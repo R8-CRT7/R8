@@ -65,7 +65,7 @@ def run(backend) -> dict:  # type: ignore[no-untyped-def]
                     mismatches.append({"scale": scale, "kind": kind, "got": got_a, "truth": truth_a})
                 a_sim = (
                     statistics.fmean(fuzz.ratio(g, t) / 100 for g, t in zip(got_a, truth_a, strict=False))
-                    if got_a and len(got_a) == len(truth_a) else 0.0
+                    if got_a and len(got_a) == len(truth_a) else float(got_a == truth_a)  # number questions: []
                 )
                 results.append({
                     "scale": scale, "kind": kind, "ok": True,

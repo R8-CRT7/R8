@@ -1,15 +1,27 @@
 # Release
 
 ## Versions
-`0.1 development` → **`0.5 alpha` (current: 0.5.0-alpha.1)** → `0.9 beta` → `1.0` only when the checklist
+`0.1 development` → **`0.5 alpha` (current: 0.5.0-alpha.2)** → `0.9 beta` → `1.0` only when the checklist
 below is fully green, including tests against the real 360° online software and on a real iPhone.
 
 ## Windows build
-Automated: `.github/workflows/windows.yml` on `windows-latest`:
-1. unit + integration + UI tests, 2. native Windows tests (real window, capture, Windows OCR, SendInput,
-hotkeys, Credential Manager, covered-target guard), 3. PyInstaller onedir build, 4. self-test of the frozen
-exe, 5. Inno Setup → `dist/360SmartSetup.exe`, 6. silent install + self-test of the installed app,
-7. upload artifact **360SmartSetup**.
+Automated: `.github/workflows/windows.yml`.
+* On `ubuntu-24.04`: ruff, mypy, all tests with real Tesseract, bandit, and pip-audit (blocking).
+* On `windows-latest`:
+  1. unit, integration and UI tests;
+  2. native Windows tests: real window, capture, Windows OCR (including concurrent calls), SendInput,
+     hotkeys, Credential Manager, and the covered-target guard;
+  3. the Windows OCR benchmark;
+  4. PyInstaller onedir build;
+  5. `--self-test --demo` of the frozen exe;
+  6. Inno Setup → `dist/360SmartSetup.exe`, plus a SHA-256 file;
+  7. silent install and self-test of the installed app;
+  8. **silent uninstall**, then a check that the files and the HKCU uninstall entry are gone;
+  9. upload of the artifact **360SmartSetup**;
+  10. a job summary with the native test output, the OCR benchmark and the installer hash.
+* **Publishing a pre-release:** *Actions → windows (tests, native, installer) → Run workflow* with
+  `release_tag` (e.g. `v0.5.0-alpha.3`). The `release` job attaches the CI-built installer and its checksum
+  to a GitHub pre-release, with `docs/RELEASE_NOTES.md` as the text.
 
 Manual: `powershell -ExecutionPolicy Bypass -File windows\packaging\build.ps1` (Python 3.11+ and Inno Setup 6
 on the build machine only - end users need neither).
@@ -18,8 +30,15 @@ on the build machine only - end users need neither).
 Azure Trusted Signing (~10 $/month) removes the SmartScreen "unknown publisher" warning. Not included.
 
 ## iOS build
-Automated: `.github/workflows/ios.yml` on `macos-15`: `swift test` for Smart360Core, XcodeGen, unsigned
-simulator build of the app + both extensions.
+Automated: `.github/workflows/ios.yml` on `macos-15` (Xcode 16.4, iOS 18.5 SDK):
+* `swift test` for Smart360Core (17 tests);
+* XcodeGen, then an unsigned simulator build of the app and both extensions;
+* `xcodebuild analyze`, which fails the job on analyzer findings;
+* an unsigned build for a real device (arm64);
+* the free-account project variant;
+* SwiftLint (informational).
+
+Signing and installing on an iPhone cannot run in CI without the user's Apple ID.
 
 Device install:
 1. `brew install xcodegen && cd ios && xcodegen generate` (paid account) or `--spec project-free.yml` (free).
@@ -40,21 +59,21 @@ is started explicitly by the user through the system picker (red status bar whil
 
 ## Release checklist
 
-| Item | State (0.5.0-alpha.1) |
+| Item | State (0.5.0-alpha.2) |
 |---|---|
-| Windows app starts | ✅ Linux offscreen smoke; ⏳ Windows CI (needs repo push access) |
-| Overlay works | ✅ rendered + UI tests; ⏳ on a real Windows desktop |
-| Question detection works | ✅ simulator + real Tesseract OCR; ❌ not yet on real 360° online |
+| Windows app starts | ✅ frozen exe + installed app `--self-test --demo` on windows-latest (CI) |
+| Overlay works | ✅ UI tests on Windows (offscreen) + rendered screenshots; ❌ not yet seen on a real desktop by a person |
+| Question detection works | ✅ real Windows window + capture + Windows OCR (CI); ❌ not yet on real 360° online |
 | AI works | ✅ Mock/demo end-to-end; ❌ no live API call made (no key available) |
-| Confirmation required | ✅ enforced + tested (unit, property, race, engine, app) |
+| Confirmation required | ✅ enforced + tested (unit, property, race, engine, app, native E2E) |
 | No stale action execution | ✅ tested (question change during approval / before click / window lost) |
 | Cache works | ✅ |
 | Settings persist | ✅ |
 | Recovery works | ✅ AI offline, invalid JSON, capture failures, corrupt files, internal exceptions |
 | UI responsive | ✅ UI-lag health, all work off the UI thread |
-| Installer works | ⏳ built + silent-installed in CI once pushed |
-| iOS builds | ⏳ macOS CI once pushed (Swift syntax-checked only) |
+| Installer works | ✅ built, silently installed, self-tested, silently uninstalled (CI); ❌ interactive install on a user PC |
+| iOS builds | ✅ simulator + device (unsigned) + analyze (CI); ❌ not signed / installed on an iPhone |
 | iOS workflow documented | ✅ |
-| No critical test failures | ✅ 145 passed (Linux); native Windows + iOS suites pending CI |
-| No exposed secrets | ✅ redaction tests, bandit, no keys in repo |
+| No critical test failures | ✅ Linux 162 · Windows all + 8/8 native · iOS 17 XCTests |
+| No exposed secrets | ✅ redaction tests, bandit, pip-audit, no keys in repo |
 | Docs complete | ✅ |

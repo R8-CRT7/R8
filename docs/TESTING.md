@@ -4,10 +4,10 @@
 
 ```bash
 cd windows
-QT_QPA_PLATFORM=offscreen pytest                 # 145 tests (~62 s)
+QT_QPA_PLATFORM=offscreen pytest                 # 162 tests (~75 s)
 pytest -m windows tests/test_windows_native.py   # on Windows, QT_QPA_PLATFORM=windows (CI does this)
 python tools/soak.py --minutes 30                # soak / memory
-python tools/ocr_benchmark.py                    # OCR accuracy + latency
+python tools/ocr_benchmark.py                    # OCR accuracy + latency (Windows OCR + Tesseract, mismatch samples)
 python tools/screenshots.py                      # visual review of every screen
 cd ../ios/Packages/Smart360Core && swift test    # iOS core (macOS)
 ```
@@ -17,14 +17,24 @@ cd ../ios/Packages/Smart360Core && swift test    # iOS core (macOS)
 | Suite | File | What it proves | # |
 |---|---|---|---|
 | State machine | `test_state_machine.py` | the confirmation gate: static table, every state, stale ids/generations, pause, races (16 threads, approve-vs-capture ×200), 400-case property-based random walk | 33 |
-| Cache & confidence | `test_cache_confidence.py` | cache never answers a different question (numbers, negation in long questions, images, answer sets, type), shuffle remap, corruption recovery, eviction; confidence bounds/monotonicity (property-based) | 23 |
+| Cache & confidence | `test_cache_confidence.py` | cache never answers a different question (numbers, negation in long questions, images, answer sets, type), shuffle remap, corruption recovery, eviction; confidence bounds/monotonicity (property-based) + uncertain-cap regression | 24 |
 | AI layer | `test_ai.py` | schema rejects free text / out-of-range / duplicates; request shapes for Anthropic (structured outputs, effort, fallbacks), OpenAI, Gemini; SDK error mapping; retry, timeout, circuit breaker (closed/open/half-open), dedup, crash containment, cost tracking | 29 |
 | Engine integration | `test_engine_integration.py` | full loop on the simulator with **real Tesseract OCR**: detection → AI → confirmation → click → verification; shuffled answers; next question; plus the race/chaos cases below | 23 |
 | Storage & services | `test_storage_services.py` | config roundtrip/backup/quarantine, secret redaction, history filters (LIKE escaping), privacy mode, retention, health states, leak-slope maths, self-test, report contains no key/question text | 17 |
 | UI | `test_ui.py` | overlay states/modes/signals, Neural Pulse states, all 9 dashboard pages, history filters/empty state, calibration wizard (mouse-drag → valid profile), onboarding flow, **whole app demo round-trip incl. ENTER blocked on manual check**, UI-lag health, single-instance lock | 10 |
-| Chaos / bug hunt | `test_chaos.py` | invalid/degenerate profiles, 1-px and full-window regions, crashing OCR, empty OCR, cache/config deleted while running, wrongly typed config, unknown forced profile, change detection between similar text-only questions (regression) | 10 |
-| Native Windows | `test_windows_native.py` | DPI awareness, Windows OCR on a rendered screen, window detection + capture exclusion, Credential Manager, RegisterHotKey via injected F8, real capture + Windows OCR + SendInput end-to-end, click refused when a window covers the target | 7 (CI) |
-| iOS core | `CoreTests.swift` | state machine, normalisation/numbers, ratio definition, negation guard, cache safety + remap + corruption, schema validation, Anthropic body shape, confidence caps, phone screenshot parser, frame hash | 16 (CI) |
+| Chaos / bug hunt | `test_chaos.py` | invalid/degenerate profiles, 1-px and full-window regions, crashing OCR, empty OCR, cache/config deleted while running, wrongly typed config, unknown forced profile, change detection between similar text-only questions (regression), Windows OCR checkbox artefacts ("C]", "Cl", "Ü", verbatim CI samples) and real words that must survive | 26 |
+| Native Windows | `test_windows_native.py` | DPI awareness, Windows OCR on a rendered screen, 8 concurrent Windows OCR calls, window detection + capture exclusion, Credential Manager, RegisterHotKey via injected F8, real capture + Windows OCR + SendInput end-to-end, click refused when a window covers the target | 8 (CI, all pass) |
+| iOS core | `CoreTests.swift` | state machine, normalisation/numbers, ratio definition, negation guard, cache safety + remap + corruption, schema validation, Anthropic body shape, confidence caps, phone screenshot parser, frame hash, uncertain-cap monotonicity | 17 (CI, all pass) |
+
+## Continuous integration (GitHub Actions, all green)
+| Workflow | Runner | Checks |
+|---|---|---|
+| `windows.yml` quality | ubuntu-24.04 | ruff, mypy, 162 tests with real Tesseract, bandit, pip-audit (blocking) |
+| `windows.yml` windows | windows-latest | all tests (25 Tesseract-only skipped), 8 native tests, Windows OCR benchmark, PyInstaller, frozen self-test, installer, silent install + self-test, silent uninstall + removal check |
+| `ios.yml` | macos-15 | `swift test`, XcodeGen, simulator build, `xcodebuild analyze`, device build (unsigned), free-account variant |
+
+A GitHub runner cannot run the real 360° online software (licensed and requires a login). No person looks
+at the runner's desktop, and it has no audio device or multiple monitors. See `FINAL_STATUS.md`.
 
 ## Race-condition & chaos cases (engine level)
 
@@ -68,6 +78,16 @@ text clipping, calibration panel placement, self-test ghost rows, orbit icon, co
 * Soak harness: turned pages every 50 ms (never a settled screen) → one page turn per answered question.
 * **Memory leak** (soak + tracemalloc): pytesseract's per-call glob pattern filled fnmatch's LRU cache
   (+19.5 MB/h, ~5 KB per question) → tesseract CLI called directly; tracemalloc growth now ~10 KB total.
+
+* **Found by the CI loop on real Windows / macOS:**
+  * Windows OCR rejected concurrent `RecognizeAsync` calls on one engine → one engine per thread.
+  * The empty checkbox was read as "C]" / "Cl" / "Ü" in front of answers. The re-check after approval then
+    refused to click ("question changed"), and the benchmark read only 45 % of answer sets exactly → glyph
+    cleanup, now 81.7 % (100 % on clean screens).
+  * The confidence "uncertain" cap was not monotone (hypothesis).
+  * mypy target vs. numpy stubs.
+  * An iOS-18-only App Intents API with an iOS 17 target.
+  * A duplicate Info.plist in the free Xcode project.
 
 ## Soak / memory
 See `docs/FINAL_STATUS.md` → *Soak test* for the 30-minute run (cycles, RSS trend, errors).

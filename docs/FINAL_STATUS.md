@@ -1,99 +1,113 @@
-# Final status - 360 SMART 0.5.0-alpha.1 (2026-09-30)
+# Final status - 360 SMART 0.5.0-alpha.2 (2026-09-30)
 
-**Legend.** ✅ done · ⏳ prepared, runs automatically once the branch is pushed (GitHub access pending) ·
-❌ not done · ➖ not applicable.
+**Legend.** ✅ done and verified the way the column says · ❌ not done · ➖ not applicable.
 *Implemented* = code exists · *Unit tested* = automated tests on the component · *Integration tested* =
-automated end-to-end test with real OCR on the simulator · *Manual verified* = I ran it and inspected the
-result (screenshots / CLI) · *Device verified* = on real Windows hardware or a real iPhone with the real
-360° online software.
+automated end-to-end test · *CI verified (real OS)* = passed on a GitHub-hosted `windows-latest` or
+`macos-15` runner (a real Windows / macOS, but a virtual machine without the real 360° online software) ·
+*Device verified* = on the user's own Windows PC or iPhone with the real 360° online software.
 
-**Environment of this work:** Linux container (no Windows, no macOS, no iPhone, no Swift toolchain, no AI
-API key). Windows and iOS were therefore verified by tests on Linux + syntax checks, and CI jobs for real
-Windows/macOS runners were written but **could not run yet** because pushing to `R8-CRT7/R8` was refused
-(HTTP 403 - GitHub App not installed / not connected).
+**Where it was verified.**
+* Development ran in a Linux container: 162 tests with real Tesseract OCR, a 30-minute soak test, and
+  screenshot review.
+* GitHub Actions, green on commit `1e74200` (code) and on the release build:
+  * `windows.yml`: Linux quality job + native Windows job + installer.
+  * `ios.yml`: Swift tests + Xcode builds on macOS.
+* **Nothing has been run on the user's own hardware or against the real 360° online software yet.** The
+  "Device verified" column is therefore ❌ throughout, and that is the most important open item.
 
 ## Windows
 
-| Component | Implemented | Unit tested | Integration tested | Manual verified | Device verified | Notes |
+| Component | Implemented | Unit tested | Integration tested | CI verified (real OS) | Device verified | Notes |
 |---|---|---|---|---|---|---|
-| State machine + confirmation gate | ✅ | ✅ 33 incl. property-based + races | ✅ | ✅ | ❌ | only `approve_question` enters EXECUTING |
-| Composite confidence engine | ✅ | ✅ | ✅ | ✅ | ❌ | "question match" signal reserved (always 1.0) |
-| Question cache (safe matching) | ✅ | ✅ | ✅ | ✅ | ❌ | negation bug found + fixed |
-| Anthropic provider (structured outputs) | ✅ | ✅ fake SDK client | ✅ via mock | ❌ | ❌ | **no live API call made** (no key) |
-| OpenAI / Gemini providers | ✅ | ✅ fake clients | ➖ | ❌ | ❌ | model ids from web research, not live-tested |
+| State machine + confirmation gate | ✅ | ✅ 33 incl. property-based + races | ✅ | ✅ Windows runner | ❌ | only `approve_question` enters EXECUTING |
+| Composite confidence engine | ✅ | ✅ | ✅ | ✅ | ❌ | monotonicity bug found by hypothesis in CI loop + fixed |
+| Question cache (safe matching) | ✅ | ✅ | ✅ | ✅ | ❌ | |
+| Anthropic provider (structured outputs) | ✅ | ✅ fake SDK client | ✅ via mock | ➖ | ❌ | **no live API call made** (no key) |
+| OpenAI / Gemini providers | ✅ | ✅ fake clients | ➖ | ✅ SDKs bundled in installer | ❌ | not live-tested |
 | Retry / timeout / circuit breaker / dedup | ✅ | ✅ | ✅ | ✅ | ❌ | |
-| Tesseract OCR backend | ✅ | ✅ | ✅ real OCR | ✅ benchmark | ❌ | thread-limit + timeout fix |
-| Windows OCR backend (WinRT) | ✅ | ⏳ native CI test | ⏳ | ❌ | ❌ | code written against pywinrt 2.x docs, not executed yet |
-| Question/answer extractor + checkbox reader | ✅ | ✅ | ✅ | ✅ calibration screenshots | ❌ | real 360° layout unknown → calibration |
-| Change detection + adaptive polling | ✅ | ✅ | ✅ | ✅ profiled 1.7 ms | ❌ | similar-question bug found by soak + fixed |
-| Window detection (Win32) | ✅ | ⏳ native CI | ⏳ | ❌ | ❌ | title patterns editable |
-| Screen capture (mss) | ✅ | ⏳ native CI | ⏳ real capture E2E | ❌ | ❌ | |
-| Input execution (SendInput, atomic, covered-target guard) | ✅ | ⏳ native CI | ⏳ real click E2E | ❌ | ❌ | simulator driver fully tested |
+| Tesseract OCR backend | ✅ | ✅ | ✅ real OCR | ✅ Linux runner | ❌ | not installed on the Windows runner (Windows OCR is primary) |
+| **Windows OCR backend (WinRT)** | ✅ | ✅ native | ✅ real capture E2E | ✅ | ❌ | 2 bugs found on the runner + fixed (see below); benchmark below |
+| Question/answer extractor + checkbox reader | ✅ | ✅ | ✅ | ✅ | ❌ | real 360° layout unknown → calibration |
+| Change detection + adaptive polling | ✅ | ✅ | ✅ | ✅ | ❌ | |
+| Window detection (Win32 EnumWindows) | ✅ | ✅ native | ✅ | ✅ | ❌ | |
+| Screen capture (mss) + capture exclusion | ✅ | ✅ native | ✅ | ✅ | ❌ | |
+| Input execution (SendInput, atomic, covered-target guard) | ✅ | ✅ native | ✅ real click E2E | ✅ | ❌ | "Selected and verified (1 attempt)" on the runner |
 | Verification + max 3 attempts | ✅ | ✅ | ✅ | ✅ | ❌ | |
-| Global hotkeys (RegisterHotKey) | ✅ | ⏳ native CI (injected F8) | ➖ | ❌ | ❌ | in-app shortcuts tested |
-| Overlay (full / focus / orbit) | ✅ | ✅ pytest-qt | ✅ app round-trip | ✅ screenshots | ❌ | capture exclusion only on Windows |
-| Dashboard (9 pages) | ✅ | ✅ | ✅ live engine data | ✅ screenshots | ❌ | |
-| Onboarding (5 steps) | ✅ | ✅ | ➖ | ✅ screenshots | ❌ | |
-| Calibration wizard | ✅ | ✅ drag → profile | ✅ live test step | ✅ screenshots | ❌ | |
-| Startup diagnostics / self-test / export | ✅ | ✅ | ✅ | ✅ CLI + screenshot | ❌ | export has no keys/texts |
+| Global hotkeys (RegisterHotKey) | ✅ | ✅ native (injected F8) | ➖ | ✅ | ❌ | |
+| Credential Manager (keyring WinVault) | ✅ | ✅ native | ➖ | ✅ | ❌ | |
+| Overlay (full / focus / orbit) | ✅ | ✅ pytest-qt | ✅ app round-trip | ✅ offscreen on Windows | ❌ | never seen on a real screen by a person |
+| Dashboard (9 pages), onboarding, calibration wizard | ✅ | ✅ | ✅ | ✅ offscreen on Windows | ❌ | screenshots reviewed (Linux render) |
+| Startup diagnostics / self-test / export | ✅ | ✅ | ✅ | ✅ frozen exe + installed app `--self-test --demo` exit 0 | ❌ | |
 | Health monitor, watchdog, UI-lag | ✅ | ✅ | ✅ | ✅ | ❌ | |
-| Config (atomic, backup, quarantine) | ✅ | ✅ | ✅ chaos | ✅ | ❌ | |
-| Secrets (Credential Manager) | ✅ | ✅ redaction; ⏳ WinVault CI | ➖ | ✅ fallback detection | ❌ | |
-| History + Insights | ✅ | ✅ | ✅ | ✅ | ❌ | |
-| Sounds (optional) | ✅ | ➖ | ➖ | ⚠ no audio device here | ❌ | fails silently without audio |
+| Config (atomic, backup, quarantine), history, insights | ✅ | ✅ | ✅ chaos | ✅ | ❌ | |
 | Single-instance lock | ✅ | ✅ | ➖ | ✅ | ❌ | |
-| Demo mode (practice simulator) | ✅ | ✅ | ✅ | ✅ app launched (offscreen) | ❌ | free, offline |
-| PyInstaller build | ✅ spec | ➖ | ⏳ CI | ❌ | ❌ | not built here (needs Windows) |
-| Installer `360SmartSetup.exe` | ✅ .iss | ➖ | ⏳ CI incl. silent install | ❌ | ❌ | unsigned → SmartScreen warning |
+| Demo mode (practice simulator) | ✅ | ✅ | ✅ | ✅ self-test in demo mode | ❌ | |
+| Sounds (optional) | ✅ | ➖ | ➖ | ➖ | ❌ | no audio device on runners |
+| PyInstaller build | ✅ | ➖ | ✅ | ✅ | ❌ | |
+| **Installer `360SmartSetup.exe`** | ✅ | ➖ | ✅ | ✅ build, silent install, installed self-test, silent uninstall, files + registry entry removed | ❌ | unsigned → SmartScreen warning |
+
+### What a GitHub runner cannot prove (documented, not faked)
+* **The real 360° online software.** It is a licensed product with a login. It cannot run on a public CI
+  runner, so only the built-in practice simulator (same flow, own layout) was used.
+* **A human looking at the overlay.** Runners have a desktop session (the native tests click real windows)
+  but no one sees it. The visual review was done on rendered screenshots.
+* **Interactive installer UI and SmartScreen.** The installer was run with `/VERYSILENT`. SmartScreen only
+  applies to files downloaded by a browser (Mark of the Web), which is not the case on the runner.
+* **Audio output**, **multi-monitor / 4K scaling** (the runner has one virtual display), and **long-term
+  stability on Windows**: the 30-minute soak test ran on Linux only.
 
 ## iOS
 
-| Component | Implemented | Unit tested | Integration tested | Manual verified | Device verified | Notes |
+| Component | Implemented | Unit tested | Integration tested | CI verified (real OS) | Device verified | Notes |
 |---|---|---|---|---|---|---|
-| Smart360Core (models, state machine, cache, confidence, schema, parser) | ✅ | ⏳ 16 XCTests (macOS CI) | ➖ | ✅ Swift syntax check | ❌ | not compiled here |
-| AI providers (URLSession) | ✅ | ⏳ body-shape test | ➖ | ❌ | ❌ | no live call |
-| SwiftUI app (6 screens, design system, Neural Pulse) | ✅ | ➖ | ⏳ simulator build CI | ❌ | ❌ | |
-| Vision OCR | ✅ | ➖ | ⏳ | ❌ | ❌ | |
-| Broadcast upload extension | ✅ | ➖ | ⏳ build only | ❌ | ❌ | needs paid account + real device |
-| Share extension | ✅ | ➖ | ⏳ build only | ❌ | ❌ | needs paid account |
-| App Intent (Shortcuts / Back Tap) | ✅ | ➖ | ⏳ build only | ❌ | ❌ | |
-| XcodeGen projects (paid / free) | ✅ | ➖ | ⏳ | ✅ reviewed | ❌ | |
-| Live Activities / Dynamic Island | ❌ | ➖ | ➖ | ➖ | ❌ | not built: an extension cannot update a Live Activity; would need an own push server (cost, privacy). Notifications are used instead |
-| UI Automation text source (Windows, read DOM text instead of OCR) | ❌ | ➖ | ➖ | ➖ | ❌ | candidate for 0.9 behind a feature flag |
+| Smart360Core (models, state machine, cache, confidence, schema, parser) | ✅ | ✅ 17 XCTests (`swift test`, macOS) | ➖ | ✅ macos-15 | ❌ | |
+| AI providers (URLSession) | ✅ | ✅ body-shape test | ➖ | ✅ compiles | ❌ | no live call |
+| SwiftUI app (6 screens, design system, Neural Pulse) | ✅ | ➖ | ➖ | ✅ Xcode 16.4 build (simulator + device arm64, unsigned) | ❌ | never launched on a simulator/phone |
+| Static analysis | ➖ | ➖ | ➖ | ✅ `xcodebuild analyze`: no analyzer findings | ➖ | |
+| Vision OCR | ✅ | ➖ | ➖ | ✅ compiles | ❌ | |
+| Broadcast upload extension | ✅ | ➖ | ➖ | ✅ builds | ❌ | needs paid account + real device |
+| Share extension | ✅ | ➖ | ➖ | ✅ builds | ❌ | needs paid account |
+| App Intent (Shortcuts / Back Tap) | ✅ | ➖ | ➖ | ✅ builds (iOS 17 target; iOS-18-only API removed) | ❌ | |
+| XcodeGen projects (paid / free) | ✅ | ➖ | ➖ | ✅ both generate + build | ❌ | |
+| Live Activities / Dynamic Island | ❌ | ➖ | ➖ | ➖ | ❌ | not built: an extension cannot update a Live Activity without an own push server |
+| Signed install on an iPhone | ❌ | ➖ | ➖ | ➖ | ❌ | needs the user's Apple ID / team (see RELEASE.md) |
 
-## Measurements (Linux container, 4 vCPU)
+## Bugs found by the CI loop (all fixed, each with a regression test)
+| # | Where | Symptom | Fix |
+|---|---|---|---|
+| 1 | Linux mypy | numpy 2.5 stubs use PEP 695 syntax; mypy target 3.11 failed to parse them | mypy `python_version = 3.12` (shipped runtime) |
+| 2 | Windows pytest | Gemini fake-client test needs `google-genai` | test skips without it; the Windows build now bundles the OpenAI + Gemini SDKs |
+| 3 | iOS build | `@Parameter(supportedContentTypes:)` is iOS 18+, deployment target 17 | plain parameter, type checked in `perform()` |
+| 4 | iOS free project | duplicate `Info.plist` output | exclude paid-only files |
+| 5 | **Windows OCR** | "Another RecognizeAsync operation is already running!" (question + answers OCR in parallel on one engine) | one `OcrEngine` per thread; test with 8 concurrent calls |
+| 6 | **Windows OCR** | empty checkbox read as "C]", inconsistently → the re-check after approval saw a "different question" and refused to click | strip box tokens |
+| 7 | **Windows OCR** | checkbox read as bracket-free "Cl"/"Ü" in front of answers (benchmark: only 45 % of answer sets exact) | strip standalone glyph tokens; verbatim CI samples as tests |
+| 8 | Confidence (Py + Swift) | `uncertain` cap missed values in [0.74, 0.75) → not monotone (hypothesis) | true `min()` cap |
 
-| Metric | Value |
-|---|---|
-| Tests | **145 passed**, 0 failed (7 native-Windows tests deselected on Linux) |
-| Lint / types / security | ruff ✅ · mypy ✅ (61 files) · bandit: 0 medium/high · pip-audit: 0 runtime vulns |
-| Question extraction (Tesseract, parallel) | median **206 ms** (was 440 ms) |
-| OCR accuracy, clean screens (4 scalings) | detected **100 %**, answers exact 90 % |
-| OCR accuracy incl. JPEG/blur degradations | detected 93 %, answers exact 78 % (docs/DECISIONS.md D-07) |
-| Change detection | 1.7 ms / frame (160×90, mean + changed-pixel rule) |
-| Overlay repaint (full) · Neural Pulse | 4.7 ms · 1.4 ms per frame (budget 16.7 ms @ 60 fps) |
-| Soak test (30 min, full loop) | see below |
+## Measurements
 
-## Soak test
-Full loop on the practice simulator for 30 minutes: new question → change detection → real Tesseract OCR →
-(mock) AI → approval → click → visual verification → next question. Raw data: `docs/benchmarks/soak_30min.*`.
-
-| | Run 2 (before leak fix) | **Run 3 (final)** |
+| Metric | Value | Where |
 |---|---|---|
-| Full cycles | 1 878 | 1 350 (slower OCR: shared CPU, 311 ms vs 195 ms per call) |
-| Correct selections / wrong | 1 690 / 0 | **1 215 / 0** (remainder: number questions, advisory by design) |
-| Stuck situations / errors | 0 / 0 | **0 / 0** |
-| RSS after warm-up | 81 → 92 MB, linear | **79.6 → 80.8 MB, plateau** (last 12 min: +0.4 MB) |
-| RSS trend | +19.5 MB/h | **+3.2 MB/h**, flattening |
-| Threads at end | 4 | 4 |
+| Tests | **162 passed** on Linux (real Tesseract). On Windows every test passes except 25 that need Tesseract and are skipped (Tesseract isn't installed on the Windows runner). **8/8 native Windows tests** pass. **17 XCTests** pass (`swift test`) | CI |
+| Lint / types / security | ruff ✅ · mypy ✅ (61 files) · bandit: 0 medium/high · pip-audit: no known vulnerabilities (blocking) | CI |
+| Windows OCR benchmark (120 screens: 4 scalings × clean/JPEG/blur) | detected **97.5 %**, answer sets exact **81.7 %** (was 45 % before fix 7) · clean screens **100 % / 100 %** · JPEG 95 % / 90 % · blur 97.5 % / 55 % (all remaining misses: heavy blur at 75 %) · median **79 ms**, p95 132 ms per question | CI windows-latest |
+| Tesseract (Linux, same benchmark) | detected 93 %, answers exact 78 %, median 465 ms (docs/DECISIONS.md D-07) | container |
+| Native E2E (real window → capture → Windows OCR → approval → SendInput → verify) | ✅ 1 attempt | CI |
+| Installer | `360SmartSetup.exe` ≈ 75 MB, per-user, uninstall verified | CI |
+| Soak test (30 min, full loop, Linux) | 1 215 correct selections, 0 wrong, 0 errors, RSS plateau ~80 MB | container |
 
-Run 1 was invalid (harness turned pages every 50 ms) and exposed the change-detection bug; run 2 exposed the
-pytesseract leak (tracemalloc). Both fixed. A 60-minute run and a run on real Windows are still open.
+## Where the Windows installer is
+* **GitHub pre-release v0.5.0-alpha.2** (built by CI from this branch, including all fixes above):
+  https://github.com/R8-CRT7/R8/releases/tag/v0.5.0-alpha.2 → asset `360SmartSetup.exe` (+ `.sha256`).
+* v0.5.0-alpha.1 (https://github.com/R8-CRT7/R8/releases/tag/v0.5.0-alpha.1) is an older build without
+  fixes 7–8.
+* Every green `windows.yml` run also uploads the artifact **360SmartSetup** (kept 90 days):
+  *Actions → windows (tests, native, installer) → run → Artifacts*.
+* New pre-release: *Actions → windows → Run workflow → release_tag = v…*.
 
 ## What is needed to reach 1.0
-1. **GitHub access** → push → Windows CI (native tests, installer) and macOS CI (Swift tests, app build) green.
-2. **A real session with 360° online** on Windows: calibrate, check detection on ~50 questions, tune the
-   checkbox reader if the real checkboxes differ.
-3. **An AI key** for one live run per provider.
-4. **iPhone test** (paid Apple account for the extensions).
-5. Optional: code-signing certificate for the installer.
+1. **A real session with 360° online** on the user's Windows PC: install, calibrate, check detection on
+   ~50 questions, and tune the checkbox reader if the real checkboxes differ.
+2. **An AI key** for one live run per provider.
+3. **iPhone test** (Apple ID; paid account for the extensions).
+4. A 60-minute soak test on Windows. Optional: a code-signing certificate for the installer.

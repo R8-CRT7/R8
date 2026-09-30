@@ -1,5 +1,5 @@
 # 360 SMART
-**AI Driving Theory Assistant** · Windows + iOS · Version 0.5.0-alpha.1
+**AI Driving Theory Assistant** · Windows + iOS · Version 0.5.0-alpha.2
 
 <p align="center">
   <img src="docs/screenshots/overlay_full_ready.png" width="300" alt="Overlay">

@@ -1,7 +1,7 @@
 ; Inno Setup script -> 360SmartSetup.exe
 ; Build (after PyInstaller):  iscc packaging\installer.iss
 #define AppName "360 SMART"
-#define AppVersion "0.5.0-alpha.1"
+#define AppVersion "0.5.0-alpha.2"
 #define AppExe "360Smart.exe"
 
 [Setup]

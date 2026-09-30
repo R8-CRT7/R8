@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       release_tag:
-        description: "Also publish 360SmartSetup.exe as a GitHub pre-release with this tag (e.g. v0.5.0-alpha.1); empty = no release"
+        description: "Also publish 360SmartSetup.exe as a GitHub pre-release with this tag (e.g. v0.5.0-alpha.2); empty = no release"
         required: false
         default: ""
 
