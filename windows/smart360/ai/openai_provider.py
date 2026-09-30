@@ -12,7 +12,13 @@ import time
 from typing import Any
 
 from smart360.ai.base import SYSTEM_PROMPT, AIProvider, ProviderError, ProviderInfo, build_user_text
-from smart360.ai.schema import SOLVE_JSON_SCHEMA, SchemaViolation, SolveRequest, SolveResult, parse_solve_response
+from smart360.ai.schema import (
+    SOLVE_JSON_SCHEMA,
+    SchemaViolation,
+    SolveRequest,
+    SolveResult,
+    parse_solve_response,
+)
 
 
 class OpenAIProvider(AIProvider):
@@ -25,7 +31,9 @@ class OpenAIProvider(AIProvider):
         pricing={},  # not verified - cost tracking shows tokens only
     )
 
-    def __init__(self, api_key: str | None, model: str | None = None, timeout_s: float = 30.0, client: Any = None):
+    def __init__(
+        self, api_key: str | None, model: str | None = None, timeout_s: float = 30.0, client: Any = None
+    ):
         super().__init__(api_key, model, timeout_s)
         self._client = client
 
@@ -68,9 +76,14 @@ class OpenAIProvider(AIProvider):
         except SchemaViolation as e:
             raise ProviderError(str(e), retryable=True, kind="invalid") from e
         usage = getattr(resp, "usage", None)
-        return SolveResult(parsed, getattr(resp, "model", self.model), self.info.id, latency,
-                           int(getattr(usage, "prompt_tokens", 0) or 0),
-                           int(getattr(usage, "completion_tokens", 0) or 0))
+        return SolveResult(
+            parsed,
+            getattr(resp, "model", self.model),
+            self.info.id,
+            latency,
+            int(getattr(usage, "prompt_tokens", 0) or 0),
+            int(getattr(usage, "completion_tokens", 0) or 0),
+        )
 
 
 def _map_openai_error(e: Exception) -> ProviderError:

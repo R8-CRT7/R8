@@ -14,8 +14,14 @@ from smart360.ai.resilience import AIUnavailable, BreakerState, CircuitBreaker, 
 from smart360.ai.schema import SchemaViolation, SolveRequest, parse_solve_response
 
 REQ = SolveRequest("Wer hat Vorfahrt?", ("Der blaue PKW", "Der Radfahrer", "Ich"), image_png=b"\x89PNG-fake")
-GOOD = {"answers": [1, 3], "number_answer": None, "confidence": 0.96, "reason": "Rechts vor links.",
-        "uncertain": False, "topic": "Vorfahrt"}
+GOOD = {
+    "answers": [1, 3],
+    "number_answer": None,
+    "confidence": 0.96,
+    "reason": "Rechts vor links.",
+    "uncertain": False,
+    "topic": "Vorfahrt",
+}
 
 
 # ----------------------------------------------------------------------------- schema
@@ -67,7 +73,7 @@ def test_uncertain_allows_empty():
     assert r.uncertain
 
 
-# ----------------------------------------------------------------------------- providers with fake SDK clients
+# ------------------------------------------------------------------ providers with fake SDK clients
 
 
 class FakeAnthropic:
@@ -75,7 +81,8 @@ class FakeAnthropic:
         self.calls = []
         msg = SimpleNamespace(
             content=[SimpleNamespace(type="thinking", thinking=""), SimpleNamespace(type="text", text=text)],
-            stop_reason=stop_reason, model="claude-opus-5-5",
+            stop_reason=stop_reason,
+            model="claude-opus-5-5",
             usage=SimpleNamespace(input_tokens=1500, output_tokens=90),
         )
         create = lambda **kw: (self.calls.append(kw), msg)[1]  # noqa: E731
@@ -138,8 +145,9 @@ def test_anthropic_sdk_errors_are_mapped():
     assert e.value.kind == "network" and e.value.retryable
 
     def rate(**kw):
-        raise anthropic.RateLimitError("slow down", response=httpx2.Response(429, request=req,
-                                       headers={"retry-after": "3"}), body=None)
+        raise anthropic.RateLimitError(
+            "slow down", response=httpx2.Response(429, request=req, headers={"retry-after": "3"}), body=None
+        )
 
     fake = SimpleNamespace(beta=SimpleNamespace(messages=SimpleNamespace(create=rate)))
     with pytest.raises(ProviderError) as e:
@@ -151,18 +159,21 @@ def test_openai_fake_client():
     calls = []
     resp = SimpleNamespace(
         choices=[SimpleNamespace(message=SimpleNamespace(content=json.dumps(GOOD), refusal=None))],
-        model="gpt-6-luna", usage=SimpleNamespace(prompt_tokens=10, completion_tokens=5),
+        model="gpt-6-luna",
+        usage=SimpleNamespace(prompt_tokens=10, completion_tokens=5),
     )
-    fake = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(
-        create=lambda **kw: (calls.append(kw), resp)[1])))
+    fake = SimpleNamespace(
+        chat=SimpleNamespace(completions=SimpleNamespace(create=lambda **kw: (calls.append(kw), resp)[1]))
+    )
     res = OpenAIProvider("sk", client=fake).solve_question(REQ)
     assert res.response.answers == [1, 3]
     assert calls[0]["response_format"]["json_schema"]["strict"] is True
 
 
 def test_gemini_fake_client():
-    resp = SimpleNamespace(text=json.dumps(GOOD), usage_metadata=SimpleNamespace(
-        prompt_token_count=7, candidates_token_count=3))
+    resp = SimpleNamespace(
+        text=json.dumps(GOOD), usage_metadata=SimpleNamespace(prompt_token_count=7, candidates_token_count=3)
+    )
     calls = []
     fake = SimpleNamespace(models=SimpleNamespace(generate_content=lambda **kw: (calls.append(kw), resp)[1]))
     res = GeminiProvider("key", client=fake).solve_question(REQ)

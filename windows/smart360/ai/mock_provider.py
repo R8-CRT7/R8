@@ -22,8 +22,13 @@ class MockProvider(AIProvider):
         pricing={"demo-1": (0.0, 0.0)},
     )
 
-    def __init__(self, answer_fn: AnswerFn | None = None, latency_s: float = 0.6,
-                 failures: list[ProviderError] | None = None, **_: object):
+    def __init__(
+        self,
+        answer_fn: AnswerFn | None = None,
+        latency_s: float = 0.6,
+        failures: list[ProviderError] | None = None,
+        **_: object,
+    ):
         super().__init__("demo", "demo-1", 30.0)
         self.answer_fn = answer_fn
         self.latency_s = latency_s
@@ -48,6 +53,12 @@ class MockProvider(AIProvider):
             data = self.answer_fn(req)
             resp = parse_solve_response(data, len(req.answers), req.number_question)
         else:
-            resp = SolveResponse(answers=[1], number_answer=None, confidence=0.9,
-                                 reason="Demo-Antwort (offline).", uncertain=False, topic="Sonstiges")
+            resp = SolveResponse(
+                answers=[1],
+                number_answer=None,
+                confidence=0.9,
+                reason="Demo-Antwort (offline).",
+                uncertain=False,
+                topic="Sonstiges",
+            )
         return SolveResult(resp, "demo-1", "mock", (time.perf_counter() - t0) * 1000, 800, 60)

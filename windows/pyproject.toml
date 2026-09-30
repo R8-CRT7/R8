@@ -64,6 +64,7 @@ select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "S", "PL"]
 ignore = [
     "PLR0913", "PLR0912", "PLR0915", "PLR2004", "PLR0911", "S101", "S311",
     "RUF001", "RUF002", "RUF003", "PLW0603", "PLC0415", "S608",
+    "SIM105", "PLR0917", "S110",  # best-effort cleanup blocks; DI constructors
 ]
 
 [tool.ruff.lint.per-file-ignores]
@@ -72,11 +73,16 @@ ignore = [
 
 [tool.mypy]
 python_version = "3.11"
+plugins = ["pydantic.mypy"]
 ignore_missing_imports = true
 warn_unused_ignores = false
 check_untyped_defs = true
 no_implicit_optional = true
 exclude = ["build/", "dist/"]
+
+[[tool.mypy.overrides]]
+module = ["smart360.platform.win32"]
+disable_error_code = ["attr-defined", "name-defined"]
 
 [[tool.mypy.overrides]]
 module = ["smart360.ui.*"]

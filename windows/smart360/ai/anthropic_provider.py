@@ -7,7 +7,13 @@ import time
 from typing import Any
 
 from smart360.ai.base import SYSTEM_PROMPT, AIProvider, ProviderError, ProviderInfo, build_user_text
-from smart360.ai.schema import SOLVE_JSON_SCHEMA, SchemaViolation, SolveRequest, SolveResult, parse_solve_response
+from smart360.ai.schema import (
+    SOLVE_JSON_SCHEMA,
+    SchemaViolation,
+    SolveRequest,
+    SolveResult,
+    parse_solve_response,
+)
 
 _FALLBACK_BETA = "server-side-fallback-2026-07-01"
 
@@ -26,8 +32,14 @@ class AnthropicProvider(AIProvider):
         },
     )
 
-    def __init__(self, api_key: str | None, model: str | None = None, timeout_s: float = 30.0,
-                 effort: str = "low", client: Any = None):
+    def __init__(
+        self,
+        api_key: str | None,
+        model: str | None = None,
+        timeout_s: float = 30.0,
+        effort: str = "low",
+        client: Any = None,
+    ):
         super().__init__(api_key, model, timeout_s)
         self.effort = effort
         self._client = client
@@ -44,11 +56,16 @@ class AnthropicProvider(AIProvider):
         blocks: list[dict[str, Any]] = []
         for png in (req.image_png, req.question_png, req.answers_png):
             if png:
-                blocks.append({
-                    "type": "image",
-                    "source": {"type": "base64", "media_type": "image/png",
-                               "data": base64.standard_b64encode(png).decode("ascii")},
-                })
+                blocks.append(
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": "image/png",
+                            "data": base64.standard_b64encode(png).decode("ascii"),
+                        },
+                    }
+                )
         blocks.append({"type": "text", "text": build_user_text(req)})
         return blocks
 
@@ -90,8 +107,9 @@ class AnthropicProvider(AIProvider):
             raise ProviderError(f"Unknown model {self.model}", retryable=False, kind="config") from e
         except anthropic.RateLimitError as e:
             ra = e.response.headers.get("retry-after") if e.response is not None else None
-            raise ProviderError("Rate limited", retryable=True, kind="rate_limit",
-                                retry_after=float(ra) if ra else None) from e
+            raise ProviderError(
+                "Rate limited", retryable=True, kind="rate_limit", retry_after=float(ra) if ra else None
+            ) from e
         except anthropic.BadRequestError as e:
             raise ProviderError(f"Bad request: {e.message}", retryable=False, kind="invalid") from e
         except anthropic.APITimeoutError as e:
@@ -99,8 +117,9 @@ class AnthropicProvider(AIProvider):
         except anthropic.APIConnectionError as e:
             raise ProviderError("Network error", retryable=True, kind="network") from e
         except anthropic.APIStatusError as e:
-            raise ProviderError(f"Server error {e.status_code}", retryable=e.status_code >= 500,
-                                kind="server") from e
+            raise ProviderError(
+                f"Server error {e.status_code}", retryable=e.status_code >= 500, kind="server"
+            ) from e
         latency = (time.perf_counter() - t0) * 1000
 
         if getattr(resp, "stop_reason", None) == "refusal":

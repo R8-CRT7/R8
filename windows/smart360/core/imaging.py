@@ -66,8 +66,9 @@ def content_variance(img: Image.Image) -> float:
 def encode_png(img: Image.Image, max_side: int | None = None) -> bytes:
     if max_side and max(img.size) > max_side:
         scale = max_side / max(img.size)
-        img = img.resize((max(1, int(img.width * scale)), max(1, int(img.height * scale))),
-                         Image.Resampling.LANCZOS)
+        img = img.resize(
+            (max(1, int(img.width * scale)), max(1, int(img.height * scale))), Image.Resampling.LANCZOS
+        )
     buf = io.BytesIO()
     img.convert("RGB").save(buf, format="PNG", optimize=False)
     return buf.getvalue()

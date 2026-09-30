@@ -24,8 +24,12 @@ class BreakerState(StrEnum):
 
 
 class CircuitBreaker:
-    def __init__(self, failure_threshold: int = 4, cooldown_s: float = 30.0,
-                 clock: Callable[[], float] = time.monotonic):
+    def __init__(
+        self,
+        failure_threshold: int = 4,
+        cooldown_s: float = 30.0,
+        clock: Callable[[], float] = time.monotonic,
+    ):
         self.failure_threshold = failure_threshold
         self.cooldown_s = cooldown_s
         self._clock = clock
@@ -200,8 +204,12 @@ class ResilientSolver:
             return fut.result(timeout=self.timeout_s)
         except FutureTimeout as e:
             fut.cancel()
-            raise ProviderError(f"AI timeout after {self.timeout_s:.0f}s", retryable=True, kind="timeout") from e
+            raise ProviderError(
+                f"AI timeout after {self.timeout_s:.0f}s", retryable=True, kind="timeout"
+            ) from e
         except ProviderError:
             raise
         except Exception as e:  # unexpected provider bug -> treat as retryable server error
-            raise ProviderError(f"provider crashed: {type(e).__name__}: {e}", retryable=True, kind="server") from e
+            raise ProviderError(
+                f"provider crashed: {type(e).__name__}: {e}", retryable=True, kind="server"
+            ) from e

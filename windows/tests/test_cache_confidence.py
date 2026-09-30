@@ -42,7 +42,11 @@ def test_ocr_noise_still_hits(cache):
     cache.store(BASE, (1,), 0.9, "r", "m")
     noisy = q(
         "Wie verhalten Sie sich an dieser Kreuzung ?",
-        ["Ich lasse den Radfahrer durchfahren", "Ich fahre vor dem Radfahrer", "Ich warte auf den Gegenverkehr."],
+        [
+            "Ich lasse den Radfahrer durchfahren",
+            "Ich fahre vor dem Radfahrer",
+            "Ich warte auf den Gegenverkehr.",
+        ],
     )
     hit = cache.lookup(noisy)
     assert hit is not None and hit.answers == (1,)

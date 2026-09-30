@@ -27,7 +27,8 @@ from pathlib import Path
 from rapidfuzz import fuzz
 
 from smart360.core.imaging import hamming
-from smart360.core.models import Question, normalize_text, numeric_tokens
+from smart360.core.matching import words_compatible
+from smart360.core.models import Question, numeric_tokens
 
 log = logging.getLogger(__name__)
 
@@ -243,10 +244,20 @@ class QuestionCache:
                 " image_hash, question_type, correct_json, number_answer, confidence, reason, topic, model,"
                 " created_at, verified) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (
-                    row.key, row.text, json.dumps(list(row.numbers)), json.dumps(list(row.answers)),
+                    row.key,
+                    row.text,
+                    json.dumps(list(row.numbers)),
+                    json.dumps(list(row.answers)),
                     f"{row.image_hash:016x}" if row.image_hash is not None else None,
-                    row.qtype, json.dumps(list(row.correct)), row.number_answer, row.confidence,
-                    row.reason, row.topic, row.model, time.time(), int(row.verified),
+                    row.qtype,
+                    json.dumps(list(row.correct)),
+                    row.number_answer,
+                    row.confidence,
+                    row.reason,
+                    row.topic,
+                    row.model,
+                    time.time(),
+                    int(row.verified),
                 ),
             )
             self._conn.commit()
@@ -319,9 +330,12 @@ class QuestionCache:
         # image agreement
         if (q.image_hash is None) != (row.image_hash is None):
             return None
-        if q.image_hash is not None and row.image_hash is not None:
-            if hamming(q.image_hash, row.image_hash) > self.max_image_distance:
-                return None
+        if (
+            q.image_hash is not None
+            and row.image_hash is not None
+            and hamming(q.image_hash, row.image_hash) > self.max_image_distance
+        ):
+            return None
         text_sim = fuzz.ratio(q.normalized_text, row.text) / 100.0
         if text_sim < self.text_threshold:
             return None
@@ -359,21 +373,3 @@ class QuestionCache:
             return None
         sim = min([text_sim, *answer_sims])
         return sim, tuple(sorted(answers))
-
-
-def words_compatible(a: str, b: str) -> bool:
-    """Word-level guard. OCR noise changes characters inside words; it does not insert or
-    delete whole words. A long question with an added "nicht" is >97% similar by characters,
-    so every word present in only one text must have a close (OCR-like) counterpart in the other."""
-    wa, wb = a.split(), b.split()
-    if abs(len(wa) - len(wb)) > 0:
-        # merged/split words from OCR are allowed only if the joined text is identical
-        return a.replace(" ", "") == b.replace(" ", "")
-    for x, y in zip(wa, wb, strict=True):
-        if x == y:
-            continue
-        if len(x) <= 3 or len(y) <= 3:
-            return False  # short words carry meaning ("nie", "kein", numbers) - must be exact
-        if fuzz.ratio(x, y) < 80:
-            return False
-    return True

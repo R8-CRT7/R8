@@ -267,15 +267,32 @@ def test_approve_vs_capture_race_never_executes_stale():
 
 OPS = st.sampled_from(
     [
-        "capture", "detect", "ready", "approve", "approve_wrong", "reject", "verify", "retry",
-        "finish_ok", "finish_fail", "pause", "resume", "fail", "recover", "reset", "consume",
-        "generic_exec", "generic_random",
+        "capture",
+        "detect",
+        "ready",
+        "approve",
+        "approve_wrong",
+        "reject",
+        "verify",
+        "retry",
+        "finish_ok",
+        "finish_fail",
+        "pause",
+        "resume",
+        "fail",
+        "recover",
+        "reset",
+        "consume",
+        "generic_exec",
+        "generic_random",
     ]
 )
 
 
 @settings(max_examples=400, deadline=None)
-@given(st.lists(OPS, min_size=1, max_size=60), st.lists(st.sampled_from(list(State)), min_size=60, max_size=60))
+@given(
+    st.lists(OPS, min_size=1, max_size=60), st.lists(st.sampled_from(list(State)), min_size=60, max_size=60)
+)
 def test_random_walk_never_executes_without_approval(ops, randoms):
     sm = AssistantStateMachine()
     gen = 0

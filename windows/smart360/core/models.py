@@ -62,9 +62,7 @@ class NormRect:
     def from_abs(r: Rect, frame: Rect) -> NormRect:
         if frame.w <= 0 or frame.h <= 0:
             raise ValueError("frame must have a positive size")
-        return NormRect(
-            (r.x - frame.x) / frame.w, (r.y - frame.y) / frame.h, r.w / frame.w, r.h / frame.h
-        )
+        return NormRect((r.x - frame.x) / frame.w, (r.y - frame.y) / frame.h, r.w / frame.w, r.h / frame.h)
 
     def is_valid(self) -> bool:
         return 0.0 <= self.x <= 1.0 and 0.0 <= self.y <= 1.0 and self.w > 0.0 and self.h > 0.0

@@ -10,7 +10,13 @@ import time
 from typing import Any
 
 from smart360.ai.base import SYSTEM_PROMPT, AIProvider, ProviderError, ProviderInfo, build_user_text
-from smart360.ai.schema import SOLVE_JSON_SCHEMA, SchemaViolation, SolveRequest, SolveResult, parse_solve_response
+from smart360.ai.schema import (
+    SOLVE_JSON_SCHEMA,
+    SchemaViolation,
+    SolveRequest,
+    SolveResult,
+    parse_solve_response,
+)
 
 
 class GeminiProvider(AIProvider):
@@ -23,7 +29,9 @@ class GeminiProvider(AIProvider):
         pricing={},
     )
 
-    def __init__(self, api_key: str | None, model: str | None = None, timeout_s: float = 30.0, client: Any = None):
+    def __init__(
+        self, api_key: str | None, model: str | None = None, timeout_s: float = 30.0, client: Any = None
+    ):
         super().__init__(api_key, model, timeout_s)
         self._client = client
 
@@ -47,7 +55,8 @@ class GeminiProvider(AIProvider):
 
         parts: list[Any] = [
             types.Part.from_bytes(data=png, mime_type="image/png")
-            for png in (req.image_png, req.question_png, req.answers_png) if png
+            for png in (req.image_png, req.question_png, req.answers_png)
+            if png
         ]
         parts.append(build_user_text(req))
         t0 = time.perf_counter()
@@ -78,6 +87,11 @@ class GeminiProvider(AIProvider):
         except SchemaViolation as e:
             raise ProviderError(str(e), retryable=True, kind="invalid") from e
         um = getattr(resp, "usage_metadata", None)
-        return SolveResult(parsed, self.model, self.info.id, latency,
-                           int(getattr(um, "prompt_token_count", 0) or 0),
-                           int(getattr(um, "candidates_token_count", 0) or 0))
+        return SolveResult(
+            parsed,
+            self.model,
+            self.info.id,
+            latency,
+            int(getattr(um, "prompt_token_count", 0) or 0),
+            int(getattr(um, "candidates_token_count", 0) or 0),
+        )

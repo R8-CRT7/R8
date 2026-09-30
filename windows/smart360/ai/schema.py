@@ -87,7 +87,9 @@ class SchemaViolation(ValueError):
     pass
 
 
-def parse_solve_response(raw: str | dict[str, Any], answer_count: int, number_question: bool) -> SolveResponse:
+def parse_solve_response(
+    raw: str | dict[str, Any], answer_count: int, number_question: bool
+) -> SolveResponse:
     """Validate a provider response against the schema AND the visible question."""
     try:
         data = json.loads(raw) if isinstance(raw, str) else raw
