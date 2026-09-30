@@ -1,0 +1,15 @@
+{
+  "minutes": 30.0,
+  "cycles": 1350,
+  "correct_selections": 1215,
+  "wrong_selections": 0,
+  "stuck_recoveries": 0,
+  "rss_start_mb": 53.8,
+  "rss_end_mb": 80.8,
+  "rss_max_mb": 81.1,
+  "rss_slope_after_warmup_mb_per_h": 3.17,
+  "threads_end": 4,
+  "avg_ocr_ms": 310.7,
+  "avg_exec_ms": 859.3,
+  "errors": 0
+}

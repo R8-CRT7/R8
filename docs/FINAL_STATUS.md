@@ -75,7 +75,20 @@ Windows/macOS runners were written but **could not run yet** because pushing to 
 | Soak test (30 min, full loop) | see below |
 
 ## Soak test
-SOAK_RESULTS_PLACEHOLDER
+Full loop on the practice simulator for 30 minutes: new question → change detection → real Tesseract OCR →
+(mock) AI → approval → click → visual verification → next question. Raw data: `docs/benchmarks/soak_30min.*`.
+
+| | Run 2 (before leak fix) | **Run 3 (final)** |
+|---|---|---|
+| Full cycles | 1 878 | 1 350 (slower OCR: shared CPU, 311 ms vs 195 ms per call) |
+| Correct selections / wrong | 1 690 / 0 | **1 215 / 0** (remainder: number questions, advisory by design) |
+| Stuck situations / errors | 0 / 0 | **0 / 0** |
+| RSS after warm-up | 81 → 92 MB, linear | **79.6 → 80.8 MB, plateau** (last 12 min: +0.4 MB) |
+| RSS trend | +19.5 MB/h | **+3.2 MB/h**, flattening |
+| Threads at end | 4 | 4 |
+
+Run 1 was invalid (harness turned pages every 50 ms) and exposed the change-detection bug; run 2 exposed the
+pytesseract leak (tracemalloc). Both fixed. A 60-minute run and a run on real Windows are still open.
 
 ## What is needed to reach 1.0
 1. **GitHub access** → push → Windows CI (native tests, installer) and macOS CI (Swift tests, app build) green.
