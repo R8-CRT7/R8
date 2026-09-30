@@ -1,0 +1,34 @@
+name: ios
+
+on:
+  push:
+    branches: ["main", "claude/**"]
+    paths: ["ios/**", ".github/workflows/ios.yml"]
+  pull_request:
+    paths: ["ios/**", ".github/workflows/ios.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Core tests + app build (simulator, unsigned)
+    runs-on: macos-15
+    defaults:
+      run:
+        working-directory: ios
+    steps:
+      - uses: actions/checkout@v4
+      - name: Swift package tests (Smart360Core)
+        working-directory: ios/Packages/Smart360Core
+        run: swift test
+      - name: Generate Xcode project
+        run: brew install xcodegen && xcodegen generate
+      - name: Build app + extensions for the iOS Simulator (no signing)
+        run: |
+          xcodebuild build -project Smart360.xcodeproj -scheme Smart360 \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+      - name: SwiftLint (informational)
+        run: brew install swiftlint && swiftlint lint --quiet || true
