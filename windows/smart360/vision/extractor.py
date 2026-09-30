@@ -98,6 +98,10 @@ _BULLET = re.compile(r"^\s*(?:[\[\](){}|_□☐☑✓✔]{1,4}\s+)+")
 _BOX_TOKEN = re.compile(
     r"^\s*(?:[\[\](){}|_]*[DJOo0IlCcUuE]{1,3}[\[\](){}|_]*|[\[\](){}|_]+)\s+(?=[A-ZÄÖÜ0-9!|])"
 )
+# A checkbox read as a standalone glyph token without any bracket: Windows OCR produces "Cl", "Ü", "ü",
+# "U", "O" in front of the answer (measured in the Windows OCR benchmark). Only a token that is followed by
+# whitespace matches, so real words ("Ob", "Um", "Überholen", "Ca.") are untouched.
+_GLYPH_TOKEN = re.compile(r"^\s*[CcÜüUuOoDJ][lI1|\])}]?\s+(?=\S{2})")
 # frequent OCR confusions in this domain
 _FIXES = (
     (re.compile(r"\bkm\s*/\s*[nb]\b|\bkmlh\b|\bkm/n\b"), "km/h"),
@@ -247,6 +251,10 @@ def _clean(text: str) -> str:
     token = _BOX_TOKEN.match(text)
     if token and any(ch in token.group(0) for ch in "[](){}|_"):
         text = text[token.end() :]
+    else:
+        glyph = _GLYPH_TOKEN.match(text)
+        if glyph:
+            text = text[glyph.end() :]
     for rx, repl in _FIXES:
         text = rx.sub(repl, text)
     text = text.replace("|", " ").replace("—", "-")

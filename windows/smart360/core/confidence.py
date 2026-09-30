@@ -86,6 +86,8 @@ def composite_confidence(
     for key, (floor, cap) in FLOORS.items():
         if key in signals and signals[key] < floor and value > cap:
             value, capped_by = cap, key
-    if inp.model_uncertain and value >= manual_threshold:
+    # a true cap (min), not "reset when above the threshold": values in [threshold - 0.01, threshold)
+    # stayed above the cap, so more model confidence could lower the result (found by hypothesis)
+    if inp.model_uncertain and value > manual_threshold - 0.01:
         value, capped_by = manual_threshold - 0.01, "model_uncertain"
     return ConfidenceResult(round(_clamp(value), 4), signals, capped_by)

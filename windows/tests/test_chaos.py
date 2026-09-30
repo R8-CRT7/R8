@@ -153,6 +153,10 @@ def test_change_detected_between_similar_text_only_questions():
         "[C Ich lasse den Radfahrer zuerst fahren",
         "U] Ich lasse den Radfahrer zuerst fahren",
         "[_] Ich lasse den Radfahrer zuerst fahren",
+        "Cl Ich lasse den Radfahrer zuerst fahren",
+        "cl Ich lasse den Radfahrer zuerst fahren",
+        "Ü Ich lasse den Radfahrer zuerst fahren",
+        "ü Ich lasse den Radfahrer zuerst fahren",
         "Ich lasse den Radfahrer zuerst fahren",
     ],
 )
@@ -167,5 +171,24 @@ def test_windows_ocr_checkbox_artefacts_are_stripped(raw):
 def test_real_words_are_not_stripped_as_checkbox():
     from smart360.vision.extractor import _clean
 
-    for text in ("Ca. 50 Meter", "Um 10 km/h", "Es ist erlaubt", "Durch Hupen", "Ob ich darf"):
+    for text in (
+        "Ca. 50 Meter", "Um 10 km/h", "Es ist erlaubt", "Durch Hupen", "Ob ich darf",
+        "Überholen ist verboten", "Old-timer", "Du musst warten", "0,5 Promille",
+    ):
         assert _clean(text) == text
+
+
+@pytest.mark.parametrize(
+    ("raw", "clean"),
+    [  # verbatim Windows OCR output from the CI benchmark (mismatch samples)
+        ("ü vorfahrt gewähren", "vorfahrt gewähren"),
+        ("Ü 50 km/h", "50 km/h"),
+        ("cl 30 km/h", "30 km/h"),
+        ("Cl dass die Kinder stehen bleiben", "dass die Kinder stehen bleiben"),
+        ("ü Reifendruck und Profiltiefe", "Reifendruck und Profiltiefe"),
+    ],
+)
+def test_windows_ocr_glyph_tokens_are_stripped(raw, clean):
+    from smart360.vision.extractor import _clean
+
+    assert _clean(raw) == clean

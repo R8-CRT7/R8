@@ -132,6 +132,15 @@ final class ConfidenceTests: XCTestCase {
         XCTAssertLessThanOrEqual(ConfidenceEngine.composite(ConfidenceInputs(model: 0.99, ocr: 0.3)).value, 0.6)
         XCTAssertLessThan(ConfidenceEngine.composite(ConfidenceInputs(model: 0.99, modelUncertain: true)).value, 0.75)
     }
+
+    /// Regression (found by the Python property test): values just below the threshold escaped the cap.
+    func testUncertainCapIsMonotone() {
+        func v(_ m: Double) -> Double {
+            ConfidenceEngine.composite(ConfidenceInputs(model: m, ocr: 0.6875, layout: 0.875, modelUncertain: true)).value
+        }
+        XCTAssertLessThanOrEqual(v(0.703125), 0.74 + 1e-9)
+        XCTAssertGreaterThanOrEqual(v(0.803125), v(0.703125) - 1e-9)
+    }
 }
 
 final class ParserTests: XCTestCase {

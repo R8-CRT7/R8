@@ -39,7 +39,8 @@ public enum ConfidenceEngine {
         var value = exp(logSum / total)
         if let o = s["ocr"], o < 0.55 { value = min(value, 0.6) }
         if let l = s["layout"], l < 0.5 { value = min(value, 0.6) }
-        if inp.modelUncertain && value >= manualThreshold { value = manualThreshold - 0.01 }
+        // a true cap (min): values just below the threshold must not stay above the cap (monotonicity)
+        if inp.modelUncertain { value = min(value, manualThreshold - 0.01) }
         return (clamp(value), s)
     }
 }

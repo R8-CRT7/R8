@@ -221,3 +221,12 @@ def test_nan_is_safe():
 
 def test_sqlite_available():
     assert sqlite3.sqlite_version
+
+
+def test_uncertain_cap_is_monotone_regression():
+    """Hypothesis counterexample: m=0.703 gave 0.742 (uncapped), m=0.803 gave 0.74 (capped)."""
+
+    def val(m):
+        return composite_confidence(ConfidenceInputs(m, 0.6875, 0.875, 0.0, 1.0, None, True, False)).value
+
+    assert val(0.703125) <= 0.74 and val(0.803125) >= val(0.703125)
