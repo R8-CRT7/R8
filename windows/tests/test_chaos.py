@@ -71,7 +71,7 @@ def test_ocr_crash_is_contained_by_engine(harness):
     h.engine.start()
     h.wait(lambda: any(e.component == "Vision" for e in h.health.errors), msg="vision error recorded")
     assert h.engine.alive
-    assert h.input.log == []
+    assert len(h.input.log) == 0
 
 
 def test_null_ocr_means_no_question_and_no_click(harness):
@@ -79,7 +79,7 @@ def test_null_ocr_means_no_question_and_no_click(harness):
     h.engine.extractor.ocr = NullOcr()
     h.engine.start()
     h.wait(lambda: h.engine.status == "Watching for questions", msg="watching")
-    assert h.engine.question is None and h.input.log == []
+    assert h.engine.question is None and len(h.input.log) == 0
 
 
 def test_cache_file_deleted_while_running(tmp_path):

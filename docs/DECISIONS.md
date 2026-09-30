@@ -113,6 +113,13 @@ and answers from the screenshot (structured output) and on-device Vision OCR fee
 There is no official Anthropic Swift SDK; the Messages API is called over HTTPS with structured
 outputs (`output_config.format`). Same for OpenAI/Gemini. Zero third-party Swift dependencies.
 
+## D-12b Change detection: mean difference OR changed-pixel fraction
+
+**Problem.** The soak test stalled: consecutive text-only questions with similar layout differ by a mean of
+0.96 grey levels at 64×36 - below any sane threshold. **Decision.** 160×90 signature; change if mean ≥ 3.0
+**or** ≥ 1 % of pixels changed by > 24 levels; stable for 2 frames. **Trade-off.** More sensitive to
+hover effects - harmless, because a re-captured identical question keeps its prediction (OCR only, no AI call).
+
 ## D-12 Default model
 
 Anthropic `claude-opus-5-5` with `effort: low` (fast enough for theory questions) and the

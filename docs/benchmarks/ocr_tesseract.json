@@ -1,0 +1,77 @@
+{
+  "windows": "unavailable on this machine",
+  "tesseract": {
+    "overall": {
+      "n": 120,
+      "detected": 0.925,
+      "question_similarity": 0.925,
+      "answers_exact": 0.783,
+      "answer_count_ok": 0.908,
+      "median_ms": 464.8,
+      "p95_ms": 617.9
+    },
+    "scale=100%": {
+      "n": 30,
+      "detected": 0.9,
+      "question_similarity": 0.9,
+      "answers_exact": 0.767,
+      "answer_count_ok": 0.9,
+      "median_ms": 435.0,
+      "p95_ms": 568.0
+    },
+    "scale=125%": {
+      "n": 30,
+      "detected": 0.9,
+      "question_similarity": 0.9,
+      "answers_exact": 0.833,
+      "answer_count_ok": 0.9,
+      "median_ms": 480.2,
+      "p95_ms": 632.0
+    },
+    "scale=150%": {
+      "n": 30,
+      "detected": 0.967,
+      "question_similarity": 0.9667,
+      "answers_exact": 0.867,
+      "answer_count_ok": 0.933,
+      "median_ms": 533.1,
+      "p95_ms": 634.1
+    },
+    "scale=75%": {
+      "n": 30,
+      "detected": 0.933,
+      "question_similarity": 0.9333,
+      "answers_exact": 0.667,
+      "answer_count_ok": 0.9,
+      "median_ms": 406.1,
+      "p95_ms": 489.5
+    },
+    "kind=blur": {
+      "n": 40,
+      "detected": 0.9,
+      "question_similarity": 0.9,
+      "answers_exact": 0.675,
+      "answer_count_ok": 0.9,
+      "median_ms": 445.7,
+      "p95_ms": 603.3
+    },
+    "kind=clean": {
+      "n": 40,
+      "detected": 1.0,
+      "question_similarity": 1.0,
+      "answers_exact": 0.9,
+      "answer_count_ok": 1.0,
+      "median_ms": 464.8,
+      "p95_ms": 566.5
+    },
+    "kind=jpeg": {
+      "n": 40,
+      "detected": 0.875,
+      "question_similarity": 0.875,
+      "answers_exact": 0.775,
+      "answer_count_ok": 0.825,
+      "median_ms": 478.4,
+      "p95_ms": 635.4
+    }
+  }
+}

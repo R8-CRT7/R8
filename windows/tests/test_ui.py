@@ -251,7 +251,7 @@ def test_app_controller_demo_round_trip(qtbot, qapp, services):
     before = list(sim.clicks)
     ctrl.on_hotkey("confirm")
     qtbot.wait(800)
-    assert sim.clicks == before
+    assert list(sim.clicks) == before
     assert eng.sm.state.value == "WAITING_FOR_CONFIRMATION"
     ctrl.on_hotkey("pause")
     qtbot.waitUntil(lambda: eng.sm.state.value == "PAUSED", timeout=5000)

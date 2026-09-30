@@ -25,7 +25,7 @@ Windows/macOS runners were written but **could not run yet** because pushing to 
 | Tesseract OCR backend | ✅ | ✅ | ✅ real OCR | ✅ benchmark | ❌ | thread-limit + timeout fix |
 | Windows OCR backend (WinRT) | ✅ | ⏳ native CI test | ⏳ | ❌ | ❌ | code written against pywinrt 2.x docs, not executed yet |
 | Question/answer extractor + checkbox reader | ✅ | ✅ | ✅ | ✅ calibration screenshots | ❌ | real 360° layout unknown → calibration |
-| Change detection + adaptive polling | ✅ | ✅ | ✅ | ✅ profiled 2.3 ms | ❌ | |
+| Change detection + adaptive polling | ✅ | ✅ | ✅ | ✅ profiled 1.7 ms | ❌ | similar-question bug found by soak + fixed |
 | Window detection (Win32) | ✅ | ⏳ native CI | ⏳ | ❌ | ❌ | title patterns editable |
 | Screen capture (mss) | ✅ | ⏳ native CI | ⏳ real capture E2E | ❌ | ❌ | |
 | Input execution (SendInput, atomic, covered-target guard) | ✅ | ⏳ native CI | ⏳ real click E2E | ❌ | ❌ | simulator driver fully tested |
@@ -65,12 +65,12 @@ Windows/macOS runners were written but **could not run yet** because pushing to 
 
 | Metric | Value |
 |---|---|
-| Tests | **144 passed**, 0 failed (7 native-Windows tests deselected on Linux) - 3 consecutive clean runs |
+| Tests | **145 passed**, 0 failed (7 native-Windows tests deselected on Linux) |
 | Lint / types / security | ruff ✅ · mypy ✅ (61 files) · bandit: 0 medium/high · pip-audit: 0 runtime vulns |
 | Question extraction (Tesseract, parallel) | median **206 ms** (was 440 ms) |
 | OCR accuracy, clean screens (4 scalings) | detected **100 %**, answers exact 90 % |
 | OCR accuracy incl. JPEG/blur degradations | detected 93 %, answers exact 78 % (docs/DECISIONS.md D-07) |
-| Change detection | 2.3 ms / frame |
+| Change detection | 1.7 ms / frame (160×90, mean + changed-pixel rule) |
 | Overlay repaint (full) · Neural Pulse | 4.7 ms · 1.4 ms per frame (budget 16.7 ms @ 60 fps) |
 | Soak test (30 min, full loop) | see below |
 

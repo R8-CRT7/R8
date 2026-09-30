@@ -160,7 +160,7 @@ def test_real_end_to_end_capture_ocr_click(qtbot):
         qtbot.waitUntil(lambda: engine.sm.state.value == "WAITING_FOR_CONFIRMATION", timeout=40000)
         assert engine.prediction.answers == sim.displayed_correct()
         qtbot.wait(700)
-        assert sim.clicks == [], "clicked before confirmation!"
+        assert len(sim.clicks) == 0, "clicked before confirmation!"
         engine.approve(engine.question.question_id)
         qtbot.waitUntil(lambda: any(e.kind == "execution" for e in events), timeout=30000)
         ev = next(e for e in events if e.kind == "execution")

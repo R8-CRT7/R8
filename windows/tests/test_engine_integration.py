@@ -27,7 +27,7 @@ def test_full_loop_requires_confirmation_and_selects_correct_answers(harness):
     assert pred is not None and pred.answers == h.sim.displayed_correct()
     # NOTHING clicked before confirmation
     time.sleep(0.5)
-    assert h.input.log == [] and h.sim.state.selected == set()
+    assert len(h.input.log) == 0 and h.sim.state.selected == set()
     assert h.engine.sm.state is State.WAITING_FOR_CONFIRMATION
     h.engine.approve(h.engine.question.question_id)
     ev = h.wait_event("execution")
@@ -100,7 +100,7 @@ def test_question_changes_between_approval_and_click(harness):
     h.wait(lambda: any(e.kind == "execution" for e in h.events), msg="execution event")
     ev = next(e for e in h.events if e.kind == "execution")
     assert not ev.data["ok"] and "changed" in ev.data["message"]
-    assert h.input.log == []
+    assert len(h.input.log) == 0
 
 
 def test_approve_wrong_id_does_nothing(harness):
@@ -109,7 +109,7 @@ def test_approve_wrong_id_does_nothing(harness):
     h.wait_state("WAITING_FOR_CONFIRMATION")
     h.engine.approve("not-the-question")
     time.sleep(0.5)
-    assert h.input.log == []
+    assert len(h.input.log) == 0
     assert h.engine.sm.state is State.WAITING_FOR_CONFIRMATION
 
 
@@ -123,7 +123,7 @@ def test_pause_during_analysis_drops_result(harness):
     assert h.engine.sm.state is State.PAUSED
     h.engine.resume()
     h.wait_state("WAITING_FOR_CONFIRMATION")
-    assert h.input.log == []
+    assert len(h.input.log) == 0
 
 
 def test_window_disappears_during_analysis(harness):
@@ -200,7 +200,7 @@ def test_reject(harness):
     h.wait_state("WAITING_FOR_CONFIRMATION")
     h.engine.reject(h.engine.question.question_id)
     h.wait_state("WAITING_FOR_NEXT_QUESTION")
-    assert h.input.log == []
+    assert len(h.input.log) == 0
     h.wait(lambda: h.history.query()[0].decision is Decision.REJECTED, msg="history decision REJECTED")
 
 
@@ -272,7 +272,7 @@ def test_ai_offline_then_recovers(harness, tmp_path):
         h.wait_state("ERROR")
         assert "OFFLINE" in h.engine.status
         h.wait_state("WAITING_FOR_CONFIRMATION", timeout=30)
-        assert h.input.log == []
+        assert len(h.input.log) == 0
     finally:
         h.close()
 
@@ -288,7 +288,7 @@ def test_invalid_json_from_ai_is_not_executed(harness, tmp_path):
         h.wait_state("ERROR")
         h.engine.approve(h.engine.sm.question_id or "x")
         time.sleep(0.5)
-        assert h.input.log == []
+        assert len(h.input.log) == 0
     finally:
         h.close()
 
@@ -307,7 +307,7 @@ def test_advisory_mode_never_clicks(harness):
     h.wait_state("WAITING_FOR_CONFIRMATION")
     h.engine.approve(h.engine.question.question_id)
     h.wait_state("WAITING_FOR_NEXT_QUESTION")
-    assert h.input.log == []
+    assert len(h.input.log) == 0
     h.wait(lambda: h.history.query()[0].decision is Decision.ACCEPTED, msg="history decision ACCEPTED")
 
 
@@ -352,4 +352,4 @@ def test_number_question_is_advisory_by_default(harness, n):
     assert h.engine.prediction.number_answer == "40"
     h.engine.approve(h.engine.question.question_id)
     h.wait_state("WAITING_FOR_NEXT_QUESTION")
-    assert h.input.log == []
+    assert len(h.input.log) == 0

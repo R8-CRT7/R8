@@ -12,7 +12,11 @@ from __future__ import annotations
 import logging
 import os
 import shutil
+
+# subprocess is used only to run the tesseract binary with a fixed argv (no shell)
+import subprocess  # nosec B404
 import sys
+import tempfile
 import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
@@ -71,6 +75,12 @@ def _prepare(img: Image.Image, min_height: int = 900) -> tuple[Image.Image, floa
 
 
 class TesseractOcr(OcrBackend):
+    """Runs the tesseract CLI directly (TSV output).
+
+    Not via pytesseract: its cleanup globs a unique temp-file pattern per call, and fnmatch caches every
+    compiled pattern (LRU, 32 768 entries) - the soak test measured ~5 KB of growth per question.
+    """
+
     name = "tesseract"
 
     def __init__(self, lang: str = "deu", cmd: str | None = None):
@@ -78,59 +88,81 @@ class TesseractOcr(OcrBackend):
         self.cmd = cmd
         self._available: bool | None = None
 
+    def _binary(self) -> str | None:
+        if self.cmd:
+            return self.cmd
+        found = shutil.which("tesseract")
+        if found:
+            return found
+        if sys.platform == "win32":
+            default = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+            if os.path.exists(default):
+                return default
+        return None
+
     def available(self) -> bool:
         if self._available is None:
+            binary = self._binary()
             try:
-                import pytesseract
-
-                if self.cmd:
-                    pytesseract.pytesseract.tesseract_cmd = self.cmd
-                elif sys.platform == "win32" and not shutil.which("tesseract"):
-                    default = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
-                    if os.path.exists(default):
-                        pytesseract.pytesseract.tesseract_cmd = default
-                langs = pytesseract.get_languages(config="")
+                if binary is None:
+                    raise FileNotFoundError("tesseract binary not found")
+                out = subprocess.run(  # noqa: S603 - fixed argv, no shell
+                    [binary, "--list-langs"], capture_output=True, text=True, timeout=10, check=True
+                ).stdout.split()
+                langs = [x for x in out if not x.endswith(":")]
                 if self.lang not in langs:
                     self.lang = "eng" if "eng" in langs else (langs[0] if langs else self.lang)
+                self.cmd = binary
                 self._available = True
-            except Exception as exc:
+            except (OSError, subprocess.SubprocessError, ValueError) as exc:
                 log.info("tesseract unavailable: %s", exc)
                 self._available = False
         return self._available
 
-    def recognize(self, img: Image.Image) -> list[OcrLine]:
-        import pytesseract
+    def _run_tsv(self, img: Image.Image) -> list[dict[str, str]]:
+        if not self.available() or self.cmd is None:  # lazy: resolves the binary path on first use
+            raise RuntimeError("tesseract is not available")
+        with tempfile.TemporaryDirectory(prefix="360smart-ocr-") as tmp:
+            src = os.path.join(tmp, "in.png")
+            img.save(src)
+            try:
+                proc = subprocess.run(  # noqa: S603 - fixed argv, no shell
+                    [self.cmd, src, "stdout", "-l", self.lang, "--psm", "6", "tsv"],
+                    capture_output=True,
+                    timeout=OCR_TIMEOUT_S,
+                    check=False,
+                )
+            except subprocess.TimeoutExpired as e:
+                raise OcrTimeout(f"tesseract timed out after {OCR_TIMEOUT_S:.0f} s") from e
+        if proc.returncode != 0:
+            raise RuntimeError(f"tesseract failed ({proc.returncode}): {proc.stderr[:200]!r}")
+        rows = proc.stdout.decode("utf-8", errors="replace").splitlines()
+        if not rows:
+            return []
+        header = rows[0].split("\t")
+        return [dict(zip(header, r.split("\t"), strict=False)) for r in rows[1:]]
 
+    def recognize(self, img: Image.Image) -> list[OcrLine]:
         prepared, scale = _prepare(img)
-        try:
-            data = pytesseract.image_to_data(
-                prepared,
-                lang=self.lang,
-                config="--psm 6",
-                output_type=pytesseract.Output.DICT,
-                timeout=OCR_TIMEOUT_S,
-            )
-        except RuntimeError as e:  # pytesseract raises RuntimeError("Tesseract process timeout")
-            raise OcrTimeout(str(e)) from e
-        lines: dict[tuple[int, int, int], list[int]] = {}
-        for i, word in enumerate(data["text"]):
-            if not word or not word.strip():
+        lines: dict[tuple[str, str, str], list[dict[str, str]]] = {}
+        for row in self._run_tsv(prepared):
+            word = (row.get("text") or "").strip()
+            if row.get("level") != "5" or not word:
                 continue
-            key = (data["block_num"][i], data["par_num"][i], data["line_num"][i])
-            lines.setdefault(key, []).append(i)
+            key = (row["block_num"], row["par_num"], row["line_num"])
+            lines.setdefault(key, []).append(row)
         out: list[OcrLine] = []
-        for idxs in lines.values():
-            words = [data["text"][i].strip() for i in idxs]
-            confs = [float(data["conf"][i]) for i in idxs if float(data["conf"][i]) >= 0]
-            x0 = min(data["left"][i] for i in idxs)
-            y0 = min(data["top"][i] for i in idxs)
-            x1 = max(data["left"][i] + data["width"][i] for i in idxs)
-            y1 = max(data["top"][i] + data["height"][i] for i in idxs)
-            bbox = Rect(int(x0 / scale), int(y0 / scale), int((x1 - x0) / scale), int((y1 - y0) / scale))
-            text = " ".join(words)
+        for words in lines.values():
+            text = " ".join(w["text"].strip() for w in words)
             # a line of pure noise (checkbox borders read as "|" / "O" / "[]") is dropped
             if len(text.strip(" |[]()_-—–.,:;'\"")) == 0:
                 continue
+            confs = [float(w["conf"]) for w in words if float(w["conf"]) >= 0]
+            x0 = min(int(w["left"]) for w in words)
+            y0 = min(int(w["top"]) for w in words)
+            x1 = max(int(w["left"]) + int(w["width"]) for w in words)
+            y1 = max(int(w["top"]) + int(w["height"]) for w in words)
+            bbox = Rect(int(x0 / scale), int(y0 / scale), int((x1 - x0) / scale), int((y1 - y0) / scale))
             out.append(OcrLine(text, bbox, (sum(confs) / len(confs) / 100.0) if confs else 0.5))
         out.sort(key=lambda line: (line.bbox.y, line.bbox.x))
         return out

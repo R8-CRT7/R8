@@ -90,7 +90,9 @@ ENTER is disabled, the button reads *CONFIRM ANYWAY*.
 
 ## Change detection & adaptive polling
 
-64×36 grayscale signature of the question+answers band (~1 ms); a change must be stable for 2 frames.
+160×90 grayscale signature of the question+answers band (~1.7 ms). A change is a mean difference ≥ threshold
+**or** ≥ 1 % of pixels changed by > 24 grey levels (the mean alone missed two similar text-only questions);
+it must be stable for 2 frames.
 Polling: 150 ms while settling, 350 ms normal, 1.2 s after 20 s idle. The AI is only called for a new,
 settled screen that is not the same question (manual ticks re-use the prediction) and not in the cache.
 

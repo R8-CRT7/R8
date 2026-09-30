@@ -51,7 +51,13 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--minutes", type=float, default=30)
     ap.add_argument("--out", type=Path, default=Path("artifacts/soak"))
+    ap.add_argument("--trace", action="store_true", help="tracemalloc diff between minute 2 and the end")
     args = ap.parse_args()
+    if args.trace:
+        import tracemalloc
+
+        tracemalloc.start(12)
+    snap_early = None
     args.out.mkdir(parents=True, exist_ok=True)
 
     sim = PracticeSimulator(shuffle=True)
@@ -129,6 +135,12 @@ def main() -> None:
             engine.reanalyze()
             last_state_change = time.monotonic()
         now = time.monotonic()
+        if args.trace and snap_early is None and now - start > 120:
+            import gc
+            import tracemalloc
+
+            gc.collect()
+            snap_early = tracemalloc.take_snapshot()
         if now >= next_sample:
             rss = proc.memory_info().rss / 1e6
             samples.append((now - start, rss))
@@ -137,6 +149,17 @@ def main() -> None:
                          "state": st})
             next_sample = now + 10
         time.sleep(0.02)
+    if args.trace and snap_early is not None:
+        import gc
+        import tracemalloc
+
+        gc.collect()
+        late = tracemalloc.take_snapshot()
+        print("== tracemalloc growth (top 12, by traceback) ==")
+        for stat in late.compare_to(snap_early, "traceback")[:12]:
+            print(f"{stat.size_diff / 1024:+9.1f} KiB  {stat.count_diff:+6d} blocks")
+            for line in stat.traceback.format()[-6:]:
+                print("      ", line.strip())
     engine.stop()
 
     warm = [s for s in samples if s[0] >= 120] or samples  # ignore the first 2 min (imports, caches, OCR warm-up)

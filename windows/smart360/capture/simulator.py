@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import random
 import threading
+from collections import deque
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -201,7 +202,7 @@ class PracticeSimulator:
         self._lock = threading.RLock()
         self.state = SimulatorState()
         self.visible = True
-        self.clicks: list[tuple[int, int]] = []
+        self.clicks: deque[tuple[int, int]] = deque(maxlen=200)  # bounded: demo mode runs for hours
         self._checkboxes: dict[int, Rect] = {}
         self._frame: Image.Image | None = None
         self.goto(0)

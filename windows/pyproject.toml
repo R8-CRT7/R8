@@ -23,7 +23,7 @@ dependencies = [
 [project.optional-dependencies]
 openai = ["openai>=1.40"]
 gemini = ["google-genai>=1.0"]
-tesseract = ["pytesseract>=0.3.10"]
+tesseract = []  # tesseract binary only (called directly, see vision/ocr.py)
 windows = [
     "winrt-runtime>=2.0; sys_platform == 'win32'",
     "winrt-Windows.Media.Ocr>=2.0; sys_platform == 'win32'",
@@ -42,7 +42,6 @@ dev = [
     "mypy>=1.10",
     "bandit>=1.7",
     "pip-audit>=2.7",
-    "pytesseract>=0.3.10",
 ]
 
 [project.scripts]

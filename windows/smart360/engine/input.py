@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from abc import ABC, abstractmethod
+from collections import deque
 
 from smart360.capture.simulator import PracticeSimulator
 from smart360.platform import win32
@@ -34,7 +35,7 @@ class SimulatorInputDriver(InputDriver):
     def __init__(self, sim: PracticeSimulator):
         self.sim = sim
         self.fail_next = 0
-        self.log: list[tuple[str, object]] = []
+        self.log: deque[tuple[str, object]] = deque(maxlen=200)
 
     def click(self, x: int, y: int, expected_window: int | None = None) -> None:
         self.log.append(("click", (x, y)))

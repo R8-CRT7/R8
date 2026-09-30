@@ -55,6 +55,6 @@ is started explicitly by the user through the system picker (red status bar whil
 | Installer works | ⏳ built + silent-installed in CI once pushed |
 | iOS builds | ⏳ macOS CI once pushed (Swift syntax-checked only) |
 | iOS workflow documented | ✅ |
-| No critical test failures | ✅ 144 passed (Linux); native Windows + iOS suites pending CI |
+| No critical test failures | ✅ 145 passed (Linux); native Windows + iOS suites pending CI |
 | No exposed secrets | ✅ redaction tests, bandit, no keys in repo |
 | Docs complete | ✅ |

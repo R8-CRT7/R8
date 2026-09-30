@@ -4,7 +4,7 @@
 
 ```bash
 cd windows
-QT_QPA_PLATFORM=offscreen pytest                 # 144 tests (~65 s)
+QT_QPA_PLATFORM=offscreen pytest                 # 145 tests (~62 s)
 pytest -m windows tests/test_windows_native.py   # on Windows, QT_QPA_PLATFORM=windows (CI does this)
 python tools/soak.py --minutes 30                # soak / memory
 python tools/ocr_benchmark.py                    # OCR accuracy + latency
@@ -22,7 +22,7 @@ cd ../ios/Packages/Smart360Core && swift test    # iOS core (macOS)
 | Engine integration | `test_engine_integration.py` | full loop on the simulator with **real Tesseract OCR**: detection → AI → confirmation → click → verification; shuffled answers; next question; plus the race/chaos cases below | 23 |
 | Storage & services | `test_storage_services.py` | config roundtrip/backup/quarantine, secret redaction, history filters (LIKE escaping), privacy mode, retention, health states, leak-slope maths, self-test, report contains no key/question text | 17 |
 | UI | `test_ui.py` | overlay states/modes/signals, Neural Pulse states, all 9 dashboard pages, history filters/empty state, calibration wizard (mouse-drag → valid profile), onboarding flow, **whole app demo round-trip incl. ENTER blocked on manual check**, UI-lag health, single-instance lock | 10 |
-| Chaos / bug hunt | `test_chaos.py` | invalid/degenerate profiles, 1-px and full-window regions, crashing OCR, empty OCR, cache/config deleted while running, wrongly typed config, unknown forced profile | 9 |
+| Chaos / bug hunt | `test_chaos.py` | invalid/degenerate profiles, 1-px and full-window regions, crashing OCR, empty OCR, cache/config deleted while running, wrongly typed config, unknown forced profile, change detection between similar text-only questions (regression) | 10 |
 | Native Windows | `test_windows_native.py` | DPI awareness, Windows OCR on a rendered screen, window detection + capture exclusion, Credential Manager, RegisterHotKey via injected F8, real capture + Windows OCR + SendInput end-to-end, click refused when a window covers the target | 7 (CI) |
 | iOS core | `CoreTests.swift` | state machine, normalisation/numbers, ratio definition, negation guard, cache safety + remap + corruption, schema validation, Anthropic body shape, confidence caps, phone screenshot parser, frame hash | 16 (CI) |
 
@@ -63,6 +63,9 @@ text clipping, calibration panel placement, self-test ghost rows, orbit icon, co
 * Secrets: unusable keyring backends were reported as secure.
 * Windows click path (review): non-atomic move+click; clicks could land on a window covering the target.
 * App (bug hunt): a second instance would run a second engine → single-instance lock.
+* Change detection (soak test): two consecutive text-only questions with a similar layout differed by a
+  mean of only 0.96 grey levels → the new question was never analysed → changed-pixel-fraction rule.
+* Soak harness: turned pages every 50 ms (never a settled screen) → one page turn per answered question.
 
 ## Soak / memory
 See `docs/FINAL_STATUS.md` → *Soak test* for the 30-minute run (cycles, RSS trend, errors).

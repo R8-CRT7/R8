@@ -178,7 +178,7 @@ Kommandozeile: `360Smart.exe --self-test` (Exit-Code 1 bei Fehlern).
 cd windows
 pip install -e ".[dev]"
 ruff check smart360 tests tools && mypy smart360
-QT_QPA_PLATFORM=offscreen pytest            # 144 Tests, inkl. Ende-zu-Ende mit echtem Tesseract-OCR
+QT_QPA_PLATFORM=offscreen pytest            # 145 Tests, inkl. Ende-zu-Ende mit echtem Tesseract-OCR
 python tools/screenshots.py                 # alle Screens rendern (Visual Review)
 python tools/ocr_benchmark.py               # OCR-Benchmark
 python tools/soak.py --minutes 30           # Langzeit-/Speichertest
