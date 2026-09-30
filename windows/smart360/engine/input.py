@@ -12,7 +12,7 @@ class InputDriver(ABC):
     name = "input"
 
     @abstractmethod
-    def click(self, x: int, y: int) -> None: ...
+    def click(self, x: int, y: int, expected_window: int | None = None) -> None: ...
 
     @abstractmethod
     def type_text(self, text: str) -> None: ...
@@ -21,8 +21,8 @@ class InputDriver(ABC):
 class Win32InputDriver(InputDriver):
     name = "win32"
 
-    def click(self, x: int, y: int) -> None:
-        win32.click(x, y)
+    def click(self, x: int, y: int, expected_window: int | None = None) -> None:
+        win32.click(x, y, expected_hwnd=expected_window)
 
     def type_text(self, text: str) -> None:
         win32.type_text(text)
@@ -36,7 +36,7 @@ class SimulatorInputDriver(InputDriver):
         self.fail_next = 0
         self.log: list[tuple[str, object]] = []
 
-    def click(self, x: int, y: int) -> None:
+    def click(self, x: int, y: int, expected_window: int | None = None) -> None:
         self.log.append(("click", (x, y)))
         if self.fail_next > 0:
             self.fail_next -= 1

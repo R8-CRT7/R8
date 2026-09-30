@@ -144,7 +144,7 @@ def test_window_disappears_during_click(harness):
     h.wait_state("WAITING_FOR_CONFIRMATION")
     real_click = h.input.click
 
-    def vanish(x, y):
+    def vanish(x, y, expected_window=None):
         h.sim.visible = False
         real_click(x, y)
 

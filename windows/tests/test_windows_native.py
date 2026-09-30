@@ -169,3 +169,30 @@ def test_real_end_to_end_capture_ocr_click(qtbot):
         assert sim.is_solved_correctly()
     finally:
         engine.stop()
+
+
+def test_click_refused_when_window_covers_target(qtbot):
+    """If the overlay (or any window) covers the answer, nothing is clicked."""
+    from PySide6.QtCore import Qt
+    from PySide6.QtWidgets import QWidget
+
+    from smart360.platform import win32
+
+    target = QWidget()
+    target.setWindowTitle("360° online - target")
+    target.setGeometry(100, 100, 400, 300)
+    cover = QWidget()
+    cover.setWindowFlag(Qt.WindowType.WindowStaysOnTopHint, True)
+    cover.setGeometry(150, 150, 120, 120)
+    for w in (target, cover):
+        qtbot.addWidget(w)
+        w.show()
+        qtbot.waitExposed(w)
+    qtbot.wait(300)
+    got = []
+    target.mousePressEvent = lambda e: got.append(e)  # type: ignore[method-assign]
+    pt = cover.geometry().center()
+    with pytest.raises(win32.ClickTargetBlocked):
+        win32.click(pt.x(), pt.y(), expected_hwnd=int(target.winId()))
+    qtbot.wait(200)
+    assert got == []

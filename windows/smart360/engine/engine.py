@@ -846,9 +846,10 @@ class Engine:
             assert a.checkbox is not None
             cx, cy = a.checkbox.center
             try:
-                self.input.click(cx, cy)
+                # WindowTarget knows the learning window: refuse to click if anything covers the answer
+                self.input.click(cx, cy, expected_window=getattr(self.target, "hwnd", None))
             except Exception as e:
-                return False, f"input failed: {e}", None
+                return False, f"not clicked: {e}", None
             time.sleep(0.06)
         time.sleep(self.settings.settle_s)
         return True, "clicked", True

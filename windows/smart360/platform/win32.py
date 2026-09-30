@@ -243,21 +243,47 @@ def cursor_pos() -> tuple[int, int]:
     return (pt.x, pt.y)
 
 
-def click(x: int, y: int, restore_cursor: bool = True) -> None:
-    """Left click at absolute screen pixel (x, y) (process must be DPI aware)."""
+def window_at(x: int, y: int) -> int:
+    """Top-level window under a screen point (0 if none)."""
+    if not IS_WINDOWS:
+        return 0
+    hwnd = user32.WindowFromPoint(wintypes.POINT(int(x), int(y)))
+    return int(user32.GetAncestor(hwnd, 2)) if hwnd else 0  # GA_ROOT
+
+
+class ClickTargetBlocked(RuntimeError):
+    """Another window (e.g. our overlay) covers the click target - nothing was clicked."""
+
+
+MOUSEEVENTF_MOVE = 0x0001
+MOUSEEVENTF_ABSOLUTE = 0x8000
+MOUSEEVENTF_VIRTUALDESK = 0x4000
+
+
+def click(x: int, y: int, restore_cursor: bool = True, expected_hwnd: int | None = None) -> None:
+    """Left click at absolute screen pixel (x, y) (process must be DPI aware).
+
+    move + down + up are sent as ONE SendInput batch (atomic with respect to other input), and
+    if `expected_hwnd` is given the click is refused unless that window is really under the point.
+    """
     if not IS_WINDOWS:
         raise RuntimeError("input injection is only available on Windows")
+    if expected_hwnd is not None:
+        under = window_at(x, y)
+        if under != expected_hwnd:
+            raise ClickTargetBlocked(f"another window covers the answer (hwnd {under})")
     old = cursor_pos()
-    if not user32.SetCursorPos(int(x), int(y)):
-        raise OSError(ctypes.get_last_error(), "SetCursorPos failed")
-    time.sleep(0.02)
-    inputs = (INPUT * 2)()
-    inputs[0].type = 0
-    inputs[0].u.mi = MOUSEINPUT(0, 0, 0, MOUSEEVENTF_LEFTDOWN, 0, 0)
-    inputs[1].type = 0
-    inputs[1].u.mi = MOUSEINPUT(0, 0, 0, MOUSEEVENTF_LEFTUP, 0, 0)
-    sent = user32.SendInput(2, inputs, ctypes.sizeof(INPUT))
-    if sent != 2:
+    vx, vy = user32.GetSystemMetrics(76), user32.GetSystemMetrics(77)
+    vw, vh = user32.GetSystemMetrics(78), user32.GetSystemMetrics(79)
+    ax = round((x - vx) * 65535 / max(1, vw - 1))
+    ay = round((y - vy) * 65535 / max(1, vh - 1))
+    move = MOUSEEVENTF_MOVE | MOUSEEVENTF_ABSOLUTE | MOUSEEVENTF_VIRTUALDESK
+    inputs = (INPUT * 3)()
+    for i, flags in enumerate((move, MOUSEEVENTF_LEFTDOWN, MOUSEEVENTF_LEFTUP)):
+        inputs[i].type = 0
+        inputs[i].u.mi = MOUSEINPUT(ax if i == 0 else 0, ay if i == 0 else 0, 0, flags, 0, 0)
+    sent = user32.SendInput(3, inputs, ctypes.sizeof(INPUT))
+    if sent != 3:
         raise OSError(ctypes.get_last_error(), "SendInput blocked (UIPI / secure desktop?)")
     if restore_cursor:
         time.sleep(0.03)
