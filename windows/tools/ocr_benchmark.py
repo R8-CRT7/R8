@@ -43,6 +43,7 @@ def run(backend) -> dict:  # type: ignore[no-untyped-def]
     prof = LayoutProfile.from_dict(simulator_profile())
     ex = QuestionExtractor(backend)
     results = []
+    mismatches: list[dict] = []  # a few examples of inexact answers, for diagnosis in CI
     for scale, (w, h) in SCALES.items():
         for kind in ("clean", "jpeg", "blur"):
             sim = PracticeSimulator(width=w, height=h, shuffle=True, seed=3)
@@ -57,13 +58,20 @@ def run(backend) -> dict:  # type: ignore[no-untyped-def]
                 truth_a = [normalize_text(a) for a in sim.displayed_answers()]
                 if q is None:
                     results.append({"scale": scale, "kind": kind, "ok": False, "q_sim": 0, "answers_exact": False,
-                                    "count_ok": False, "ms": ms})
+                                    "a_sim": 0.0, "count_ok": False, "ms": ms})
                     continue
                 got_a = list(q.normalized_answers)
+                if got_a != truth_a and len(mismatches) < 15 and (kind == "clean" or len(mismatches) < 8):
+                    mismatches.append({"scale": scale, "kind": kind, "got": got_a, "truth": truth_a})
+                a_sim = (
+                    statistics.fmean(fuzz.ratio(g, t) / 100 for g, t in zip(got_a, truth_a, strict=False))
+                    if got_a and len(got_a) == len(truth_a) else 0.0
+                )
                 results.append({
                     "scale": scale, "kind": kind, "ok": True,
                     "q_sim": fuzz.ratio(q.normalized_text, truth_q) / 100,
                     "answers_exact": got_a == truth_a,
+                    "a_sim": a_sim,
                     "count_ok": len(got_a) == len(truth_a),
                     "ms": ms,
                 })
@@ -74,6 +82,7 @@ def run(backend) -> dict:  # type: ignore[no-untyped-def]
             "detected": round(sum(r["ok"] for r in rows) / len(rows), 3),
             "question_similarity": round(statistics.fmean(r["q_sim"] for r in rows), 4),
             "answers_exact": round(sum(r["answers_exact"] for r in rows) / len(rows), 3),
+            "answer_similarity": round(statistics.fmean(r["a_sim"] for r in rows), 4),
             "answer_count_ok": round(sum(r["count_ok"] for r in rows) / len(rows), 3),
             "median_ms": round(statistics.median(r["ms"] for r in rows), 1),
             "p95_ms": round(sorted(r["ms"] for r in rows)[int(len(rows) * 0.95) - 1], 1),
@@ -83,6 +92,7 @@ def run(backend) -> dict:  # type: ignore[no-untyped-def]
     for key in ("scale", "kind"):
         for val in sorted({r[key] for r in results}):
             out[f"{key}={val}"] = agg([r for r in results if r[key] == val])
+    out["mismatch_samples"] = mismatches  # type: ignore[assignment]
     return out
 
 

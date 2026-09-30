@@ -42,7 +42,7 @@ jobs:
       - name: Security scan (bandit)
         run: bandit -q -r smart360 -c pyproject.toml -ll
       - name: Dependency audit
-        run: pip-audit --progress-spinner off || true
+        run: pip-audit --progress-spinner off --skip-editable
 
   windows:
     name: Native Windows tests + installer
