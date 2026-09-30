@@ -266,3 +266,16 @@ def test_ui_lag_health(qtbot, qapp, services):
     qtbot.addWidget(ctrl.overlay)
     qtbot.wait(700)
     assert services.health.components["UI"].state.value == "HEALTHY"
+
+
+def test_single_instance_lock(qapp, tmp_path, monkeypatch):
+    monkeypatch.setenv("SMART360_HOME", str(tmp_path))
+    from smart360.app import acquire_single_instance
+
+    first = acquire_single_instance()
+    assert first is not None
+    assert acquire_single_instance() is None  # second instance refused
+    first.unlock()
+    again = acquire_single_instance()
+    assert again is not None
+    again.unlock()

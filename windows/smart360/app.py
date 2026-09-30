@@ -372,6 +372,14 @@ def main(argv: list[str] | None = None) -> int:
     theme.load_fonts()
     app.setStyleSheet(theme.stylesheet())
 
+    lock = acquire_single_instance()
+    if lock is None:
+        from PySide6.QtWidgets import QMessageBox
+
+        QMessageBox.information(None, APP_NAME, f"{APP_NAME} is already running (see the system tray).")
+        services.shutdown()
+        return 0
+
     from smart360.health.diagnostics import run_self_test
     from smart360.ui.splash import StartupSplash
 
@@ -409,6 +417,18 @@ def main(argv: list[str] | None = None) -> int:
     code = app.exec()
     services.shutdown()
     return code
+
+
+def acquire_single_instance():  # type: ignore[no-untyped-def]
+    """Two instances would mean two engines that could both act on the same question.
+    Returns the held QLockFile, or None if another instance owns it (stale locks are recovered)."""
+    from PySide6.QtCore import QLockFile
+
+    from smart360.storage import paths
+
+    lock = QLockFile(str(paths.data_dir() / "360smart.lock"))
+    lock.setStaleLockTime(0)  # a crashed instance's lock is detected via its (dead) PID
+    return lock if lock.tryLock(200) else None
 
 
 def _install_tray(app, ctrl: AppController) -> None:  # type: ignore[no-untyped-def]
