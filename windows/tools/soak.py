@@ -101,23 +101,31 @@ def main() -> None:
     last_state_change = time.monotonic()
     last_state = ""
     stuck = 0
+    advanced = False
     while time.monotonic() < end:
         st = engine.sm.state.value
         if st != last_state:
             last_state, last_state_change = st, time.monotonic()
+            if st != "WAITING_FOR_NEXT_QUESTION":
+                advanced = False
         if st == "WAITING_FOR_CONFIRMATION" and engine.question is not None:
             engine.approve(engine.question.question_id)
             time.sleep(0.05)
-        elif st == "WAITING_FOR_NEXT_QUESTION":
+        elif st == "WAITING_FOR_NEXT_QUESTION" and not advanced:
+            # exactly ONE page turn per answered question, then wait until the engine has
+            # picked up the new screen (the engine only reacts to *settled* changes)
             cycles += 1
             if sim.is_solved_correctly():
                 ok += 1
             elif sim.question.number_answer is None:
                 wrong += 1
             sim.next()
+            advanced = True
             time.sleep(0.05)
         elif time.monotonic() - last_state_change > 20:
             stuck += 1
+            print(f"[stuck] state={st} status={engine.status!r} q={sim.state.index} "
+                  f"number={sim.question.number_answer is not None} advanced={advanced}", flush=True)
             engine.reanalyze()
             last_state_change = time.monotonic()
         now = time.monotonic()

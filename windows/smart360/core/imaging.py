@@ -35,8 +35,16 @@ def hamming(a: int, b: int) -> int:
 
 
 def region_signature(img: Image.Image) -> np.ndarray:
-    """Small grayscale thumbnail used for cheap frame differencing."""
-    return to_gray_array(img, (64, 36))
+    """Small grayscale thumbnail used for cheap frame differencing (160x90: fine enough that two
+    similar-looking questions with different text still differ, see changed_fraction)."""
+    return to_gray_array(img, (160, 90))
+
+
+def changed_fraction(a: np.ndarray, b: np.ndarray, level: float = 24.0) -> float:
+    """Share of pixels that changed clearly. Catches text changes that a mean difference averages away."""
+    if a.shape != b.shape:
+        return 1.0
+    return float(np.mean(np.abs(a - b) > level))
 
 
 def mean_abs_diff(a: np.ndarray, b: np.ndarray) -> float:

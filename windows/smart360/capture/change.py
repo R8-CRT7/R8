@@ -13,7 +13,7 @@ from dataclasses import dataclass
 import numpy as np
 from PIL import Image
 
-from smart360.core.imaging import mean_abs_diff, region_signature
+from smart360.core.imaging import changed_fraction, mean_abs_diff, region_signature
 
 
 @dataclass
@@ -25,8 +25,17 @@ class PollingPolicy:
 
 
 class ChangeDetector:
-    def __init__(self, threshold: float = 3.0, stable_frames: int = 2, policy: PollingPolicy | None = None):
+    def __init__(
+        self,
+        threshold: float = 3.0,
+        stable_frames: int = 2,
+        policy: PollingPolicy | None = None,
+        min_changed_fraction: float = 0.01,
+    ):
         self.threshold = threshold
+        # mean difference alone misses consecutive questions with a similar layout (measured: 0.96 mean
+        # for two different text-only questions); 1 % clearly changed pixels catches them.
+        self.min_changed_fraction = min_changed_fraction
         self.stable_frames = stable_frames
         self.policy = policy or PollingPolicy()
         self._baseline: np.ndarray | None = None  # signature of the last *processed* screen
@@ -47,17 +56,20 @@ class ChangeDetector:
     def observe(self, img: Image.Image, now: float) -> bool:
         """Returns True exactly once per settled change (or for the very first frame)."""
         sig = region_signature(img)
-        if self._baseline is not None and mean_abs_diff(sig, self._baseline) < self.threshold:
+        if self._baseline is not None and self._same(sig, self._baseline):
             self._candidate = None
             self._stable_count = 0
             return False
         self._last_change_t = now
-        if self._candidate is not None and mean_abs_diff(sig, self._candidate) < self.threshold:
+        if self._candidate is not None and self._same(sig, self._candidate):
             self._stable_count += 1
         else:
             self._candidate = sig
             self._stable_count = 1
         return self._stable_count >= self.stable_frames
+
+    def _same(self, a: np.ndarray, b: np.ndarray) -> bool:
+        return mean_abs_diff(a, b) < self.threshold and changed_fraction(a, b) < self.min_changed_fraction
 
     def next_interval(self, now: float) -> float:
         if self._candidate is not None:

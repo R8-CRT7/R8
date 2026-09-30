@@ -118,3 +118,25 @@ def test_unknown_forced_profile_falls_back_to_auto(harness):
     h.engine.forced_profile = "does-not-exist"
     h.engine.start()
     h.wait_state("WAITING_FOR_CONFIRMATION")
+
+
+def test_change_detected_between_similar_text_only_questions():
+    """Regression (found by the soak test): q9 -> q10 are both text-only with a similar layout; the
+    mean pixel difference (0.96) was below the threshold and the new question was never analysed."""
+    from smart360.capture.change import ChangeDetector
+
+    sim = PracticeSimulator()
+    prof = LayoutProfile.from_dict(simulator_profile())
+    frame = Rect(0, 0, sim.width, sim.height)
+    q, a = prof.question.to_abs(frame), prof.answers.to_abs(frame)
+    band = (min(q.x, a.x), min(q.y, a.y), max(q.x + q.w, a.x + a.w), max(q.y + q.h, a.y + a.h))
+    for i in range(len(sim.bank)):
+        sim.goto(i)
+        before = sim.render().crop(band)
+        sim.goto(i + 1)
+        after = sim.render().crop(band)
+        det = ChangeDetector()
+        det.mark_processed(before)
+        assert not det.observe(before, 0.0)  # unchanged screen never triggers
+        det.observe(after, 0.1)
+        assert det.observe(after, 0.2), f"question {i} -> {i + 1} not detected"
