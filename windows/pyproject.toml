@@ -71,7 +71,7 @@ ignore = [
 "smart360/ui/*" = ["E501", "RUF012"]  # QSS strings / UI copy; constant lookup tables
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"  # runtime shipped in the installer; numpy>=2.5 stubs need 3.12 syntax
 plugins = ["pydantic.mypy"]
 ignore_missing_imports = true
 warn_unused_ignores = false

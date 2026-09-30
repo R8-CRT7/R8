@@ -171,6 +171,7 @@ def test_openai_fake_client():
 
 
 def test_gemini_fake_client():
+    pytest.importorskip("google.genai")  # optional extra, types are needed to build the config
     resp = SimpleNamespace(
         text=json.dumps(GOOD), usage_metadata=SimpleNamespace(prompt_token_count=7, candidates_token_count=3)
     )

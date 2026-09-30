@@ -6,7 +6,7 @@ Set-Location (Split-Path $PSScriptRoot -Parent)
 
 if (-not (Test-Path .buildvenv)) { python -m venv .buildvenv }
 .\.buildvenv\Scripts\python.exe -m pip install --upgrade pip
-.\.buildvenv\Scripts\python.exe -m pip install ".[windows]" "pyinstaller>=6.10"
+.\.buildvenv\Scripts\python.exe -m pip install ".[windows,openai,gemini]" "pyinstaller>=6.10"
 
 .\.buildvenv\Scripts\pyinstaller.exe packaging\smart360.spec --noconfirm --clean --distpath dist --workpath build
 

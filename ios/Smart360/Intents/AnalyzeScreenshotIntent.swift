@@ -8,7 +8,8 @@ struct AnalyzeScreenshotIntent: AppIntent {
     static var title: LocalizedStringResource = "Analyze Screenshot"
     static var description = IntentDescription("Reads a driving-theory question from a screenshot and recommends an answer.")
 
-    @Parameter(title: "Screenshot", supportedContentTypes: [.image])
+    // `supportedContentTypes:` is iOS 18+; the deployment target is iOS 17, so the type is checked in perform().
+    @Parameter(title: "Screenshot")
     var screenshot: IntentFile
 
     func perform() async throws -> some IntentResult & ProvidesDialog & ReturnsValue<String> {

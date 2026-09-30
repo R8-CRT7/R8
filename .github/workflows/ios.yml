@@ -30,5 +30,22 @@ jobs:
           xcodebuild build -project Smart360.xcodeproj -scheme Smart360 \
             -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+      - name: Static analysis (clang/Swift analyzer, app + extensions)
+        run: |
+          xcodebuild analyze -project Smart360.xcodeproj -scheme Smart360 \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO | tee analyze.log
+          grep -E "warning: .*\[(clang-analyzer|core|deadcode|security|unix|osx)" analyze.log && exit 1 || echo "no analyzer findings"
+      - name: Build for a real device (arm64, unsigned - proves the device slice compiles)
+        run: |
+          xcodebuild build -project Smart360.xcodeproj -scheme Smart360 \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+      - name: Free-account project variant generates and builds
+        run: |
+          xcodegen generate --spec project-free.yml
+          xcodebuild build -project Smart360.xcodeproj -scheme Smart360 \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
       - name: SwiftLint (informational)
         run: brew install swiftlint && swiftlint lint --quiet || true
