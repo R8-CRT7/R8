@@ -69,7 +69,8 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S", "PL", "B", "RUF012"]
-"tools/*" = ["S", "PL", "T201"]
+"tools/*" = ["S", "PL", "T201", "E501"]
+"smart360/ui/*" = ["E501", "RUF012"]  # QSS strings / UI copy; constant lookup tables
 
 [tool.mypy]
 python_version = "3.11"

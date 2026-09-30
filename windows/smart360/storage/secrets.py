@@ -66,9 +66,14 @@ class SecretStore:
                 import keyring
 
                 kr = keyring.get_keyring()
-                name = type(kr).__name__
-                if "fail" not in name.lower() and "null" not in name.lower():
-                    self.backend = name
+                ident = f"{type(kr).__module__}.{type(kr).__name__}".lower()
+                usable = getattr(kr, "priority", 0) > 0 and not any(
+                    x in ident for x in ("fail", "null", "chainer")
+                )
+                if "chainer" in ident:
+                    usable = bool(getattr(kr, "backends", []))
+                if usable:
+                    self.backend = type(kr).__name__
                 else:
                     self.use_keyring = False
             except Exception:
@@ -77,6 +82,14 @@ class SecretStore:
     @property
     def secure(self) -> bool:
         return self.use_keyring
+
+    @property
+    def backend_label(self) -> str:
+        if not self.use_keyring:
+            return "memory / environment (no secure store available)"
+        if "Windows" in self.backend or "WinVault" in self.backend:
+            return "Windows Credential Manager"
+        return f"OS keyring ({self.backend})"
 
     def get(self, name: str) -> str | None:
         if not name:
@@ -89,7 +102,7 @@ class SecretStore:
                 if v:
                     return v
             except Exception as e:
-                log.warning("keyring read failed: %s", type(e).__name__)
+                log.debug("keyring read failed: %s", type(e).__name__)
         if name in self._memory:
             return self._memory[name]
         env = os.environ.get(name)
