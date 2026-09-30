@@ -1,4 +1,4 @@
-name: windows
+name: windows (tests, native, installer)
 
 on:
   push:

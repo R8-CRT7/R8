@@ -1,4 +1,4 @@
-name: ios
+name: ios (swift tests, xcode build)
 
 on:
   push:
