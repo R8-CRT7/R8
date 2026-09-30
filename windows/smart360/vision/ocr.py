@@ -17,6 +17,7 @@ import shutil
 import subprocess  # nosec B404
 import sys
 import tempfile
+import threading
 import time
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
@@ -175,8 +176,28 @@ class WindowsOcr(OcrBackend):
 
     def __init__(self, language: str = "de-DE"):
         self.language = language
-        self._engine = None
+        # One OcrEngine per thread: an engine rejects a second concurrent RecognizeAsync
+        # ("Another RecognizeAsync operation is already running!"), and the extractor OCRs the
+        # question and answer regions in parallel (found by the native Windows CI test).
+        self._local = threading.local()
         self._available: bool | None = None
+
+    def _create_engine(self):  # type: ignore[no-untyped-def]
+        from winrt.windows.globalization import Language
+        from winrt.windows.media.ocr import OcrEngine
+
+        engine = None
+        if OcrEngine.is_language_supported(Language(self.language)):
+            engine = OcrEngine.try_create_from_language(Language(self.language))
+        if engine is None:
+            engine = OcrEngine.try_create_from_user_profile_languages()
+        return engine
+
+    def _thread_engine(self):  # type: ignore[no-untyped-def]
+        engine = getattr(self._local, "engine", None)
+        if engine is None:
+            engine = self._local.engine = self._create_engine()
+        return engine
 
     def available(self) -> bool:
         if self._available is not None:
@@ -185,16 +206,7 @@ class WindowsOcr(OcrBackend):
             self._available = False
             return False
         try:
-            from winrt.windows.globalization import Language
-            from winrt.windows.media.ocr import OcrEngine
-
-            engine = None
-            if OcrEngine.is_language_supported(Language(self.language)):
-                engine = OcrEngine.try_create_from_language(Language(self.language))
-            if engine is None:
-                engine = OcrEngine.try_create_from_user_profile_languages()
-            self._engine = engine
-            self._available = engine is not None
+            self._available = self._thread_engine() is not None
         except Exception as exc:
             log.info("Windows OCR unavailable: %s", exc)
             self._available = False
@@ -217,8 +229,9 @@ class WindowsOcr(OcrBackend):
         bmp = SoftwareBitmap(BitmapPixelFormat.BGRA8, rgba.width, rgba.height, BitmapAlphaMode.PREMULTIPLIED)
         bmp.copy_from_buffer(writer.detach_buffer())
 
-        engine = self._engine
-        assert engine is not None
+        engine = self._thread_engine()
+        if engine is None:
+            raise RuntimeError("Windows OCR engine could not be created")
 
         async def run():  # type: ignore[no-untyped-def]
             return await engine.recognize_async(bmp)

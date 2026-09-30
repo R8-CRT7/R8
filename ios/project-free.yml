@@ -25,6 +25,9 @@ targets:
     platform: iOS
     sources:
       - path: Smart360
+        excludes:                      # files generated/used only by the paid project.yml
+          - Resources/Info.plist
+          - "Resources/*.entitlements"
     dependencies:
       - package: Smart360Core
     settings:

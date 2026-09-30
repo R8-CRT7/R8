@@ -50,6 +50,22 @@ def test_windows_ocr_reads_simulator():
     assert len(q.answers) == 3
 
 
+def test_windows_ocr_concurrent_calls():
+    """Regression: one shared OcrEngine rejected the parallel question/answer OCR
+    ("Another RecognizeAsync operation is already running!")."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    from smart360.capture.simulator import PracticeSimulator
+    from smart360.vision.ocr import WindowsOcr
+
+    ocr = WindowsOcr()
+    assert ocr.available()
+    img = PracticeSimulator().render()
+    with ThreadPoolExecutor(4) as pool:
+        results = list(pool.map(lambda _: ocr.recognize(img), range(8)))
+    assert all(len(r) > 3 for r in results)
+
+
 def test_window_detection_and_capture_exclusion(qtbot):
     from PySide6.QtWidgets import QWidget
 
