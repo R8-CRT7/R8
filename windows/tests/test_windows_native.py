@@ -174,6 +174,9 @@ def test_real_end_to_end_capture_ocr_click(qtbot):
     engine.start()
     try:
         qtbot.waitUntil(lambda: engine.sm.state.value == "WAITING_FOR_CONFIRMATION", timeout=40000)
+        print("OCR question:", engine.question.text)
+        print("OCR answers:", [a.text for a in engine.question.answers])
+        print("truth answers:", list(sim.question.answers))
         assert engine.prediction.answers == sim.displayed_correct()
         qtbot.wait(700)
         assert len(sim.clicks) == 0, "clicked before confirmation!"

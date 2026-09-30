@@ -3,6 +3,7 @@ import shutil
 import time
 
 import pytest
+from rapidfuzz import fuzz
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
@@ -38,8 +39,15 @@ def truth_answer_fn(sim):
                 "uncertain": False,
                 "topic": q.topic,
             }
-        correct_texts = {normalize_text(q.answers[i - 1]) for i in q.correct}
-        idx = [i for i, a in enumerate(req.answers, start=1) if normalize_text(a) in correct_texts]
+        # Map each OCR'd answer to the closest ground-truth answer (tolerates OCR noise the way a real
+        # model does; exact matching failed on Windows OCR, which read one answer slightly differently).
+        truth = [normalize_text(a) for a in q.answers]
+        idx = []
+        for i, a in enumerate(req.answers, start=1):
+            scores = [fuzz.ratio(normalize_text(a), t) for t in truth]
+            best = max(range(len(truth)), key=scores.__getitem__)
+            if scores[best] >= 70 and best + 1 in q.correct:
+                idx.append(i)
         return {
             "answers": idx or [1],
             "number_answer": None,
