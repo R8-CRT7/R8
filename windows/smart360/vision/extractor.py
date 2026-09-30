@@ -91,9 +91,13 @@ _UNIT_ONLY = re.compile(
     r"^[\s_]*(m|km/h|km|%|meter|jahre?|cm|t|kg|minuten|stunden|sekunden)?[\s_.]*$", re.IGNORECASE
 )
 # leading checkbox artefacts read by OCR: "[_]", "[]", "|", "□", "(_)", and blurred boxes read as
-# "[DD", "DJ)", "[D)" (a bracket plus box-shaped letters) before the real, capitalised answer text
+# "[DD", "DJ)", "[D)" (a bracket plus box-shaped letters) before the real, capitalised answer text.
+# Windows OCR reads an empty checkbox as "C]" / "U]" / "E]" - and not on every capture, which made the
+# executor's re-check see a "different question" (found by the native Windows CI test).
 _BULLET = re.compile(r"^\s*(?:[\[\](){}|_□☐☑✓✔]{1,4}\s+)+")
-_BOX_TOKEN = re.compile(r"^\s*(?:[\[\](){}|_]*[DJOo0Il]{1,3}[\[\](){}|_]*|[\[\](){}|_]+)\s+(?=[A-ZÄÖÜ0-9!|])")
+_BOX_TOKEN = re.compile(
+    r"^\s*(?:[\[\](){}|_]*[DJOo0IlCcUuE]{1,3}[\[\](){}|_]*|[\[\](){}|_]+)\s+(?=[A-ZÄÖÜ0-9!|])"
+)
 # frequent OCR confusions in this domain
 _FIXES = (
     (re.compile(r"\bkm\s*/\s*[nb]\b|\bkmlh\b|\bkm/n\b"), "km/h"),

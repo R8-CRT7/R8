@@ -143,3 +143,29 @@ def test_change_detected_between_similar_text_only_questions():
         assert not det.observe(before, 0.0)  # unchanged screen never triggers
         det.observe(after, 0.1)
         assert det.observe(after, 0.2), f"question {i} -> {i + 1} not detected"
+
+
+@pytest.mark.parametrize(
+    "raw",
+    [
+        "C] Ich lasse den Radfahrer zuerst fahren",
+        "c] Ich lasse den Radfahrer zuerst fahren",
+        "[C Ich lasse den Radfahrer zuerst fahren",
+        "U] Ich lasse den Radfahrer zuerst fahren",
+        "[_] Ich lasse den Radfahrer zuerst fahren",
+        "Ich lasse den Radfahrer zuerst fahren",
+    ],
+)
+def test_windows_ocr_checkbox_artefacts_are_stripped(raw):
+    """Regression (native Windows CI): Windows OCR prefixes some answers with "C]" for the empty
+    checkbox, inconsistently between captures - the answer text must not depend on it."""
+    from smart360.vision.extractor import _clean
+
+    assert _clean(raw) == "Ich lasse den Radfahrer zuerst fahren"
+
+
+def test_real_words_are_not_stripped_as_checkbox():
+    from smart360.vision.extractor import _clean
+
+    for text in ("Ca. 50 Meter", "Um 10 km/h", "Es ist erlaubt", "Durch Hupen", "Ob ich darf"):
+        assert _clean(text) == text
