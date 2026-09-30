@@ -66,6 +66,8 @@ text clipping, calibration panel placement, self-test ghost rows, orbit icon, co
 * Change detection (soak test): two consecutive text-only questions with a similar layout differed by a
   mean of only 0.96 grey levels → the new question was never analysed → changed-pixel-fraction rule.
 * Soak harness: turned pages every 50 ms (never a settled screen) → one page turn per answered question.
+* **Memory leak** (soak + tracemalloc): pytesseract's per-call glob pattern filled fnmatch's LRU cache
+  (+19.5 MB/h, ~5 KB per question) → tesseract CLI called directly; tracemalloc growth now ~10 KB total.
 
 ## Soak / memory
 See `docs/FINAL_STATUS.md` → *Soak test* for the 30-minute run (cycles, RSS trend, errors).

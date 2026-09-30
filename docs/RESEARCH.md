@@ -22,7 +22,8 @@ bundled Claude API reference), PyPI. Star counts / activity as reported by the G
 | pywinauto | github.com/pywinauto/pywinauto | UIA automation | Py | BSD | 6.2k | 2026-09 | UIA tree of browser pages | heavy (comtypes), slow for browsers | do not use (UIA text source = future flag) |
 | winrt-Windows.Media.Ocr | pypi (pywinrt) | Windows OCR | Py | MIT | – | 2.x | built-in OCR, offline, fast | no per-word confidence | **USE** (primary on Windows) |
 | winocr | github.com/GitHub30/winocr | Windows OCR wrapper | Py | MIT | 25 | 2026-08 | reference for WinRT OCR usage | small project | reference only |
-| Tesseract + pytesseract | github.com/tesseract-ocr | OCR | C++/Py | Apache-2.0 | – | – | cross-platform, confidences, CI | OpenMP oversubscription (fixed: OMP_THREAD_LIMIT=1) | **USE** (fallback + CI) |
+| Tesseract (CLI) | github.com/tesseract-ocr | OCR | C++ | Apache-2.0 | – | – | cross-platform, confidences, CI | OpenMP oversubscription (fixed: OMP_THREAD_LIMIT=1) | **USE** (fallback + CI), called directly |
+| pytesseract | github.com/madmaze/pytesseract | Tesseract wrapper | Py | Apache-2.0 | – | – | convenient | per-call unique glob pattern → fnmatch LRU cache growth (~5 KB/question, found by soak test) | **removed** – 40-line direct runner |
 | PaddleOCR | github.com/PaddlePaddle/PaddleOCR | OCR | Py | Apache-2.0 | 90k | 2026-09 | very accurate | Paddle runtime ~1 GB | do not use |
 | EasyOCR | – | OCR | Py | Apache-2.0 | – | – | easy API | PyTorch ~700 MB | do not use |
 | PyQt/PySide Frameless-Window | github.com/zhiyiYo/PyQt-Frameless-Window | acrylic/mica | Py | GPLv3 | – | 2026 | Win11 effects | **GPL** – incompatible with a closed app | do not use (own 10-line DWM call) |

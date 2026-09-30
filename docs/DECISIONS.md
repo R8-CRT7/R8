@@ -74,6 +74,13 @@ fallback and the engine used in Linux CI. PaddleOCR/EasyOCR were rejected: 200 M
 PyTorch/Paddle dependencies for a UI with clean rendered text. The AI always receives the
 situation image; text crops are only sent when OCR confidence is low (cost saver).
 
+## D-06b Tesseract is called directly, not through pytesseract
+
+The 30-minute soak test showed linear RSS growth (+19.5 MB/h). tracemalloc traced it to pytesseract's
+cleanup (`glob(f"{unique_tmp_name}*")` per call → `fnmatch` caches every compiled pattern, LRU up to
+32 768 entries). A 40-line runner (fixed argv, per-call temp dir, TSV parsing, hard timeout) removes the
+leak and a dependency.
+
 ## D-07 No image sharpening before OCR (A/B-tested)
 
 Measured on 120 simulator screens × 4 scalings × 3 degradations (Tesseract):

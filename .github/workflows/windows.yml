@@ -61,6 +61,12 @@ jobs:
         env:
           QT_QPA_PLATFORM: windows
         run: pytest -q -s -m windows tests/test_windows_native.py
+      - name: OCR benchmark (Windows OCR vs. simulator ground truth)
+        run: python tools/ocr_benchmark.py --out dist/ocr_benchmark_windows.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ocr-benchmark-windows
+          path: windows/dist/ocr_benchmark_windows.json
       - name: Build 360Smart.exe (PyInstaller)
         run: pyinstaller packaging/smart360.spec --noconfirm --clean --distpath dist --workpath build
       - name: Self-test frozen app

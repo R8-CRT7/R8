@@ -13,6 +13,8 @@ from smart360.storage.config import ConfigStore
 from smart360.vision.extractor import LayoutProfile, QuestionExtractor
 from smart360.vision.ocr import NullOcr, OcrBackend, OcrLine
 
+from .conftest import requires_tesseract
+
 
 def test_invalid_profiles_are_skipped_not_fatal(tmp_path):
     svc = Services.create(tmp_path, demo=False)
@@ -113,6 +115,7 @@ def test_config_with_wrong_types_recovers(tmp_path):
     assert s.recovered and s.config.ai.retries == 2
 
 
+@requires_tesseract
 def test_unknown_forced_profile_falls_back_to_auto(harness):
     h = harness()
     h.engine.forced_profile = "does-not-exist"

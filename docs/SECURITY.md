@@ -36,7 +36,7 @@
 
 ## Supply chain
 * Runtime dependencies (Windows): PySide6, pydantic, numpy, Pillow, mss, rapidfuzz, anthropic, keyring,
-  psutil (+ optional openai, google-genai, pytesseract, winrt-*). iOS: none (Apple frameworks only).
+  psutil (+ optional openai, google-genai, winrt-*; the tesseract binary is called directly with a fixed argv, no shell). iOS: none (Apple frameworks only).
 * `pip-audit` (2026-09-30): no known vulnerabilities in runtime dependencies; the only finding was
   `setuptools 79` (build tool only) → build requirement raised to `setuptools>=83`.
 * `bandit -ll`: 0 medium/high findings; 5 low-severity intentional `try/except/pass` (listener isolation,
