@@ -1,12 +1,11 @@
 [build-system]
-requires = ["setuptools>=69", "wheel"]
+requires = ["setuptools>=83", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "smart360"
 version = "0.5.0a1"
 description = "360 SMART - AI Driving Theory Assistant (Windows desktop companion)"
-readme = "../README.md"
 requires-python = ">=3.11"
 license = { text = "Proprietary (personal use)" }
 dependencies = [
@@ -98,3 +97,9 @@ markers = [
     "ocr: requires the tesseract binary",
 ]
 addopts = "-m 'not soak and not windows'"
+
+[tool.bandit]
+exclude_dirs = ["tests", "tools"]
+# B101 asserts are used for internal invariants only (never for security checks);
+# B311 random is only used for retry jitter and deterministic test data.
+skips = ["B101", "B311"]

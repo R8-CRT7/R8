@@ -359,8 +359,16 @@ def main(argv: list[str] | None = None) -> int:
     app.setApplicationVersion(__version__)
     app.setQuitOnLastWindowClosed(False)
 
+    from PySide6.QtGui import QIcon
+
     from smart360.ui import theme
 
+    app.setWindowIcon(QIcon(str(theme.ASSETS / "icon.ico")))
+    if sys.platform == "win32":
+        import ctypes
+
+        # own taskbar identity (otherwise the Python/Qt icon is shown)
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("Smart360.AIDrivingTheoryAssistant")
     theme.load_fonts()
     app.setStyleSheet(theme.stylesheet())
 
@@ -412,7 +420,7 @@ def _install_tray(app, ctrl: AppController) -> None:  # type: ignore[no-untyped-
 
     if not QSystemTrayIcon.isSystemTrayAvailable():
         return
-    tray = QSystemTrayIcon(icon("orbit", C.PRIMARY, 32), app)
+    tray = QSystemTrayIcon(app.windowIcon() if not app.windowIcon().isNull() else icon("orbit", C.PRIMARY, 32), app)
     tray.setToolTip(f"{APP_NAME} {__version__}")
     menu = QMenu()
     for text, fn in (
