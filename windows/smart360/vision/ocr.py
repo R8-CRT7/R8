@@ -24,6 +24,16 @@ from smart360.core.models import Rect
 
 log = logging.getLogger(__name__)
 
+# Tesseract spawns OpenMP threads that busy-wait. With concurrent OCR calls this oversubscribes the
+# CPU (observed: load average 85, single calls taking >10 min). One thread per process is what the
+# Tesseract docs recommend for parallel use - and our crops are small.
+os.environ.setdefault("OMP_THREAD_LIMIT", "1")
+OCR_TIMEOUT_S = 15.0
+
+
+class OcrTimeout(RuntimeError):
+    pass
+
 
 @dataclass(frozen=True, slots=True)
 class OcrLine:
@@ -54,6 +64,8 @@ def _prepare(img: Image.Image, min_height: int = 900) -> tuple[Image.Image, floa
     if g.height < min_height and g.height > 0:
         scale = min(3.0, max(1.0, min_height / g.height))
         if scale > 1.05:
+            # no sharpening: A/B-tested (docs/DECISIONS.md D-07) - it amplifies JPEG artefacts and
+            # does not help lossless screen captures
             g = g.resize((int(g.width * scale), int(g.height * scale)), Image.Resampling.LANCZOS)
     return g, scale
 
@@ -90,9 +102,16 @@ class TesseractOcr(OcrBackend):
         import pytesseract
 
         prepared, scale = _prepare(img)
-        data = pytesseract.image_to_data(
-            prepared, lang=self.lang, config="--psm 6", output_type=pytesseract.Output.DICT
-        )
+        try:
+            data = pytesseract.image_to_data(
+                prepared,
+                lang=self.lang,
+                config="--psm 6",
+                output_type=pytesseract.Output.DICT,
+                timeout=OCR_TIMEOUT_S,
+            )
+        except RuntimeError as e:  # pytesseract raises RuntimeError("Tesseract process timeout")
+            raise OcrTimeout(str(e)) from e
         lines: dict[tuple[int, int, int], list[int]] = {}
         for i, word in enumerate(data["text"]):
             if not word or not word.strip():

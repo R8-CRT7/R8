@@ -87,6 +87,10 @@ class Harness:
             f"timeout waiting for {states}, state={self.engine.sm.state}, status={self.engine.status}"
         )
 
+    def wait_event(self, kind, timeout=20.0):
+        self.wait(lambda: any(e.kind == kind for e in self.events), timeout, f"event {kind}")
+        return next(e for e in self.events if e.kind == kind)
+
     def wait(self, pred, timeout=20.0, msg="condition"):
         deadline = time.time() + timeout
         while time.time() < deadline:

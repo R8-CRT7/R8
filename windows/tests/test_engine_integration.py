@@ -30,10 +30,10 @@ def test_full_loop_requires_confirmation_and_selects_correct_answers(harness):
     assert h.input.log == [] and h.sim.state.selected == set()
     assert h.engine.sm.state is State.WAITING_FOR_CONFIRMATION
     h.engine.approve(h.engine.question.question_id)
-    h.wait_state("WAITING_FOR_NEXT_QUESTION")
+    ev = h.wait_event("execution")
+    assert ev.data["ok"], ev.data
     assert h.sim.is_solved_correctly()
-    assert any(e.kind == "execution" and e.data["ok"] for e in h.events)
-    assert h.history.query()[0].decision is Decision.ACCEPTED
+    h.wait(lambda: h.history.query()[0].decision is Decision.ACCEPTED, msg="history decision ACCEPTED")
 
 
 def test_next_question_detected_after_answer(harness):
@@ -175,9 +175,8 @@ def test_lost_click_is_retried_and_verified(harness):
     h.wait_state("WAITING_FOR_CONFIRMATION")
     h.input.fail_next = 1  # first click swallowed
     h.engine.approve(h.engine.question.question_id)
-    h.wait_state("WAITING_FOR_NEXT_QUESTION")
+    ev = h.wait_event("execution")
     assert h.sim.is_solved_correctly()
-    ev = next(e for e in h.events if e.kind == "execution")
     assert ev.data["ok"] and "2 attempts" in ev.data["message"]
 
 
@@ -192,7 +191,7 @@ def test_max_three_attempts(harness):
     assert not ev.data["ok"] and "3 attempts" in ev.data["message"]
     # at most 3 attempts x number of needed clicks
     assert len([x for x in h.input.log if x[0] == "click"]) <= 3 * len(h.sim.displayed_correct())
-    assert h.history.query()[0].decision is Decision.FAILED
+    h.wait(lambda: h.history.query()[0].decision is Decision.FAILED, msg="history decision FAILED")
 
 
 def test_reject(harness):
@@ -202,7 +201,7 @@ def test_reject(harness):
     h.engine.reject(h.engine.question.question_id)
     h.wait_state("WAITING_FOR_NEXT_QUESTION")
     assert h.input.log == []
-    assert h.history.query()[0].decision is Decision.REJECTED
+    h.wait(lambda: h.history.query()[0].decision is Decision.REJECTED, msg="history decision REJECTED")
 
 
 def test_manual_tick_keeps_prediction_and_exec_fixes_selection(harness):
@@ -309,7 +308,7 @@ def test_advisory_mode_never_clicks(harness):
     h.engine.approve(h.engine.question.question_id)
     h.wait_state("WAITING_FOR_NEXT_QUESTION")
     assert h.input.log == []
-    assert h.history.query()[0].decision is Decision.ACCEPTED
+    h.wait(lambda: h.history.query()[0].decision is Decision.ACCEPTED, msg="history decision ACCEPTED")
 
 
 def test_hotkey_spam_executes_once(harness):

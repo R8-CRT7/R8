@@ -87,10 +87,16 @@ _NUMBER_HINT = re.compile(r"(zahl|antwort)\s*[:：]?\s*_*|^_{2,}", re.IGNORECASE
 _UNIT_ONLY = re.compile(
     r"^[\s_]*(m|km/h|km|%|meter|jahre?|cm|t|kg|minuten|stunden|sekunden)?[\s_.]*$", re.IGNORECASE
 )
-# leading checkbox artefacts read by OCR: "[_]", "[]", "|", "□", "(_)" ...
+# leading checkbox artefacts read by OCR: "[_]", "[]", "|", "□", "(_)", and blurred boxes read as
+# "[DD", "DJ)", "[D)" (a bracket plus box-shaped letters) before the real, capitalised answer text
 _BULLET = re.compile(r"^\s*(?:[\[\](){}|_□☐☑✓✔]{1,4}\s+)+")
+_BOX_TOKEN = re.compile(r"^\s*(?:[\[\](){}|_]*[DJOo0Il]{1,3}[\[\](){}|_]*|[\[\](){}|_]+)\s+(?=[A-ZÄÖÜ0-9!|])")
 # frequent OCR confusions in this domain
-_FIXES = ((re.compile(r"\bkm\s*/\s*[nb]\b|\bkmlh\b|\bkm/n\b"), "km/h"), (re.compile(r"\s+%"), " %"))
+_FIXES = (
+    (re.compile(r"\bkm\s*/\s*[nb]\b|\bkmlh\b|\bkm/n\b"), "km/h"),
+    (re.compile(r"\s+%"), " %"),
+    (re.compile(r"^[!|l1]ch\b"), "Ich"),  # "!ch", "|ch" -> "Ich" at the start of an answer
+)
 
 
 @dataclass(slots=True)
@@ -208,6 +214,16 @@ class QuestionExtractor:
         return QuestionType.SINGLE_OR_MULTI, answers, layout_conf
 
 
+def _looks_like_number_input(lines: list[OcrLine], joined: str) -> bool:
+    """'Antwort: [____] m' - one short line, an 'Antwort' label or unit, no answer sentence."""
+    if len(lines) > 2:
+        return False
+    if _NUMBER_HINT.search(joined) and _UNIT_ONLY.match(_NUMBER_HINT.sub("", joined)):
+        return True
+    words = [w for w in re.findall(r"[A-Za-zÄÖÜäöüß]{2,}", joined)]
+    return "antwort" in joined.lower() and len(words) <= 3
+
+
 def _crop(img: Image.Image, r: Rect) -> Image.Image:
     x0 = max(0, min(img.width - 1, r.x))
     y0 = max(0, min(img.height - 1, r.y))
@@ -218,6 +234,9 @@ def _crop(img: Image.Image, r: Rect) -> Image.Image:
 
 def _clean(text: str) -> str:
     text = _BULLET.sub("", text)
+    token = _BOX_TOKEN.match(text)
+    if token and any(ch in token.group(0) for ch in "[](){}|_"):
+        text = text[token.end() :]
     for rx, repl in _FIXES:
         text = rx.sub(repl, text)
     text = text.replace("|", " ").replace("—", "-")

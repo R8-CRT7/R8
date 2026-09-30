@@ -455,10 +455,10 @@ class Engine:
 
         # Same question re-captured (e.g. user ticked a box manually): keep the prediction.
         if is_same and previous_p is not None and not force:
-            self.sm.answer_ready(question.question_id, gen, previous_p.answers or (1,))
             with self._lock:
                 self.prediction = previous_p
             self._emit("prediction", prediction=previous_p, question_id=question.question_id)
+            self.sm.answer_ready(question.question_id, gen, previous_p.answers or (1,))
             self._set_status("Awaiting your confirmation")
             return
         self._set_status("Analyzing…")
@@ -588,9 +588,25 @@ class Engine:
 
     # ------------------------------------------------------------------ analysis results (engine thread)
     def _analysis_done(self, q: Question, gen: int, pred: Prediction, elapsed_ms: float) -> None:
+        # Stale check first. All state-machine mutations happen on this (engine) thread, so the check
+        # stays valid until answer_ready() below.
+        if (
+            gen != self.sm.generation
+            or self.sm.question_id != q.question_id
+            or self.sm.state is not State.ANALYZING
+        ):
+            log.info("dropping stale prediction for %s", q.question_id)
+            return
+        # Publish the prediction BEFORE the state change: anyone reacting to WAITING_FOR_CONFIRMATION
+        # (overlay, hotkey registration) must already see the matching prediction.
+        with self._lock:
+            self.prediction = pred
+        self._emit("prediction", prediction=pred, question_id=q.question_id)
         try:
             self.sm.answer_ready(q.question_id, gen, pred.answers or (1,))
         except TransitionError:
+            with self._lock:
+                self.prediction = None
             log.info("dropping stale prediction for %s", q.question_id)
             return
         self._error_backoff = 1.0
@@ -603,10 +619,7 @@ class Engine:
             self.stats.ai_time_ms += pred.latency_ms
         if pred.uncertain:
             self.stats.uncertain += 1
-        with self._lock:
-            self.prediction = pred
         self._history_row = self._add_history(q, pred, Decision.SKIPPED, elapsed_ms)
-        self._emit("prediction", prediction=pred, question_id=q.question_id)
         self._emit("stats", **self.stats.as_dict())
         self._set_status("Manual check recommended" if pred.uncertain else "Awaiting your confirmation")
 

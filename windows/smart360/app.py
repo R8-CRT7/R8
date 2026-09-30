@@ -420,7 +420,8 @@ def _install_tray(app, ctrl: AppController) -> None:  # type: ignore[no-untyped-
 
     if not QSystemTrayIcon.isSystemTrayAvailable():
         return
-    tray = QSystemTrayIcon(app.windowIcon() if not app.windowIcon().isNull() else icon("orbit", C.PRIMARY, 32), app)
+    tray_icon = app.windowIcon() if not app.windowIcon().isNull() else icon("orbit", C.PRIMARY, 32)
+    tray = QSystemTrayIcon(tray_icon, app)
     tray.setToolTip(f"{APP_NAME} {__version__}")
     menu = QMenu()
     for text, fn in (

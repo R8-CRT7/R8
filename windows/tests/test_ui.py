@@ -236,7 +236,8 @@ def test_app_controller_demo_round_trip(qtbot, qapp, services):
     eng = services.engine
     eng.detector.policy.normal_s = 0.08
     qtbot.waitUntil(lambda: eng.sm.state.value == "WAITING_FOR_CONFIRMATION", timeout=30000)
-    assert ctrl.overlay.prediction is not None
+    # the prediction signal is delivered (queued) no later than the state signal
+    qtbot.waitUntil(lambda: ctrl.overlay.prediction is not None, timeout=2000)
     sim = services.simulator
     ctrl.on_hotkey("confirm")
     qtbot.waitUntil(lambda: eng.sm.state.value == "WAITING_FOR_NEXT_QUESTION", timeout=20000)
