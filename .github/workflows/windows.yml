@@ -7,6 +7,11 @@ on:
   pull_request:
     paths: ["windows/**", ".github/workflows/windows.yml"]
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Also publish 360SmartSetup.exe as a GitHub pre-release with this tag (e.g. v0.5.0-alpha.1); empty = no release"
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -60,7 +65,7 @@ jobs:
       - name: Native Windows tests (real window, capture, OCR, SendInput, hotkeys, Credential Manager)
         env:
           QT_QPA_PLATFORM: windows
-        run: pytest -q -s -m windows tests/test_windows_native.py
+        run: pytest -q -s -m windows tests/test_windows_native.py | Tee-Object -FilePath dist-native.log
       - name: OCR benchmark (Windows OCR vs. simulator ground truth)
         run: python tools/ocr_benchmark.py --out dist/ocr_benchmark_windows.json
       - uses: actions/upload-artifact@v4
@@ -89,6 +94,9 @@ jobs:
           "installed app self-test exit: $($q.ExitCode)"
           if ($q.ExitCode -ne 0) { exit 1 }
           Get-ChildItem dist | Format-Table Name, Length
+          $h = (Get-FileHash dist\360SmartSetup.exe -Algorithm SHA256).Hash
+          "360SmartSetup.exe SHA256: $h"
+          Set-Content -Path dist\360SmartSetup.exe.sha256 -Value "$h  360SmartSetup.exe"
       - name: Silent uninstall + verify removal
         shell: pwsh
         run: |
@@ -107,5 +115,41 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: 360SmartSetup
-          path: windows/dist/360SmartSetup.exe
+          path: |
+            windows/dist/360SmartSetup.exe
+            windows/dist/360SmartSetup.exe.sha256
           if-no-files-found: error
+      - name: Job summary (native test output, OCR benchmark, installer)
+        if: always()
+        shell: pwsh
+        run: |
+          $out = @("## Native Windows tests", '```')
+          if (Test-Path dist-native.log) { $out += Get-Content dist-native.log | Select-String -Pattern "OCR|execution|passed|failed|ms" | ForEach-Object { $_.Line } }
+          $out += '```', "## Windows OCR benchmark", '```json'
+          if (Test-Path dist\ocr_benchmark_windows.json) { $out += Get-Content dist\ocr_benchmark_windows.json }
+          $out += '```', "## Installer", '```'
+          if (Test-Path dist\360SmartSetup.exe) { $out += "size: $((Get-Item dist\360SmartSetup.exe).Length) bytes"; $out += Get-Content dist\360SmartSetup.exe.sha256 }
+          $out += '```'
+          $out | Tee-Object -Append -FilePath $env:GITHUB_STEP_SUMMARY
+
+  release:
+    name: Publish pre-release (manual)
+    needs: windows
+    if: github.event_name == 'workflow_dispatch' && inputs.release_tag != ''
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: 360SmartSetup
+          path: out
+      - name: Create GitHub pre-release with the installer
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.release_tag }}
+        run: |
+          gh release create "$TAG" out/360SmartSetup.exe out/360SmartSetup.exe.sha256 \
+            --prerelease --target "$GITHUB_SHA" --title "360 SMART $TAG" \
+            --notes-file docs/RELEASE_NOTES.md
