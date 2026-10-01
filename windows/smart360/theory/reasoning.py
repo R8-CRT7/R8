@@ -13,6 +13,7 @@ from __future__ import annotations
 import dataclasses
 import math
 import re
+import time
 from dataclasses import dataclass, field
 from enum import StrEnum
 from functools import lru_cache
@@ -21,6 +22,7 @@ from smart360.theory import calc
 from smart360.theory.kb import KnowledgeBase, get_kb
 from smart360.theory.negation import Deontic, Polarity, analyze, asks_for_negative, deontic_truth
 from smart360.theory.priority import PriorityDecision, decide
+from smart360.theory.retrieval import claim_frame, hybrid_retrieve, structural_conflict
 from smart360.theory.scene import Scene, temporal_check
 from smart360.theory.schema import Claim, KnowledgeObject, Sign
 from smart360.theory.semantics import (
@@ -54,6 +56,7 @@ from smart360.theory.text import (
 DEFAULT_THRESHOLD = 0.75
 MATCH_MIN = 0.55  # minimum statement similarity for a claim to count
 AMBIGUITY_GAP = 0.08
+RETRIEVAL_LIMIT = 12  # candidate rules handed to the deterministic checks
 SPECIFIC_WINDOW = 0.25  # how far below the best match a more specific, disagreeing claim is still heard
 SPECIFICITY_GAP = 2  # matched situation terms more than the best claim that make a claim 'more specific'
 NUMERIC_SITUATION_MIN = 0.3
@@ -107,6 +110,7 @@ class TheoryResult:
     kinds: set[str]
     factors: dict[str, float]
     trace: list[tuple[str, str]]
+    timings: dict[str, float] = field(default_factory=dict)  # seconds: retrieval_latency, reasoning_latency
 
     @property
     def status(self) -> str:
@@ -333,6 +337,7 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
     obj_core = {obj.id: _object_core(obj) for obj in candidates}
     specific = set().union(*(q_quals & c for c in obj_core.values())) if candidates else set()
     out: list[_Match] = []
+    q_frame = claim_frame(question)
     for obj in candidates:
         # rules (objects) that never mention a question qualifier another candidate rule covers are general rules
         shadowed = specific - obj_core[obj.id]
@@ -340,6 +345,14 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
         for claim in (part for c in obj.claims for part in _claim_parts(c)):
             if situation_conflict(question, " ".join(claim.context) + " " + claim.statement, answer):
                 continue  # 'Arm hoch' claim for an 'Arme quer' question, 'Zeichen 283' for 'Zeichen 286'
+            c_frame = claim_frame(" ".join(claim.context) + ". " + claim.statement)
+            if structural_conflict(q_frame, c_frame):
+                # innerorts question vs außerorts claim, Lkw question vs Pkw-only claim - unless the answer names
+                # its own situation and that one fits the claim ('Außerorts gilt ...')
+                a_frame = claim_frame(answer)
+                if not (a_frame.road_context or a_frame.vehicle_context - {"trailer"}) or \
+                        structural_conflict(a_frame, c_frame):
+                    continue
             if numeric_only:
                 # "100 km/h", "unter 50 m": the words say nothing - the SITUATION (question vs claim) decides
                 c_nums = numbers(" ".join(claim.numbers) or claim.statement)
@@ -768,6 +781,7 @@ SOURCE_WEIGHT = {1: 1.0, 2: 0.96, 3: 0.93, 4: 0.9, 5: 0.86, 6: 0.6, 9: 0.5}
 
 def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float = DEFAULT_THRESHOLD,
           llm_selected: tuple[int, ...] | None = None) -> TheoryResult:
+    t_start = time.perf_counter()
     kb = kb or get_kb()
     trace: list[tuple[str, str]] = []
     reasons: list[str] = []
@@ -809,10 +823,13 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
         if q.scene is None and "image" in kinds:
             reasons.append("picture question without a scene model")
 
-    # rule retrieval (question + all answers)
-    retrieved = kb.retrieve(q.text + " " + " ".join(q.answers), limit=12)
-    candidates = [o for _, o in retrieved]
-    trace.append(("retrieval", ", ".join(o.id for o in candidates[:8])))
+    # rule retrieval (question + all answers): hybrid - lexical + semantic + concept graph, ranked by structure.
+    # Retrieval only proposes candidate rules; every verdict below comes from the deterministic checks.
+    t_ret = time.perf_counter()
+    hybrid = hybrid_retrieve(q.text + " " + " ".join(q.answers), kb, limit=RETRIEVAL_LIMIT)
+    candidates = [c.obj for c in hybrid]
+    retrieval_latency = time.perf_counter() - t_ret
+    trace.append(("retrieval", ", ".join(f"{c.obj.id}[{'+'.join(sorted(c.channels))}]" for c in hybrid[:8])))
 
     n = len(q.answers)
     evals: dict[int, AnswerEval] = {}
@@ -990,7 +1007,10 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
     if uncertain:
         conf = min(conf, threshold - 0.01)  # same safety cap as the app's confidence engine
     trace.append(("confidence", f"{conf:.3f} " + " ".join(f"{k}={v:.2f}" for k, v in factors.items())))
-    return TheoryResult(selected, number_answer, ordered, round(conf, 4), uncertain, reasons, kinds, factors, trace)
+    total = time.perf_counter() - t_start
+    timings = {"retrieval_latency": retrieval_latency, "reasoning_latency": max(0.0, total - retrieval_latency)}
+    return TheoryResult(selected, number_answer, ordered, round(conf, 4), uncertain, reasons, kinds, factors, trace,
+                        timings)
 
 
 _WHO_FIRST = re.compile(r"\bwer (hat|hätte|hatte)( \w+){0,6} (vorfahrt|vorrang)\b|"

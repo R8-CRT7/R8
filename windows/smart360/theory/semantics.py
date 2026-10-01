@@ -203,10 +203,11 @@ def situation_conflict(question: str, claim: str, answer: str = "") -> str | Non
     return None
 
 
-def _sides(text: str) -> list[tuple[bool, bool]]:
+@lru_cache(maxsize=100_000)
+def _sides(text: str) -> tuple[tuple[bool, bool], ...]:
     words = set(re.findall(r"[a-zäöüß]+", fold(text)))
-    return [(any(x in words for x, _ in pairs), any(y in words for _, y in pairs))
-            for pairs in load_lexicon().opposites]
+    return tuple((any(x in words for x, _ in pairs), any(y in words for _, y in pairs))
+                 for pairs in load_lexicon().opposites)
 
 
 def opposite_conflict(a: str, b: str) -> bool:

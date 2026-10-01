@@ -1,10 +1,10 @@
 {
  "overall": {
   "n": 160,
-  "accuracy": 0.4562,
-  "coverage": 0.4562,
+  "accuracy": 0.4625,
+  "coverage": 0.4625,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.5437,
+  "uncertain_rate": 0.5375,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -29,10 +29,10 @@
  "by_category": {
   "claims": {
    "n": 160,
-   "accuracy": 0.4562,
-   "coverage": 0.4562,
+   "accuracy": 0.4625,
+   "coverage": 0.4625,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.5437,
+   "uncertain_rate": 0.5375,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -112,10 +112,10 @@
   },
   "09_manoeuvres": {
    "n": 20,
-   "accuracy": 0.4,
-   "coverage": 0.4,
+   "accuracy": 0.45,
+   "coverage": 0.45,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.6,
+   "uncertain_rate": 0.55,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -166,12 +166,12 @@
   }
  },
  "by_variant": {
-  "golden": {
+  "development_golden": {
    "n": 160,
-   "accuracy": 0.4562,
-   "coverage": 0.4562,
+   "accuracy": 0.4625,
+   "coverage": 0.4625,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.5437,
+   "uncertain_rate": 0.5375,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -181,17 +181,34 @@
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   85
+   84
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
-   54
+   52
   ],
   [
    "rule not verified against an official law text",
    3
   ]
  ],
- "seconds": 4.6,
- "set": "golden_internal"
+ "latency_ms": {
+  "total_theory_latency": {
+   "p50": 23.4,
+   "p95": 73.57,
+   "max": 1886.44
+  },
+  "retrieval_latency": {
+   "p50": 6.66,
+   "p95": 35.9,
+   "max": 1738.01
+  },
+  "reasoning_latency": {
+   "p50": 15.51,
+   "p95": 56.2,
+   "max": 148.38
+  }
+ },
+ "seconds": 7.1,
+ "set": "development_golden"
 }

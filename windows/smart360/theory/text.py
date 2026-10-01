@@ -40,6 +40,7 @@ _UNIT_WORDS = r"(minuten?|stunden?|tagen?|tage|tag|wochen?|monaten?|monate|monat
 _DURATION = {"wochen": (7.0, "tage"), "stunden": (60.0, "min")}
 
 
+@lru_cache(maxsize=200_000)
 def fold(text: str) -> str:
     """Lower case, unify quotes/dashes, keep umlauts (they distinguish words), collapse spaces."""
     t = unicodedata.normalize("NFC", text).lower()
@@ -59,6 +60,11 @@ _NUM = re.compile(r"(\d+(?:[.,]\d+)?)\s*(km/h|km|‰|%|mm|cm|m|kg|t|s|jahre|mona
 
 def numbers(text: str) -> list[tuple[float, str]]:
     """[(value, unit)] - German decimal comma, unit aliases ("Meter" -> m)."""
+    return list(_numbers(text))
+
+
+@lru_cache(maxsize=100_000)
+def _numbers(text: str) -> tuple[tuple[float, str], ...]:
     t = fold(text)
     t = re.sub(rf"\b({'|'.join(NUMBER_WORDS)})\s+{_UNIT_WORDS}\b",
                lambda m: f"{NUMBER_WORDS[m.group(1)]} {m.group(2)}", t)
@@ -76,7 +82,7 @@ def numbers(text: str) -> list[tuple[float, str]]:
             f, u = _DURATION[u]
             v *= f
         out.append((v, u))
-    return out
+    return tuple(out)
 
 
 _STEM_SUFFIXES = ("ungen", "ung", "en", "er", "es", "em", "e", "n", "s")

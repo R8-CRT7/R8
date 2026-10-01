@@ -273,6 +273,23 @@
    24
   ]
  ],
- "seconds": 30.5,
+ "latency_ms": {
+  "total_theory_latency": {
+   "p50": 12.59,
+   "p95": 25.61,
+   "max": 2476.31
+  },
+  "retrieval_latency": {
+   "p50": 7.67,
+   "p95": 14.65,
+   "max": 2252.51
+  },
+  "reasoning_latency": {
+   "p50": 4.65,
+   "p95": 11.3,
+   "max": 223.76
+  }
+ },
+ "seconds": 32.2,
  "set": "validation"
 }

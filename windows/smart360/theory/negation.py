@@ -9,6 +9,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 from enum import StrEnum
+from functools import lru_cache
 
 from smart360.theory.text import fold
 
@@ -55,6 +56,7 @@ def _hits(t: str, words: tuple[str, ...]) -> list[str]:
     return [w for w in words if re.search(rf"(?<![a-zäöü]){re.escape(w)}(?![a-zäöü])", t)]
 
 
+@lru_cache(maxsize=100_000)
 def analyze(text: str) -> Polarity:
     from smart360.theory.semantics import canonicalize
 
