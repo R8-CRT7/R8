@@ -14,3 +14,4 @@ windows/artifacts/
 ios/*.xcodeproj/
 ios/DerivedData/
 .DS_Store
+windows/smart360/_build.py

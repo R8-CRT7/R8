@@ -1,7 +1,7 @@
 ; Inno Setup script -> 360SmartSetup.exe
 ; Build (after PyInstaller):  iscc packaging\installer.iss
 #define AppName "360 SMART"
-#define AppVersion "0.5.0-alpha.2"
+#define AppVersion "0.5.0-alpha.3"
 #define AppExe "360Smart.exe"
 
 [Setup]
@@ -41,6 +41,7 @@ Source: "..\dist\360Smart\*"; DestDir: "{app}"; Flags: ignoreversion recursesubd
 [Icons]
 Name: "{group}\360 SMART"; Filename: "{app}\{#AppExe}"
 Name: "{group}\360 SMART (Demo)"; Filename: "{app}\{#AppExe}"; Parameters: "--demo"
+Name: "{group}\360 SMART - Diagnose erstellen"; Filename: "{app}\{#AppExe}"; Parameters: "--diagnose"
 Name: "{group}\{cm:UninstallProgram,360 SMART}"; Filename: "{uninstallexe}"
 Name: "{autodesktop}\360 SMART"; Filename: "{app}\{#AppExe}"; Tasks: desktopicon
 

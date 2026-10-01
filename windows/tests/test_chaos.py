@@ -192,3 +192,48 @@ def test_windows_ocr_glyph_tokens_are_stripped(raw, clean):
     from smart360.vision.extractor import _clean
 
     assert _clean(raw) == clean
+
+
+# ----------------------------------------------------------------------------- checkbox detection
+def _row(text, box=None, filled=False, scale=1.0):
+    from PIL import Image, ImageDraw, ImageFont
+
+    from smart360.ui.theme import ASSETS
+
+    font = ImageFont.truetype(str(ASSETS / "fonts" / "Inter-Regular.ttf"), int(20 * scale))
+    img = Image.new("RGB", (int(560 * scale), int(48 * scale)), (255, 255, 255))
+    d = ImageDraw.Draw(img)
+    x = int(8 * scale)
+    if box:
+        s = int(22 * scale)
+        d.rectangle((x, int(12 * scale), x + s, int(12 * scale) + s), outline=(90, 100, 112), width=2,
+                    fill=(0, 84, 147) if filled else (255, 255, 255))
+        x += s + int(14 * scale)
+    d.text((x, int(12 * scale)), text, font=font, fill=(20, 28, 38))
+    return img, Rect(x, int(12 * scale), int(400 * scale), int(24 * scale))
+
+
+@pytest.mark.parametrize("scale", [0.75, 1.0, 1.5])
+@pytest.mark.parametrize("filled", [False, True])
+def test_checkbox_square_is_found(scale, filled):
+    from smart360.vision.extractor import _find_checkbox
+
+    img, line = _row("Ich lasse den Radfahrer zuerst fahren", box=True, filled=filled, scale=scale)
+    rect, found = _find_checkbox(img, line, line)
+    assert found
+    s = int(22 * scale)
+    assert abs(rect.center[0] - (int(8 * scale) + s // 2)) <= 3
+    assert abs(rect.center[1] - (int(12 * scale) + s // 2)) <= 3
+
+
+@pytest.mark.parametrize(
+    "text", ["Ich lasse den Radfahrer zuerst fahren", "DO NOT OVERTAKE 0 km/h", "[ ] Halt", "Hupen IIII"]
+)
+def test_text_without_checkbox_is_never_reported_as_found(text):
+    """No false positives: letters (D, O, 0, I, brackets) are not a checkbox -> safe mode won't click."""
+    from smart360.vision.extractor import _find_checkbox
+
+    img, line = _row(text, box=False)
+    line = Rect(8, line.y, line.w, line.h)  # the line starts at the left edge
+    _rect, found = _find_checkbox(img, line, line)
+    assert not found

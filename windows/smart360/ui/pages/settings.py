@@ -533,6 +533,38 @@ class SettingsPage(Page):
             SettingRow("Demo mode", "Practise with the built-in simulator - free and offline.", self.demo)
         )
 
+        safe = self.section(
+            "Safety (first tests on your PC)",
+            "Recommended until the real-PC test is done. See REAL_DEVICE_TEST.md.",
+        )
+        self.dry_run = Toggle(c.safety.dry_run)
+        self.dry_run.toggled.connect(lambda v: self._save("safety", dry_run=v))
+        safe.lay.addWidget(
+            SettingRow(
+                "Dry run (never click)",
+                "Does everything up to the click and shows WHERE it would click - but clicks nothing.",
+                self.dry_run,
+            )
+        )
+        self.safe_mode = Toggle(c.safety.safe_mode)
+        self.safe_mode.toggled.connect(lambda v: self._save("safety", safe_mode=v))
+        safe.lay.addWidget(
+            SettingRow(
+                "Safe mode",
+                "No click when the confidence is low, a checkbox was not clearly found, the target is "
+                "ambiguous or the window moved. No click retries.",
+                self.safe_mode,
+            )
+        )
+        safe.lay.addWidget(
+            label(
+                f"Emergency stop: {c.controls.emergency_stop} (works everywhere) or the STOP button.",
+                T.small(),
+                C.TEXT_3,
+                wrap=True,
+            )
+        )
+
         ctl = self.section("Controls")
         keys = [
             ("confirm", "Confirm"),
@@ -541,6 +573,7 @@ class SettingsPage(Page):
             ("reanalyze", "Reanalyze"),
             ("mini_mode", "Cycle overlay mode"),
             ("quit", "Quit"),
+            ("emergency_stop", "EMERGENCY STOP"),
         ]
         g = self.grid(S.SM)
         for i, (k, text) in enumerate(keys):
@@ -573,7 +606,27 @@ class SettingsPage(Page):
         )
 
         pr = self.section(
-            "Privacy", "Screenshots are ephemeral: kept in memory only and discarded after analysis."
+            "Privacy",
+            "Screenshots are kept in memory only - except the question/answer-area pictures of the "
+            "session trace below (local, for 'Create diagnosis'). API keys are never stored in them.",
+        )
+        self.trace = Toggle(c.privacy.session_trace)
+        self.trace.toggled.connect(lambda v: self._save("privacy", session_trace=v))
+        pr.lay.addWidget(
+            SettingRow(
+                "Session trace",
+                "Logs every step per question (OCR, AI answer, confidence, click / no click + reason).",
+                self.trace,
+            )
+        )
+        self.trace_img = Toggle(c.privacy.trace_images)
+        self.trace_img.toggled.connect(lambda v: self._save("privacy", trace_images=v))
+        pr.lay.addWidget(
+            SettingRow(
+                "Trace pictures",
+                "Saves a picture of the question/answer area (with click targets) per step.",
+                self.trace_img,
+            )
         )
         self.debug = Toggle(c.privacy.debug_screenshots)
         self.debug.toggled.connect(lambda v: self._save("privacy", debug_screenshots=v))

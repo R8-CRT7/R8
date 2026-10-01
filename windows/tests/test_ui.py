@@ -228,7 +228,8 @@ def test_app_controller_demo_round_trip(qtbot, qapp, services):
     """Whole app in demo mode: detect -> recommend -> ENTER hotkey -> verified selection."""
     from smart360.app import AppController
 
-    services.store.update(first_run_done=True)
+    # real clicks: the shipped default is dry run (see test_app_defaults_to_dry_run_and_safe_mode)
+    services.store.update(first_run_done=True, safety={"dry_run": False})
     ctrl = AppController(qapp, services, demo_window=False)
     qtbot.addWidget(ctrl.dashboard)
     qtbot.addWidget(ctrl.overlay)
@@ -256,6 +257,62 @@ def test_app_controller_demo_round_trip(qtbot, qapp, services):
     ctrl.on_hotkey("pause")
     qtbot.waitUntil(lambda: eng.sm.state.value == "PAUSED", timeout=5000)
     services.engine.stop()
+
+
+def test_app_defaults_to_dry_run_and_safe_mode(qtbot, qapp, services):
+    """Shipped defaults for the first real-PC tests: dry run + safe mode. The app shows WHERE it would
+    click (markers + DRY RUN message) and clicks nothing; the emergency stop shows STOPPED."""
+    from smart360.app import AppController
+
+    assert services.config.safety.dry_run and services.config.safety.safe_mode
+    services.store.update(first_run_done=True)
+    ctrl = AppController(qapp, services, demo_window=False)
+    qtbot.addWidget(ctrl.dashboard)
+    qtbot.addWidget(ctrl.overlay)
+    ctrl.start()
+    eng = services.engine
+    assert eng.settings.dry_run and eng.settings.safe_mode
+    assert ctrl.overlay.f_state.text().startswith("DRY RUN")
+    eng.detector.policy.normal_s = 0.08
+    qtbot.waitUntil(lambda: eng.sm.state.value == "WAITING_FOR_CONFIRMATION", timeout=30000)
+    qtbot.waitUntil(lambda: ctrl.overlay.prediction is not None, timeout=2000)
+    assert ctrl.overlay.btn_confirm.text() == "CONFIRM (DRY RUN)"
+    sim = services.simulator
+    ctrl.on_hotkey("confirm")
+    qtbot.waitUntil(lambda: len(ctrl.markers.markers) > 0, timeout=20000)
+    assert len(ctrl.markers.markers) == len(sim.displayed_correct())
+    assert "DRY RUN - would click" in ctrl.overlay.f_reason.text()
+    assert list(sim.clicks) == [] and sim.state.selected == set()
+    # emergency stop via the global-hotkey action
+    ctrl.on_hotkey("emergency_stop")
+    assert ctrl.overlay.stopped and ctrl.overlay.f_state.text() == "STOPPED"
+    assert ctrl.markers.markers == []
+    qtbot.waitUntil(lambda: eng.status == "STOPPED", timeout=5000)
+    # RESUME (overlay button / F8) leaves the stop
+    ctrl.overlay.pause_toggled.emit()
+    qtbot.waitUntil(lambda: not eng.stopped and not ctrl.overlay.stopped, timeout=5000)
+    services.engine.stop()
+
+
+def test_emergency_stop_hotkey_is_always_bound(qtbot, qapp, services):
+    from smart360.app import AppController
+
+    ctrl = AppController(qapp, services, demo_window=False)
+    qtbot.addWidget(ctrl.dashboard)
+    qtbot.addWidget(ctrl.overlay)
+
+    class FakeHotkeys:
+        bindings: dict = {}
+
+        def set_bindings(self, b):
+            self.bindings = dict(b)
+
+    ctrl.hotkeys = FakeHotkeys()
+    ctrl.sync_hotkeys()
+    assert ctrl.hotkeys.bindings["emergency_stop"] == "CTRL+SHIFT+X"
+    services.store.update(controls={"global_hotkeys": False})
+    ctrl.sync_hotkeys()
+    assert ctrl.hotkeys.bindings == {"emergency_stop": "CTRL+SHIFT+X"}
 
 
 def test_ui_lag_health(qtbot, qapp, services):

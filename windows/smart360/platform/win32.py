@@ -38,8 +38,17 @@ if IS_WINDOWS:
 # --------------------------------------------------------------------------- DPI
 
 
+DPI_MODE = "not set"  # result of enable_dpi_awareness() (diagnostics)
+
+
 def enable_dpi_awareness() -> str:
     """Per-monitor v2 awareness so capture pixels == input coordinates on scaled displays."""
+    global DPI_MODE
+    DPI_MODE = _enable_dpi_awareness()
+    return DPI_MODE
+
+
+def _enable_dpi_awareness() -> str:
     if not IS_WINDOWS:
         return "n/a"
     try:
@@ -58,6 +67,68 @@ def enable_dpi_awareness() -> str:
         return "system"
     except OSError:
         return "unaware"
+
+
+# --------------------------------------------------------------------------- displays (diagnostics)
+
+
+def display_info() -> list[dict[str, object]]:
+    """Monitors with physical rect, work area, DPI and scale factor (diagnostics only). [] off Windows."""
+    if not IS_WINDOWS:
+        return []
+
+    class MONITORINFOEXW(ctypes.Structure):
+        _fields_ = [("cbSize", wintypes.DWORD), ("rcMonitor", wintypes.RECT), ("rcWork", wintypes.RECT),
+                    ("dwFlags", wintypes.DWORD), ("szDevice", wintypes.WCHAR * 32)]
+
+    out: list[dict[str, object]] = []
+    proc_t = ctypes.WINFUNCTYPE(ctypes.c_int, wintypes.HMONITOR, wintypes.HDC, ctypes.POINTER(wintypes.RECT),
+                                wintypes.LPARAM)
+
+    def cb(hmon, _hdc, _rect, _lp):  # type: ignore[no-untyped-def]
+        mi = MONITORINFOEXW()
+        mi.cbSize = ctypes.sizeof(MONITORINFOEXW)
+        if not user32.GetMonitorInfoW(hmon, ctypes.byref(mi)):
+            return 1
+        dx, dy = wintypes.UINT(96), wintypes.UINT(96)
+        if shcore is not None:
+            try:
+                shcore.GetDpiForMonitor(hmon, 0, ctypes.byref(dx), ctypes.byref(dy))  # MDT_EFFECTIVE_DPI
+            except OSError:
+                pass
+        r, w = mi.rcMonitor, mi.rcWork
+        out.append({
+            "device": mi.szDevice,
+            "primary": bool(mi.dwFlags & 1),
+            "rect": [r.left, r.top, r.right - r.left, r.bottom - r.top],
+            "work_area": [w.left, w.top, w.right - w.left, w.bottom - w.top],
+            "dpi": int(dx.value),
+            "scale_percent": round(dx.value / 96 * 100),
+        })
+        return 1
+
+    try:
+        user32.EnumDisplayMonitors(None, None, proc_t(cb), 0)
+    except OSError as e:
+        log.info("EnumDisplayMonitors failed: %s", e)
+    return out
+
+
+def windows_version() -> str:
+    import platform
+
+    if not IS_WINDOWS:
+        return platform.platform()
+    v = sys.getwindowsversion()  # type: ignore[attr-defined]
+    edition = getattr(platform, "win32_edition", lambda: "")() or ""
+    product = "Windows 11" if v.build >= 22000 else "Windows 10" if v.major == 10 else f"Windows {v.major}"
+    return f"{product} {edition} (build {v.major}.{v.minor}.{v.build})".replace("  ", " ")
+
+
+def message_box(title: str, text: str) -> None:
+    """Native info box (for CLI actions of the windowed exe, which has no console)."""
+    if IS_WINDOWS:
+        user32.MessageBoxW(None, text, title, 0x40)  # MB_ICONINFORMATION
 
 
 # --------------------------------------------------------------------------- windows
@@ -333,7 +404,7 @@ def enable_backdrop(hwnd: int, kind: int = 3) -> bool:
 # --------------------------------------------------------------------------- hotkeys
 
 MOD_ALT, MOD_CONTROL, MOD_SHIFT, MOD_NOREPEAT = 0x1, 0x2, 0x4, 0x4000
-VK = {"ENTER": 0x0D, "ESC": 0x1B, "F8": 0x77, "F9": 0x78, "M": 0x4D, "Q": 0x51, "P": 0x50}
+VK = {"ENTER": 0x0D, "ESC": 0x1B, "PAUSE": 0x13, **{f"F{i}": 0x6F + i for i in range(1, 13)}}
 
 
 def parse_hotkey(spec: str) -> tuple[int, int]:

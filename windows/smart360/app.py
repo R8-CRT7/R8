@@ -42,6 +42,7 @@ class AppController:
 
         from smart360.platform import win32
         from smart360.ui.bridge import EngineBridge
+        from smart360.ui.click_marker import ClickMarkers
         from smart360.ui.dashboard import Dashboard
         from smart360.ui.overlay import OverlayWindow
         from smart360.ui.pages.base import UiContext
@@ -62,6 +63,8 @@ class AppController:
         )
         self.ctx.extra["rebuild_engine"] = self.rebuild_engine
         self.ctx.extra["sync_hotkeys"] = self.sync_hotkeys
+        self.ctx.extra["create_diagnosis"] = self.create_diagnosis
+        self.markers = ClickMarkers()
         a = services.config.appearance
         self.overlay = OverlayWindow(
             a.overlay_mode if services.config.flags.orbit_mode or a.overlay_mode != "orbit" else "full",
@@ -89,10 +92,12 @@ class AppController:
         b.execution.connect(self._on_execution)
         b.error.connect(lambda m, k: self.sounds.play("error"))
         b.hotkey.connect(self.on_hotkey)
+        b.estop.connect(self._on_estop)
         ov.confirm.connect(self.confirm)
         ov.reject.connect(self.reject)
         ov.recheck.connect(lambda: self.svc.engine and self.svc.engine.reanalyze())
         ov.pause_toggled.connect(lambda: self.svc.engine and self.svc.engine.toggle_pause())
+        ov.emergency_stop.connect(self.emergency_stop)
         ov.open_dashboard.connect(self.show_dashboard)
         ov.mode_changed.connect(lambda m: self.svc.store.update(appearance={"overlay_mode": m}))
         ov.moved.connect(lambda pt: self.svc.store.update(appearance={"overlay_pos": [pt.x(), pt.y()]}))
@@ -110,6 +115,7 @@ class AppController:
                 (c.reanalyze, "reanalyze"),
                 (c.mini_mode, "mini_mode"),
                 (c.quit, "quit"),
+                (c.emergency_stop, "emergency_stop"),
             ):
                 sc = QShortcut(QKeySequence(seq.replace("CTRL", "Ctrl").replace("SHIFT", "Shift")), widget)
                 sc.activated.connect(lambda a=action: self.on_hotkey(a))
@@ -121,6 +127,7 @@ class AppController:
     def start(self) -> None:
         self.svc.build_engine(self.bridge.sink)
         self.overlay.set_threshold(self.svc.config.ai.confidence_threshold)
+        self._apply_safety()
         self._maybe_show_simulator()
         self.svc.engine.start()
         self.svc.watchdog.start()
@@ -152,6 +159,11 @@ class AppController:
     def apply_engine_config(self) -> None:
         self.svc.apply_config()
         self.overlay.set_threshold(self.svc.config.ai.confidence_threshold)
+        self._apply_safety()
+
+    def _apply_safety(self) -> None:
+        sf = self.svc.config.safety
+        self.overlay.set_safety(sf.safe_mode, sf.dry_run)
 
     def apply_appearance(self) -> None:
         a = self.svc.config.appearance
@@ -166,6 +178,9 @@ class AppController:
 
     # ------------------------------------------------------------------ state reactions
     def _on_state(self, state: str, _reason: str) -> None:
+        eng = self.svc.engine
+        if self.overlay.stopped and state != "PAUSED" and not (eng and eng.stopped):
+            self.overlay.set_stopped(False)  # resumed after an emergency stop
         self.overlay.set_state(state)
         if state == "WAITING_FOR_CONFIRMATION" and self._last_state != state:
             self.sounds.play("ready")
@@ -178,7 +193,13 @@ class AppController:
 
     def _on_execution(self, d: dict) -> None:
         ok = bool(d.get("ok"))
-        self.overlay.flash_result(ok, d.get("message", ""))
+        if d.get("dry_run"):
+            # show WHERE it would have clicked (live markers + the message stays readable)
+            self.markers.show_points(d.get("clicks") or [], seconds=10)
+            self.overlay.flash_result(ok, d.get("message", ""), hold_s=10)
+            self.toast(d.get("message", "Dry run"), "info")
+            return
+        self.overlay.flash_result(ok, d.get("message", ""), hold_s=1.6 if ok else 6)
         self.sounds.play("confirm" if ok else "error")
         if not ok:
             self.toast(d.get("message", "Action failed"), "warning")
@@ -190,10 +211,12 @@ class AppController:
             return
         c = self.svc.config.controls
         if not c.global_hotkeys:
-            self.hotkeys.set_bindings({})
+            # the emergency stop stays global even when all other hotkeys are off
+            self.hotkeys.set_bindings({"emergency_stop": c.emergency_stop})
             return
         eng = self.svc.engine
-        bindings = {"pause": c.pause, "reanalyze": c.reanalyze, "mini_mode": c.mini_mode, "quit": c.quit}
+        bindings = {"pause": c.pause, "reanalyze": c.reanalyze, "mini_mode": c.mini_mode, "quit": c.quit,
+                    "emergency_stop": c.emergency_stop}
         if eng and eng.sm.state.value == "WAITING_FOR_CONFIRMATION":
             bindings["reject"] = c.reject
             if eng.prediction is not None and not eng.prediction.uncertain:
@@ -219,6 +242,43 @@ class AppController:
             self.overlay.cycle_mode()
         elif action == "quit":
             self.quit()
+        elif action == "emergency_stop":
+            self.emergency_stop()
+
+    def emergency_stop(self) -> None:
+        """Stops everything immediately: no capture, no AI result, no click until RESUME."""
+        eng = self.svc.engine
+        if eng is not None:
+            eng.emergency_stop()
+        self._on_estop()
+
+    def _on_estop(self) -> None:
+        self.markers.clear()
+        self.overlay.set_stopped(True)
+        if not self.overlay.isVisible():
+            self.overlay.show()
+        self.sounds.play("error")
+        self.toast("EMERGENCY STOP - nothing will be clicked. Press RESUME to continue.", "error")
+
+    def create_diagnosis(self) -> None:
+        from PySide6.QtCore import Qt, QUrl
+        from PySide6.QtGui import QDesktopServices
+        from PySide6.QtWidgets import QApplication
+
+        from smart360.health.bundle import create_bundle
+
+        QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
+        try:
+            path = create_bundle(self.svc)
+        except Exception as e:
+            logging.getLogger(__name__).exception("diagnosis failed")
+            self.toast(f"Diagnosis failed: {e}", "error")
+            return
+        finally:
+            QApplication.restoreOverrideCursor()
+        self.toast(f"Diagnosis created: {path.name} (folder opened)", "success")
+        QDesktopServices.openUrl(QUrl.fromLocalFile(str(path.parent)))
+        self.last_diagnosis = path
 
     def confirm(self) -> None:
         eng = self.svc.engine
@@ -324,6 +384,16 @@ def main(argv: list[str] | None = None) -> int:
         "--self-test", action="store_true", help="run diagnostics and exit (exit code 1 on fail)"
     )
     parser.add_argument("--no-splash", action="store_true")
+    parser.add_argument(
+        "--diagnose", action="store_true",
+        help="create the diagnosis ZIP (no API keys/passwords) and exit; see --out",
+    )
+    parser.add_argument("--out", type=Path, help="folder for --diagnose (default: Desktop)")
+    parser.add_argument("--quiet", action="store_true", help="--diagnose: no message box (CI / scripts)")
+    parser.add_argument(
+        "--metrics", type=Path, metavar="PROTOCOL_CSV",
+        help="print the real-device test metrics of a (filled-in) protocol.csv and exit",
+    )
     args = parser.parse_args(argv)
 
     if args.data_dir:
@@ -338,7 +408,27 @@ def main(argv: list[str] | None = None) -> int:
 
     from smart360.services import Services
 
+    if args.metrics:
+        import json
+
+        from smart360.health.protocol import compute_metrics, metrics_text, read_csv
+
+        m = compute_metrics(read_csv(args.metrics))
+        print(metrics_text(m))
+        args.metrics.with_name("metrics.json").write_text(json.dumps(m, indent=2), encoding="utf-8")
+        return 0
+
     services = Services.create(demo=True if args.demo else None)
+
+    if args.diagnose:
+        from smart360.health.bundle import create_bundle
+
+        path = create_bundle(services, args.out)
+        print(f"Diagnosis created: {path}")
+        services.shutdown()
+        if getattr(sys, "frozen", False) and not args.quiet:
+            win32.message_box(APP_NAME, f"Diagnose erstellt / diagnosis created:\n\n{path}")
+        return 0
 
     if args.self_test:
         from smart360.health.diagnostics import run_self_test
@@ -448,6 +538,8 @@ def _install_tray(app, ctrl: AppController) -> None:  # type: ignore[no-untyped-
         ("Open dashboard", ctrl.show_dashboard),
         ("Show / hide overlay", ctrl.toggle_overlay),
         ("Pause / resume", lambda: ctrl.on_hotkey("pause")),
+        ("EMERGENCY STOP (Ctrl+Shift+X)", ctrl.emergency_stop),
+        ("Create diagnosis (ZIP)", ctrl.create_diagnosis),
         (None, None),
         ("Quit", ctrl.quit),
     ):

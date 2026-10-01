@@ -72,6 +72,9 @@ jobs:
         with:
           name: ocr-benchmark-windows
           path: windows/dist/ocr_benchmark_windows.json
+      - name: Stamp build id (commit + run) into the app
+        shell: pwsh
+        run: Set-Content -Path smart360\_build.py -Value "BUILD = 'git ${{ github.sha }} / CI run ${{ github.run_number }}'"
       - name: Build 360Smart.exe (PyInstaller)
         run: pyinstaller packaging/smart360.spec --noconfirm --clean --distpath dist --workpath build
       - name: Self-test frozen app
@@ -93,6 +96,18 @@ jobs:
           $q = Start-Process -FilePath "$env:RUNNER_TEMP\app\360Smart.exe" -ArgumentList "--self-test","--demo","--data-dir","$env:RUNNER_TEMP\st2" -Wait -PassThru
           "installed app self-test exit: $($q.ExitCode)"
           if ($q.ExitCode -ne 0) { exit 1 }
+          # "Create diagnosis" from the installed app (the Start-menu shortcut runs exactly this)
+          $d = Start-Process -FilePath "$env:RUNNER_TEMP\app\360Smart.exe" -ArgumentList "--diagnose","--quiet","--demo","--data-dir","$env:RUNNER_TEMP\st3","--out","$env:RUNNER_TEMP\diag" -Wait -PassThru
+          if ($d.ExitCode -ne 0) { throw "--diagnose exit $($d.ExitCode)" }
+          $zip = Get-ChildItem "$env:RUNNER_TEMP\diag" -Filter "360SMART-Diagnose-*.zip" | Select-Object -First 1
+          if (-not $zip) { throw "diagnosis ZIP not created" }
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          $names = [System.IO.Compression.ZipFile]::OpenRead($zip.FullName).Entries.FullName
+          foreach ($n in "README.txt","report.json","self_test.txt") { if ($names -notcontains $n) { throw "$n missing in diagnosis ZIP" } }
+          "diagnosis ZIP ok: $($zip.Name) ($($zip.Length) bytes): $($names -join ', ')"
+          $lnk = Get-ChildItem "$env:APPDATA\Microsoft\Windows\Start Menu\Programs" -Recurse -Filter "*Diagnose*.lnk" | Select-Object -First 1
+          if (-not $lnk) { throw "Start-menu shortcut 'Diagnose erstellen' missing" }
+          "start menu shortcut: $($lnk.FullName)"
           Get-ChildItem dist | Format-Table Name, Length
           $h = (Get-FileHash dist\360SmartSetup.exe -Algorithm SHA256).Hash
           "360SmartSetup.exe SHA256: $h"

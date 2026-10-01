@@ -7,7 +7,7 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from smart360 import __version__
+from smart360 import BUILD, __version__
 from smart360.ai.base import AIProvider
 from smart360.ai.mock_provider import MockProvider
 from smart360.ai.registry import PROVIDERS, create_provider
@@ -18,6 +18,7 @@ from smart360.capture.targets import CaptureTarget, SimulatorTarget, WindowTarge
 from smart360.core.models import normalize_text
 from smart360.engine.engine import Engine, EngineSettings, EventSink
 from smart360.engine.input import InputDriver, SimulatorInputDriver, Win32InputDriver
+from smart360.engine.trace import SessionTrace
 from smart360.health.monitor import Health, HealthMonitor, PerformanceWatchdog
 from smart360.platform import win32
 from smart360.storage import paths
@@ -73,6 +74,7 @@ class Services:
     provider: AIProvider | None = None
     solver: ResilientSolver | None = None
     notes: list[str] = field(default_factory=list)
+    tracer: SessionTrace | None = None
 
     @property
     def config(self) -> AppConfig:
@@ -152,7 +154,23 @@ class Services:
             auto_advance=c.flags.auto_advance,
             number_input=c.flags.number_input,
             debug_dir=paths.debug_dir() if c.privacy.debug_screenshots else None,
+            safe_mode=c.safety.safe_mode,
+            dry_run=c.safety.dry_run,
         )
+
+    def session_tracer(self) -> SessionTrace | None:
+        """One trace file per app run (kept across engine rebuilds); None when switched off."""
+        pv = self.config.privacy
+        if not pv.session_trace:
+            return None
+        if self.tracer is None:
+            try:
+                self.tracer = SessionTrace(paths.trace_dir(), images=pv.trace_images)
+            except OSError as e:
+                self.health.record_error("UI", f"session trace unavailable: {e}")
+                return None
+        self.tracer.images = pv.trace_images
+        return self.tracer
 
     def build_engine(self, sink: EventSink | None) -> Engine:
         target: CaptureTarget
@@ -179,6 +197,7 @@ class Services:
             sink=sink,
         )
         self.engine.forced_profile = self.config.detection.active_profile
+        self.engine.tracer = self.session_tracer()
         self.health.set(
             "Input",
             Health.HEALTHY if driver else Health.DEGRADED,
@@ -194,6 +213,7 @@ class Services:
         self.engine.profiles = self.profiles()
         self.engine.forced_profile = self.config.detection.active_profile
         self.engine.detector.threshold = self.config.detection.change_threshold
+        self.engine.tracer = self.session_tracer()
         self.history.store_text = self.config.privacy.store_question_text
         self.solver = self.build_solver()
         self.engine.replace_solver(self.solver)
@@ -215,6 +235,7 @@ class Services:
             "python": sys.version.split()[0],
             "platform": sys.platform,
             "qt": qt_version,
+            "build": BUILD,
             "ocr": self.ocr.name,
             "secret_store": self.secrets.backend,
         }

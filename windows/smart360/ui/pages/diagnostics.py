@@ -31,11 +31,17 @@ class DiagnosticsPage(Page):
         super().__init__(ctx)
         self.last_results: list[CheckResult] = []
         run = GlowButton("Run self-test", "ghost", "refresh")
-        export = GlowButton("Export report", "primary", "download")
+        export = GlowButton("Export report", "ghost", "download")
+        self.btn_diagnosis = GlowButton("Create diagnosis (ZIP)", "primary", "download")
+        self.btn_diagnosis.setToolTip(
+            "One ZIP on your desktop with logs, traces and system info - no API keys, no passwords."
+        )
         run.clicked.connect(self._run)
         export.clicked.connect(self._export)
+        self.btn_diagnosis.clicked.connect(self._diagnosis)
         self.header_row.addWidget(run)
         self.header_row.addWidget(export)
+        self.header_row.addWidget(self.btn_diagnosis)
 
         g = self.grid(S.MD)
         self.chips: dict[str, tuple[Chip, object]] = {}
@@ -111,6 +117,11 @@ class DiagnosticsPage(Page):
                 )
             )
             self.results_box.addWidget(w)
+
+    def _diagnosis(self) -> None:
+        fn = self.ctx.extra.get("create_diagnosis")
+        if fn is not None:
+            fn()
 
     def _export(self) -> None:
         default = str(Path.home() / f"360smart-diagnostics-{time.strftime('%Y%m%d-%H%M%S')}.json")

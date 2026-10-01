@@ -41,6 +41,12 @@ def log_dir() -> Path:
     return p
 
 
+def trace_dir() -> Path:
+    p = data_dir() / "trace"
+    p.mkdir(exist_ok=True)
+    return p
+
+
 def debug_dir() -> Path:
     p = data_dir() / "debug"
     p.mkdir(exist_ok=True)

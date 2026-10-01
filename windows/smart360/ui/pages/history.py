@@ -32,6 +32,7 @@ DECISION_COLORS = {
     Decision.REJECTED: C.ERROR,
     Decision.SKIPPED: C.TEXT_3,
     Decision.FAILED: C.WARNING,
+    Decision.DRY_RUN: C.PRIMARY,
 }
 
 

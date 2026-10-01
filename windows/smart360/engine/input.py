@@ -18,6 +18,10 @@ class InputDriver(ABC):
     @abstractmethod
     def type_text(self, text: str) -> None: ...
 
+    def blocked_reason(self, x: int, y: int, expected_window: int | None = None) -> str | None:
+        """Dry run: why a click at (x, y) would be refused right now (None = it would be sent)."""
+        return None
+
 
 class Win32InputDriver(InputDriver):
     name = "win32"
@@ -27,6 +31,12 @@ class Win32InputDriver(InputDriver):
 
     def type_text(self, text: str) -> None:
         win32.type_text(text)
+
+    def blocked_reason(self, x: int, y: int, expected_window: int | None = None) -> str | None:
+        if expected_window is None:
+            return None
+        under = win32.window_at(x, y)
+        return None if under == expected_window else f"another window covers the answer (hwnd {under})"
 
 
 class SimulatorInputDriver(InputDriver):

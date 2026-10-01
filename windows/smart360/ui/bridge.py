@@ -19,6 +19,7 @@ class EngineBridge(QObject):
     error = Signal(str, str)
     hotkey = Signal(str)
     health = Signal(str, object)
+    estop = Signal()
 
     def sink(self, ev: EngineEvent) -> None:
         """Called from engine/worker threads. Only emits signals (never touches widgets)."""
@@ -38,3 +39,5 @@ class EngineBridge(QObject):
             self.stats.emit(dict(d))
         elif ev.kind == "error":
             self.error.emit(d.get("message", ""), d.get("kind", ""))
+        elif ev.kind == "estop":
+            self.estop.emit()

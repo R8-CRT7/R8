@@ -17,6 +17,7 @@ import logging
 import queue
 import threading
 import time
+from collections import deque
 from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field, replace
@@ -72,6 +73,14 @@ class EngineSettings:
     number_input: bool = False
     debug_dir: Any = None  # Path | None - debug screenshots only when set
     settle_s: float = 0.35  # wait after clicks before verifying
+    # Conservative mode for the first real-PC tests: no click for uncertain predictions, estimated checkbox
+    # positions or a window that moved since the question was read; no click retries.
+    safe_mode: bool = False
+    dry_run: bool = False  # do everything up to SendInput, report WHERE it would click, click nothing
+
+
+# blocks after which another attempt cannot help (the same capture gives the same answer)
+_NO_RETRY = {"ambiguous", "checkbox_unreadable", "checkbox_not_found", "window_changed", "estop"}
 
 
 @dataclass
@@ -175,6 +184,11 @@ class Engine:
         self._error_until = 0.0
         self.last_loop_at = 0.0
         self.status = "Starting"
+        self._estop = threading.Event()
+        self.tracer: Any = None  # SessionTrace | None - per-question debug trace (diagnostics)
+        self.transitions: deque[tuple[float, str, str, str]] = deque(maxlen=100)
+        self._t_detect = 0.0
+        self._planned: list[dict[str, Any]] = []
 
     # ================================================================== public API (any thread)
     def start(self) -> None:
@@ -209,6 +223,21 @@ class Engine:
     def resume(self) -> None:
         self._cmds.put(("resume", ()))
 
+    def emergency_stop(self) -> None:
+        """Any thread, takes effect immediately: the approval token is voided under the state-machine lock
+        (an execution in progress stops before its next click), nothing is captured, analysed or clicked
+        until resume()."""
+        self._estop.set()
+        try:
+            self.sm.pause()
+        except Exception:
+            log.exception("emergency stop: pause failed")
+        self._cmds.put(("estop", ()))
+
+    @property
+    def stopped(self) -> bool:
+        return self._estop.is_set()
+
     def toggle_pause(self) -> None:
         self._cmds.put(("toggle_pause", ()))
 
@@ -238,6 +267,7 @@ class Engine:
             log.exception("event sink failed")
 
     def _on_state(self, change: StateChange) -> None:
+        self.transitions.append((time.time(), change.old.value, change.new.value, change.reason))
         self._emit(
             "state",
             old=change.old.value,
@@ -245,6 +275,35 @@ class Engine:
             reason=change.reason,
             question_id=change.question_id,
         )
+
+    def _trace(self, stage: str, /, **data: Any) -> None:
+        if self.tracer is None:
+            return
+        try:
+            self.tracer.record(stage, **data)
+        except Exception:
+            log.debug("trace failed", exc_info=True)
+
+    def _trace_image(self, question_id: str, stage: str, frame: Image.Image, frame_rect: Rect,
+                     profile: LayoutProfile, question: Question | None,
+                     marks: list[dict[str, Any]] | None = None) -> str | None:
+        if self.tracer is None:
+            return None
+        try:
+            n = self.tracer.number(question_id) or 0
+            return self.tracer.image(f"q{n:03d}-{stage}", frame, frame_rect, question, marks,
+                                     band=self._band_rect(profile, frame_rect))
+        except Exception:
+            log.debug("trace image failed", exc_info=True)
+            return None
+
+    def _report(self, ok: bool, message: str, question_id: str, /, mode: str = "click",
+                blocked: str | None = None, **extra: Any) -> None:
+        """One place for every execution outcome: event for the UI + trace line."""
+        data = {"ok": ok, "message": message, "question_id": question_id, "mode": mode, "blocked": blocked,
+                "dry_run": mode == "dry_run", "clicks": list(self._planned), **extra}
+        self._trace("execution", **data)
+        self._emit("execution", **data)
 
     def _set_status(self, text: str) -> None:
         with self._lock:
@@ -301,8 +360,21 @@ class Engine:
             self._analysis_failed(*args)
         elif name == "solver":
             self.solver = args[0]
+        elif name == "estop":
+            self._emergency_stopped()
+
+    def _emergency_stopped(self) -> None:
+        self._planned = []
+        with self._lock:
+            self.question, self.prediction = None, None
+        self._history_row = None
+        self._emit("question", question=None)
+        self._trace("estop")
+        self._emit("estop")
+        self._set_status("STOPPED")
 
     def _resume(self) -> None:
+        self._estop.clear()
         self.sm.resume()
         self.detector.reset()
         self._set_status("Watching for questions")
@@ -324,7 +396,7 @@ class Engine:
     def _tick(self) -> float:
         now = self.clock()
         st = self.sm.state
-        if st is State.PAUSED:
+        if st is State.PAUSED or self._estop.is_set():
             return 0.5
         if st is State.ERROR:
             if now < self._error_until:
@@ -408,8 +480,9 @@ class Engine:
         previous_state = self.sm.state
         gen = self.sm.begin_capture("screen changed" if not force else "recheck requested")
         self._set_status("Reading question…")
+        self._t_detect = time.perf_counter()
         try:
-            question, _frame, problem = self._extract(frame_rect, profile)
+            question, frame, problem = self._extract(frame_rect, profile)
         except CaptureError as e:
             self.health.failure("Capture", str(e))
             self.sm.transition(State.WAITING_FOR_QUESTION, "capture failed")
@@ -420,7 +493,11 @@ class Engine:
             self.sm.transition(State.WAITING_FOR_QUESTION, "extraction failed")
             return
         self.detector.mark_processed(band_img)
+        if self._estop.is_set():
+            return
         if question is None:
+            self._trace("no_question", problem=problem or "no question visible", window=_r(frame_rect),
+                        profile=profile.name, ocr_engine=self.extractor.ocr.name)
             self.health.set(
                 "Vision",
                 Health.HEALTHY if self.extractor.ocr.available() else Health.DEGRADED,
@@ -452,6 +529,17 @@ class Engine:
         self._frame_rect = frame_rect
         self.sm.question_detected(question.question_id, gen)
         self._emit("question", question=question)
+        self._trace(
+            "ocr",
+            question_id=question.question_id,
+            same_as_before=is_same,
+            window=_r(frame_rect),
+            profile=profile.name,
+            ocr_engine=self.extractor.ocr.name,
+            extract_ms=round((time.perf_counter() - self._t_detect) * 1000, 1),
+            image=self._trace_image(question.question_id, "detect", frame, frame_rect, profile, question),
+            **_question_dict(question),
+        )
 
         # Same question re-captured (e.g. user ticked a box manually): keep the prediction.
         if is_same and previous_p is not None and not force:
@@ -599,9 +687,28 @@ class Engine:
             return
         # Publish the prediction BEFORE the state change: anyone reacting to WAITING_FOR_CONFIRMATION
         # (overlay, hotkey registration) must already see the matching prediction.
+        if self._estop.is_set():
+            return
         with self._lock:
             self.prediction = pred
         self._emit("prediction", prediction=pred, question_id=q.question_id)
+        self._trace(
+            "prediction",
+            question_id=q.question_id,
+            source=pred.source.value,
+            model=pred.model,
+            answers=list(pred.answers),
+            answer_texts=[a.text for i in pred.answers if (a := q.answer_by_index(i))],
+            number_answer=pred.number_answer,
+            confidence=round(pred.confidence, 4),
+            model_confidence=round(pred.model_confidence, 4),
+            confidence_breakdown=dict(pred.confidence_breakdown),
+            uncertain=pred.uncertain,
+            threshold=self.settings.confidence_threshold,
+            reason=pred.reason,
+            ai_ms=round(pred.latency_ms, 1),
+            latency_ms=round((time.perf_counter() - self._t_detect) * 1000, 1) if self._t_detect else None,
+        )
         try:
             self.sm.answer_ready(q.question_id, gen, pred.answers or (1,))
         except TransitionError:
@@ -632,6 +739,7 @@ class Engine:
         if kind in ("network", "timeout", "unavailable"):
             self.health.set("AI", Health.DEGRADED, "AI offline")
         self._emit("error", message=str(err), kind=kind)
+        self._trace("ai_error", question_id=q.question_id, kind=kind, message=str(err))
         self._enter_error(
             "AI OFFLINE" if kind in ("network", "timeout", "unavailable") else f"AI error: {err}"
         )
@@ -695,11 +803,17 @@ class Engine:
             self._emit("error", message=f"Reject ignored: {e}", kind="stale")
             return
         self.stats.rejected += 1
+        self._trace("decision", question_id=question_id, decision="rejected")
         self._set_decision(Decision.REJECTED)
         self._emit("stats", **self.stats.as_dict())
         self._set_status("Rejected - waiting for next question")
 
     def _execute(self, question_id: str, answers: tuple[int, ...] | None) -> None:
+        self._planned = []
+        if self._estop.is_set():
+            self._report(False, "Emergency stop is active - nothing was clicked", question_id,
+                         mode="blocked", blocked="estop")
+            return
         pred = self.prediction
         q = self.question
         try:
@@ -707,9 +821,10 @@ class Engine:
                 answers = (1,)  # placeholder index for number answers; texts carry the real value
             token = self.sm.approve_question(question_id, answers)
         except ApprovalError as e:
-            self._emit("execution", ok=False, message=f"Not executed: {e}", question_id=question_id)
+            self._report(False, f"Not executed: {e}", question_id, mode="blocked", blocked="stale")
             return
         assert q is not None
+        self._trace("decision", question_id=question_id, decision="approved", answers=list(token.answers))
         self._approved_texts = tuple(
             q.normalized_answers[i - 1] for i in token.answers if 1 <= i <= len(q.answers)
         )
@@ -718,51 +833,76 @@ class Engine:
         advisory = (not self.settings.execute_on_confirm) or self.input is None
         if q.question_type is QuestionType.NUMBER_INPUT and not self.settings.number_input:
             advisory = True
-        if advisory:
+        low_conf = (
+            not advisory and self.settings.safe_mode and pred is not None and pred.uncertain
+        )
+        if advisory or low_conf:
             self.sm.consume_approval(token)
             self.sm.begin_verify(token)
             self.sm.finish_execution(True)
             self._set_decision(Decision.ACCEPTED)
-            self._emit(
-                "execution",
-                ok=True,
-                message="Accepted (advisory mode - select it yourself)",
-                question_id=question_id,
-                advisory=True,
-            )
-            self._set_status("Accepted")
+            if advisory:
+                self._report(True, "Accepted (advisory mode - select it yourself)", question_id,
+                             mode="advisory", advisory=True)
+                self._set_status("Accepted")
+            else:
+                assert pred is not None
+                self._report(
+                    False,
+                    f"Not clicked: confidence {pred.confidence:.0%} is below the safety threshold "
+                    "(safe mode) - select it yourself if you agree",
+                    question_id, mode="blocked", blocked="low_confidence",
+                )
+                self._set_status("Not clicked (low confidence)")
             return
-        ok, message = self._perform(token, q)
+        ok, message, block = self._perform(token, q)
         self.health.metrics["exec_ms"].add((time.perf_counter() - t0) * 1000)
+        dry = self.settings.dry_run
         if ok:
-            self.health.ok("Input", "last action verified")
-            self._set_decision(Decision.ACCEPTED)
+            self.health.ok("Input", "dry run (nothing clicked)" if dry else "last action verified")
+            self._set_decision(Decision.DRY_RUN if dry else Decision.ACCEPTED)
         else:
             self.stats.failed += 1
-            self.health.failure("Input", message)
+            if block not in ("estop",):
+                self.health.failure("Input", message)
             self._set_decision(Decision.FAILED)
-        self._emit("execution", ok=ok, message=message, question_id=question_id)
+        mode = "dry_run" if dry and ok else ("click" if ok else ("blocked" if block else "failed"))
+        self._report(ok, message, question_id, mode=mode, blocked=block)
         self._emit("stats", **self.stats.as_dict())
-        self._set_status("Done - waiting for next question" if ok else f"Action failed: {message}")
+        if self._estop.is_set():
+            self._set_status("STOPPED")
+        elif dry and ok:
+            self._set_status("Dry run - nothing clicked")
+        else:
+            self._set_status("Done - waiting for next question" if ok else f"Action failed: {message}")
 
-    def _perform(self, token: ApprovalToken, approved_q: Question) -> tuple[bool, str]:
-        """Runs in the engine thread. Every step re-validates the token and the screen."""
+    def _perform(self, token: ApprovalToken, approved_q: Question) -> tuple[bool, str, str | None]:
+        """Runs in the engine thread. Every step re-validates the token and the screen.
+        Returns (ok, message, block category or None)."""
         assert self.input is not None
         try:
             self.sm.consume_approval(token)
         except ApprovalError as e:
             self._finish(False)
-            return False, str(e)
+            return False, str(e), "stale"
+        max_attempts = 1 if self.settings.safe_mode else MAX_EXECUTION_ATTEMPTS
         attempts = 0
         message = "unknown"
         while True:
             attempts += 1
-            ok, message, fresh = self._perform_once(token, approved_q)
+            ok, message, fresh, block = self._perform_once(token, approved_q)
+            if self._estop.is_set():
+                if self.sm.state in (State.EXECUTING_CONFIRMED_ACTION, State.VERIFYING):
+                    self._finish(False)
+                return False, "EMERGENCY STOP - remaining clicks were dropped", "estop"
             if not self.sm.check_token(token):
                 # paused / question vanished mid-action: stop immediately
                 if self.sm.state in (State.EXECUTING_CONFIRMED_ACTION, State.VERIFYING):
                     self._finish(False)
-                return False, "cancelled: question changed or paused"
+                return False, "cancelled: question changed or paused", "question_changed"
+            if self.settings.dry_run:
+                self._finish(ok)
+                return ok, message, block
             self.sm.begin_verify(token)
             if ok:
                 verified, message = self._verify(token, approved_q)
@@ -770,13 +910,20 @@ class Engine:
                     self._finish(True)
                     if self.settings.auto_advance:
                         self._advance()
-                    return True, f"Selected and verified ({attempts} attempt{'s' if attempts > 1 else ''})"
+                    plural = "s" if attempts > 1 else ""
+                    return True, f"Selected and verified ({attempts} attempt{plural})", None
+                block = "verification_failed"
             if fresh is False:  # different question on screen: never retry
                 self._finish(False)
-                return False, message
-            if attempts >= MAX_EXECUTION_ATTEMPTS or not self.sm.retry_execution(token):
+                return False, message, block or "question_changed"
+            if block in _NO_RETRY:
                 self._finish(False)
-                return False, f"{message} (after {attempts} attempts)"
+                return False, message, block
+            if attempts >= max_attempts or not self.sm.retry_execution(token):
+                self._finish(False)
+                if self.settings.safe_mode:
+                    return False, f"{message} - not retried (safe mode)", block
+                return False, f"{message} (after {attempts} attempts)", block
             time.sleep(0.25)
 
     def _finish(self, success: bool) -> None:
@@ -793,66 +940,111 @@ class Engine:
         except (TargetLost, CaptureError):
             self.detector.reset()
 
-    def _perform_once(self, token: ApprovalToken, approved_q: Question) -> tuple[bool, str, bool | None]:
-        """One attempt. Returns (clicked_ok, message, same_question?)."""
+    def _perform_once(
+        self, token: ApprovalToken, approved_q: Question
+    ) -> tuple[bool, str, bool | None, str | None]:
+        """One attempt. Returns (clicked_ok, message, same_question?, block category)."""
+        self._planned = []
         try:
             frame_rect = self.target.locate()
         except TargetLost as e:
-            return False, f"window lost: {e}", None
+            return False, f"window lost: {e}", None, "window_lost"
+        if self.settings.safe_mode and self._frame_rect is not None and frame_rect != self._frame_rect:
+            return (False, "window moved or resized since the question was read - nothing was clicked "
+                    "(press F9 to re-check)", None, "window_changed")
         profile = self._profile_for(frame_rect)
         if profile is None:
-            return False, "no layout profile", None
+            return False, "no layout profile", None, "no_profile"
         try:
             fresh, frame, _ = self._extract(frame_rect, profile)
         except CaptureError as e:
-            return False, f"capture failed: {e}", None
+            return False, f"capture failed: {e}", None, "capture_failed"
         # 1+2. re-check question id against the visible question
         if fresh is None or not same_question(fresh, approved_q):
-            return False, "the visible question changed - nothing was clicked", False
+            self._trace("execute_capture", question_id=approved_q.question_id, same_question=False,
+                        **(_question_dict(fresh) if fresh else {"question": None}))
+            return False, "the visible question changed - nothing was clicked", False, "question_changed"
         if not self.sm.check_token(token):
-            return False, "approval no longer valid", None
+            return False, "approval no longer valid", None, "stale"
         assert self.input is not None
         # number input (experimental flag)
         if fresh.question_type is QuestionType.NUMBER_INPUT:
             pred = self.prediction
             if not pred or not pred.number_answer:
-                return False, "no number to enter", None
+                return False, "no number to enter", None, "no_number"
+            if self.settings.dry_run:
+                return True, f"DRY RUN - would type {pred.number_answer!r}", True, None
             self.input.type_text(pred.number_answer)
-            return True, "number entered", True
-        assert self.input is not None
-        # 3. locate target answers by TEXT in the fresh capture (answer order may differ)
+            return True, "number entered", True, None
+        # 3. locate target answers by TEXT in the fresh capture (answer order may differ); every approved
+        #    text must match exactly ONE answer on screen
         desired: set[int] = set()
         for text in self._approved_texts:
-            match = next((a.index for a in fresh.answers if a.index not in desired and _same(a, text)), None)
-            if match is None:
-                return False, f"answer not found on screen: {text[:40]}", None
-            desired.add(match)
+            matches = [a.index for a in fresh.answers if _same(a, text)]
+            if not matches:
+                return False, f"answer not found on screen: {text[:40]}", None, "answer_not_found"
+            if len(matches) > 1 or matches[0] in desired:
+                msg = f"ambiguous target: '{text[:40]}' matches answers {matches} - nothing was clicked"
+                return False, msg, None, "ambiguous"
+            desired.add(matches[0])
         states = checkbox_states(frame, frame_rect, fresh)
-        clicks = []
-        for a in fresh.answers:
-            want = a.index in desired
-            have = states.get(a.index, False) if states else False
-            if want != have and (states is not None or want):
-                clicks.append(a)
-        # 4. click - re-validate the window position right before input
+        if states is None:
+            # without a readable state a click cannot be verified, and a retry would toggle the box back
+            return False, "checkbox state unreadable - nothing was clicked", None, "checkbox_unreadable"
+        clicks = [a for a in fresh.answers if (a.index in desired) != states.get(a.index, False)]
+        if self.settings.safe_mode and any(not a.checkbox_found for a in clicks):
+            return (False, "checkbox position only estimated (no box found) - nothing was clicked", None,
+                    "checkbox_not_found")
+        hwnd = getattr(self.target, "hwnd", None)
         for a in clicks:
-            if not self.sm.check_token(token):
-                return False, "approval revoked during action", None
-            try:
-                if self.target.locate() != frame_rect:
-                    return False, "window moved during action", None
-            except TargetLost as e:
-                return False, f"window lost during action: {e}", None
             assert a.checkbox is not None
             cx, cy = a.checkbox.center
+            self._planned.append({"answer": a.index, "x": cx, "y": cy, "text": a.text[:60],
+                                  "blocked": self.input.blocked_reason(cx, cy, hwnd) if self.settings.dry_run
+                                  else None})
+        self._trace(
+            "execute_capture",
+            question_id=approved_q.question_id,
+            same_question=True,
+            window=_r(frame_rect),
+            checkbox_states={str(k): v for k, v in states.items()},
+            planned_clicks=list(self._planned),
+            dry_run=self.settings.dry_run,
+            image=self._trace_image(approved_q.question_id, "dryrun" if self.settings.dry_run else "execute",
+                                    frame, frame_rect, profile, fresh, self._planned),
+        )
+        if self.settings.dry_run:
+            if not clicks:
+                return True, "DRY RUN - the approved answers are already selected (no click)", True, None
+            where = "; ".join(
+                f"answer {c['answer']} at ({c['x']}, {c['y']})"
+                + (f" - BLOCKED: {c['blocked']}" if c["blocked"] else "")
+                for c in self._planned
+            )
+            return True, f"DRY RUN - would click {where}", True, None
+        # 4. click - re-validate the window position right before input
+        for plan in self._planned:
+            if self._estop.is_set():
+                return False, "EMERGENCY STOP - remaining clicks were dropped", None, "estop"
+            if not self.sm.check_token(token):
+                return False, "approval revoked during action", None, "stale"
+            try:
+                if self.target.locate() != frame_rect:
+                    return False, "window moved during action", None, "window_moved"
+            except TargetLost as e:
+                return False, f"window lost during action: {e}", None, "window_lost"
+            if self._estop.is_set():  # last check, immediately before SendInput
+                return False, "EMERGENCY STOP - remaining clicks were dropped", None, "estop"
             try:
                 # WindowTarget knows the learning window: refuse to click if anything covers the answer
-                self.input.click(cx, cy, expected_window=getattr(self.target, "hwnd", None))
+                self.input.click(plan["x"], plan["y"], expected_window=hwnd)
+                plan["sent"] = True
             except Exception as e:
-                return False, f"not clicked: {e}", None
+                blocked = "covered" if "cover" in str(e) else "input_error"
+                return False, f"not clicked: {e}", None, blocked
             time.sleep(0.06)
         time.sleep(self.settings.settle_s)
-        return True, "clicked", True
+        return True, "clicked", True, None
 
     def _verify(self, token: ApprovalToken, approved_q: Question) -> tuple[bool, str]:
         """5+6. visual verification: same question, checkbox states match the approval."""
@@ -865,13 +1057,26 @@ class Engine:
         except (TargetLost, CaptureError) as e:
             return False, f"verification capture failed: {e}"
         if fresh is None or not same_question(fresh, approved_q):
+            self._trace("verification", question_id=approved_q.question_id, ok=False, same_question=False)
             return False, "question changed during verification"
         desired = {a.index for a in fresh.answers if any(_same(a, t) for t in self._approved_texts)}
         states = checkbox_states(frame, frame_rect, fresh)
         if states is None:
+            self._trace("verification", question_id=approved_q.question_id, ok=False,
+                        reason="state unreadable")
             return False, "could not read checkbox state"
         actual = {k for k, v in states.items() if v}
-        if actual == desired:
+        ok = actual == desired
+        self._trace(
+            "verification",
+            question_id=approved_q.question_id,
+            ok=ok,
+            expected=sorted(desired),
+            seen=sorted(actual),
+            image=self._trace_image(approved_q.question_id, "verify", frame, frame_rect, profile, fresh,
+                                    self._planned),
+        )
+        if ok:
             return True, "verified"
         return False, f"selection mismatch (expected {sorted(desired)}, saw {sorted(actual)})"
 
@@ -902,3 +1107,28 @@ def _with_identity(q: Question, previous: Question) -> Question | None:
 def _same(option, normalized_text: str) -> bool:  # type: ignore[no-untyped-def]
     t = normalize_text(option.text)
     return numeric_tokens(t) == numeric_tokens(normalized_text) and fuzz.ratio(t, normalized_text) >= 92
+
+
+def _r(r: Rect | None) -> list[int] | None:
+    return [r.x, r.y, r.w, r.h] if r is not None else None
+
+
+def _question_dict(q: Question) -> dict[str, Any]:
+    """Trace view of a question: texts, OCR quality and the click targets in screen pixels."""
+    return {
+        "question": q.text,
+        "question_type": q.question_type.value,
+        "ocr_confidence": round(q.ocr_confidence, 3),
+        "layout_confidence": round(q.layout_confidence, 3),
+        "has_image": q.has_image,
+        "answers": [
+            {
+                "index": a.index,
+                "text": a.text,
+                "ocr_confidence": round(a.ocr_confidence, 3),
+                "checkbox": _r(a.checkbox),
+                "checkbox_found": a.checkbox_found,
+            }
+            for a in q.answers
+        ],
+    }

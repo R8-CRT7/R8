@@ -19,14 +19,19 @@ _KEY_PATTERNS = [
     re.compile(r"sk-ant-[A-Za-z0-9_\-]{8,}"),
     re.compile(r"sk-[A-Za-z0-9_\-]{16,}"),
     re.compile(r"AIza[0-9A-Za-z_\-]{20,}"),
-    re.compile(r"(?i)(api[_-]?key|authorization|x-api-key)(\"?\s*[:=]\s*\"?)[^\s\",]+"),
+    re.compile(r"(?i)\bbearer\s+[A-Za-z0-9._~+/\-]{8,}=*"),
+    re.compile(
+        r"(?i)\b(api[_-]?key|authorization|x-api-key|password|passwd|pwd|secret(?!_store)|"
+        r"(?:access|refresh|auth|id|session)?_?token)(\"?\s*[:=]\s*\"?)[^\s\",]+"
+    ),
 ]
 
 
 def redact(text: str) -> str:
-    for p in _KEY_PATTERNS[:3]:
+    """Scrubs key/token/password-shaped values (logs, diagnosis export, traces)."""
+    for p in _KEY_PATTERNS[:4]:
         text = p.sub("[REDACTED]", text)
-    return _KEY_PATTERNS[3].sub(r"\1\2[REDACTED]", text)
+    return _KEY_PATTERNS[4].sub(r"\1\2[REDACTED]", text)
 
 
 class RedactingFilter(logging.Filter):

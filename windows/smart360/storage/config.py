@@ -57,6 +57,7 @@ class ControlSettings(BaseModel):
     reanalyze: str = "F9"
     mini_mode: str = "CTRL+SHIFT+M"
     quit: str = "CTRL+SHIFT+Q"
+    emergency_stop: str = "CTRL+SHIFT+X"  # always registered: stops everything, shows STOPPED
     global_hotkeys: bool = True
     execute_on_confirm: bool = True  # False = advisory only, never touch the mouse
 
@@ -72,9 +73,24 @@ class AppearanceSettings(BaseModel):
     system_backdrop: bool = True
 
 
+class SafetySettings(BaseModel):
+    """Conservative defaults for the first tests on a real PC with the real 360° online software."""
+
+    model_config = ConfigDict(extra="ignore")
+    # no click for uncertain predictions, estimated checkbox positions, a window that moved since the
+    # question was read, ambiguous targets; no click retries
+    safe_mode: bool = True
+    # do everything up to the click, show WHERE it would click, click nothing - switch off deliberately
+    dry_run: bool = True
+
+
 class PrivacySettings(BaseModel):
     model_config = ConfigDict(extra="ignore")
     debug_screenshots: bool = False
+    # per-question trace (capture -> OCR -> AI -> decision -> click) for "Create diagnosis"; images are crops
+    # of the question/answer area only. Never contains API keys.
+    session_trace: bool = True
+    trace_images: bool = True
     store_question_text: bool = True
     history_retention_days: int = Field(90, ge=1, le=3650)
 
@@ -96,6 +112,7 @@ class AppConfig(BaseModel):
     controls: ControlSettings = Field(default_factory=ControlSettings)
     appearance: AppearanceSettings = Field(default_factory=AppearanceSettings)
     privacy: PrivacySettings = Field(default_factory=PrivacySettings)
+    safety: SafetySettings = Field(default_factory=SafetySettings)
     flags: FeatureFlags = Field(default_factory=FeatureFlags)
 
     @field_validator("version")

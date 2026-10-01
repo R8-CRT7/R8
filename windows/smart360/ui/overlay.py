@@ -117,6 +117,7 @@ class OverlayWindow(QWidget):
     reject = Signal()
     recheck = Signal()
     pause_toggled = Signal()
+    emergency_stop = Signal()
     open_dashboard = Signal()
     mode_changed = Signal(str)
     moved = Signal(QPoint)
@@ -144,6 +145,9 @@ class OverlayWindow(QWidget):
         self._drag: QPoint | None = None
         self._orbit_expanded = False
         self._flash_until = 0.0
+        self.stopped = False
+        self.safe_mode = False
+        self.dry_run = False
 
         self.shell = _GlassShell(self)
         self.stack = QStackedLayout(self.shell)
@@ -239,10 +243,14 @@ class OverlayWindow(QWidget):
         self.btn_resume = GlowButton("RESUME", "primary", "play")
         self.btn_resume.clicked.connect(self.pause_toggled.emit)
         self.btn_resume.hide()
-        row = hbox(self.btn_confirm, self.btn_resume, self.btn_recheck, spacing=S.SM)
+        self.btn_stop = GlowButton("STOP", "danger", "pause")
+        self.btn_stop.setToolTip("Emergency stop (Ctrl+Shift+X): stops everything, nothing is clicked")
+        self.btn_stop.clicked.connect(self.emergency_stop.emit)
+        row = hbox(self.btn_confirm, self.btn_resume, self.btn_recheck, self.btn_stop, spacing=S.SM)
         row.setStretch(0, 3)
         row.setStretch(1, 3)
         row.setStretch(2, 2)
+        row.setStretch(3, 2)
         lay.addLayout(row)
         lay.addSpacing(S.MD)
         self.k_enter = KeyCap("ENTER", "Confirm")
@@ -360,14 +368,24 @@ class OverlayWindow(QWidget):
     def set_ai_status(self, text: str, color: QColor) -> None:
         self.f_ai.set(text, color)
 
-    def flash_result(self, ok: bool, message: str) -> None:
+    def flash_result(self, ok: bool, message: str, hold_s: float = 1.6) -> None:
         pulse_state = CONFIRMED if ok else ERROR
         for pl in (self.f_pulse, self.c_pulse, self.o_pulse):
             pl.set_state(pulse_state)
         self.f_reason.setText(message)
         set_label_color(self.f_reason, C.SUCCESS if ok else C.ERROR)
-        self._flash_until = time.monotonic() + 1.6
-        self._status_timer.start(1700)
+        self._flash_until = time.monotonic() + hold_s
+        self._status_timer.start(int(hold_s * 1000) + 100)
+
+    def set_safety(self, safe_mode: bool, dry_run: bool) -> None:
+        self.safe_mode, self.dry_run = safe_mode, dry_run
+        self._refresh()
+
+    def set_stopped(self, stopped: bool) -> None:
+        self.stopped = stopped
+        if stopped:
+            self._flash_until = 0.0
+        self._refresh()
 
     def set_reduce_motion(self, on: bool) -> None:
         for pl in (self.f_pulse, self.c_pulse, self.o_pulse):
@@ -390,8 +408,14 @@ class OverlayWindow(QWidget):
         title = STATE_TITLES.get(st, st)
         if waiting and uncertain:
             title = "CHECK THIS ONE"
+        if self.stopped:
+            title = "STOPPED"
+        elif self.dry_run:
+            title = f"DRY RUN · {title}"
         self.f_state.setText(title)
         state_color = {"ERROR": C.ERROR, "PAUSED": C.TEXT_2}.get(st, C.WARNING if uncertain else C.PRIMARY)
+        if self.stopped:
+            state_color = C.ERROR
         set_label_color(self.f_state, state_color)
         self.shell.accent = state_color if st in ("ERROR",) or uncertain else (C.PRIMARY if waiting else None)
         q = self.question
@@ -430,12 +454,22 @@ class OverlayWindow(QWidget):
                 }.get(st, "Waiting for the next question.")
             )
             set_label_color(self.f_reason, C.TEXT_2)
+        if self.stopped:
+            self.f_reason.setText(
+                "EMERGENCY STOP - nothing is captured, sent or clicked. Press RESUME (or F8) to continue."
+            )
+            set_label_color(self.f_reason, C.ERROR)
         self.f_manual.setVisible(waiting and uncertain)
         self.btn_confirm.setEnabled(waiting)
         self.btn_confirm.kind = "warning" if uncertain else "primary"
-        self.btn_confirm.setText("CONFIRM" if not uncertain else "CONFIRM ANYWAY")
+        if uncertain and self.safe_mode:
+            self.btn_confirm.setText("ACCEPT · NO CLICK")
+        elif self.dry_run:
+            self.btn_confirm.setText("CONFIRM (DRY RUN)")
+        else:
+            self.btn_confirm.setText("CONFIRM" if not uncertain else "CONFIRM ANYWAY")
         self.btn_confirm.update()
-        paused = st == "PAUSED"
+        paused = st == "PAUSED" or self.stopped
         self.btn_confirm.setVisible(not paused)
         self.btn_resume.setVisible(paused)
         self.btn_recheck.setEnabled(st not in ("PAUSED", "EXECUTING_CONFIRMED_ACTION", "VERIFYING"))
@@ -447,7 +481,9 @@ class OverlayWindow(QWidget):
 
         # ---- focus
         self.c_answer.setText(
-            answer_text(p)
+            "STOPPED"
+            if self.stopped
+            else answer_text(p)
             if p
             else {"PAUSED": "Paused", "ERROR": "Attention"}.get(
                 st, "Watching" if not analyzing else "Analyzing…"
@@ -463,6 +499,8 @@ class OverlayWindow(QWidget):
 
         # ---- orbit tooltip
         tip = f"{answer_text(p)}   {p.confidence * 100:.0f} %" if p else STATE_TITLES.get(st, st).title()
+        if self.stopped:
+            tip = "STOPPED (emergency stop)"
         self.orbit.setToolTip(f"360 SMART · {tip}\nClick to expand")
 
     # ================================================================== interaction

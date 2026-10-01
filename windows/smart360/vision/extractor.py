@@ -213,7 +213,7 @@ class QuestionExtractor:
             y1 = max(line.bbox.y + line.bbox.h for line in group)
             first = group[0]
             row = Rect(x0, y0, x1 - x0, y1 - y0)
-            cb_local = _find_checkbox(a_img, first.bbox, row)
+            cb_local, cb_found = _find_checkbox(a_img, first.bbox, row)
             answers.append(
                 AnswerOption(
                     index=idx,
@@ -221,6 +221,7 @@ class QuestionExtractor:
                     bbox=row.translated(ox, oy),
                     checkbox=cb_local.translated(ox, oy),
                     ocr_confidence=statistics.fmean(line.confidence for line in group),
+                    checkbox_found=cb_found,
                 )
             )
         n = len(answers)
@@ -280,24 +281,64 @@ def _group_rows(lines: list[OcrLine]) -> list[list[OcrLine]]:
     return groups
 
 
-def _find_checkbox(a_img: Image.Image, first_line: Rect, row: Rect) -> Rect:
-    """Locate the checkbox left of the first text line: the darkest-edge square in the band
-    between the region's left border and the text start. Falls back to the band centre."""
+def _find_square(a_img: Image.Image, first_line: Rect) -> Rect | None:
+    """A checkbox = a square outline with four (almost) continuous dark edges, searched left of the text and
+    at the start of the first text line (OCR engines often include the box glyph in the line: "[]", "C]").
+    Letters never have four straight edges of equal length. Returns None when no square is found."""
+    h = max(6, first_line.h)
+    cy = first_line.y + first_line.h // 2
+    x1 = min(a_img.width, first_line.x + 3 * h)
+    y0, y1 = max(0, cy - int(1.3 * h)), min(a_img.height, cy + int(1.3 * h) + 1)
+    if x1 < 6 or y1 - y0 < 6:
+        return None
+    g = np.asarray(a_img.convert("L").crop((0, y0, x1, y1)), dtype=np.float32)
+    bg = float(np.median(g))
+    dark = (g < bg - max(40.0, (bg - float(np.percentile(g, 2))) / 2)).astype(np.int32)
+    rows, cols = dark.shape
+    cum_y = np.vstack([np.zeros((1, cols), np.int32), np.cumsum(dark, axis=0)])  # column runs
+    cum_x = np.hstack([np.zeros((rows, 1), np.int32), np.cumsum(dark, axis=1)])  # row runs
+    best: tuple[float, Rect] | None = None
+    for k in range(max(6, int(0.55 * h)), min(rows, cols, int(1.9 * h)) + 1):
+        need = 0.85 * k
+        col_run = cum_y[k:, :] - cum_y[:-k, :]  # [y, x] dark count in column x, rows y..y+k-1
+        row_run = cum_x[:, k:] - cum_x[:, :-k]  # [y, x] dark count in row y, cols x..x+k-1
+        ny, nx = rows - k + 1, cols - k + 1
+        left = col_run[:ny, :nx] >= need
+        right = col_run[:ny, k - 1 : k - 1 + nx] >= need
+        top = row_run[:ny, :nx] >= need
+        bottom = row_run[k - 1 : k - 1 + ny, :nx] >= need
+        hits = np.argwhere(left & right & top & bottom)
+        for yy, xx in hits:
+            centre_off = abs((y0 + yy + k / 2) - cy)
+            if centre_off > 0.6 * k:
+                continue
+            score = xx + centre_off - 0.5 * k  # leftmost, centred, prefer the full (outer) box
+            if best is None or score < best[0]:
+                best = (score, Rect(int(xx), int(y0 + yy), k, k))
+    return best[1] if best else None
+
+
+def _find_checkbox(a_img: Image.Image, first_line: Rect, row: Rect) -> tuple[Rect, bool]:
+    """Locate the checkbox of an answer row. Returns (rect, found): found=True only when a real square
+    outline was detected (_find_square); otherwise the rect is an estimate (darkest-edge column left of the
+    text, band centre or text start) and found is False - safe mode never clicks an estimate."""
+    square = _find_square(a_img, first_line)
+    if square is not None:
+        return square, True
     band_x1 = max(1, first_line.x - 2)
     cy = first_line.y + first_line.h // 2
     size = max(10, int(first_line.h * 1.3))
     if band_x1 < size // 2:
-        # no room left of the text: click the start of the text row itself
-        return Rect(first_line.x, cy - size // 2, size, size)
+        # no room left of the text: estimate = the start of the text row itself
+        return Rect(first_line.x, cy - size // 2, size, size), False
     y0 = max(0, cy - size)
     y1 = min(a_img.height, cy + size)
     band = np.asarray(a_img.convert("L").crop((0, y0, band_x1, y1)), dtype=np.float32)
     if band.size == 0:
-        return Rect(band_x1 // 2 - size // 2, cy - size // 2, size, size)
+        return Rect(band_x1 // 2 - size // 2, cy - size // 2, size, size), False
     edges = np.abs(np.diff(band, axis=1)).sum(axis=0)
     if edges.max() < 200:
-        cx = band_x1 // 2
-    else:
-        cols = np.where(edges > edges.max() * 0.5)[0]
-        cx = int((cols.min() + cols.max()) / 2)
-    return Rect(max(0, cx - size // 2), cy - size // 2, size, size)
+        return Rect(max(0, band_x1 // 2 - size // 2), cy - size // 2, size, size), False
+    cols = np.where(edges > edges.max() * 0.5)[0]
+    cx = int((cols.min() + cols.max()) / 2)
+    return Rect(max(0, cx - size // 2), cy - size // 2, size, size), False

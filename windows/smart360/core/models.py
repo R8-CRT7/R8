@@ -105,6 +105,7 @@ class AnswerOption:
     bbox: Rect | None = None  # absolute screen coordinates of the whole answer row
     checkbox: Rect | None = None  # click target (left part of the row)
     ocr_confidence: float = 1.0
+    checkbox_found: bool = True  # False = position estimated (no box edges found) - safe mode won't click
 
 
 @dataclass(frozen=True, slots=True)
@@ -192,6 +193,7 @@ class Decision(StrEnum):
     REJECTED = "rejected"
     SKIPPED = "skipped"  # question changed before the user decided
     FAILED = "failed"  # accepted but execution failed
+    DRY_RUN = "dry_run"  # accepted in dry-run mode: targets shown, nothing clicked
 
 
 @dataclass(frozen=True, slots=True)
