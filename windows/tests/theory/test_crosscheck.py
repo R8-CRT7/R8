@@ -47,3 +47,18 @@ def test_engine_hook_only_adds_uncertainty():
     assert out.uncertain and "Regel-Engine widerspricht" in out.reason
     ok = eng._theory_crosscheck(FakeQ(), replace(p, answers=(1,)))
     assert not ok.uncertain and ok.confidence == p.confidence
+
+
+def test_unverified_knowledge_never_makes_the_crosscheck_block(monkeypatch):
+    """Even a (hypothetical) confident theory result is ignored when it rests on an unverified rule."""
+    from smart360.theory import crosscheck as cc
+    from smart360.theory.kb import get_kb
+    from smart360.theory.reasoning import AnswerEval, TheoryResult, Verdict
+
+    unverified = next(i for i, s in get_kb().status.items() if s == "unverified")
+    fake = TheoryResult((2,), None, [AnswerEval(1, Verdict.FALSE, "claim", [unverified]),
+                                     AnswerEval(2, Verdict.TRUE, "claim", [unverified])],
+                        0.95, False, [], set(), {}, [])
+    monkeypatch.setattr(cc, "solve", lambda *a, **k: fake)
+    res = cc.crosscheck("Frage?", ["A", "B"], False, 1.0, False, (1,), None)
+    assert res.verdict == "theory_uncertain" and not res.should_block

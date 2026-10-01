@@ -3,7 +3,9 @@
 It can only make a prediction MORE conservative:
   * theory engine sure AND different answer  ->  prediction becomes uncertain (no click in safe mode)
   * theory engine uncertain or agreeing      ->  prediction unchanged
-It never raises a confidence, never clears 'uncertain', never selects answers itself."""
+It never raises a confidence, never clears 'uncertain', never selects answers itself.
+Unverified knowledge (FeV/StVG/BKatV without official text) can never make it block: a theory result that rests on
+an unverified rule counts as 'theory_uncertain' (defence in depth - the engine already caps it as uncertain)."""
 
 from __future__ import annotations
 
@@ -38,6 +40,11 @@ def crosscheck(question: str, answers: list[str], number_input: bool, ocr_confid
         return CrossCheck("error", reasons=(f"{type(e).__name__}",))
     if r.uncertain:
         return CrossCheck("theory_uncertain", r.selected, r.number_answer, r.confidence, tuple(r.reasons[:3]))
+    from smart360.theory.kb import get_kb
+
+    kb = get_kb()
+    if any(not kb.verified(x) for e in r.evals if e.verdict.value != "UNKNOWN" for x in e.evidence):
+        return CrossCheck("theory_uncertain", r.selected, r.number_answer, r.confidence, ("unverified_knowledge",))
     if number_input:
         same = _num(r.number_answer) is not None and _num(r.number_answer) == _num(ai_number)
     else:
