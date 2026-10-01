@@ -1,0 +1,29 @@
+{"items": [
+{"id": "LEG_PROBATION", "topic": "03_legal", "subtopic": "probezeit", "title": "Probezeit",
+ "rule": "Probezeit von zwei Jahren beim Ersterwerb; bei schwerwiegenden oder zwei weniger schwerwiegenden Verstößen: Aufbauseminar und Verlängerung auf vier Jahre. Werte aus StVG § 2a – NICHT amtlich verifiziert (StVG nicht im RIS-Testbestand).",
+ "numeric_refs": ["STVG_2A_PROBATION_YEARS"],
+ "concepts": ["probezeit", "aufbauseminar"], "keywords": ["Probezeit", "Aufbauseminar", "Fahranfänger", "zwei Jahre", "Verlängerung"],
+ "exam_relevance": 3, "difficulty": 2, "confidence": 0.8,
+ "sources": [{"type": "law", "law": "stvg", "norm": "§ 2a", "ref": "StVG § 2a – NICHT verifiziert"}],
+ "claims": [
+  {"context": ["Probezeit", "Dauer"], "statement": "Die Probezeit dauert zwei Jahre", "truth": true, "numbers": ["zwei Jahre"]},
+  {"context": ["Probezeit", "Dauer"], "statement": "Die Probezeit dauert ein Jahr", "truth": false}]},
+
+{"id": "LEG_POINTS", "topic": "03_legal", "subtopic": "punkte", "title": "Fahreignungs-Bewertungssystem",
+ "rule": "Bei 8 oder mehr Punkten im Fahreignungsregister wird die Fahrerlaubnis entzogen (Vorstufen: Ermahnung, Verwarnung). Aus StVG § 4 – NICHT amtlich verifiziert.",
+ "numeric_refs": ["STVG_4_POINTS_REVOKE"],
+ "concepts": ["punkte", "fahrerlaubnis"], "keywords": ["Punkte", "Flensburg", "Fahreignungsregister", "Entziehung"],
+ "exam_relevance": 2, "difficulty": 2, "confidence": 0.8,
+ "sources": [{"type": "law", "law": "stvg", "norm": "§ 4", "ref": "StVG § 4 – NICHT verifiziert"}],
+ "claims": [
+  {"context": ["Punkte", "Entziehung"], "statement": "Ab 8 Punkten wird die Fahrerlaubnis entzogen", "truth": true}]},
+
+{"id": "LEG_SPECIAL_RIGHTS", "topic": "03_legal", "subtopic": "sonderrechte", "title": "Sonderrechte",
+ "rule": "Polizei, Feuerwehr, Bundeswehr, Bundespolizei, Katastrophenschutz und Zoll sind von der StVO befreit, soweit zur Erfüllung hoheitlicher Aufgaben dringend geboten; Rettungsdienst, wenn höchste Eile geboten ist, um Menschenleben zu retten oder schwere Gesundheitsschäden abzuwenden. Sonderrechte nur unter gebührender Berücksichtigung der öffentlichen Sicherheit und Ordnung.",
+ "concepts": ["sonderrechte", "einsatzfahrzeug"], "keywords": ["Sonderrechte", "Rettungsdienst", "Feuerwehr", "Polizei", "hoheitlich"],
+ "exam_relevance": 1, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 35", "para": "Abs. 5a", "evidence": "Fahrzeuge des Rettungsdienstes sind von den Vorschriften dieser Verordnung befreit, wenn höchste Eile geboten ist, um Menschenleben zu retten oder schwere gesundheitliche Schäden abzuwenden."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 35", "para": "Abs. 8", "evidence": "Die Sonderrechte dürfen nur unter gebührender Berücksichtigung der öffentlichen Sicherheit und Ordnung ausgeübt werden."}],
+ "claims": [
+  {"context": ["Rettungsdienst", "Sonderrechte"], "statement": "Der Rettungsdienst ist von den Vorschriften der StVO befreit, wenn höchste Eile geboten ist, um Menschenleben zu retten", "truth": true}]}
+]}

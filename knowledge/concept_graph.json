@@ -1,0 +1,264 @@
+{
+ "edges": [
+  {
+   "a": "geschwindigkeit",
+   "b": "reaktionsweg",
+   "relation": "influences"
+  },
+  {
+   "a": "geschwindigkeit",
+   "b": "anhalteweg",
+   "relation": "influences"
+  },
+  {
+   "a": "reaktionsweg",
+   "b": "anhalteweg",
+   "relation": "part_of"
+  },
+  {
+   "a": "bremsweg",
+   "b": "anhalteweg",
+   "relation": "part_of"
+  },
+  {
+   "a": "geschwindigkeit",
+   "b": "bremsweg",
+   "relation": "influences"
+  },
+  {
+   "a": "sichtweite",
+   "b": "geschwindigkeit",
+   "relation": "influences"
+  },
+  {
+   "a": "nebel",
+   "b": "sichtweite",
+   "relation": "influences"
+  },
+  {
+   "a": "ablenkung",
+   "b": "reaktionsweg",
+   "relation": "influences"
+  },
+  {
+   "a": "muedigkeit",
+   "b": "reaktionsweg",
+   "relation": "influences"
+  },
+  {
+   "a": "alkohol",
+   "b": "reaktionsweg",
+   "relation": "influences"
+  },
+  {
+   "a": "alkohol",
+   "b": "fahrtuechtigkeit",
+   "relation": "influences"
+  },
+  {
+   "a": "muedigkeit",
+   "b": "fahrtuechtigkeit",
+   "relation": "influences"
+  },
+  {
+   "a": "medikamente",
+   "b": "fahrtuechtigkeit",
+   "relation": "influences"
+  },
+  {
+   "a": "reifen",
+   "b": "bremsweg",
+   "relation": "influences"
+  },
+  {
+   "a": "profil",
+   "b": "aquaplaning",
+   "relation": "influences"
+  },
+  {
+   "a": "abstand",
+   "b": "anhalteweg",
+   "relation": "requires"
+  },
+  {
+   "a": "polizei",
+   "b": "rangfolge",
+   "relation": "part_of"
+  },
+  {
+   "a": "ampel",
+   "b": "rangfolge",
+   "relation": "part_of"
+  },
+  {
+   "a": "verkehrszeichen",
+   "b": "rangfolge",
+   "relation": "part_of"
+  },
+  {
+   "a": "rechts_vor_links",
+   "b": "rangfolge",
+   "relation": "part_of"
+  },
+  {
+   "a": "rangfolge",
+   "b": "vorfahrt",
+   "relation": "related"
+  },
+  {
+   "a": "kreisverkehr",
+   "b": "vorfahrt",
+   "relation": "related"
+  },
+  {
+   "a": "abknickende_vorfahrt",
+   "b": "vorfahrt",
+   "relation": "related"
+  },
+  {
+   "a": "gruenpfeil",
+   "b": "ampel",
+   "relation": "exception_of"
+  },
+  {
+   "a": "einfahren",
+   "b": "vorfahrt",
+   "relation": "exception_of"
+  },
+  {
+   "a": "abbiegen",
+   "b": "gegenverkehr",
+   "relation": "related"
+  },
+  {
+   "a": "abbiegen",
+   "b": "radfahrer",
+   "relation": "related"
+  },
+  {
+   "a": "abbiegen",
+   "b": "fussgaenger",
+   "relation": "related"
+  },
+  {
+   "a": "abbiegen",
+   "b": "blinken",
+   "relation": "requires"
+  },
+  {
+   "a": "ueberholen",
+   "b": "gegenverkehr",
+   "relation": "related"
+  },
+  {
+   "a": "ueberholen",
+   "b": "seitenabstand",
+   "relation": "requires"
+  },
+  {
+   "a": "ueberholen",
+   "b": "blinken",
+   "relation": "requires"
+  },
+  {
+   "a": "fahrstreifen",
+   "b": "blinken",
+   "relation": "requires"
+  },
+  {
+   "a": "einsatzfahrzeug",
+   "b": "rangfolge",
+   "relation": "related"
+  },
+  {
+   "a": "bahnuebergang",
+   "b": "vorrang",
+   "relation": "related"
+  },
+  {
+   "a": "andreaskreuz",
+   "b": "bahnuebergang",
+   "relation": "part_of"
+  },
+  {
+   "a": "zebrastreifen",
+   "b": "fussgaenger",
+   "relation": "related"
+  },
+  {
+   "a": "halten",
+   "b": "parken",
+   "relation": "precedes"
+  },
+  {
+   "a": "panne",
+   "b": "absichern",
+   "relation": "requires"
+  },
+  {
+   "a": "unfall",
+   "b": "absichern",
+   "relation": "requires"
+  },
+  {
+   "a": "unfall",
+   "b": "erste_hilfe",
+   "relation": "requires"
+  },
+  {
+   "a": "anhaenger",
+   "b": "geschwindigkeit",
+   "relation": "influences"
+  },
+  {
+   "a": "anhaenger",
+   "b": "fahrerlaubnis",
+   "relation": "related"
+  },
+  {
+   "a": "gesamtmasse",
+   "b": "fahrerlaubnis",
+   "relation": "influences"
+  },
+  {
+   "a": "ladung",
+   "b": "ladungssicherung",
+   "relation": "requires"
+  },
+  {
+   "a": "beleuchtung",
+   "b": "sichtweite",
+   "relation": "related"
+  },
+  {
+   "a": "kinder",
+   "b": "vorsicht",
+   "relation": "requires"
+  },
+  {
+   "a": "probezeit",
+   "b": "alkohol",
+   "relation": "related"
+  },
+  {
+   "a": "handy",
+   "b": "ablenkung",
+   "relation": "part_of"
+  },
+  {
+   "a": "autobahn",
+   "b": "einfahren",
+   "relation": "related"
+  },
+  {
+   "a": "stau",
+   "b": "rettungsgasse",
+   "relation": "requires"
+  },
+  {
+   "a": "winter",
+   "b": "reifen",
+   "relation": "requires"
+  }
+ ]
+}

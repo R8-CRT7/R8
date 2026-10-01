@@ -14,7 +14,7 @@ STOPWORDS = frozenset(
     mit nach von vor zu zum zur über unter um durch für gegen ohne bis ich sie er es wir ihr man sich mich mir
     ist sind war wird werden wurde haben hat habe hatte sein ihre ihren seinem seiner seine dieser diese dieses
     diesem diesen jetzt dann da hier dort wenn weil dass ob was welche welcher welches wer wo wohin woran
-    worauf wie viel viele einem einer eines sollten sollen würden würde ja schon noch nun nur_ etwa
+    worauf wie viel viele beim vom ins zum einem einer eines sollten sollen würden würde ja schon noch nun nur_ etwa
     """.split()
 )
 
@@ -79,13 +79,56 @@ def stem(word: str) -> str:
     return w
 
 
+# Synonyms used in exam questions -> one canonical token (applied before tokenising)
+SYNONYMS: tuple[tuple[re.Pattern[str], str], ...] = tuple((re.compile(p), r) for p, r in (
+    (r"\baußerhalb geschlossener ortschaften?\b|\bausserhalb geschlossener ortschaften?\b|\baußerorts\b|\bausserorts\b", "außerorts"),
+    (r"\binnerhalb geschlossener ortschaften?\b|\binnerorts\b", "innerorts"),
+    (r"\bzebrastreifens?\b|\bfußgängerüberwege?n?s?\b|\bfussgängerüberwege?n?s?\b|\bzeichen 293\b", "fußgängerüberweg"),
+    (r"\bpersonenkraftwagens?\b|\bpkws?\b", "pkw"),
+    (r"\blastkraftwagens?\b|\blkws?\b", "lkw"),
+    (r"\bmotorrad\w*|\bkrafträder\w*|\bkraftrad\w*", "kraftrad"),
+    (r"\bampel\w*|\blichtzeichenanlage\w*|\blichtzeichen\b", "ampel"),
+    (r"\bstoppschild\w*|\bstop-schild\w*|\bzeichen 206\b", "stoppschild"),
+    (r"\bhandys?\b|\bmobiltelefon\w*|\bsmartphones?\b", "handy"),
+    (r"\bblinker[ns]?\b|\bfahrtrichtungsanzeiger[ns]?\b", "blinker"),
+    (r"\bmartinshorn\b|\beinsatzhorn\b", "einsatzhorn"),
+    (r"\bblaulicht\b|\bblaue[sm]? blinklicht\b", "blaulicht"),
+    (r"\bwarnblinker\b|\bwarnblinkanlage\b|\bwarnblinklicht\b", "warnblinklicht"),
+    (r"\btüv\b|\bhauptuntersuchung\w*", "hauptuntersuchung"),
+    (r"\bwohnwagen\w*|\bwohnanhänger\w*", "wohnanhänger"),
+    (r"\bspielstraße\w*|\bverkehrsberuhigte[nmr]? bereich\w*", "verkehrsberuhigt"),
+    (r"\btempo[- ]?30[- ]zone\w*", "tempo30zone"),
+))
+
+
+def canon(text: str) -> str:
+    t = fold(text)
+    for rx, repl in SYNONYMS:
+        t = rx.sub(repl, t)
+    return t
+
+
 def words(text: str) -> list[str]:
-    return re.findall(r"[a-zäöü0-9/‰%]+", fold(text))
+    return re.findall(r"[a-zäöü0-9/‰%]+", canon(text))
+
+
+_UMLAUT = str.maketrans("äöü", "aou")
 
 
 def content(text: str, keep: frozenset[str] = frozenset()) -> set[str]:
-    """Stemmed content words (stop words removed; negators/modals kept - they matter)."""
-    return {stem(w) for w in words(text) if (w not in STOPWORDS or w in keep) and len(w) > 1}
+    """Stemmed content words (stop words removed; negators/modals kept - they matter). Umlauts are folded
+    after stemming so that inflected forms meet ('einfährt' / 'einfahren' -> 'einfahr')."""
+    return {stem(w).translate(_UMLAUT) for w in words(text) if (w not in STOPWORDS or w in keep) and len(w) > 1}
+
+
+NUMBER_TOKEN = re.compile(r"^(\d+([.,]\d+)?|km/h|m|cm|mm|kg|t|s|‰|%|jahre|monate|minuten)$")
+
+
+def cosine(a: set[str], b: set[str]) -> float:
+    """Set cosine: penalises words of either side that the other side lacks (situation matching)."""
+    if not a or not b:
+        return 0.0
+    return len(a & b) / (len(a) * len(b)) ** 0.5
 
 
 def similarity(a: set[str], b: set[str]) -> float:

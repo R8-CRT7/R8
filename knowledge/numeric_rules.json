@@ -1,0 +1,1528 @@
+{
+ "items": [
+  {
+   "id": "STVO_3_INNERORTS",
+   "topic": "08_speed_distance",
+   "quantity": "max_speed",
+   "value": 50,
+   "unit": "km/h",
+   "comparator": "max",
+   "value_text": "50 km/h",
+   "applies_to": "alle Kfz innerhalb geschlossener Ortschaften",
+   "keywords": [
+    "innerorts",
+    "Höchstgeschwindigkeit"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 3 Nr. 1",
+     "evidence": "innerhalb geschlossener Ortschaften für alle Kraftfahrzeuge 50 km/h,"
+    }
+   ]
+  },
+  {
+   "id": "STVO_3_AUSSERORTS_PKW",
+   "topic": "08_speed_distance",
+   "quantity": "max_speed",
+   "value": 100,
+   "unit": "km/h",
+   "comparator": "max",
+   "value_text": "100 km/h",
+   "applies_to": "Pkw und Kfz bis 3,5 t außerorts (nicht Autobahn / getrennte Fahrbahnen / 2+ Fahrstreifen je Richtung)",
+   "keywords": [
+    "außerorts",
+    "Pkw"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 3 Nr. 2 c",
+     "evidence": "für Personenkraftwagen sowie für andere Kraftfahrzeuge mit einer zulässigen Gesamtmasse bis 3,5 t\n100 km/h."
+    }
+   ]
+  },
+  {
+   "id": "STVO_3_PKW_TRAILER",
+   "topic": "08_speed_distance",
+   "quantity": "max_speed",
+   "value": 80,
+   "unit": "km/h",
+   "comparator": "max",
+   "value_text": "80 km/h",
+   "applies_to": "Pkw mit Anhänger außerorts",
+   "keywords": [
+    "Anhänger",
+    "außerorts"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 3 Nr. 2 a",
+     "evidence": "Personenkraftwagen mit Anhänger,\ncc) Lastkraftwagen und Wohnmobile jeweils bis zu einer zulässigen Gesamtmasse von 3,5 t mit Anhänger sowie\ndd) Kraftomnibusse, auch mit Gepäckanhänger,\n80 km/h,"
+    }
+   ]
+  },
+  {
+   "id": "STVO_18_PKW_TRAILER",
+   "topic": "14_trailers",
+   "quantity": "max_speed",
+   "value": 80,
+   "unit": "km/h",
+   "comparator": "max",
+   "value_text": "80 km/h",
+   "applies_to": "Pkw mit Anhänger auf Autobahnen / Kraftfahrstraßen mit getrennten Fahrbahnen",
+   "keywords": [
+    "Anhänger",
+    "Autobahn"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 18",
+     "para": "Abs. 5 Nr. 1",
+     "evidence": "Personenkraftwagen mit Anhänger, Lastkraftwagen mit Anhänger, Wohnmobile mit Anhänger und Zugmaschinen mit Anhänger sowie\nc) Kraftomnibusse ohne Anhänger oder mit Gepäckanhänger\n80 km/h,"
+    }
+   ]
+  },
+  {
+   "id": "STVO_3_SNOW_CHAINS",
+   "topic": "08_speed_distance",
+   "quantity": "max_speed",
+   "value": 50,
+   "unit": "km/h",
+   "comparator": "max",
+   "value_text": "50 km/h",
+   "applies_to": "Kfz mit Schneeketten",
+   "keywords": [
+    "Schneeketten"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 4",
+     "evidence": "Die zulässige Höchstgeschwindigkeit beträgt für Kraftfahrzeuge mit Schneeketten auch unter günstigsten Umständen 50 km/h."
+    }
+   ]
+  },
+  {
+   "id": "STVO_3_FOG_SPEED",
+   "topic": "08_speed_distance",
+   "quantity": "max_speed",
+   "value": 50,
+   "unit": "km/h",
+   "comparator": "max",
+   "value_text": "50 km/h",
+   "applies_to": "Sichtweite durch Nebel, Schneefall oder Regen unter 50 m",
+   "keywords": [
+    "Nebel",
+    "Sichtweite"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 1 Satz 3",
+     "evidence": "Beträgt die Sichtweite durch Nebel, Schneefall oder Regen weniger als 50 m, darf nicht schneller als 50 km/h gefahren werden"
+    }
+   ]
+  },
+  {
+   "id": "STVO_3_FOG_VISIBILITY",
+   "topic": "08_speed_distance",
+   "quantity": "visibility",
+   "value": 50,
+   "unit": "m",
+   "comparator": "max",
+   "value_text": "50 m",
+   "applies_to": "Grenze der Sichtweite für die 50-km/h-Regel",
+   "keywords": [
+    "Nebel",
+    "Sichtweite"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 1 Satz 3",
+     "evidence": "Beträgt die Sichtweite durch Nebel, Schneefall oder Regen weniger als 50 m"
+    }
+   ]
+  },
+  {
+   "id": "STVO_17_FOG_REAR_LIGHT",
+   "topic": "13_vehicle_technology",
+   "quantity": "visibility",
+   "value": 50,
+   "unit": "m",
+   "comparator": "max",
+   "value_text": "50 m",
+   "applies_to": "Nebelschlussleuchte nur bei Nebel und Sichtweite unter 50 m",
+   "keywords": [
+    "Nebelschlussleuchte"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 17",
+     "para": "Abs. 3 Satz 5",
+     "evidence": "Nebelschlussleuchten dürfen nur dann benutzt werden, wenn durch Nebel die Sichtweite weniger als 50 m beträgt."
+    }
+   ]
+  },
+  {
+   "id": "STVO_4_TRAIN_7M",
+   "topic": "14_trailers",
+   "quantity": "length",
+   "value": 7,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "7 m",
+   "applies_to": "Züge länger als 7 m: Einscherabstand außerorts",
+   "keywords": [
+    "Zug",
+    "Abstand"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 4",
+     "para": "Abs. 2",
+     "evidence": "einen Zug führt, der länger als 7 m ist"
+    }
+   ]
+  },
+  {
+   "id": "STVO_5_PASS_GAP_IN",
+   "topic": "09_manoeuvres",
+   "quantity": "lateral_distance",
+   "value": 1.5,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "1,5 m",
+   "applies_to": "Seitenabstand beim Überholen von Fußgängern, Radfahrern, E-Scootern innerorts",
+   "keywords": [
+    "Seitenabstand",
+    "Radfahrer",
+    "innerorts"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 4 Satz 3",
+     "evidence": "beträgt der ausreichende Seitenabstand innerorts mindestens 1,5 m und außerorts mindestens 2 m"
+    }
+   ]
+  },
+  {
+   "id": "STVO_5_PASS_GAP_OUT",
+   "topic": "09_manoeuvres",
+   "quantity": "lateral_distance",
+   "value": 2,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "2 m",
+   "applies_to": "Seitenabstand beim Überholen von Fußgängern, Radfahrern, E-Scootern außerorts",
+   "keywords": [
+    "Seitenabstand",
+    "Radfahrer",
+    "außerorts"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 4 Satz 3",
+     "evidence": "beträgt der ausreichende Seitenabstand innerorts mindestens 1,5 m und außerorts mindestens 2 m"
+    }
+   ]
+  },
+  {
+   "id": "STVO_12_PARK_3MIN",
+   "topic": "10_parking",
+   "quantity": "duration",
+   "value": 3,
+   "unit": "min",
+   "comparator": "max",
+   "value_text": "drei Minuten",
+   "applies_to": "Wer länger als 3 Minuten hält oder das Fahrzeug verlässt, parkt",
+   "keywords": [
+    "Halten",
+    "Parken"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 12",
+     "para": "Abs. 2",
+     "evidence": "Wer sein Fahrzeug verlässt oder länger als drei Minuten hält, der parkt."
+    }
+   ]
+  },
+  {
+   "id": "STVO_12_JUNCTION_5M",
+   "topic": "10_parking",
+   "quantity": "distance",
+   "value": 5,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "5 m",
+   "applies_to": "Parkverbot vor und hinter Kreuzungen/Einmündungen bis je 5 m von den Schnittpunkten der Fahrbahnkanten",
+   "keywords": [
+    "Kreuzung",
+    "Einmündung",
+    "Parken"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 12",
+     "para": "Abs. 3 Nr. 1",
+     "evidence": "vor und hinter Kreuzungen und Einmündungen bis zu je 5 m von den Schnittpunkten der Fahrbahnkanten"
+    }
+   ]
+  },
+  {
+   "id": "STVO_12_JUNCTION_8M_BIKE",
+   "topic": "10_parking",
+   "quantity": "distance",
+   "value": 8,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "8 m",
+   "applies_to": "mit baulich angelegtem Radweg rechts: vor Kreuzungen/Einmündungen bis je 8 m",
+   "keywords": [
+    "Kreuzung",
+    "Radweg",
+    "Parken"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 12",
+     "para": "Abs. 3 Nr. 1",
+     "evidence": "soweit in Fahrtrichtung rechts neben der Fahrbahn ein Radweg baulich angelegt ist, vor Kreuzungen und Einmündungen bis zu je 8 m von den Schnittpunkten der Fahrbahnkanten"
+    }
+   ]
+  },
+  {
+   "id": "STVO_12_TRAILER_2WEEKS",
+   "topic": "10_parking",
+   "quantity": "duration",
+   "value": 2,
+   "unit": "weeks",
+   "comparator": "max",
+   "value_text": "zwei Wochen",
+   "applies_to": "Anhänger ohne Zugfahrzeug parken",
+   "keywords": [
+    "Anhänger",
+    "Parken"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 12",
+     "para": "Abs. 3b",
+     "evidence": "Mit Kraftfahrzeuganhängern ohne Zugfahrzeug darf nicht länger als zwei Wochen geparkt werden."
+    }
+   ]
+  },
+  {
+   "id": "STVO_37_LIGHT_10M",
+   "topic": "10_parking",
+   "quantity": "distance",
+   "value": 10,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "10 m",
+   "applies_to": "Kein Halten bis 10 m vor einem Lichtzeichen, wenn es dadurch verdeckt wird",
+   "keywords": [
+    "Ampel",
+    "Lichtzeichen",
+    "Halten"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 1 Satz 2",
+     "evidence": "Wer ein Fahrzeug führt, darf bis zu 10 m vor einem Lichtzeichen nicht halten, wenn es dadurch verdeckt wird."
+    }
+   ]
+  },
+  {
+   "id": "STVO_15_WARNING_100M",
+   "topic": "11_special",
+   "quantity": "distance",
+   "value": 100,
+   "unit": "m",
+   "comparator": "eq",
+   "value_text": "100 m",
+   "applies_to": "Warnzeichen bei schnellem Verkehr in etwa 100 m Entfernung aufstellen",
+   "keywords": [
+    "Warndreieck",
+    "Panne",
+    "liegenbleiben"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 15",
+     "evidence": "und zwar bei schnellem Verkehr in etwa 100 m Entfernung"
+    }
+   ]
+  },
+  {
+   "id": "STVO_18_MIN_DESIGN_SPEED",
+   "topic": "04_road_system",
+   "quantity": "min_design_speed",
+   "value": 60,
+   "unit": "km/h",
+   "comparator": "min",
+   "value_text": "60 km/h",
+   "applies_to": "Autobahn/Kraftfahrstraße nur mit Kfz, deren bauartbestimmte Höchstgeschwindigkeit mehr als 60 km/h beträgt",
+   "keywords": [
+    "Autobahn",
+    "Kraftfahrstraße",
+    "bauartbedingt"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 18",
+     "para": "Abs. 1",
+     "evidence": "deren durch die Bauart bestimmte Höchstgeschwindigkeit mehr als 60 km/h beträgt"
+    }
+   ]
+  },
+  {
+   "id": "STVO_22_HEIGHT",
+   "topic": "13_vehicle_technology",
+   "quantity": "max_height",
+   "value": 4,
+   "unit": "m",
+   "comparator": "max",
+   "value_text": "4 m",
+   "applies_to": "Fahrzeug und Ladung zusammen höchstens 4 m hoch",
+   "keywords": [
+    "Ladung",
+    "Höhe"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 2",
+     "evidence": "Fahrzeug und Ladung dürfen zusammen nicht breiter als 2,55 m und nicht höher als 4 m sein."
+    }
+   ]
+  },
+  {
+   "id": "STVO_22_WIDTH",
+   "topic": "13_vehicle_technology",
+   "quantity": "max_width",
+   "value": 2.55,
+   "unit": "m",
+   "comparator": "max",
+   "value_text": "2,55 m",
+   "applies_to": "Fahrzeug und Ladung zusammen höchstens 2,55 m breit",
+   "keywords": [
+    "Ladung",
+    "Breite"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 2",
+     "evidence": "Fahrzeug und Ladung dürfen zusammen nicht breiter als 2,55 m und nicht höher als 4 m sein."
+    }
+   ]
+  },
+  {
+   "id": "STVO_22_REAR_OVERHANG",
+   "topic": "13_vehicle_technology",
+   "quantity": "max_overhang",
+   "value": 1.5,
+   "unit": "m",
+   "comparator": "max",
+   "value_text": "1,50 m",
+   "applies_to": "Ladung nach hinten (bis 100 km Strecke: 3 m)",
+   "keywords": [
+    "Ladung",
+    "hinausragen",
+    "hinten"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 4",
+     "evidence": "Nach hinten darf die Ladung bis zu 1,50 m hinausragen, jedoch bei Beförderung über eine Wegstrecke bis zu einer Entfernung von 100 km bis zu 3 m"
+    }
+   ]
+  },
+  {
+   "id": "STVO_22_REAR_OVERHANG_100KM",
+   "topic": "13_vehicle_technology",
+   "quantity": "max_overhang",
+   "value": 3,
+   "unit": "m",
+   "comparator": "max",
+   "value_text": "3 m",
+   "applies_to": "Ladung nach hinten bei Beförderung bis 100 km",
+   "keywords": [
+    "Ladung",
+    "hinausragen",
+    "100 km"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 4",
+     "evidence": "bei Beförderung über eine Wegstrecke bis zu einer Entfernung von 100 km bis zu 3 m"
+    }
+   ]
+  },
+  {
+   "id": "STVO_22_MARK_1M",
+   "topic": "13_vehicle_technology",
+   "quantity": "overhang_mark",
+   "value": 1,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "1 m",
+   "applies_to": "Kennzeichnungspflicht, wenn die Ladung mehr als 1 m über die Rückstrahler hinausragt",
+   "keywords": [
+    "Ladung",
+    "Fahne",
+    "kenntlich"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 4 Satz 3",
+     "evidence": "Ragt das äußerste Ende der Ladung mehr als 1 m über die Rückstrahler des Fahrzeugs nach hinten hinaus, so ist es kenntlich zu machen"
+    }
+   ]
+  },
+  {
+   "id": "STVO_22_FLAG_SIZE",
+   "topic": "13_vehicle_technology",
+   "quantity": "flag_size",
+   "value": 30,
+   "unit": "cm",
+   "comparator": "min",
+   "value_text": "30 x 30 cm",
+   "applies_to": "hellrote Fahne mindestens 30 x 30 cm",
+   "keywords": [
+    "Fahne",
+    "Ladung"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 4 Nr. 1",
+     "evidence": "eine hellrote, nicht unter 30 x 30 cm große, durch eine Querstange auseinandergehaltene Fahne"
+    }
+   ]
+  },
+  {
+   "id": "STVO_22_FRONT_OVERHANG",
+   "topic": "13_vehicle_technology",
+   "quantity": "max_overhang",
+   "value": 50,
+   "unit": "cm",
+   "comparator": "max",
+   "value_text": "50 cm",
+   "applies_to": "Ladung nach vorn (ab 2,50 m Höhe) bis 50 cm",
+   "keywords": [
+    "Ladung",
+    "vorn"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 3",
+     "evidence": "Im Übrigen darf der Ladungsüberstand nach vorn bis zu 50 cm über das Fahrzeug, bei Zügen bis zu 50 cm über das ziehende Fahrzeug betragen."
+    }
+   ]
+  },
+  {
+   "id": "STVO_22_SIDE_40CM",
+   "topic": "13_vehicle_technology",
+   "quantity": "side_overhang",
+   "value": 40,
+   "unit": "cm",
+   "comparator": "max",
+   "value_text": "40 cm",
+   "applies_to": "Seitlicher Überstand über die Leuchten mehr als 40 cm: kenntlich machen",
+   "keywords": [
+    "Ladung",
+    "seitlich"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 5",
+     "evidence": "Ragt die Ladung seitlich mehr als 40 cm über die Fahrzeugleuchten"
+    }
+   ]
+  },
+  {
+   "id": "STVO_22_MAX_LENGTH",
+   "topic": "13_vehicle_technology",
+   "quantity": "max_length",
+   "value": 20.75,
+   "unit": "m",
+   "comparator": "max",
+   "value_text": "20,75 m",
+   "applies_to": "Fahrzeug oder Zug samt Ladung höchstens 20,75 m lang",
+   "keywords": [
+    "Ladung",
+    "Länge",
+    "Zug"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 4 Satz 2",
+     "evidence": "Fahrzeug oder Zug samt Ladung darf nicht länger als 20,75 m sein."
+    }
+   ]
+  },
+  {
+   "id": "STVO_21_CHILD_12Y",
+   "topic": "13_vehicle_technology",
+   "quantity": "age",
+   "value": 12,
+   "unit": "years",
+   "comparator": "max",
+   "value_text": "12. Lebensjahr",
+   "applies_to": "Kindersitzpflicht bis zum vollendeten 12. Lebensjahr, wenn kleiner als 150 cm",
+   "keywords": [
+    "Kindersitz",
+    "Kinder"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 21",
+     "para": "Abs. 1a",
+     "evidence": "Kinder bis zum vollendeten 12. Lebensjahr, die kleiner als 150 cm sind"
+    }
+   ]
+  },
+  {
+   "id": "STVO_21_CHILD_150CM",
+   "topic": "13_vehicle_technology",
+   "quantity": "height",
+   "value": 150,
+   "unit": "cm",
+   "comparator": "max",
+   "value_text": "150 cm",
+   "applies_to": "Kindersitzpflicht für Kinder unter 150 cm (bis 12 Jahre)",
+   "keywords": [
+    "Kindersitz",
+    "Körpergröße"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 21",
+     "para": "Abs. 1a",
+     "evidence": "Kinder bis zum vollendeten 12. Lebensjahr, die kleiner als 150 cm sind"
+    }
+   ]
+  },
+  {
+   "id": "STVO_2_BIKE_KIDS_8Y",
+   "topic": "07_road_users",
+   "quantity": "age",
+   "value": 8,
+   "unit": "years",
+   "comparator": "max",
+   "value_text": "achten Lebensjahr",
+   "applies_to": "Kinder bis 8 Jahre MÜSSEN mit dem Fahrrad den Gehweg benutzen (bis 10 dürfen)",
+   "keywords": [
+    "Kinder",
+    "Fahrrad",
+    "Gehweg"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 2",
+     "para": "Abs. 5",
+     "evidence": "Kinder bis zum vollendeten achten Lebensjahr müssen, Kinder bis zum vollendeten zehnten Lebensjahr dürfen mit Fahrrädern Gehwege benutzen."
+    }
+   ]
+  },
+  {
+   "id": "STVO_2_BIKE_KIDS_10Y",
+   "topic": "07_road_users",
+   "quantity": "age",
+   "value": 10,
+   "unit": "years",
+   "comparator": "max",
+   "value_text": "zehnten Lebensjahr",
+   "applies_to": "Kinder bis 10 Jahre DÜRFEN mit dem Fahrrad den Gehweg benutzen",
+   "keywords": [
+    "Kinder",
+    "Fahrrad",
+    "Gehweg"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 2",
+     "para": "Abs. 5",
+     "evidence": "Kinder bis zum vollendeten achten Lebensjahr müssen, Kinder bis zum vollendeten zehnten Lebensjahr dürfen mit Fahrrädern Gehwege benutzen."
+    }
+   ]
+  },
+  {
+   "id": "STVO_2_WINTER_HALF_TACHO",
+   "topic": "08_speed_distance",
+   "quantity": "max_speed",
+   "value": 50,
+   "unit": "km/h",
+   "comparator": "max",
+   "value_text": "50 km/h",
+   "applies_to": "erlaubte Fahrt ohne Winterreifen bei Winterglätte (Ausnahmefahrzeuge): max. 50 km/h",
+   "keywords": [
+    "Winterreifen",
+    "Glätte"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 2",
+     "para": "Abs. 3a",
+     "evidence": "nicht schneller als 50 km/h zu fahren, wenn nicht eine geringere Geschwindigkeit geboten ist."
+    }
+   ]
+  },
+  {
+   "id": "STVO_9_TRUCK_RIGHT_TURN",
+   "topic": "09_manoeuvres",
+   "quantity": "mass",
+   "value": 3.5,
+   "unit": "t",
+   "comparator": "min",
+   "value_text": "3,5 t",
+   "applies_to": "Kfz über 3,5 t: innerorts beim Rechtsabbiegen Schrittgeschwindigkeit, wenn mit Rad-/Fußverkehr zu rechnen ist",
+   "keywords": [
+    "Rechtsabbiegen",
+    "Lkw",
+    "Schrittgeschwindigkeit"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 6",
+     "evidence": "Wer ein Kraftfahrzeug mit einer zulässigen Gesamtmasse über 3,5 t innerorts führt, muss beim Rechtsabbiegen mit Schrittgeschwindigkeit fahren"
+    }
+   ]
+  },
+  {
+   "id": "STVO_4_TRUCK_50M",
+   "topic": "08_speed_distance",
+   "quantity": "min_distance",
+   "value": 50,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "50 m",
+   "applies_to": "Lkw über 3,5 t / Busse auf Autobahnen bei mehr als 50 km/h: Mindestabstand 50 m",
+   "keywords": [
+    "Lkw",
+    "Autobahn",
+    "Abstand"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 4",
+     "para": "Abs. 3",
+     "evidence": "muss auf Autobahnen, wenn die Geschwindigkeit mehr als 50 km/h beträgt, zu vorausfahrenden Fahrzeugen einen Mindestabstand von 50 m einhalten."
+    }
+   ]
+  },
+  {
+   "id": "STVZO_36_TREAD",
+   "topic": "13_vehicle_technology",
+   "quantity": "min_tread_depth",
+   "value": 1.6,
+   "unit": "mm",
+   "comparator": "min",
+   "value_text": "1,6 mm",
+   "applies_to": "Hauptprofil von Kfz-Reifen (Mofa/Kleinkraftrad/Leichtkraftrad: 1 mm)",
+   "keywords": [
+    "Profiltiefe",
+    "Reifen"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 36",
+     "para": "Abs. 3",
+     "evidence": "Das Hauptprofil muss am ganzen Umfang eine Profiltiefe von mindestens 1,6 mm aufweisen"
+    }
+   ]
+  },
+  {
+   "id": "STVZO_35H_FIRST_AID_SPEED",
+   "topic": "13_vehicle_technology",
+   "quantity": "design_speed",
+   "value": 6,
+   "unit": "km/h",
+   "comparator": "min",
+   "value_text": "6 km/h",
+   "applies_to": "Erste-Hilfe-Material in Kfz mit bauartbedingter Höchstgeschwindigkeit über 6 km/h (nicht Krafträder)",
+   "keywords": [
+    "Verbandkasten",
+    "Erste Hilfe"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 35h",
+     "para": "Abs. 3",
+     "evidence": "mit einer durch die Bauart bestimmten Höchstgeschwindigkeit von mehr als 6 km/h"
+    }
+   ]
+  },
+  {
+   "id": "STVO_21A_HELMET_20",
+   "topic": "07_road_users",
+   "quantity": "design_speed",
+   "value": 20,
+   "unit": "km/h",
+   "comparator": "min",
+   "value_text": "20 km/h",
+   "applies_to": "Helmpflicht auf Krafträdern / offenen Kfz mit bauartbedingt über 20 km/h",
+   "keywords": [
+    "Helm",
+    "Kraftrad"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 21a",
+     "para": "Abs. 2",
+     "evidence": "mit einer bauartbedingten Höchstgeschwindigkeit von über 20 km/h führt"
+    }
+   ]
+  },
+  {
+   "id": "STVO_23_EBA_30",
+   "topic": "13_vehicle_technology",
+   "quantity": "speed",
+   "value": 30,
+   "unit": "km/h",
+   "comparator": "min",
+   "value_text": "30 km/h",
+   "applies_to": "Kfz über 3,5 t: Notbremsassistent ab mehr als 30 km/h eingeschaltet",
+   "keywords": [
+    "Notbremsassistent",
+    "Lkw"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 23",
+     "para": "Abs. 1d",
+     "evidence": "bei einer Geschwindigkeit von mehr als 30 km/h ein für das Kraftfahrzeug vorgeschriebenes Notbremsassistenzsystem eingeschaltet ist"
+    }
+   ]
+  },
+  {
+   "id": "STVO_2_BIKE_ESCORT_16",
+   "topic": "07_road_users",
+   "quantity": "age",
+   "value": 16,
+   "unit": "years",
+   "comparator": "min",
+   "value_text": "16 Jahre",
+   "applies_to": "Aufsichtsperson eines radfahrenden Kindes auf dem Gehweg geeignet ab 16 Jahren",
+   "keywords": [
+    "Kinder",
+    "Fahrrad",
+    "Aufsichtsperson"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 2",
+     "para": "Abs. 5",
+     "evidence": "eine Aufsichtsperson ist insbesondere geeignet, wenn diese mindestens 16 Jahre alt ist"
+    }
+   ]
+  },
+  {
+   "id": "FEV6_B_MAX_ZGM",
+   "topic": "14_trailers",
+   "quantity": "max_mass",
+   "value": 3500,
+   "unit": "kg",
+   "comparator": "max",
+   "value_text": "3 500 kg",
+   "applies_to": "Klasse B: Kfz mit zulässiger Gesamtmasse bis 3 500 kg",
+   "keywords": [
+    "Klasse B",
+    "Gesamtmasse"
+   ],
+   "confidence": 0.8,
+   "sources": [
+    {
+     "type": "law",
+     "law": "fev_2010",
+     "norm": "§ 6",
+     "para": "Abs. 1 Klasse B",
+     "ref": "FeV § 6 – amtlicher Text im Container nicht abrufbar (RIS-Testphase ohne FeV); NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "FEV6_B_LIGHT_TRAILER",
+   "topic": "14_trailers",
+   "quantity": "max_mass",
+   "value": 750,
+   "unit": "kg",
+   "comparator": "max",
+   "value_text": "750 kg",
+   "applies_to": "Klasse B: Anhänger bis 750 kg zulässige Gesamtmasse ohne weitere Bedingung",
+   "keywords": [
+    "Klasse B",
+    "Anhänger"
+   ],
+   "confidence": 0.8,
+   "sources": [
+    {
+     "type": "law",
+     "law": "fev_2010",
+     "norm": "§ 6",
+     "para": "Abs. 1 Klasse B",
+     "ref": "FeV § 6 – NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "FEV6_B96_MAX_COMBINATION",
+   "topic": "14_trailers",
+   "quantity": "max_mass",
+   "value": 4250,
+   "unit": "kg",
+   "comparator": "max",
+   "value_text": "4 250 kg",
+   "applies_to": "Schlüsselzahl 96: Kombination bis 4 250 kg",
+   "keywords": [
+    "B96",
+    "Anhänger"
+   ],
+   "confidence": 0.8,
+   "sources": [
+    {
+     "type": "law",
+     "law": "fev_2010",
+     "norm": "§ 6",
+     "para": "Abs. 1 / Anlage 9",
+     "ref": "FeV – NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "FEV6_BE_MAX_TRAILER",
+   "topic": "14_trailers",
+   "quantity": "max_mass",
+   "value": 3500,
+   "unit": "kg",
+   "comparator": "max",
+   "value_text": "3 500 kg",
+   "applies_to": "Klasse BE: Anhänger bis 3 500 kg zulässige Gesamtmasse",
+   "keywords": [
+    "BE",
+    "Anhänger"
+   ],
+   "confidence": 0.8,
+   "sources": [
+    {
+     "type": "law",
+     "law": "fev_2010",
+     "norm": "§ 6",
+     "para": "Abs. 1 Klasse BE",
+     "ref": "FeV § 6 – NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "STVG_2A_PROBATION_YEARS",
+   "topic": "03_legal",
+   "quantity": "duration",
+   "value": 2,
+   "unit": "years",
+   "comparator": "eq",
+   "value_text": "zwei Jahre",
+   "applies_to": "Probezeit bei erstmaligem Erwerb (Verlängerung um 2 Jahre bei Aufbauseminar-Anordnung)",
+   "keywords": [
+    "Probezeit"
+   ],
+   "confidence": 0.8,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvg",
+     "norm": "§ 2a",
+     "ref": "StVG § 2a – NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "STVG_24A_ALCOHOL_05",
+   "topic": "02_human_risk",
+   "quantity": "bac",
+   "value": 0.5,
+   "unit": "‰",
+   "comparator": "max",
+   "value_text": "0,5 Promille",
+   "applies_to": "Ordnungswidrigkeit ab 0,5 ‰ (bzw. 0,25 mg/l Atemalkohol)",
+   "keywords": [
+    "Alkohol",
+    "Promille"
+   ],
+   "confidence": 0.8,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvg",
+     "norm": "§ 24a",
+     "ref": "StVG § 24a – NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "STVG_24C_NOVICE_ZERO",
+   "topic": "02_human_risk",
+   "quantity": "bac",
+   "value": 0.0,
+   "unit": "‰",
+   "comparator": "max",
+   "value_text": "0,0 Promille",
+   "applies_to": "Alkoholverbot in der Probezeit und vor Vollendung des 21. Lebensjahres",
+   "keywords": [
+    "Alkohol",
+    "Probezeit",
+    "Fahranfänger"
+   ],
+   "confidence": 0.8,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvg",
+     "norm": "§ 24c",
+     "ref": "StVG § 24c – NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "STVG_4_POINTS_REVOKE",
+   "topic": "03_legal",
+   "quantity": "points",
+   "value": 8,
+   "unit": "points",
+   "comparator": "min",
+   "value_text": "8 Punkte",
+   "applies_to": "Fahreignungs-Bewertungssystem: Entziehung ab 8 Punkten",
+   "keywords": [
+    "Punkte",
+    "Flensburg"
+   ],
+   "confidence": 0.8,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvg",
+     "norm": "§ 4",
+     "ref": "StVG § 4 – NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "FEV_A7_B_QUESTIONS",
+   "topic": "12_learning",
+   "quantity": "count",
+   "value": 30,
+   "unit": "questions",
+   "comparator": "eq",
+   "value_text": "30",
+   "applies_to": "Theorieprüfung Klasse B (Ersterwerb): Anzahl Aufgaben",
+   "keywords": [
+    "Prüfung"
+   ],
+   "confidence": 0.7,
+   "sources": [
+    {
+     "type": "law",
+     "law": "fev_2010",
+     "norm": "Anlage 7",
+     "ref": "FeV Anlage 7 – NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "FEV_A7_B_MAX_ERROR_POINTS",
+   "topic": "12_learning",
+   "quantity": "points",
+   "value": 10,
+   "unit": "points",
+   "comparator": "max",
+   "value_text": "10",
+   "applies_to": "Theorieprüfung Klasse B: höchstens 10 Fehlerpunkte, nicht zwei 5-Punkte-Fehler",
+   "keywords": [
+    "Prüfung",
+    "Fehlerpunkte"
+   ],
+   "confidence": 0.7,
+   "sources": [
+    {
+     "type": "law",
+     "law": "fev_2010",
+     "norm": "Anlage 7",
+     "ref": "FeV Anlage 7 – NICHT verifiziert"
+    }
+   ]
+  },
+  {
+   "id": "STVO_40_DANGER_150",
+   "topic": "06_signs",
+   "quantity": "distance",
+   "value": 150,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "150",
+   "applies_to": "Gefahrzeichen außerorts frühestens ca. 150 m vor der Gefahrstelle",
+   "keywords": [
+    "Gefahrzeichen"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 40",
+     "evidence": "Außerhalb geschlossener Ortschaften stehen sie im Allgemeinen 150 bis 250 m vor den Gefahrstellen."
+    }
+   ]
+  },
+  {
+   "id": "STVO_40_DANGER_250",
+   "topic": "06_signs",
+   "quantity": "distance",
+   "value": 250,
+   "unit": "m",
+   "comparator": "max",
+   "value_text": "250 m",
+   "applies_to": "Gefahrzeichen außerorts höchstens ca. 250 m vor der Gefahrstelle",
+   "keywords": [
+    "Gefahrzeichen"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 40",
+     "evidence": "Außerhalb geschlossener Ortschaften stehen sie im Allgemeinen 150 bis 250 m vor den Gefahrstellen."
+    }
+   ]
+  },
+  {
+   "id": "STVO_A1_BAKE_3",
+   "topic": "04_road_system",
+   "quantity": "distance",
+   "value": 240,
+   "unit": "m",
+   "comparator": "eq",
+   "value_text": "240 m",
+   "applies_to": "Dreistreifige Bake (Zeichen 156) etwa 240 m vor dem Bahnübergang",
+   "keywords": [
+    "Bake",
+    "Bahnübergang"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 21",
+     "evidence": "Bahnübergang mit dreistreifiger Bake etwa 240 m vor dem Bahnübergang."
+    }
+   ]
+  },
+  {
+   "id": "STVO_A1_BAKE_2",
+   "topic": "04_road_system",
+   "quantity": "distance",
+   "value": 160,
+   "unit": "m",
+   "comparator": "eq",
+   "value_text": "160 m",
+   "applies_to": "Zweistreifige Bake (Zeichen 159) etwa 160 m vor dem Bahnübergang",
+   "keywords": [
+    "Bake",
+    "Bahnübergang"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 22",
+     "evidence": "Zweistreifige Bake etwa 160 m vor dem Bahnübergang"
+    }
+   ]
+  },
+  {
+   "id": "STVO_A1_BAKE_1",
+   "topic": "04_road_system",
+   "quantity": "distance",
+   "value": 80,
+   "unit": "m",
+   "comparator": "eq",
+   "value_text": "80 m",
+   "applies_to": "Einstreifige Bake (Zeichen 162) etwa 80 m vor dem Bahnübergang",
+   "keywords": [
+    "Bake",
+    "Bahnübergang"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 23",
+     "evidence": "Einstreifige Bake etwa 80 m vor dem Bahnübergang"
+    }
+   ]
+  },
+  {
+   "id": "STVO_A2_RAIL_PARK_IN",
+   "topic": "10_parking",
+   "quantity": "distance",
+   "value": 5,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "5 m",
+   "applies_to": "Andreaskreuz: innerorts bis je 5 m davor und dahinter nicht parken",
+   "keywords": [
+    "Andreaskreuz",
+    "Parken"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 1",
+     "evidence": "innerhalb geschlossener Ortschaften (Zeichen 310 und 311) bis zu je 5 m,"
+    }
+   ]
+  },
+  {
+   "id": "STVO_A2_RAIL_PARK_OUT",
+   "topic": "10_parking",
+   "quantity": "distance",
+   "value": 50,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "50 m",
+   "applies_to": "Andreaskreuz: außerorts bis je 50 m davor und dahinter nicht parken",
+   "keywords": [
+    "Andreaskreuz",
+    "Parken"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 1",
+     "evidence": "außerhalb geschlossener Ortschaften bis zu je 50 m"
+    }
+   ]
+  },
+  {
+   "id": "STVO_A2_SIGN_10M",
+   "topic": "10_parking",
+   "quantity": "distance",
+   "value": 10,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "10 m",
+   "applies_to": "Vor Zeichen 201/205/206: bis 10 m davor nicht halten, wenn es dadurch verdeckt wird",
+   "keywords": [
+    "Halten",
+    "Vorfahrt gewähren"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 2",
+     "evidence": "Wer ein Fahrzeug führt, darf bis zu 10 m vor diesem Zeichen nicht halten, wenn es dadurch verdeckt wird."
+    }
+   ]
+  },
+  {
+   "id": "STVO_A2_BUSSTOP_15M",
+   "topic": "10_parking",
+   "quantity": "distance",
+   "value": 15,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "15 m",
+   "applies_to": "Haltestelle (Zeichen 224): bis 15 m vor und hinter dem Zeichen nicht parken",
+   "keywords": [
+    "Haltestelle",
+    "Parken"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 14",
+     "evidence": "Wer ein Fahrzeug führt, darf bis zu 15 m vor und hinter dem Zeichen nicht parken."
+    }
+   ]
+  },
+  {
+   "id": "STVO_A2_ZEBRA_5M",
+   "topic": "10_parking",
+   "quantity": "distance",
+   "value": 5,
+   "unit": "m",
+   "comparator": "min",
+   "value_text": "5 m",
+   "applies_to": "Fußgängerüberweg: auf ihm und bis 5 m davor nicht halten",
+   "keywords": [
+    "Zebrastreifen",
+    "Halten"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 66",
+     "evidence": "Wer ein Fahrzeug führt, darf auf Fußgängerüberwegen sowie bis zu 5 m davor nicht halten."
+    }
+   ]
+  },
+  {
+   "id": "STVO_A3_SIDEWALK_28T",
+   "topic": "10_parking",
+   "quantity": "max_mass",
+   "value": 2.8,
+   "unit": "t",
+   "comparator": "max",
+   "value_text": "2,8 t",
+   "applies_to": "Parken auf Gehwegen (Zeichen 315) nur bis 2,8 t",
+   "keywords": [
+    "Gehwegparken"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 10",
+     "evidence": "Wer ein Fahrzeug führt, darf auf Gehwegen mit Fahrzeugen mit einer zulässigen Gesamtmasse über 2,8 t nicht parken"
+    }
+   ]
+  },
+  {
+   "id": "STVO_A2_BIKE_STREET_30",
+   "topic": "06_signs",
+   "quantity": "max_speed",
+   "value": 30,
+   "unit": "km/h",
+   "comparator": "max",
+   "value_text": "30 km/h",
+   "applies_to": "Fahrradstraße: Fahrverkehr höchstens 30 km/h",
+   "keywords": [
+    "Fahrradstraße"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 23",
+     "evidence": "Für den Fahrverkehr gilt eine Höchstgeschwindigkeit von 30 km/h."
+    }
+   ]
+  },
+  {
+   "id": "STVO_A2_HALT_286_3MIN",
+   "topic": "10_parking",
+   "quantity": "duration",
+   "value": 3,
+   "unit": "min",
+   "comparator": "max",
+   "value_text": "drei Minuten",
+   "applies_to": "Eingeschränktes Haltverbot: höchstens drei Minuten halten (außer Ein-/Aussteigen, Laden)",
+   "keywords": [
+    "eingeschränktes Haltverbot"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 63",
+     "evidence": "darf nicht länger als drei Minuten auf der Fahrbahn halten"
+    }
+   ]
+  },
+  {
+   "id": "STVZO_A8_PKW_FIRST_HU",
+   "topic": "13_vehicle_technology",
+   "quantity": "interval",
+   "value": 36,
+   "unit": "months",
+   "comparator": "eq",
+   "value_text": "36",
+   "applies_to": "Pkw: erste Hauptuntersuchung nach 36 Monaten",
+   "keywords": [
+    "HU",
+    "Hauptuntersuchung"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "Anlage VIII",
+     "para": "Nr. 2.1.2.1",
+     "evidence": "für die zweite Hauptuntersuchung\n36"
+    }
+   ]
+  },
+  {
+   "id": "STVZO_A8_PKW_HU",
+   "topic": "13_vehicle_technology",
+   "quantity": "interval",
+   "value": 24,
+   "unit": "months",
+   "comparator": "eq",
+   "value_text": "24",
+   "applies_to": "Pkw: weitere Hauptuntersuchungen alle 24 Monate",
+   "keywords": [
+    "HU",
+    "Hauptuntersuchung"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "Anlage VIII",
+     "para": "Nr. 2.1.2.1",
+     "evidence": "für die weiteren Hauptuntersuchungen\n24"
+    }
+   ]
+  }
+ ]
+}

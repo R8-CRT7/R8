@@ -1,0 +1,35 @@
+{"items": [
+{"id": "RDS_LANES_THREE", "topic": "04_road_system", "subtopic": "fahrstreifen_aufteilung", "title": "Drei- und vierstreifige Fahrbahnen für beide Richtungen",
+ "rule": "Drei Fahrstreifen (Leitlinien) für beide Richtungen: linker (Gegenverkehr) und mittlerer Fahrstreifen dürfen nicht zum Überholen benutzt werden; zum Linksabbiegen darf man sich auf dem mittleren einordnen. Vier Fahrstreifen: die beiden linken sind ausschließlich dem Gegenverkehr vorbehalten.",
+ "concepts": ["fahrstreifen", "ueberholen", "gegenverkehr"], "keywords": ["drei Fahrstreifen", "mittlerer Fahrstreifen", "vier Fahrstreifen", "Gegenverkehr", "Leitlinie", "überholen"],
+ "exam_relevance": 2, "difficulty": 3, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 7", "para": "Abs. 3a", "evidence": "Sind auf einer Fahrbahn für beide Richtungen insgesamt drei Fahrstreifen durch Leitlinien (Zeichen 340) markiert, dann dürfen der linke, dem Gegenverkehr vorbehaltene, und der mittlere Fahrstreifen nicht zum Überholen benutzt werden."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 7", "para": "Abs. 3b", "evidence": "Auf Fahrbahnen für beide Richtungen mit vier durch Leitlinien (Zeichen 340) markierten Fahrstreifen sind die beiden in Fahrtrichtung linken Fahrstreifen ausschließlich dem Gegenverkehr vorbehalten"}],
+ "claims": [
+  {"context": ["drei Fahrstreifen", "beide Richtungen", "mittlerer", "überholen"], "statement": "Der mittlere Fahrstreifen darf nicht zum Überholen benutzt werden", "truth": true},
+  {"context": ["drei Fahrstreifen", "beide Richtungen", "mittlerer", "links abbiegen"], "statement": "Zum Linksabbiegen darf ich mich auf dem mittleren Fahrstreifen einordnen", "truth": true},
+  {"context": ["vier Fahrstreifen", "beide Richtungen", "überholen"], "statement": "Auf vierstreifigen Fahrbahnen für beide Richtungen darf ich den dritten Fahrstreifen von rechts zum Überholen nutzen", "truth": false}]},
+
+{"id": "RDS_RIGHT_LANE_RULE", "topic": "04_road_system", "subtopic": "rechtsfahrgebot", "title": "Fahrbahnbenutzung und Rechtsfahrgebot",
+ "rule": "Fahrzeuge benutzen die Fahrbahn, von zwei Fahrbahnen die rechte; Seitenstreifen gehören nicht zur Fahrbahn. Möglichst weit rechts fahren. Außerorts mit drei markierten Fahrstreifen je Richtung darf der mittlere durchgehend befahren werden, wenn rechts – auch nur hin und wieder – ein Fahrzeug fährt oder hält. Den linken Fahrstreifen dürfen dort Lkw über 3,5 t und Kfz mit Anhänger nur zum Linksabbiegen benutzen.",
+ "concepts": ["fahrstreifen", "rechtsfahrgebot"], "keywords": ["Rechtsfahrgebot", "Fahrbahn", "Seitenstreifen", "mittlerer Fahrstreifen", "drei Fahrstreifen", "Anhänger", "linker Fahrstreifen"],
+ "exam_relevance": 2, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 2", "para": "Abs. 1", "evidence": "Fahrzeuge müssen die Fahrbahnen benutzen, von zwei Fahrbahnen die rechte. Seitenstreifen sind nicht Bestandteil der Fahrbahn."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 7", "para": "Abs. 3c", "evidence": "Den linken Fahrstreifen dürfen außerhalb geschlossener Ortschaften Lastkraftwagen mit einer zulässigen Gesamtmasse von mehr als 3,5 t sowie alle Kraftfahrzeuge mit Anhänger nur benutzen, wenn sie sich dort zum Zwecke des Linksabbiegens einordnen."}],
+ "claims": [
+  {"context": ["Seitenstreifen", "Fahrbahn"], "statement": "Seitenstreifen sind nicht Bestandteil der Fahrbahn", "truth": true},
+  {"context": ["Anhänger", "außerorts", "drei Fahrstreifen", "linker Fahrstreifen"], "statement": "Mit Anhänger darf ich außerorts bei drei Fahrstreifen den linken nur zum Linksabbiegen benutzen", "truth": true},
+  {"context": ["Anhänger", "außerorts", "drei Fahrstreifen", "linker Fahrstreifen"], "statement": "Mit Anhänger darf ich auf dem linken von drei Fahrstreifen überholen", "truth": false}]},
+
+{"id": "RDS_MOTORWAY_ACCESS", "topic": "04_road_system", "subtopic": "autobahn_kraftfahrstrasse", "title": "Autobahn und Kraftfahrstraße: Benutzung",
+ "rule": "Autobahnen (Zeichen 330.1) und Kraftfahrstraßen (331.1) nur mit Kfz, deren bauartbedingte Höchstgeschwindigkeit mehr als 60 km/h beträgt (auch Anhänger). Fußgänger dürfen Autobahnen nicht betreten. Ausfahrt nur an gekennzeichneten Stellen (Zeichen 332/333). Lkw über 7,5 t und Zugmaschinen dürfen bei Sicht ≤ 50 m durch Schnee/Regen sowie bei Glätte den äußerst linken Fahrstreifen nicht benutzen.",
+ "numeric_refs": ["STVO_18_MIN_DESIGN_SPEED"],
+ "concepts": ["autobahn", "kraftfahrstrasse"], "keywords": ["Autobahn", "Kraftfahrstraße", "60 km/h", "Fußgänger", "Ausfahrt", "Zeichen 330.1", "Zeichen 331.1"],
+ "exam_relevance": 2, "difficulty": 1, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 18", "para": "Abs. 1", "evidence": "Autobahnen (Zeichen 330.1) und Kraftfahrstraßen (Zeichen 331.1) dürfen nur mit Kraftfahrzeugen benutzt werden, deren durch die Bauart bestimmte Höchstgeschwindigkeit mehr als 60 km/h beträgt"},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 18", "para": "Abs. 9", "evidence": "Zu Fuß Gehende dürfen Autobahnen nicht betreten."}],
+ "claims": [
+  {"context": ["Autobahn", "Mofa", "Traktor", "benutzen"], "statement": "Fahrzeuge, die bauartbedingt nicht mehr als 60 km/h fahren können, dürfen die Autobahn nicht benutzen", "truth": true},
+  {"context": ["Autobahn", "Fußgänger"], "statement": "Fußgänger dürfen die Autobahn nicht betreten", "truth": true},
+  {"context": ["Kraftfahrstraße", "einfahren"], "statement": "Auf Kraftfahrstraßen darf nur an Kreuzungen oder Einmündungen eingefahren werden", "truth": true}]}
+]}

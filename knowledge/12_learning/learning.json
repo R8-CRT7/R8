@@ -1,0 +1,17 @@
+{"items": [
+{"id": "LRN_LIFELONG", "topic": "12_learning", "subtopic": "lebenslanges_lernen", "title": "Lebenslanges Lernen",
+ "rule": "Regeln ändern sich (z. B. Seitenabstand 1,5/2 m, Grünpfeil für Radfahrer, Handyregeln). Wissen regelmäßig auffrischen, Fahrsicherheitstrainings und Erste-Hilfe-Kenntnisse nutzen; eigene Fehler reflektieren.",
+ "concepts": ["lernen", "regelaenderung"], "keywords": ["lebenslanges Lernen", "Fahrsicherheitstraining", "Regeländerung", "auffrischen", "Erste Hilfe"],
+ "exam_relevance": 1, "difficulty": 1,
+ "sources": [{"type": "driving_school", "ref": "Eigene Zusammenfassung; Regeländerungen werden durch den Knowledge Watch gegen den amtlichen Text verfolgt"}],
+ "claims": [
+  {"context": ["lernen", "Führerschein", "Regeln"], "statement": "Auch nach der Führerscheinprüfung sollte man sein Wissen über Verkehrsregeln regelmäßig auffrischen", "truth": true}]},
+
+{"id": "LRN_EXAM_STRUCTURE", "topic": "12_learning", "subtopic": "pruefung", "title": "Theorieprüfung Klasse B (Struktur)",
+ "rule": "Theorieprüfung Klasse B (Ersterwerb): 30 Aufgaben, bestanden mit höchstens 10 Fehlerpunkten, aber nicht mit zwei falsch beantworteten 5-Punkte-Fragen. Quelle FeV Anlage 7 – im Container NICHT amtlich verifiziert; der Prüfungssimulator kennzeichnet das.",
+ "numeric_refs": ["FEV_A7_B_QUESTIONS", "FEV_A7_B_MAX_ERROR_POINTS"],
+ "concepts": ["pruefung"], "keywords": ["Theorieprüfung", "Fehlerpunkte", "30 Fragen", "bestanden"],
+ "exam_relevance": 1, "difficulty": 1, "confidence": 0.7,
+ "sources": [{"type": "law", "law": "fev_2010", "norm": "Anlage 7", "ref": "FeV Anlage 7 – NICHT verifiziert"}],
+ "claims": []}
+]}

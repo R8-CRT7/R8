@@ -1,0 +1,610 @@
+{
+ "items": [
+  {
+   "id": "SPD_ADAPT",
+   "topic": "08_speed_distance",
+   "subtopic": "angepasste_geschwindigkeit",
+   "title": "Angepasste Geschwindigkeit",
+   "rule": "Nur so schnell fahren, dass man das Fahrzeug ständig beherrscht; Tempo an Straße, Verkehr, Sicht, Wetter, eigenes Können, Fahrzeug und Ladung anpassen. Innerhalb der übersehbaren Strecke anhalten können.",
+   "exceptions": [
+    "Auf schmalen Fahrbahnen mit gefährdetem Gegenverkehr: Anhalten innerhalb der HÄLFTE der übersehbaren Strecke."
+   ],
+   "concepts": [
+    "geschwindigkeit",
+    "sichtweite",
+    "anhalteweg"
+   ],
+   "keywords": [
+    "angepasst",
+    "übersehbare Strecke",
+    "Sichtverhältnisse",
+    "Wetter",
+    "beherrschen"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 1 Satz 1, 2, 4",
+     "evidence": "Wer ein Fahrzeug führt, darf nur so schnell fahren, dass das Fahrzeug ständig beherrscht wird."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 1 Satz 4",
+     "evidence": "Es darf nur so schnell gefahren werden, dass innerhalb der übersehbaren Strecke gehalten werden kann."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Geschwindigkeit",
+      "wählen",
+      "anpassen"
+     ],
+     "statement": "Die Geschwindigkeit muss den Straßen-, Verkehrs-, Sicht- und Wetterverhältnissen angepasst werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Geschwindigkeit",
+      "anpassen"
+     ],
+     "statement": "Die Geschwindigkeit muss den persönlichen Fähigkeiten und der Ladung angepasst werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Geschwindigkeit",
+      "Sicht",
+      "übersehbare Strecke"
+     ],
+     "statement": "Man muss innerhalb der übersehbaren Strecke anhalten können",
+     "truth": true
+    },
+    {
+     "context": [
+      "schmale Fahrbahn",
+      "Gegenverkehr",
+      "übersehbare Strecke"
+     ],
+     "statement": "Auf schmalen Fahrbahnen muss man innerhalb der Hälfte der übersehbaren Strecke anhalten können",
+     "truth": true
+    },
+    {
+     "context": [
+      "Geschwindigkeit",
+      "zulässige Höchstgeschwindigkeit"
+     ],
+     "statement": "Die zulässige Höchstgeschwindigkeit darf immer ausgefahren werden",
+     "truth": false
+    },
+    {
+     "context": [
+      "Geschwindigkeit",
+      "Sicht"
+     ],
+     "statement": "Man darf so schnell fahren, wie das Fahrzeug bauartbedingt kann",
+     "truth": false
+    }
+   ],
+   "mnemonic": "Sehen – Anhalten: Was ich nicht überblicke, muss ich vorher anhalten können."
+  },
+  {
+   "id": "SPD_FOG_50",
+   "topic": "08_speed_distance",
+   "subtopic": "sicht_nebel",
+   "title": "Sichtweite unter 50 m",
+   "rule": "Sichtweite durch Nebel, Schneefall oder Regen unter 50 m: höchstens 50 km/h (auch auf der Autobahn); Nebelschlussleuchte nur bei Nebel und Sicht unter 50 m.",
+   "numeric_refs": [
+    "STVO_3_FOG_SPEED",
+    "STVO_3_FOG_VISIBILITY",
+    "STVO_17_FOG_REAR_LIGHT"
+   ],
+   "concepts": [
+    "sichtweite",
+    "nebel",
+    "beleuchtung"
+   ],
+   "keywords": [
+    "Nebel",
+    "Schneefall",
+    "Regen",
+    "Sichtweite",
+    "50 m",
+    "Nebelschlussleuchte",
+    "Leitpfosten"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 1 Satz 3",
+     "evidence": "Beträgt die Sichtweite durch Nebel, Schneefall oder Regen weniger als 50 m, darf nicht schneller als 50 km/h gefahren werden, wenn nicht eine geringere Geschwindigkeit geboten ist."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 17",
+     "para": "Abs. 3 Satz 5",
+     "evidence": "Nebelschlussleuchten dürfen nur dann benutzt werden, wenn durch Nebel die Sichtweite weniger als 50 m beträgt."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Nebel",
+      "Schneefall",
+      "Regen",
+      "Sichtweite",
+      "höchstens 50 km/h"
+     ],
+     "statement": "Bei einer Sichtweite unter 50 m darf höchstens 50 km/h gefahren werden",
+     "truth": true,
+     "numbers": [
+      "50 m",
+      "50 km/h"
+     ]
+    },
+    {
+     "context": [
+      "Nebel",
+      "Sichtweite",
+      "weniger als 50 m"
+     ],
+     "statement": "Ich darf höchstens 50 km/h fahren",
+     "truth": true,
+     "numbers": [
+      "50 km/h"
+     ]
+    },
+    {
+     "context": [
+      "Nebel",
+      "Sichtweite",
+      "Autobahn"
+     ],
+     "statement": "Bei Sichtweite unter 50 m gilt auch auf der Autobahn höchstens 50 km/h",
+     "truth": true,
+     "numbers": [
+      "50 km/h"
+     ]
+    },
+    {
+     "context": [
+      "Nebelschlussleuchte",
+      "einschalten"
+     ],
+     "statement": "Die Nebelschlussleuchte darf nur bei Nebel mit einer Sichtweite unter 50 m eingeschaltet werden",
+     "truth": true,
+     "numbers": [
+      "50 m"
+     ]
+    },
+    {
+     "context": [
+      "Nebelschlussleuchte",
+      "Regen"
+     ],
+     "statement": "Die Nebelschlussleuchte darf bei starkem Regen eingeschaltet werden",
+     "truth": false
+    },
+    {
+     "context": [
+      "Nebel",
+      "Sichtweite",
+      "weniger als 50 m"
+     ],
+     "statement": "Die 50 km/h dürfen immer ausgefahren werden",
+     "truth": false
+    }
+   ],
+   "mnemonic": "50 m Sicht → max. 50 km/h. Leitpfosten stehen im Abstand von 50 m."
+  },
+  {
+   "id": "SPD_LIMITS_CAR",
+   "topic": "08_speed_distance",
+   "subtopic": "hoechstgeschwindigkeit_pkw",
+   "title": "Höchstgeschwindigkeiten Pkw",
+   "rule": "Pkw (und Kfz bis 3,5 t): innerorts 50 km/h, außerorts 100 km/h. Auf Autobahnen und Straßen mit baulich getrennten Richtungsfahrbahnen bzw. mindestens zwei markierten Fahrstreifen je Richtung gilt die 100-km/h-Grenze nicht (Richtgeschwindigkeit 130 km/h nach Autobahn-Richtgeschwindigkeits-V).",
+   "numeric_refs": [
+    "STVO_3_INNERORTS",
+    "STVO_3_AUSSERORTS_PKW"
+   ],
+   "exceptions": [
+    "Verkehrszeichen können abweichende Grenzen anordnen.",
+    "Mit Schneeketten höchstens 50 km/h."
+   ],
+   "concepts": [
+    "geschwindigkeit",
+    "innerorts",
+    "ausserorts"
+   ],
+   "keywords": [
+    "Höchstgeschwindigkeit",
+    "innerorts",
+    "außerorts",
+    "Pkw",
+    "geschlossene Ortschaft",
+    "100 km/h",
+    "50 km/h"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 3 Nr. 1",
+     "evidence": "innerhalb geschlossener Ortschaften für alle Kraftfahrzeuge 50 km/h,"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 3 Nr. 2 c",
+     "evidence": "für Personenkraftwagen sowie für andere Kraftfahrzeuge mit einer zulässigen Gesamtmasse bis 3,5 t\n100 km/h."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "innerhalb geschlossener Ortschaften",
+      "innerorts",
+      "Pkw",
+      "Höchstgeschwindigkeit"
+     ],
+     "statement": "Innerorts beträgt die zulässige Höchstgeschwindigkeit für Pkw 50 km/h",
+     "truth": true,
+     "numbers": [
+      "50 km/h"
+     ]
+    },
+    {
+     "context": [
+      "außerhalb geschlossener Ortschaften",
+      "außerorts",
+      "Pkw",
+      "Höchstgeschwindigkeit"
+     ],
+     "statement": "Außerorts beträgt die zulässige Höchstgeschwindigkeit für Pkw 100 km/h",
+     "truth": true,
+     "numbers": [
+      "100 km/h"
+     ]
+    },
+    {
+     "context": [
+      "Schneeketten",
+      "Höchstgeschwindigkeit"
+     ],
+     "statement": "Mit Schneeketten dürfen höchstens 50 km/h gefahren werden",
+     "truth": true,
+     "numbers": [
+      "50 km/h"
+     ]
+    }
+   ],
+   "mnemonic": "50 – 100 – (Autobahn: Richtgeschwindigkeit 130)."
+  },
+  {
+   "id": "SPD_LIMITS_TRAILER",
+   "topic": "08_speed_distance",
+   "subtopic": "hoechstgeschwindigkeit_anhaenger",
+   "title": "Höchstgeschwindigkeit mit Anhänger",
+   "rule": "Pkw mit Anhänger: außerorts höchstens 80 km/h; auf Autobahnen und Kraftfahrstraßen mit getrennten Fahrbahnen ebenfalls 80 km/h (100 km/h nur mit besonderer Zulassung nach der 9. AusnVO – nicht Teil der StVO).",
+   "numeric_refs": [
+    "STVO_3_PKW_TRAILER",
+    "STVO_18_PKW_TRAILER"
+   ],
+   "concepts": [
+    "anhaenger",
+    "geschwindigkeit"
+   ],
+   "keywords": [
+    "Anhänger",
+    "Pkw mit Anhänger",
+    "80 km/h",
+    "Gespann",
+    "Wohnwagen"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 3 Nr. 2 a bb",
+     "evidence": "Personenkraftwagen mit Anhänger,"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 18",
+     "para": "Abs. 5 Nr. 1 b",
+     "evidence": "Personenkraftwagen mit Anhänger, Lastkraftwagen mit Anhänger, Wohnmobile mit Anhänger und Zugmaschinen mit Anhänger sowie"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Anhänger",
+      "Pkw",
+      "außerorts",
+      "Höchstgeschwindigkeit"
+     ],
+     "statement": "Mit einem Pkw mit Anhänger darf außerorts höchstens 80 km/h gefahren werden",
+     "truth": true,
+     "numbers": [
+      "80 km/h"
+     ]
+    },
+    {
+     "context": [
+      "Anhänger",
+      "Pkw",
+      "Autobahn",
+      "Höchstgeschwindigkeit"
+     ],
+     "statement": "Mit einem Pkw mit Anhänger darf man auf der Autobahn grundsätzlich höchstens 80 km/h fahren",
+     "truth": true,
+     "numbers": [
+      "80 km/h"
+     ]
+    }
+   ],
+   "mnemonic": "Anhänger dran → 80."
+  },
+  {
+   "id": "SPD_TOO_SLOW",
+   "topic": "08_speed_distance",
+   "subtopic": "langsamfahren",
+   "title": "Kein unnötig langsames Fahren",
+   "rule": "Kraftfahrzeuge dürfen ohne triftigen Grund nicht so langsam fahren, dass sie den Verkehrsfluss behindern.",
+   "concepts": [
+    "geschwindigkeit",
+    "verkehrsfluss"
+   ],
+   "keywords": [
+    "langsam",
+    "Verkehrsfluss",
+    "triftiger Grund",
+    "behindern"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 2",
+     "evidence": "Ohne triftigen Grund dürfen Kraftfahrzeuge nicht so langsam fahren, dass sie den Verkehrsfluss behindern."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "langsam",
+      "Verkehrsfluss"
+     ],
+     "statement": "Ohne triftigen Grund darf man nicht so langsam fahren, dass der Verkehrsfluss behindert wird",
+     "truth": true
+    },
+    {
+     "context": [
+      "langsam",
+      "Verkehrsfluss"
+     ],
+     "statement": "Langsames Fahren ist immer erlaubt, weil es sicher ist",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "SPD_CHILDREN_ELDERLY",
+   "topic": "08_speed_distance",
+   "subtopic": "kinder_aeltere",
+   "title": "Kinder, Hilfsbedürftige, ältere Menschen",
+   "rule": "Gegenüber Kindern, hilfsbedürftigen und älteren Menschen: Geschwindigkeit vermindern, bremsbereit sein, so verhalten, dass eine Gefährdung ausgeschlossen ist.",
+   "concepts": [
+    "kinder",
+    "geschwindigkeit",
+    "vorsicht"
+   ],
+   "keywords": [
+    "Kinder",
+    "ältere Menschen",
+    "hilfsbedürftig",
+    "Bremsbereitschaft",
+    "Ball",
+    "Schulweg"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 2a",
+     "evidence": "Wer ein Fahrzeug führt, muss sich gegenüber Kindern, hilfsbedürftigen und älteren Menschen, insbesondere durch Verminderung der Fahrgeschwindigkeit und durch Bremsbereitschaft, so verhalten, dass eine Gefährdung dieser Verkehrsteilnehmer ausgeschlossen ist."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Kinder",
+      "Fahrbahnrand"
+     ],
+     "statement": "Geschwindigkeit vermindern und bremsbereit sein",
+     "truth": true
+    },
+    {
+     "context": [
+      "Kinder",
+      "Fahrbahnrand"
+     ],
+     "statement": "Durch Hupen warnen und mit unverminderter Geschwindigkeit weiterfahren",
+     "truth": false
+    },
+    {
+     "context": [
+      "Kinder",
+      "Fahrbahnrand"
+     ],
+     "statement": "Darauf vertrauen, dass die Kinder stehen bleiben",
+     "truth": false
+    },
+    {
+     "context": [
+      "ältere Menschen",
+      "Fahrbahn",
+      "überqueren"
+     ],
+     "statement": "Mit unvorsichtigem Verhalten älterer Menschen rechnen und bremsbereit sein",
+     "truth": true
+    }
+   ],
+   "mnemonic": "Kind in Sicht → Fuß vom Gas, Fuß über die Bremse."
+  },
+  {
+   "id": "DIST_FOLLOW",
+   "topic": "08_speed_distance",
+   "subtopic": "sicherheitsabstand",
+   "title": "Abstand zum Vorausfahrenden",
+   "rule": "Der Abstand muss in der Regel so groß sein, dass man auch bei plötzlichem Bremsen des Vorausfahrenden hinter ihm halten kann. Faustregeln: außerorts „halber Tacho“ in Metern bzw. 2 Sekunden; Wer vorausfährt, darf nicht ohne zwingenden Grund stark bremsen.",
+   "numeric_refs": [],
+   "concepts": [
+    "abstand",
+    "reaktionsweg",
+    "anhalteweg"
+   ],
+   "keywords": [
+    "Abstand",
+    "Sicherheitsabstand",
+    "halber Tacho",
+    "zwei Sekunden",
+    "vorausfahrend",
+    "auffahren"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 4",
+     "para": "Abs. 1",
+     "evidence": "Der Abstand zu einem vorausfahrenden Fahrzeug muss in der Regel so groß sein, dass auch dann hinter diesem gehalten werden kann, wenn es plötzlich gebremst wird."
+    },
+    {
+     "type": "rule_of_thumb",
+     "ref": "Faustregel Fahrschulausbildung: Sicherheitsabstand = halber Tachowert in Metern / 2-Sekunden-Abstand"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Abstand",
+      "vorausfahrend"
+     ],
+     "statement": "Der Abstand muss so groß sein, dass ich auch bei plötzlichem Bremsen des Vorausfahrenden anhalten kann",
+     "truth": true
+    },
+    {
+     "context": [
+      "Abstand",
+      "vorausfahrend",
+      "bremsen"
+     ],
+     "statement": "Wer vorausfährt, darf ohne zwingenden Grund nicht stark bremsen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Abstand",
+      "Nässe",
+      "Glätte",
+      "Dunkelheit"
+     ],
+     "statement": "Bei Nässe, Glätte oder schlechter Sicht muss der Abstand größer sein",
+     "truth": true
+    },
+    {
+     "context": [
+      "Abstand",
+      "außerorts"
+     ],
+     "statement": "Außerorts genügt als Abstand ein Viertel des Tachowerts in Metern",
+     "truth": false
+    }
+   ],
+   "mnemonic": "Halber Tacho = Meter Abstand (außerorts); 21, 22 – zwei Sekunden."
+  },
+  {
+   "id": "DIST_TRUCK_GAP",
+   "topic": "08_speed_distance",
+   "subtopic": "abstand_einscheren",
+   "title": "Einscherabstand langsamer Fahrzeuge",
+   "rule": "Wer ein Kfz mit besonderer Geschwindigkeitsbeschränkung oder einen Zug über 7 m Länge führt, muss außerorts so viel Abstand halten, dass Überholende einscheren können – außer beim angekündigten Ausscheren zum Überholen, bei mehr als einem Fahrstreifen je Richtung oder bei Überholverbot.",
+   "numeric_refs": [
+    "STVO_4_TRAIN_7M"
+   ],
+   "concepts": [
+    "abstand",
+    "anhaenger",
+    "ueberholen"
+   ],
+   "keywords": [
+    "Zug",
+    "7 m",
+    "Einscheren",
+    "Anhänger",
+    "Gespann",
+    "Abstand"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 4",
+     "para": "Abs. 2",
+     "evidence": "Wer ein Kraftfahrzeug führt, für das eine besondere Geschwindigkeitsbeschränkung gilt, sowie einen Zug führt, der länger als 7 m ist, muss außerhalb geschlossener Ortschaften ständig so großen Abstand von dem vorausfahrenden Kraftfahrzeug halten, dass ein überholendes Kraftfahrzeug einscheren kann."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zug",
+      "Anhänger",
+      "länger als 7 m",
+      "außerorts",
+      "Abstand"
+     ],
+     "statement": "Ich muss so großen Abstand halten, dass ein Überholender vor mir einscheren kann",
+     "truth": true
+    }
+   ]
+  }
+ ]
+}

@@ -21,11 +21,18 @@ from smart360.theory.negation import Deontic, Polarity, analyze, asks_for_negati
 from smart360.theory.priority import PriorityDecision, decide
 from smart360.theory.scene import Scene, temporal_check
 from smart360.theory.schema import Claim, KnowledgeObject
-from smart360.theory.text import content, fold, numbers, similarity, stem
+from smart360.theory.text import NUMBER_TOKEN, content, cosine, fold, numbers, similarity, stem
 
 DEFAULT_THRESHOLD = 0.75
 MATCH_MIN = 0.55  # minimum statement similarity for a claim to count
 AMBIGUITY_GAP = 0.08
+NUMERIC_SITUATION_MIN = 0.3
+# Words that change which number applies. If the question contains one that the matched claim does not, a
+# numeric answer is not decided from that claim (protects against e.g. "Pkw mit Anhänger" -> Pkw limit).
+QUALIFIERS = frozenset(content(" ".join((
+    "anhänger wohnanhänger lkw kraftrad bus kraftomnibus schneeketten nebel schneefall regen glätte autobahn "
+    "kraftfahrstraße innerorts außerorts kinder radfahrer fußgänger dunkelheit nacht probezeit fahranfänger "
+    "baustelle tunnel bahnübergang einbahnstraße kreisverkehr").split())))  # numeric-only answers: minimum question-vs-claim situation similarity
 
 
 class Verdict(StrEnum):
@@ -151,15 +158,25 @@ def _claim_verdict(claim: Claim, answer: str, pa: Polarity) -> tuple[Verdict, li
     flags: list[str] = []
     pc = analyze(claim.statement)
     truth = claim.truth
-    # numbers: a different number in the answer than in a TRUE claim -> the answer is false
+    # numbers are compared per unit: a different value in the same unit as a TRUE claim -> the answer is false;
+    # a number the claim does not cover (other unit / claim without numbers) -> not decidable from this claim
     a_nums = {(v, u) for v, u in numbers(answer)}
     c_nums = {(v, u) for v, u in numbers(" ".join(claim.numbers) or claim.statement)}
-    if c_nums and a_nums and a_nums != c_nums:
-        if {u for _, u in a_nums} != {u for _, u in c_nums}:
-            flags.append("unit_mismatch")
-        if truth:
-            return Verdict.FALSE, [*flags, "number_differs"]
-        return Verdict.UNKNOWN, [*flags, "number_differs_from_false_claim"]
+    if a_nums:
+        if not c_nums:
+            return Verdict.UNKNOWN, ["number_not_covered"]
+        differs = covered = False
+        for v, u in a_nums:
+            same_unit = {cv for cv, cu in c_nums if cu == u}
+            if same_unit:
+                covered = True
+                differs |= v not in same_unit
+        if not covered:
+            return Verdict.UNKNOWN, ["unit_mismatch"]
+        if differs:
+            if truth:
+                return Verdict.FALSE, ["number_differs"]
+            return Verdict.UNKNOWN, ["number_differs_from_false_claim"]
     if Deontic.NONE not in (pa.deontic, pc.deontic):
         r = deontic_truth(pc.deontic, pa.deontic, truth)
         if r is None:
@@ -188,14 +205,33 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
     q_core = _core(question)
     a_core = _core(answer)
     pa = analyze(answer)
+    a_words = {w for w in a_core if not NUMBER_TOKEN.match(w)}
+    numeric_only = bool(numbers(answer)) and len(a_words) <= 1
     out: list[_Match] = []
     for obj in candidates:
         for claim in obj.claims:
+            if numeric_only:
+                # "100 km/h", "unter 50 m": the words say nothing - the SITUATION (question vs claim) decides
+                c_nums = numbers(" ".join(claim.numbers) or claim.statement)
+                if not {u for _, u in c_nums} & {u for _, u in numbers(answer)}:
+                    continue
+                c_all = {w for w in _core(" ".join(claim.context) + " " + claim.statement) if not NUMBER_TOKEN.match(w)}
+                s_sit = cosine({w for w in q_core if not NUMBER_TOKEN.match(w)}, c_all)
+                if s_sit < NUMERIC_SITUATION_MIN:
+                    continue
+                verdict, flags = _claim_verdict(claim, answer, pa)
+                flags = [*flags, "numeric_answer"]
+                missing = (q_core & QUALIFIERS) - c_all
+                if missing:  # the question names a situation (Anhänger, Lkw, Nebel ...) this claim does not cover
+                    flags.append("qualifier_missing")
+                    s_sit *= 0.5 ** len(missing)
+                out.append(_Match(obj, claim, s_sit, verdict, flags))
+                continue
             s_stmt = similarity(a_core, _core(claim.statement))
             if s_stmt < MATCH_MIN:
                 continue
             ctx = _core(" ".join(claim.context)) if claim.context else set()
-            s_ctx = similarity(q_core, ctx) if ctx else 0.5
+            s_ctx = max(similarity(q_core, ctx), similarity(q_core, _core(claim.statement))) if ctx else 0.5
             if use_context and claim.context and s_ctx < 0.2:
                 continue  # the claim belongs to a different situation
             score = s_stmt * ((0.5 + 0.5 * s_ctx) if use_context else 1.0)
@@ -208,15 +244,22 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
 
 
 def _decide_claims(matches: list[_Match]) -> tuple[Verdict, _Match | None, list[str]]:
+    """Best DECISIVE match wins - unless an undecidable claim is clearly closer, or two decisive claims within
+    the ambiguity gap disagree (-> UNKNOWN, conflicting_rules)."""
     if not matches:
         return Verdict.UNKNOWN, None, ["no_matching_rule"]
-    best = matches[0]
-    for other in matches[1:]:
+    decisive = [m for m in matches if m.verdict != Verdict.UNKNOWN]
+    if not decisive:
+        return Verdict.UNKNOWN, matches[0], list(matches[0].flags)
+    best = decisive[0]
+    if matches[0].score - best.score > AMBIGUITY_GAP:
+        return Verdict.UNKNOWN, matches[0], [*matches[0].flags, "closest_rule_undecidable"]
+    for other in decisive[1:]:
         if best.score - other.score > AMBIGUITY_GAP:
             break
-        if other.verdict not in (best.verdict, Verdict.UNKNOWN):
+        if other.verdict != best.verdict:
             return Verdict.UNKNOWN, best, ["conflicting_rules"]
-    if "exception_risk" in best.flags:
+    if "exception_risk" in best.flags or "qualifier_missing" in best.flags:
         return Verdict.UNKNOWN, best, [*best.flags]
     return best.verdict, best, list(best.flags)
 

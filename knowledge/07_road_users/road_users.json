@@ -1,0 +1,68 @@
+{"items": [
+{"id": "USR_CYCLISTS", "topic": "07_road_users", "subtopic": "radfahrer", "title": "Radfahrer: Radwegbenutzung, Nebeneinanderfahren",
+ "rule": "Radwegbenutzungspflicht nur bei Zeichen 237, 240 oder 241. Rechte Radwege ohne Zeichen dürfen, linke nur mit Zusatzzeichen „Radverkehr frei“ benutzt werden. Nebeneinanderfahren erlaubt, wenn der Verkehr nicht behindert wird. Radfahrer dürfen wartende Fahrzeuge rechts mit mäßiger Geschwindigkeit überholen, wenn ausreichend Raum ist.",
+ "concepts": ["radfahrer", "radweg"], "keywords": ["Radfahrer", "Radweg", "Benutzungspflicht", "nebeneinander", "Zeichen 237", "Radverkehr frei", "rechts überholen"],
+ "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 2", "para": "Abs. 4", "evidence": "Eine Pflicht, Radwege in der jeweiligen Fahrtrichtung zu benutzen, besteht nur, wenn dies durch Zeichen 237, 240 oder 241 angeordnet ist."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 2", "para": "Abs. 4 Satz 1", "evidence": "Mit Fahrrädern darf nebeneinander gefahren werden, wenn dadurch der Verkehr nicht behindert wird"},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 5", "para": "Abs. 8", "evidence": "Ist ausreichender Raum vorhanden, dürfen Rad Fahrende und Mofa Fahrende die Fahrzeuge, die auf dem rechten Fahrstreifen warten, mit mäßiger Geschwindigkeit und besonderer Vorsicht rechts überholen."}],
+ "claims": [
+  {"context": ["Radfahrer", "Radweg", "Pflicht"], "statement": "Radfahrer müssen einen Radweg nur benutzen, wenn er mit Zeichen 237, 240 oder 241 gekennzeichnet ist", "truth": true},
+  {"context": ["Radfahrer", "Radweg", "Pflicht"], "statement": "Radfahrer müssen jeden vorhandenen Radweg benutzen", "truth": false},
+  {"context": ["Radfahrer", "nebeneinander"], "statement": "Radfahrer dürfen nebeneinander fahren, wenn der Verkehr nicht behindert wird", "truth": true},
+  {"context": ["Radfahrer", "wartende Fahrzeuge", "rechts überholen"], "statement": "Radfahrer dürfen an der Ampel wartende Autos rechts überholen", "truth": true}]},
+
+{"id": "USR_CHILDREN_BIKES", "topic": "07_road_users", "subtopic": "kinder_fahrrad", "title": "Kinder mit dem Fahrrad",
+ "rule": "Kinder bis zum vollendeten 8. Lebensjahr müssen, bis zum 10. dürfen mit dem Fahrrad den Gehweg benutzen (bis 8 auch baulich getrennte Radwege). Eine geeignete Aufsichtsperson (ab 16 Jahren) darf mitfahren. Vor dem Überqueren der Fahrbahn absteigen. Kinder bis 7 auf Fahrrädern nur in besonderen Sitzen bzw. Kinderanhängern (max. zwei) von mindestens 16 Jahre alten Personen.",
+ "numeric_refs": ["STVO_2_BIKE_KIDS_8Y", "STVO_2_BIKE_KIDS_10Y", "STVO_2_BIKE_ESCORT_16"],
+ "concepts": ["kinder", "radfahrer", "gehweg"], "keywords": ["Kinder", "Fahrrad", "Gehweg", "8 Jahre", "10 Jahre", "Aufsichtsperson", "absteigen", "Kindersitz", "Fahrradanhänger"],
+ "exam_relevance": 2, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 2", "para": "Abs. 5", "evidence": "Kinder bis zum vollendeten achten Lebensjahr müssen, Kinder bis zum vollendeten zehnten Lebensjahr dürfen mit Fahrrädern Gehwege benutzen."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 2", "para": "Abs. 5", "evidence": "Wird vor dem Überqueren einer Fahrbahn ein Gehweg benutzt, müssen die Kinder und die diese begleitende Aufsichtsperson absteigen."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 21", "para": "Abs. 3", "evidence": "bis zu zwei Kinder bis zum vollendeten siebten Lebensjahr von mindestens 16 Jahre alten Personen mitgenommen werden."}],
+ "claims": [
+  {"context": ["Kinder", "Fahrrad", "Gehweg", "acht"], "statement": "Kinder bis zum vollendeten 8. Lebensjahr müssen mit dem Fahrrad den Gehweg benutzen", "truth": true},
+  {"context": ["Kinder", "Fahrrad", "Gehweg", "zehn"], "statement": "Kinder bis zum vollendeten 10. Lebensjahr dürfen mit dem Fahrrad den Gehweg benutzen", "truth": true},
+  {"context": ["Kinder", "Fahrrad", "Gehweg", "Fahrbahn überqueren"], "statement": "Vor dem Überqueren der Fahrbahn müssen Kinder vom Gehweg aus absteigen", "truth": true},
+  {"context": ["Kinder", "Fahrrad", "Gehweg"], "statement": "Kinder bis 12 Jahre müssen mit dem Fahrrad den Gehweg benutzen", "truth": false}]},
+
+{"id": "USR_PEDESTRIANS", "topic": "07_road_users", "subtopic": "fussgaenger", "title": "Fußgänger",
+ "rule": "Fußgänger benutzen Gehwege; Fahrbahn nur, wenn weder Gehweg noch Seitenstreifen da ist – innerorts am rechten oder linken Rand, außerorts am linken Rand (wenn zumutbar). Fahrbahn zügig auf kürzestem Weg quer überschreiten; bei dichtem Verkehr an Kreuzungen, Ampeln, Querungshilfen oder Überwegen. Wechselt die Fußgängerampel auf Rot, Weg zügig fortsetzen. Inline-Skates, Roller, Kinderfahrräder gelten nicht als Fahrzeuge (Fußgängerregeln).",
+ "concepts": ["fussgaenger", "gehweg"], "keywords": ["Fußgänger", "Gehweg", "linker Fahrbahnrand", "außerorts", "überqueren", "Inline-Skates", "Kinderfahrrad", "Roller"],
+ "exam_relevance": 2, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 25", "para": "Abs. 1", "evidence": "außerhalb geschlossener Ortschaften muss am linken Fahrbahnrand gegangen werden, wenn das zumutbar ist."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 24", "para": "Abs. 1", "evidence": "Schiebe- und Greifreifenrollstühle, Rodelschlitten, Kinderwagen, Roller, Kinderfahrräder, Inline-Skates, Rollschuhe und ähnliche nicht motorbetriebene Fortbewegungsmittel sind nicht Fahrzeuge im Sinne der Verordnung."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 37", "para": "Abs. 2 Nr. 5", "evidence": "Wechselt Grün auf Rot, während zu Fuß Gehende die Fahrbahn überschreiten, haben sie ihren Weg zügig fortzusetzen."}],
+ "claims": [
+  {"context": ["Fußgänger", "außerorts", "kein Gehweg"], "statement": "Außerorts müssen Fußgänger am linken Fahrbahnrand gehen, wenn das zumutbar ist", "truth": true},
+  {"context": ["Fußgänger", "außerorts", "kein Gehweg"], "statement": "Außerorts müssen Fußgänger am rechten Fahrbahnrand gehen", "truth": false},
+  {"context": ["Inline-Skates", "Fahrzeug"], "statement": "Inline-Skater gelten als Fahrzeuge", "truth": false},
+  {"context": ["Fußgänger", "Ampel", "Rot", "auf der Fahrbahn"], "statement": "Wechselt die Ampel auf Rot, müssen Fußgänger ihren Weg zügig fortsetzen", "truth": true}]},
+
+{"id": "USR_HELMET_BELTS", "topic": "07_road_users", "subtopic": "gurt_helm", "title": "Gurt- und Helmpflicht",
+ "rule": "Vorgeschriebene Sicherheitsgurte müssen während der Fahrt angelegt sein (Ausnahmen u. a. Fahrten mit Schrittgeschwindigkeit wie Rückwärtsfahren und auf Parkplätzen, Haus-zu-Haus-Verkehr). Auf Krafträdern und offenen Kfz über 20 km/h bauartbedingt geeigneten Schutzhelm tragen.",
+ "numeric_refs": ["STVO_21A_HELMET_20"],
+ "concepts": ["gurt", "helm", "sicherheit"], "keywords": ["Sicherheitsgurt", "anschnallen", "Gurtpflicht", "Helm", "Motorrad", "Parkplatz", "Rückwärtsfahren"],
+ "exam_relevance": 2, "difficulty": 1, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 21a", "para": "Abs. 1", "evidence": "Vorgeschriebene Sicherheitsgurte müssen während der Fahrt angelegt sein"},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 21a", "para": "Abs. 1 Nr. 3", "evidence": "Fahrten mit Schrittgeschwindigkeit wie Rückwärtsfahren, Fahrten auf Parkplätzen,"}],
+ "claims": [
+  {"context": ["Sicherheitsgurt", "Fahrt"], "statement": "Vorgeschriebene Sicherheitsgurte müssen während der Fahrt angelegt sein", "truth": true},
+  {"context": ["Sicherheitsgurt", "Kurzstrecke", "innerorts"], "statement": "Bei kurzen Fahrten innerorts muss man sich nicht anschnallen", "truth": false},
+  {"context": ["Sicherheitsgurt", "Rückwärtsfahren", "Parkplatz"], "statement": "Beim Rückwärtsfahren mit Schrittgeschwindigkeit gilt die Gurtpflicht nicht", "truth": true}]},
+
+{"id": "USR_PASSENGERS", "topic": "07_road_users", "subtopic": "personenbefoerderung", "title": "Mitnahme von Personen",
+ "rule": "Nicht mehr Personen als Sitzplätze mit Sicherheitsgurten. Keine Mitnahme auf Krafträdern ohne besonderen Sitz, in Wohnanhängern hinter Kfz, auf Ladeflächen (Ausnahmen für Arbeiten). Kinder bis 12 Jahre unter 150 cm nur mit geeigneter Kinderrückhalteeinrichtung.",
+ "numeric_refs": ["STVO_21_CHILD_12Y", "STVO_21_CHILD_150CM"],
+ "concepts": ["personenbefoerderung", "kinder", "kindersitz"], "keywords": ["Mitnahme", "Wohnanhänger", "Wohnwagen", "Ladefläche", "Kindersitz", "150 cm", "12 Jahre"],
+ "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 21", "para": "Abs. 1", "evidence": "In Kraftfahrzeugen dürfen nicht mehr Personen befördert werden, als mit Sicherheitsgurten ausgerüstete Sitzplätze vorhanden sind."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 21", "para": "Abs. 1 Nr. 3", "evidence": "in Wohnanhängern hinter Kraftfahrzeugen."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 21", "para": "Abs. 1a", "evidence": "Kinder bis zum vollendeten 12. Lebensjahr, die kleiner als 150 cm sind, dürfen in Kraftfahrzeugen auf Sitzen, für die Sicherheitsgurte vorgeschrieben sind, nur mitgenommen werden, wenn Rückhalteeinrichtungen für Kinder benutzt werden"}],
+ "claims": [
+  {"context": ["Wohnwagen", "Wohnanhänger", "Personen", "mitnehmen"], "statement": "Im Wohnanhänger dürfen während der Fahrt keine Personen mitgenommen werden", "truth": true},
+  {"context": ["Wohnwagen", "Wohnanhänger", "Personen", "mitnehmen"], "statement": "Im Wohnanhänger dürfen Personen mitfahren, wenn sie angeschnallt sind", "truth": false},
+  {"context": ["Kindersitz", "Kinder", "Größe"], "statement": "Kinder bis 12 Jahre, die kleiner als 150 cm sind, brauchen eine geeignete Kinderrückhalteeinrichtung", "truth": true},
+  {"context": ["Kindersitz", "Kinder", "Größe"], "statement": "Ein Kindersitz ist nur bis 6 Jahre vorgeschrieben", "truth": false},
+  {"context": ["Personen", "Sitzplätze"], "statement": "Es dürfen nicht mehr Personen mitfahren, als Sitzplätze mit Sicherheitsgurten vorhanden sind", "truth": true}]}
+]}

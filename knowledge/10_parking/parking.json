@@ -1,0 +1,57 @@
+{"items": [
+{"id": "PRK_HALT_VS_PARK", "topic": "10_parking", "subtopic": "halten_parken", "title": "Halten oder Parken?",
+ "rule": "Wer sein Fahrzeug verlässt oder länger als drei Minuten hält, parkt. Halten ist unzulässig an engen und unübersichtlichen Stellen, im Bereich scharfer Kurven, auf Ein-/Ausfädelungsstreifen, auf Bahnübergängen, vor und in Feuerwehrzufahrten.",
+ "numeric_refs": ["STVO_12_PARK_3MIN"],
+ "concepts": ["halten", "parken"], "keywords": ["Halten", "Parken", "drei Minuten", "Fahrzeug verlassen", "Feuerwehrzufahrt", "Kurve", "unübersichtlich", "Bahnübergang"],
+ "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 12", "para": "Abs. 2", "evidence": "Wer sein Fahrzeug verlässt oder länger als drei Minuten hält, der parkt."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 12", "para": "Abs. 1", "evidence": "an engen und an unübersichtlichen Straßenstellen,"}],
+ "claims": [
+  {"context": ["parken", "Definition"], "statement": "Wer sein Fahrzeug verlässt, parkt", "truth": true},
+  {"context": ["parken", "Definition"], "statement": "Wer länger als drei Minuten hält, parkt", "truth": true, "numbers": ["drei Minuten"]},
+  {"context": ["parken", "Definition"], "statement": "Wer länger als fünf Minuten hält, parkt", "truth": false},
+  {"context": ["halten", "unzulässig"], "statement": "Halten ist im Bereich von scharfen Kurven unzulässig", "truth": true},
+  {"context": ["halten", "unzulässig"], "statement": "Halten ist auf Bahnübergängen unzulässig", "truth": true},
+  {"context": ["halten", "unzulässig"], "statement": "Halten ist vor und in amtlich gekennzeichneten Feuerwehrzufahrten unzulässig", "truth": true}]},
+
+{"id": "PRK_NO_PARKING", "topic": "10_parking", "subtopic": "parkverbote", "title": "Parkverbote",
+ "rule": "Parken unzulässig: vor und hinter Kreuzungen/Einmündungen bis je 5 m (mit baulichem Radweg rechts: vor der Kreuzung bis 8 m), wenn es die Benutzung gekennzeichneter Parkflächen verhindert, vor Grundstücksein- und -ausfahrten (auf schmalen Fahrbahnen auch gegenüber), über Schachtdeckeln bei erlaubtem Gehwegparken, vor Bordsteinabsenkungen. Andreaskreuz: innerorts bis je 5 m, außerorts bis je 50 m. Haltestelle: bis je 15 m.",
+ "numeric_refs": ["STVO_12_JUNCTION_5M", "STVO_12_JUNCTION_8M_BIKE", "STVO_A2_RAIL_PARK_IN", "STVO_A2_RAIL_PARK_OUT", "STVO_A2_BUSSTOP_15M"],
+ "concepts": ["parken", "kreuzung"], "keywords": ["Parkverbot", "Kreuzung", "Einmündung", "5 m", "8 m", "Grundstückseinfahrt", "Bordsteinabsenkung", "Haltestelle", "Andreaskreuz"],
+ "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 12", "para": "Abs. 3", "evidence": "vor Grundstücksein- und -ausfahrten, auf schmalen Fahrbahnen auch ihnen gegenüber,"},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 12", "para": "Abs. 3 Nr. 1", "evidence": "vor und hinter Kreuzungen und Einmündungen bis zu je 5 m von den Schnittpunkten der Fahrbahnkanten"},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 12", "para": "Abs. 3 Nr. 5", "evidence": "vor Bordsteinabsenkungen."}],
+ "claims": [
+  {"context": ["parken", "Kreuzung", "Einmündung", "Abstand"], "statement": "Vor und hinter Kreuzungen und Einmündungen darf bis zu je 5 m von den Schnittpunkten der Fahrbahnkanten nicht geparkt werden", "truth": true, "numbers": ["5 m"]},
+  {"context": ["parken", "Kreuzung", "Abstand"], "statement": "Vor Kreuzungen darf bis 10 m nicht geparkt werden", "truth": false},
+  {"context": ["parken", "Grundstückseinfahrt", "schmale Fahrbahn"], "statement": "Auf schmalen Fahrbahnen darf auch gegenüber einer Grundstückseinfahrt nicht geparkt werden", "truth": true},
+  {"context": ["parken", "Bordsteinabsenkung"], "statement": "Vor Bordsteinabsenkungen darf nicht geparkt werden", "truth": true},
+  {"context": ["parken", "Haltestelle", "Zeichen 224"], "statement": "Bis zu 15 m vor und hinter dem Haltestellenschild darf nicht geparkt werden", "truth": true, "numbers": ["15 m"]},
+  {"context": ["parken", "Andreaskreuz", "außerorts"], "statement": "Außerorts darf bis zu je 50 m vor und hinter dem Andreaskreuz nicht geparkt werden", "truth": true, "numbers": ["50 m"]}]},
+
+{"id": "PRK_WHERE", "topic": "10_parking", "subtopic": "wie_parken", "title": "Wo und wie parken",
+ "rule": "Zum Parken den rechten Seitenstreifen (inkl. Parkstreifen) benutzen, wenn ausreichend befestigt, sonst an den rechten Fahrbahnrand. In Einbahnstraßen und bei Schienen rechts darf links gehalten und geparkt werden. Gehwegparken (wenn erlaubt) nur rechts, in Einbahnstraßen rechts oder links. Platzsparend parken. An einer Parklücke hat Vorrang, wer sie zuerst unmittelbar erreicht (auch beim Rückwärtseinparken).",
+ "concepts": ["parken", "parkluecke"], "keywords": ["Parklücke", "Vorrang", "Einbahnstraße", "links parken", "Seitenstreifen", "platzsparend", "Gehweg"],
+ "exam_relevance": 2, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 12", "para": "Abs. 4", "evidence": "Soweit auf der rechten Seite Schienen liegen sowie in Einbahnstraßen (Zeichen 220) darf links gehalten und geparkt werden."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 12", "para": "Abs. 5", "evidence": "An einer Parklücke hat Vorrang, wer sie zuerst unmittelbar erreicht"},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 12", "para": "Abs. 6", "evidence": "Es ist platzsparend zu parken"}],
+ "claims": [
+  {"context": ["Einbahnstraße", "links parken"], "statement": "In Einbahnstraßen darf auch links geparkt werden", "truth": true},
+  {"context": ["Parklücke", "Vorrang", "rückwärts einparken"], "statement": "Wer die Parklücke zuerst unmittelbar erreicht, behält den Vorrang, auch wenn er zum Rückwärtseinparken vorbeifährt", "truth": true},
+  {"context": ["Parklücke", "Vorrang"], "statement": "Wer schneller in die Parklücke einfahren kann, hat Vorrang", "truth": false}]},
+
+{"id": "PRK_LEAVING_VEHICLE", "topic": "10_parking", "subtopic": "aussteigen_sichern", "title": "Ein- und Aussteigen, Fahrzeug sichern, Beleuchtung haltender Fahrzeuge",
+ "rule": "Beim Ein- und Aussteigen eine Gefährdung anderer ausschließen (Tür, Radfahrer). Beim Verlassen Unfälle/Störungen vermeiden und Kfz gegen unbefugte Benutzung sichern. Haltende Fahrzeuge außerorts mit eigener Lichtquelle beleuchten; innerorts genügt Parkleuchte zur Fahrbahnseite oder ausreichende Straßenbeleuchtung.",
+ "concepts": ["parken", "aussteigen", "beleuchtung"], "keywords": ["aussteigen", "Tür öffnen", "Radfahrer", "sichern", "unbefugte Benutzung", "Parkleuchte", "beleuchten", "Dunkelheit"],
+ "exam_relevance": 2, "difficulty": 1, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 14", "para": "Abs. 1", "evidence": "Wer ein- oder aussteigt, muss sich so verhalten, dass eine Gefährdung anderer am Verkehr Teilnehmenden ausgeschlossen ist."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 14", "para": "Abs. 2", "evidence": "Kraftfahrzeuge sind auch gegen unbefugte Benutzung zu sichern."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 17", "para": "Abs. 4", "evidence": "Haltende Fahrzeuge sind außerhalb geschlossener Ortschaften mit eigener Lichtquelle zu beleuchten."}],
+ "claims": [
+  {"context": ["aussteigen", "Tür", "Radfahrer"], "statement": "Vor dem Öffnen der Tür muss ich mich vergewissern, dass niemand gefährdet wird", "truth": true},
+  {"context": ["Fahrzeug verlassen", "sichern"], "statement": "Ein Kraftfahrzeug ist beim Verlassen gegen unbefugte Benutzung zu sichern", "truth": true},
+  {"context": ["haltend", "außerorts", "Dunkelheit", "beleuchten"], "statement": "Außerorts muss ein haltendes Fahrzeug mit eigener Lichtquelle beleuchtet werden", "truth": true},
+  {"context": ["haltend", "innerorts", "Dunkelheit", "Straßenbeleuchtung"], "statement": "Innerorts kann eigene Beleuchtung entbehrlich sein, wenn die Straßenbeleuchtung das Fahrzeug deutlich sichtbar macht", "truth": true}]}
+]}

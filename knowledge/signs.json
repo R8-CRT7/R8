@@ -1,0 +1,4949 @@
+{
+ "_generated_by": "windows/tools/build_signs.py",
+ "items": [
+  {
+   "id": "SIGN_101",
+   "number": "101",
+   "name": "Gefahrstelle",
+   "category": "Gefahrzeichen",
+   "meaning": "Allgemeine Gefahrstelle; ein Zusatzzeichen kann die Gefahr näher bezeichnen.",
+   "effects": [
+    "gefahr"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Gefahrstelle",
+    "Ausrufezeichen"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 1",
+     "evidence": "Zeichen 101"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_102",
+   "number": "102",
+   "name": "Kreuzung oder Einmündung",
+   "category": "Gefahrzeichen",
+   "meaning": "Kreuzung oder Einmündung mit Vorfahrt von rechts (rechts vor links).",
+   "effects": [
+    "gefahr",
+    "vorfahrt"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Kreuzung",
+    "rechts vor links"
+   ],
+   "confusions": [
+    "301",
+    "205"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 2",
+     "evidence": "Zeichen 102"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_103",
+   "number": "103",
+   "name": "Kurve",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Kurve (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 3",
+     "evidence": "Zeichen 103"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_105",
+   "number": "105",
+   "name": "Doppelkurve",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Doppelkurve (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 4",
+     "evidence": "Zeichen 105"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_108",
+   "number": "108",
+   "name": "Gefälle",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Gefälle (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 5",
+     "evidence": "Zeichen 108"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_110",
+   "number": "110",
+   "name": "Steigung",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Steigung (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 6",
+     "evidence": "Zeichen 110"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_112",
+   "number": "112",
+   "name": "Unebene Fahrbahn",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Unebene Fahrbahn (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 7",
+     "evidence": "Zeichen 112"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_114",
+   "number": "114",
+   "name": "Schleuder- oder Rutschgefahr",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Schleuder- oder Rutschgefahr (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 8",
+     "evidence": "Zeichen 114"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_117",
+   "number": "117",
+   "name": "Seitenwind",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Seitenwind (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 9",
+     "evidence": "Zeichen 117"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_120",
+   "number": "120",
+   "name": "Verengte Fahrbahn",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Verengte Fahrbahn (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 10",
+     "evidence": "Zeichen 120"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_121",
+   "number": "121",
+   "name": "Einseitig verengte Fahrbahn",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Einseitig verengte Fahrbahn (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 11",
+     "evidence": "Zeichen 121"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_123",
+   "number": "123",
+   "name": "Arbeitsstelle",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Arbeitsstelle (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 12",
+     "evidence": "Zeichen 123"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_124",
+   "number": "124",
+   "name": "Stau",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Stau (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 13",
+     "evidence": "Zeichen 124"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_125",
+   "number": "125",
+   "name": "Gegenverkehr",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Gegenverkehr (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 14",
+     "evidence": "Zeichen 125"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_131",
+   "number": "131",
+   "name": "Lichtzeichenanlage",
+   "category": "Gefahrzeichen",
+   "meaning": "Lichtzeichenanlage (Ampel) voraus.",
+   "effects": [
+    "gefahr"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Ampel"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 15",
+     "evidence": "Zeichen 131"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_133",
+   "number": "133",
+   "name": "Fußgänger",
+   "category": "Gefahrzeichen",
+   "meaning": "Fußgänger – Gefahr durch querende Fußgänger.",
+   "effects": [
+    "gefahr"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Fußgänger"
+   ],
+   "confusions": [
+    "136",
+    "293"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 16",
+     "evidence": "Zeichen 133"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_136",
+   "number": "136",
+   "name": "Kinder",
+   "category": "Gefahrzeichen",
+   "meaning": "Kinder – Gefahr durch Kinder (z. B. Schule, Spielplatz).",
+   "effects": [
+    "gefahr"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Kinder"
+   ],
+   "confusions": [
+    "133"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 17",
+     "evidence": "Zeichen 136"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_138",
+   "number": "138",
+   "name": "Radverkehr",
+   "category": "Gefahrzeichen",
+   "meaning": "Radverkehr – Gefahr durch kreuzenden oder einfahrenden Radverkehr.",
+   "effects": [
+    "gefahr"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Radfahrer"
+   ],
+   "confusions": [
+    "237"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 18",
+     "evidence": "Zeichen 138"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_142",
+   "number": "142",
+   "name": "Wildwechsel",
+   "category": "Gefahrzeichen",
+   "meaning": "Amtliche Bezeichnung: Wildwechsel (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 19",
+     "evidence": "Zeichen 142"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_151",
+   "number": "151",
+   "name": "Bahnübergang",
+   "category": "Gefahrzeichen",
+   "meaning": "Unbeschrankter oder beschrankter Bahnübergang voraus; ab hier keine Kfz überholen.",
+   "effects": [
+    "gefahr"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Bahnübergang"
+   ],
+   "confusions": [
+    "201"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 20",
+     "evidence": "Zeichen 151"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_156",
+   "number": "156",
+   "name": "Bahnübergang mit dreistreifiger Bake",
+   "category": "Gefahrzeichen",
+   "meaning": "Dreistreifige Bake: etwa 240 m vor dem Bahnübergang.",
+   "effects": [
+    "gefahr"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Bake",
+    "Bahnübergang",
+    "240 m"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 21",
+     "evidence": "Zeichen 156"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_159",
+   "number": "159",
+   "name": "Zweistreifige Bake",
+   "category": "Gefahrzeichen",
+   "meaning": "Zweistreifige Bake: etwa 160 m vor dem Bahnübergang.",
+   "effects": [
+    "gefahr"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Bake",
+    "160 m"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 22",
+     "evidence": "Zeichen 159"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_162",
+   "number": "162",
+   "name": "Einstreifige Bake",
+   "category": "Gefahrzeichen",
+   "meaning": "Einstreifige Bake: etwa 80 m vor dem Bahnübergang.",
+   "effects": [
+    "gefahr"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Bake",
+    "80 m"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 23",
+     "evidence": "Zeichen 162"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_201",
+   "number": "201",
+   "name": "Andreaskreuz",
+   "category": "Vorschriftzeichen",
+   "meaning": "Andreaskreuz: dem Schienenverkehr Vorrang gewähren; bis 10 m davor nicht halten, wenn es verdeckt wird; Parkverbot davor/dahinter (innerorts 5 m, außerorts 50 m).",
+   "effects": [
+    "vorfahrt",
+    "wartepflicht",
+    "halten"
+   ],
+   "priority_effect": "must_yield",
+   "keywords": [
+    "Andreaskreuz",
+    "Bahnübergang",
+    "Schienenverkehr"
+   ],
+   "confusions": [
+    "151"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 1",
+     "evidence": "Zeichen 201"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 1",
+     "evidence": "Wer ein Fahrzeug führt, muss dem Schienenverkehr Vorrang gewähren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_205",
+   "number": "205",
+   "name": "Vorfahrt gewähren",
+   "category": "Vorschriftzeichen",
+   "meaning": "Vorfahrt gewähren an der nächsten Kreuzung/Einmündung; bis 10 m davor nicht halten, wenn es verdeckt wird.",
+   "effects": [
+    "wartepflicht",
+    "vorfahrt"
+   ],
+   "priority_effect": "must_yield",
+   "keywords": [
+    "Vorfahrt gewähren",
+    "Dreieck",
+    "auf der Spitze"
+   ],
+   "confusions": [
+    "206",
+    "301",
+    "102"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 2",
+     "evidence": "Zeichen 205"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 2",
+     "evidence": "Wer ein Fahrzeug führt, muss Vorfahrt gewähren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_206",
+   "number": "206",
+   "name": "Halt. Vorfahrt gewähren",
+   "category": "Vorschriftzeichen",
+   "meaning": "Halt. Vorfahrt gewähren: immer anhalten (Haltlinie, sonst mit Sicht), dann Vorfahrt gewähren.",
+   "effects": [
+    "wartepflicht",
+    "vorfahrt",
+    "gebot"
+   ],
+   "priority_effect": "must_stop_and_yield",
+   "keywords": [
+    "Stoppschild",
+    "STOP",
+    "anhalten",
+    "Haltlinie"
+   ],
+   "confusions": [
+    "205"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 3",
+     "evidence": "Zeichen 206"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 3",
+     "evidence": "Wer ein Fahrzeug führt, muss anhalten und Vorfahrt gewähren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_208",
+   "number": "208",
+   "name": "Vorrang des Gegenverkehrs",
+   "category": "Vorschriftzeichen",
+   "meaning": "Vorrang des Gegenverkehrs an einer Engstelle: Gegenverkehr durchfahren lassen.",
+   "effects": [
+    "wartepflicht"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Engstelle",
+    "Gegenverkehr",
+    "roter Pfeil"
+   ],
+   "confusions": [
+    "308"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 4",
+     "evidence": "Zeichen 208"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 4",
+     "evidence": "Wer ein Fahrzeug führt, hat dem Gegenverkehr Vorrang zu gewähren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_209",
+   "number": "209",
+   "name": "Rechts",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Rechts (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 5",
+     "evidence": "Zeichen 209"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. zu 5 bis 7",
+     "evidence": "Wer ein Fahrzeug führt, muss der vorgeschriebenen Fahrtrichtung folgen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_211",
+   "number": "211",
+   "name": "Hier rechts",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Hier rechts (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 6",
+     "evidence": "Zeichen 211"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. zu 5 bis 7",
+     "evidence": "Wer ein Fahrzeug führt, muss der vorgeschriebenen Fahrtrichtung folgen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_214",
+   "number": "214",
+   "name": "Geradeaus oder rechts",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Geradeaus oder rechts (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 7",
+     "evidence": "Zeichen 214"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. zu 5 bis 7",
+     "evidence": "Wer ein Fahrzeug führt, muss der vorgeschriebenen Fahrtrichtung folgen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_215",
+   "number": "215",
+   "name": "Kreisverkehr",
+   "category": "Vorschriftzeichen",
+   "meaning": "Kreisverkehr: rechts herum fahren, Mittelinsel nicht überfahren (Ausnahme große Fahrzeuge), auf der Kreisfahrbahn nicht halten; mit Zeichen 205 hat der Kreisverkehr Vorfahrt.",
+   "effects": [
+    "gebot",
+    "halten"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Kreisverkehr"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 8",
+     "evidence": "Zeichen 215"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 8",
+     "evidence": "Wer ein Fahrzeug führt, muss der vorgeschriebenen Fahrtrichtung im Kreisverkehr rechts folgen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_220",
+   "number": "220",
+   "name": "Einbahnstraße",
+   "category": "Vorschriftzeichen",
+   "meaning": "Einbahnstraße: nur in Pfeilrichtung befahren; Parken/Halten auch links erlaubt.",
+   "effects": [
+    "gebot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Einbahnstraße"
+   ],
+   "confusions": [
+    "267"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 9",
+     "evidence": "Zeichen 220"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 9",
+     "evidence": "Wer ein Fahrzeug führt, darf die Einbahnstraße nur in Richtung des Pfeils befahren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_222",
+   "number": "222",
+   "name": "Rechts vorbei",
+   "category": "Vorschriftzeichen",
+   "meaning": "Rechts vorbei: vorgeschriebene Vorbeifahrt.",
+   "effects": [
+    "gebot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "vorbei"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 10",
+     "evidence": "Zeichen 222"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 10",
+     "evidence": "Wer ein Fahrzeug führt, muss der vorgeschriebenen Vorbeifahrt folgen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_223_1",
+   "number": "223.1",
+   "name": "Seitenstreifen befahren",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Seitenstreifen befahren (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 11",
+     "evidence": "Zeichen 223.1"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 11",
+     "evidence": "Das Zeichen gibt den Seitenstreifen als Fahrstreifen frei; dieser ist wie ein rechter Fahrstreifen zu befahren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_223_2",
+   "number": "223.2",
+   "name": "Seitenstreifen nicht mehr befahren",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Seitenstreifen nicht mehr befahren (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 12",
+     "evidence": "Zeichen 223.2"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 12",
+     "evidence": "Das Zeichen hebt die Freigabe des Seitenstreifens als Fahrstreifen auf."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_223_3",
+   "number": "223.3",
+   "name": "Seitenstreifen räumen",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Seitenstreifen räumen (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 13",
+     "evidence": "Zeichen 223.3"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 13",
+     "evidence": "Das Zeichen ordnet die Räumung des Seitenstreifens an."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_224",
+   "number": "224",
+   "name": "Haltestelle",
+   "category": "Vorschriftzeichen",
+   "meaning": "Haltestelle (Bus/Straßenbahn): 15 m vor und hinter dem Zeichen nicht parken.",
+   "effects": [
+    "parken",
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Haltestelle",
+    "Bus"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 14",
+     "evidence": "Zeichen 224"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 14",
+     "evidence": "Wer ein Fahrzeug führt, darf bis zu 15 m vor und hinter dem Zeichen nicht parken."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_229",
+   "number": "229",
+   "name": "Taxenstand",
+   "category": "Vorschriftzeichen",
+   "meaning": "Taxenstand: dort nicht halten (außer bereitgehaltene Taxen).",
+   "effects": [
+    "halten"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Taxi"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 15",
+     "evidence": "Zeichen 229"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 15",
+     "evidence": "Wer ein Fahrzeug führt, darf an Taxenständen nicht halten, ausgenommen sind für die Fahrgastbeförderung bereitgehaltene Taxen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_230",
+   "number": "230",
+   "name": "Ladebereich",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ladebereich (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 15.1",
+     "evidence": "Zeichen 230"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 15.1",
+     "evidence": "Das Halten und Parken ist nur zum Be- und Entladen von Fahrzeugen zulässig."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_237",
+   "number": "237",
+   "name": "Radweg",
+   "category": "Vorschriftzeichen",
+   "meaning": "Radweg: Radverkehr muss ihn benutzen; anderer Verkehr darf ihn nicht benutzen (Ausnahme Zusatzzeichen).",
+   "effects": [
+    "gebot",
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Radweg",
+    "Fahrrad",
+    "blau"
+   ],
+   "confusions": [
+    "240",
+    "241",
+    "138"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 16",
+     "evidence": "Zeichen 237"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 16",
+     "evidence": "Der Radverkehr darf nicht die Fahrbahn, sondern muss den Radweg benutzen (Radwegbenutzungspflicht)."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_238",
+   "number": "238",
+   "name": "Reitweg",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Reitweg (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 17",
+     "evidence": "Zeichen 238"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 17",
+     "evidence": "Wer reitet, darf nicht die Fahrbahn, sondern muss den Reitweg benutzen. Dies gilt auch für das Führen von Pferden (Reitwegbenutzungspflicht)."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_239",
+   "number": "239",
+   "name": "Gehweg",
+   "category": "Vorschriftzeichen",
+   "meaning": "Gehweg: anderer Verkehr darf ihn nicht benutzen (Ausnahme Zusatzzeichen).",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Gehweg"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 18",
+     "evidence": "Zeichen 239"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 18",
+     "evidence": "Anderer als Fußgängerverkehr darf den Gehweg nicht nutzen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_240",
+   "number": "240",
+   "name": "Gemeinsamer Geh- und Radweg",
+   "category": "Vorschriftzeichen",
+   "meaning": "Gemeinsamer Geh- und Radweg: Radverkehr muss ihn benutzen und auf Fußgänger Rücksicht nehmen.",
+   "effects": [
+    "gebot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Geh- und Radweg"
+   ],
+   "confusions": [
+    "241"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 19",
+     "evidence": "Zeichen 240"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 19",
+     "evidence": "Der Radverkehr darf nicht die Fahrbahn, sondern muss den gemeinsamen Geh- und Radweg benutzen (Radwegbenutzungspflicht). Dabei ist auf den Fußverkehr Rücksicht zu nehmen. Der Fußverkehr darf weder gefährdet noch behindert werden. Erforderlichenfalls ist die Geschwindigkeit an den Fußverkehr anzupassen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_241",
+   "number": "241",
+   "name": "Getrennter Rad- und Gehweg",
+   "category": "Vorschriftzeichen",
+   "meaning": "Getrennter Rad- und Gehweg: Radverkehr muss den Radwegteil benutzen.",
+   "effects": [
+    "gebot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "getrennter Rad- und Gehweg"
+   ],
+   "confusions": [
+    "240"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 20",
+     "evidence": "Zeichen 241"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 20",
+     "evidence": "Der Radverkehr darf nicht die Fahrbahn, sondern muss den Radweg des getrennten Rad- und Gehwegs benutzen (Radwegbenutzungspflicht)."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_242_1",
+   "number": "242.1",
+   "name": "Beginn einer Fußgängerzone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Beginn einer Fußgängerzone: Fahrzeugverkehr verboten (Ausnahmen per Zusatzzeichen, dann Schrittgeschwindigkeit).",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Fußgängerzone"
+   ],
+   "confusions": [
+    "325.1"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 21",
+     "evidence": "Zeichen 242.1"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 21",
+     "evidence": "Anderer als Fußgängerverkehr darf die Fußgängerzone nicht benutzen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_242_2",
+   "number": "242.2",
+   "name": "Ende einer Fußgängerzone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende einer Fußgängerzone (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 22",
+     "evidence": "Zeichen 242.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_244_1",
+   "number": "244.1",
+   "name": "Beginn einer Fahrradstraße",
+   "category": "Vorschriftzeichen",
+   "meaning": "Beginn einer Fahrradstraße: andere Fahrzeuge nur mit Zusatzzeichen, höchstens 30 km/h, Radfahrer dürfen nebeneinander fahren.",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Fahrradstraße"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 23",
+     "evidence": "Zeichen 244.1"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 23",
+     "evidence": "Anderer Fahrzeugverkehr als Radverkehr sowie Elektrokleinstfahrzeuge im Sinne der eKFV darf Fahrradstraßen nicht benutzen, es sei denn, dies ist durch Zusatzzeichen erlaubt. Die freigegebenen Verkehrsarten können auch gemeinsam auf einem Zusatzzeichen abgebildet sein. Das Überqueren einer Fahrradstraße durch anderen Fahrzeugverkehr an einer Kreuzung zum Erreichen der weiterführenden Straße ist gestattet."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_244_2",
+   "number": "244.2",
+   "name": "Ende einer Fahrradstraße",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende einer Fahrradstraße (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 24",
+     "evidence": "Zeichen 244.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_244_3",
+   "number": "244.3",
+   "name": "Beginn einer Fahrradzone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Beginn einer Fahrradzone (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 24.1",
+     "evidence": "Zeichen 244.3"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 24.1",
+     "evidence": "Anderer Fahrzeugverkehr als Radverkehr sowie Elektrokleinstfahrzeuge im Sinne der eKFV darf Fahrradzonen nicht benutzen, es sei denn, dies ist durch Zusatzzeichen erlaubt. Die freigegebenen Verkehrsarten können auch gemeinsam auf einem Zusatzzeichen abgebildet sein."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_244_4",
+   "number": "244.4",
+   "name": "Ende einer Fahrradzone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende einer Fahrradzone (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 24.2",
+     "evidence": "Zeichen 244.4"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_245",
+   "number": "245",
+   "name": "Bussonderfahrstreifen",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Bussonderfahrstreifen (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 25",
+     "evidence": "Zeichen 245"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 25",
+     "evidence": "Anderer Fahrverkehr als Omnibusse des Linienverkehrs sowie nach dem Personenbeförderungsrecht mit dem Schulbus-Schild zu kennzeichnende Fahrzeuge des Schüler- und Behindertenverkehrs dürfen Bussonderfahrstreifen nicht benutzen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_250",
+   "number": "250",
+   "name": "Verbot für Fahrzeuge aller Art",
+   "category": "Vorschriftzeichen",
+   "meaning": "Verbot für Fahrzeuge aller Art (gilt nicht für geschobene Fahrräder/Handfahrzeuge).",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Verbot für Fahrzeuge aller Art",
+    "roter Ring"
+   ],
+   "confusions": [
+    "267",
+    "260"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 28",
+     "evidence": "Zeichen 250"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 28",
+     "evidence": "Verbot für Fahrzeuge aller Art. Das Zeichen gilt nicht für Handfahrzeuge, abweichend von § 28 Absatz 2 auch nicht für Reiter, Führer von Pferden sowie Treiber und Führer von Vieh."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_251",
+   "number": "251",
+   "name": "Verbot für Kraftwagen",
+   "category": "Vorschriftzeichen",
+   "meaning": "Verbot für Kraftwagen und sonstige mehrspurige Kfz.",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Pkw-Verbot"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 29",
+     "evidence": "Zeichen 251"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 29",
+     "evidence": "Verbot für Kraftwagen und sonstige mehrspurige Kraftfahrzeuge"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_253",
+   "number": "253",
+   "name": "Verbot für Kraftfahrzeuge über 3,5 t",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Verbot für Kraftfahrzeuge über 3,5 t (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 30",
+     "evidence": "Zeichen 253"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 30",
+     "evidence": "Verbot für Kraftfahrzeuge mit einer zulässigen Gesamtmasse über 3,5 t, einschließlich ihrer Anhänger, und für Zugmaschinen. Ausgenommen sind Personenkraftwagen und Kraftomnibusse."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_254",
+   "number": "254",
+   "name": "Verbot für Radverkehr",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Verbot für Radverkehr (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 31",
+     "evidence": "Zeichen 254"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 31",
+     "evidence": "Verbot für den Radverkehr und den Verkehr mit Elektrokleinstfahrzeugen im Sinne der eKFV"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_255",
+   "number": "255",
+   "name": "Verbot für Krafträder",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Verbot für Krafträder (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 32",
+     "evidence": "Zeichen 255"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 32",
+     "evidence": "Verbot für Krafträder, auch mit Beiwagen, Kleinkrafträder und Mofas"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_259",
+   "number": "259",
+   "name": "Verbot für Fußgänger",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Verbot für Fußgänger (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 33",
+     "evidence": "Zeichen 259"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 33",
+     "evidence": "Verbot für den Fußgängerverkehr"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_260",
+   "number": "260",
+   "name": "Verbot für Kraftfahrzeuge",
+   "category": "Vorschriftzeichen",
+   "meaning": "Verbot für Krafträder (auch mit Beiwagen), Kleinkrafträder, Mofas und sonstige mehrspurige Kfz.",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Kraftrad",
+    "Kfz-Verbot"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 34",
+     "evidence": "Zeichen 260"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 34",
+     "evidence": "Verbot für Krafträder, auch mit Beiwagen, Kleinkrafträder und Mofas sowie für Kraftwagen und sonstige mehrspurige Kraftfahrzeuge"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_261",
+   "number": "261",
+   "name": "Verbot für kennzeichnungspflichtige Kraftfahrzeuge mit gefährlichen Gütern",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Verbot für kennzeichnungspflichtige Kraftfahrzeuge mit gefährlichen Gütern (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 35",
+     "evidence": "Zeichen 261"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 35",
+     "evidence": "Verbot für kennzeichnungspflichtige Kraftfahrzeuge mit gefährlichen Gütern"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_262",
+   "number": "262",
+   "name": "Tatsächliche Masse",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Tatsächliche Masse (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 36",
+     "evidence": "Zeichen 262"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 36",
+     "evidence": "Die Beschränkung durch Zeichen 262 gilt bei Fahrzeugkombinationen für das einzelne Fahrzeug, bei Sattelkraftfahrzeugen gesondert für die Sattelzugmaschine einschließlich Sattellast und für die tatsächlich vorhandenen Achslasten des Sattelanhängers."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. zu 36 bis 40",
+     "evidence": "Die nachfolgenden Zeichen 262 bis 266 verbieten die Verkehrsteilnahme für Fahrzeuge, deren Maße oder Massen, einschließlich Ladung, eine auf dem jeweiligen Zeichen angegebene tatsächliche Grenze überschreiten."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_263",
+   "number": "263",
+   "name": "Tatsächliche Achslast",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Tatsächliche Achslast (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 37",
+     "evidence": "Zeichen 263"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. zu 36 bis 40",
+     "evidence": "Die nachfolgenden Zeichen 262 bis 266 verbieten die Verkehrsteilnahme für Fahrzeuge, deren Maße oder Massen, einschließlich Ladung, eine auf dem jeweiligen Zeichen angegebene tatsächliche Grenze überschreiten."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_264",
+   "number": "264",
+   "name": "Tatsächliche Breite",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Tatsächliche Breite (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 38",
+     "evidence": "Zeichen 264"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. zu 36 bis 40",
+     "evidence": "Die nachfolgenden Zeichen 262 bis 266 verbieten die Verkehrsteilnahme für Fahrzeuge, deren Maße oder Massen, einschließlich Ladung, eine auf dem jeweiligen Zeichen angegebene tatsächliche Grenze überschreiten."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_265",
+   "number": "265",
+   "name": "Tatsächliche Höhe",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Tatsächliche Höhe (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 39",
+     "evidence": "Zeichen 265"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. zu 36 bis 40",
+     "evidence": "Die nachfolgenden Zeichen 262 bis 266 verbieten die Verkehrsteilnahme für Fahrzeuge, deren Maße oder Massen, einschließlich Ladung, eine auf dem jeweiligen Zeichen angegebene tatsächliche Grenze überschreiten."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_266",
+   "number": "266",
+   "name": "Tatsächliche Länge",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Tatsächliche Länge (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 40",
+     "evidence": "Zeichen 266"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 40",
+     "evidence": "Das Verbot gilt bei Fahrzeugkombinationen für die Gesamtlänge."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. zu 36 bis 40",
+     "evidence": "Die nachfolgenden Zeichen 262 bis 266 verbieten die Verkehrsteilnahme für Fahrzeuge, deren Maße oder Massen, einschließlich Ladung, eine auf dem jeweiligen Zeichen angegebene tatsächliche Grenze überschreiten."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_267",
+   "number": "267",
+   "name": "Verbot der Einfahrt",
+   "category": "Vorschriftzeichen",
+   "meaning": "Verbot der Einfahrt (Einbahnstraße von der falschen Seite).",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Einfahrt verboten",
+    "weißer Balken"
+   ],
+   "confusions": [
+    "250",
+    "220"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 41",
+     "evidence": "Zeichen 267"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 41",
+     "evidence": "Wer ein Fahrzeug führt, darf nicht in die Fahrbahn einfahren, für die das Zeichen angeordnet ist."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_268",
+   "number": "268",
+   "name": "Schneeketten vorgeschrieben",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Schneeketten vorgeschrieben (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 42",
+     "evidence": "Zeichen 268"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 42",
+     "evidence": "Wer ein Fahrzeug führt, darf die Straße nur mit Schneeketten befahren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_269",
+   "number": "269",
+   "name": "Verbot für Fahrzeuge mit wassergefährdender Ladung",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Verbot für Fahrzeuge mit wassergefährdender Ladung (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 43",
+     "evidence": "Zeichen 269"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 43",
+     "evidence": "Wer ein Fahrzeug führt, darf die Straße mit mehr als 20 l wassergefährdender Ladung nicht benutzen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_270_1",
+   "number": "270.1",
+   "name": "Beginn einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Beginn einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 44",
+     "evidence": "Zeichen 270.1"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 44",
+     "evidence": "Die Teilnahme am Verkehr mit einem Kraftfahrzeug innerhalb einer so gekennzeichneten Zone ist verboten."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_270_2",
+   "number": "270.2",
+   "name": "Ende einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 45",
+     "evidence": "Zeichen 270.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_272",
+   "number": "272",
+   "name": "Verbot des Wendens",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Verbot des Wendens (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 47",
+     "evidence": "Zeichen 272"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 47",
+     "evidence": "Wer ein Fahrzeug führt, darf hier nicht wenden."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_273",
+   "number": "273",
+   "name": "Verbot des Unterschreitens des angegebenen Mindestabstandes",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Verbot des Unterschreitens des angegebenen Mindestabstandes (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 48",
+     "evidence": "Zeichen 273"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 48",
+     "evidence": "Wer ein Kraftfahrzeug mit einer zulässigen Gesamtmasse über 3,5 t oder eine Zugmaschine führt, darf den angegebenen Mindestabstand zu einem vorausfahrenden Kraftfahrzeug gleicher Art nicht unterschreiten. Personenkraftwagen und Kraftomnibusse sind ausgenommen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_274",
+   "number": "274",
+   "name": "Zulässige Höchstgeschwindigkeit",
+   "category": "Vorschriftzeichen",
+   "meaning": "Zulässige Höchstgeschwindigkeit: nicht schneller als angegeben (gilt ab dem Zeichen).",
+   "effects": [
+    "verbot",
+    "streckenverbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Höchstgeschwindigkeit",
+    "Tempolimit"
+   ],
+   "confusions": [
+    "275"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 49",
+     "evidence": "Zeichen 274"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 49",
+     "evidence": "Wer ein Fahrzeug führt, darf nicht schneller als mit der jeweils angegebenen Höchstgeschwindigkeit fahren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_274_1",
+   "number": "274.1",
+   "name": "Beginn einer Tempo 30-Zone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Beginn einer Tempo-30-Zone (auch 20): höchstens die angegebene Geschwindigkeit in der ganzen Zone.",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Tempo 30-Zone",
+    "Zone"
+   ],
+   "confusions": [
+    "274",
+    "325.1"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 50",
+     "evidence": "Zeichen 274.1"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 50",
+     "evidence": "Wer ein Fahrzeug führt, darf innerhalb dieser Zone nicht schneller als mit der angegebenen Höchstgeschwindigkeit fahren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_274_2",
+   "number": "274.2",
+   "name": "Ende einer Tempo 30-Zone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende einer Tempo 30-Zone (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 51",
+     "evidence": "Zeichen 274.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_275",
+   "number": "275",
+   "name": "Vorgeschriebene Mindestgeschwindigkeit",
+   "category": "Vorschriftzeichen",
+   "meaning": "Vorgeschriebene Mindestgeschwindigkeit: nicht langsamer fahren als angegeben (wenn nicht Straßen-, Verkehrs-, Sicht- oder Wetterverhältnisse es verlangen).",
+   "effects": [
+    "gebot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Mindestgeschwindigkeit",
+    "blau"
+   ],
+   "confusions": [
+    "274"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 52",
+     "evidence": "Zeichen 275"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 52",
+     "evidence": "Wer ein Fahrzeug führt, darf nicht langsamer als mit der angegebenen Mindestgeschwindigkeit fahren, sofern nicht Straßen-, Verkehrs-, Sicht- oder Wetterverhältnisse dazu verpflichten. Es verbietet, mit Fahrzeugen, die nicht so schnell fahren können oder dürfen, einen so gekennzeichneten Fahrstreifen zu benutzen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_276",
+   "number": "276",
+   "name": "Überholverbot für Kraftfahrzeuge aller Art",
+   "category": "Vorschriftzeichen",
+   "meaning": "Überholverbot für Kraftfahrzeuge aller Art: Kraftfahrzeuge dürfen keine mehrspurigen Kraftfahrzeuge und keine Krafträder mit Beiwagen überholen. Einspurige Fahrzeuge (z. B. Fahrräder, Motorräder ohne Beiwagen) dürfen überholt werden.",
+   "effects": [
+    "verbot",
+    "streckenverbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Überholverbot"
+   ],
+   "confusions": [
+    "277"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 53",
+     "evidence": "Zeichen 276"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. Zu 53, 54 und 54.4",
+     "evidence": "Die nachfolgenden Zeichen 276 und 277 verbieten Kraftfahrzeugen das Überholen von mehrspurigen Kraftfahrzeugen und Krafträdern mit Beiwagen. Ist auf einem Zusatzzeichen eine Masse, wie „7,5 t“ angegeben, gilt das Verbot nur, soweit die zulässige Gesamtmasse dieser Kraftfahrzeuge, einschließlich ihrer Anhänger, die angegebene Grenze überschreitet. Soll mehrspurigen Kraftfahrzeugen und Krafträdern mit Beiwagen das Überholen von einspurigen Fahrzeugen verboten werden, ist Zeichen 277.1 angeordnet."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_277",
+   "number": "277",
+   "name": "Überholverbot für Kraftfahrzeuge über 3,5 t",
+   "category": "Vorschriftzeichen",
+   "meaning": "Überholverbot für Kfz über 3,5 t (einschließlich Anhänger) und Zugmaschinen gegenüber mehrspurigen Kfz und Krafträdern mit Beiwagen; Pkw und Kraftomnibusse sind ausgenommen.",
+   "effects": [
+    "verbot",
+    "streckenverbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Überholverbot Lkw"
+   ],
+   "confusions": [
+    "276"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 54",
+     "evidence": "Zeichen 277"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 54",
+     "evidence": "Überholverbot für Kraftfahrzeuge mit einer zulässigen Gesamtmasse über 3,5 t, einschließlich ihrer Anhänger, und für Zugmaschinen. Ausgenommen sind Personenkraftwagen und Kraftomnibusse."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. Zu 53, 54 und 54.4",
+     "evidence": "Die nachfolgenden Zeichen 276 und 277 verbieten Kraftfahrzeugen das Überholen von mehrspurigen Kraftfahrzeugen und Krafträdern mit Beiwagen. Ist auf einem Zusatzzeichen eine Masse, wie „7,5 t“ angegeben, gilt das Verbot nur, soweit die zulässige Gesamtmasse dieser Kraftfahrzeuge, einschließlich ihrer Anhänger, die angegebene Grenze überschreitet. Soll mehrspurigen Kraftfahrzeugen und Krafträdern mit Beiwagen das Überholen von einspurigen Fahrzeugen verboten werden, ist Zeichen 277.1 angeordnet."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_277_1",
+   "number": "277.1",
+   "name": "Verbot des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen",
+   "category": "Vorschriftzeichen",
+   "meaning": "Wer ein mehrspuriges Kraftfahrzeug führt, darf weder einspurige noch mehrspurige Fahrzeuge überholen (schützt vor allem Radfahrende).",
+   "effects": [
+    "verbot",
+    "streckenverbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Radfahrer überholen",
+    "einspurig"
+   ],
+   "confusions": [
+    "276",
+    "277"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 54.4",
+     "evidence": "Zeichen 277.1"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 54.4",
+     "evidence": "Wer ein mehrspuriges Kraftfahrzeug führt, darf ein- und mehrspurige Fahrzeuge nicht überholen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. Zu 53, 54 und 54.4",
+     "evidence": "Die nachfolgenden Zeichen 276 und 277 verbieten Kraftfahrzeugen das Überholen von mehrspurigen Kraftfahrzeugen und Krafträdern mit Beiwagen. Ist auf einem Zusatzzeichen eine Masse, wie „7,5 t“ angegeben, gilt das Verbot nur, soweit die zulässige Gesamtmasse dieser Kraftfahrzeuge, einschließlich ihrer Anhänger, die angegebene Grenze überschreitet. Soll mehrspurigen Kraftfahrzeugen und Krafträdern mit Beiwagen das Überholen von einspurigen Fahrzeugen verboten werden, ist Zeichen 277.1 angeordnet."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_278",
+   "number": "278",
+   "name": "Ende der zulässigen Höchstgeschwindigkeit",
+   "category": "Vorschriftzeichen",
+   "meaning": "Ende der zulässigen Höchstgeschwindigkeit.",
+   "effects": [
+    "aufhebung"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Ende Tempolimit"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 56",
+     "evidence": "Zeichen 278"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_279",
+   "number": "279",
+   "name": "Ende der vorgeschriebenen Mindestgeschwindigkeit",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende der vorgeschriebenen Mindestgeschwindigkeit (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 57",
+     "evidence": "Zeichen 279"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_280",
+   "number": "280",
+   "name": "Ende des Überholverbots für Kraftfahrzeuge aller Art",
+   "category": "Vorschriftzeichen",
+   "meaning": "Ende des Überholverbots für Kfz aller Art.",
+   "effects": [
+    "aufhebung"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Ende Überholverbot"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 58",
+     "evidence": "Zeichen 280"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_281",
+   "number": "281",
+   "name": "Ende des Überholverbots für Kraftfahrzeuge über 3,5 t",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende des Überholverbots für Kraftfahrzeuge über 3,5 t (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 59",
+     "evidence": "Zeichen 281"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_281_1",
+   "number": "281.1",
+   "name": "Ende des Verbots des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende des Verbots des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 59.1",
+     "evidence": "Zeichen 281.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_282",
+   "number": "282",
+   "name": "Ende sämtlicher streckenbezogener Geschwindigkeitsbeschränkungen und Überholverbote",
+   "category": "Vorschriftzeichen",
+   "meaning": "Ende sämtlicher Streckenverbote.",
+   "effects": [
+    "aufhebung"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Ende aller Streckenverbote"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 60",
+     "evidence": "Zeichen 282"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_283",
+   "number": "283",
+   "name": "Absolutes Haltverbot",
+   "category": "Vorschriftzeichen",
+   "meaning": "Absolutes Haltverbot: Halten auf der Fahrbahn verboten.",
+   "effects": [
+    "verbot",
+    "halten"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Halteverbot",
+    "rotes Kreuz"
+   ],
+   "confusions": [
+    "286"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 62",
+     "evidence": "Zeichen 283"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 62",
+     "evidence": "Das Halten auf der Fahrbahn ist verboten."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_286",
+   "number": "286",
+   "name": "Eingeschränktes Haltverbot",
+   "category": "Vorschriftzeichen",
+   "meaning": "Eingeschränktes Haltverbot: höchstens 3 Minuten halten, ausgenommen zum Ein-/Aussteigen und Be-/Entladen.",
+   "effects": [
+    "verbot",
+    "halten"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "eingeschränktes Halteverbot",
+    "drei Minuten"
+   ],
+   "confusions": [
+    "283"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 63",
+     "evidence": "Zeichen 286"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 63",
+     "evidence": "Wer ein Fahrzeug führt, darf nicht länger als drei Minuten auf der Fahrbahn halten, ausgenommen zum Ein- oder Aussteigen oder zum Be- oder Entladen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_290_1",
+   "number": "290.1",
+   "name": "Beginn eines Eingeschränkten Haltverbots für eine Zone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Beginn eines eingeschränkten Haltverbots für eine Zone.",
+   "effects": [
+    "verbot",
+    "halten"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Haltverbotszone"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 64",
+     "evidence": "Zeichen 290.1"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 64",
+     "evidence": "Wer ein Fahrzeug führt, darf innerhalb der gekennzeichneten Zone nicht länger als drei Minuten halten, ausgenommen zum Ein- oder Aussteigen oder zum Be- oder Entladen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_290_2",
+   "number": "290.2",
+   "name": "Ende eines eingeschränkten Haltverbots für eine Zone",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende eines eingeschränkten Haltverbots für eine Zone (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 65",
+     "evidence": "Zeichen 290.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_293",
+   "number": "293",
+   "name": "Fußgängerüberweg",
+   "category": "Vorschriftzeichen",
+   "meaning": "Fußgängerüberweg (Zebrastreifen): auf ihm und bis 5 m davor nicht halten; Fußgängern das Überqueren ermöglichen.",
+   "effects": [
+    "halten",
+    "wartepflicht"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Zebrastreifen",
+    "Fußgängerüberweg"
+   ],
+   "confusions": [
+    "133"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 66",
+     "evidence": "Zeichen 293"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 66",
+     "evidence": "Wer ein Fahrzeug führt, darf auf Fußgängerüberwegen sowie bis zu 5 m davor nicht halten."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_294",
+   "number": "294",
+   "name": "Haltlinie",
+   "category": "Vorschriftzeichen",
+   "meaning": "Haltlinie: hier halten, wenn Zeichen 206, Polizei, Lichtzeichen oder Schranke ein Halt gebieten.",
+   "effects": [
+    "gebot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Haltlinie"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 67",
+     "evidence": "Zeichen 294"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 67",
+     "evidence": "Ergänzend zu Halt- oder Wartegeboten, die durch Zeichen 206, durch Polizeibeamte, Lichtzeichen oder Schranken gegeben werden, ordnet sie an:"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_295",
+   "number": "295",
+   "name": "Fahrstreifenbegrenzung, Begrenzung von Fahrbahnen und Sonderwegen",
+   "category": "Vorschriftzeichen",
+   "meaning": "Fahrstreifenbegrenzung (durchgehende Linie): nicht überfahren, nicht auf ihr fahren.",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "durchgezogene Linie",
+    "Fahrstreifenbegrenzung"
+   ],
+   "confusions": [
+    "340"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 68",
+     "evidence": "Zeichen 295"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 68",
+     "evidence": "Wer ein Fahrzeug führt, darf die durchgehende Linie auch nicht teilweise überfahren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_296",
+   "number": "296",
+   "name": "Fahrstreifen B Fahrstreifen A Einseitige Fahrstreifenbegrenzung",
+   "category": "Vorschriftzeichen",
+   "meaning": "Einseitige Fahrstreifenbegrenzung: die durchgehende Linie darf nicht überfahren werden; von der unterbrochenen Seite aus darf man wechseln.",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "einseitige Linie"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 69",
+     "evidence": "Zeichen 296"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 69",
+     "evidence": "Wer ein Fahrzeug führt, darf die durchgehende Linie nicht überfahren oder auf ihr fahren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_297",
+   "number": "297",
+   "name": "Pfeilmarkierungen",
+   "category": "Vorschriftzeichen",
+   "meaning": "Pfeilmarkierung: der Pfeilrichtung auf der folgenden Kreuzung folgen; zwischen Pfeilen nicht halten, wenn davor Leitlinie oder Fahrstreifenbegrenzung.",
+   "effects": [
+    "gebot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Richtungspfeil"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 70",
+     "evidence": "Zeichen 297"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 70",
+     "evidence": "Wer ein Fahrzeug führt, muss der Fahrtrichtung auf der folgenden Kreuzung oder Einmündung folgen, wenn zwischen den Pfeilen Leitlinien (Zeichen 340) oder Fahrstreifenbegrenzungen (Zeichen 295) markiert sind."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_297_1",
+   "number": "297.1",
+   "name": "Vorankündigungspfeil",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Vorankündigungspfeil (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 71",
+     "evidence": "Zeichen 297.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_298",
+   "number": "298",
+   "name": "Sperrfläche",
+   "category": "Vorschriftzeichen",
+   "meaning": "Amtliche Bezeichnung: Sperrfläche (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 72",
+     "evidence": "Zeichen 298"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 72",
+     "evidence": "Wer ein Fahrzeug führt, darf Sperrflächen nicht benutzen."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_299",
+   "number": "299",
+   "name": "Grenzmarkierung für Halt- oder Parkverbote",
+   "category": "Vorschriftzeichen",
+   "meaning": "Grenzmarkierung (Zickzack) für Halt- oder Parkverbote: dort nicht halten bzw. parken.",
+   "effects": [
+    "verbot",
+    "halten"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Zickzacklinie"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 73",
+     "evidence": "Zeichen 299"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 73",
+     "evidence": "Wer ein Fahrzeug führt, darf innerhalb einer Grenzmarkierung für Halt- oder Parkverbote nicht halten oder parken."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_301",
+   "number": "301",
+   "name": "Vorfahrt",
+   "category": "Richtzeichen",
+   "meaning": "Vorfahrt an der nächsten Kreuzung oder Einmündung (nur dort).",
+   "effects": [
+    "vorfahrt"
+   ],
+   "priority_effect": "priority_next_junction",
+   "keywords": [
+    "Vorfahrt",
+    "rot-weißes Dreieck mit Pfeil"
+   ],
+   "confusions": [
+    "306",
+    "102",
+    "205"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 1",
+     "evidence": "Zeichen 301"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 1",
+     "evidence": "Das Zeichen zeigt an, dass an der nächsten Kreuzung oder Einmündung Vorfahrt besteht."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_306",
+   "number": "306",
+   "name": "Vorfahrtstraße",
+   "category": "Richtzeichen",
+   "meaning": "Vorfahrtstraße: Vorfahrt bis zum nächsten Zeichen 205/206/307; außerorts auf der Fahrbahn nicht parken.",
+   "effects": [
+    "vorfahrt",
+    "parken"
+   ],
+   "priority_effect": "has_priority",
+   "keywords": [
+    "Vorfahrtstraße",
+    "gelbe Raute"
+   ],
+   "confusions": [
+    "301",
+    "307"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 2",
+     "evidence": "Zeichen 306"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 2",
+     "evidence": "Wer ein Fahrzeug führt, darf außerhalb geschlossener Ortschaften auf Fahrbahnen von Vorfahrtstraßen nicht parken."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_307",
+   "number": "307",
+   "name": "Ende der Vorfahrtstraße",
+   "category": "Richtzeichen",
+   "meaning": "Ende der Vorfahrtstraße.",
+   "effects": [
+    "aufhebung"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Ende Vorfahrtstraße"
+   ],
+   "confusions": [
+    "306"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 3",
+     "evidence": "Zeichen 307"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_308",
+   "number": "308",
+   "name": "Vorrang vor dem Gegenverkehr",
+   "category": "Richtzeichen",
+   "meaning": "Vorrang vor dem Gegenverkehr an einer Engstelle.",
+   "effects": [
+    "vorfahrt"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Vorrang",
+    "Engstelle"
+   ],
+   "confusions": [
+    "208"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 4",
+     "evidence": "Zeichen 308"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 4",
+     "evidence": "Wer ein Fahrzeug führt, hat Vorrang vor dem Gegenverkehr."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_310",
+   "number": "310",
+   "name": "Ortstafel Vorderseite",
+   "category": "Richtzeichen",
+   "meaning": "Ortstafel Vorderseite: Beginn einer geschlossenen Ortschaft (innerorts 50 km/h).",
+   "effects": [
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Ortseingang",
+    "Ortsschild",
+    "gelb"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 5",
+     "evidence": "Zeichen 310"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_311",
+   "number": "311",
+   "name": "Ortstafel Rückseite",
+   "category": "Richtzeichen",
+   "meaning": "Ortstafel Rückseite: Ende der geschlossenen Ortschaft.",
+   "effects": [
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Ortsausgang"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 6",
+     "evidence": "Zeichen 311"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_314",
+   "number": "314",
+   "name": "Parken",
+   "category": "Richtzeichen",
+   "meaning": "Parken erlaubt (ggf. mit Zusatzzeichen eingeschränkt).",
+   "effects": [
+    "parken",
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Parkplatz",
+    "P"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 7",
+     "evidence": "Zeichen 314"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 7",
+     "evidence": "Wer ein Fahrzeug führt, darf hier parken."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_314_1",
+   "number": "314.1",
+   "name": "Beginn einer Parkraumbewirtschaftungszone",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Beginn einer Parkraumbewirtschaftungszone (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 8",
+     "evidence": "Zeichen 314.1"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 8",
+     "evidence": "Wer ein Fahrzeug führt, darf innerhalb der Parkraumbewirtschaftungszone nur mit Parkschein oder mit Parkscheibe (Bild 318) parken, soweit das Halten und Parken nicht gesetzlich oder durch Verkehrszeichen verboten ist."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_314_2",
+   "number": "314.2",
+   "name": "Ende einer Parkraumbewirtschaftungszone",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende einer Parkraumbewirtschaftungszone (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 9",
+     "evidence": "Zeichen 314.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_315",
+   "number": "315",
+   "name": "Parken auf Gehwegen",
+   "category": "Richtzeichen",
+   "meaning": "Parken auf Gehwegen erlaubt (nur Fahrzeuge bis 2,8 t, Aufstellungsart nach Sinnbild).",
+   "effects": [
+    "parken"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Gehwegparken"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 10",
+     "evidence": "Zeichen 315"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 10",
+     "evidence": "Wer ein Fahrzeug führt, darf auf Gehwegen mit Fahrzeugen mit einer zulässigen Gesamtmasse über 2,8 t nicht parken. Dann darf auch nicht entgegen der angeordneten Aufstellungsart des Zeichens oder entgegen Beschränkungen durch Zusatzzeichen geparkt werden."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_325_1",
+   "number": "325.1",
+   "name": "Beginn eines verkehrsberuhigten Bereichs",
+   "category": "Richtzeichen",
+   "meaning": "Beginn verkehrsberuhigter Bereich: Schrittgeschwindigkeit, Fußgänger dürfen die ganze Straße benutzen und nicht behindert/gefährdet werden; Parken nur auf gekennzeichneten Flächen.",
+   "effects": [
+    "gebot",
+    "parken"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "verkehrsberuhigter Bereich",
+    "Spielstraße",
+    "Schrittgeschwindigkeit"
+   ],
+   "confusions": [
+    "274.1",
+    "242.1"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 12",
+     "evidence": "Zeichen 325.1"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 12",
+     "evidence": "Wer ein Fahrzeug führt, muss mit Schrittgeschwindigkeit fahren."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_325_2",
+   "number": "325.2",
+   "name": "Ende eines verkehrsberuhigten Bereichs",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende eines verkehrsberuhigten Bereichs (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 13",
+     "evidence": "Zeichen 325.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_327",
+   "number": "327",
+   "name": "Tunnel",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Tunnel (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 14",
+     "evidence": "Zeichen 327"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_328",
+   "number": "328",
+   "name": "Nothalte- und Pannenbucht",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Nothalte- und Pannenbucht (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 15",
+     "evidence": "Zeichen 328"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 15",
+     "evidence": "Wer ein Fahrzeug führt, darf nur im Notfall oder bei einer Panne in einer Nothalte- und Pannenbucht halten."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_330_1",
+   "number": "330.1",
+   "name": "Autobahn",
+   "category": "Richtzeichen",
+   "meaning": "Autobahn: Regeln des § 18 (nur Kfz mit bauartbedingt mehr als 60 km/h; nicht halten, wenden, rückwärts fahren).",
+   "effects": [
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Autobahn"
+   ],
+   "confusions": [
+    "331.1"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 16",
+     "evidence": "Zeichen 330.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_330_2",
+   "number": "330.2",
+   "name": "Ende der Autobahn",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende der Autobahn (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 17",
+     "evidence": "Zeichen 330.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_331_1",
+   "number": "331.1",
+   "name": "Kraftfahrstraße",
+   "category": "Richtzeichen",
+   "meaning": "Kraftfahrstraße: Regeln des § 18 (Kfz über 60 km/h bauartbedingt; Einfahrt nur an Kreuzungen/Einmündungen).",
+   "effects": [
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Kraftfahrstraße"
+   ],
+   "confusions": [
+    "330.1"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 18",
+     "evidence": "Zeichen 331.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_331_2",
+   "number": "331.2",
+   "name": "Ende der Kraftfahrstraße",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende der Kraftfahrstraße (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 19",
+     "evidence": "Zeichen 331.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_332",
+   "number": "332",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 60",
+     "evidence": "Zeichen 332"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_332_1",
+   "number": "332.1",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 53",
+     "evidence": "Zeichen 332.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_333",
+   "number": "333",
+   "name": "Ausfahrt von der Autobahn",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Ausfahrt von der Autobahn (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 20",
+     "evidence": "Zeichen 333"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_340",
+   "number": "340",
+   "name": "Leitlinie",
+   "category": "Richtzeichen",
+   "meaning": "Leitlinie (unterbrochene Linie): darf überfahren werden, wenn der Verkehr nicht gefährdet wird.",
+   "effects": [
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Leitlinie",
+    "unterbrochene Linie"
+   ],
+   "confusions": [
+    "295"
+   ],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 22",
+     "evidence": "Zeichen 340"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 22",
+     "evidence": "Wer ein Fahrzeug führt, darf Leitlinien nicht überfahren, wenn dadurch der Verkehr gefährdet wird."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_341",
+   "number": "341",
+   "name": "Wartelinie",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Wartelinie (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 23",
+     "evidence": "Zeichen 341"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_342",
+   "number": "342",
+   "name": "Haifischzähne",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Haifischzähne (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 23.1",
+     "evidence": "Zeichen 342"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_350",
+   "number": "350",
+   "name": "Fußgängerüberweg",
+   "category": "Richtzeichen",
+   "meaning": "Fußgängerüberweg (Richtzeichen-Hinweis auf Zebrastreifen).",
+   "effects": [
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Fußgängerüberweg"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 24",
+     "evidence": "Zeichen 350"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_350_1",
+   "number": "350.1",
+   "name": "Radschnellweg",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Radschnellweg (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 24.1",
+     "evidence": "Zeichen 350.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_350_2",
+   "number": "350.2",
+   "name": "Ende des Radschnellwegs",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Ende des Radschnellwegs (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 24.2",
+     "evidence": "Zeichen 350.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_354",
+   "number": "354",
+   "name": "Wasserschutzgebiet",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Wasserschutzgebiet (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 25",
+     "evidence": "Zeichen 354"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_356",
+   "number": "356",
+   "name": "Verkehrshelfer",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Verkehrshelfer (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 26",
+     "evidence": "Zeichen 356"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_357",
+   "number": "357",
+   "name": "Sackgasse",
+   "category": "Richtzeichen",
+   "meaning": "Sackgasse (ggf. für Rad/Fußgänger durchlässig).",
+   "effects": [
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Sackgasse"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 27",
+     "evidence": "Zeichen 357"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_358",
+   "number": "358",
+   "name": "Erste Hilfe",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Erste Hilfe (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 28",
+     "evidence": "Zeichen 358"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_363",
+   "number": "363",
+   "name": "Polizei",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Polizei (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 29",
+     "evidence": "Zeichen 363"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_385",
+   "number": "385",
+   "name": "Ortshinweistafel",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Ortshinweistafel (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 30",
+     "evidence": "Zeichen 385"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_386_1",
+   "number": "386.1",
+   "name": "Touristischer Hinweis",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Touristischer Hinweis (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 31",
+     "evidence": "Zeichen 386.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_386_2",
+   "number": "386.2",
+   "name": "Touristische Route",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Touristische Route (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 32",
+     "evidence": "Zeichen 386.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_386_3",
+   "number": "386.3",
+   "name": "Touristische Unterrichtungstafel",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Touristische Unterrichtungstafel (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 33",
+     "evidence": "Zeichen 386.3"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_390",
+   "number": "390",
+   "name": "Mautpflicht nach dem Bundesfernstraßenmautgesetz",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Mautpflicht nach dem Bundesfernstraßenmautgesetz (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 34",
+     "evidence": "Zeichen 390"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_391",
+   "number": "391",
+   "name": "Mautpflichtige Strecke",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Mautpflichtige Strecke (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 35",
+     "evidence": "Zeichen 391"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_392",
+   "number": "392",
+   "name": "Zollstelle",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Zollstelle (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 36",
+     "evidence": "Zeichen 392"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_393",
+   "number": "393",
+   "name": "Informationstafel an Grenzübergangsstellen",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Informationstafel an Grenzübergangsstellen (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 37",
+     "evidence": "Zeichen 393"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_394",
+   "number": "394",
+   "name": "Laternenring",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Laternenring (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 38",
+     "evidence": "Zeichen 394"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_401",
+   "number": "401",
+   "name": "Bundesstraßen",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Bundesstraßen (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 39",
+     "evidence": "Zeichen 401"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_405",
+   "number": "405",
+   "name": "Autobahnen",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Autobahnen (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 40",
+     "evidence": "Zeichen 405"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_406",
+   "number": "406",
+   "name": "Knotenpunkte der Autobahnen",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Knotenpunkte der Autobahnen (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 41",
+     "evidence": "Zeichen 406"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_410",
+   "number": "410",
+   "name": "Europastraßen",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Europastraßen (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 42",
+     "evidence": "Zeichen 410"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_415",
+   "number": "415",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 47",
+     "evidence": "Zeichen 415"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_418",
+   "number": "418",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 48",
+     "evidence": "Zeichen 418"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_419",
+   "number": "419",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 49",
+     "evidence": "Zeichen 419"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_421",
+   "number": "421",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 63",
+     "evidence": "Zeichen 421"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_422",
+   "number": "422",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 64",
+     "evidence": "Zeichen 422"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_430",
+   "number": "430",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 50",
+     "evidence": "Zeichen 430"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_432",
+   "number": "432",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 51",
+     "evidence": "Zeichen 432"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_434",
+   "number": "434",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 52",
+     "evidence": "Zeichen 434"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_437",
+   "number": "437",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 54",
+     "evidence": "Zeichen 437"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_438",
+   "number": "438",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 43",
+     "evidence": "Zeichen 438"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_439",
+   "number": "439",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 44",
+     "evidence": "Zeichen 439"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_440",
+   "number": "440",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 45",
+     "evidence": "Zeichen 440"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_441",
+   "number": "441",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 46",
+     "evidence": "Zeichen 441"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_442",
+   "number": "442",
+   "name": "Vorwegweiser",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Vorwegweiser (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 62",
+     "evidence": "Zeichen 442"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_448",
+   "number": "448",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 55",
+     "evidence": "Zeichen 448"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_448_1",
+   "number": "448.1",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 58",
+     "evidence": "Zeichen 448.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_449",
+   "number": "449",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 59",
+     "evidence": "Zeichen 449"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_450",
+   "number": "450",
+   "name": "Ankündigungsbake",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Ankündigungsbake (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 21",
+     "evidence": "Zeichen 450"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_453",
+   "number": "453",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 61",
+     "evidence": "Zeichen 453"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_454",
+   "number": "454",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 66",
+     "evidence": "Zeichen 454"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_455_1",
+   "number": "455.1",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 67",
+     "evidence": "Zeichen 455.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_455_2",
+   "number": "455.2",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 75",
+     "evidence": "Zeichen 455.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_457_1",
+   "number": "457.1",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 69",
+     "evidence": "Zeichen 457.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_457_2",
+   "number": "457.2",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 74",
+     "evidence": "Zeichen 457.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_458",
+   "number": "458",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 72",
+     "evidence": "Zeichen 458"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_460",
+   "number": "460",
+   "name": "Bedarfsumleitung",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Bedarfsumleitung (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 76",
+     "evidence": "Zeichen 460"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_466",
+   "number": "466",
+   "name": "Weiterführende Bedarfsumleitung",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Weiterführende Bedarfsumleitung (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 77",
+     "evidence": "Zeichen 466"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_467_1",
+   "number": "467.1",
+   "name": "Umlenkungspfeil",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Umlenkungspfeil (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 78",
+     "evidence": "Zeichen 467.1"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_467_2",
+   "number": "467.2",
+   "name": "",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 79",
+     "evidence": "Zeichen 467.2"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_501",
+   "number": "501",
+   "name": "Überleitungstafel",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Überleitungstafel (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 81",
+     "evidence": "Zeichen 501"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_531",
+   "number": "531",
+   "name": "Einengungstafel",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Einengungstafel (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 82",
+     "evidence": "Zeichen 531"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_590",
+   "number": "590",
+   "name": "Blockumfahrung",
+   "category": "Richtzeichen",
+   "meaning": "Amtliche Bezeichnung: Blockumfahrung (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 83",
+     "evidence": "Zeichen 590"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_600",
+   "number": "600",
+   "name": "Absperrschranke",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Absperrschranke: abgesperrte Straßenfläche nicht befahren/betreten.",
+   "effects": [
+    "verbot"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Absperrung"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 1",
+     "evidence": "Zeichen 600"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. zu 1 bis 7",
+     "evidence": "Die Einrichtungen verbieten das Befahren der so gekennzeichneten Straßenfläche und leiten den Verkehr an dieser Fläche vorbei."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_605",
+   "number": "605",
+   "name": "",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Leitbake: kennzeichnet seitliche Begrenzung (z. B. Baustelle); vorbeifahren in Richtung der Schraffen nach unten.",
+   "effects": [
+    "information"
+   ],
+   "priority_effect": "none",
+   "keywords": [
+    "Leitbake",
+    "Baustelle"
+   ],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 1.0,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 2",
+     "evidence": "Zeichen 605"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. zu 1 bis 7",
+     "evidence": "Die Einrichtungen verbieten das Befahren der so gekennzeichneten Straßenfläche und leiten den Verkehr an dieser Fläche vorbei."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_610",
+   "number": "610",
+   "name": "Leitkegel",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung: Leitkegel (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 5",
+     "evidence": "Zeichen 610"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. zu 1 bis 7",
+     "evidence": "Die Einrichtungen verbieten das Befahren der so gekennzeichneten Straßenfläche und leiten den Verkehr an dieser Fläche vorbei."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_615",
+   "number": "615",
+   "name": "Fahrbare Absperrtafel",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung: Fahrbare Absperrtafel (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 6",
+     "evidence": "Zeichen 615"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. zu 1 bis 7",
+     "evidence": "Die Einrichtungen verbieten das Befahren der so gekennzeichneten Straßenfläche und leiten den Verkehr an dieser Fläche vorbei."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_616",
+   "number": "616",
+   "name": "Fahrbare Absperrtafel mit Blinkpfeil",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung: Fahrbare Absperrtafel mit Blinkpfeil (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 7",
+     "evidence": "Zeichen 616"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. zu 1 bis 7",
+     "evidence": "Die Einrichtungen verbieten das Befahren der so gekennzeichneten Straßenfläche und leiten den Verkehr an dieser Fläche vorbei."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_620",
+   "number": "620",
+   "name": "Leitpfosten (links) (rechts)",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung: Leitpfosten (links) (rechts) (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 11",
+     "evidence": "Zeichen 620"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_625",
+   "number": "625",
+   "name": "Richtungstafel in Kurven",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung: Richtungstafel in Kurven (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 8",
+     "evidence": "Zeichen 625"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_626",
+   "number": "626",
+   "name": "Leitplatte",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung: Leitplatte (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 9",
+     "evidence": "Zeichen 626"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_627",
+   "number": "627",
+   "name": "Leitmal",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung: Leitmal (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 10",
+     "evidence": "Zeichen 627"
+    }
+   ]
+  },
+  {
+   "id": "SIGN_628",
+   "number": "628",
+   "name": "",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 3",
+     "evidence": "Zeichen 628"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. zu 1 bis 7",
+     "evidence": "Die Einrichtungen verbieten das Befahren der so gekennzeichneten Straßenfläche und leiten den Verkehr an dieser Fläche vorbei."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_629",
+   "number": "629",
+   "name": "",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung:  (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 4",
+     "evidence": "Zeichen 629"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. zu 1 bis 7",
+     "evidence": "Die Einrichtungen verbieten das Befahren der so gekennzeichneten Straßenfläche und leiten den Verkehr an dieser Fläche vorbei."
+    }
+   ]
+  },
+  {
+   "id": "SIGN_630",
+   "number": "630",
+   "name": "Parkwarntafel",
+   "category": "Verkehrseinrichtung",
+   "meaning": "Amtliche Bezeichnung: Parkwarntafel (keine eigene Zusammenfassung hinterlegt)",
+   "effects": [],
+   "priority_effect": "none",
+   "keywords": [],
+   "confusions": [],
+   "exceptions": [],
+   "last_verified": "2026-10-01",
+   "confidence": 0.6,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 4 Nr. 12",
+     "evidence": "Zeichen 630"
+    }
+   ]
+  }
+ ]
+}

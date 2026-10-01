@@ -1,0 +1,12 @@
+{"items": [
+{"id": "PRS_FITNESS", "topic": "01_personal", "subtopic": "fahrtuechtigkeit", "title": "Persönliche Voraussetzungen und Fahrtüchtigkeit",
+ "rule": "Nur fahren, wenn man körperlich und geistig dazu in der Lage ist; Geschwindigkeit an die persönlichen Fähigkeiten anpassen. Medikamente (Beipackzettel), Krankheit, Müdigkeit, Alkohol und Drogen können die Fahrtüchtigkeit aufheben. Fahrzeug muss vorschriftsmäßig und verkehrssicher sein (Fahrerverantwortung).",
+ "concepts": ["fahrtuechtigkeit", "medikamente", "verantwortung"], "keywords": ["Fahrtüchtigkeit", "Medikamente", "Beipackzettel", "Krankheit", "Brille", "persönliche Fähigkeiten", "verantwortlich"],
+ "exam_relevance": 2, "difficulty": 1, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 23", "para": "Abs. 1 Satz 2", "evidence": "Wer ein Fahrzeug führt, hat zudem dafür zu sorgen, dass das Fahrzeug, der Zug, das Gespann sowie die Ladung und die Besetzung vorschriftsmäßig sind"},
+             {"type": "driving_school", "ref": "Fahrtüchtigkeit bei Medikamenten/Krankheit – eigene Zusammenfassung; Rechtsgrundlage FeV §§ 2, 11 nicht verifiziert"}],
+ "claims": [
+  {"context": ["Medikamente", "Fahrtüchtigkeit"], "statement": "Vor dem Fahren sollte ich den Beipackzettel auf Hinweise zur Fahrtüchtigkeit prüfen", "truth": true},
+  {"context": ["Fahrzeug", "vorschriftsmäßig", "Verantwortung"], "statement": "Der Fahrer ist dafür verantwortlich, dass Fahrzeug, Ladung und Besetzung vorschriftsmäßig sind", "truth": true},
+  {"context": ["Medikamente", "rezeptfrei"], "statement": "Rezeptfreie Medikamente beeinträchtigen die Fahrtüchtigkeit nie", "truth": false}]}
+]}

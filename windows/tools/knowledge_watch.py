@@ -186,7 +186,7 @@ def fetch(out: Path) -> dict:
 
 # ----------------------------------------------------------------------------- LegalDocML (RIS) -> snapshot
 AKN_BLOCK = {"p", "item", "td", "th", "tr", "br", "heading", "paragraph", "blockList", "table", "listIntroduction"}
-SIGN_RE = re.compile(r"Zeichen\s+(\d{3,4}(?:-\d{1,2})?)")
+SIGN_RE = re.compile(r"Zeichen\s+(\d{3,4}(?:[.-]\d{1,2})?)")
 
 
 def _akn_text(el: ET.Element) -> str:

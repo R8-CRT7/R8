@@ -1,0 +1,753 @@
+{
+ "_note": "Eigene Kurzbedeutungen (keine Lehrbuchtexte). Amtlicher Wortlaut kommt aus dem StVO-Snapshot (evidence).",
+ "signs": {
+  "101": {
+   "meaning": "Allgemeine Gefahrstelle; ein Zusatzzeichen kann die Gefahr näher bezeichnen.",
+   "effects": [
+    "gefahr"
+   ],
+   "keywords": [
+    "Gefahrstelle",
+    "Ausrufezeichen"
+   ]
+  },
+  "102": {
+   "meaning": "Kreuzung oder Einmündung mit Vorfahrt von rechts (rechts vor links).",
+   "effects": [
+    "gefahr",
+    "vorfahrt"
+   ],
+   "keywords": [
+    "Kreuzung",
+    "rechts vor links"
+   ],
+   "confusions": [
+    "301",
+    "205"
+   ]
+  },
+  "131": {
+   "meaning": "Lichtzeichenanlage (Ampel) voraus.",
+   "effects": [
+    "gefahr"
+   ],
+   "keywords": [
+    "Ampel"
+   ]
+  },
+  "133": {
+   "meaning": "Fußgänger – Gefahr durch querende Fußgänger.",
+   "effects": [
+    "gefahr"
+   ],
+   "keywords": [
+    "Fußgänger"
+   ],
+   "confusions": [
+    "136",
+    "293"
+   ]
+  },
+  "136": {
+   "meaning": "Kinder – Gefahr durch Kinder (z. B. Schule, Spielplatz).",
+   "effects": [
+    "gefahr"
+   ],
+   "keywords": [
+    "Kinder"
+   ],
+   "confusions": [
+    "133"
+   ]
+  },
+  "138": {
+   "meaning": "Radverkehr – Gefahr durch kreuzenden oder einfahrenden Radverkehr.",
+   "effects": [
+    "gefahr"
+   ],
+   "keywords": [
+    "Radfahrer"
+   ],
+   "confusions": [
+    "237"
+   ]
+  },
+  "151": {
+   "meaning": "Unbeschrankter oder beschrankter Bahnübergang voraus; ab hier keine Kfz überholen.",
+   "effects": [
+    "gefahr"
+   ],
+   "keywords": [
+    "Bahnübergang"
+   ],
+   "confusions": [
+    "201"
+   ]
+  },
+  "156": {
+   "meaning": "Dreistreifige Bake: etwa 240 m vor dem Bahnübergang.",
+   "effects": [
+    "gefahr"
+   ],
+   "keywords": [
+    "Bake",
+    "Bahnübergang",
+    "240 m"
+   ]
+  },
+  "159": {
+   "meaning": "Zweistreifige Bake: etwa 160 m vor dem Bahnübergang.",
+   "effects": [
+    "gefahr"
+   ],
+   "keywords": [
+    "Bake",
+    "160 m"
+   ]
+  },
+  "162": {
+   "meaning": "Einstreifige Bake: etwa 80 m vor dem Bahnübergang.",
+   "effects": [
+    "gefahr"
+   ],
+   "keywords": [
+    "Bake",
+    "80 m"
+   ]
+  },
+  "201": {
+   "meaning": "Andreaskreuz: dem Schienenverkehr Vorrang gewähren; bis 10 m davor nicht halten, wenn es verdeckt wird; Parkverbot davor/dahinter (innerorts 5 m, außerorts 50 m).",
+   "effects": [
+    "vorfahrt",
+    "wartepflicht",
+    "halten"
+   ],
+   "priority_effect": "must_yield",
+   "keywords": [
+    "Andreaskreuz",
+    "Bahnübergang",
+    "Schienenverkehr"
+   ],
+   "confusions": [
+    "151"
+   ]
+  },
+  "205": {
+   "meaning": "Vorfahrt gewähren an der nächsten Kreuzung/Einmündung; bis 10 m davor nicht halten, wenn es verdeckt wird.",
+   "effects": [
+    "wartepflicht",
+    "vorfahrt"
+   ],
+   "priority_effect": "must_yield",
+   "keywords": [
+    "Vorfahrt gewähren",
+    "Dreieck",
+    "auf der Spitze"
+   ],
+   "confusions": [
+    "206",
+    "301",
+    "102"
+   ]
+  },
+  "206": {
+   "meaning": "Halt. Vorfahrt gewähren: immer anhalten (Haltlinie, sonst mit Sicht), dann Vorfahrt gewähren.",
+   "effects": [
+    "wartepflicht",
+    "vorfahrt",
+    "gebot"
+   ],
+   "priority_effect": "must_stop_and_yield",
+   "keywords": [
+    "Stoppschild",
+    "STOP",
+    "anhalten",
+    "Haltlinie"
+   ],
+   "confusions": [
+    "205"
+   ]
+  },
+  "208": {
+   "meaning": "Vorrang des Gegenverkehrs an einer Engstelle: Gegenverkehr durchfahren lassen.",
+   "effects": [
+    "wartepflicht"
+   ],
+   "keywords": [
+    "Engstelle",
+    "Gegenverkehr",
+    "roter Pfeil"
+   ],
+   "confusions": [
+    "308"
+   ]
+  },
+  "215": {
+   "meaning": "Kreisverkehr: rechts herum fahren, Mittelinsel nicht überfahren (Ausnahme große Fahrzeuge), auf der Kreisfahrbahn nicht halten; mit Zeichen 205 hat der Kreisverkehr Vorfahrt.",
+   "effects": [
+    "gebot",
+    "halten"
+   ],
+   "keywords": [
+    "Kreisverkehr"
+   ]
+  },
+  "220": {
+   "meaning": "Einbahnstraße: nur in Pfeilrichtung befahren; Parken/Halten auch links erlaubt.",
+   "effects": [
+    "gebot"
+   ],
+   "keywords": [
+    "Einbahnstraße"
+   ],
+   "confusions": [
+    "267"
+   ]
+  },
+  "222": {
+   "meaning": "Rechts vorbei: vorgeschriebene Vorbeifahrt.",
+   "effects": [
+    "gebot"
+   ],
+   "keywords": [
+    "vorbei"
+   ]
+  },
+  "224": {
+   "meaning": "Haltestelle (Bus/Straßenbahn): 15 m vor und hinter dem Zeichen nicht parken.",
+   "effects": [
+    "parken",
+    "information"
+   ],
+   "keywords": [
+    "Haltestelle",
+    "Bus"
+   ]
+  },
+  "229": {
+   "meaning": "Taxenstand: dort nicht halten (außer bereitgehaltene Taxen).",
+   "effects": [
+    "halten"
+   ],
+   "keywords": [
+    "Taxi"
+   ]
+  },
+  "237": {
+   "meaning": "Radweg: Radverkehr muss ihn benutzen; anderer Verkehr darf ihn nicht benutzen (Ausnahme Zusatzzeichen).",
+   "effects": [
+    "gebot",
+    "verbot"
+   ],
+   "keywords": [
+    "Radweg",
+    "Fahrrad",
+    "blau"
+   ],
+   "confusions": [
+    "240",
+    "241",
+    "138"
+   ]
+  },
+  "239": {
+   "meaning": "Gehweg: anderer Verkehr darf ihn nicht benutzen (Ausnahme Zusatzzeichen).",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "Gehweg"
+   ]
+  },
+  "240": {
+   "meaning": "Gemeinsamer Geh- und Radweg: Radverkehr muss ihn benutzen und auf Fußgänger Rücksicht nehmen.",
+   "effects": [
+    "gebot"
+   ],
+   "keywords": [
+    "Geh- und Radweg"
+   ],
+   "confusions": [
+    "241"
+   ]
+  },
+  "241": {
+   "meaning": "Getrennter Rad- und Gehweg: Radverkehr muss den Radwegteil benutzen.",
+   "effects": [
+    "gebot"
+   ],
+   "keywords": [
+    "getrennter Rad- und Gehweg"
+   ],
+   "confusions": [
+    "240"
+   ]
+  },
+  "242.1": {
+   "meaning": "Beginn einer Fußgängerzone: Fahrzeugverkehr verboten (Ausnahmen per Zusatzzeichen, dann Schrittgeschwindigkeit).",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "Fußgängerzone"
+   ],
+   "confusions": [
+    "325.1"
+   ]
+  },
+  "244.1": {
+   "meaning": "Beginn einer Fahrradstraße: andere Fahrzeuge nur mit Zusatzzeichen, höchstens 30 km/h, Radfahrer dürfen nebeneinander fahren.",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "Fahrradstraße"
+   ]
+  },
+  "250": {
+   "meaning": "Verbot für Fahrzeuge aller Art (gilt nicht für geschobene Fahrräder/Handfahrzeuge).",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "Verbot für Fahrzeuge aller Art",
+    "roter Ring"
+   ],
+   "confusions": [
+    "267",
+    "260"
+   ]
+  },
+  "251": {
+   "meaning": "Verbot für Kraftwagen und sonstige mehrspurige Kfz.",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "Pkw-Verbot"
+   ]
+  },
+  "260": {
+   "meaning": "Verbot für Krafträder (auch mit Beiwagen), Kleinkrafträder, Mofas und sonstige mehrspurige Kfz.",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "Kraftrad",
+    "Kfz-Verbot"
+   ]
+  },
+  "267": {
+   "meaning": "Verbot der Einfahrt (Einbahnstraße von der falschen Seite).",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "Einfahrt verboten",
+    "weißer Balken"
+   ],
+   "confusions": [
+    "250",
+    "220"
+   ]
+  },
+  "274": {
+   "meaning": "Zulässige Höchstgeschwindigkeit: nicht schneller als angegeben (gilt ab dem Zeichen).",
+   "effects": [
+    "verbot",
+    "streckenverbot"
+   ],
+   "keywords": [
+    "Höchstgeschwindigkeit",
+    "Tempolimit"
+   ],
+   "confusions": [
+    "275"
+   ]
+  },
+  "274.1": {
+   "meaning": "Beginn einer Tempo-30-Zone (auch 20): höchstens die angegebene Geschwindigkeit in der ganzen Zone.",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "Tempo 30-Zone",
+    "Zone"
+   ],
+   "confusions": [
+    "274",
+    "325.1"
+   ]
+  },
+  "275": {
+   "meaning": "Vorgeschriebene Mindestgeschwindigkeit: nicht langsamer fahren als angegeben (wenn nicht Straßen-, Verkehrs-, Sicht- oder Wetterverhältnisse es verlangen).",
+   "effects": [
+    "gebot"
+   ],
+   "keywords": [
+    "Mindestgeschwindigkeit",
+    "blau"
+   ],
+   "confusions": [
+    "274"
+   ]
+  },
+  "276": {
+   "meaning": "Überholverbot für Kraftfahrzeuge aller Art: Kraftfahrzeuge dürfen keine mehrspurigen Kraftfahrzeuge und keine Krafträder mit Beiwagen überholen. Einspurige Fahrzeuge (z. B. Fahrräder, Motorräder ohne Beiwagen) dürfen überholt werden.",
+   "effects": [
+    "verbot",
+    "streckenverbot"
+   ],
+   "keywords": [
+    "Überholverbot"
+   ],
+   "confusions": [
+    "277"
+   ]
+  },
+  "277": {
+   "meaning": "Überholverbot für Kfz über 3,5 t (einschließlich Anhänger) und Zugmaschinen gegenüber mehrspurigen Kfz und Krafträdern mit Beiwagen; Pkw und Kraftomnibusse sind ausgenommen.",
+   "effects": [
+    "verbot",
+    "streckenverbot"
+   ],
+   "keywords": [
+    "Überholverbot Lkw"
+   ],
+   "confusions": [
+    "276"
+   ]
+  },
+  "277.1": {
+   "meaning": "Wer ein mehrspuriges Kraftfahrzeug führt, darf weder einspurige noch mehrspurige Fahrzeuge überholen (schützt vor allem Radfahrende).",
+   "effects": [
+    "verbot",
+    "streckenverbot"
+   ],
+   "keywords": [
+    "Radfahrer überholen",
+    "einspurig"
+   ],
+   "confusions": [
+    "276",
+    "277"
+   ]
+  },
+  "278": {
+   "meaning": "Ende der zulässigen Höchstgeschwindigkeit.",
+   "effects": [
+    "aufhebung"
+   ],
+   "keywords": [
+    "Ende Tempolimit"
+   ]
+  },
+  "280": {
+   "meaning": "Ende des Überholverbots für Kfz aller Art.",
+   "effects": [
+    "aufhebung"
+   ],
+   "keywords": [
+    "Ende Überholverbot"
+   ]
+  },
+  "282": {
+   "meaning": "Ende sämtlicher Streckenverbote.",
+   "effects": [
+    "aufhebung"
+   ],
+   "keywords": [
+    "Ende aller Streckenverbote"
+   ]
+  },
+  "283": {
+   "meaning": "Absolutes Haltverbot: Halten auf der Fahrbahn verboten.",
+   "effects": [
+    "verbot",
+    "halten"
+   ],
+   "keywords": [
+    "Halteverbot",
+    "rotes Kreuz"
+   ],
+   "confusions": [
+    "286"
+   ]
+  },
+  "286": {
+   "meaning": "Eingeschränktes Haltverbot: höchstens 3 Minuten halten, ausgenommen zum Ein-/Aussteigen und Be-/Entladen.",
+   "effects": [
+    "verbot",
+    "halten"
+   ],
+   "keywords": [
+    "eingeschränktes Halteverbot",
+    "drei Minuten"
+   ],
+   "confusions": [
+    "283"
+   ]
+  },
+  "290.1": {
+   "meaning": "Beginn eines eingeschränkten Haltverbots für eine Zone.",
+   "effects": [
+    "verbot",
+    "halten"
+   ],
+   "keywords": [
+    "Haltverbotszone"
+   ]
+  },
+  "293": {
+   "meaning": "Fußgängerüberweg (Zebrastreifen): auf ihm und bis 5 m davor nicht halten; Fußgängern das Überqueren ermöglichen.",
+   "effects": [
+    "halten",
+    "wartepflicht"
+   ],
+   "keywords": [
+    "Zebrastreifen",
+    "Fußgängerüberweg"
+   ],
+   "confusions": [
+    "133"
+   ]
+  },
+  "294": {
+   "meaning": "Haltlinie: hier halten, wenn Zeichen 206, Polizei, Lichtzeichen oder Schranke ein Halt gebieten.",
+   "effects": [
+    "gebot"
+   ],
+   "keywords": [
+    "Haltlinie"
+   ]
+  },
+  "295": {
+   "meaning": "Fahrstreifenbegrenzung (durchgehende Linie): nicht überfahren, nicht auf ihr fahren.",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "durchgezogene Linie",
+    "Fahrstreifenbegrenzung"
+   ],
+   "confusions": [
+    "340"
+   ]
+  },
+  "296": {
+   "meaning": "Einseitige Fahrstreifenbegrenzung: die durchgehende Linie darf nicht überfahren werden; von der unterbrochenen Seite aus darf man wechseln.",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "einseitige Linie"
+   ]
+  },
+  "297": {
+   "meaning": "Pfeilmarkierung: der Pfeilrichtung auf der folgenden Kreuzung folgen; zwischen Pfeilen nicht halten, wenn davor Leitlinie oder Fahrstreifenbegrenzung.",
+   "effects": [
+    "gebot"
+   ],
+   "keywords": [
+    "Richtungspfeil"
+   ]
+  },
+  "299": {
+   "meaning": "Grenzmarkierung (Zickzack) für Halt- oder Parkverbote: dort nicht halten bzw. parken.",
+   "effects": [
+    "verbot",
+    "halten"
+   ],
+   "keywords": [
+    "Zickzacklinie"
+   ]
+  },
+  "301": {
+   "meaning": "Vorfahrt an der nächsten Kreuzung oder Einmündung (nur dort).",
+   "effects": [
+    "vorfahrt"
+   ],
+   "priority_effect": "priority_next_junction",
+   "keywords": [
+    "Vorfahrt",
+    "rot-weißes Dreieck mit Pfeil"
+   ],
+   "confusions": [
+    "306",
+    "102",
+    "205"
+   ]
+  },
+  "306": {
+   "meaning": "Vorfahrtstraße: Vorfahrt bis zum nächsten Zeichen 205/206/307; außerorts auf der Fahrbahn nicht parken.",
+   "effects": [
+    "vorfahrt",
+    "parken"
+   ],
+   "priority_effect": "has_priority",
+   "keywords": [
+    "Vorfahrtstraße",
+    "gelbe Raute"
+   ],
+   "confusions": [
+    "301",
+    "307"
+   ]
+  },
+  "307": {
+   "meaning": "Ende der Vorfahrtstraße.",
+   "effects": [
+    "aufhebung"
+   ],
+   "keywords": [
+    "Ende Vorfahrtstraße"
+   ],
+   "confusions": [
+    "306"
+   ]
+  },
+  "308": {
+   "meaning": "Vorrang vor dem Gegenverkehr an einer Engstelle.",
+   "effects": [
+    "vorfahrt"
+   ],
+   "keywords": [
+    "Vorrang",
+    "Engstelle"
+   ],
+   "confusions": [
+    "208"
+   ]
+  },
+  "310": {
+   "meaning": "Ortstafel Vorderseite: Beginn einer geschlossenen Ortschaft (innerorts 50 km/h).",
+   "effects": [
+    "information"
+   ],
+   "keywords": [
+    "Ortseingang",
+    "Ortsschild",
+    "gelb"
+   ]
+  },
+  "311": {
+   "meaning": "Ortstafel Rückseite: Ende der geschlossenen Ortschaft.",
+   "effects": [
+    "information"
+   ],
+   "keywords": [
+    "Ortsausgang"
+   ]
+  },
+  "314": {
+   "meaning": "Parken erlaubt (ggf. mit Zusatzzeichen eingeschränkt).",
+   "effects": [
+    "parken",
+    "information"
+   ],
+   "keywords": [
+    "Parkplatz",
+    "P"
+   ]
+  },
+  "315": {
+   "meaning": "Parken auf Gehwegen erlaubt (nur Fahrzeuge bis 2,8 t, Aufstellungsart nach Sinnbild).",
+   "effects": [
+    "parken"
+   ],
+   "keywords": [
+    "Gehwegparken"
+   ]
+  },
+  "325.1": {
+   "meaning": "Beginn verkehrsberuhigter Bereich: Schrittgeschwindigkeit, Fußgänger dürfen die ganze Straße benutzen und nicht behindert/gefährdet werden; Parken nur auf gekennzeichneten Flächen.",
+   "effects": [
+    "gebot",
+    "parken"
+   ],
+   "keywords": [
+    "verkehrsberuhigter Bereich",
+    "Spielstraße",
+    "Schrittgeschwindigkeit"
+   ],
+   "confusions": [
+    "274.1",
+    "242.1"
+   ]
+  },
+  "330.1": {
+   "meaning": "Autobahn: Regeln des § 18 (nur Kfz mit bauartbedingt mehr als 60 km/h; nicht halten, wenden, rückwärts fahren).",
+   "effects": [
+    "information"
+   ],
+   "keywords": [
+    "Autobahn"
+   ],
+   "confusions": [
+    "331.1"
+   ]
+  },
+  "331.1": {
+   "meaning": "Kraftfahrstraße: Regeln des § 18 (Kfz über 60 km/h bauartbedingt; Einfahrt nur an Kreuzungen/Einmündungen).",
+   "effects": [
+    "information"
+   ],
+   "keywords": [
+    "Kraftfahrstraße"
+   ],
+   "confusions": [
+    "330.1"
+   ]
+  },
+  "340": {
+   "meaning": "Leitlinie (unterbrochene Linie): darf überfahren werden, wenn der Verkehr nicht gefährdet wird.",
+   "effects": [
+    "information"
+   ],
+   "keywords": [
+    "Leitlinie",
+    "unterbrochene Linie"
+   ],
+   "confusions": [
+    "295"
+   ]
+  },
+  "350": {
+   "meaning": "Fußgängerüberweg (Richtzeichen-Hinweis auf Zebrastreifen).",
+   "effects": [
+    "information"
+   ],
+   "keywords": [
+    "Fußgängerüberweg"
+   ]
+  },
+  "357": {
+   "meaning": "Sackgasse (ggf. für Rad/Fußgänger durchlässig).",
+   "effects": [
+    "information"
+   ],
+   "keywords": [
+    "Sackgasse"
+   ]
+  },
+  "600": {
+   "meaning": "Absperrschranke: abgesperrte Straßenfläche nicht befahren/betreten.",
+   "effects": [
+    "verbot"
+   ],
+   "keywords": [
+    "Absperrung"
+   ]
+  },
+  "605": {
+   "meaning": "Leitbake: kennzeichnet seitliche Begrenzung (z. B. Baustelle); vorbeifahren in Richtung der Schraffen nach unten.",
+   "effects": [
+    "information"
+   ],
+   "keywords": [
+    "Leitbake",
+    "Baustelle"
+   ]
+  }
+ }
+}

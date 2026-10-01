@@ -41,7 +41,9 @@
   "215": "Anlage 2 Nr. 8",
   "220": "Anlage 2 Nr. 9",
   "222": "Anlage 2 Nr. 10",
-  "223": "Anlage 2 Nr. 13",
+  "223.1": "Anlage 2 Nr. 11",
+  "223.2": "Anlage 2 Nr. 12",
+  "223.3": "Anlage 2 Nr. 13",
   "224": "Anlage 2 Nr. 14",
   "229": "Anlage 2 Nr. 15",
   "230": "Anlage 2 Nr. 15.1",
@@ -50,8 +52,12 @@
   "239": "Anlage 2 Nr. 18",
   "240": "Anlage 2 Nr. 19",
   "241": "Anlage 2 Nr. 20",
-  "242": "Anlage 2 Nr. 22",
-  "244": "Anlage 2 Nr. 24.2",
+  "242.1": "Anlage 2 Nr. 21",
+  "242.2": "Anlage 2 Nr. 22",
+  "244.1": "Anlage 2 Nr. 23",
+  "244.2": "Anlage 2 Nr. 24",
+  "244.3": "Anlage 2 Nr. 24.1",
+  "244.4": "Anlage 2 Nr. 24.2",
   "245": "Anlage 2 Nr. 25",
   "250": "Anlage 2 Nr. 28",
   "251": "Anlage 2 Nr. 29",
@@ -69,26 +75,33 @@
   "267": "Anlage 2 Nr. 41",
   "268": "Anlage 2 Nr. 42",
   "269": "Anlage 2 Nr. 43",
-  "270": "Anlage 2 Nr. 45",
+  "270.1": "Anlage 2 Nr. 44",
+  "270.2": "Anlage 2 Nr. 45",
   "272": "Anlage 2 Nr. 47",
   "273": "Anlage 2 Nr. 48",
-  "274": "Anlage 2 Nr. 51",
+  "274": "Anlage 2 Nr. 49",
+  "274.1": "Anlage 2 Nr. 50",
+  "274.2": "Anlage 2 Nr. 51",
   "275": "Anlage 2 Nr. 52",
   "276": "Anlage 2 Nr. 53",
-  "277": "Anlage 2 Nr. 54.4",
+  "277": "Anlage 2 Nr. 54",
+  "277.1": "Anlage 2 Nr. 54.4",
   "278": "Anlage 2 Nr. 56",
   "279": "Anlage 2 Nr. 57",
   "280": "Anlage 2 Nr. 58",
-  "281": "Anlage 2 Nr. 59.1",
+  "281": "Anlage 2 Nr. 59",
+  "281.1": "Anlage 2 Nr. 59.1",
   "282": "Anlage 2 Nr. 60",
   "283": "Anlage 2 Nr. 62",
   "286": "Anlage 2 Nr. 63",
-  "290": "Anlage 2 Nr. 65",
+  "290.1": "Anlage 2 Nr. 64",
+  "290.2": "Anlage 2 Nr. 65",
   "293": "Anlage 2 Nr. 66",
   "294": "Anlage 2 Nr. 67",
   "295": "Anlage 2 Nr. 68",
   "296": "Anlage 2 Nr. 69",
-  "297": "Anlage 2 Nr. 71",
+  "297": "Anlage 2 Nr. 70",
+  "297.1": "Anlage 2 Nr. 71",
   "298": "Anlage 2 Nr. 72",
   "299": "Anlage 2 Nr. 73",
   "301": "Anlage 3 Nr. 1",
@@ -97,26 +110,36 @@
   "308": "Anlage 3 Nr. 4",
   "310": "Anlage 3 Nr. 5",
   "311": "Anlage 3 Nr. 6",
-  "314": "Anlage 3 Nr. 9",
+  "314": "Anlage 3 Nr. 7",
+  "314.1": "Anlage 3 Nr. 8",
+  "314.2": "Anlage 3 Nr. 9",
   "315": "Anlage 3 Nr. 10",
-  "325": "Anlage 3 Nr. 13",
+  "325.1": "Anlage 3 Nr. 12",
+  "325.2": "Anlage 3 Nr. 13",
   "327": "Anlage 3 Nr. 14",
   "328": "Anlage 3 Nr. 15",
-  "330": "Anlage 3 Nr. 17",
-  "331": "Anlage 3 Nr. 19",
+  "330.1": "Anlage 3 Nr. 16",
+  "330.2": "Anlage 3 Nr. 17",
+  "331.1": "Anlage 3 Nr. 18",
+  "331.2": "Anlage 3 Nr. 19",
   "332": "Anlage 3 Nr. 60",
+  "332.1": "Anlage 3 Nr. 53",
   "333": "Anlage 3 Nr. 20",
   "340": "Anlage 3 Nr. 22",
   "341": "Anlage 3 Nr. 23",
   "342": "Anlage 3 Nr. 23.1",
-  "350": "Anlage 3 Nr. 24.2",
+  "350": "Anlage 3 Nr. 24",
+  "350.1": "Anlage 3 Nr. 24.1",
+  "350.2": "Anlage 3 Nr. 24.2",
   "354": "Anlage 3 Nr. 25",
   "356": "Anlage 3 Nr. 26",
   "357": "Anlage 3 Nr. 27",
   "358": "Anlage 3 Nr. 28",
   "363": "Anlage 3 Nr. 29",
   "385": "Anlage 3 Nr. 30",
-  "386": "Anlage 3 Nr. 33",
+  "386.1": "Anlage 3 Nr. 31",
+  "386.2": "Anlage 3 Nr. 32",
+  "386.3": "Anlage 3 Nr. 33",
   "390": "Anlage 3 Nr. 34",
   "391": "Anlage 3 Nr. 35",
   "392": "Anlage 3 Nr. 36",
@@ -140,17 +163,21 @@
   "440": "Anlage 3 Nr. 45",
   "441": "Anlage 3 Nr. 46",
   "442": "Anlage 3 Nr. 62",
-  "448": "Anlage 3 Nr. 58",
+  "448": "Anlage 3 Nr. 55",
+  "448.1": "Anlage 3 Nr. 58",
   "449": "Anlage 3 Nr. 59",
   "450": "Anlage 3 Nr. 21",
   "453": "Anlage 3 Nr. 61",
   "454": "Anlage 3 Nr. 66",
-  "455": "Anlage 3 Nr. 75",
-  "457": "Anlage 3 Nr. 74",
+  "455.1": "Anlage 3 Nr. 67",
+  "455.2": "Anlage 3 Nr. 75",
+  "457.1": "Anlage 3 Nr. 69",
+  "457.2": "Anlage 3 Nr. 74",
   "458": "Anlage 3 Nr. 72",
   "460": "Anlage 3 Nr. 76",
   "466": "Anlage 3 Nr. 77",
-  "467": "Anlage 3 Nr. 79",
+  "467.1": "Anlage 3 Nr. 78",
+  "467.2": "Anlage 3 Nr. 79",
   "501": "Anlage 3 Nr. 81",
   "531": "Anlage 3 Nr. 82",
   "590": "Anlage 3 Nr. 83",
@@ -576,11 +603,11 @@
   },
   "Anlage 2 Nr. 11": {
    "enbez": "Anlage 2 lfd. Nr. 11",
-   "title": ".1 Seitenstreifen befahren",
+   "title": "Seitenstreifen befahren",
    "text": "Zeichen 223.1 Seitenstreifen befahren\nGe- oder Verbot\nDas Zeichen gibt den Seitenstreifen als Fahrstreifen frei; dieser ist wie ein rechter Fahrstreifen zu befahren.",
    "sha256": "f82c336a92c82450cf11b71fa2af053f9dbe161af5151f32f42f4a8a583e5de2",
    "signs": [
-    "223"
+    "223.1"
    ],
    "section": "Abschnitt 4 Seitenstreifen als Fahrstreifen, Haltestellen und Taxenstände"
   },
@@ -594,21 +621,21 @@
   },
   "Anlage 2 Nr. 12": {
    "enbez": "Anlage 2 lfd. Nr. 12",
-   "title": ".2 Seitenstreifen nicht mehr befahren",
+   "title": "Seitenstreifen nicht mehr befahren",
    "text": "Zeichen 223.2 Seitenstreifen nicht mehr befahren\nGe- oder Verbot\nDas Zeichen hebt die Freigabe des Seitenstreifens als Fahrstreifen auf.",
    "sha256": "b5ca5d12cbed6dbb6724ce53609d3b059dcc03e7b523addf83f29231277741c8",
    "signs": [
-    "223"
+    "223.2"
    ],
    "section": "Abschnitt 4 Seitenstreifen als Fahrstreifen, Haltestellen und Taxenstände"
   },
   "Anlage 2 Nr. 13": {
    "enbez": "Anlage 2 lfd. Nr. 13",
-   "title": ".3 Seitenstreifen räumen",
+   "title": "Seitenstreifen räumen",
    "text": "Zeichen 223.3 Seitenstreifen räumen\nGe- oder Verbot\nDas Zeichen ordnet die Räumung des Seitenstreifens an.",
    "sha256": "5f630e0a0f603da41089832f7039af592c89e2477171c6763f76b2b415a85c26",
    "signs": [
-    "223"
+    "223.3"
    ],
    "section": "Abschnitt 4 Seitenstreifen als Fahrstreifen, Haltestellen und Taxenstände"
   },
@@ -694,61 +721,61 @@
   },
   "Anlage 2 Nr. 21": {
    "enbez": "Anlage 2 lfd. Nr. 21",
-   "title": ".1 Beginn einer Fußgängerzone",
+   "title": "Beginn einer Fußgängerzone",
    "text": "Zeichen 242.1 Beginn einer Fußgängerzone\nGe- oder Verbot\n1.\nAnderer als Fußgängerverkehr darf die Fußgängerzone nicht benutzen.\n2.\nIst durch Zusatzzeichen die Benutzung einer Fußgängerzone für eine andere Verkehrsart erlaubt, dann gilt für den Fahrverkehr Nummer 2 zu Zeichen 239 entsprechend.",
    "sha256": "c69843e3ce41d273382492257d6b82952c24460de224c8ea284af2632afc94ae",
    "signs": [
-    "242"
+    "242.1"
    ],
    "section": "Abschnitt 5 Sonderwege"
   },
   "Anlage 2 Nr. 22": {
    "enbez": "Anlage 2 lfd. Nr. 22",
-   "title": ".2 Ende einer Fußgängerzone",
+   "title": "Ende einer Fußgängerzone",
    "text": "Zeichen 242.2 Ende einer Fußgängerzone\n",
    "sha256": "f2244e489a5cb0d01c21a0ae1e9a1b97ee9c218f8f86676ed3b9f36c96642b61",
    "signs": [
-    "242"
+    "242.2"
    ],
    "section": "Abschnitt 5 Sonderwege"
   },
   "Anlage 2 Nr. 23": {
    "enbez": "Anlage 2 lfd. Nr. 23",
-   "title": ".1 Beginn einer Fahrradstraße",
+   "title": "Beginn einer Fahrradstraße",
    "text": "Zeichen 244.1 Beginn einer Fahrradstraße\nGe- oder Verbot\n1.\nAnderer Fahrzeugverkehr als Radverkehr sowie Elektrokleinstfahrzeuge im Sinne der eKFV darf Fahrradstraßen nicht benutzen, es sei denn, dies ist durch Zusatzzeichen erlaubt. Die freigegebenen Verkehrsarten können auch gemeinsam auf einem Zusatzzeichen abgebildet sein. Das Überqueren einer Fahrradstraße durch anderen Fahrzeugverkehr an einer Kreuzung zum Erreichen der weiterführenden Straße ist gestattet.\n2.\nFür den Fahrverkehr gilt eine Höchstgeschwindigkeit von 30 km/h. Der Radverkehr darf weder gefährdet noch behindert werden. Wenn nötig, muss der Kraftfahrzeugverkehr die Geschwindigkeit weiter verringern.\n3.\nDas Nebeneinanderfahren mit Fahrrädern ist erlaubt.\n4.\nIm Übrigen gelten die Vorschriften über die Fahrbahnbenutzung und über die Vorfahrt.",
    "sha256": "1ee7618101a0906f83b7b401cec3305e932713fe2b64a46538dddefef6dabc41",
    "signs": [
-    "244"
+    "244.1"
    ],
    "section": "Abschnitt 5 Sonderwege"
   },
   "Anlage 2 Nr. 24": {
    "enbez": "Anlage 2 lfd. Nr. 24",
-   "title": ".2 Ende einer Fahrradstraße",
+   "title": "Ende einer Fahrradstraße",
    "text": "Zeichen 244.2 Ende einer Fahrradstraße\n",
    "sha256": "6ce7c57fcbd2d4c20999a23ba82c9408d56233c13e0b0c10403661c234a02e25",
    "signs": [
-    "244"
+    "244.2"
    ],
    "section": "Abschnitt 5 Sonderwege"
   },
   "Anlage 2 Nr. 24.1": {
    "enbez": "Anlage 2 lfd. Nr. 24.1",
-   "title": ".3 Beginn einer Fahrradzone",
+   "title": "Beginn einer Fahrradzone",
    "text": "Zeichen 244.3 Beginn einer Fahrradzone\nGe- oder Verbot\n1.\nAnderer Fahrzeugverkehr als Radverkehr sowie Elektrokleinstfahrzeuge im Sinne der eKFV darf Fahrradzonen nicht benutzen, es sei denn, dies ist durch Zusatzzeichen erlaubt. Die freigegebenen Verkehrsarten können auch gemeinsam auf einem Zusatzzeichen abgebildet sein.\n2.\nFür den Fahrverkehr gilt eine Höchstgeschwindigkeit von 30 km/h. Der Radverkehr darf weder gefährdet noch behindert werden. Wenn nötig, muss der Kraftfahrzeugverkehr die Geschwindigkeit weiter verringern.\n3.\nDas Nebeneinanderfahren mit Fahrrädern und Elektrokleinstfahrzeugen im Sinne der eKFV ist erlaubt.\n4.\nIm Übrigen gelten die Vorschriften über die Fahrbahnbenutzung und über die Vorfahrt.",
    "sha256": "1c299ff8173c37632f7634dbb7878047b9d543385cf2bdc537f2b7aa3b13e7d2",
    "signs": [
-    "244"
+    "244.3"
    ],
    "section": "Abschnitt 5 Sonderwege"
   },
   "Anlage 2 Nr. 24.2": {
    "enbez": "Anlage 2 lfd. Nr. 24.2",
-   "title": ".4 Ende einer Fahrradzone",
+   "title": "Ende einer Fahrradzone",
    "text": "Zeichen 244.4 Ende einer Fahrradzone\n",
    "sha256": "c790cee996b4de91c718936acdcde0a97807395134160cb7674a4dd73ac59ec1",
    "signs": [
-    "244"
+    "244.4"
    ],
    "section": "Abschnitt 5 Sonderwege"
   },
@@ -980,21 +1007,21 @@
   },
   "Anlage 2 Nr. 44": {
    "enbez": "Anlage 2 lfd. Nr. 44",
-   "title": ".1 Beginn einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone",
+   "title": "Beginn einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone",
    "text": "Zeichen 270.1 Beginn einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone\nGe- oder Verbot\n1.\nDie Teilnahme am Verkehr mit einem Kraftfahrzeug innerhalb einer so gekennzeichneten Zone ist verboten.\n2.\n§ 1 Absatz 2 sowie § 2 Absatz 3 in Verbindung mit Anhang 3 der Verordnung zur Kennzeichnung der Kraftfahrzeuge mit geringem Beitrag zur Schadstoffbelastung vom 10. Oktober 2006 (BGBl. I S. 2218), die durch Artikel 1 der Verordnung vom 5. Dezember 2007 (BGBl. I S. 2793) geändert worden ist, bleiben unberührt. Die Ausnahmen können im Einzelfall oder allgemein durch Zusatzzeichen oder Allgemeinverfügung zugelassen sein.\n3.\nVon dem Verbot der Verkehrsteilnahme sind zudem Kraftfahrzeuge zur Beförderung schwerbehinderter Menschen mit außergewöhnlicher Gehbehinderung, beidseitiger Amelie oder Phokomelie oder mit vergleichbaren Funktionseinschränkungen sowie blinde Menschen ausgenommen.\nErläuterung\nDie Umweltzone ist zur Vermeidung von schädlichen Umwelteinwirkungen durch Luftverunreinigungen in einem Luftreinhalteplan oder einem Plan für kurzfristig zu ergreifende Maßnahmen nach § 47 Absatz 1 oder 2 des Bundes-Immissionsschutzgesetzes festgesetzt und auf Grund des § 40 Absatz 1 des Bundes-Immissionsschutzgesetzes angeordnet. Die Kennzeichnung der Umweltzone erfolgt auf Grund von § 45 Absatz 1f.",
    "sha256": "e2a30c6ea3cbf5b0c3e98f56ad539a6267ea136c5a1697e943ae3dd2b0c9f0ba",
    "signs": [
-    "270"
+    "270.1"
    ],
    "section": "Mit diesem Zusatzzeichen sind elektrisch betriebene Fahrzeuge von Verkehrsverboten (Zeichen 250, 251, 253, 255, 260) ausgenommen."
   },
   "Anlage 2 Nr. 45": {
    "enbez": "Anlage 2 lfd. Nr. 45",
-   "title": ".2 Ende einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone",
+   "title": "Ende einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone",
    "text": "Zeichen 270.2 Ende einer Verkehrsverbotszone zur Verminderung schädlicher Luftverunreinigungen in einer Zone\n",
    "sha256": "839cb7e663f1faad5328a495b054daf723b082533bf9408b91587eb8b64952be",
    "signs": [
-    "270"
+    "270.2"
    ],
    "section": "Mit diesem Zusatzzeichen sind elektrisch betriebene Fahrzeuge von Verkehrsverboten (Zeichen 250, 251, 253, 255, 260) ausgenommen."
   },
@@ -1046,21 +1073,21 @@
   },
   "Anlage 2 Nr. 50": {
    "enbez": "Anlage 2 lfd. Nr. 50",
-   "title": ".1 Beginn einer Tempo 30-Zone",
+   "title": "Beginn einer Tempo 30-Zone",
    "text": "Zeichen 274.1 Beginn einer Tempo 30-Zone\nGe- oder Verbot\nWer ein Fahrzeug führt, darf innerhalb dieser Zone nicht schneller als mit der angegebenen Höchstgeschwindigkeit fahren.\nErläuterung\nMit dem Zeichen können in verkehrsberuhigten Geschäftsbereichen auch Zonengeschwindigkeitsbeschränkungen von weniger als 30 km/h angeordnet sein.",
    "sha256": "d536c9c6d75a8252cc248333c3c86235d63cea60b1c819a02eba74cf41aa61e6",
    "signs": [
-    "274"
+    "274.1"
    ],
    "section": "Abschnitt 7 Geschwindigkeitsbeschränkungen und Überholverbote"
   },
   "Anlage 2 Nr. 51": {
    "enbez": "Anlage 2 lfd. Nr. 51",
-   "title": ".2 Ende einer Tempo 30-Zone",
+   "title": "Ende einer Tempo 30-Zone",
    "text": "Zeichen 274.2 Ende einer Tempo 30-Zone\n",
    "sha256": "0d5bc5d8b716b4767dfda1dd05a7dedb8528b91d7bac7e87599feb476fd80f95",
    "signs": [
-    "274"
+    "274.2"
    ],
    "section": "Abschnitt 7 Geschwindigkeitsbeschränkungen und Überholverbote"
   },
@@ -1128,11 +1155,11 @@
   },
   "Anlage 2 Nr. 54.4": {
    "enbez": "Anlage 2 lfd. Nr. 54.4",
-   "title": ".1 Verbot des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen",
+   "title": "Verbot des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen",
    "text": "Zeichen 277.1 Verbot des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen\nGe- oder Verbot\nWer ein mehrspuriges Kraftfahrzeug führt, darf ein- und mehrspurige Fahrzeuge nicht überholen.",
    "sha256": "8b2891fb60351bae8034c098161d6bd8384112eccfbaf8aaa3aaae0ef85ebf34",
    "signs": [
-    "277"
+    "277.1"
    ],
    "section": "Abschnitt 7 Geschwindigkeitsbeschränkungen und Überholverbote"
   },
@@ -1186,11 +1213,11 @@
   },
   "Anlage 2 Nr. 59.1": {
    "enbez": "Anlage 2 lfd. Nr. 59.1",
-   "title": ".1 Ende des Verbots des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen",
+   "title": "Ende des Verbots des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen",
    "text": "Zeichen 281.1 Ende des Verbots des Überholens von einspurigen Fahrzeugen für mehrspurige Kraftfahrzeuge und Krafträder mit Beiwagen\n",
    "sha256": "5747743ca23ffbf8975c96f8a81e62361c293ae81a1b62c0acbbdee02b7927e9",
    "signs": [
-    "281"
+    "281.1"
    ],
    "section": "Abschnitt 7 Geschwindigkeitsbeschränkungen und Überholverbote"
   },
@@ -1298,11 +1325,11 @@
   },
   "Anlage 2 Nr. 64": {
    "enbez": "Anlage 2 lfd. Nr. 64",
-   "title": ".1 Beginn eines Eingeschränkten Haltverbots für eine Zone",
+   "title": "Beginn eines Eingeschränkten Haltverbots für eine Zone",
    "text": "Zeichen 290.1 Beginn eines Eingeschränkten Haltverbots für eine Zone\nGe- oder Verbot\n1.\nWer ein Fahrzeug führt, darf innerhalb der gekennzeichneten Zone nicht länger als drei Minuten halten, ausgenommen zum Ein- oder Aussteigen oder zum Be- oder Entladen.\n2.\nInnerhalb der gekennzeichneten Zone gilt das eingeschränkte Haltverbot auf allen öffentlichen Verkehrsflächen, sofern nicht abweichende Regelungen durch Verkehrszeichen oder Verkehrseinrichtungen getroffen sind.\n3.\nDurch Zusatzzeichen kann das Parken für Bewohner mit Parkausweis oder mit Parkschein oder Parkscheibe (Bild 318) innerhalb gekennzeichneter Flächen erlaubt sein.\n4.\nDurch Zusatzzeichen kann das Parken mit Parkschein oder Parkscheibe (Bild 318) innerhalb gekennzeichneter Flächen erlaubt sein. Dabei ist der Parkausweis, der Parkschein oder die Parkscheibe gut lesbar auszulegen oder anzubringen.",
    "sha256": "39c392fd6e6e8d2c4161b849fe8a51f9691fc6c0db6162a84d55b334fa30ff09",
    "signs": [
-    "290"
+    "290.1"
    ],
    "section": "Durch das Zusatzzeichen zu Zeichen 286 wird das Parken für elektrisch betriebene Fahrzeuge innerhalb der gekennzeichneten Flächen erlaubt."
   },
@@ -1324,11 +1351,11 @@
   },
   "Anlage 2 Nr. 65": {
    "enbez": "Anlage 2 lfd. Nr. 65",
-   "title": ".2 Ende eines eingeschränkten Haltverbots für eine Zone",
+   "title": "Ende eines eingeschränkten Haltverbots für eine Zone",
    "text": "Zeichen 290.2 Ende eines eingeschränkten Haltverbots für eine Zone\n",
    "sha256": "60c16b3e0e111e432b06bd48c62d6c93a8a71bbbcbca0fe3c577206f6e06cf7c",
    "signs": [
-    "290"
+    "290.2"
    ],
    "section": "Durch das Zusatzzeichen zu Zeichen 290.1 wird das Parken für elektrisch betriebene Fahrzeuge innerhalb der gekennzeichneten Flächen erlaubt."
   },
@@ -1384,11 +1411,11 @@
   },
   "Anlage 2 Nr. 71": {
    "enbez": "Anlage 2 lfd. Nr. 71",
-   "title": ".1 Vorankündigungspfeil",
+   "title": "Vorankündigungspfeil",
    "text": "Zeichen 297.1 Vorankündigungspfeil\nErläuterung\nMit dem Vorankündigungspfeil wird eine Fahrstreifenbegrenzung angekündigt oder das Ende eines Fahrstreifens angezeigt. Die Ausführung des Pfeils kann von der gezeigten abweichen.",
    "sha256": "d04092daa91e031321720742c37ed05030f8048c64fb790e2ac6cb959f2d17f3",
    "signs": [
-    "297"
+    "297.1"
    ],
    "section": "Abschnitt 9 Markierungen"
   },
@@ -1514,21 +1541,21 @@
   },
   "Anlage 3 Nr. 8": {
    "enbez": "Anlage 3 lfd. Nr. 8",
-   "title": ".1 Beginn einer Parkraumbewirtschaftungszone",
+   "title": "Beginn einer Parkraumbewirtschaftungszone",
    "text": "Zeichen 314.1 Beginn einer Parkraumbewirtschaftungszone\nGe- oder Verbot\n1.\nWer ein Fahrzeug führt, darf innerhalb der Parkraumbewirtschaftungszone nur mit Parkschein oder mit Parkscheibe (Bild 318) parken, soweit das Halten und Parken nicht gesetzlich oder durch Verkehrszeichen verboten ist.\n2.\nDurch Zusatzzeichen können Bewohner mit Parkausweis von der Verpflichtung zum Parken mit Parkschein oder Parkscheibe freigestellt sein.\n3.\nDie Parkerlaubnis gilt nur, wenn der Parkschein, die Parkscheibe oder der Parkausweis gut lesbar ausgelegt oder angebracht ist.\n4.\na)\nDurch Zusatzzeichen kann die Parkerlaubnis zugunsten elektrisch betriebener Fahrzeuge beschränkt sein.\nb)\nDurch Zusatzzeichen können elektrisch betriebene Fahrzeuge von der Verpflichtung zum Parken mit Parkschein oder Parkscheibe freigestellt sein. Sind Parkscheinautomaten aufgestellt, kann die Freistellung auch allein am Automaten angegeben sein.\nc)\nDurch Zusatzzeichen kann die Parkerlaubnis für elektrisch betriebene Fahrzeuge nach der Dauer beschränkt sein. Der Nachweis zur Einhaltung der zeitlichen Dauer erfolgt durch Auslegen der Parkscheibe. Die Parkerlaubnis gilt nur, wenn die Parkscheibe gut lesbar ausgelegt oder angebracht ist.\n5.\na)\nDurch Zusatzzeichen kann die Parkerlaubnis zugunsten von mit einem Carsharingausweis versehenen Carsharingfahrzeugen beschränkt sein. Eine Beschränkung auf Fahrzeuge nur eines Carsharingunternehmens oder auf bestimmte Carsharingunternehmen ist nach Maßgabe des Carsharinggesetzes zulässig. Die Beschränkung erfolgt durch eine zusätzliche Angabe der entsprechenden Firmenbezeichnung in schwarzer Schrift auf weißem Grund auf einem weiteren Zusatzzeichen. Die Parkerlaubnis gilt nur, wenn der Carsharingausweis gut lesbar im Fahrzeug ausgelegt oder angebracht ist.\nb)\nDurch Zusatzzeichen können Carsharingfahrzeuge von der Verpflichtung zum Parken mit Parkschein oder Parkscheibe freigestellt sein. Sind Parkscheinautomaten aufgestellt, kann die Freistellung auch allein am Automaten angegeben sein.\nErläuterung\nDie Art der Parkbeschränkung wird durch Zusatzzeichen angezeigt.",
    "sha256": "082c212ff4a3d1840f10214300130f334f1fe5988fb8bd9511b46b5a93598fe6",
    "signs": [
-    "314"
+    "314.1"
    ],
    "section": "Abschnitt 3 Parken"
   },
   "Anlage 3 Nr. 9": {
    "enbez": "Anlage 3 lfd. Nr. 9",
-   "title": ".2 Ende einer Parkraumbewirtschaftungszone",
+   "title": "Ende einer Parkraumbewirtschaftungszone",
    "text": "Zeichen 314.2 Ende einer Parkraumbewirtschaftungszone\n",
    "sha256": "9eba39a714448635a1242031ecf5a4a59420321d131b35896e87358c363776e8",
    "signs": [
-    "314"
+    "314.2"
    ],
    "section": "Abschnitt 3 Parken"
   },
@@ -1552,21 +1579,21 @@
   },
   "Anlage 3 Nr. 12": {
    "enbez": "Anlage 3 lfd. Nr. 12",
-   "title": ".1 Beginn eines verkehrsberuhigten Bereichs",
+   "title": "Beginn eines verkehrsberuhigten Bereichs",
    "text": "Zeichen 325.1 Beginn eines verkehrsberuhigten Bereichs\nGe- oder Verbot\n1.\nWer ein Fahrzeug führt, muss mit Schrittgeschwindigkeit fahren.\n2.\nWer ein Fahrzeug führt, darf den Fußgängerverkehr weder gefährden noch behindern; wenn nötig, muss gewartet werden.\n3.\nWer zu Fuß geht, darf den Fahrverkehr nicht unnötig behindern.\n4.\nWer ein Fahrzeug führt, darf außerhalb der dafür gekennzeichneten Flächen nicht parken, ausgenommen zum Ein- oder Aussteigen und zum Be- oder Entladen.\n5.\nWer zu Fuß geht, darf die Straße in ihrer ganzen Breite benutzen; Kinderspiele sind überall erlaubt.",
    "sha256": "9f7d4fcb5716acca142cbc31e806e8a1cee48ad9e479c3564816801d477afc91",
    "signs": [
-    "325"
+    "325.1"
    ],
    "section": "Abschnitt 4 Verkehrsberuhigter Bereich"
   },
   "Anlage 3 Nr. 13": {
    "enbez": "Anlage 3 lfd. Nr. 13",
-   "title": ".2 Ende eines verkehrsberuhigten Bereichs",
+   "title": "Ende eines verkehrsberuhigten Bereichs",
    "text": "Zeichen 325.2 Ende eines verkehrsberuhigten Bereichs\nErläuterung\nBeim Ausfahren ist § 10 zu beachten.",
    "sha256": "ab591020ff224477854d444de1beba0832a82e54cd5f209ad5b39c364e92136f",
    "signs": [
-    "325"
+    "325.2"
    ],
    "section": "Abschnitt 4 Verkehrsberuhigter Bereich"
   },
@@ -1592,41 +1619,41 @@
   },
   "Anlage 3 Nr. 16": {
    "enbez": "Anlage 3 lfd. Nr. 16",
-   "title": ".1 Autobahn",
+   "title": "Autobahn",
    "text": "Zeichen 330.1 Autobahn\nErläuterung\nAb diesem Zeichen gelten die Regeln für den Verkehr auf Autobahnen.",
    "sha256": "1145792db574916c6275b6841add7df2ad0c958ea52de189f0861b36de24fec0",
    "signs": [
-    "330"
+    "330.1"
    ],
    "section": "Abschnitt 7 Autobahnen und Kraftfahrstraßen"
   },
   "Anlage 3 Nr. 17": {
    "enbez": "Anlage 3 lfd. Nr. 17",
-   "title": ".2 Ende der Autobahn",
+   "title": "Ende der Autobahn",
    "text": "Zeichen 330.2 Ende der Autobahn\n",
    "sha256": "fa41d0e3c8d2fc422a953ace758ce5eb4cfabd31417592a4d073b8aa4ad5cc51",
    "signs": [
-    "330"
+    "330.2"
    ],
    "section": "Abschnitt 7 Autobahnen und Kraftfahrstraßen"
   },
   "Anlage 3 Nr. 18": {
    "enbez": "Anlage 3 lfd. Nr. 18",
-   "title": ".1 Kraftfahrstraße",
+   "title": "Kraftfahrstraße",
    "text": "Zeichen 331.1 Kraftfahrstraße\nErläuterung\nAb diesem Zeichen gelten die Regeln für den Verkehr auf Kraftfahrstraßen.",
    "sha256": "24b36ec576354fe55a3a1fd8015591dca5804d25e1805533e8daabe010e4b0a3",
    "signs": [
-    "331"
+    "331.1"
    ],
    "section": "Abschnitt 7 Autobahnen und Kraftfahrstraßen"
   },
   "Anlage 3 Nr. 19": {
    "enbez": "Anlage 3 lfd. Nr. 19",
-   "title": ".2 Ende der Kraftfahrstraße",
+   "title": "Ende der Kraftfahrstraße",
    "text": "Zeichen 331.2 Ende der Kraftfahrstraße\n",
    "sha256": "f08dc47cd6017c1a4a6e17e62c26facd2889f4d8027593aa2077d79c50e56780",
    "signs": [
-    "331"
+    "331.2"
    ],
    "section": "Abschnitt 7 Autobahnen und Kraftfahrstraßen"
   },
@@ -1692,21 +1719,21 @@
   },
   "Anlage 3 Nr. 24.1": {
    "enbez": "Anlage 3 lfd. Nr. 24.1",
-   "title": ".1 Radschnellweg",
+   "title": "Radschnellweg",
    "text": "Zeichen 350.1 Radschnellweg\nErläuterung\nDas Zeichen steht an Radschnellwegen. Es dient der Unterrichtung über den Beginn von Radschnellwegen und der Führung von Radschnellwegen an Knotenpunkten.",
    "sha256": "6fb1343bddc6769d5764ddeb58ecf4cc5ea76bd42083e7296c958a05497df59e",
    "signs": [
-    "350"
+    "350.1"
    ],
    "section": "Abschnitt 9 Hinweise"
   },
   "Anlage 3 Nr. 24.2": {
    "enbez": "Anlage 3 lfd. Nr. 24.2",
-   "title": ".2 Ende des Radschnellwegs",
+   "title": "Ende des Radschnellwegs",
    "text": "Zeichen 350.2 Ende des Radschnellwegs\n",
    "sha256": "d4193d91085460a73600db1acb4e081c91425b54416d8b3737273a26e07f6996",
    "signs": [
-    "350"
+    "350.2"
    ],
    "section": "Abschnitt 9 Hinweise"
   },
@@ -1788,31 +1815,31 @@
   },
   "Anlage 3 Nr. 31": {
    "enbez": "Anlage 3 lfd. Nr. 31",
-   "title": ".1 Touristischer Hinweis",
+   "title": "Touristischer Hinweis",
    "text": "Zeichen 386.1 Touristischer Hinweis\n",
    "sha256": "e85605fd238e4bd205644b5cd314a4b05860d610fc25f057f1b3bb9702062ce7",
    "signs": [
-    "386"
+    "386.1"
    ],
    "section": "Abschnitt 9 Hinweise"
   },
   "Anlage 3 Nr. 32": {
    "enbez": "Anlage 3 lfd. Nr. 32",
-   "title": ".2 Touristische Route",
+   "title": "Touristische Route",
    "text": "Zeichen 386.2 Touristische Route\n",
    "sha256": "e0bde5b0b51f06e6b47ee472d65265341a4742e2267dd5fb09ecd5b75c68a875",
    "signs": [
-    "386"
+    "386.2"
    ],
    "section": "Abschnitt 9 Hinweise"
   },
   "Anlage 3 Nr. 33": {
    "enbez": "Anlage 3 lfd. Nr. 33",
-   "title": ".3 Touristische Unterrichtungstafel",
+   "title": "Touristische Unterrichtungstafel",
    "text": "Zeichen 386.3 Touristische Unterrichtungstafel\nErläuterung\nDas Zeichen steht an der Autobahn. Es dient der Unterrichtung über touristisch bedeutsame Ziele.",
    "sha256": "f86e99adf3e9b83d88e31b61667337cb948cca3f0d3ed9aff96e3583ef99bff2",
    "signs": [
-    "386"
+    "386.3"
    ],
    "section": "Abschnitt 9 Hinweise"
   },
@@ -2016,11 +2043,11 @@
   },
   "Anlage 3 Nr. 53": {
    "enbez": "Anlage 3 lfd. Nr. 53",
-   "title": ".1",
+   "title": "",
    "text": "Zeichen 332.1\nErläuterung\nAusfahrt von der Kraftfahrstraße oder einer autobahnähnlich ausgebauten Straße. Das Zeichen kann innerhalb geschlossener Ortschaften auch mit weißem Grund ausgeführt sein.",
    "sha256": "e1f109cd3acc05ab46932d0e85c188f76663e13f1edbdbfe6a4d798ad1eb1c86",
    "signs": [
-    "332"
+    "332.1"
    ],
    "section": "Abschnitt 10 Wegweisung"
   },
@@ -2070,11 +2097,11 @@
   },
   "Anlage 3 Nr. 58": {
    "enbez": "Anlage 3 lfd. Nr. 58",
-   "title": ".1",
+   "title": "",
    "text": "Zeichen 448.1\nErläuterung\n1.\nMit dem Zeichen wird ein Autohof in unmittelbarer Nähe einer Autobahnausfahrt angekündigt.\n2.\nDer Autohof wird einmal am rechten Fahrbahnrand 500 bis 1 000 m vor dem Zeichen 448 angekündigt. Auf einem Zusatzzeichen wird durch grafische Symbole der Leistungsumfang des Autohofs dargestellt.",
    "sha256": "ef2fa7d503734c88b74070d5a16516d8dc8421cf057f10faae60bedf5b851cfd",
    "signs": [
-    "448"
+    "448.1"
    ],
    "section": "Abschnitt 10 Wegweisung"
   },
@@ -2158,11 +2185,11 @@
   },
   "Anlage 3 Nr. 67": {
    "enbez": "Anlage 3 lfd. Nr. 67",
-   "title": ".1",
+   "title": "",
    "text": "Zeichen 455.1\nErläuterung\nFortsetzung der Umleitung",
    "sha256": "7e899d498d14c56325a0182f9f93af37e3ee76692c6407d33636850c6a0c378e",
    "signs": [
-    "455"
+    "455.1"
    ],
    "section": "Abschnitt 11 Umleitungsbeschilderung"
   },
@@ -2184,11 +2211,11 @@
   },
   "Anlage 3 Nr. 69": {
    "enbez": "Anlage 3 lfd. Nr. 69",
-   "title": ".1",
+   "title": "",
    "text": "Zeichen 457.1\nErläuterung\nUmleitungsankündigung",
    "sha256": "7ef4f4ad70e069ced5f5bf8ec8120e81df33e7ee1267188be8105de3c83ed718",
    "signs": [
-    "457"
+    "457.1"
    ],
    "section": "Abschnitt 11 Umleitungsbeschilderung"
   },
@@ -2228,21 +2255,21 @@
   },
   "Anlage 3 Nr. 74": {
    "enbez": "Anlage 3 lfd. Nr. 74",
-   "title": ".2",
+   "title": "",
    "text": "Zeichen 457.2\nErläuterung\nEnde der Umleitung oder",
    "sha256": "ed84ae7936894a0b1f29829aa7c484350a5d501f92c416562c57ba2e5ba0115f",
    "signs": [
-    "457"
+    "457.2"
    ],
    "section": "Abschnitt 11 Umleitungsbeschilderung"
   },
   "Anlage 3 Nr. 75": {
    "enbez": "Anlage 3 lfd. Nr. 75",
-   "title": ".2",
+   "title": "",
    "text": "Zeichen 455.2\nErläuterung\nEnde der Umleitung",
    "sha256": "d403de85ae2b0989b5bd0d62efca342d00ad950ef8a33ebb7032cec6e8f06b19",
    "signs": [
-    "455"
+    "455.2"
    ],
    "section": "Abschnitt 11 Umleitungsbeschilderung"
   },
@@ -2268,21 +2295,21 @@
   },
   "Anlage 3 Nr. 78": {
    "enbez": "Anlage 3 lfd. Nr. 78",
-   "title": ".1 Umlenkungspfeil",
+   "title": "Umlenkungspfeil",
    "text": "Zeichen 467.1 Umlenkungspfeil\nErläuterung\nDas Zeichen kennzeichnet Alternativstrecken auf Autobahnen, deren Benutzung im Bedarfsfall empfohlen wird (Streckenempfehlung).",
    "sha256": "6a0566525a6deb6e736e19b80ba129565fa68b3c5ae28e9e617b3030a3360e3e",
    "signs": [
-    "467"
+    "467.1"
    ],
    "section": "Abschnitt 12 Sonstige Verkehrsführung"
   },
   "Anlage 3 Nr. 79": {
    "enbez": "Anlage 3 lfd. Nr. 79",
-   "title": ".2",
+   "title": "",
    "text": "Zeichen 467.2\nErläuterung\nDas Zeichen kennzeichnet das Ende einer Streckenempfehlung.",
    "sha256": "9dd62fadfcb945c3d291825c5aa9e2b0744622ef8c122e66cca79bb5dffd0b0e",
    "signs": [
-    "467"
+    "467.2"
    ],
    "section": "Abschnitt 12 Sonstige Verkehrsführung"
   },

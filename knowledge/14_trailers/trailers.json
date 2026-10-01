@@ -1,0 +1,30 @@
+{"items": [
+{"id": "TRL_SPEED", "topic": "14_trailers", "subtopic": "geschwindigkeit_anhaenger", "title": "Geschwindigkeit mit Anhänger",
+ "rule": "Pkw mit Anhänger: außerorts und auf Autobahnen/Kraftfahrstraßen mit getrennten Fahrbahnen höchstens 80 km/h (StVO). Höhere Werte (100 km/h) nur mit besonderer Ausnahmegenehmigung/Zulassung außerhalb der StVO – nicht verifiziert.",
+ "numeric_refs": ["STVO_3_PKW_TRAILER", "STVO_18_PKW_TRAILER"],
+ "concepts": ["anhaenger", "geschwindigkeit"], "keywords": ["Anhänger", "Wohnwagen", "80 km/h", "Gespann", "Autobahn"],
+ "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 18", "para": "Abs. 5 Nr. 1 b", "evidence": "Personenkraftwagen mit Anhänger, Lastkraftwagen mit Anhänger, Wohnmobile mit Anhänger und Zugmaschinen mit Anhänger sowie"}],
+ "claims": [
+  {"context": ["Anhänger", "Autobahn", "Höchstgeschwindigkeit", "Pkw"], "statement": "Mit Anhänger gilt auf der Autobahn grundsätzlich höchstens 80 km/h", "truth": true, "numbers": ["80 km/h"]},
+  {"context": ["Anhänger", "Autobahn", "Höchstgeschwindigkeit", "Pkw"], "statement": "Mit Anhänger gilt auf der Autobahn die Richtgeschwindigkeit 130 km/h", "truth": false}]},
+
+{"id": "TRL_LENGTH_GAP", "topic": "14_trailers", "subtopic": "zuglaenge_abstand", "title": "Lange Züge: Abstand, Länge, Fahrstreifen",
+ "rule": "Züge über 7 m Länge halten außerorts Einscherabstand. Fahrzeug oder Zug samt Ladung höchstens 20,75 m lang. Kfz mit Anhänger dürfen außerorts bei drei Fahrstreifen je Richtung den linken nur zum Linksabbiegen benutzen. Kfz-Anhänger ohne Zugfahrzeug höchstens zwei Wochen parken.",
+ "numeric_refs": ["STVO_4_TRAIN_7M", "STVO_22_MAX_LENGTH", "STVO_12_TRAILER_2WEEKS"],
+ "concepts": ["anhaenger", "abstand", "parken"], "keywords": ["Zug", "Anhänger", "7 m", "Einscherabstand", "zwei Wochen", "Anhänger parken", "20,75 m"],
+ "exam_relevance": 2, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 12", "para": "Abs. 3b", "evidence": "Mit Kraftfahrzeuganhängern ohne Zugfahrzeug darf nicht länger als zwei Wochen geparkt werden."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 4", "para": "Abs. 2", "evidence": "einen Zug führt, der länger als 7 m ist"}],
+ "claims": [
+  {"context": ["Anhänger", "ohne Zugfahrzeug", "parken"], "statement": "Ein Anhänger ohne Zugfahrzeug darf höchstens zwei Wochen geparkt werden", "truth": true},
+  {"context": ["Anhänger", "ohne Zugfahrzeug", "parken"], "statement": "Ein Anhänger ohne Zugfahrzeug darf unbegrenzt am Straßenrand geparkt werden", "truth": false}]},
+
+{"id": "TRL_LICENCE", "topic": "14_trailers", "subtopic": "fahrerlaubnis_anhaenger", "title": "Fahrerlaubnis B, B96, BE",
+ "rule": "Klasse B: Kfz bis 3 500 kg zulässige Gesamtmasse; Anhänger bis 750 kg, oder schwerer, wenn die Kombination 3 500 kg nicht übersteigt. B96: Kombination bis 4 250 kg. BE: Anhänger bis 3 500 kg. ACHTUNG: FeV § 6 ist im Container nicht amtlich abrufbar – Werte NICHT verifiziert, Engine antwortet hier UNCERTAIN.",
+ "numeric_refs": ["FEV6_B_MAX_ZGM", "FEV6_B_LIGHT_TRAILER", "FEV6_B96_MAX_COMBINATION", "FEV6_BE_MAX_TRAILER"],
+ "concepts": ["fahrerlaubnis", "anhaenger", "gesamtmasse"], "keywords": ["Klasse B", "BE", "B96", "Anhänger", "zulässige Gesamtmasse", "750 kg", "3500 kg", "4250 kg", "Führerschein"],
+ "exam_relevance": 3, "difficulty": 3, "confidence": 0.8,
+ "sources": [{"type": "law", "law": "fev_2010", "norm": "§ 6", "ref": "FeV § 6 – nicht im RIS-Testbestand, NICHT verifiziert"}],
+ "claims": []}
+]}
