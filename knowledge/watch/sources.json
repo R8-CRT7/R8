@@ -6,49 +6,7 @@
    "name": "Straßenverkehrs-Ordnung (StVO)",
    "priority": 1,
    "norms": [
-    "§ 1",
-    "§ 2",
-    "§ 3",
-    "§ 4",
-    "§ 5",
-    "§ 6",
-    "§ 7",
-    "§ 7a",
-    "§ 8",
-    "§ 9",
-    "§ 9a",
-    "§ 10",
-    "§ 11",
-    "§ 12",
-    "§ 13",
-    "§ 14",
-    "§ 15",
-    "§ 15a",
-    "§ 16",
-    "§ 17",
-    "§ 18",
-    "§ 19",
-    "§ 20",
-    "§ 21",
-    "§ 21a",
-    "§ 22",
-    "§ 23",
-    "§ 25",
-    "§ 26",
-    "§ 34",
-    "§ 35",
-    "§ 36",
-    "§ 37",
-    "§ 38",
-    "§ 39",
-    "§ 40",
-    "§ 41",
-    "§ 42",
-    "§ 43",
-    "Anlage 1",
-    "Anlage 2",
-    "Anlage 3",
-    "Anlage 4"
+    "all"
    ],
    "abbreviations": [
     "StVO",
@@ -131,7 +89,8 @@
     "§ 54",
     "§ 55",
     "§ 56",
-    "§ 57"
+    "§ 57",
+    "Anlage VIII"
    ],
    "abbreviations": [
     "StVZO",
@@ -156,6 +115,21 @@
    "search_terms": [
     "BKatV",
     "Bußgeldkatalog-Verordnung"
+   ]
+  },
+  {
+   "slug": "ekfv",
+   "name": "Elektrokleinstfahrzeuge-Verordnung",
+   "abbreviations": [
+    "eKFV"
+   ],
+   "search_terms": [
+    "eKFV",
+    "Elektrokleinstfahrzeuge"
+   ],
+   "priority": 1,
+   "norms": [
+    "all"
    ]
   }
  ],

@@ -48,7 +48,7 @@ class Junction:
     kind: Literal["crossing", "t_junction", "roundabout", "level_crossing"] = "crossing"
     arms: tuple[Arm, ...] = ARMS
     main_road_arms: frozenset[str] = frozenset()  # arms forming the priority road (straight or bent)
-    roundabout_yield: bool = True  # Zeichen 215 with Zeichen 205 at the entries (§ 9a)
+    roundabout_yield: bool = True  # Zeichen 215 with Zeichen 205 at the entries (§ 8 Absatz 1a, Anlage 2 Zeichen 215)
 
 
 @dataclass
@@ -183,7 +183,7 @@ def _turning(a: Participant, b: Participant, j: Junction, ignore_signs: bool) ->
     if j.kind == "roundabout" and a.in_roundabout != b.in_roundabout:
         inside, entering = (a, b) if a.in_roundabout else (b, a)
         if j.roundabout_yield:
-            return Yield(entering.id, inside.id, "STVO_9A_ROUNDABOUT",
+            return Yield(entering.id, inside.id, "STVO_8_ROUNDABOUT",
                          "Kreisverkehr mit Zeichen 215 und 205: der Verkehr im Kreis hat Vorfahrt")
         return Yield(inside.id, entering.id, "STVO_8_RIGHT_BEFORE_LEFT",
                      "Kreisverkehr ohne Zeichen 205: rechts vor links - der Einfahrende kommt von rechts")

@@ -15,6 +15,7 @@ from __future__ import annotations
 import random
 import re
 from dataclasses import dataclass, field
+from typing import Any
 
 from smart360.theory import calc
 from smart360.theory.kb import KnowledgeBase
@@ -161,11 +162,11 @@ def _make_variant(obj: KnowledgeObject, trues: list[Claim], falses: list[Claim],
         changed = _change_number(t.statement, rng)
         if changed is None:
             return None
-        opts = [(changed, False), (t.statement, True)] + opts[1:2]
+        opts = [(changed, False), (t.statement, True), *opts[1:2]]
     elif variant == "unit_error":
         if not re.search(r"\d+\s*km/h", t.statement):
             return None
-        opts = [(re.sub(r"(\d+)\s*km/h", r"\1 m", t.statement, count=1), False), (t.statement, True)] + opts[1:2]
+        opts = [(re.sub(r"(\d+)\s*km/h", r"\1 m", t.statement, count=1), False), (t.statement, True), *opts[1:2]]
     elif variant == "exception":
         if not obj.exceptions:
             return None
@@ -283,7 +284,7 @@ def sign_items(kb: KnowledgeBase, seed: int = 13) -> list[TheoryItem]:
 # ----------------------------------------------------------------------------- priority scene templates
 # Hand-written situations with the expected waiting relation (from the StVO, written independently of the
 # engine). Each is rotated through 4 orientations and 3 label sets.
-PRIORITY_TEMPLATES = [
+PRIORITY_TEMPLATES: list[tuple[str, dict, Any]] = [
     ("rvl_basic", {"junction": {"kind": "crossing", "main_road_arms": [], "roundabout_yield": True},
      "participants": [{"id": "me", "kind": "me", "arm": "S", "intent": "straight"},
                       {"id": "x", "kind": "car", "arm": "E", "intent": "straight"}]}, "me_waits"),

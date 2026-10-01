@@ -3,7 +3,8 @@
 Source: gesetze-im-internet.de (Bundesministerium der Justiz), official XML downloads. German statutes are
 official works without copyright (§ 5 UrhG), so verbatim snapshots of the relevant norms may be stored.
 
-    python tools/knowledge_watch.py fetch   --out DIR
+    python tools/knowledge_watch.py fetch-raw --out DIR      (RIS API, LegalDocML ZIPs)
+    python tools/knowledge_watch.py parse   --raw DIR --out SNAPDIR
     python tools/knowledge_watch.py compare --old knowledge/sources/snapshots --new DIR --report report.md
     python tools/knowledge_watch.py show    --law stvo_2013 --norm "§ 3"
 
@@ -84,7 +85,7 @@ def parse_law(xml_bytes: bytes) -> dict:
 
 def norm_key(enbez: str) -> str:
     """'Anlage 2 (zu § 41 Absatz 1)' -> 'Anlage 2'; '§ 3' -> '§ 3'."""
-    m = re.match(r"(§+\s*\d+[a-z]?|Anlage\s+\d+[a-z]?)", enbez)
+    m = re.match(r"(§+\s*\d+[a-z]?|Anlage\s+(?:\d+|[IVXL]+)[a-z]?\b)", enbez)
     return re.sub(r"\s+", " ", m.group(1)) if m else enbez
 
 
@@ -183,6 +184,143 @@ def fetch(out: Path) -> dict:
     return summary
 
 
+# ----------------------------------------------------------------------------- LegalDocML (RIS) -> snapshot
+AKN_BLOCK = {"p", "item", "td", "th", "tr", "br", "heading", "paragraph", "blockList", "table", "listIntroduction"}
+SIGN_RE = re.compile(r"Zeichen\s+(\d{3,4}(?:-\d{1,2})?)")
+
+
+def _akn_text(el: ET.Element) -> str:
+    """Readable text of a LegalDocML element: block elements on their own lines, images/markers dropped."""
+    parts: list[str] = []
+
+    def walk(e: ET.Element) -> None:
+        tag = e.tag.split("}")[-1]
+        if tag in ("meta", "img", "marker", "note", "authorialNote"):
+            if e.tail and tag != "meta":
+                parts.append(e.tail)
+            return
+        block = tag in AKN_BLOCK
+        if block:
+            parts.append("\n")
+        if e.text:
+            parts.append(e.text)
+        for c in e:
+            walk(c)
+        if tag == "num":
+            parts.append(" ")
+        if block:
+            parts.append("\n")
+        if e.tail:
+            parts.append(e.tail)
+
+    walk(el)
+    text = "".join(parts).replace("\xa0", " ")
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r" *\n[ \n]*", "\n", text)
+    return text.strip()
+
+
+def _child(el: ET.Element, tag: str) -> ET.Element | None:
+    return next((c for c in el if c.tag.split("}")[-1] == tag), None)
+
+
+def _iter(el: ET.Element, tag: str):  # type: ignore[no-untyped-def]
+    return (e for e in el.iter() if e.tag.split("}")[-1] == tag)
+
+
+def _entry(enbez: str, title: str, text: str, **extra: object) -> dict:
+    return {"enbez": enbez, "title": title, "text": text,
+            "sha256": hashlib.sha256(normalize(text).encode()).hexdigest(), **extra}
+
+
+def parse_ldml_main(xml_bytes: bytes) -> dict[str, dict]:
+    """Articles (§§) of the main Regelungstext, with per-paragraph text."""
+    root = ET.fromstring(xml_bytes)  # nosec B314 - official source, no entities used
+    norms: dict[str, dict] = {}
+    for art in _iter(root, "article"):
+        num = _child(art, "num")
+        if num is None:
+            continue
+        enbez = normalize("".join(num.itertext()))
+        head = _child(art, "heading")
+        title = normalize("".join(head.itertext())) if head is not None else ""
+        paras: dict[str, str] = {}
+        for para in (c for c in art if c.tag.split("}")[-1] == "paragraph"):
+            pn = _child(para, "num")
+            key = normalize("".join(pn.itertext())) if pn is not None else str(len(paras) + 1)
+            paras[key] = _akn_text(para)
+        body = [c for c in art if c.tag.split("}")[-1] not in ("num", "heading")]
+        text = "\n".join(_akn_text(c) for c in body).strip()
+        if text:
+            norms[norm_key(enbez)] = _entry(enbez, title, text, paragraphs=paras)
+    return norms
+
+
+def parse_ldml_annex(xml_bytes: bytes) -> dict[str, dict]:
+    """One Anlage: the whole text, plus one entry per table row of the sign catalogues
+    ('Anlage 2 Nr. 2' with signs=['205'], name, rule text)."""
+    root = ET.fromstring(xml_bytes)  # nosec B314 - official source, no entities used
+    dt = next(_iter(root, "docTitle"), None)
+    full_title = normalize(" ".join(t for t in dt.itertext())) if dt is not None else ""
+    key = norm_key(full_title)
+    body = next(_iter(root, "mainBody"), root)
+    text = _akn_text(body)
+    out: dict[str, dict] = {}
+    if not text:
+        return out
+    out[key] = _entry(full_title, full_title[len(key):].strip(), text)
+    section = ""
+    for tr in _iter(body, "tr"):
+        tds = [c for c in tr if c.tag.split("}")[-1] == "td"]
+        if len(tds) == 1:
+            section = normalize(_akn_text(tds[0]))
+            continue
+        if len(tds) < 3:
+            continue
+        nr = normalize(_akn_text(tds[0]))
+        if not nr:
+            continue
+        sign_cell = _akn_text(tds[1])
+        signs = SIGN_RE.findall(sign_cell)
+        name = normalize(SIGN_RE.sub("", sign_cell).replace("\n", " "))
+        rule = _akn_text(tds[2]) if len(tds) == 3 else "\n".join(_akn_text(t) for t in tds[2:])
+        out[f"{key} Nr. {nr}"] = _entry(f"{key} lfd. Nr. {nr}", name, normalize(sign_cell) + "\n" + rule,
+                                        signs=signs, section=section)
+    return out
+
+
+def parse_raw(raw_dir: Path, out: Path) -> dict:
+    """knowledge/sources/raw/<slug>/*.xml.gz (RIS LegalDocML) -> <out>/<slug>.json snapshots."""
+    import gzip
+
+    cfg = {law["slug"]: law for law in json.loads(CONFIG.read_text(encoding="utf-8"))["laws"]}
+    out.mkdir(parents=True, exist_ok=True)
+    summary = {}
+    for d in sorted(p for p in Path(raw_dir).iterdir() if (p / "meta.json").exists()):
+        meta = json.loads((d / "meta.json").read_text(encoding="utf-8"))
+        norms: dict[str, dict] = {}
+        for f in sorted(d.glob("*.xml.gz")):
+            data = gzip.decompress(f.read_bytes())
+            if f.name.startswith("regelungstext"):
+                norms.update(parse_ldml_main(data))
+            elif f.name.startswith("anlage"):
+                norms.update(parse_ldml_annex(data))
+        law = cfg.get(d.name, {})
+        keep = law.get("norms", ["all"])
+        if keep != ["all"]:
+            norms = {k: n for k, n in norms.items() if k in keep or any(k.startswith(x + " Nr. ") for x in keep)}
+        signs = {s: k for k, n in norms.items() for s in n.get("signs", [])}
+        snap = {"law": d.name, "name": meta.get("name"), "abbreviation": meta.get("abbreviation"),
+                "eli": meta.get("eli"), "source_url": meta.get("zip_url"), "source_priority": law.get("priority", 1),
+                "fetched_at": meta.get("fetched_at"),
+                "missing_norms": [k for k in keep if k != "all" and k not in norms],
+                "sign_index": dict(sorted(signs.items())), "norms": norms}
+        (out / f"{d.name}.json").write_text(json.dumps(snap, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        summary[d.name] = {"norms": len(norms), "signs": len(signs), "missing": snap["missing_norms"]}
+        print(f"{d.name}: {len(norms)} norms, {len(signs)} signs, missing {snap['missing_norms']}", flush=True)
+    return summary
+
+
 # ----------------------------------------------------------------------------- compare + impact
 def _load_dir(d: Path) -> dict[str, dict]:
     return {p.stem: json.loads(p.read_text(encoding="utf-8")) for p in sorted(Path(d).glob("*.json"))}
@@ -224,10 +362,10 @@ def compare(old_dir: Path, new_dir: Path, knowledge_dir: Path) -> dict:
     cites = _citations(knowledge_dir)
     broken = []
     for c in cites:
-        snap = new.get(c["law"])
-        if snap is None:
+        cur = new.get(c["law"])
+        if cur is None:
             continue
-        n = snap["norms"].get(c["norm"])
+        n = cur["norms"].get(c["norm"])
         if n is None or (c["evidence"] and normalize(c["evidence"]) not in normalize(n["text"])):
             broken.append(c)
     touched = {(c["law"], c["norm"]) for c in changed}
@@ -268,6 +406,9 @@ def main(argv: list[str] | None = None) -> int:
     f.add_argument("--out", type=Path, required=True)
     fr = sub.add_parser("fetch-raw")
     fr.add_argument("--out", type=Path, required=True)
+    pr = sub.add_parser("parse")
+    pr.add_argument("--raw", type=Path, default=ROOT / "knowledge" / "sources" / "raw")
+    pr.add_argument("--out", type=Path, default=ROOT / "knowledge" / "sources" / "snapshots")
     c = sub.add_parser("compare")
     c.add_argument("--old", type=Path, default=ROOT / "knowledge" / "sources" / "snapshots")
     c.add_argument("--new", type=Path, required=True)
@@ -283,6 +424,8 @@ def main(argv: list[str] | None = None) -> int:
         fetch(a.out)
     elif a.cmd == "fetch-raw":
         fetch_raw(a.out)
+    elif a.cmd == "parse":
+        parse_raw(a.raw, a.out)
     elif a.cmd == "compare":
         res = compare(a.old, a.new, a.knowledge)
         md = report_md(res)

@@ -471,6 +471,10 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
         reasons.append("right-of-way not fully decidable")
     if q.ocr_confidence < 0.6:
         reasons.append("low OCR confidence")
+    unverified = sorted({x for e in ordered if e.verdict != Verdict.UNKNOWN for x in e.evidence
+                         if not kb.verified(x)})
+    if unverified:
+        reasons.append(f"rule not verified against an official law text: {unverified}")
     trace.append(("second_pass", "; ".join(reasons) or "ok"))
 
     # confidence calibration

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 from collections import defaultdict
 from dataclasses import dataclass, field
@@ -35,6 +36,8 @@ class KnowledgeBase:
     snapshots: dict[str, dict] = field(default_factory=dict)
     by_topic: dict[str, list[str]] = field(default_factory=lambda: defaultdict(list))
     by_concept: dict[str, list[str]] = field(default_factory=lambda: defaultdict(list))
+    status: dict[str, str] = field(default_factory=dict)  # id -> verified | unverified | secondary
+    evidence_errors: list[str] = field(default_factory=list)
 
     # ------------------------------------------------------------------ loading
     @classmethod
@@ -71,7 +74,42 @@ class KnowledgeBase:
             kb.edges = [Edge.model_validate(e) for e in json.loads(cg.read_text(encoding="utf-8"))["edges"]]
         for p in sorted((root / "sources" / "snapshots").glob("*.json")):
             kb.snapshots[p.stem] = json.loads(p.read_text(encoding="utf-8"))
+        kb._verify()
         return kb
+
+    def _verify(self) -> None:
+        """Check every law citation against the official snapshot.
+
+        verified   - at least one law source whose evidence occurs verbatim in the snapshot of that norm
+        unverified - cites a law that has no official snapshot yet (e.g. FeV/StVG/BKatV, not in the RIS test
+                     phase): the engine must not answer confidently from it
+        secondary  - only non-law sources (rule of thumb, authority text without snapshot)
+        A citation whose evidence is NOT found in an existing snapshot is an error (evidence_errors)."""
+        items: list = [*self.objects.values(), *self.numeric.values(), *self.signs.values()]  # type: ignore[type-arg]
+        for it in items:
+            ok, missing = False, False
+            for s in it.sources:
+                if s.type != "law" or not s.law:
+                    continue
+                if s.law not in self.snapshots:
+                    missing = True
+                    continue
+                text = self.norm_text(s.law, s.norm or "")
+                if text is None:
+                    self.evidence_errors.append(f"{it.id}: {s.law} {s.norm} not in snapshot")
+                elif not s.evidence or _ws(s.evidence) not in _ws(text):
+                    self.evidence_errors.append(f"{it.id}: evidence not found in {s.law} {s.norm}: {s.evidence[:80]}")
+                else:
+                    ok = True
+            if isinstance(it, NumericRule) and ok:
+                ev = " ".join(s.evidence for s in it.sources)
+                if _ws(it.value_text) not in _ws(ev):
+                    self.evidence_errors.append(f"{it.id}: value_text {it.value_text!r} not in its evidence")
+                    ok = False
+            self.status[it.id] = "verified" if ok else ("unverified" if missing else "secondary")
+
+    def verified(self, item_id: str) -> bool:
+        return self.status.get(item_id) != "unverified"
 
     # ------------------------------------------------------------------ queries
     def norm_text(self, law: str, norm: str) -> str | None:
@@ -103,6 +141,10 @@ class KnowledgeBase:
             scored.append((score, obj))
         scored.sort(key=lambda x: -x[0])
         return scored[:limit]
+
+
+def _ws(text: str) -> str:
+    return re.sub(r"\s+", " ", text).strip()
 
 
 @lru_cache(maxsize=4096)
