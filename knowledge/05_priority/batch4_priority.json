@@ -1,0 +1,62 @@
+{
+ "items": [
+  {
+   "id": "PRI_RAIL_FLAG",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 19",
+     "para": "Abs. 5",
+     "evidence": "Vor Bahnübergängen ohne Vorrang der Schienenfahrzeuge ist in sicherer Entfernung zu warten, wenn ein Bahnbediensteter mit einer weiß-rot-weißen Fahne oder einer roten Leuchte Halt gebietet.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "05_priority",
+   "subtopic": "bahnuebergang",
+   "title": "Bahnübergang ohne Vorrang: Fahne oder rote Leuchte",
+   "rule": "Vor Bahnübergängen ohne Vorrang der Schienenfahrzeuge ist in sicherer Entfernung zu warten, wenn ein Bahnbediensteter mit einer weiß-rot-weißen Fahne oder einer roten Leuchte Halt gebietet.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "bahnuebergang"
+   ],
+   "keywords": [
+    "Bahnübergang",
+    "Bahnbediensteter",
+    "Fahne",
+    "rote Leuchte",
+    "ohne Vorrang"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Bahnübergang ohne Vorrang",
+      "Fahne"
+     ],
+     "statement": "Gebietet ein Bahnbediensteter mit weiß-rot-weißer Fahne Halt, warte ich in sicherer Entfernung",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Bahnübergang ohne Vorrang",
+      "rote Leuchte"
+     ],
+     "statement": "Gebietet ein Bahnbediensteter mit roter Leuchte Halt, warte ich in sicherer Entfernung",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 1,
+   "difficulty": 2
+  }
+ ]
+}

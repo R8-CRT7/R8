@@ -1,0 +1,71 @@
+{
+ "items": [
+  {
+   "id": "SPC_EVENTS_PERMIT",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 29",
+     "para": "Abs. 2",
+     "evidence": "Veranstaltungen, für die Straßen mehr als verkehrsüblich in Anspruch genommen werden, insbesondere Kraftfahrzeugrennen, bedürfen der Erlaubnis.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 29",
+     "para": "Abs. 3",
+     "evidence": "Einer Erlaubnis bedarf der Verkehr mit Fahrzeugen und Zügen, deren Abmessungen, Achslasten oder Gesamtmassen die gesetzlich allgemein zugelassenen Grenzen tatsächlich überschreiten.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "11_special",
+   "subtopic": "erlaubnis",
+   "title": "Erlaubnispflicht: Rennen, Veranstaltungen, Übergröße",
+   "rule": "Veranstaltungen, die die Straße mehr als verkehrsüblich in Anspruch nehmen, insbesondere Kraftfahrzeugrennen, bedürfen der Erlaubnis. Auch Fahrzeuge, deren Abmessungen, Achslasten oder Gesamtmassen die zugelassenen Grenzen überschreiten, brauchen eine Erlaubnis.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "erlaubnis"
+   ],
+   "keywords": [
+    "Rennen",
+    "Kraftfahrzeugrennen",
+    "Veranstaltung",
+    "Erlaubnis",
+    "Übergröße",
+    "Schwertransport"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Kraftfahrzeugrennen"
+     ],
+     "statement": "Ein Kraftfahrzeugrennen auf öffentlichen Straßen bedarf einer Erlaubnis",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Abmessungen",
+      "Gesamtmasse",
+      "Grenzen"
+     ],
+     "statement": "Für Fahrzeuge, die die zulässigen Abmessungen oder Gesamtmassen überschreiten, ist eine Erlaubnis nötig",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 2,
+   "difficulty": 2
+  }
+ ]
+}

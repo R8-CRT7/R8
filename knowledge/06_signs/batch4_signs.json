@@ -1,0 +1,54 @@
+{
+ "items": [
+  {
+   "id": "SGN_DANGER_ARROW",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 40",
+     "para": "Abs. 5",
+     "evidence": "Steht ein Gefahrzeichen vor einer Einmündung, weist auf einem Zusatzzeichen ein schwarzer Pfeil in die Richtung der Gefahrstelle, falls diese in der anderen Straße liegt.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "gefahrzeichen",
+   "title": "Gefahrzeichen vor Einmündung mit Pfeil",
+   "rule": "Steht ein Gefahrzeichen vor einer Einmündung, weist ein schwarzer Pfeil auf einem Zusatzzeichen in die Richtung der Gefahrstelle, wenn diese in der anderen Straße liegt.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "gefahrzeichen"
+   ],
+   "keywords": [
+    "Gefahrzeichen",
+    "Einmündung",
+    "Pfeil",
+    "Zusatzzeichen",
+    "Gefahrstelle"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Gefahrzeichen",
+      "Einmündung",
+      "Pfeil"
+     ],
+     "statement": "Ein Pfeil auf dem Zusatzzeichen zeigt, dass die Gefahrstelle in der anderen Straße liegt",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

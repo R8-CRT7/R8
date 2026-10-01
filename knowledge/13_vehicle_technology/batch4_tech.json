@@ -1,0 +1,168 @@
+{
+ "items": [
+  {
+   "id": "TEC_HU_DUTY",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 29",
+     "para": "Abs. 1",
+     "evidence": "haben ihre Fahrzeuge auf ihre Kosten nach Maßgabe der Anlage VIII in Verbindung mit Anlage VIIIa in regelmäßigen Zeitabständen untersuchen zu lassen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "13_vehicle_technology",
+   "subtopic": "hauptuntersuchung",
+   "title": "Hauptuntersuchung: Pflicht des Halters",
+   "rule": "Der Halter muss sein zulassungspflichtiges Fahrzeug auf eigene Kosten in regelmäßigen Zeitabständen untersuchen lassen (Hauptuntersuchung).",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "hauptuntersuchung"
+   ],
+   "keywords": [
+    "Hauptuntersuchung",
+    "HU",
+    "TÜV",
+    "Halter",
+    "Kosten"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Hauptuntersuchung",
+      "Halter"
+     ],
+     "statement": "Der Halter muss das Fahrzeug in regelmäßigen Abständen zur Hauptuntersuchung bringen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Hauptuntersuchung",
+      "Kosten"
+     ],
+     "statement": "Die Kosten der Hauptuntersuchung trägt der Halter",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 2,
+   "difficulty": 2
+  },
+  {
+   "id": "TEC_TYRES_SUITABLE",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 36",
+     "para": "Abs. 1",
+     "evidence": "Maße und Bauart der Reifen von Fahrzeugen müssen den Betriebsbedingungen, besonders der Belastung und der durch die Bauart bestimmten Höchstgeschwindigkeit des Fahrzeugs, entsprechen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "13_vehicle_technology",
+   "subtopic": "reifen",
+   "title": "Reifen passend zu Belastung und Höchstgeschwindigkeit",
+   "rule": "Maße und Bauart der Reifen müssen den Betriebsbedingungen entsprechen, besonders der Belastung und der bauartbedingten Höchstgeschwindigkeit des Fahrzeugs.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "reifen"
+   ],
+   "keywords": [
+    "Reifen",
+    "Reifengröße",
+    "Tragfähigkeit",
+    "Geschwindigkeitsindex",
+    "Belastung"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Reifen",
+      "Belastung"
+     ],
+     "statement": "Die Reifen müssen für die Belastung des Fahrzeugs geeignet sein",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Reifen",
+      "Höchstgeschwindigkeit"
+     ],
+     "statement": "Die Reifen müssen für die bauartbedingte Höchstgeschwindigkeit des Fahrzeugs zugelassen sein",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "TEC_HORN_TONES",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 16",
+     "para": "Abs. 3",
+     "evidence": "Schallzeichen dürfen nicht aus einer Folge verschieden hoher Töne bestehen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "13_vehicle_technology",
+   "subtopic": "schallzeichen",
+   "title": "Hupe: keine Tonfolge",
+   "rule": "Schallzeichen dürfen nicht aus einer Folge verschieden hoher Töne bestehen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "schallzeichen"
+   ],
+   "keywords": [
+    "Hupe",
+    "Schallzeichen",
+    "Tonfolge",
+    "Fanfare"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Hupe",
+      "Tonfolge"
+     ],
+     "statement": "Eine Hupe darf keine Folge verschieden hoher Töne abgeben",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 1,
+   "difficulty": 2
+  }
+ ]
+}

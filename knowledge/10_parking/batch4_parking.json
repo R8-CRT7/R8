@@ -1,0 +1,96 @@
+{
+ "items": [
+  {
+   "id": "PRK_DISC_SETTING",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 13",
+     "para": "Abs. 2 Nr. 1",
+     "evidence": "für die Zeit, die auf dem Zusatzzeichen angegeben ist, und,",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 13",
+     "para": "Abs. 2 Nr. 2",
+     "evidence": "soweit das Fahrzeug eine von außen gut lesbare Parkscheibe hat und der Zeiger der Scheibe auf den Strich der halben Stunde eingestellt ist, die dem Zeitpunkt des Anhaltens folgt.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 13",
+     "para": "Abs. 3",
+     "evidence": "müssen nicht betätigt werden, soweit die Entrichtung der Parkgebühren und die Überwachung der Parkzeit auch durch elektronische Einrichtungen oder Vorrichtungen, insbesondere Taschenparkuhren oder Mobiltelefone, sichergestellt werden kann.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "10_parking",
+   "subtopic": "parkscheibe",
+   "title": "Parkscheibe richtig einstellen; Handyparken",
+   "rule": "Ist eine Parkscheibe vorgeschrieben, darf nur für die angegebene Zeit geparkt werden; die Parkscheibe muss von außen gut lesbar sein und auf den Strich der halben Stunde eingestellt werden, die dem Zeitpunkt des Anhaltens folgt. Parkuhr oder Parkscheibe müssen nicht betätigt werden, soweit Gebühr und Parkzeit elektronisch (z. B. per Mobiltelefon) sichergestellt sind.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "parkscheibe"
+   ],
+   "keywords": [
+    "Parkscheibe",
+    "halbe Stunde",
+    "Ankunftszeit",
+    "Handyparken",
+    "Mobiltelefon"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Parkscheibe",
+      "einstellen"
+     ],
+     "statement": "Die Parkscheibe stelle ich auf den Strich der halben Stunde ein, die auf meine Ankunft folgt",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Parkscheibe",
+      "einstellen"
+     ],
+     "statement": "Die Parkscheibe stelle ich auf die volle Stunde vor meiner Ankunft ein",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Parkscheibe",
+      "lesbar"
+     ],
+     "statement": "Die Parkscheibe muss von außen gut lesbar sein",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Parkgebühr",
+      "Mobiltelefon"
+     ],
+     "statement": "Wird die Parkgebühr per Handy bezahlt, muss kein Parkschein ausgelegt werden",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 2,
+   "difficulty": 2
+  }
+ ]
+}

@@ -1,0 +1,133 @@
+{
+ "items": [
+  {
+   "id": "USR_ESCOOTER_VEHICLE",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 2",
+     "para": "Abs. 1 Nr. 2",
+     "evidence": "es eine gültige Versicherungsplakette für Elektrokleinstfahrzeuge nach § 56 der Fahrzeug-Zulassungsverordnung führt,",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 2",
+     "para": "Abs. 1 Nr. 1",
+     "evidence": "es einem Typ entspricht, für den eine Allgemeine Betriebserlaubnis erteilt worden ist, oder für das Fahrzeug eine Einzelbetriebserlaubnis erteilt worden ist,",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 4",
+     "para": "Abs. 1",
+     "evidence": "Ein Elektrokleinstfahrzeug muss mit zwei voneinander unabhängigen Bremsen",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 5",
+     "para": "Abs. 4",
+     "evidence": "Bei Elektrokleinstfahrzeugen ist die Ausrüstung mit nach vorne und nach hinten wirkenden Fahrtrichtungsanzeigern entsprechend § 67 Absatz 5 Satz 6 der Straßenverkehrs-Zulassungs-Ordnung vorgeschrieben.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 13",
+     "para": null,
+     "evidence": "Elektrokleinstfahrzeuge unterfallen der Lichtzeichenregelung des § 37 Absatz 2 Nummer 5 und 6 der Straßenverkehrs-Ordnung. Dabei kommt das Sinnbild „Radverkehr“ zur Anwendung.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 12",
+     "para": "Abs. 2",
+     "evidence": "so dürfen Elektrokleinstfahrzeuge dort nur fahren oder einfahren, wenn dies durch das Zusatzzeichen „Elektrokleinstfahrzeuge frei“ erlaubt ist.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "07_road_users",
+   "subtopic": "escooter",
+   "title": "E-Scooter: Voraussetzungen, Bremsen, Blinker, Ampeln, Verbote",
+   "rule": "Ein E-Scooter darf nur mit Betriebserlaubnis und gültiger Versicherungsplakette in Betrieb gesetzt werden. Er braucht zwei voneinander unabhängige Bremsen und Fahrtrichtungsanzeiger. Für E-Scooter gelten die Lichtzeichen für den Radverkehr. Bei Verbot für Kraftwagen, Krafträder, Kraftfahrzeuge oder Verbot der Einfahrt nur mit Zusatzzeichen „Elektrokleinstfahrzeuge frei“.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "escooter"
+   ],
+   "keywords": [
+    "E-Scooter",
+    "Elektrokleinstfahrzeug",
+    "Versicherungsplakette",
+    "Betriebserlaubnis",
+    "Bremsen",
+    "Fahrtrichtungsanzeiger",
+    "Radverkehr"
+   ],
+   "claims": [
+    {
+     "context": [
+      "E-Scooter",
+      "Versicherungsplakette"
+     ],
+     "statement": "Ein E-Scooter braucht eine gültige Versicherungsplakette",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Betriebserlaubnis"
+     ],
+     "statement": "Ein E-Scooter braucht eine Betriebserlaubnis",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Bremsen"
+     ],
+     "statement": "Ein E-Scooter braucht zwei voneinander unabhängige Bremsen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Ampel",
+      "Lichtzeichen"
+     ],
+     "statement": "Für E-Scooter gelten die Lichtzeichen für den Radverkehr",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Verbot der Einfahrt",
+      "Zusatzzeichen"
+     ],
+     "statement": "Bei Verbot der Einfahrt darf ein E-Scooter nur mit Zusatzzeichen Elektrokleinstfahrzeuge frei einfahren",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 2,
+   "difficulty": 2
+  }
+ ]
+}

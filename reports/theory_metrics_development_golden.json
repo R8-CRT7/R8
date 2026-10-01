@@ -194,21 +194,21 @@
  ],
  "latency_ms": {
   "total_theory_latency": {
-   "p50": 12.42,
-   "p95": 81.85,
-   "max": 2151.83
+   "p50": 13.31,
+   "p95": 81.58,
+   "max": 2494.97
   },
   "retrieval_latency": {
-   "p50": 4.64,
-   "p95": 29.98,
-   "max": 2026.48
+   "p50": 4.92,
+   "p95": 39.4,
+   "max": 2360.03
   },
   "reasoning_latency": {
-   "p50": 6.76,
-   "p95": 68.72,
-   "max": 454.01
+   "p50": 7.52,
+   "p95": 53.7,
+   "max": 540.64
   }
  },
- "seconds": 6.0,
+ "seconds": 6.7,
  "set": "development_golden"
 }

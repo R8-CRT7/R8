@@ -299,6 +299,62 @@ an ist.
 * Dazu kommen Falsch-Optionen ohne verifizierten Gegenbeweis.
 * Weder Schwellen noch Golden-Fragen wurden angefasst.
 
+## Phase „Knowledge Completeness“ (2026-10-01)
+
+**Amtliche Quellen:**
+* FeV, StVG und BKatV sind **nicht integriert**.
+* Der Abruf über das Rechtsinformationsportal liefert „NOT FOUND“: Der Testbestand enthält nur StVO, StVZO, eKFV
+  und BABRiGeschwV.
+* Der Abruf von gesetze-im-internet.de über den GitHub-Runner (`knowledge-watch.yml`, Eingabe `fetch_gii`) bricht
+  mit HTTP-Timeout ab, ebenso aus dieser Umgebung (Netzwerkrichtlinie).
+* Es wurde keine Sperre umgangen.
+* Manueller Weg: `knowledge/sources/manual/README.md` mit den drei Dateien, dann
+  `python windows/tools/manual_source_import.py --all`.
+
+**Wissen je Norm geschlossen** (`windows/tools/analysis/norm_coverage.py` → `reports/norm_coverage.md`):
+* Abgedeckte Einzelvorschriften: **308 → 400 von 492** (StVO §§ 1–43 mit Anlagen, zitierte StVZO-Normen, eKFV,
+  BABRiGeschwV).
+* Regeln: **92 → 132**. Claims: **403 → 512**.
+* Alle neuen Regeln sind *verified*: Jede Evidence ist wörtlich im amtlichen Snapshot enthalten
+  (`kb_builder.src` prüft das vor dem Schreiben). Evidence-Fehler: 0.
+* Neue Gebiete:
+  * StVO: Überholen und Zeichen, Fahrstreifen, Licht, Halten und Parken (Parkuhr, Parkscheibe, Handyparken),
+    Fahrgäste, Fußgänger, Verbände, Bahnübergänge, Polizei, Sonderrechte, Werbung, Verkehrseinrichtungen,
+    Zusatzzeichen, Markierungen, Ortstafel und Reißverschluss, Erlaubnispflicht (Rennen, Übergröße), Tonfolge,
+    Gefahrzeichen mit Pfeil
+  * StVZO: HU-Pflicht und Plakette, Reifen, Winterreifen, Warndreieck, Warnleuchte und Warnblinkanlage
+  * eKFV: E-Scooter-Verkehrsflächen, Betriebserlaubnis und Versicherungsplakette, Bremsen, Blinker, Lichtzeichen,
+    Verkehrsverbote
+* Die Test-Sets wurden dafür nicht gelesen. Die nicht abgedeckten Vorschriften sind überwiegend nicht
+  prüfungsrelevant: Militär, Feiertage, Bauvorschriften der eKFV, Wegweiser.
+
+**Allgemeine Engine-Korrekturen** (keine Frage-Sonderfälle):
+* Eine Antwort, die einen *unterscheidenden* Situationsbegriff eines Claims nennt, wird in dieser Situation
+  beurteilt. Begriffe aus dem Regeltitel und gemeinsame Begriffe aller Claims zählen dabei nicht.
+* Ein wahrer Claim mit Menge („etwa 100 m“) bestätigt keine Antwort ohne Menge (`claim_quantity_missing`).
+* Gegensatz-Dimension `QUANTITY_LIMIT`: „mehr X als“ widerspricht „höchstens X“ (nach Normalisierung von „nicht
+  mehr … als“).
+* In der Spezifität zählen die Teile eines zusammengesetzten Worts einmal: „bahn“, „übergang“ und „bahnübergang“
+  sind ein Begriff.
+* Widerspricht ein Claim derselben Regel mit *genau der Menge der Antwort*, wird ein Mengenvergleich gegen einen
+  anderen Claim nicht entschieden (`exact_quantity_claim_disagrees` → UNCERTAIN).
+* Lexikon: 21 Objekt-Konzepte, z. B. Warndreieck, Parkscheibe, E-Scooter, Bahnübergang. Sie dienen nur der
+  Struktur (RuleFrame). Es wurden keine Synonyme aus Testfragen übernommen.
+
+**Messung** (Start = Commit 62b2bdb; FC = false-confident):
+
+| Set | Accuracy | Coverage | UNCERTAIN | Acc. beantwortet | FC |
+|---|---|---|---|---|---|
+| synthetisch (5240 → 5936) | 77.5 % → **88.4 %** | 77.5 % → 88.4 % | 22.5 % → 11.6 % | 100 % → 100 % | 0 → **0** |
+| Validierung (2049 → 2433) | 72.4 % → **82.4 %** | 72.4 % → 82.4 % | 27.6 % → 17.6 % | 100 % → 100 % | 0 → **0** |
+| Development golden (160, nur Regression) | 44.4 % → **45.6 %** | 44.4 % → 45.6 % | 55.6 % → 54.4 % | 100 % → 100 % | 0 → **0** |
+| External golden | leer, unverändert | – | – | – | – |
+
+* Synthetisch und Validierung entstehen aus den Claims selbst. Neue Regeln erhöhen dort die Werte auch durch
+  Selbstabgleich. Aussagekräftig für die Generalisierung bleibt nur ein externes Set.
+* Topic 02 (Alkohol), 03 (Recht) und 14 (Führerscheinklassen) bleiben schwach, weil ihre Regeln aus FeV/StVG
+  stammen und *unverified* sind. Die Engine antwortet dort bewusst UNCERTAIN.
+
 ## Tägliche Wissensprüfung (`.github/workflows/knowledge-watch.yml`, 04:17 UTC)
 1. **Erkennen:** RIS-API, nur gültige Fassungen.
 2. **Vergleichen:** Rohtexte gegen die geprüften Texte.

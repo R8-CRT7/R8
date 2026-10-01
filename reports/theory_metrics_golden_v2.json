@@ -1,10 +1,10 @@
 {
  "overall": {
   "n": 80,
-  "accuracy": 0.4,
-  "coverage": 0.4,
+  "accuracy": 0.4125,
+  "coverage": 0.4125,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.6,
+  "uncertain_rate": 0.5875,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -29,10 +29,10 @@
  "by_category": {
   "claims": {
    "n": 80,
-   "accuracy": 0.4,
-   "coverage": 0.4,
+   "accuracy": 0.4125,
+   "coverage": 0.4125,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.6,
+   "uncertain_rate": 0.5875,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -112,10 +112,10 @@
   },
   "09_manoeuvres": {
    "n": 10,
-   "accuracy": 0.2,
-   "coverage": 0.2,
+   "accuracy": 0.3,
+   "coverage": 0.3,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.8,
+   "uncertain_rate": 0.7,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -168,10 +168,10 @@
  "by_variant": {
   "development_golden": {
    "n": 80,
-   "accuracy": 0.4,
-   "coverage": 0.4,
+   "accuracy": 0.4125,
+   "coverage": 0.4125,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.6,
+   "uncertain_rate": 0.5875,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -181,30 +181,30 @@
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   47
+   46
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
-   28
+   29
   ]
  ],
  "latency_ms": {
   "total_theory_latency": {
-   "p50": 18.39,
-   "p95": 184.79,
-   "max": 1952.5
+   "p50": 20.14,
+   "p95": 187.5,
+   "max": 2175.04
   },
   "retrieval_latency": {
-   "p50": 5.99,
-   "p95": 48.13,
-   "max": 1774.27
+   "p50": 6.16,
+   "p95": 59.59,
+   "max": 2021.36
   },
   "reasoning_latency": {
-   "p50": 11.02,
-   "p95": 131.32,
-   "max": 501.56
+   "p50": 10.39,
+   "p95": 114.26,
+   "max": 601.4
   }
  },
- "seconds": 4.8,
+ "seconds": 5.3,
  "set": "golden_v2"
 }

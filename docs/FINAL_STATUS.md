@@ -127,6 +127,23 @@ Architecture, metrics and limits: [`THEORY_ENGINE.md`](THEORY_ENGINE.md). Covera
 * Daily knowledge watch (`knowledge-watch.yml`): reports changes, never applies them automatically.
 * Real-device status unchanged: real Windows PC ❌, real 360° software ❌, real API call ❌, iPhone ❌.
 
+### Phase "Knowledge completeness" (same branch, not released)
+* **FeV / StVG / BKatV are still not integrated.** RIS answers "not found", and gesetze-im-internet.de times out from
+  both the GitHub runner and this environment. No restriction was bypassed. The three files the user must download
+  are listed in `knowledge/sources/manual/README.md`.
+* **Knowledge added per norm, with verbatim evidence:**
+  * provisions covered: 308 → 400 of 492
+  * rules: 92 → 132
+  * claims: 403 → 512
+  * evidence errors: 0
+* **Metrics** (FC = false-confident):
+  * synthetic: 77.5 % → 88.4 %
+  * validation: 72.4 % → 82.4 %
+  * development golden (regression only): 44.4 % → 45.6 %
+  * false-confident: 0 on every set
+* **Unchanged:** safety components, click mechanism, confidence thresholds, `safety.theory_crosscheck` default off.
+  There is no release.
+
 ### Milestone "Generalization + independent validation" (same branch, not released)
 * **Holdout:** four splits (train / validation / golden internal / golden external). The external golden set is
   evaluation-only and still **empty**: it needs human-written questions. Tests prove that no golden data

@@ -616,6 +616,13 @@ def _decide_claims(matches: list[_Match]) -> tuple[Verdict, _Match | None, list[
         if (best.score - other.score <= SPECIFIC_WINDOW and other.verdict != best.verdict
                 and other.spec - best.spec >= SPECIFICITY_GAP):
             return Verdict.UNKNOWN, best, ["more_specific_rule_disagrees"]
+    if "number_differs" in best.flags:
+        # 'bis 10 dürfen' says nothing against 'bis 8 müssen': a claim of the same rule that names the answer's own
+        # quantity and disagrees makes the number comparison unsafe
+        for other in decisive[1:]:
+            if (best.score - other.score <= SPECIFIC_WINDOW and other.obj.id == best.obj.id
+                    and other.verdict != best.verdict and "number_differs" not in other.flags):
+                return Verdict.UNKNOWN, best, [*best.flags, "exact_quantity_claim_disagrees"]
     if "exception_risk" in best.flags or "qualifier_missing" in best.flags:
         return Verdict.UNKNOWN, best, [*best.flags]
     return best.verdict, best, list(best.flags)

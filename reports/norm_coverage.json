@@ -66,8 +66,8 @@
   "law": "ekfv",
   "norm": "§ 2",
   "provision": "(1) Ein Elektrokleinstfahrzeug darf auf öffentlichen Straßen nur in Betrieb gesetzt werden, wenn es einem Typ entspricht, für den eine Allgemeine Betriebserlaubnis erteilt worden ist, oder für das Fahrzeug eine Einzelbetriebserlaubnis erteilt worden ist, es eine gültige Versicherungsplakette für Elektrokleinstfahrzeuge nach § 56 der Fahrzeug-Zulassungsverordnung führt, es entsprechend der Anlage 1",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
@@ -108,8 +108,8 @@
   "law": "ekfv",
   "norm": "§ 4",
   "provision": "(1) Ein Elektrokleinstfahrzeug muss mit zwei voneinander unabhängigen Bremsen im Sinne des § 65 Absatz 1 Satz 1 der Straßenverkehrs-Zulassungs-Ordnung ausgerüstet sein, die das Fahrzeug bis zum Stillstand abbremsen können, bis zur Maximalgeschwindigkeit wirken, mindestens einen Verzögerungswert von 3,5 m/s2 erreichen und jeweils einzeln bei Ausfall der jeweils anderen Bremse eine Mindestverzögerun",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
@@ -143,8 +143,8 @@
   "law": "ekfv",
   "norm": "§ 5",
   "provision": "(4) Bei Elektrokleinstfahrzeugen ist die Ausrüstung mit nach vorne und nach hinten wirkenden Fahrtrichtungsanzeigern entsprechend § 67 Absatz 5 Satz 6 der Straßenverkehrs-Zulassungs-Ordnung vorgeschrieben. Zusätzlich dürfen auch die hinteren Fahrtrichtungsanzeiger mit der Lenkung mitschwenken, darf der Abstand vom hintersten Punkt des Fahrzeugs zu den Fahrtrichtungsanzeigern mehr als 300 mm betrag",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
@@ -157,8 +157,8 @@
   "law": "ekfv",
   "norm": "§ 6",
   "provision": "Elektrokleinstfahrzeuge müssen mit mindestens einer helltönenden Glocke ausgerüstet sein. Es dürfen auch andere Einrichtungen für Schallzeichen angebracht sein, die der Regelung Nr. 28 der Wirtschaftskommission der Vereinten Nationen für Europa (UN/ECE) – Einheitliche Vorschriften für die Genehmigung der Vorrichtungen für Schallzeichen und der Kraftfahrzeuge hinsichtlich ihrer Schallzeichen (ABl. ",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
@@ -192,8 +192,8 @@
   "law": "ekfv",
   "norm": "§ 10",
   "provision": "(2) Außerhalb geschlossener Ortschaften dürfen Elektrokleinstfahrzeuge nur baulich angelegte Radwege, darunter auch gemeinsame Geh- und Radwege (Zeichen 240 der Anlage 2 zur Straßenverkehrs-Ordnung) und die dem Radverkehr zugeteilte Verkehrsfläche getrennter Rad- und Gehwege (Zeichen 241 der Anlage 2 zur Straßenverkehrs-Ordnung), sowie Radfahrstreifen (Zeichen 237 in Verbindung mit Zeichen 295 der",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
@@ -220,50 +220,50 @@
   "law": "ekfv",
   "norm": "§ 11",
   "provision": "(3) Sind an einem Elektrokleinstfahrzeug keine Fahrtrichtungsanzeiger vorhanden, so muss wer ein Elektrokleinstfahrzeug führt, die Richtungsänderung so rechtzeitig und deutlich durch Handzeichen ankündigen, dass andere Verkehrsteilnehmer ihr Verhalten daran ausrichten können.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
   "norm": "§ 11",
   "provision": "(4) Wer ein Elektrokleinstfahrzeug auf Radverkehrsflächen führt, muss auf den Radverkehr Rücksicht nehmen und erforderlichenfalls die Geschwindigkeit an den Radverkehr anpassen. Wer ein Elektrokleinstfahrzeug führt, muss schnellerem Radverkehr das Überholen ohne Behinderung ermöglichen. Auf gemeinsamen Geh- und Radwegen (Zeichen 240 der Anlage 2 zur Straßenverkehrs-Ordnung) haben Fußgänger Vorrang",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
   "norm": "§ 11",
   "provision": "(5) Für das Abstellen von Elektrokleinstfahrzeugen gelten die für Fahrräder geltenden Parkvorschriften entsprechend.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
   "norm": "§ 12",
   "provision": "(1) Ist ein Verbot für Fahrzeuge aller Art (Zeichen 250 der Anlage 2 zur Straßenverkehrs-Ordnung) angeordnet, so dürfen Elektrokleinstfahrzeuge dort geschoben werden.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
   "norm": "§ 12",
   "provision": "(2) Ist ein Verbot für Kraftwagen (Zeichen 251 der Anlage 2 zur Straßenverkehrs-Ordnung), ein Verbot für Krafträder (Zeichen 255 der Anlage 2 zur Straßenverkehrs-Ordnung), ein Verbot für Kraftfahrzeuge (Zeichen 260 der Anlage 2 zur Straßenverkehrs-Ordnung) oder ein Verbot der Einfahrt (Zeichen 267 der Anlage 2 zur Straßenverkehrs-Ordnung) angeordnet, so dürfen Elektrokleinstfahrzeuge dort nur fahr",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
   "norm": "§ 12",
   "provision": "(3) Ist ein Verbot für den Radverkehr (Zeichen 254 der Anlage 2 zur Straßenverkehrs-Ordnung) angeordnet, so gilt dies auch für Elektrokleinstfahrzeuge.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
   "norm": "§ 13",
   "provision": "Elektrokleinstfahrzeuge unterfallen der Lichtzeichenregelung des § 37 Absatz 2 Nummer 5 und 6 der Straßenverkehrs-Ordnung. Dabei kommt das Sinnbild „Radverkehr“ zur Anwendung.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "ekfv",
@@ -388,15 +388,15 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 2.1",
   "provision": "Ge- oder Verbot Ist das Zusatzzeichen zusammen mit dem Zeichen 205 angeordnet, bedeutet es: Wer ein Fahrzeug führt, muss Vorfahrt gewähren und dabei auf Radverkehr und Elektrokleinstfahrzeuge im Sinne der eKFV von links und rechts achten. Erläuterung Das Zusatzzeichen steht über dem Zeichen 205.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 2.2",
   "provision": "Ge- oder Verbot Ist das Zusatzzeichen zusammen mit dem Zeichen 205 angeordnet, bedeutet es: Wer ein Fahrzeug führt, muss der Straßenbahn Vorfahrt gewähren. Erläuterung Das Zusatzzeichen steht über dem Zeichen 205.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -409,8 +409,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 3.1",
   "provision": "Erläuterung Das Zusatzzeichen kündigt zusammen mit dem Zeichen 205 das Haltgebot in der angegebenen Entfernung an.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -423,8 +423,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. Zu 2 und 3",
   "provision": "Erläuterung Das Zusatzzeichen gibt zusammen mit den Zeichen 205 oder 206 den Verlauf der Vorfahrtstraße (abknickende Vorfahrt) bekannt.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -465,8 +465,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 9.1",
   "provision": "Ge- oder Verbot Ist Zeichen 220 mit diesem Zusatzzeichen angeordnet, bedeutet dies: Wer ein Fahrzeug führt, muss beim Einbiegen und im Verlauf einer Einbahnstraße auf Radverkehr und Elektrokleinstfahrzeuge im Sinne der eKFV entgegen der Fahrtrichtung achten. Erläuterung Das Zusatzzeichen zeigt an, dass Radverkehr in der Gegenrichtung zugelassen ist. Beim Vorbeifahren an einer für den gegenläufigen",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -626,8 +626,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 27",
   "provision": "Ge- oder Verbot Ist auf einem Zusatzzeichen eine Masse, wie „7,5 t“, angegeben, gilt das Verbot nur, soweit die zulässige Gesamtmasse dieser Verkehrsmittel einschließlich ihrer Anhänger die angegebene Grenze überschreitet.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -745,8 +745,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 41.1",
   "provision": "Ge- oder Verbot Durch das Zusatzzeichen zu dem Zeichen 267 ist die Einfahrt für den Radverkehr und Elektrokleinstfahrzeuge im Sinne der eKFV zugelassen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -808,8 +808,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 49.1",
   "provision": "Ge- oder Verbot Das Zusatzzeichen zu dem Zeichen 274 verbietet Fahrzeugführenden, bei nasser Fahrbahn die angegebene Geschwindigkeit zu überschreiten.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -857,22 +857,22 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 54.1",
   "provision": "Ge- oder Verbot Mit dem Zusatzzeichen gilt das durch Zeichen 277 angeordnete Überholverbot auch für Kraftfahrzeuge über 2,8 t, einschließlich ihrer Anhänger.",
-  "covered": false,
+  "covered": true,
   "by_evidence": false
  },
  {
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 54.2",
   "provision": "Ge- oder Verbot Mit dem Zusatzzeichen gilt das durch Zeichen 277 angeordnete Überholverbot auch für Kraftomnibusse und Personenkraftwagen mit Anhänger.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 54.3",
   "provision": "Erläuterung Das Zusatzzeichen zu dem Zeichen 274, 276, 277 oder 277.1 gibt die Länge einer Geschwindigkeitsbeschränkung oder eines Überholverbots an.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -885,8 +885,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 55",
   "provision": "Erläuterung Das Ende einer streckenbezogenen Geschwindigkeitsbeschränkung oder eines Überholverbots ist nicht gekennzeichnet, wenn das Verbot nur für eine kurze Strecke gilt und auf einem Zusatzzeichen die Länge des Verbots angegeben ist. Es ist auch nicht gekennzeichnet, wenn das Verbotszeichen zusammen mit einem Gefahrzeichen angebracht ist und sich aus der Örtlichkeit zweifelsfrei ergibt, von w",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -934,8 +934,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 61",
   "provision": "Ge- oder Verbot Die durch die nachfolgenden Zeichen 283 und 286 angeordneten Haltverbote gelten nur auf der Straßenseite, auf der die Zeichen angebracht sind. Sie gelten bis zur nächsten Kreuzung oder Einmündung auf der gleichen Straßenseite oder bis durch Verkehrszeichen für den ruhenden Verkehr eine andere Regelung vorgegeben wird. Mobile, vorübergehend angeordnete Haltverbote durch Zeichen 283 ",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -948,14 +948,14 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 62.1",
   "provision": "Ge- oder Verbot Das mit dem Zeichen 283 angeordnete Zusatzzeichen verbietet das Halten von Fahrzeugen auch auf dem Seitenstreifen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 62.2",
   "provision": "Ge- oder Verbot Das mit dem Zeichen 283 angeordnete Zusatzzeichen verbietet das Halten von Fahrzeugen nur auf dem Seitenstreifen.",
-  "covered": false,
+  "covered": true,
   "by_evidence": false
  },
  {
@@ -990,8 +990,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 63.4",
   "provision": "Ge- oder Verbot Das Zusatzzeichen zu Zeichen 286 nimmt Bewohner mit besonderem Parkausweis vom Haltverbot aus. Die Ausnahme gilt nur, soweit der Parkausweis gut lesbar ausgelegt oder angebracht ist.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -1081,8 +1081,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 2 Nr. 74",
   "provision": "Parkflächenmarkierung Ge- oder Verbot Eine Parkflächenmarkierung erlaubt das Parken; auf Gehwegen aber nur Fahrzeugen mit einer zulässigen Gesamtmasse bis zu 2,8 t. Die durch die Parkflächenmarkierung angeordnete Aufstellung ist einzuhalten. Wo sie mit durchgehenden Linien markiert ist, darf diese überfahren werden. Erläuterung Sind Parkflächen auf Straßen erkennbar abgegrenzt, wird damit angeordn",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -1102,8 +1102,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 3 Nr. 2.1",
   "provision": "Ge- oder Verbot Wer ein Fahrzeug führt und dem Verlauf der abknickenden Vorfahrtstraße folgen will, muss dies rechtzeitig und deutlich ankündigen; dabei sind die Fahrtrichtungsanzeiger zu benutzen. Auf den Fußgängerverkehr ist besondere Rücksicht zu nehmen. Wenn nötig, muss gewartet werden. Erläuterung Das Zusatzzeichen zum Zeichen 306 zeigt den Verlauf der Vorfahrtstraße an.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -1123,8 +1123,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 3 Nr. zu 5 und 6",
   "provision": "Erläuterung Ab der Ortstafel gelten jeweils die für den Verkehr innerhalb oder außerhalb geschlossener Ortschaften bestehenden Vorschriften.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -1578,7 +1578,7 @@
   "law": "stvo_2013",
   "norm": "Anlage 3 Nr. 73",
   "provision": "Erläuterung Das Ende der Umleitung kann angezeigt werden durch",
-  "covered": false,
+  "covered": true,
   "by_evidence": false
  },
  {
@@ -1648,8 +1648,8 @@
   "law": "stvo_2013",
   "norm": "Anlage 3 Nr. 82.1",
   "provision": "Erläuterung Bei Einengungstafeln wird mit dem Zusatzzeichen der Ort angekündigt, an dem der Fahrstreifenwechsel nach dem Reißverschlussverfahren (§ 7 Absatz 4) erfolgen soll.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -1823,8 +1823,8 @@
   "law": "stvo_2013",
   "norm": "§ 5",
   "provision": "(1) Es ist links zu überholen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -1844,8 +1844,8 @@
   "law": "stvo_2013",
   "norm": "§ 5",
   "provision": "(3a) Wer ein Kraftfahrzeug mit einer zulässigen Gesamtmasse über 7,5 t führt, darf unbeschadet sonstiger Überholverbote nicht überholen, wenn die Sichtweite durch Nebel, Schneefall oder Regen weniger als 50 m beträgt.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -1858,15 +1858,15 @@
   "law": "stvo_2013",
   "norm": "§ 5",
   "provision": "(4a) Das Ausscheren zum Überholen und das Wiedereinordnen sind rechtzeitig und deutlich anzukündigen; dabei sind die Fahrtrichtungsanzeiger zu benutzen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 5",
   "provision": "(5) Außerhalb geschlossener Ortschaften darf das Überholen durch kurze Schall- oder Leuchtzeichen angekündigt werden. Wird mit Fernlicht geblinkt, dürfen entgegenkommende Fahrzeugführende nicht geblendet werden.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -1900,8 +1900,8 @@
   "law": "stvo_2013",
   "norm": "§ 7",
   "provision": "(1) Auf Fahrbahnen mit mehreren Fahrstreifen für eine Richtung dürfen Kraftfahrzeuge von dem Gebot möglichst weit rechts zu fahren (§ 2 Absatz 2) abweichen, wenn die Verkehrsdichte das rechtfertigt. Fahrstreifen ist der Teil einer Fahrbahn, den ein mehrspuriges Fahrzeug zum ungehinderten Fahren im Verlauf der Fahrbahn benötigt.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -1963,8 +1963,8 @@
   "law": "stvo_2013",
   "norm": "§ 7a",
   "provision": "(1) Gehen Fahrstreifen, insbesondere auf Autobahnen und Kraftfahrstraßen, von der durchgehenden Fahrbahn ab, darf beim Abbiegen vom Beginn einer breiten Leitlinie (Zeichen 340) rechts von dieser schneller als auf der durchgehenden Fahrbahn gefahren werden.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2012,8 +2012,8 @@
   "law": "stvo_2013",
   "norm": "§ 9",
   "provision": "(2) Wer mit dem Fahrrad nach links abbiegen will, braucht sich nicht einzuordnen, wenn die Fahrbahn hinter der Kreuzung oder Einmündung vom rechten Fahrbahnrand aus überquert werden soll. Beim Überqueren ist der Fahrzeugverkehr aus beiden Richtungen zu beachten. Wer über eine Radverkehrsführung abbiegt, muss dieser im Kreuzungs- oder Einmündungsbereich folgen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2096,8 +2096,8 @@
   "law": "stvo_2013",
   "norm": "§ 12",
   "provision": "(3a) Mit Kraftfahrzeugen mit einer zulässigen Gesamtmasse über 7,5 t sowie mit Kraftfahrzeuganhängern über 2 t zulässiger Gesamtmasse ist innerhalb geschlossener Ortschaften in reinen und allgemeinen Wohngebieten, in Sondergebieten, die der Erholung dienen, in Kurgebieten und in Klinikgebieten das regelmäßige Parken in der Zeit von 22.00 bis 06.00 Uhr sowie an Sonn- und Feiertagen unzulässig. Das ",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2138,36 +2138,36 @@
   "law": "stvo_2013",
   "norm": "§ 13",
   "provision": "(1) An Parkuhren darf nur während des Laufens der Uhr, an Parkscheinautomaten nur mit einem Parkschein, der am oder im Fahrzeug von außen gut lesbar angebracht sein muss, für die Dauer der zulässigen Parkzeit gehalten werden. Ist eine Parkuhr oder ein Parkscheinautomat nicht funktionsfähig, darf nur bis zur angegebenen Höchstparkdauer geparkt werden. In diesem Fall ist die Parkscheibe zu verwenden",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 13",
   "provision": "(2) Wird im Bereich eines eingeschränkten Haltverbots für eine Zone (Zeichen 290.1 und 290.2) oder einer Parkraumbewirtschaftungszone (Zeichen 314.1 und 314.2) oder bei den Zeichen 314 oder 315 durch ein Zusatzzeichen die Benutzung einer Parkscheibe (Bild 318) vorgeschrieben, ist das Halten und Parken nur erlaubt für die Zeit, die auf dem Zusatzzeichen angegeben ist, und, soweit das Fahrzeug eine ",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 13",
   "provision": "(3) Die in den Absätzen 1 und 2 genannten Einrichtungen zur Überwachung der Parkzeit müssen nicht betätigt werden, soweit die Entrichtung der Parkgebühren und die Überwachung der Parkzeit auch durch elektronische Einrichtungen oder Vorrichtungen, insbesondere Taschenparkuhren oder Mobiltelefone, sichergestellt werden kann. Satz 1 gilt nicht, soweit eine dort genannte elektronische Einrichtung oder",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 13",
   "provision": "(4) Einrichtungen und Vorrichtungen zur Überwachung der Parkzeit brauchen nicht betätigt zu werden beim Ein- oder Aussteigen sowie zum Be- oder Entladen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 13",
   "provision": "(5) Wer ein elektrisch betriebenes Fahrzeug im Sinne des Elektromobilitätsgesetzes oder ein Carsharingfahrzeug im Sinne des Carsharinggesetzes und der entsprechenden Länderregelungen führt, muss Einrichtungen und Vorrichtungen zur Überwachung der Parkzeit nicht betätigen, soweit dies durch bevorrechtigende Zusatzzeichen zu Zeichen 290.1, 314, 314.1 oder 315 angeordnet ist. Sind im Geltungsbereich ",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2236,8 +2236,8 @@
   "law": "stvo_2013",
   "norm": "§ 16",
   "provision": "(3) Schallzeichen dürfen nicht aus einer Folge verschieden hoher Töne bestehen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2250,8 +2250,8 @@
   "law": "stvo_2013",
   "norm": "§ 17",
   "provision": "(1) Während der Dämmerung, bei Dunkelheit oder wenn die Sichtverhältnisse es sonst erfordern, sind die vorgeschriebenen Beleuchtungseinrichtungen zu benutzen. Die Beleuchtungseinrichtungen dürfen nicht verdeckt oder verschmutzt sein.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2334,8 +2334,8 @@
   "law": "stvo_2013",
   "norm": "§ 18",
   "provision": "(6) Wer auf der Autobahn mit Abblendlicht fährt, braucht seine Geschwindigkeit nicht der Reichweite des Abblendlichts anzupassen, wenn die Schlussleuchten des vorausfahrenden Kraftfahrzeugs klar erkennbar sind und ein ausreichender Abstand von ihm eingehalten wird oder der Verlauf der Fahrbahn durch Leiteinrichtungen mit Rückstrahlern und, zusammen mit fremdem Licht, Hindernisse rechtzeitig erkenn",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2369,8 +2369,8 @@
   "law": "stvo_2013",
   "norm": "§ 18",
   "provision": "(11) Lastkraftwagen mit einer zulässigen Gesamtmasse über 7,5 t, einschließlich ihrer Anhänger, sowie Zugmaschinen dürfen, wenn die Sichtweite durch erheblichen Schneefall oder Regen auf 50 m oder weniger eingeschränkt ist, sowie bei Schneeglätte oder Glatteis den äußerst linken Fahrstreifen nicht benutzen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2383,8 +2383,8 @@
   "law": "stvo_2013",
   "norm": "§ 19",
   "provision": "(2) Fahrzeuge haben vor dem Andreaskreuz, zu Fuß Gehende in sicherer Entfernung vor dem Bahnübergang zu warten, wenn sich ein Schienenfahrzeug nähert, rotes Blinklicht oder gelbe oder rote Lichtzeichen gegeben werden, die Schranken sich senken oder geschlossen sind, ein Bahnbediensteter Halt gebietet oder ein hörbares Signal, wie ein Pfeifsignal des herannahenden Zuges, ertönt. Hat das rote Blinkl",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2404,15 +2404,15 @@
   "law": "stvo_2013",
   "norm": "§ 19",
   "provision": "(5) Vor Bahnübergängen ohne Vorrang der Schienenfahrzeuge ist in sicherer Entfernung zu warten, wenn ein Bahnbediensteter mit einer weiß-rot-weißen Fahne oder einer roten Leuchte Halt gebietet. Werden gelbe oder rote Lichtzeichen gegeben, gilt § 37 Absatz 2 Nummer 1 entsprechend.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 19",
   "provision": "(6) Die Scheinwerfer wartender Kraftfahrzeuge dürfen niemanden blenden.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2453,8 +2453,8 @@
   "law": "stvo_2013",
   "norm": "§ 20",
   "provision": "(6) Personen, die öffentliche Verkehrsmittel benutzen wollen, müssen sie auf den Gehwegen, den Seitenstreifen oder einer Haltestelleninsel, sonst am Rand der Fahrbahn erwarten.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2474,15 +2474,15 @@
   "law": "stvo_2013",
   "norm": "§ 21",
   "provision": "(1b) In Fahrzeugen, die nicht mit Sicherheitsgurten ausgerüstet sind, dürfen Kinder unter drei Jahren nicht befördert werden. Kinder ab dem vollendeten dritten Lebensjahr, die kleiner als 150 cm sind, müssen in solchen Fahrzeugen auf dem Rücksitz befördert werden. Die Sätze 1 und 2 gelten nicht für Kraftomnibusse.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 21",
   "provision": "(2) Die Mitnahme von Personen auf der Ladefläche oder in Laderäumen von Kraftfahrzeugen ist verboten. Dies gilt nicht, soweit auf der Ladefläche oder in Laderäumen mitgenommene Personen dort notwendige Arbeiten auszuführen haben. Das Verbot gilt ferner nicht für die Beförderung von Baustellenpersonal innerhalb von Baustellen. Auf der Ladefläche oder in Laderäumen von Anhängern darf niemand mitgeno",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2579,8 +2579,8 @@
   "law": "stvo_2013",
   "norm": "§ 23",
   "provision": "(2) Wer ein Fahrzeug führt, muss das Fahrzeug, den Zug oder das Gespann auf dem kürzesten Weg aus dem Verkehr ziehen, falls unterwegs auftretende Mängel, welche die Verkehrssicherheit wesentlich beeinträchtigen, nicht alsbald beseitigt werden; dagegen dürfen Krafträder und Fahrräder dann geschoben werden.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2593,8 +2593,8 @@
   "law": "stvo_2013",
   "norm": "§ 23",
   "provision": "(4) Wer ein Kraftfahrzeug führt, darf sein Gesicht nicht so verhüllen oder verdecken, dass er nicht mehr erkennbar ist. Dies gilt nicht in Fällen des § 21a Absatz 2 Satz 1.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2607,8 +2607,8 @@
   "law": "stvo_2013",
   "norm": "§ 24",
   "provision": "(2) Mit Krankenfahrstühlen oder mit anderen als in Absatz 1 genannten Rollstühlen darf dort, wo Fußgängerverkehr zulässig ist, gefahren werden, jedoch nur mit Schrittgeschwindigkeit.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2628,22 +2628,22 @@
   "law": "stvo_2013",
   "norm": "§ 25",
   "provision": "(3) Wer zu Fuß geht, hat Fahrbahnen unter Beachtung des Fahrzeugverkehrs zügig auf kurzem Weg quer zur Fahrtrichtung zu überschreiten. Wenn die Verkehrsdichte, Fahrgeschwindigkeit, Sichtverhältnisse oder der Verkehrsablauf es erfordern, ist eine Fahrbahn nur an Kreuzungen oder Einmündungen, an Lichtzeichenanlagen innerhalb von Markierungen, an Fußgängerquerungshilfen oder auf Fußgängerüberwegen (Z",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 25",
   "provision": "(4) Wer zu Fuß geht, darf Absperrungen, wie Stangen- oder Kettengeländer, nicht überschreiten. Absperrschranken (Zeichen 600) verbieten das Betreten der abgesperrten Straßenfläche.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 25",
   "provision": "(5) Gleisanlagen, die nicht zugleich dem sonstigen öffentlichen Straßenverkehr dienen, dürfen nur an den dafür vorgesehenen Stellen betreten werden.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2670,8 +2670,8 @@
   "law": "stvo_2013",
   "norm": "§ 26",
   "provision": "(4) Führt die Markierung über einen Radweg oder einen anderen Straßenteil, gelten diese Vorschriften entsprechend.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2691,8 +2691,8 @@
   "law": "stvo_2013",
   "norm": "§ 27",
   "provision": "(3) Geschlossen ist ein Verband, wenn er für andere am Verkehr Teilnehmende als solcher deutlich erkennbar ist. Bei Kraftfahrzeugverbänden muss dazu jedes einzelne Fahrzeug als zum Verband gehörig gekennzeichnet sein.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2712,8 +2712,8 @@
   "law": "stvo_2013",
   "norm": "§ 27",
   "provision": "(6) Auf Brücken darf nicht im Gleichschritt marschiert werden.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2733,15 +2733,15 @@
   "law": "stvo_2013",
   "norm": "§ 29",
   "provision": "(2) Veranstaltungen, für die Straßen mehr als verkehrsüblich in Anspruch genommen werden, insbesondere Kraftfahrzeugrennen, bedürfen der Erlaubnis. Das ist der Fall, wenn die Benutzung der Straße für den Verkehr wegen der Zahl oder des Verhaltens der Teilnehmenden oder der Fahrweise der beteiligten Fahrzeuge eingeschränkt wird; Kraftfahrzeuge in geschlossenem Verband nehmen die Straße stets mehr a",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 29",
   "provision": "(3) Einer Erlaubnis bedarf der Verkehr mit Fahrzeugen und Zügen, deren Abmessungen, Achslasten oder Gesamtmassen die gesetzlich allgemein zugelassenen Grenzen tatsächlich überschreiten. Das gilt auch für den Verkehr mit Fahrzeugen, deren Bauart den Fahrzeugführenden kein ausreichendes Sichtfeld lässt.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2782,8 +2782,8 @@
   "law": "stvo_2013",
   "norm": "§ 31",
   "provision": "(2) Durch das Zusatzzeichen wird das Inline-Skaten und Rollschuhfahren zugelassen. Das Zusatzzeichen kann auch allein angeordnet sein. Wer sich dort mit Inline-Skates oder Rollschuhen fortbewegt, hat sich mit äußerster Vorsicht und unter besonderer Rücksichtnahme auf den übrigen Verkehr am rechten Rand in Fahrtrichtung zu bewegen und Fahrzeugen das Überholen zu ermöglichen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2803,8 +2803,8 @@
   "law": "stvo_2013",
   "norm": "§ 33",
   "provision": "(1) Verboten ist der Betrieb von Lautsprechern, das Anbieten von Waren und Leistungen aller Art auf der Straße, außerhalb geschlossener Ortschaften jede Werbung und Propaganda durch Bild, Schrift, Licht oder Ton, wenn dadurch am Verkehr Teilnehmende in einer den Verkehr gefährdenden oder erschwerenden Weise abgelenkt oder belästigt werden können. Auch durch innerörtliche Werbung und Propaganda dar",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2894,14 +2894,14 @@
   "law": "stvo_2013",
   "norm": "§ 35",
   "provision": "(6) Fahrzeuge, die dem Bau, der Unterhaltung oder Reinigung der Straßen und Anlagen im Straßenraum oder der Müllabfuhr dienen und durch weiß-rot-weiße Warneinrichtungen gekennzeichnet sind, dürfen auf allen Straßen und Straßenteilen und auf jeder Straßenseite in jeder Richtung zu allen Zeiten fahren und halten, soweit ihr Einsatz dies erfordert, zur Reinigung der Gehwege jedoch nur, wenn die zuläs",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 35",
   "provision": "(7) Messfahrzeuge der Bundesnetzagentur für Elektrizität, Gas, Telekommunikation, Post und Eisenbahn (§ 1 des Gesetzes über die Bundesnetzagentur) dürfen auf allen Straßen und Straßenteilen zu allen Zeiten fahren und halten, soweit ihr hoheitlicher Einsatz dies erfordert.",
-  "covered": false,
+  "covered": true,
   "by_evidence": false
  },
  {
@@ -2950,15 +2950,15 @@
   "law": "stvo_2013",
   "norm": "§ 36",
   "provision": "(4) An anderen Straßenstellen, wie an Einmündungen und an Fußgängerüberwegen, haben die Zeichen entsprechende Bedeutung.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 36",
   "provision": "(5) Polizeibeamte dürfen Verkehrsteilnehmer zur Verkehrskontrolle einschließlich der Kontrolle der Verkehrstüchtigkeit und zu Verkehrserhebungen anhalten. Das Zeichen zum Anhalten kann auch durch geeignete technische Einrichtungen am Einsatzfahrzeug, eine Winkerkelle oder eine rote Leuchte gegeben werden. Mit diesen Zeichen kann auch ein vorausfahrender Verkehrsteilnehmer angehalten werden. Die Ve",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -2985,8 +2985,8 @@
   "law": "stvo_2013",
   "norm": "§ 37",
   "provision": "(3) Dauerlichtzeichen über einem Fahrstreifen sperren ihn oder geben ihn zum Befahren frei. Rote gekreuzte Schrägbalken ordnen an: „Der Fahrstreifen darf nicht benutzt werden“. Ein grüner, nach unten gerichteter Pfeil bedeutet: „Der Verkehr auf dem Fahrstreifen ist freigegeben“. Ein gelb blinkender, schräg nach unten gerichteter Pfeil ordnet an: „Fahrstreifen in Pfeilrichtung wechseln“.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -3013,8 +3013,8 @@
   "law": "stvo_2013",
   "norm": "§ 38",
   "provision": "(2) Blaues Blinklicht allein darf nur von den damit ausgerüsteten Fahrzeugen und nur zur Warnung an Unfall- oder sonstigen Einsatzstellen, bei Einsatzfahrten oder bei der Begleitung von Fahrzeugen oder von geschlossenen Verbänden verwendet werden.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -3034,15 +3034,15 @@
   "law": "stvo_2013",
   "norm": "§ 39",
   "provision": "(1a) Innerhalb geschlossener Ortschaften ist abseits der Vorfahrtstraßen (Zeichen 306) mit der Anordnung von Tempo 30-Zonen (Zeichen 274.1) zu rechnen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 39",
   "provision": "(1b) Innerhalb geschlossener Ortschaften ist abseits der Vorfahrtstraßen (Zeichen 306) mit der Anordnung von Fahrradzonen (Zeichen 244.3) zu rechnen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -3139,15 +3139,15 @@
   "law": "stvo_2013",
   "norm": "§ 40",
   "provision": "(4) Ein Zusatzzeichen wie kann die Länge der Gefahrstrecke angeben.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 40",
   "provision": "(5) Steht ein Gefahrzeichen vor einer Einmündung, weist auf einem Zusatzzeichen ein schwarzer Pfeil in die Richtung der Gefahrstelle, falls diese in der anderen Straße liegt.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -3167,8 +3167,8 @@
   "law": "stvo_2013",
   "norm": "§ 41",
   "provision": "(1) Wer am Verkehr teilnimmt, hat die durch Vorschriftzeichen nach Anlage 2 angeordneten Ge- oder Verbote zu befolgen.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -3181,29 +3181,29 @@
   "law": "stvo_2013",
   "norm": "§ 42",
   "provision": "(1) Richtzeichen geben besondere Hinweise zur Erleichterung des Verkehrs. Sie können auch Ge- oder Verbote enthalten.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 42",
   "provision": "(2) Wer am Verkehr teilnimmt, hat die durch Richtzeichen nach Anlage 3 angeordneten Ge- oder Verbote zu befolgen.",
-  "covered": false,
+  "covered": true,
   "by_evidence": false
  },
  {
   "law": "stvo_2013",
   "norm": "§ 42",
   "provision": "(3) Richtzeichen stehen vorbehaltlich des Satzes 2 dort, wo oder von wo an die Anordnung zu befolgen ist. Soweit die Zeichen aus Gründen der Leichtigkeit oder der Sicherheit des Verkehrs in einer bestimmten Entfernung zum Beginn der Befolgungspflicht stehen, ist die Entfernung zu dem maßgeblichen Ort auf einem Zusatzzeichen angegeben.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
   "norm": "§ 43",
   "provision": "(1) Verkehrseinrichtungen sind Schranken, Sperrpfosten, Absperrgeräte sowie Leiteinrichtungen, die bis auf Leitpfosten, Leitschwellen und Leitborde rot-weiß gestreift sind. Leitschwellen und Leitborde haben die Funktion einer vorübergehend gültigen Markierung und sind gelb. Verkehrseinrichtungen sind außerdem Absperrgeländer, Parkuhren, Parkscheinautomaten, Blinklicht- und Lichtzeichenanlagen sowi",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -3216,8 +3216,8 @@
   "law": "stvo_2013",
   "norm": "§ 43",
   "provision": "(3) Verkehrseinrichtungen nach Absatz 1 Satz 1 ergeben sich aus Anlage 4. Die durch Verkehrseinrichtungen (Anlage 4 Nummer 1 bis 7) gekennzeichneten Straßenflächen darf der Verkehrsteilnehmer nicht befahren.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvo_2013",
@@ -3237,15 +3237,15 @@
   "law": "stvzo_2012",
   "norm": "§ 29",
   "provision": "(1) Die Halter von zulassungspflichtigen Fahrzeugen im Sinne des § 3 Absatz 1 der Fahrzeug-Zulassungsverordnung und kennzeichenpflichtigen Fahrzeugen nach § 4 Absatz 2 und 3 Satz 2 der Fahrzeug-Zulassungsverordnung haben ihre Fahrzeuge auf ihre Kosten nach Maßgabe der Anlage VIII in Verbindung mit Anlage VIIIa in regelmäßigen Zeitabständen untersuchen zu lassen. Ausgenommen sind Fahrzeuge mit rote",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvzo_2012",
   "norm": "§ 29",
   "provision": "(2) Der Halter hat den Monat, in dem das Fahrzeug spätestens zur Hauptuntersuchung vorgeführt werden muss, durch eine Prüfplakette nach Anlage IX auf dem Kennzeichen nachzuweisen, es sei denn, es handelt sich um ein Kurzzeitkennzeichen oder Ausfuhrkennzeichen, Sicherheitsprüfung vorgeführt werden muss, durch eine Prüfmarke in Verbindung mit einem SP-Schild nach Anlage IXb nachzuweisen. Prüfplakett",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvzo_2012",
@@ -3265,8 +3265,8 @@
   "law": "stvzo_2012",
   "norm": "§ 29",
   "provision": "(5) Der Halter hat dafür zu sorgen, dass sich die nach Absatz 3 angebrachte Prüfplakette und die nach Absatz 4 angebrachte Prüfmarke und das SP-Schild in ordnungsgemäßem Zustand befinden; sie dürfen weder verdeckt noch verschmutzt sein.",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvzo_2012",
@@ -3335,8 +3335,8 @@
   "law": "stvzo_2012",
   "norm": "§ 36",
   "provision": "(1) Maße und Bauart der Reifen von Fahrzeugen müssen den Betriebsbedingungen, besonders der Belastung und der durch die Bauart bestimmten Höchstgeschwindigkeit des Fahrzeugs, entsprechen. Sind land- oder forstwirtschaftliche Kraftfahrzeuge und Kraftfahrzeuge des Straßenunterhaltungsdienstes mit Reifen ausgerüstet, die nur eine niedrigere Höchstgeschwindigkeit zulassen, müssen diese Fahrzeuge entsp",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvzo_2012",
@@ -3356,8 +3356,8 @@
   "law": "stvzo_2012",
   "norm": "§ 36",
   "provision": "(4) Reifen für winterliche Wetterverhältnisse sind Luftreifen im Sinne des Absatzes 2, durch deren Laufflächenprofil, Laufflächenmischung oder Bauart vor allem die Fahreigenschaften bei Schnee gegenüber normalen Reifen hinsichtlich ihrer Eigenschaft beim Anfahren, bei der Stabilisierung der Fahrzeugbewegung und beim Abbremsen des Fahrzeugs verbessert werden, und die mit dem Alpine-Symbol (Bergpikt",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvzo_2012",
@@ -3412,8 +3412,8 @@
   "law": "stvzo_2012",
   "norm": "§ 53a",
   "provision": "(1) Warndreiecke und Warnleuchten müssen tragbar, standsicher und so beschaffen sein, dass sie bei Gebrauch auf ausreichende Entfernung erkennbar sind. Warndreiecke müssen rückstrahlend sein; Warnleuchten müssen gelbes Blinklicht abstrahlen, von der Lichtanlage des Fahrzeugs unabhängig sein und eine ausreichende Brenndauer haben. Warnwesten müssen der Norm DIN EN 471:2003+A1:2007, Ausgabe März 200",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvzo_2012",
@@ -3433,8 +3433,8 @@
   "law": "stvzo_2012",
   "norm": "§ 53a",
   "provision": "(4) Fahrzeuge (ausgenommen Kraftfahrzeuge nach § 30a Absatz 3 mit Ausnahme von dreirädrigen Kraftfahrzeugen), die mit Fahrtrichtungsanzeigern ausgerüstet sein müssen, müssen zusätzlich eine Warnblinkanlage haben. Sie muss wie folgt beschaffen sein: Für die Schaltung muss im Kraftfahrzeug ein besonderer Schalter vorhanden sein. Nach dem Einschalten müssen alle am Fahrzeug oder Zug vorhandenen Blink",
-  "covered": false,
-  "by_evidence": false
+  "covered": true,
+  "by_evidence": true
  },
  {
   "law": "stvzo_2012",

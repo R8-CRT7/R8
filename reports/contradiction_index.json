@@ -631,6 +631,84 @@
    "origin": "claims"
   },
   {
+   "a": "MAN_OVERTAKE_SIGNALS#0",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_SIGNALS#2",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS#2",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_SIGNALS#0",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS#3",
+   "relation": "exception_to",
+   "b": "MAN_OVERTAKE_SIGNALS",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:BRAKE_READY",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:EXPECT_MISCONDUCT",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:SLOW_DOWN",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS#6",
+   "relation": "exception_to",
+   "b": "MAN_OVERTAKE_SIGNALS",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS:ANKÜNDIG_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_SIGNALS:ANKÜNDIG_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS:ANKÜNDIG_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_SIGNALS:ANKÜNDIG_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS:BLEND_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_SIGNALS:BLEND_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS:BLEND_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_SIGNALS:BLEND_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS:ÜBERHOL_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_SIGNALS:ÜBERHOL_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_SIGNALS:ÜBERHOL_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_SIGNALS:ÜBERHOL_ALLOWED",
+   "origin": "claims"
+  },
+  {
    "a": "MAN_REVERSE_UTURN#2",
    "relation": "exception_to",
    "b": "MAN_REVERSE_UTURN",
@@ -856,6 +934,48 @@
    "a": "PRI_CROSSWALK:FAHR_PROHIBITED",
    "relation": "contradicts",
    "b": "PRI_CROSSWALK:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK_OTHER#0",
+   "relation": "exception_to",
+   "b": "PRI_CROSSWALK_OTHER",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK_OTHER#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK_OTHER#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK_OTHER#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK_OTHER#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK_OTHER:ERMÖGLICH_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_CROSSWALK_OTHER:ERMÖGLICH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK_OTHER:ERMÖGLICH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_CROSSWALK_OTHER:ERMÖGLICH_ALLOWED",
    "origin": "claims"
   },
   {
@@ -1549,6 +1669,84 @@
    "origin": "claims"
   },
   {
+   "a": "PRI_POLICE_OTHER#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#1",
+   "relation": "exception_to",
+   "b": "PRI_POLICE_OTHER",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER:ANHALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_POLICE_OTHER:ANHALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE_OTHER:ANHALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_POLICE_OTHER:ANHALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
    "a": "PRI_PROPERTY_EXIT#0",
    "relation": "incompatible_with",
    "b": "ACTION:ACCELERATE",
@@ -1780,6 +1978,198 @@
    "a": "PRI_RAIL_CROSSING#9",
    "relation": "incompatible_with",
    "b": "ACTION:RELY_ON_OTHERS",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_FLAG#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT:BLEND_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_RAIL_WAIT:BLEND_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_WAIT:BLEND_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_RAIL_WAIT:BLEND_ALLOWED",
    "origin": "claims"
   },
   {
@@ -2479,6 +2869,18 @@
    "origin": "claims"
   },
   {
+   "a": "PRK_DISC_SETTING#0",
+   "relation": "contradicts",
+   "b": "PRK_DISC_SETTING#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_DISC_SETTING#1",
+   "relation": "contradicts",
+   "b": "PRK_DISC_SETTING#0",
+   "origin": "claims"
+  },
+  {
    "a": "PRK_HALT_VS_PARK#0",
    "relation": "contradicts",
    "b": "PRK_HALT_VS_PARK#2",
@@ -2548,6 +2950,18 @@
    "a": "PRK_HALT_VS_PARK#7",
    "relation": "contradicts",
    "b": "PRK_HALT_VS_PARK#6",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HEAVY_NIGHT:PARK_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRK_HEAVY_NIGHT:PARK_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HEAVY_NIGHT:PARK_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRK_HEAVY_NIGHT:PARK_ALLOWED",
    "origin": "claims"
   },
   {
@@ -2578,6 +2992,54 @@
    "a": "PRK_LEAVING_VEHICLE:VERGEWISSER_PROHIBITED",
    "relation": "contradicts",
    "b": "PRK_LEAVING_VEHICLE:VERGEWISSER_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_METERS_DISC#1",
+   "relation": "contradicts",
+   "b": "PRK_METERS_DISC#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_METERS_DISC#2",
+   "relation": "contradicts",
+   "b": "PRK_METERS_DISC#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_METERS_DISC:ANBRING_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRK_METERS_DISC:ANBRING_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_METERS_DISC:ANBRING_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRK_METERS_DISC:ANBRING_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_METERS_DISC:BETÄTIG_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRK_METERS_DISC:BETÄTIG_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_METERS_DISC:BETÄTIG_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRK_METERS_DISC:BETÄTIG_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_METERS_DISC:PARK_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRK_METERS_DISC:PARK_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_METERS_DISC:PARK_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRK_METERS_DISC:PARK_ALLOWED",
    "origin": "claims"
   },
   {
@@ -2638,6 +3100,30 @@
    "a": "PRK_WHERE:PARK_PROHIBITED",
    "relation": "contradicts",
    "b": "PRK_WHERE:PARK_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRS_FACE_COVER:VERDECK_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRS_FACE_COVER:VERDECK_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRS_FACE_COVER:VERDECK_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRS_FACE_COVER:VERDECK_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_LANES_DENSITY:ABWEICH_ALLOWED",
+   "relation": "contradicts",
+   "b": "RDS_LANES_DENSITY:ABWEICH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_LANES_DENSITY:ABWEICH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "RDS_LANES_DENSITY:ABWEICH_ALLOWED",
    "origin": "claims"
   },
   {
@@ -2710,6 +3196,42 @@
    "a": "RDS_MOTORWAY_ACCESS:VERBOT_PROHIBITED",
    "relation": "contradicts",
    "b": "RDS_MOTORWAY_ACCESS:VERBOT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_LIGHT_TRUCKS#0",
+   "relation": "exception_to",
+   "b": "RDS_MOTORWAY_LIGHT_TRUCKS",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_LIGHT_TRUCKS#1",
+   "relation": "exception_to",
+   "b": "RDS_MOTORWAY_LIGHT_TRUCKS",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_LIGHT_TRUCKS:ANPASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_LIGHT_TRUCKS:ANPASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_LIGHT_TRUCKS:ANPASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_LIGHT_TRUCKS:ANPASS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_LIGHT_TRUCKS:BENUTZ_ALLOWED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_LIGHT_TRUCKS:BENUTZ_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_LIGHT_TRUCKS:BENUTZ_PROHIBITED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_LIGHT_TRUCKS:BENUTZ_ALLOWED",
    "origin": "claims"
   },
   {
@@ -2791,6 +3313,150 @@
    "origin": "claims"
   },
   {
+   "a": "SGN_ADD_PRIORITY#0",
+   "relation": "exception_to",
+   "b": "SGN_ADD_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#1",
+   "relation": "exception_to",
+   "b": "SGN_ADD_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#3",
+   "relation": "contradicts",
+   "b": "SGN_ADD_PRIORITY#4",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#4",
+   "relation": "contradicts",
+   "b": "SGN_ADD_PRIORITY#3",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#5",
+   "relation": "exception_to",
+   "b": "SGN_ADD_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY:ACHT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_ADD_PRIORITY:ACHT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY:ACHT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_ADD_PRIORITY:ACHT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY:BLINK_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_ADD_PRIORITY:BLINK_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY:BLINK_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_ADD_PRIORITY:BLINK_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY:GEWÄHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_ADD_PRIORITY:GEWÄHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_PRIORITY:GEWÄHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_ADD_PRIORITY:GEWÄHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_RESTRICTIONS#0",
+   "relation": "contradicts",
+   "b": "SGN_ADD_RESTRICTIONS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_RESTRICTIONS#1",
+   "relation": "contradicts",
+   "b": "SGN_ADD_RESTRICTIONS#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADD_RESTRICTIONS#4",
+   "relation": "exception_to",
+   "b": "SGN_ADD_RESTRICTIONS",
+   "origin": "claims"
+  },
+  {
    "a": "SGN_BENT_PRIORITY#0",
    "relation": "contradicts",
    "b": "SGN_BENT_PRIORITY#1",
@@ -2863,6 +3529,18 @@
    "origin": "claims"
   },
   {
+   "a": "SGN_HALT_BAN_SIDE#0",
+   "relation": "contradicts",
+   "b": "SGN_HALT_BAN_SIDE#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HALT_BAN_SIDE#1",
+   "relation": "contradicts",
+   "b": "SGN_HALT_BAN_SIDE#0",
+   "origin": "claims"
+  },
+  {
    "a": "SGN_HAZMAT:BENUTZ_ALLOWED",
    "relation": "contradicts",
    "b": "SGN_HAZMAT:BENUTZ_PROHIBITED",
@@ -2893,6 +3571,18 @@
    "origin": "claims"
   },
   {
+   "a": "SGN_LANE_LIGHTS#0",
+   "relation": "contradicts",
+   "b": "SGN_LANE_LIGHTS#3",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_LANE_LIGHTS#3",
+   "relation": "contradicts",
+   "b": "SGN_LANE_LIGHTS#0",
+   "origin": "claims"
+  },
+  {
    "a": "SGN_LINES#0",
    "relation": "exception_to",
    "b": "SGN_LINES",
@@ -2908,6 +3598,36 @@
    "a": "SGN_LINES:ÜBERFAHR_PROHIBITED",
    "relation": "contradicts",
    "b": "SGN_LINES:ÜBERFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ONEWAY_BIKES#0",
+   "relation": "exception_to",
+   "b": "SGN_ONEWAY_BIKES",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ONEWAY_BIKES:EINFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_ONEWAY_BIKES:EINFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ONEWAY_BIKES:EINFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_ONEWAY_BIKES:EINFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ONEWAY_BIKES:RECHN_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_ONEWAY_BIKES:RECHN_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ONEWAY_BIKES:RECHN_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_ONEWAY_BIKES:RECHN_ALLOWED",
    "origin": "claims"
   },
   {
@@ -2944,6 +3664,30 @@
    "a": "SGN_OVERTAKING_BANS:ÜBERHOL_PROHIBITED",
    "relation": "contradicts",
    "b": "SGN_OVERTAKING_BANS:ÜBERHOL_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PARKING_MARKINGS:EINHALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_PARKING_MARKINGS:EINHALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PARKING_MARKINGS:EINHALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_PARKING_MARKINGS:EINHALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PARKING_MARKINGS:PARK_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_PARKING_MARKINGS:PARK_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PARKING_MARKINGS:PARK_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_PARKING_MARKINGS:PARK_ALLOWED",
    "origin": "claims"
   },
   {
@@ -3022,6 +3766,66 @@
    "a": "SGN_PRIORITY_ROAD:ANHALT_PROHIBITED",
    "relation": "contradicts",
    "b": "SGN_PRIORITY_ROAD:ANHALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES#0",
+   "relation": "contradicts",
+   "b": "SGN_SYSTEM_RULES#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES#0",
+   "relation": "exception_to",
+   "b": "SGN_SYSTEM_RULES",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES#1",
+   "relation": "contradicts",
+   "b": "SGN_SYSTEM_RULES#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES#3",
+   "relation": "exception_to",
+   "b": "SGN_SYSTEM_RULES",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES:ANGEB_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_SYSTEM_RULES:ANGEB_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES:ANGEB_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_SYSTEM_RULES:ANGEB_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES:ENTHALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_SYSTEM_RULES:ENTHALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES:ENTHALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_SYSTEM_RULES:ENTHALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES:RECHN_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_SYSTEM_RULES:RECHN_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_SYSTEM_RULES:RECHN_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_SYSTEM_RULES:RECHN_ALLOWED",
    "origin": "claims"
   },
   {
@@ -3115,6 +3919,18 @@
    "origin": "claims"
   },
   {
+   "a": "SGN_TRAFFIC_DEVICES:BEFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_DEVICES:BEFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_DEVICES:BEFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_DEVICES:BEFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
    "a": "SGN_WHERE_VALID#0",
    "relation": "exception_to",
    "b": "SGN_WHERE_VALID",
@@ -3151,6 +3967,12 @@
    "origin": "claims"
   },
   {
+   "a": "SIDE:höchstens",
+   "relation": "contradicts",
+   "b": "SIDE:mehr",
+   "origin": "lexicon"
+  },
+  {
    "a": "SIDE:linke",
    "relation": "contradicts",
    "b": "SIDE:rechte",
@@ -3184,6 +4006,18 @@
    "a": "SIDE:links",
    "relation": "contradicts",
    "b": "SIDE:rechts",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:mehr",
+   "relation": "contradicts",
+   "b": "SIDE:höchstens",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:mindestens",
+   "relation": "contradicts",
+   "b": "SIDE:weniger",
    "origin": "lexicon"
   },
   {
@@ -3232,6 +4066,12 @@
    "a": "SIDE:vorwärts",
    "relation": "contradicts",
    "b": "SIDE:rückwärts",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:weniger",
+   "relation": "contradicts",
+   "b": "SIDE:mindestens",
    "origin": "lexicon"
   },
   {
@@ -3379,6 +4219,18 @@
    "origin": "claims"
   },
   {
+   "a": "SPC_ADVERTISING:VERBOT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_ADVERTISING:VERBOT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ADVERTISING:VERBOT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_ADVERTISING:VERBOT_ALLOWED",
+   "origin": "claims"
+  },
+  {
    "a": "SPC_BASIC_RULE#1",
    "relation": "exception_to",
    "b": "SPC_BASIC_RULE",
@@ -3484,6 +4336,24 @@
    "a": "SPC_OBSTACLES:MACH_PROHIBITED",
    "relation": "contradicts",
    "b": "SPC_OBSTACLES:MACH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_SERVICE_VEHICLES#0",
+   "relation": "exception_to",
+   "b": "SPC_SERVICE_VEHICLES",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_SERVICE_VEHICLES:HALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_SERVICE_VEHICLES:HALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_SERVICE_VEHICLES:HALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_SERVICE_VEHICLES:HALT_ALLOWED",
    "origin": "claims"
   },
   {
@@ -3961,6 +4831,36 @@
    "origin": "claims"
   },
   {
+   "a": "TEC_HORN_TONES#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:BRAKE_READY",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_HORN_TONES#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:EXPECT_MISCONDUCT",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_HORN_TONES#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:SLOW_DOWN",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_HORN_TONES:ABGEB_ALLOWED",
+   "relation": "contradicts",
+   "b": "TEC_HORN_TONES:ABGEB_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_HORN_TONES:ABGEB_PROHIBITED",
+   "relation": "contradicts",
+   "b": "TEC_HORN_TONES:ABGEB_ALLOWED",
+   "origin": "claims"
+  },
+  {
    "a": "TEC_HU#1",
    "relation": "contradicts",
    "b": "TEC_HU#2",
@@ -3970,6 +4870,18 @@
    "a": "TEC_HU#2",
    "relation": "contradicts",
    "b": "TEC_HU#1",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_HU_DUTY:BRING_ALLOWED",
+   "relation": "contradicts",
+   "b": "TEC_HU_DUTY:BRING_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_HU_DUTY:BRING_PROHIBITED",
+   "relation": "contradicts",
+   "b": "TEC_HU_DUTY:BRING_ALLOWED",
    "origin": "claims"
   },
   {
@@ -4018,6 +4930,30 @@
    "a": "TEC_LIGHTS:GEFAHR_PROHIBITED",
    "relation": "contradicts",
    "b": "TEC_LIGHTS:GEFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS_USE#3",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS_USE#4",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS_USE#4",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS_USE#3",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS_USE:EINSCHALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS_USE:EINSCHALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS_USE:EINSCHALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS_USE:EINSCHALT_ALLOWED",
    "origin": "claims"
   },
   {
@@ -4084,6 +5020,18 @@
    "a": "TEC_TYRES#1",
    "relation": "contradicts",
    "b": "TEC_TYRES#0",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_TYRES_SUITABLE:ZUGELASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "TEC_TYRES_SUITABLE:ZUGELASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_TYRES_SUITABLE:ZUGELASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "TEC_TYRES_SUITABLE:ZUGELASS_ALLOWED",
    "origin": "claims"
   },
   {
@@ -4231,6 +5179,66 @@
    "origin": "claims"
   },
   {
+   "a": "USR_ESCOOTER_RULES#0",
+   "relation": "exception_to",
+   "b": "USR_ESCOOTER_RULES",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER_RULES#1",
+   "relation": "exception_to",
+   "b": "USR_ESCOOTER_RULES",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER_RULES#2",
+   "relation": "exception_to",
+   "b": "USR_ESCOOTER_RULES",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER_RULES#4",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER_RULES#5",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER_RULES#4",
+   "relation": "exception_to",
+   "b": "USR_ESCOOTER_RULES",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER_RULES#5",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER_RULES#4",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER_RULES:ERMÖGLICH_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER_RULES:ERMÖGLICH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER_RULES:ERMÖGLICH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER_RULES:ERMÖGLICH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER_VEHICLE:EINFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER_VEHICLE:EINFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER_VEHICLE:EINFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER_VEHICLE:EINFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
    "a": "USR_GROUPS#0",
    "relation": "contradicts",
    "b": "USR_GROUPS#1",
@@ -4282,6 +5290,18 @@
    "a": "USR_GROUPS:UNTERBRECH_PROHIBITED",
    "relation": "contradicts",
    "b": "USR_GROUPS:UNTERBRECH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS_SKATES:ERMÖGLICH_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_GROUPS_SKATES:ERMÖGLICH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS_SKATES:ERMÖGLICH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_GROUPS_SKATES:ERMÖGLICH_ALLOWED",
    "origin": "claims"
   },
   {
@@ -4381,6 +5401,36 @@
    "origin": "claims"
   },
   {
+   "a": "USR_PASSENGERS_EXTRA#0",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS_EXTRA#1",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS_EXTRA#1",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS_EXTRA#0",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS_EXTRA#2",
+   "relation": "exception_to",
+   "b": "USR_PASSENGERS_EXTRA",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS_EXTRA:VERBOT_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS_EXTRA:VERBOT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS_EXTRA:VERBOT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS_EXTRA:VERBOT_ALLOWED",
+   "origin": "claims"
+  },
+  {
    "a": "USR_PEDESTRIANS#0",
    "relation": "contradicts",
    "b": "USR_PEDESTRIANS#1",
@@ -4444,6 +5494,72 @@
    "a": "USR_PEDESTRIANS:GEHE_PROHIBITED",
    "relation": "contradicts",
    "b": "USR_PEDESTRIANS:GEHE_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS_CROSS#0",
+   "relation": "exception_to",
+   "b": "USR_PEDESTRIANS_CROSS",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS_CROSS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS_CROSS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS_CROSS:GEFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS_CROSS:GEFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS_CROSS:GEFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS_CROSS:GEFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PUBLIC_TRANSPORT_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PUBLIC_TRANSPORT_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PUBLIC_TRANSPORT_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PUBLIC_TRANSPORT_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PUBLIC_TRANSPORT_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PUBLIC_TRANSPORT_WAIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
    "origin": "claims"
   },
   {
