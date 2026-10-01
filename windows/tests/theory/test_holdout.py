@@ -60,7 +60,7 @@ def test_training_never_reads_golden_files(monkeypatch):
 
 
 def test_only_the_loader_and_the_evaluator_reference_the_external_set():
-    allowed = {"smart360/theory/splits.py", "tools/theory_eval.py"}
+    allowed = {"smart360/theory/splits.py", "tools/theory_eval.py", "tools/external_import.py"}
     hits = []
     for p in list((SRC / "smart360").rglob("*.py")) + list((SRC / "tools").rglob("*.py")):
         rel = p.relative_to(SRC).as_posix()
@@ -72,11 +72,13 @@ def test_only_the_loader_and_the_evaluator_reference_the_external_set():
 def test_external_loader_is_evaluation_only():
     with pytest.raises(PermissionError):
         splits.load_golden_external(purpose="training")  # type: ignore[arg-type]
+    with pytest.raises(PermissionError):
+        splits.load_external_records(purpose="tuning")  # type: ignore[arg-type]
 
 
 def test_external_import_format_is_validated():
     ok = {"id": "E1", "topic": "05_priority", "question": "Wer hat Vorfahrt?", "answers": ["A", "B"],
-          "correct": [1], "source": "external-human-authored"}
+          "correct": [1], "source": "external-human-authored", "author": "Tester"}
     splits.ExternalItem.model_validate(ok).to_item()
     with pytest.raises(ValueError):
         splits.ExternalItem.model_validate({**ok, "source": "ai-generated"})
@@ -84,6 +86,8 @@ def test_external_import_format_is_validated():
         splits.ExternalItem.model_validate({**ok, "correct": [3]}).to_item()
     with pytest.raises(ValueError):
         splits.ExternalItem.model_validate({**ok, "topic": "99_unknown"})
+    with pytest.raises(ValueError):
+        splits.ExternalItem.model_validate({**ok, "author": ""})
 
 
 def _near(a: set[str], b: set[str]) -> bool:

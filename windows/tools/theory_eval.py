@@ -98,12 +98,29 @@ def metrics(rows: list[dict]) -> dict:
     }
 
 
+def _pct(xs: list[float], q: float) -> float:
+    xs = sorted(xs)
+    return round(xs[min(len(xs) - 1, int(q * len(xs)))] * 1000, 2) if xs else 0.0
+
+
 def run(items: list[TheoryItem], kb: KnowledgeBase) -> tuple[list[dict], dict]:
-    rows = [judge(it, solve(it.question, kb)) for it in items]
-    return rows, metrics(rows)
+    rows = []
+    lat: dict[str, list[float]] = defaultdict(list)
+    for it in items:
+        t0 = time.perf_counter()
+        r = solve(it.question, kb)
+        total = time.perf_counter() - t0
+        rows.append(judge(it, r))
+        lat["total_theory_latency"].append(total)
+        for k, v in getattr(r, "timings", {}).items():
+            lat[k].append(v)
+    m = metrics(rows)
+    m["latency_ms"] = {k: {"p50": _pct(v, 0.5), "p95": _pct(v, 0.95), "max": _pct(v, 1.0)} for k, v in lat.items()}
+    return rows, m
 
 
-SETS = ("synthetic", "validation", "golden_internal", "golden_v1", "golden_v2", "golden_external")
+SETS = ("synthetic", "validation", "development_golden", "golden_internal", "golden_v1", "golden_v2",
+        "golden_external")
 
 
 def load_set(name: str, kb: KnowledgeBase) -> list[TheoryItem]:
@@ -115,8 +132,8 @@ def load_set(name: str, kb: KnowledgeBase) -> list[TheoryItem]:
         from smart360.theory.generator import validation_items
 
         return validation_items(kb)
-    if name == "golden_internal":
-        return splits.load_golden_internal()
+    if name in ("development_golden", "golden_internal"):  # golden_internal = old name
+        return splits.load_development_golden()
     if name in ("golden_v1", "golden_v2"):
         return splits.load_golden_internal(splits.GOLDEN_DIR / f"golden_{name[-2:]}.json")
     if name == "golden_external":
@@ -124,14 +141,40 @@ def load_set(name: str, kb: KnowledgeBase) -> list[TheoryItem]:
     raise ValueError(name)
 
 
+def _external_metrics(rows: list[dict], m: dict) -> dict:
+    """External set: integrity check (MANIFEST sha256), main metric only on items without POSSIBLE_LEAKAGE,
+    first measurement written once to reports/external_first_measurement.json and never overwritten."""
+    import hashlib
+
+    from smart360.theory import splits
+
+    man_p = splits.EXTERNAL_DIR / splits.MANIFEST
+    manifest = json.loads(man_p.read_text(encoding="utf-8")) if man_p.exists() else {"files": {}}
+    for fname, digest in manifest["files"].items():
+        body = (splits.EXTERNAL_DIR / fname).read_bytes().replace(b"\r\n", b"\n")
+        if hashlib.sha256(body).hexdigest() != digest:
+            raise SystemExit(f"external file {fname} was changed after import - external golden is read-only")
+    leak = {r.id for r in splits.load_external_records(purpose="evaluation") if r.leakage}
+    indep = [r for r in rows if r["id"] not in leak]
+    full = metrics(rows)
+    m = {**metrics(indep), "all_including_possible_leakage": full["overall"], "possible_leakage": len(leak),
+         "latency_ms": m.get("latency_ms"), "seconds": m.get("seconds"), "set": "golden_external"}
+    first = ROOT / "reports" / "external_first_measurement.json"
+    if not first.exists():
+        first.write_text(json.dumps({**m, "date": time.strftime("%Y-%m-%d"), "frozen": True}, ensure_ascii=False,
+                                    indent=1), encoding="utf-8")
+        print(f"first external measurement frozen in {first}")
+    return m
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--set", choices=SETS, default="synthetic")
-    ap.add_argument("--golden", action="store_true", help="alias for --set golden_internal")
+    ap.add_argument("--golden", action="store_true", help="alias for --set development_golden")
     ap.add_argument("--out", type=Path)
     ap.add_argument("--show-wrong", type=int, default=0)
     a = ap.parse_args(argv)
-    name = "golden_internal" if a.golden else a.set
+    name = "development_golden" if a.golden else a.set
     kb = KnowledgeBase.load()
     t0 = time.time()
     items = load_set(name, kb)
@@ -141,6 +184,8 @@ def main(argv: list[str] | None = None) -> int:
     rows, m = run(items, kb)
     m["seconds"] = round(time.time() - t0, 1)
     m["set"] = name
+    if name == "golden_external":
+        m = _external_metrics(rows, m)
     out = a.out or ROOT / "reports" / f"theory_metrics_{name}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(m, ensure_ascii=False, indent=1), encoding="utf-8")
