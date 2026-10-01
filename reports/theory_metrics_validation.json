@@ -1,10 +1,10 @@
 {
  "overall": {
   "n": 1476,
-  "accuracy": 0.7676,
-  "coverage": 0.7676,
+  "accuracy": 0.7744,
+  "coverage": 0.7744,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.2324,
+  "uncertain_rate": 0.2256,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -29,10 +29,10 @@
  "by_category": {
   "claims": {
    "n": 1230,
-   "accuracy": 0.7675,
-   "coverage": 0.7675,
+   "accuracy": 0.7756,
+   "coverage": 0.7756,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2325,
+   "uncertain_rate": 0.2244,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -85,10 +85,10 @@
   },
   "05_priority": {
    "n": 426,
-   "accuracy": 0.8286,
-   "coverage": 0.8286,
+   "accuracy": 0.8404,
+   "coverage": 0.8404,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1714,
+   "uncertain_rate": 0.1596,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -112,10 +112,10 @@
   },
   "08_speed_distance": {
    "n": 108,
-   "accuracy": 0.8704,
-   "coverage": 0.8704,
+   "accuracy": 0.9167,
+   "coverage": 0.9167,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1296,
+   "uncertain_rate": 0.0833,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -168,10 +168,10 @@
  "by_variant": {
   "val_actor": {
    "n": 246,
-   "accuracy": 0.7724,
-   "coverage": 0.7724,
+   "accuracy": 0.7805,
+   "coverage": 0.7805,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2276,
+   "uncertain_rate": 0.2195,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -186,37 +186,37 @@
   },
   "val_noise": {
    "n": 246,
-   "accuracy": 0.7439,
-   "coverage": 0.7439,
+   "accuracy": 0.752,
+   "coverage": 0.752,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2561,
+   "uncertain_rate": 0.248,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "val_reorder": {
    "n": 246,
-   "accuracy": 0.7764,
-   "coverage": 0.7764,
+   "accuracy": 0.7846,
+   "coverage": 0.7846,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2236,
+   "uncertain_rate": 0.2154,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "val_short": {
    "n": 246,
-   "accuracy": 0.7805,
-   "coverage": 0.7805,
+   "accuracy": 0.7886,
+   "coverage": 0.7886,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2195,
+   "uncertain_rate": 0.2114,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "val_stem": {
    "n": 246,
-   "accuracy": 0.7642,
-   "coverage": 0.7642,
+   "accuracy": 0.7724,
+   "coverage": 0.7724,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2358,
+   "uncertain_rate": 0.2276,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -226,7 +226,7 @@
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   325
+   315
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
@@ -237,6 +237,6 @@
    18
   ]
  ],
- "seconds": 23.5,
+ "seconds": 25.6,
  "set": "validation"
 }

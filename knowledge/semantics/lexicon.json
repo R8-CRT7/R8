@@ -759,6 +759,62 @@
     "rechne (ich )?mit (unvorsichtigem |falschem )?(fehl)?verhalten",
     "mit (unvorsichtigem|falschem) verhalten (\\w+ )?rechnen"
    ]
+  },
+  {
+   "id": "act_turn_around",
+   "canonical_concept": "TURN_AROUND",
+   "rewrite": "cturnx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "\\bwenden\\b",
+    "\\bwende (ich )?\\b",
+    "umkehren",
+    "kehre (ich )?um"
+   ]
+  },
+  {
+   "id": "act_reverse",
+   "canonical_concept": "REVERSE",
+   "rewrite": "creversex",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "zurück(zu)?setzen",
+    "setze (ich )?zurück",
+    "rückwärts(zu)?fahren",
+    "fahre (ich )?rückwärts"
+   ]
+  },
+  {
+   "id": "qual_max",
+   "canonical_concept": "AT_MOST",
+   "rewrite": "höchstens",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "nicht (schneller|mehr|länger|weiter|höher|breiter|schwerer) als",
+    "höchstens",
+    "maximal",
+    "nicht über(?= \\d)"
+   ]
+  },
+  {
+   "id": "qual_min",
+   "canonical_concept": "AT_LEAST",
+   "rewrite": "mindestens",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "nicht (weniger|langsamer|kürzer|kleiner) als",
+    "mindestens",
+    "wenigstens",
+    "nicht unter(?= \\d)"
+   ]
   }
  ],
  "incompatible": [
@@ -853,6 +909,26 @@
   [
    "CLEAR_JUNCTION",
    "WAIT"
+  ],
+  [
+   "YIELD",
+   "CONTINUE"
+  ],
+  [
+   "TURN_AROUND",
+   "CONTINUE"
+  ],
+  [
+   "REVERSE",
+   "CONTINUE"
+  ],
+  [
+   "WAIT",
+   "ROLL_THROUGH"
+  ],
+  [
+   "SLOW_DOWN",
+   "HORN"
   ]
  ],
  "exclusive": [

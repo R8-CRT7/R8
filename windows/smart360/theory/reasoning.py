@@ -82,7 +82,7 @@ class TheoryQuestion:
 class AnswerEval:
     index: int
     verdict: Verdict
-    method: str = "none"  # calc | sign | priority | claim | none
+    method: str = "none"  # calc | sign | priority | claim | joint | none
     evidence: list[str] = field(default_factory=list)
     explanation: str = ""
     score: float = 0.0
@@ -316,6 +316,11 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
                 if s_sit < NUMERIC_SITUATION_MIN:
                     continue
                 verdict, flags = _claim_verdict(claim, answer, pa)
+                if verdict != Verdict.UNKNOWN and "number_differs" not in flags:
+                    flags = [f for f in flags if f != "negation_flip"]
+                    # a bare value has no polarity of its own: it fills the question's slot, so the claim's own
+                    # negation ('darf bis 15 m nicht geparkt werden') must not flip it - same value = claim's truth
+                    verdict = Verdict.TRUE if claim.truth else Verdict.FALSE
                 flags = [*flags, "numeric_answer"]
                 missing = (q_core & QUALIFIERS) - c_all - _negated_qualifiers(question)
                 excluded = _negated_qualifiers(question) & c_all
@@ -539,6 +544,9 @@ def _target_sign(kb: KnowledgeBase, q: TheoryQuestion) -> str | None:
     return m.group(1) if m and m.group(1) in kb.signs else None
 
 
+_RAW_NEG = re.compile(r"\b(nicht|kein\w*|nie|niemals|verboten|untersagt|unzulässig)\b")
+
+
 def _negative(text: str) -> bool:
     p = analyze(text)
     return p.negated != (p.deontic in (Deontic.FORBIDDEN, Deontic.NOT_OBLIGATORY))
@@ -552,15 +560,40 @@ def _eval_sign(kb: KnowledgeBase, q: TheoryQuestion) -> list[AnswerEval]:
     rivals = [kb.signs[c] for c in target.confusions if c in kb.signs]
     evals = []
 
-    def desc(sg: Sign) -> str:
-        return f"{sg.name} {sg.meaning} {' '.join(sg.keywords)}"
+    def desc(sg: Sign, official: bool) -> str:
+        # name, curated meaning, keywords - plus, as a fallback, the official evidence text of the sign
+        return " ".join([sg.name, sg.meaning, *sg.keywords, *((x.evidence for x in sg.sources if x.evidence)
+                                                              if official else ())])
 
+    def fit(a_core: set[str], excl: set[str], a_acts: set[str], sg: Sign, official: bool = False) -> tuple[float, float]:
+        d = _core(desc(sg, official))
+        if excl & _core(f"{sg.name} {sg.meaning}") or any(
+                lex.incompatible_with(x, y) for x in a_acts for y in action_concepts(f"{sg.name}. {sg.meaning}")):
+            return 0.0, 0.0  # 'ohne anhalten' contradicts a sign whose meaning is 'anhalten'
+        name = _core(sg.name)
+        if a_core and a_core == name:
+            return 2.0, 1.0  # the official name itself
+        cov = len(a_core & d) / len(a_core) if a_core else 0.0
+        return cov, cosine(a_core, d)
+
+    lex = load_lexicon()
     for i, a in enumerate(q.answers, start=1):
         a_core = _core(a)
-        s_t = cosine(a_core, _core(desc(target)))
-        scored = sorted(((cosine(a_core, _core(desc(r))), r) for r in rivals), key=lambda x: -x[0])
-        s_r = scored[0][0] if scored else 0.0
-        if max(s_t, s_r) < SIGN_MATCH_MIN or abs(s_t - s_r) < AMBIGUITY_GAP:
+        a_acts = action_concepts(a)
+        excl = _excluded_terms(a)
+        a_core = a_core - excl
+        f_t = fit(a_core, excl, a_acts, target)
+        scored = sorted(((fit(a_core, excl, a_acts, r), r) for r in rivals), key=lambda x: (-x[0][0], -x[0][1]))
+        f_r = scored[0][0] if scored else (0.0, 0.0)
+        if max(f_t[0], f_r[0]) < 0.5:  # curated wording does not cover the answer: try the official text
+            f_t = fit(a_core, excl, a_acts, target, True)
+            scored = sorted(((fit(a_core, excl, a_acts, r, True), r) for r in rivals),
+                            key=lambda x: (-x[0][0], -x[0][1]))
+            f_r = scored[0][0] if scored else (0.0, 0.0)
+        s_t, s_r = f_t[0], f_r[0]
+        if abs(s_t - s_r) < AMBIGUITY_GAP:  # same coverage: the tighter description decides
+            s_t, s_r = f_t[1], f_r[1]
+        if max(f_t[0], f_r[0]) < 0.5 or max(f_t[1], f_r[1]) < SIGN_MATCH_MIN / 2 or abs(s_t - s_r) < AMBIGUITY_GAP:
             evals.append(AnswerEval(i, Verdict.UNKNOWN, "sign", [f"SIGN_{num}"], "Bedeutung nicht eindeutig zuzuordnen",
                                     max(s_t, s_r)))
             continue
@@ -569,10 +602,17 @@ def _eval_sign(kb: KnowledgeBase, q: TheoryQuestion) -> list[AnswerEval]:
         # negation relative to the matched meaning ("darf nicht halten" in the meaning itself is no negation)
         pa_ = analyze(a)
         has_polarity = pa_.negated or pa_.deontic != Deontic.NONE
-        if has_polarity and _negative(a) != _negative(matched.meaning):
-            v = not v  # only an answer that itself says 'nicht/verboten/darf' can contradict the meaning
+        if has_polarity and not excl:
+            canon_diff = _negative(a) != _negative(matched.meaning)
+            raw_diff = bool(_RAW_NEG.search(fold(a))) != bool(_RAW_NEG.search(fold(matched.meaning)))
+            if canon_diff != raw_diff:  # normalised and literal reading disagree (OCR noise, paraphrase)
+                evals.append(AnswerEval(i, Verdict.UNKNOWN, "sign", [f"SIGN_{num}"],
+                                        "Verneinung nicht eindeutig", min(1.0, max(f_t[0], f_r[0])), ["polarity_unclear"]))
+                continue
+            if canon_diff:
+                v = not v  # only an answer that itself says 'nicht/verboten/darf' can contradict the meaning
         evals.append(AnswerEval(i, Verdict.TRUE if v else Verdict.FALSE, "sign", [f"SIGN_{num}"],
-                                f"Zeichen {num} ({target.name}): {target.meaning}", max(s_t, s_r)))
+                                f"Zeichen {num} ({target.name}): {target.meaning}", min(1.0, max(f_t[0], f_r[0]))))
     return evals
 
 
@@ -780,6 +820,10 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
             e.verdict = Verdict.FALSE if e.verdict == Verdict.TRUE else e.verdict
     trace.append(("semantic_check_C", "units checked"))
 
+    # semantic check D (joint answer interpretation): mutually exclusive answers, exam elimination
+    joint = _joint_answers(q, evals, n, "negative_question" in kinds)
+    trace.append(("semantic_check_D", joint or "no joint inference"))
+
     # exception + negation checks
     neg_q = "negative_question" in kinds
     exc = [i for i, e in evals.items() if "exception_risk" in e.flags or "absolute_quantifier" in e.flags]
@@ -833,6 +877,58 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
         conf = min(conf, threshold - 0.01)  # same safety cap as the app's confidence engine
     trace.append(("confidence", f"{conf:.3f} " + " ".join(f"{k}={v:.2f}" for k, v in factors.items())))
     return TheoryResult(selected, number_answer, ordered, round(conf, 4), uncertain, reasons, kinds, factors, trace)
+
+
+_WHO_FIRST = re.compile(r"\bwer (hat|hätte) (hier |jetzt |dort )?(die )?vorfahrt\b|\bwer (darf|fährt) (hier |jetzt )?zuerst\b",
+                        re.IGNORECASE)
+
+
+def _affirmative(text: str) -> bool:
+    p = analyze(main_clause(text))
+    return not p.negated and p.deontic in (Deontic.NONE, Deontic.OBLIGATORY, Deontic.PERMITTED)
+
+
+def _joint_answers(q: TheoryQuestion, evals: dict[int, AnswerEval], n: int, negative: bool) -> str:
+    """Answers are read together with each other, not only with the question:
+    1. an answer whose action excludes the action of an answer already shown TRUE ('vor dem Andreaskreuz warten'
+       vs 'schnell noch durchfahren') cannot be correct as well -> FALSE;
+    2. 'Wer hat Vorfahrt?': only one party can have it - 'Ich ...' is FALSE when another party was shown to have it.
+    No elimination ('the last undecided answer must be the correct one'): it turns a single hidden wrong FALSE
+    verdict into a confident wrong selection (measured on the internal golden set)."""
+    if q.number_input or n < 2 or any(i not in evals for i in range(1, n + 1)):
+        return ""
+    lex = load_lexicon()
+    notes = []
+    true_idx = [i for i, e in evals.items() if e.verdict == Verdict.TRUE and e.method in ("claim", "sign", "priority")
+                and "excluded_by_answer" not in e.flags]
+    if not negative:
+        for j, e in evals.items():
+            if e.verdict != Verdict.UNKNOWN:
+                continue
+            aj = q.answers[j - 1]
+            acts_j = action_concepts(main_clause(aj))
+            for i in true_idx:
+                ai = q.answers[i - 1]
+                acts_i = action_concepts(main_clause(ai))
+                same_actor = actor(ai) == actor(aj) or None in (actor(ai), actor(aj))
+                if (acts_i and acts_j and not acts_i & acts_j and same_actor and _affirmative(ai) and _affirmative(aj)
+                        and any(lex.incompatible_with(x, y) for x in acts_i for y in acts_j)):
+                    e.verdict, e.method, e.evidence = Verdict.FALSE, "joint", list(evals[i].evidence)
+                    e.explanation = f"schließt Antwort {i} aus: {evals[i].explanation}"
+                    e.flags.append("excluded_by_answer")
+                    notes.append(f"{j} excluded by {i}")
+                    break
+        if _WHO_FIRST.search(q.text):
+            for j, e in evals.items():
+                aj = q.answers[j - 1].strip().lower()
+                if e.verdict != Verdict.UNKNOWN or not re.match(r"^ich\b", aj):
+                    continue
+                if any(not re.match(r"^ich\b", q.answers[i - 1].strip().lower()) for i in true_idx):
+                    e.verdict, e.method = Verdict.FALSE, "joint"
+                    e.explanation = "Vorfahrt kann nur eine Seite haben - eine andere Antwort ist belegt."
+                    e.flags.append("excluded_by_answer")
+                    notes.append(f"{j} excluded (one party has right of way)")
+    return "; ".join(notes)
 
 
 def _explain(m: _Match) -> str:
