@@ -69,6 +69,8 @@ ignore = [
 "tests/*" = ["S", "PL", "B", "RUF012"]
 "tools/*" = ["S", "PL", "T201", "E501"]
 "smart360/ui/*" = ["E501", "RUF012"]  # QSS strings / UI copy; constant lookup tables
+"smart360/theory/*" = ["E501", "SIM905", "RUF012"]  # German word lists, rule tables
+"smart360/tutor/*" = ["E501", "RUF012"]
 
 [tool.mypy]
 python_version = "3.12"  # runtime shipped in the installer; numpy>=2.5 stubs need 3.12 syntax

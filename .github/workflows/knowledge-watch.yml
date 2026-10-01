@@ -31,7 +31,15 @@ jobs:
           for u in https://www.gesetze-im-internet.de/ https://www.gesetze-im-internet.de/stvo_2013/xml.zip http://www.gesetze-im-internet.de/stvo_2013/xml.zip https://testphase.rechtsinformationen.bund.de/ https://www.recht.bund.de/; do
             echo "== $u"; curl -sS -o /dev/null -w "http=%{http_code} ip=%{remote_ip} t=%{time_total}s size=%{size_download}\n" --max-time 90 "$u" || true
           done
+      - name: Discover rechtsinformationen.bund.de API (temporary)
+        continue-on-error: true
+        run: |
+          B=https://testphase.rechtsinformationen.bund.de
+          for path in "/v1/legislation?searchTerm=Stra%C3%9Fenverkehrs-Ordnung&size=3" "/v1/legislation?searchTerm=StVO&size=3" "/v1/legislation?searchTerm=Fahrerlaubnis-Verordnung&size=2" "/v1/document?searchTerm=StVO&size=2" "/openapi.json" "/v3/api-docs"; do
+            echo "======== $path"; curl -sS --max-time 60 "$B$path" | head -c 6000; echo
+          done
       - name: Fetch official sources
+        timeout-minutes: 8
         run: python windows/tools/knowledge_watch.py fetch --out "$RUNNER_TEMP/new"
       - name: Compare with reviewed snapshots + impact analysis
         run: |
