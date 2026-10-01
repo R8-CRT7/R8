@@ -96,9 +96,14 @@ def negate(statement: str) -> str | None:
 def _same_situation(a: Claim, b: Claim) -> bool:
     """Two TRUE claims may appear in one item only if they describe the same situation - otherwise a statement
     that is true for sign 301 would be marked true in a question about sign 306."""
+    from smart360.theory.reasoning import _excluded_terms
     from smart360.theory.text import content
 
-    ca, cb = content(" ".join(a.context)), content(" ".join(b.context))
+    ta, tb = " ".join(a.context), " ".join(b.context)
+    ca, cb = content(ta), content(tb)
+    ea, eb = _excluded_terms(ta), _excluded_terms(tb)
+    if (ea & (cb - eb)) or (eb & (ca - ea)):  # 'ohne Einsatzhorn' vs 'Einsatzhorn': opposite situations
+        return False
     return bool(ca and cb) and len(ca & cb) / min(len(ca), len(cb)) >= 0.5
 
 

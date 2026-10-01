@@ -12,7 +12,10 @@ import tools.theory_eval as ev
 from smart360.theory.generator import all_items
 from smart360.theory.golden import GOLDEN_DIR, load_golden
 
-GOLDEN_V1_SHA256 = "7caf82dca079a52428dbcc0c1beda6d81e706e8edd4136468fcdf5e09ec50a5e"
+GOLDEN_SHA256 = {
+    "golden_v1.json": "7caf82dca079a52428dbcc0c1beda6d81e706e8edd4136468fcdf5e09ec50a5e",
+    "golden_v2.json": "c07b74c5f50ad74c259a887bd41a8b989e82d65fa98f7c1b91df73ed66d43e11",
+}
 
 
 @pytest.fixture(scope="module")
@@ -43,10 +46,18 @@ def test_synthetic_category_gates(synthetic):
     assert m["overall"]["precision_when_answered"] >= 0.995
 
 
-def test_golden_v1_is_frozen():
-    """The golden set must not be edited to fit the engine - a new version gets a new file."""
-    data = (GOLDEN_DIR / "golden_v1.json").read_bytes()
-    assert hashlib.sha256(data).hexdigest() == GOLDEN_V1_SHA256
+@pytest.mark.parametrize("name", sorted(GOLDEN_SHA256))
+def test_golden_sets_are_frozen(name):
+    """A golden set must not be edited to fit the engine - a new version gets a new file."""
+    data = (GOLDEN_DIR / name).read_bytes()
+    assert hashlib.sha256(data).hexdigest() == GOLDEN_SHA256[name]
+
+
+def test_first_runs_are_recorded():
+    """The first (independent) golden measurements are kept unchanged in reports/."""
+    root = GOLDEN_DIR.parents[3]
+    for v in ("v1", "v2"):
+        assert (root / "reports" / f"golden_{v}_first_run.json").exists()
 
 
 def test_golden_false_confident_gate(kb):

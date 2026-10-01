@@ -13,6 +13,7 @@
 | "Create diagnosis" ZIP (no keys/passwords/tokens) | ✅ Linux + Windows runner + installed app | ✅ | ❌ | ❌ | ➖ | ➖ |
 | Installer `360SmartSetup.exe` (install, start, self-test, uninstall) | ✅ silent, on the runner | ➖ | ❌ | ➖ | ➖ | ➖ |
 | AI providers (Anthropic / OpenAI / Gemini) | ✅ with fake SDK clients | ✅ with the offline demo AI | ❌ | ❌ | ❌ **no live call ever made** | ➖ |
+| Driver-theory knowledge engine + tutor (branch `feature/driver-theory-knowledge-engine`, **not released**) | ✅ Linux (Windows runner: see below) | ✅ synthetic 5 051 variants + 2 golden sets | ❌ | ❌ | ➖ (rule-based, no API) | ➖ |
 | iOS app + extensions | ✅ macOS runner: Swift tests, simulator + device builds (unsigned), analyze | ➖ | ➖ | ❌ | ❌ | ❌ never installed |
 
 **In plain words:**
@@ -106,3 +107,22 @@ All values come from CI run 36819103066 (commit `6f58fed`) or the container. **N
 3. **iPhone test.** Needs your Apple ID; the extensions need a paid account.
 4. A 60-minute soak test on Windows, and multi-monitor and 125 %/150 % scaling on real hardware.
 5. Optional: a code-signing certificate (removes the SmartScreen warning).
+
+## Phase "Driver Theory Knowledge Engine" (branch `feature/driver-theory-knowledge-engine`, not released)
+Architecture, metrics and limits: [`THEORY_ENGINE.md`](THEORY_ENGINE.md). Coverage per topic:
+[`KNOWLEDGE_COVERAGE.md`](KNOWLEDGE_COVERAGE.md).
+
+* Official law texts: StVO + StVZO from the Rechtsinformationsportal des Bundes (LegalDocML), every law citation is
+  checked word for word against them. **FeV, StVG and BKatV are not available** (not in the RIS test phase,
+  gesetze-im-internet.de blocked by this environment's network policy). Their values are marked *unverified* and
+  the engine answers UNCERTAIN for them.
+* Measured: synthetic 5 051 variants, 0 false-confident, 75.7 % answered correctly, 24.3 % UNCERTAIN. Golden
+  sets (own questions, first measurement): 20-21 % correct, 75-76 % UNCERTAIN, **3.75 % false-confident**. The
+  causes were fixed as general error classes, so the golden sets are no longer independent. The engine is a
+  **cautious verifier**, not a stand-alone answerer.
+* App integration: `safety.theory_crosscheck` (**default off**) can only make an answer more cautious (a confident
+  contradiction → uncertain → no click in safe mode). Safety components of alpha.3 (SendInput, click
+  verification, safe mode, dry run, emergency stop, window validation, occlusion, ambiguity, confidence cap,
+  diagnosis, secret storage) are unchanged.
+* Daily knowledge watch (`knowledge-watch.yml`): reports changes, never applies them automatically.
+* Real-device status unchanged: real Windows PC ❌, real 360° software ❌, real API call ❌, iPhone ❌.

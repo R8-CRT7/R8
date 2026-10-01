@@ -24,6 +24,7 @@ from smart360.theory.scene import Scene, temporal_check
 from smart360.theory.schema import Claim, KnowledgeObject, Sign
 from smart360.theory.text import (
     NUMBER_TOKEN,
+    canon,
     content,
     cosine,
     fold,
@@ -281,6 +282,7 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
     pa = analyze(main_clause(answer))
     a_words = {w for w in a_core if not NUMBER_TOKEN.match(w)}
     numeric_only = bool(numbers(answer)) and len(a_words) <= 1
+    excluded = _excluded_terms(question)
     out: list[_Match] = []
     for obj in candidates:
         for claim in obj.claims:
@@ -309,6 +311,8 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
             if s_stmt < MATCH_MIN:
                 continue
             ctx = _core(" ".join(claim.context)) if claim.context else set()
+            if (ctx - _excluded_terms(" ".join(claim.context))) & excluded:
+                continue  # the question rules out a situation this claim assumes ('Blaulicht ohne Martinshorn')
             s_ctx = max(similarity(q_core, ctx), similarity(q_core, _core(claim.statement))) if ctx else 0.5
             if use_context and claim.context and s_ctx < 0.2:
                 continue  # the claim belongs to a different situation
@@ -322,6 +326,14 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
                 flags.append("exception_risk")
             out.append(_Match(obj, claim, score, verdict, flags))
     out.sort(key=lambda m: -m.score)
+    return out
+
+
+def _excluded_terms(text: str) -> set[str]:
+    """Content words the question explicitly excludes: 'ohne Martinshorn', 'kein Gehweg' (one word after)."""
+    out: set[str] = set()
+    for m in re.finditer(r"\b(ohne|kein\w*)\s+(\w+)", canon(text)):
+        out |= content(m.group(2))
     return out
 
 
@@ -496,8 +508,10 @@ def _eval_sign(kb: KnowledgeBase, q: TheoryQuestion) -> list[AnswerEval]:
         matched = target if s_t > s_r else scored[0][1]
         v = s_t > s_r
         # negation relative to the matched meaning ("darf nicht halten" in the meaning itself is no negation)
-        if _negative(a) != _negative(matched.meaning):
-            v = not v
+        pa_ = analyze(a)
+        has_polarity = pa_.negated or pa_.deontic != Deontic.NONE
+        if has_polarity and _negative(a) != _negative(matched.meaning):
+            v = not v  # only an answer that itself says 'nicht/verboten/darf' can contradict the meaning
         evals.append(AnswerEval(i, Verdict.TRUE if v else Verdict.FALSE, "sign", [f"SIGN_{num}"],
                                 f"Zeichen {num} ({target.name}): {target.meaning}", max(s_t, s_r)))
     return evals

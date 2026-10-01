@@ -99,3 +99,16 @@ def test_priority_scene_question(kb):
                                                           "Der blaue Pkw muss mich durchfahren lassen"],
                              has_image=True, scene=scene_from_dict(d)), kb)
     assert r.selected == (1,) and not r.uncertain
+
+
+def test_sign_name_answer_is_not_flipped_by_a_negation_inside_the_meaning(kb):
+    """A bare sign name has no polarity; 'nicht/verboten' inside the official meaning must not flip it."""
+    r = solve(TheoryQuestion("Was bedeutet dieses Zeichen?", ["Vorgeschriebene Mindestgeschwindigkeit",
+                                                              "Zulässige Höchstgeschwindigkeit"], sign_ids=["275"]), kb)
+    assert r.uncertain or r.selected == (1,)
+
+
+def test_question_excluding_a_situation_blocks_rules_for_that_situation(kb):
+    r = solve(TheoryQuestion("Ein Fahrzeug fährt mit blauem Blinklicht ohne Einsatzhorn. Was gilt?",
+                             ["Es warnt nur", "Alle Verkehrsteilnehmer haben sofort freie Bahn zu schaffen"]), kb)
+    assert r.uncertain or 2 not in r.selected

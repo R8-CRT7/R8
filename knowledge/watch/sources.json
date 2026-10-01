@@ -131,6 +131,23 @@
    "norms": [
     "all"
    ]
+  },
+  {
+   "slug": "babrigeschwv",
+   "name": "Autobahn-Richtgeschwindigkeits-Verordnung",
+   "abbreviations": [
+    "BABRiGeschwV 1978",
+    "BABRiGeschwV"
+   ],
+   "search_terms": [
+    "BABRiGeschwV",
+    "Autobahn-Richtgeschwindigkeits-Verordnung",
+    "Richtgeschwindigkeit"
+   ],
+   "priority": 1,
+   "norms": [
+    "all"
+   ]
   }
  ],
  "api": "https://testphase.rechtsinformationen.bund.de"
