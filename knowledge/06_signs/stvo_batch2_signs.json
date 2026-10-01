@@ -1,0 +1,584 @@
+{
+ "items": [
+  {
+   "id": "SGN_ADD_PRIORITY",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 2.1",
+     "para": null,
+     "evidence": "Wer ein Fahrzeug führt, muss Vorfahrt gewähren und dabei auf Radverkehr und Elektrokleinstfahrzeuge im Sinne der eKFV von links und rechts achten.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 2.2",
+     "para": null,
+     "evidence": "Wer ein Fahrzeug führt, muss der Straßenbahn Vorfahrt gewähren.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 3.1",
+     "para": null,
+     "evidence": "Das Zusatzzeichen kündigt zusammen mit dem Zeichen 205 das Haltgebot in der angegebenen Entfernung an.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. Zu 2 und 3",
+     "para": null,
+     "evidence": "Das Zusatzzeichen gibt zusammen mit den Zeichen 205 oder 206 den Verlauf der Vorfahrtstraße (abknickende Vorfahrt) bekannt.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 2.1",
+     "para": null,
+     "evidence": "Wer ein Fahrzeug führt und dem Verlauf der abknickenden Vorfahrtstraße folgen will, muss dies rechtzeitig und deutlich ankündigen; dabei sind die Fahrtrichtungsanzeiger zu benutzen.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 2.1",
+     "para": null,
+     "evidence": "Auf den Fußgängerverkehr ist besondere Rücksicht zu nehmen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "zusatzzeichen",
+   "title": "Zusatzzeichen an Vorfahrtzeichen",
+   "rule": "Über Zeichen 205: Radverkehr von links und rechts beachten bzw. der Straßenbahn Vorfahrt gewähren. Zusatzzeichen mit Entfernung unter 205 kündigt das Haltgebot (Zeichen 206) an. Zusatzzeichen mit dem Straßenverlauf unter 205/206 zeigt die abknickende Vorfahrt; wer der abknickenden Vorfahrtstraße folgt, muss blinken und auf Fußgänger besonders Rücksicht nehmen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "zusatzzeichen",
+    "vorfahrt"
+   ],
+   "keywords": [
+    "Zusatzzeichen",
+    "Zeichen 205",
+    "Zeichen 206",
+    "abknickende Vorfahrt",
+    "Radverkehr beide Richtungen",
+    "Straßenbahn"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zusatzzeichen",
+      "Zeichen 205",
+      "Radfahrer"
+     ],
+     "statement": "Mit dem Zusatzzeichen Radverkehr über Zeichen 205 muss ich auf Radfahrer von links und rechts achten",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Zusatzzeichen",
+      "Zeichen 205",
+      "Straßenbahn"
+     ],
+     "statement": "Mit dem Straßenbahn-Zusatzzeichen über Zeichen 205 muss ich der Straßenbahn Vorfahrt gewähren",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Zusatzzeichen",
+      "Entfernung",
+      "Zeichen 205"
+     ],
+     "statement": "Zeichen 205 mit Entfernungsangabe kündigt ein Stoppschild in dieser Entfernung an",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "abknickende Vorfahrt",
+      "blinken"
+     ],
+     "statement": "Wer der abknickenden Vorfahrtstraße folgt, muss blinken",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "abknickende Vorfahrt",
+      "blinken"
+     ],
+     "statement": "Wer der abknickenden Vorfahrtstraße folgt, muss nicht blinken, weil er Vorfahrt hat",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "abknickende Vorfahrt",
+      "Fußgänger"
+     ],
+     "statement": "Folge ich der abknickenden Vorfahrt, nehme ich auf Fußgänger besondere Rücksicht und warte wenn nötig",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SGN_ADD_RESTRICTIONS",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 27",
+     "para": null,
+     "evidence": "Ist auf einem Zusatzzeichen eine Masse, wie „7,5 t“, angegeben, gilt das Verbot nur, soweit die zulässige Gesamtmasse dieser Verkehrsmittel einschließlich ihrer Anhänger die angegebene Grenze überschreitet.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 49.1",
+     "para": null,
+     "evidence": "Das Zusatzzeichen zu dem Zeichen 274 verbietet Fahrzeugführenden, bei nasser Fahrbahn die angegebene Geschwindigkeit zu überschreiten.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 54.3",
+     "para": null,
+     "evidence": "Das Zusatzzeichen zu dem Zeichen 274, 276, 277 oder 277.1 gibt die Länge einer Geschwindigkeitsbeschränkung oder eines Überholverbots an.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 55",
+     "para": null,
+     "evidence": "Das Ende einer streckenbezogenen Geschwindigkeitsbeschränkung oder eines Überholverbots ist nicht gekennzeichnet, wenn das Verbot nur für eine kurze Strecke gilt und auf einem Zusatzzeichen die Länge des Verbots angegeben ist.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 54.2",
+     "para": null,
+     "evidence": "Mit dem Zusatzzeichen gilt das durch Zeichen 277 angeordnete Überholverbot auch für Kraftomnibusse und Personenkraftwagen mit Anhänger.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "zusatzzeichen",
+   "title": "Zusatzzeichen: Masse, Nässe, Länge, Ende eines Verbots",
+   "rule": "Steht auf einem Zusatzzeichen eine Masse (z. B. 7,5 t), gilt das Verbot nur für Fahrzeuge, deren zulässige Gesamtmasse einschließlich Anhänger darüber liegt. Das Zusatzzeichen 'bei Nässe' zu Zeichen 274 begrenzt die Geschwindigkeit nur bei nasser Fahrbahn. Ein Zusatzzeichen kann die Länge einer Beschränkung angeben; dann ist das Ende nicht eigens gekennzeichnet. Mit Zusatzzeichen gilt das Überholverbot Z 277 auch für Kfz über 2,8 t oder für Busse und Pkw mit Anhänger.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "zusatzzeichen",
+    "geschwindigkeit"
+   ],
+   "keywords": [
+    "Zusatzzeichen",
+    "Masse",
+    "bei Nässe",
+    "Länge",
+    "Überholverbot",
+    "Pkw mit Anhänger"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zusatzzeichen",
+      "bei Nässe",
+      "Zeichen 274"
+     ],
+     "statement": "Die Geschwindigkeitsbegrenzung mit dem Zusatzzeichen Nässe gilt nur bei nasser Fahrbahn",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Zusatzzeichen",
+      "bei Nässe",
+      "Zeichen 274"
+     ],
+     "statement": "Die Geschwindigkeitsbegrenzung mit dem Zusatzzeichen Nässe gilt immer",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Zusatzzeichen",
+      "7,5 t",
+      "Verbot"
+     ],
+     "statement": "Ein Verbot mit dem Zusatzzeichen 7,5 t gilt nur für Fahrzeuge mit einer zulässigen Gesamtmasse über 7,5 t",
+     "truth": true,
+     "numbers": [
+      "7,5 t",
+      "7,5 t"
+     ]
+    },
+    {
+     "context": [
+      "Zusatzzeichen",
+      "Länge",
+      "Ende"
+     ],
+     "statement": "Gibt ein Zusatzzeichen die Länge der Beschränkung an, wird das Ende nicht eigens angezeigt",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Zusatzzeichen",
+      "Zeichen 277",
+      "Pkw mit Anhänger"
+     ],
+     "statement": "Mit dem passenden Zusatzzeichen gilt das Lkw-Überholverbot auch für Pkw mit Anhänger",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SGN_HALT_BAN_SIDE",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 61",
+     "para": null,
+     "evidence": "Die durch die nachfolgenden Zeichen 283 und 286 angeordneten Haltverbote gelten nur auf der Straßenseite, auf der die Zeichen angebracht sind.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 61",
+     "para": null,
+     "evidence": "Sie gelten bis zur nächsten Kreuzung oder Einmündung auf der gleichen Straßenseite",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 61",
+     "para": null,
+     "evidence": "Mobile, vorübergehend angeordnete Haltverbote durch Zeichen 283 und 286 heben Verkehrszeichen auf, die das Parken erlauben.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 62.1",
+     "para": null,
+     "evidence": "Das mit dem Zeichen 283 angeordnete Zusatzzeichen verbietet das Halten von Fahrzeugen auch auf dem Seitenstreifen.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 63.4",
+     "para": null,
+     "evidence": "Das Zusatzzeichen zu Zeichen 286 nimmt Bewohner mit besonderem Parkausweis vom Haltverbot aus.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "haltverbot",
+   "title": "Haltverbote: Straßenseite, Seitenstreifen, Bewohner",
+   "rule": "Haltverbote durch Zeichen 283 und 286 gelten nur auf der Straßenseite, auf der die Zeichen stehen, bis zur nächsten Kreuzung oder Einmündung. Mobile Haltverbote heben Zeichen auf, die das Parken erlauben. Ein Zusatzzeichen zu Zeichen 283 kann das Halten auch oder nur auf dem Seitenstreifen verbieten. Ein Zusatzzeichen zu 286 kann Bewohner mit Parkausweis ausnehmen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "haltverbot",
+    "zusatzzeichen"
+   ],
+   "keywords": [
+    "Haltverbot",
+    "Straßenseite",
+    "nächste Kreuzung",
+    "mobiles Haltverbot",
+    "Seitenstreifen",
+    "Bewohnerparkausweis"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Haltverbot",
+      "Straßenseite"
+     ],
+     "statement": "Ein Haltverbotszeichen gilt nur auf der Straßenseite, auf der es steht",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Haltverbot",
+      "Straßenseite"
+     ],
+     "statement": "Ein Haltverbotszeichen gilt auf beiden Straßenseiten",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Haltverbot",
+      "Kreuzung"
+     ],
+     "statement": "Ein Haltverbot gilt bis zur nächsten Kreuzung oder Einmündung",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "mobiles Haltverbot",
+      "Parken erlaubt"
+     ],
+     "statement": "Ein mobiles Haltverbot hebt ein Schild auf, das das Parken erlaubt",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SGN_PARKING_MARKINGS",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 74",
+     "para": null,
+     "evidence": "Eine Parkflächenmarkierung erlaubt das Parken; auf Gehwegen aber nur Fahrzeugen mit einer zulässigen Gesamtmasse bis zu 2,8 t.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 74",
+     "para": null,
+     "evidence": "Die durch die Parkflächenmarkierung angeordnete Aufstellung ist einzuhalten.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "markierung",
+   "title": "Parkflächenmarkierung",
+   "rule": "Eine Parkflächenmarkierung erlaubt das Parken, auf Gehwegen nur für Fahrzeuge bis 2,8 t zulässige Gesamtmasse. Die markierte Aufstellung ist einzuhalten.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "parken",
+    "markierung"
+   ],
+   "keywords": [
+    "Parkflächenmarkierung",
+    "Gehweg",
+    "2,8 t",
+    "Aufstellung"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Parkflächenmarkierung",
+      "Gehweg"
+     ],
+     "statement": "Auf einer markierten Parkfläche auf dem Gehweg dürfen nur Fahrzeuge bis 2,8 t parken",
+     "truth": true,
+     "numbers": [
+      "2,8 t"
+     ]
+    },
+    {
+     "context": [
+      "Parkflächenmarkierung",
+      "Aufstellung"
+     ],
+     "statement": "Die markierte Aufstellung auf der Parkfläche muss ich einhalten",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SGN_ONEWAY_BIKES",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 9.1",
+     "para": null,
+     "evidence": "Wer ein Fahrzeug führt, muss beim Einbiegen und im Verlauf einer Einbahnstraße auf Radverkehr und Elektrokleinstfahrzeuge im Sinne der eKFV entgegen der Fahrtrichtung achten.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 41.1",
+     "para": null,
+     "evidence": "Durch das Zusatzzeichen zu dem Zeichen 267 ist die Einfahrt für den Radverkehr und Elektrokleinstfahrzeuge im Sinne der eKFV zugelassen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "einbahnstrasse",
+   "title": "Einbahnstraße mit Radverkehr in Gegenrichtung",
+   "rule": "Zeichen 220 mit Zusatzzeichen: Radverkehr in der Gegenrichtung ist zugelassen; beim Einbiegen und in der Einbahnstraße auf entgegenkommende Radfahrer achten. Zeichen 267 mit Zusatzzeichen lässt die Einfahrt für Radverkehr zu.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "einbahnstrasse",
+    "radfahrer"
+   ],
+   "keywords": [
+    "Einbahnstraße",
+    "Radverkehr Gegenrichtung",
+    "Zeichen 220",
+    "Zeichen 267",
+    "Zusatzzeichen"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Einbahnstraße",
+      "Radfahrer frei",
+      "Gegenrichtung"
+     ],
+     "statement": "In einer für Radfahrer in Gegenrichtung freigegebenen Einbahnstraße muss ich mit entgegenkommenden Radfahrern rechnen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Zeichen 267",
+      "Radfahrer frei"
+     ],
+     "statement": "Mit dem Zusatzzeichen Radfahrer frei dürfen Radfahrer trotz Zeichen 267 einfahren",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SGN_TOWN_SIGN_ZIPPER",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. zu 5 und 6",
+     "para": null,
+     "evidence": "Ab der Ortstafel gelten jeweils die für den Verkehr innerhalb oder außerhalb geschlossener Ortschaften bestehenden Vorschriften.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 82.1",
+     "para": null,
+     "evidence": "Bei Einengungstafeln wird mit dem Zusatzzeichen der Ort angekündigt, an dem der Fahrstreifenwechsel nach dem Reißverschlussverfahren (§ 7 Absatz 4) erfolgen soll.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "richtzeichen",
+   "title": "Ortstafel, Einengungstafel",
+   "rule": "Ab der Ortstafel gelten die Vorschriften für innerorts bzw. außerorts. Bei Einengungstafeln kündigt ein Zusatzzeichen an, wo der Fahrstreifenwechsel nach dem Reißverschlussverfahren erfolgen soll.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "ortstafel",
+    "reissverschluss"
+   ],
+   "keywords": [
+    "Ortstafel",
+    "Ortsschild",
+    "innerorts",
+    "Einengungstafel",
+    "Reißverschluss"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Ortstafel",
+      "innerorts"
+     ],
+     "statement": "Ab der Ortstafel gelten die Regeln für innerorts",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Ortstafel",
+      "innerorts",
+      "Geschwindigkeit"
+     ],
+     "statement": "Die innerörtlichen Regeln gelten erst ab den ersten Häusern, nicht ab der Ortstafel",
+     "truth": false,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

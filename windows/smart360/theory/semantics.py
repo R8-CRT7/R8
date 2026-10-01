@@ -116,9 +116,12 @@ def canonicalize(text: str, context: str = "") -> Canon:
         if e.invalid_context and any(v in ctx for v in e.invalid_context):
             continue
         new = t
+        hit = False
         for rx in e.patterns:
-            new = rx.sub(partial(_protected, e=e, rx=rx), new)
-        if new != t:
+            if rx.search(new):
+                hit = True
+                new = rx.sub(partial(_protected, e=e, rx=rx), new)
+        if hit:  # also when the phrase already is in canonical form ('warndreieck' -> 'warndreieck')
             applied.append(e.id)
             conf = min(conf, e.confidence)
             t = new
@@ -205,7 +208,8 @@ def situation_conflict(question: str, claim: str, answer: str = "") -> str | Non
 
 @lru_cache(maxsize=100_000)
 def _sides(text: str) -> tuple[tuple[bool, bool], ...]:
-    words = set(re.findall(r"[a-zäöüß]+", fold(text)))
+    # canonical text: 'nicht mehr X als' is already 'höchstens X wie', so a bare 'mehr X als' is its opposite
+    words = set(re.findall(r"[a-zäöüß]+", canonicalize(text).text))
     return tuple((any(x in words for x, _ in pairs), any(y in words for _, y in pairs))
                  for pairs in load_lexicon().opposites)
 

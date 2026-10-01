@@ -76,7 +76,10 @@ def frame_of(text: str) -> RuleFrame:
     t = canon.text
     cond = conditions(text)
     lex = load_lexicon()
-    objects = frozenset(c for c in canon.concepts if c not in lex.action_concepts)
+    by_id = {e.id: e.concept for e in lex.entries}
+    applied = {by_id[a] for a in canon.applied if a in by_id}
+    # every lexicon entry that matched names a concept (objects rewrite to plain words, actions to tokens)
+    objects = frozenset(c for c in canon.concepts | applied if c not in lex.action_concepts and not c.startswith("CTX"))
     actors = frozenset(a for a, rx in _ACTORS.items() if re.search(rx, t))
     modal = frozenset(m for m, rx in _MODAL if re.search(rx, t))
     nums = tuple((_QUANTITY_OF_UNIT.get(u, "number"), v, u) for v, u in numbers(text) if u)

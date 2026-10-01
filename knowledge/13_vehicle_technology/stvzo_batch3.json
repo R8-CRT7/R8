@@ -1,0 +1,236 @@
+{
+ "items": [
+  {
+   "id": "TEC_HU_PLATE",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 29",
+     "para": "Abs. 2",
+     "evidence": "Der Halter hat den Monat, in dem das Fahrzeug spätestens zur 1. Hauptuntersuchung vorgeführt werden muss, durch eine Prüfplakette nach Anlage IX auf dem Kennzeichen nachzuweisen",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 29",
+     "para": "Abs. 2",
+     "evidence": "auf dem hinteren amtlichen Kennzeichen dauerhaft und gegen Missbrauch gesichert anzubringen.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 29",
+     "para": "Abs. 5",
+     "evidence": "sie dürfen weder verdeckt noch verschmutzt sein.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "13_vehicle_technology",
+   "subtopic": "hauptuntersuchung",
+   "title": "HU-Prüfplakette",
+   "rule": "Der Monat der nächsten Hauptuntersuchung wird durch die Prüfplakette auf dem hinteren Kennzeichen nachgewiesen. Die Prüfplakette darf weder verdeckt noch verschmutzt sein.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "hauptuntersuchung"
+   ],
+   "keywords": [
+    "Prüfplakette",
+    "HU-Plakette",
+    "Kennzeichen",
+    "Hauptuntersuchung",
+    "Halter"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Prüfplakette",
+      "Kennzeichen"
+     ],
+     "statement": "Die HU-Prüfplakette befindet sich auf dem hinteren Kennzeichen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Prüfplakette",
+      "Hauptuntersuchung"
+     ],
+     "statement": "Die Prüfplakette zeigt den Monat, bis zu dem das Fahrzeug spätestens zur Hauptuntersuchung muss",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Prüfplakette",
+      "verschmutzt"
+     ],
+     "statement": "Die Prüfplakette darf weder verdeckt noch verschmutzt sein",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 2,
+   "difficulty": 2
+  },
+  {
+   "id": "TEC_WINTER_TYRES_DEF",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 36",
+     "para": "Abs. 4 Nr. 1",
+     "evidence": "durch deren Laufflächenprofil, Laufflächenmischung oder Bauart vor allem die Fahreigenschaften bei Schnee gegenüber normalen Reifen hinsichtlich ihrer Eigenschaft beim Anfahren, bei der Stabilisierung der Fahrzeugbewegung und beim Abbremsen des Fahrzeugs verbessert werden",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 36",
+     "para": "Abs. 4 Nr. 2",
+     "evidence": "die mit dem Alpine-Symbol (Bergpiktogramm mit Schneeflocke)",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "13_vehicle_technology",
+   "subtopic": "reifen",
+   "title": "Winterreifen: Alpine-Symbol",
+   "rule": "Reifen für winterliche Wetterverhältnisse verbessern die Fahreigenschaften bei Schnee (Anfahren, Stabilität, Bremsen) und tragen das Alpine-Symbol (Bergpiktogramm mit Schneeflocke).",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "reifen",
+    "winter"
+   ],
+   "keywords": [
+    "Winterreifen",
+    "Alpine-Symbol",
+    "Schneeflocke",
+    "Bergpiktogramm",
+    "M+S"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Winterreifen",
+      "Kennzeichnung"
+     ],
+     "statement": "Winterreifen erkennt man am Alpine-Symbol, einem Berg mit Schneeflocke",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Winterreifen",
+      "Schnee"
+     ],
+     "statement": "Winterreifen verbessern bei Schnee das Anfahren, die Stabilität und das Bremsen",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "TEC_WARNING_EQUIPMENT",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 53a",
+     "para": "Abs. 1",
+     "evidence": "Warndreiecke müssen rückstrahlend sein; Warnleuchten müssen gelbes Blinklicht abstrahlen, von der Lichtanlage des Fahrzeugs unabhängig sein und eine ausreichende Brenndauer haben.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 53a",
+     "para": "Abs. 4",
+     "evidence": "die mit Fahrtrichtungsanzeigern ausgerüstet sein müssen, müssen zusätzlich eine Warnblinkanlage haben.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 53a",
+     "para": "Abs. 4 Nr. 1",
+     "evidence": "Für die Schaltung muss im Kraftfahrzeug ein besonderer Schalter vorhanden sein.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "13_vehicle_technology",
+   "subtopic": "ausruestung",
+   "title": "Warndreieck, Warnleuchte, Warnblinkanlage",
+   "rule": "Warndreiecke müssen rückstrahlend sein, Warnleuchten gelbes Blinklicht abstrahlen und von der Lichtanlage des Fahrzeugs unabhängig sein. Fahrzeuge mit vorgeschriebenen Fahrtrichtungsanzeigern brauchen zusätzlich eine Warnblinkanlage mit eigenem Schalter.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "ausruestung",
+    "panne"
+   ],
+   "keywords": [
+    "Warndreieck",
+    "Warnleuchte",
+    "Warnblinkanlage",
+    "rückstrahlend",
+    "Warnweste"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Warndreieck"
+     ],
+     "statement": "Ein Warndreieck muss rückstrahlend sein",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Warnleuchte"
+     ],
+     "statement": "Eine Warnleuchte muss gelbes Blinklicht abstrahlen und von der Fahrzeugbeleuchtung unabhängig sein",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Warnblinkanlage",
+      "Schalter"
+     ],
+     "statement": "Die Warnblinkanlage hat einen eigenen Schalter",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 2,
+   "difficulty": 2
+  }
+ ]
+}

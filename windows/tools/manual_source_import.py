@@ -111,13 +111,24 @@ def evidence_report(knowledge_root: Path, law: str) -> tuple[list[str], list[str
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("file", type=Path)
-    ap.add_argument("--law", required=True, help="law id as cited in the knowledge base, e.g. fev_2010, stvg")
+    ap.add_argument("file", type=Path, nargs="?")
+    ap.add_argument("--law", help="law id as cited in the knowledge base, e.g. fev_2010, stvg")
+    ap.add_argument("--all", action="store_true", help="import every <law>_xml.zip found in knowledge/sources/manual/")
     ap.add_argument("--confirm-official", action="store_true",
                     help="you checked that the file is the official text (needed for HTML/PDF)")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--knowledge", type=Path, default=ROOT / "knowledge")
     a = ap.parse_args(argv)
+    if a.all:
+        files = sorted((a.knowledge / "sources" / "manual").glob("*_xml.zip"))
+        if not files:
+            print("no <law>_xml.zip files in knowledge/sources/manual/ - see the README there")
+            return 1
+        codes = [main([str(f), "--law", f.name.removesuffix("_xml.zip"), "--knowledge", str(a.knowledge)]
+                      + (["--confirm-official"] if a.confirm_official else [])) for f in files]
+        return max(codes)
+    if a.file is None or a.law is None:
+        ap.error("FILE and --law are required (or use --all)")
     parsed = parse_file(a.file, a.law, a.confirm_official)
     print(f"format {parsed.fmt}, {len(parsed.norms)} norms, markers {parsed.markers}, official={parsed.official}")
     if not parsed.norms:

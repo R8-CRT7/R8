@@ -279,6 +279,10 @@ def _claim_verdict(claim: Claim, answer: str, pa: Polarity, numbers_text: str | 
     # a number the claim does not cover (other unit / claim without numbers) -> not decidable from this claim
     a_list = numbers(answer if numbers_text is None else numbers_text)
     c_list = numbers(" ".join([*claim.numbers, claim.statement]))
+    if truth and not a_list and any(u for _, u in numbers(claim.statement)):
+        # 'Warndreieck etwa 100 m hinter das Fahrzeug' cannot confirm 'Warndreieck direkt hinter das Fahrzeug':
+        # the claim's decisive quantity is missing in the answer
+        return Verdict.UNKNOWN, ["claim_quantity_missing"]
     if a_list:
         if not c_list:
             return Verdict.UNKNOWN, ["number_not_covered"]
@@ -407,6 +411,12 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
                 s_ctx = 0.5
             else:
                 s_ctx = max(similarity(q_core, ctx), similarity(q_core, _core(claim.statement))) if ctx else 0.5
+            if use_context and claim.context and s_ctx < 0.2 and ctx:
+                # the answer may name its own situation ('Ein Verbot für Radverkehr gilt ...'): judged by that
+                # situation when it names a distinctive context term of the claim (one the rule's other claims lack)
+                distinct = ctx - _object_common_ctx(obj) - _core(obj.title)
+                if distinct & a_core:
+                    s_ctx = max(s_ctx, similarity(a_core, ctx))
             if use_context and claim.context and s_ctx < 0.2:
                 continue  # the claim belongs to a different situation
             # same proposition? actor and action concepts must agree (lexicon); precedence order must agree
@@ -448,14 +458,30 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
             if unmet and verdict != Verdict.UNKNOWN:
                 verdict, flags = Verdict.UNKNOWN, [*flags, "condition_unmet"]
                 score *= 0.5
-            out.append(_Match(obj, claim, score, verdict, flags, s_ctx, float(len(q_core & ctx))))
+            out.append(_Match(obj, claim, score, verdict, flags, s_ctx, _term_count(q_core & ctx)))
     out.sort(key=lambda m: -m.score)
     return out
+
+
+def _term_count(words: set[str]) -> float:
+    """Number of situation terms: the parts of a split compound ('bahn', 'ubergang' of 'bahnubergang') are one term."""
+    return float(sum(not any(w != o and w in o for o in words) for w in words))
 
 
 @lru_cache(maxsize=4096)
 def _object_core_cached(obj_id: str, text: str) -> frozenset[str]:
     return frozenset(_core(text))
+
+
+@lru_cache(maxsize=4096)
+def _common_ctx_cached(obj_id: str, contexts: tuple[str, ...]) -> frozenset[str]:
+    cores = [_core(c) for c in contexts if c]
+    return frozenset(set.intersection(*cores)) if cores else frozenset()
+
+
+def _object_common_ctx(obj: KnowledgeObject) -> frozenset[str]:
+    """Context words shared by all claims of a rule ('E-Scooter') - they do not distinguish situations."""
+    return _common_ctx_cached(obj.id, tuple(" ".join(c.context) for c in obj.claims))
 
 
 def _object_core(obj: KnowledgeObject) -> frozenset[str]:

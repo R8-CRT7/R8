@@ -1,10 +1,10 @@
 {
  "overall": {
   "n": 160,
-  "accuracy": 0.4437,
-  "coverage": 0.4437,
+  "accuracy": 0.4562,
+  "coverage": 0.4562,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.5563,
+  "uncertain_rate": 0.5437,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -29,10 +29,10 @@
  "by_category": {
   "claims": {
    "n": 160,
-   "accuracy": 0.4437,
-   "coverage": 0.4437,
+   "accuracy": 0.4562,
+   "coverage": 0.4562,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.5563,
+   "uncertain_rate": 0.5437,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -67,10 +67,10 @@
   },
   "04_road_system": {
    "n": 4,
-   "accuracy": 0.5,
-   "coverage": 0.5,
+   "accuracy": 0.75,
+   "coverage": 0.75,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.5,
+   "uncertain_rate": 0.25,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -112,10 +112,10 @@
   },
   "09_manoeuvres": {
    "n": 20,
-   "accuracy": 0.4,
-   "coverage": 0.4,
+   "accuracy": 0.45,
+   "coverage": 0.45,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.6,
+   "uncertain_rate": 0.55,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -168,10 +168,10 @@
  "by_variant": {
   "development_golden": {
    "n": 160,
-   "accuracy": 0.4437,
-   "coverage": 0.4437,
+   "accuracy": 0.4562,
+   "coverage": 0.4562,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.5563,
+   "uncertain_rate": 0.5437,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -181,11 +181,11 @@
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   87
+   85
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
-   51
+   53
   ],
   [
    "rule not verified against an official law text",
@@ -194,21 +194,21 @@
  ],
  "latency_ms": {
   "total_theory_latency": {
-   "p50": 14.62,
-   "p95": 90.43,
-   "max": 1880.4
+   "p50": 12.42,
+   "p95": 81.85,
+   "max": 2151.83
   },
   "retrieval_latency": {
-   "p50": 5.23,
-   "p95": 35.83,
-   "max": 1685.83
+   "p50": 4.64,
+   "p95": 29.98,
+   "max": 2026.48
   },
   "reasoning_latency": {
-   "p50": 8.39,
-   "p95": 74.55,
-   "max": 461.88
+   "p50": 6.76,
+   "p95": 68.72,
+   "max": 454.01
   }
  },
- "seconds": 6.4,
+ "seconds": 6.0,
  "set": "development_golden"
 }

@@ -829,6 +829,264 @@
     "wenigstens",
     "nicht unter(?= \\d)"
    ]
+  },
+  {
+   "id": "obj_warndreieck",
+   "canonical_concept": "WARNING_TRIANGLE",
+   "rewrite": "warndreieck",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "warndreiecke?s?n?"
+   ]
+  },
+  {
+   "id": "obj_warnleuchte",
+   "canonical_concept": "WARNING_LIGHT",
+   "rewrite": "warnleuchte",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "warnleuchten?"
+   ]
+  },
+  {
+   "id": "obj_parkuhr",
+   "canonical_concept": "PARKING_METER",
+   "rewrite": "parkuhr",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "parkuhren?",
+    "parkscheinautomate?n?",
+    "parkscheine?s?"
+   ]
+  },
+  {
+   "id": "obj_parkscheibe",
+   "canonical_concept": "PARKING_DISC",
+   "rewrite": "parkscheibe",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "parkscheiben?"
+   ]
+  },
+  {
+   "id": "obj_pruefplakette",
+   "canonical_concept": "INSPECTION_STICKER",
+   "rewrite": "prüfplakette",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "prüfplaketten?",
+    "hu-plaketten?",
+    "tüv-plaketten?"
+   ]
+  },
+  {
+   "id": "obj_winterreifen",
+   "canonical_concept": "WINTER_TYRE",
+   "rewrite": "winterreifen",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "winterreifen",
+    "reifen für winterliche wetterverhältnisse",
+    "alpine-symbol"
+   ]
+  },
+  {
+   "id": "obj_verkehrseinrichtung",
+   "canonical_concept": "TRAFFIC_DEVICE",
+   "rewrite": "absperrgerät",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "absperrgeräte?n?",
+    "absperrschranken?",
+    "leitschwellen?",
+    "leitborde?",
+    "sperrpfosten"
+   ]
+  },
+  {
+   "id": "obj_verband",
+   "canonical_concept": "CLOSED_GROUP",
+   "rewrite": "verband",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "geschlossene[rn]? verbände?s?",
+    "verbände?s?\\b"
+   ]
+  },
+  {
+   "id": "obj_skates",
+   "canonical_concept": "INLINE_SKATES",
+   "rewrite": "inline-skates",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "inline-skates?r?",
+    "inlineskates?",
+    "rollschuhe?n?"
+   ]
+  },
+  {
+   "id": "obj_zusatzzeichen",
+   "canonical_concept": "ADDITIONAL_SIGN",
+   "rewrite": "zusatzzeichen",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "zusatzzeichens?"
+   ]
+  },
+  {
+   "id": "obj_ortstafel",
+   "canonical_concept": "TOWN_SIGN",
+   "rewrite": "ortstafel",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "ortstafeln?",
+    "ortsschilde?s?n?",
+    "ortseingangsschilde?s?"
+   ]
+  },
+  {
+   "id": "obj_ladeflaeche",
+   "canonical_concept": "LOAD_AREA",
+   "rewrite": "ladefläche",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "ladeflächen?",
+    "laderäume?n?",
+    "laderaum"
+   ]
+  },
+  {
+   "id": "obj_escooter",
+   "canonical_concept": "E_SCOOTER",
+   "rewrite": "e-scooter",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "e-scootern?",
+    "e-roller",
+    "elektrokleinstfahrzeuge?n?s?",
+    "elektro-tretroller"
+   ]
+  },
+  {
+   "id": "obj_haltestelle",
+   "canonical_concept": "STOP_BUS",
+   "rewrite": "haltestelle",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "haltestellen?",
+    "bushaltestellen?",
+    "haltestelleninseln?"
+   ]
+  },
+  {
+   "id": "obj_gleise",
+   "canonical_concept": "RAIL_TRACKS",
+   "rewrite": "gleise",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "gleisanlagen?",
+    "gleise?n?"
+   ]
+  },
+  {
+   "id": "obj_tunnel",
+   "canonical_concept": "TUNNEL",
+   "rewrite": "tunnel",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "tunnels?"
+   ]
+  },
+  {
+   "id": "obj_bahnuebergang",
+   "canonical_concept": "LEVEL_CROSSING",
+   "rewrite": "bahnübergang",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "bahnübergänge?n?s?",
+    "bahnuebergänge?n?s?",
+    "andreaskreuze?s?"
+   ]
+  },
+  {
+   "id": "obj_kreisverkehr",
+   "canonical_concept": "ROUNDABOUT",
+   "rewrite": "kreisverkehr",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "kreisverkehrs?e?",
+    "kreisfahrbahn"
+   ]
+  },
+  {
+   "id": "obj_autobahn",
+   "canonical_concept": "MOTORWAY",
+   "rewrite": "autobahn",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "autobahnen?",
+    "bundesautobahn"
+   ]
+  },
+  {
+   "id": "obj_anhaenger",
+   "canonical_concept": "TRAILER",
+   "rewrite": "anhänger",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "anhängers?n?"
+   ]
+  },
+  {
+   "id": "obj_kinder",
+   "canonical_concept": "CHILD",
+   "rewrite": "kind",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "kinde?r?n?s?"
+   ]
   }
  ],
  "incompatible": [
@@ -1028,6 +1286,20 @@
     [
      "vorwärts",
      "rückwärts"
+    ]
+   ]
+  },
+  {
+   "dimension": "QUANTITY_LIMIT",
+   "_note": "\"nicht mehr X als\" wird zu \"höchstens X wie\" normalisiert; ein bloßes \"mehr X als\" sagt das Gegenteil.",
+   "pairs": [
+    [
+     "höchstens",
+     "mehr"
+    ],
+    [
+     "mindestens",
+     "weniger"
     ]
    ]
   }

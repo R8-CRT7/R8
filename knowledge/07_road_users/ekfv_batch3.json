@@ -1,0 +1,188 @@
+{
+ "items": [
+  {
+   "id": "USR_ESCOOTER_RULES",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 10",
+     "para": "Abs. 2",
+     "evidence": "Außerhalb geschlossener Ortschaften dürfen Elektrokleinstfahrzeuge nur baulich angelegte Radwege",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 10",
+     "para": "Abs. 2",
+     "evidence": "Wenn solche nicht vorhanden sind, darf auf Fahrbahnen gefahren werden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 11",
+     "para": "Abs. 3",
+     "evidence": "Sind an einem Elektrokleinstfahrzeug keine Fahrtrichtungsanzeiger vorhanden, so muss wer ein Elektrokleinstfahrzeug führt, die Richtungsänderung so rechtzeitig und deutlich durch Handzeichen ankündigen",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 11",
+     "para": "Abs. 4",
+     "evidence": "Wer ein Elektrokleinstfahrzeug führt, muss schnellerem Radverkehr das Überholen ohne Behinderung ermöglichen.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 11",
+     "para": "Abs. 4",
+     "evidence": "Auf gemeinsamen Geh- und Radwegen (Zeichen 240 der Anlage 2 zur Straßenverkehrs-Ordnung) haben Fußgänger Vorrang und dürfen weder behindert noch gefährdet werden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 11",
+     "para": "Abs. 5",
+     "evidence": "Für das Abstellen von Elektrokleinstfahrzeugen gelten die für Fahrräder geltenden Parkvorschriften entsprechend.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 12",
+     "para": "Abs. 1",
+     "evidence": "so dürfen Elektrokleinstfahrzeuge dort geschoben werden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 12",
+     "para": "Abs. 3",
+     "evidence": "Ist ein Verbot für den Radverkehr (Zeichen 254 der Anlage 2 zur Straßenverkehrs-Ordnung) angeordnet, so gilt dies auch für Elektrokleinstfahrzeuge.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 6",
+     "para": null,
+     "evidence": "Elektrokleinstfahrzeuge müssen mit mindestens einer helltönenden Glocke ausgerüstet sein.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "07_road_users",
+   "subtopic": "escooter",
+   "title": "E-Scooter: Verkehrsflächen, Rücksicht, Abstellen",
+   "rule": "Außerorts dürfen E-Scooter (Elektrokleinstfahrzeuge) nur baulich angelegte Radwege, gemeinsame Geh- und Radwege, Radfahrstreifen, Fahrradstraßen und Seitenstreifen befahren; fehlen diese, die Fahrbahn. Auf Radverkehrsflächen Rücksicht auf Radfahrer nehmen und schnellere Radfahrer überholen lassen. Auf gemeinsamen Geh- und Radwegen haben Fußgänger Vorrang. Ohne Blinker die Richtungsänderung per Handzeichen anzeigen. Abstellen wie Fahrräder. Bei Zeichen 250 darf geschoben werden; ein Radverbot (Zeichen 254) gilt auch für E-Scooter. Eine helltönende Glocke ist vorgeschrieben.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "escooter"
+   ],
+   "keywords": [
+    "E-Scooter",
+    "Elektrokleinstfahrzeug",
+    "Radweg",
+    "Handzeichen",
+    "Abstellen",
+    "Glocke",
+    "Zeichen 254"
+   ],
+   "claims": [
+    {
+     "context": [
+      "E-Scooter",
+      "außerorts",
+      "Radweg"
+     ],
+     "statement": "Außerorts fahre ich mit dem E-Scooter auf dem Radweg, wenn einer vorhanden ist",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "gemeinsamer Geh- und Radweg",
+      "Fußgänger"
+     ],
+     "statement": "Auf einem gemeinsamen Geh- und Radweg haben Fußgänger Vorrang vor E-Scootern",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Radfahrer",
+      "überholen"
+     ],
+     "statement": "Mit dem E-Scooter muss ich schnelleren Radfahrern das Überholen ermöglichen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "ohne Blinker",
+      "abbiegen"
+     ],
+     "statement": "Hat der E-Scooter keine Blinker, zeige ich das Abbiegen mit Handzeichen an",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Zeichen 254",
+      "Radverbot"
+     ],
+     "statement": "Ein Verbot für Radverkehr gilt auch für E-Scooter",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Zeichen 254",
+      "Radverbot"
+     ],
+     "statement": "Ein Verbot für Radverkehr gilt nicht für E-Scooter",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Abstellen"
+     ],
+     "statement": "E-Scooter werden nach den Parkregeln für Fahrräder abgestellt",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Glocke"
+     ],
+     "statement": "Ein E-Scooter muss eine helltönende Glocke haben",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 2,
+   "difficulty": 2
+  }
+ ]
+}
