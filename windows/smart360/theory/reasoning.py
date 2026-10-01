@@ -22,7 +22,17 @@ from smart360.theory.negation import Deontic, Polarity, analyze, asks_for_negati
 from smart360.theory.priority import PriorityDecision, decide
 from smart360.theory.scene import Scene, temporal_check
 from smart360.theory.schema import Claim, KnowledgeObject, Sign
-from smart360.theory.text import NUMBER_TOKEN, content, cosine, fold, numbers, ocr_repair, similarity, stem, vocab_repair
+from smart360.theory.text import (
+    NUMBER_TOKEN,
+    content,
+    cosine,
+    fold,
+    numbers,
+    ocr_repair,
+    similarity,
+    stem,
+    vocab_repair,
+)
 
 DEFAULT_THRESHOLD = 0.75
 MATCH_MIN = 0.55  # minimum statement similarity for a claim to count
