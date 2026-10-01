@@ -1,0 +1,15 @@
+{
+ "slug": "ekfv",
+ "abbreviation": "eKFV",
+ "name": "Verordnung über die Teilnahme von Elektrokleinstfahrzeugen am Straßenverkehr",
+ "eli": "eli/bund/bgbl-1/2019/s756/2026-04-01/1/deu",
+ "legal_force": "InForce",
+ "zip_url": "https://testphase.rechtsinformationen.bund.de/v1/legislation/eli/bund/bgbl-1/2019/s756/2026-04-01/1/deu/2026-05-12.zip",
+ "files": [
+  "anlage-regelungstext-1.xml",
+  "anlage-regelungstext-2.xml",
+  "rechtsetzungsdokument-1.xml",
+  "regelungstext-verkuendung-1.xml"
+ ],
+ "fetched_at": "2026-10-01T10:42:39Z"
+}
