@@ -31,7 +31,9 @@ from smart360.theory.semantics import (
     opposite_conflict,
     precedence,
     resolve_answer,
+    separable_verbs,
     situation_conflict,
+    split_compound,
 )
 from smart360.theory.text import (
     NUMBER_TOKEN,
@@ -187,7 +189,25 @@ _POLARITY_WORDS = {stem(w) for w in (
 
 
 def _core(text: str) -> set[str]:
-    return {w for w in content(text) if w not in _POLARITY_WORDS}
+    """Content words + compound parts known to the KB ('Grundstücksausfahrt' -> grundstück, ausfahrt) + separable
+    verbs re-joined ('schleppen ... ab' -> abschleppen)."""
+    return set(_core_cached(text))
+
+
+@lru_cache(maxsize=200_000)
+def _core_cached(text: str) -> frozenset[str]:
+    base = {w for w in content(text) if w not in _POLARITY_WORDS}
+    extra: set[str] = set()
+    for w in base:
+        extra.update(split_compound(w))
+    for v in separable_verbs(text):
+        extra |= content(v)
+    return frozenset(base | (extra - _POLARITY_WORDS))
+
+
+# words that only say what kind of question it is - a question made of these names no situation
+_META = frozenset(content("aussage aussagen falsch richtig richtige gilt gelten tun verhalten wann wie was welche "
+                          "welcher bedeutet bedeutung zutreffend korrekt trifft zu stimmt hier dabei folgende"))
 
 
 @dataclass
@@ -197,6 +217,7 @@ class _Match:
     score: float
     verdict: Verdict
     flags: list[str]
+    s_ctx: float = 0.0  # how well the claim's situation matches the question
 
 
 _CONJ = r"(solange|wenn|weil|dass|ob|bis|obwohl|falls|sofern|nachdem|bevor|damit|sodass|während|sobald)"
@@ -303,7 +324,7 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
         # rules (objects) that never mention a question qualifier another candidate rule covers are general rules
         shadowed = specific - obj_core[obj.id]
         topic_core = _core(obj.title + " " + " ".join(obj.keywords))
-        for claim in obj.claims:
+        for claim in (part for c in obj.claims for part in _claim_parts(c)):
             if situation_conflict(question, " ".join(claim.context) + " " + claim.statement, answer):
                 continue  # 'Arm hoch' claim for an 'Arme quer' question, 'Zeichen 283' for 'Zeichen 286'
             if numeric_only:
@@ -343,7 +364,10 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
             ctx = _core(" ".join(claim.context)) if claim.context else set()
             if (ctx - _excluded_terms(" ".join(claim.context))) & excluded:
                 continue  # the question rules out a situation this claim assumes ('Blaulicht ohne Martinshorn')
-            s_ctx = max(similarity(q_core, ctx), similarity(q_core, _core(claim.statement))) if ctx else 0.5
+            if not q_core - _META:  # 'Welche Aussage ist falsch?' - the question names no situation to compare
+                s_ctx = 0.5
+            else:
+                s_ctx = max(similarity(q_core, ctx), similarity(q_core, _core(claim.statement))) if ctx else 0.5
             if use_context and claim.context and s_ctx < 0.2:
                 continue  # the claim belongs to a different situation
             # same proposition? actor and action concepts must agree (lexicon); precedence order must agree
@@ -385,7 +409,7 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
             if unmet and verdict != Verdict.UNKNOWN:
                 verdict, flags = Verdict.UNKNOWN, [*flags, "condition_unmet"]
                 score *= 0.5
-            out.append(_Match(obj, claim, score, verdict, flags))
+            out.append(_Match(obj, claim, score, verdict, flags, s_ctx))
     out.sort(key=lambda m: -m.score)
     return out
 
@@ -456,6 +480,47 @@ def _answer_proposition(question: str, answer: str) -> tuple[str, str]:
 def _yes_no_reason(answer: str) -> str:
     qa = _YES_NO_A.match(answer)
     return qa.group(2).strip() if qa else ""
+
+
+_NICHT_SONDERN = re.compile(r"^(?P<neg>.*?\b(?:nicht|kein\w*)\b.*?),?\s+sondern\s+(?P<pos>.+)$", re.IGNORECASE)
+_LEADING_PRONOUN_REPLY = re.compile(r"^\s*(nichts|niemand|keine[rsn]?)\s*[,:;-]\s*(?=\S)", re.IGNORECASE)
+
+
+@lru_cache(maxsize=4096)
+def _split_claim(statement: str) -> tuple[str, ...]:
+    m = _NICHT_SONDERN.match(statement)
+    return (m.group("neg").rstrip(" ,"), m.group("pos")) if m else ()
+
+
+def _claim_parts(claim: Claim) -> list[Claim]:
+    """'X ordnet nicht an, A zu tun, sondern warnt' -> 'X ordnet nicht an, A zu tun' + 'warnt': the negation
+    binds to the first predicate only; both parts keep the claim's truth."""
+    parts = _split_claim(claim.statement)
+    if not parts:
+        return [claim]
+    return [claim.model_copy(update={"statement": p}) for p in parts]
+
+
+_STATEMENT_Q = re.compile(r"\b(aussagen?|trifft|treffen|zutreffend|richtig|falsch|stimmt|stimmen)\b", re.IGNORECASE)
+_SLOT_START = frozenset("auf an am in im bei beim vor hinter neben über unter zwischen nach bis ab mit ohne für zum zur "
+                        "innerhalb außerhalb".split())
+
+
+def _slot_proposition(question: str, answer: str) -> str | None:
+    """A short answer without polarity of its own to a W-question that has a polarity ('unzulässig', 'muss',
+    'darf nicht') -> the proposition built with the question, else None."""
+    if not _is_short(answer) or numbers(answer) or _STATEMENT_Q.search(question):
+        return None
+    words = answer.split()
+    if not (words[0].lower() in _SLOT_START or (len(words) <= 3 and not _SUBJECT_START.match(answer))):
+        return None
+    pa = analyze(answer)
+    if pa.negated or pa.deontic != Deontic.NONE or action_concepts(answer):
+        return None
+    pq = analyze(question)
+    if not pq.negated and pq.deontic == Deontic.NONE:
+        return None
+    return resolve_answer(question, answer)
 
 
 def _is_short(answer: str) -> bool:
@@ -574,6 +639,8 @@ def _eval_sign(kb: KnowledgeBase, q: TheoryQuestion) -> list[AnswerEval]:
         if a_core and a_core == name:
             return 2.0, 1.0  # the official name itself
         cov = len(a_core & d) / len(a_core) if a_core else 0.0
+        if action_concepts(f"{sg.name}. {sg.meaning}") - a_acts:
+            cov *= 0.5  # the answer omits what the sign orders ('Vorfahrt gewähren', 'anhalten')
         return cov, cosine(a_core, d)
 
     lex = load_lexicon()
@@ -752,9 +819,11 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
 
     # claims (semantic checks A: question context + answer)
     claim_matches: dict[int, _Match | None] = {}
+    eval_text: dict[int, str] = {}
     for i, a in enumerate(q.answers, start=1):
         if i in evals and evals[i].verdict != Verdict.UNKNOWN:
             continue
+        slot = None
         a_eval, a_mode = _answer_proposition(q.text, a)
         if a_mode == "yes_no":
             verdict, best, flags = _decide_claims(match_claims(kb, q.text, a_eval, candidates))
@@ -767,8 +836,17 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
                 elif verdict == Verdict.UNKNOWN and r_verdict != Verdict.UNKNOWN:
                     verdict, best, flags = r_verdict, r_best, [*flags, "yes_no_by_reason"]
         else:
+            # 'Nichts, erst ab 2 m ist ...': the leading pronoun answers the question, it does not negate the clause
+            a = _LEADING_PRONOUN_REPLY.sub("", a) if len(a.split()) > 3 else a
             matches = match_claims(kb, q.text, a, candidates)
             verdict, best, flags = _decide_claims(matches)
+            slot = _slot_proposition(q.text, a)
+            if slot:
+                # 'Wo ist das Halten unzulässig?' + 'Auf Bahnübergängen': the polarity is the question's - the bare
+                # slot answer must not be compared with 'unzulässig' in the claim on its own
+                s_verdict, s_best, s_flags = _decide_claims(match_claims(kb, q.text, slot, candidates))
+                if s_verdict != Verdict.UNKNOWN or verdict != Verdict.UNKNOWN:
+                    verdict, best, flags = s_verdict, s_best or best, [*s_flags, "slot_answer"]
             parts = clauses(a)
             if len(parts) > 1:
                 # composition: 'A und B' is true only if every clause is; one false clause makes it false
@@ -790,6 +868,10 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
                     if r_best is not None and (best is None or r_verdict != Verdict.UNKNOWN):
                         verdict, best, flags = r_verdict, r_best, [*r_flags, "resolved_answer"]
         claim_matches[i] = best
+        if "slot_answer" in flags and slot:
+            eval_text[i] = slot
+        elif a_mode == "yes_no":
+            eval_text[i] = a_eval
         if best is not None:
             evals[i] = AnswerEval(i, verdict, "claim", [best.obj.id], _explain(best), best.score, flags)
         else:
@@ -806,7 +888,7 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
     for i, best in claim_matches.items():
         if best is None or evals[i].verdict == Verdict.UNKNOWN:
             continue
-        alt = match_claims(kb, q.text, q.answers[i - 1], [best.obj], use_context=False)
+        alt = match_claims(kb, q.text, eval_text.get(i, q.answers[i - 1]), [best.obj], use_context=False)
         alt_v, _, _ = _decide_claims(alt)
         if alt_v not in (evals[i].verdict, Verdict.UNKNOWN):
             disagreements += 1

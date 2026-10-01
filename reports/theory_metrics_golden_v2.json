@@ -1,10 +1,10 @@
 {
  "overall": {
   "n": 80,
-  "accuracy": 0.325,
-  "coverage": 0.325,
+  "accuracy": 0.3125,
+  "coverage": 0.3125,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.675,
+  "uncertain_rate": 0.6875,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -29,10 +29,10 @@
  "by_category": {
   "claims": {
    "n": 80,
-   "accuracy": 0.325,
-   "coverage": 0.325,
+   "accuracy": 0.3125,
+   "coverage": 0.3125,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.675,
+   "uncertain_rate": 0.6875,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -112,10 +112,10 @@
   },
   "09_manoeuvres": {
    "n": 10,
-   "accuracy": 0.2,
-   "coverage": 0.2,
+   "accuracy": 0.1,
+   "coverage": 0.1,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.8,
+   "uncertain_rate": 0.9,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -168,10 +168,10 @@
  "by_variant": {
   "golden": {
    "n": 80,
-   "accuracy": 0.325,
-   "coverage": 0.325,
+   "accuracy": 0.3125,
+   "coverage": 0.3125,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.675,
+   "uncertain_rate": 0.6875,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -181,13 +181,13 @@
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   54
+   55
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
-   39
+   38
   ]
  ],
- "seconds": 2.1,
+ "seconds": 2.4,
  "set": "golden_v2"
 }

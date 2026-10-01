@@ -789,6 +789,17 @@
    ]
   },
   {
+   "id": "qual_max_np",
+   "canonical_concept": "AT_MOST",
+   "rewrite": "höchstens \\1 wie",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "nicht mehr (\\w+(?: \\w+){0,3}),? als"
+   ]
+  },
+  {
    "id": "qual_max",
    "canonical_concept": "AT_MOST",
    "rewrite": "höchstens",

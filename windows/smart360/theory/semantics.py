@@ -100,7 +100,7 @@ def _protected(m: re.Match[str], e: LexEntry, rx: re.Pattern[str]) -> str:
         if e.id.startswith("act_") and len(_NEGATOR.findall(m.group(0))) == 1:
             return "nicht " + e.rewrite
         return m.group(0)
-    return e.rewrite
+    return m.expand(e.rewrite) if "\\" in e.rewrite else e.rewrite
 
 
 @lru_cache(maxsize=100_000)
@@ -222,6 +222,65 @@ def flip_opposites(text: str) -> str:
     """'links' <-> 'rechts': compare an answer with a claim about the opposite side."""
     swap = {w: v for pairs in load_lexicon().opposites for x, y in pairs for w, v in ((x, y), (y, x))}
     return re.sub(r"[a-zäöüß]+", lambda m: swap.get(m.group(0), m.group(0)), fold(text))
+
+
+# ----------------------------------------------------------------------------- word formation
+_LINKERS = ("", "s", "es", "n", "en", "e")
+_PARTICLES = frozenset("ab an auf aus ein zurück weiter vorbei fest los um mit nach heran hinaus vor zu".split())
+_NOT_VERB = frozenset("der die das den dem des ein eine einen einem einer nicht kein keine noch schon dann "
+                      "auch nur bitte sofort ich sie er es wir man mich sich".split())
+
+
+@lru_cache(maxsize=1)
+def _vocab() -> frozenset[str]:
+    """Stems of the knowledge base (rules, claims, signs) - the parts a compound may be split into."""
+    from smart360.theory.kb import get_kb
+    from smart360.theory.text import content
+
+    kb = get_kb()
+    parts: list[str] = []
+    for o in kb.objects.values():
+        parts += [o.title, o.rule, *o.keywords, *(" ".join(c.context) + " " + c.statement for c in o.claims)]
+    for sg in kb.signs.values():
+        parts += [sg.name, sg.meaning, *sg.keywords]
+    return frozenset(w for w in content(" ".join(parts)) if len(w) >= 4)
+
+
+@lru_cache(maxsize=50_000)
+def split_compound(stem_word: str) -> tuple[str, ...]:
+    """'grundstucksausfahr' -> ('grundstuck', 'ausfahr') when both parts are knowledge-base stems
+    (linking -s/-es/-n/-en/-e allowed). Unknown parts -> no split (no free decomposition)."""
+    from smart360.theory.text import stem
+
+    v = _vocab()
+    if len(stem_word) < 8 or not stem_word.isalpha():
+        return ()
+    for i in range(len(stem_word) - 4, 3, -1):  # longest head first
+        left, right = stem_word[:i], stem_word[i:]
+        if right not in v and stem(right) not in v:
+            continue
+        for link in _LINKERS:
+            if link and not left.endswith(link):
+                continue
+            head = left[: len(left) - len(link)] if link else left
+            if len(head) >= 4 and (head in v or stem(head) in v):
+                return (head if head in v else stem(head), right if right in v else stem(right))
+    return ()
+
+
+def separable_verbs(text: str) -> set[str]:
+    """'Sie schleppen ein Fahrzeug ab' -> {'abschleppen'}: German separable verbs put the particle at the end
+    of the clause; the finite verb is the first lower-case word after the subject."""
+    out = set()
+    for clause in re.split(r"[.,;:?!]", text):
+        toks = clause.split()
+        if len(toks) < 3 or toks[-1].lower() not in _PARTICLES:
+            continue
+        for t in toks[1:-1]:
+            if t[:1].islower() and t.lower() not in _NOT_VERB and t.isalpha():
+                out.add(toks[-1].lower() + t.lower())
+                break
+    return out
 
 
 # ----------------------------------------------------------------------------- intents
