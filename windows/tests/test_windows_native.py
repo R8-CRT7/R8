@@ -210,7 +210,7 @@ def test_real_dry_run_shows_targets_and_sends_no_input(qtbot, tmp_path):
     from smart360.engine.trace import SessionTrace, latest_trace, read_trace
 
     tracer = SessionTrace(tmp_path)
-    sim, _win, engine, events = _native_setup(
+    sim, win, engine, events = _native_setup(
         qtbot, EngineSettings(settle_s=0.4, safe_mode=True, dry_run=True), tracer
     )
     engine.start()
@@ -223,11 +223,14 @@ def test_real_dry_run_shows_targets_and_sends_no_input(qtbot, tmp_path):
         assert ev.data["ok"] and ev.data["dry_run"]
         qtbot.wait(600)
         assert len(sim.clicks) == 0 and sim.state.selected == set()  # deque, not list
-        ox, oy = sim.origin
+        from PySide6.QtCore import QPoint
+
         for c in ev.data["clicks"]:
+            # the same mapping a real click takes: screen -> simulator window -> checkbox (runner: 100 % DPI)
+            local = win.mapFromGlobal(QPoint(c["x"], c["y"]))
             box = sim._checkboxes[c["answer"]]
-            assert box.x - 4 <= c["x"] - ox <= box.x + box.w + 4, c
-            assert box.y - 4 <= c["y"] - oy <= box.y + box.h + 4, c
+            assert box.x - 4 <= local.x() <= box.x + box.w + 4, (c, local, box)
+            assert box.y - 4 <= local.y() <= box.y + box.h + 4, (c, local, box)
             assert c["blocked"] is None, c  # nothing covers the simulator window
         images = [e["image"] for e in read_trace(latest_trace(tmp_path)) if e.get("image")]
         assert any("dryrun" in i for i in images)
