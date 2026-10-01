@@ -15,7 +15,7 @@ from __future__ import annotations
 import json
 import re
 from dataclasses import dataclass, field
-from functools import lru_cache
+from functools import lru_cache, partial
 from pathlib import Path
 
 from smart360.theory.text import fold
@@ -117,7 +117,7 @@ def canonicalize(text: str, context: str = "") -> Canon:
             continue
         new = t
         for rx in e.patterns:
-            new = rx.sub(lambda m, e=e, rx=rx: _protected(m, e, rx), new)
+            new = rx.sub(partial(_protected, e=e, rx=rx), new)
         if new != t:
             applied.append(e.id)
             conf = min(conf, e.confidence)
@@ -391,11 +391,11 @@ def conditions(text: str) -> Conditions:
     m = re.search(r"(\d+)[- ]?(jährig|jahre alt)", t)
     if m:
         c.age_years = float(m.group(1))
-    for v, u in numbers(text):
-        if u == "cm":
-            c.height_cm = v
-        if u in ("kg", "t"):
-            c.mass_kg.append(v * 1000 if u == "t" else v)
+    for val, unit in numbers(text):
+        if unit == "cm":
+            c.height_cm = val
+        if unit in ("kg", "t"):
+            c.mass_kg.append(val * 1000 if unit == "t" else val)
     for w in ("stau", "stockt", "staut"):
         if w in t:
             c.traffic_state.add("stau")

@@ -1,10 +1,10 @@
 {
  "overall": {
   "n": 5240,
-  "accuracy": 0.7725,
-  "coverage": 0.7725,
+  "accuracy": 0.7719,
+  "coverage": 0.7719,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.2275,
+  "uncertain_rate": 0.2281,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -29,10 +29,10 @@
  "by_category": {
   "claims": {
    "n": 3309,
-   "accuracy": 0.7135,
-   "coverage": 0.7135,
+   "accuracy": 0.7126,
+   "coverage": 0.7126,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2865,
+   "uncertain_rate": 0.2874,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -121,10 +121,10 @@
   },
   "05_priority": {
    "n": 1660,
-   "accuracy": 0.8464,
-   "coverage": 0.8464,
+   "accuracy": 0.8446,
+   "coverage": 0.8446,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1536,
+   "uncertain_rate": 0.1554,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -258,10 +258,10 @@
   },
   "context": {
    "n": 577,
-   "accuracy": 0.662,
-   "coverage": 0.662,
+   "accuracy": 0.6603,
+   "coverage": 0.6603,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.338,
+   "uncertain_rate": 0.3397,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -339,19 +339,19 @@
   },
   "ocr_noise": {
    "n": 1218,
-   "accuracy": 0.72,
-   "coverage": 0.72,
+   "accuracy": 0.7192,
+   "coverage": 0.7192,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.28,
+   "uncertain_rate": 0.2808,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "paraphrase": {
    "n": 563,
-   "accuracy": 0.7176,
-   "coverage": 0.7176,
+   "accuracy": 0.7158,
+   "coverage": 0.7158,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2824,
+   "uncertain_rate": 0.2842,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -406,7 +406,7 @@
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   1130
+   1133
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
@@ -417,6 +417,6 @@
    61
   ]
  ],
- "seconds": 72.4,
+ "seconds": 66.6,
  "set": "synthetic"
 }

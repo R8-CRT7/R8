@@ -54,6 +54,8 @@ from smart360.theory.text import (
 DEFAULT_THRESHOLD = 0.75
 MATCH_MIN = 0.55  # minimum statement similarity for a claim to count
 AMBIGUITY_GAP = 0.08
+SPECIFIC_WINDOW = 0.25  # how far below the best match a more specific, disagreeing claim is still heard
+SPECIFICITY_GAP = 2  # matched situation terms more than the best claim that make a claim 'more specific'
 NUMERIC_SITUATION_MIN = 0.3
 SIGN_MATCH_MIN = 0.35  # cosine between an answer and a sign description
 # Words that change which number applies. If the question contains one that the matched claim does not, a
@@ -228,6 +230,7 @@ class _Match:
     verdict: Verdict
     flags: list[str]
     s_ctx: float = 0.0  # how well the claim's situation matches the question
+    spec: float = 0.0  # number of question terms the claim's context names (specificity of its situation)
 
 
 _CONJ = r"(solange|wenn|weil|dass|ob|bis|obwohl|falls|sofern|nachdem|bevor|damit|sodass|während|sobald)"
@@ -419,7 +422,7 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
             if unmet and verdict != Verdict.UNKNOWN:
                 verdict, flags = Verdict.UNKNOWN, [*flags, "condition_unmet"]
                 score *= 0.5
-            out.append(_Match(obj, claim, score, verdict, flags, s_ctx))
+            out.append(_Match(obj, claim, score, verdict, flags, s_ctx, float(len(q_core & ctx))))
     out.sort(key=lambda m: -m.score)
     return out
 
@@ -560,6 +563,12 @@ def _decide_claims(matches: list[_Match]) -> tuple[Verdict, _Match | None, list[
             break
         if other.verdict != best.verdict:
             return Verdict.UNKNOWN, best, ["conflicting_rules"]
+    for other in decisive[1:]:
+        # a less similar but clearly more situation-specific claim disagrees: the general rule may not apply here
+        # (exception). Never pick a side - UNKNOWN.
+        if (best.score - other.score <= SPECIFIC_WINDOW and other.verdict != best.verdict
+                and other.spec - best.spec >= SPECIFICITY_GAP):
+            return Verdict.UNKNOWN, best, ["more_specific_rule_disagrees"]
     if "exception_risk" in best.flags or "qualifier_missing" in best.flags:
         return Verdict.UNKNOWN, best, [*best.flags]
     return best.verdict, best, list(best.flags)
@@ -878,8 +887,8 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
                         v, b, f = next(x for x in sub if x[0] == Verdict.FALSE)
                         verdict, best, flags = v, b, [*f, "clause_false"]
                 elif verdict == Verdict.UNKNOWN and all(v == Verdict.TRUE for v, _, _ in sub):
-                    verdict, best, flags = Verdict.TRUE, min((x[1] for x in sub), key=lambda m: m.score), \
-                        ["clauses_true"]
+                    weakest = min((x[1] for x in sub if x[1] is not None), key=lambda m: m.score, default=best)
+                    verdict, best, flags = Verdict.TRUE, weakest, ["clauses_true"]
             if verdict == Verdict.UNKNOWN and _is_short(a):
                 # short answer to a W-question: read it together with the question as one proposition
                 prop = resolve_answer(q.text, a)

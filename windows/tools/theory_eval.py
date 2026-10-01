@@ -37,6 +37,8 @@ CATEGORY_OF_VARIANT = {
     "number_input": "numeric", "calc_ocr": "numeric", "calc_factor": "numeric", "calc_factor_neg": "numeric",
     "number_change": "numeric", "unit_error": "numeric", "priority": "priority", "sign": "sign",
     "val_negq": "negation",
+    "val_competing": "competing_rule",
+    "val_long": "long_irrelevant",
     "sign_paraphrase": "sign", "sign_ocr": "sign", "licence": "licence", "licence_paraphrase": "licence",
 }
 

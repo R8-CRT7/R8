@@ -430,7 +430,7 @@ _VAL_STEMS = ("Welches Verhalten ist richtig?", "Was trifft zu?", "Wie verhalten
               "Was ist korrekt?", "Welche Aussage stimmt?")
 _VAL_NEG_STEMS = ("Welche Aussage trifft nicht zu?", "Was ist falsch?")
 _VAL_NOISE = ("Es ist Dienstagvormittag.", "Ihr Beifahrer unterhält sich mit Ihnen.", "Das Radio läuft leise.",
-              "Sie sind auf dem Weg zur Arbeit.", "Die Straße ist trocken.")
+              "Sie sind auf dem Weg zur Arbeit.")  # noise must never change the situation (no weather, no road)
 _SIE = [(r"\bIch muss\b", "Sie müssen"), (r"\bIch darf\b", "Sie dürfen"), (r"\bich muss\b", "müssen Sie"),
         (r"\bich darf\b", "dürfen Sie"), (r"\bIch\b", "Sie"), (r"\bmuss ich\b", "müssen Sie"),
         (r"\bdarf ich\b", "dürfen Sie"), (r"\bmich\b", "sich"), (r"\bmeine\b", "Ihre"), (r"\bmein\b", "Ihr")]
@@ -455,7 +455,8 @@ def validation_items(kb: KnowledgeBase, seed: int = 4242) -> list[TheoryItem]:
         for ti, t in enumerate(trues):
             same = [f for f in falses if _same_situation(f, t)] or falses
             ctx = list(t.context)
-            for variant in ("val_actor", "val_noise", "val_reorder", "val_stem", "val_negq", "val_short"):
+            for variant in ("val_actor", "val_noise", "val_reorder", "val_stem", "val_negq", "val_short",
+                            "val_competing", "val_long"):
                 opts = [(t.statement, True)] + [(f.statement, False) for f in rng.sample(same, min(2, len(same)))]
                 situation = ", ".join(ctx) or obj.title
                 stem = rng.choice(_VAL_STEMS)
@@ -473,6 +474,16 @@ def validation_items(kb: KnowledgeBase, seed: int = 4242) -> list[TheoryItem]:
                 elif variant == "val_negq":
                     stem = rng.choice(_VAL_NEG_STEMS)
                     want_false = True
+                elif variant == "val_competing":
+                    # a wrong statement of a similar, competing rule of the same topic as an extra distractor
+                    rivals = [f for o in objs if o.topic == obj.topic and o.id != obj.id for f in o.claims if not f.truth]
+                    if rivals:
+                        opts.append((rng.choice(rivals).statement, False))
+                elif variant == "val_long":
+                    c2 = ctx[:]
+                    rng.shuffle(c2)
+                    situation = (f"{rng.choice(_VAL_NOISE)} Sie sind unterwegs und achten auf den Verkehr. "
+                                 f"Situation: {', '.join(c2) or obj.title}")
                 rng.shuffle(opts)
                 correct = tuple(i for i, (_, v) in enumerate(opts, start=1) if v != want_false)
                 if not correct:

@@ -30,6 +30,7 @@ from smart360.tutor.mastery import MasteryState, compute
 from smart360.tutor.planner import NextTask, SubtopicInfo, plan
 from smart360.tutor.store import Attempt, LearnerStore
 
+NOT_PROVABLE = "Diese Regel kann ich noch nicht zuverlässig belegen."
 UNVERIFIED_NOTE = ("Hinweis: Diese Regel stammt aus einem Gesetz, dessen amtlicher Text hier noch nicht "
                    "abgeglichen werden konnte (FeV/StVG). Bitte mit aktueller Quelle prüfen.")
 
@@ -132,14 +133,18 @@ class LearnSession:
         if item.question.number_input:
             return []
         res = solve(item.question, self.kb)
+        negative = "negative_question" in res.kinds
         out = []
         for i, text in enumerate(item.question.answers, start=1):
             ok = i in item.correct
             ev = res.evals[i - 1] if i - 1 < len(res.evals) else None
-            if ev is not None and ev.verdict != Verdict.UNKNOWN and ev.explanation:
+            expected = (Verdict.FALSE if negative else Verdict.TRUE) if ok else (Verdict.TRUE if negative else Verdict.FALSE)
+            if ev is not None and ev.verdict == expected and ev.explanation:
                 why = ev.explanation
             else:
-                why = "Diese Aussage trifft in dieser Situation zu." if ok else "Diese Aussage trifft in dieser Situation nicht zu."
+                # the engine cannot back this option (UNKNOWN) or contradicts the answer key: never explain a rule
+                # it cannot prove - only the answer key and an honest note
+                why = ("Laut Lösung richtig. " if ok else "Laut Lösung falsch. ") + NOT_PROVABLE
             out.append(OptionFeedback(text, ok, i in chosen, why))
         return out
 
