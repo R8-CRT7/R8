@@ -1,0 +1,17 @@
+{
+ "slug": "stvo_2013",
+ "abbreviation": "StVO",
+ "name": "Straßenverkehrs-Ordnung",
+ "eli": "eli/bund/bgbl-1/2013/s367/2025-01-01/1/deu",
+ "legal_force": "InForce",
+ "zip_url": "https://testphase.rechtsinformationen.bund.de/v1/legislation/eli/bund/bgbl-1/2013/s367/2025-01-01/1/deu/2026-04-01.zip",
+ "files": [
+  "anlage-regelungstext-1.xml",
+  "anlage-regelungstext-2.xml",
+  "anlage-regelungstext-3.xml",
+  "anlage-regelungstext-4.xml",
+  "rechtsetzungsdokument-1.xml",
+  "regelungstext-verkuendung-1.xml"
+ ],
+ "fetched_at": "2026-10-01T09:27:22Z"
+}
