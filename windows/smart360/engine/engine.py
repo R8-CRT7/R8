@@ -77,6 +77,7 @@ class EngineSettings:
     # positions or a window that moved since the question was read; no click retries.
     safe_mode: bool = False
     dry_run: bool = False  # do everything up to SendInput, report WHERE it would click, click nothing
+    theory_crosscheck: bool = False  # rule-based cross-check; can only turn a prediction into 'uncertain'
 
 
 # blocks after which another attempt cannot help (the same capture gives the same answer)
@@ -571,6 +572,8 @@ class Engine:
                 pred = self._from_cache(q)
             if pred is None:
                 pred = self._from_ai(q)
+            if self.settings.theory_crosscheck:
+                pred = self._theory_crosscheck(q, pred)
             self._cmds.put(("analysis_done", (q, gen, pred, (time.perf_counter() - t0) * 1000)))
         except ProviderError as e:
             self._cmds.put(("analysis_failed", (q, gen, e)))
@@ -579,6 +582,21 @@ class Engine:
             self._cmds.put(
                 ("analysis_failed", (q, gen, ProviderError(f"{type(e).__name__}: {e}", True, "server")))
             )
+
+    def _theory_crosscheck(self, q: Question, pred: Prediction) -> Prediction:
+        """Only ever makes the prediction more conservative (see smart360.theory.crosscheck)."""
+        from smart360.theory.crosscheck import crosscheck
+
+        cc = crosscheck(q.text, [a.text for a in q.answers], q.question_type is QuestionType.NUMBER_INPUT,
+                        q.ocr_confidence, q.has_image, pred.answers, pred.number_answer)
+        self._trace("theory_crosscheck", question_id=q.question_id, verdict=cc.verdict,
+                    theory_selected=list(cc.theory_selected), theory_number=cc.theory_number,
+                    theory_confidence=round(cc.theory_confidence, 4), reasons=list(cc.reasons))
+        if not cc.should_block or pred.uncertain:
+            return pred
+        theirs = list(cc.theory_selected) or cc.theory_number
+        note = f"Regel-Engine widerspricht (Regel-Engine: {theirs})"
+        return replace(pred, uncertain=True, reason=f"{pred.reason} | {note}")
 
     def _from_cache(self, q: Question) -> Prediction | None:
         try:

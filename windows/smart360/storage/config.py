@@ -82,6 +82,9 @@ class SafetySettings(BaseModel):
     safe_mode: bool = True
     # do everything up to the click, show WHERE it would click, click nothing - switch off deliberately
     dry_run: bool = True
+    # cross-check AI answers with the rule-based theory engine; a confident contradiction makes the answer
+    # 'uncertain' (no click in safe mode). Can only make results more conservative. Off until real-PC tested.
+    theory_crosscheck: bool = False
 
 
 class PrivacySettings(BaseModel):

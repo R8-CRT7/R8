@@ -156,6 +156,7 @@ class Services:
             debug_dir=paths.debug_dir() if c.privacy.debug_screenshots else None,
             safe_mode=c.safety.safe_mode,
             dry_run=c.safety.dry_run,
+            theory_crosscheck=c.safety.theory_crosscheck,
         )
 
     def session_tracer(self) -> SessionTrace | None:
