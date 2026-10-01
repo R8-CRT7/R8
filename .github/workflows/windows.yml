@@ -2,7 +2,7 @@ name: windows (tests, native, installer)
 
 on:
   push:
-    branches: ["main", "claude/**"]
+    branches: ["main", "claude/**", "feature/**"]
     paths: ["windows/**", ".github/workflows/windows.yml"]
   pull_request:
     paths: ["windows/**", ".github/workflows/windows.yml"]

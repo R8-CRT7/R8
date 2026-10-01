@@ -1,0 +1,51 @@
+name: knowledge watch (official law sources)
+
+# Daily: download the official law texts (gesetze-im-internet.de), compare them with the reviewed snapshots in
+# knowledge/sources/snapshots and report changes + affected knowledge. NEVER changes knowledge automatically.
+# Bootstrap/refresh of the snapshots happens only on a push whose message contains [refresh-sources]
+# (a deliberate, reviewed step).
+
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+  push:
+    branches: ["feature/**", "claude/**"]
+    paths: ["windows/tools/knowledge_watch.py", "knowledge/watch/**", ".github/workflows/knowledge-watch.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  watch:
+    name: daily-theory-knowledge-check
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch official sources
+        run: python windows/tools/knowledge_watch.py fetch --out "$RUNNER_TEMP/new"
+      - name: Compare with reviewed snapshots + impact analysis
+        run: |
+          python windows/tools/knowledge_watch.py compare --new "$RUNNER_TEMP/new" \
+            --report "$RUNNER_TEMP/report.md" --json "$RUNNER_TEMP/report.json"
+          cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: knowledge-watch-report
+          path: |
+            ${{ runner.temp }}/report.md
+            ${{ runner.temp }}/report.json
+      - name: Refresh snapshots (only on an explicit [refresh-sources] push)
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '[refresh-sources]')
+        run: |
+          mkdir -p knowledge/sources/snapshots
+          cp "$RUNNER_TEMP"/new/*.json knowledge/sources/snapshots/
+          git config user.name "knowledge-watch[bot]"
+          git config user.email "knowledge-watch@users.noreply.github.com"
+          git add knowledge/sources/snapshots
+          git diff --cached --quiet && echo "snapshots unchanged" && exit 0
+          git commit -m "sources: official law snapshots ($(date -u +%Y-%m-%d)) [skip ci]"
+          git push origin HEAD:${{ github.ref_name }}
