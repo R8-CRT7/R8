@@ -29,6 +29,7 @@ from smart360.theory.semantics import (
     flip_opposites,
     load_lexicon,
     opposite_conflict,
+    participle_base,
     precedence,
     resolve_answer,
     separable_verbs,
@@ -37,6 +38,7 @@ from smart360.theory.semantics import (
 )
 from smart360.theory.text import (
     NUMBER_TOKEN,
+    UMLAUT_FOLD,
     canon,
     content,
     cosine,
@@ -148,6 +150,10 @@ def classify(q: TheoryQuestion) -> tuple[set[str], dict]:
     if "bremsweg" in t and any(w in t for w in _FACTOR_WORDS) and not speeds:
         k = next(v for w, v in _FACTOR_WORDS.items() if w in t)
         task = {"formula": "braking_distance_factor", "inputs": {"k": k}}
+    elif "bremsweg" in t and len(speeds) >= 2 and re.search(r"\bstatt\b|\bändert\b|\bverändert\b|\bvon .* auf\b", t) \
+            and speeds[0] > 0:
+        # 'statt 30 km/h nun 90 km/h': ratio of two speeds -> factor of the braking distance
+        task = {"formula": "braking_distance_factor", "inputs": {"k": speeds[1] / speeds[0]}}
     elif speeds:
         v = speeds[0]
         if "anhalteweg" in t:
@@ -156,7 +162,8 @@ def classify(q: TheoryQuestion) -> tuple[set[str], dict]:
             task = {"formula": "emergency_braking_distance" if emergency else "braking_distance", "inputs": {"v_kmh": v}}
         elif "reaktionsweg" in t:
             task = {"formula": "reaction_distance", "inputs": {"v_kmh": v}}
-        elif re.search(r"halbe[rn]? tacho|sicherheitsabstand|mindestabstand", t) and "außerorts" in t.replace("ausserorts", "außerorts"):
+        elif re.search(r"halbe[rn]? tacho|sicherheitsabstand|mindestabstand|abstand\b.*\b(vorausfahrend|vordermann|"
+                       r"vorderfahrzeug|faustregel)|faustregel\b.*\babstand", t) and "außerorts" in t.replace("ausserorts", "außerorts"):
             task = {"formula": "safe_distance_half_speedometer", "inputs": {"v_kmh": v}}
         elif re.search(r"(\d+)\s*sekunden?", t) and re.search(r"zurück|fahren sie|legen sie", t):
             secs = float(re.search(r"(\d+(?:[.,]\d+)?)\s*sekunden?", t).group(1).replace(",", "."))  # type: ignore[union-attr]
@@ -183,9 +190,9 @@ def classify(q: TheoryQuestion) -> tuple[set[str], dict]:
 
 
 # ----------------------------------------------------------------------------- claim matching
-_POLARITY_WORDS = {stem(w) for w in (
+_POLARITY_WORDS = {f(stem(w)) for f in (lambda x: x, lambda x: x.translate(UMLAUT_FOLD)) for w in (
     "nicht", "kein", "keine", "keinen", "nie", "niemals", "darf", "dürfen", "muss", "müssen", "kann", "können",
-    "erlaubt", "verboten", "untersagt", "unzulässig", "zulässig", "braucht", "brauchen", "sollte", "nichts")}
+    "erlaubt", "verboten", "untersagt", "unzulässig", "zulässig", "braucht", "brauchen", "sollte", "nichts", "niemand")}
 
 
 def _core(text: str) -> set[str]:
@@ -200,6 +207,7 @@ def _core_cached(text: str) -> frozenset[str]:
     extra: set[str] = set()
     for w in base:
         extra.update(split_compound(w))
+        extra.update(participle_base(w))
     for v in separable_verbs(text):
         extra |= content(v)
     return frozenset(base | (extra - _POLARITY_WORDS))
@@ -343,7 +351,7 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
                     # negation ('darf bis 15 m nicht geparkt werden') must not flip it - same value = claim's truth
                     verdict = Verdict.TRUE if claim.truth else Verdict.FALSE
                 flags = [*flags, "numeric_answer"]
-                missing = (q_core & QUALIFIERS) - c_all - _negated_qualifiers(question)
+                missing = _uncovered_qualifiers((q_core & QUALIFIERS) - _negated_qualifiers(question), c_all)
                 excluded = _negated_qualifiers(question) & c_all
                 if excluded:  # question says 'ohne Anhänger' but the claim is about the trailer case
                     flags.append("qualifier_excluded")
@@ -442,6 +450,13 @@ def clauses(answer: str) -> list[str]:
     return [parts[0], *(p if _SUBJECT_START.match(p) else f"ich {p}" for p in parts[1:])]
 
 
+def _uncovered_qualifiers(quals: set[str], claim_words: set[str]) -> set[str]:
+    """Question qualifiers the claim does not cover. The head of a compound covers it ('Wohnanhänger' is an
+    'Anhänger': a claim about Anhänger covers the Wohnanhänger question)."""
+    have = claim_words & QUALIFIERS
+    return {x for x in quals - claim_words if not any(x != h and x.endswith(h) for h in have)}
+
+
 def _excluded_terms(text: str) -> set[str]:
     """Content words the question explicitly excludes: 'ohne Martinshorn', 'kein Gehweg' (one word after)."""
     out: set[str] = set()
@@ -469,7 +484,7 @@ def _answer_proposition(question: str, answer: str) -> tuple[str, str]:
     qa = _YES_NO_A.match(answer)
     if not (_YES_NO_Q.match(question) and qa):
         return answer, "plain"
-    prop = re.sub(r"[?!.]+\s*$", "", question.strip())
+    prop = re.sub(r"\s*\([^)]*\)", "", re.sub(r"[?!.]+\s*$", "", question.strip()))  # (asides) are no part of it
     prop = re.sub(r",\s*(um|damit|wenn|weil)\b.*$", "", prop)  # purpose/condition of the question is not the claim
     first, _, rest = prop.partition(" ")
     if qa.group(1).lower() == "nein":
@@ -632,16 +647,19 @@ def _eval_sign(kb: KnowledgeBase, q: TheoryQuestion) -> list[AnswerEval]:
 
     def fit(a_core: set[str], excl: set[str], a_acts: set[str], sg: Sign, official: bool = False) -> tuple[float, float]:
         d = _core(desc(sg, official))
-        if excl & _core(f"{sg.name} {sg.meaning}") or any(
+        if (excl - sign_excl(sg)) & _core(f"{sg.name} {sg.meaning}") or any(
                 lex.incompatible_with(x, y) for x in a_acts for y in action_concepts(f"{sg.name}. {sg.meaning}")):
             return 0.0, 0.0  # 'ohne anhalten' contradicts a sign whose meaning is 'anhalten'
         name = _core(sg.name)
         if a_core and a_core == name:
             return 2.0, 1.0  # the official name itself
         cov = len(a_core & d) / len(a_core) if a_core else 0.0
-        if action_concepts(f"{sg.name}. {sg.meaning}") - a_acts:
-            cov *= 0.5  # the answer omits what the sign orders ('Vorfahrt gewähren', 'anhalten')
+        if len(a_core) <= 6 and action_concepts(f"{sg.name}. {sg.meaning}") - a_acts:
+            cov *= 0.5  # a short answer that omits what the sign orders ('Vorfahrt gewähren', 'anhalten')
         return cov, cosine(a_core, d)
+
+    def sign_excl(sg: Sign) -> set[str]:
+        return _excluded_terms(f"{sg.name} {sg.meaning}")
 
     lex = load_lexicon()
     for i, a in enumerate(q.answers, start=1):
@@ -820,9 +838,11 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
     # claims (semantic checks A: question context + answer)
     claim_matches: dict[int, _Match | None] = {}
     eval_text: dict[int, str] = {}
-    for i, a in enumerate(q.answers, start=1):
+    for i, a_raw in enumerate(q.answers, start=1):
         if i in evals and evals[i].verdict != Verdict.UNKNOWN:
             continue
+        # 'Nichts, erst ab 2 m ist ...': the leading pronoun answers the question, it does not negate the clause
+        a = _LEADING_PRONOUN_REPLY.sub("", a_raw) if len(a_raw.split()) > 3 else a_raw
         slot = None
         a_eval, a_mode = _answer_proposition(q.text, a)
         if a_mode == "yes_no":
@@ -836,8 +856,6 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
                 elif verdict == Verdict.UNKNOWN and r_verdict != Verdict.UNKNOWN:
                     verdict, best, flags = r_verdict, r_best, [*flags, "yes_no_by_reason"]
         else:
-            # 'Nichts, erst ab 2 m ist ...': the leading pronoun answers the question, it does not negate the clause
-            a = _LEADING_PRONOUN_REPLY.sub("", a) if len(a.split()) > 3 else a
             matches = match_claims(kb, q.text, a, candidates)
             verdict, best, flags = _decide_claims(matches)
             slot = _slot_proposition(q.text, a)
@@ -961,8 +979,17 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
     return TheoryResult(selected, number_answer, ordered, round(conf, 4), uncertain, reasons, kinds, factors, trace)
 
 
-_WHO_FIRST = re.compile(r"\bwer (hat|hätte) (hier |jetzt |dort )?(die )?vorfahrt\b|\bwer (darf|fährt) (hier |jetzt )?zuerst\b",
+_WHO_FIRST = re.compile(r"\bwer (hat|hätte|hatte)( \w+){0,6} (vorfahrt|vorrang)\b|"
+                        r"\bwelche \w+ (hat|hätte) (den )?vorrang\b|\bwer (darf|fährt) (hier |jetzt )?zuerst\b",
                         re.IGNORECASE)
+
+
+def _party(answer: str) -> set[str]:
+    """The party an answer to 'Wer hat Vorrang?' names: 'Ich, weil ...' -> {ich}; 'Der Pkw von rechts' -> {pkw, rechts}."""
+    head = re.split(r",|\bweil\b|\bda\b|\bdenn\b", answer, maxsplit=1)[0].strip().lower()
+    if re.match(r"^ich\b", head):
+        return {"ich"}
+    return _core(head)
 
 
 def _affirmative(text: str) -> bool:
@@ -1002,12 +1029,12 @@ def _joint_answers(q: TheoryQuestion, evals: dict[int, AnswerEval], n: int, nega
                     break
         if _WHO_FIRST.search(q.text):
             for j, e in evals.items():
-                aj = q.answers[j - 1].strip().lower()
-                if e.verdict != Verdict.UNKNOWN or not re.match(r"^ich\b", aj):
+                pj = _party(q.answers[j - 1])
+                if e.verdict != Verdict.UNKNOWN or not pj:
                     continue
-                if any(not re.match(r"^ich\b", q.answers[i - 1].strip().lower()) for i in true_idx):
+                if any((pi := _party(q.answers[i - 1])) and not pi & pj for i in true_idx):
                     e.verdict, e.method = Verdict.FALSE, "joint"
-                    e.explanation = "Vorfahrt kann nur eine Seite haben - eine andere Antwort ist belegt."
+                    e.explanation = "Vorrang kann nur eine Seite haben - eine andere Antwort ist belegt."
                     e.flags.append("excluded_by_answer")
                     notes.append(f"{j} excluded (one party has right of way)")
     return "; ".join(notes)

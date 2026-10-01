@@ -1,10 +1,10 @@
 {
  "overall": {
   "n": 1476,
-  "accuracy": 0.7981,
-  "coverage": 0.7981,
+  "accuracy": 0.8042,
+  "coverage": 0.8042,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.2019,
+  "uncertain_rate": 0.1958,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -29,10 +29,10 @@
  "by_category": {
   "claims": {
    "n": 1230,
-   "accuracy": 0.7967,
-   "coverage": 0.7967,
+   "accuracy": 0.8041,
+   "coverage": 0.8041,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2033,
+   "uncertain_rate": 0.1959,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -103,55 +103,55 @@
   },
   "07_road_users": {
    "n": 168,
-   "accuracy": 0.8274,
-   "coverage": 0.8274,
+   "accuracy": 0.8214,
+   "coverage": 0.8214,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1726,
+   "uncertain_rate": 0.1786,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "08_speed_distance": {
    "n": 108,
-   "accuracy": 0.8704,
-   "coverage": 0.8704,
+   "accuracy": 0.9167,
+   "coverage": 0.9167,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1296,
+   "uncertain_rate": 0.0833,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "09_manoeuvres": {
    "n": 192,
-   "accuracy": 0.7969,
-   "coverage": 0.7969,
+   "accuracy": 0.7865,
+   "coverage": 0.7865,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2031,
+   "uncertain_rate": 0.2135,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "10_parking": {
    "n": 90,
-   "accuracy": 0.8444,
-   "coverage": 0.8444,
+   "accuracy": 0.9333,
+   "coverage": 0.9333,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1556,
+   "uncertain_rate": 0.0667,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "11_special": {
    "n": 102,
-   "accuracy": 0.7059,
-   "coverage": 0.7059,
+   "accuracy": 0.7157,
+   "coverage": 0.7157,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2941,
+   "uncertain_rate": 0.2843,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "13_vehicle_technology": {
    "n": 132,
-   "accuracy": 0.6288,
-   "coverage": 0.6288,
+   "accuracy": 0.6136,
+   "coverage": 0.6136,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.3712,
+   "uncertain_rate": 0.3864,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -168,10 +168,10 @@
  "by_variant": {
   "val_actor": {
    "n": 246,
-   "accuracy": 0.7805,
-   "coverage": 0.7805,
+   "accuracy": 0.7927,
+   "coverage": 0.7927,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2195,
+   "uncertain_rate": 0.2073,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -186,19 +186,19 @@
   },
   "val_noise": {
    "n": 246,
-   "accuracy": 0.7846,
-   "coverage": 0.7846,
+   "accuracy": 0.7927,
+   "coverage": 0.7927,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2154,
+   "uncertain_rate": 0.2073,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "val_reorder": {
    "n": 246,
-   "accuracy": 0.7967,
-   "coverage": 0.7967,
+   "accuracy": 0.8049,
+   "coverage": 0.8049,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2033,
+   "uncertain_rate": 0.1951,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -213,10 +213,10 @@
   },
   "val_stem": {
    "n": 246,
-   "accuracy": 0.8008,
-   "coverage": 0.8008,
+   "accuracy": 0.8089,
+   "coverage": 0.8089,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1992,
+   "uncertain_rate": 0.1911,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -226,17 +226,17 @@
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   280
+   271
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
-   51
+   50
   ],
   [
    "rule not verified against an official law text",
    18
   ]
  ],
- "seconds": 21.2,
+ "seconds": 22.4,
  "set": "validation"
 }

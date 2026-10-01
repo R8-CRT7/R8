@@ -13,7 +13,7 @@ from enum import StrEnum
 from smart360.theory.text import fold
 
 NEGATORS = ("nicht", "kein", "keine", "keinen", "keinem", "keiner", "keines", "nie", "niemals", "keinesfalls",
-            "nichts", "weder", "auf keinen fall")
+            "nichts", "niemand", "niemanden", "weder", "auf keinen fall")
 PERMIT = ("darf", "dürfen", "duerfen", "dürfte", "erlaubt", "zulässig", "zulaessig", "gestattet")
 OBLIGE = ("muss", "müssen", "muessen", "musste", "verpflichtet", "ist zu", "sind zu", "hat zu", "haben zu",
           "vorgeschrieben", "pflicht")
@@ -59,7 +59,7 @@ def analyze(text: str) -> Polarity:
     from smart360.theory.semantics import canonicalize
 
     t = canonicalize(text).text  # phrases like 'nicht gefährden' are already absorbed into a concept
-    n_neg = len(re.findall(r"(?<![a-zäöü])(nicht|kein\w*|nie|niemals|keinesfalls|nichts)(?![a-zäöü])", t))
+    n_neg = len(re.findall(r"(?<![a-zäöü])(nicht|kein\w*|nie|niemals|niemand\w*|keinesfalls|nichts)(?![a-zäöü])", t))
     prohibit = _hits(t, ("verboten", "untersagt", "unzulässig", "unzulaessig"))
     permit = _hits(t, PERMIT)
     oblige = _hits(t, OBLIGE)

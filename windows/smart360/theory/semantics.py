@@ -90,7 +90,7 @@ class Canon:
     applied: tuple[str, ...]
 
 
-_NEGATOR = re.compile(r"(?<![a-zäöüß])(nicht|kein\w*|nie|niemals|keinesfalls|nichts)(?![a-zäöüß])")
+_NEGATOR = re.compile(r"(?<![a-zäöüß])(nicht|kein\w*|nie|niemals|niemand\w*|keinesfalls|nichts)(?![a-zäöüß])")
 
 
 def _protected(m: re.Match[str], e: LexEntry, rx: re.Pattern[str]) -> str:
@@ -265,6 +265,19 @@ def split_compound(stem_word: str) -> tuple[str, ...]:
             head = left[: len(left) - len(link)] if link else left
             if len(head) >= 4 and (head in v or stem(head) in v):
                 return (head if head in v else stem(head), right if right in v else stem(right))
+    return ()
+
+
+@lru_cache(maxsize=50_000)
+def participle_base(stem_word: str) -> tuple[str, ...]:
+    """Past participle -> verb stem when the KB knows it: 'abgeschlepp' -> 'abschlepp', 'gefahr' -> 'fahr'."""
+    v = _vocab()
+    for p in sorted(_PARTICLES, key=len, reverse=True):
+        if stem_word.startswith(p + "ge") and len(stem_word) > len(p) + 5:
+            cand = p + stem_word[len(p) + 2:]
+            return (cand,) if cand in v else ()
+    if stem_word.startswith("ge") and len(stem_word) >= 6 and stem_word[2:] in v:
+        return (stem_word[2:],)
     return ()
 
 

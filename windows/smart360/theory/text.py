@@ -106,6 +106,7 @@ def words(text: str) -> list[str]:
 
 
 _UMLAUT = str.maketrans("äöü", "aou")
+UMLAUT_FOLD = _UMLAUT
 
 
 def content(text: str, keep: frozenset[str] = frozenset()) -> set[str]:

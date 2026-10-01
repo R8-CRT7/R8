@@ -126,7 +126,9 @@
     "fussgänger(in|innen|n)?",
     "zu fuß gehende[nr]?",
     "zu fuss gehende[nr]?",
-    "passant(in|en)?"
+    "passant(in|en)?",
+    "zu fuß",
+    "zu fuss"
    ]
   },
   {
@@ -534,7 +536,7 @@
     "gebe (ich )?gas",
     "(geschwindigkeit|tempo) (zu )?erhöhen",
     "(geschwindigkeit|tempo) erhöhe",
-    "schneller (zu )?(werden|fahren)"
+    "schneller (zu )?(werden|fahren)(?! als)"
    ]
   },
   {
