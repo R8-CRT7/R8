@@ -1,5 +1,6 @@
 """Exam simulator (theory test, class B) - structure and pass rule come from the numeric knowledge base
-(FeV Anlage 7, verified against the official law snapshot), not from hard-coded memory.
+(FeV Anlage 7), not from code. The FeV is not available as an official snapshot yet, so ExamRules.source says
+'NICHT amtlich verifiziert' until the knowledge watch can fetch it.
 
 In exam mode there is no help and no solution while answering. Afterwards: full analysis per question and
 per topic, error points, pass/fail, and the learner profile is updated (mode='exam')."""
@@ -25,12 +26,13 @@ class ExamRules:
 def class_b_rules() -> ExamRules:
     kb = get_kb()
     n = kb.numeric
+    verified = all(kb.verified(i) for i in ("FEV_A7_B_QUESTIONS", "FEV_A7_B_MAX_ERROR_POINTS"))
     return ExamRules(
         questions=int(n["FEV_A7_B_QUESTIONS"].value),
         max_error_points=int(n["FEV_A7_B_MAX_ERROR_POINTS"].value),
         fail_on_two_five_point_errors=True,
         minutes=int(n["FEV_A7_B_MINUTES"].value) if "FEV_A7_B_MINUTES" in n else None,
-        source="FeV Anlage 7 (snapshot verified)",
+        source="FeV Anlage 7" + ("" if verified else " - NICHT amtlich verifiziert (kein offizieller Snapshot)"),
     )
 
 

@@ -107,6 +107,17 @@ def paths_conflict(a: Participant, b: Participant) -> bool:
         if veh.kind == "pedestrian":
             return False
         return ped.crossing_arm in (veh.arm, exit_arm(veh))
+    if a.in_roundabout != b.in_roundabout:
+        # roundabout (right-hand traffic, counter-clockwise): the circulating vehicle passes every arm between its
+        # entry and its exit; an entering vehicle conflicts with it if its entry arm is one of those
+        inside, entering = (a, b) if a.in_roundabout else (b, a)
+        steps = {"right": 1, "straight": 2, "left": 3}.get(inside.intent, 3)
+        passed: list[str] = []
+        arm: str = inside.arm
+        for _ in range(steps - 1):
+            arm = right_of(arm)
+            passed.append(arm)
+        return entering.arm in passed
     if a.arm == b.arm:  # same entry: only a cyclist going straight next to a right/left turner
         return (a.on_bike_path_straight and b.intent != "straight") or (
             b.on_bike_path_straight and a.intent != "straight")

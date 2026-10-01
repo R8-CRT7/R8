@@ -1,42 +1,237 @@
-{"items": [
-{"id": "HUM_DISTRACTION", "topic": "02_human_risk", "subtopic": "ablenkung", "title": "Ablenkung, Sicht und Gehör",
- "rule": "Wer fährt, ist verantwortlich, dass Sicht und Gehör nicht durch Besetzung, Tiere, Ladung, Geräte oder den Fahrzeugzustand beeinträchtigt werden. Handy/Navi nur nach § 23 Abs. 1a. Ablenkung verlängert die Reaktionszeit und damit den Reaktionsweg.",
- "concepts": ["ablenkung", "reaktionsweg", "aufmerksamkeit"], "keywords": ["Ablenkung", "Sicht", "Gehör", "Kopfhörer", "Tiere", "Aufmerksamkeit", "Reaktionszeit"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 23", "para": "Abs. 1", "evidence": "Wer ein Fahrzeug führt, ist dafür verantwortlich, dass seine Sicht und das Gehör nicht durch die Besetzung, Tiere, die Ladung, Geräte oder den Zustand des Fahrzeugs beeinträchtigt werden."}],
- "claims": [
-  {"context": ["Sicht", "Gehör", "beeinträchtigt"], "statement": "Ich bin dafür verantwortlich, dass meine Sicht und mein Gehör nicht durch Ladung, Tiere oder Geräte beeinträchtigt werden", "truth": true},
-  {"context": ["Ablenkung", "Reaktionsweg"], "statement": "Ablenkung verlängert den Reaktionsweg", "truth": true}]},
-
-{"id": "HUM_FATIGUE", "topic": "02_human_risk", "subtopic": "muedigkeit", "title": "Müdigkeit",
- "rule": "Müdigkeit verlängert die Reaktionszeit, verursacht Sekundenschlaf und Fehleinschätzungen. Gegenmittel: Pause mit Bewegung/kurzer Schlaf; Kaffee, Musik oder offenes Fenster helfen nur kurz und beseitigen Müdigkeit nicht.",
- "concepts": ["muedigkeit", "reaktionsweg", "fahrtuechtigkeit"], "keywords": ["Müdigkeit", "Sekundenschlaf", "Pause", "Gähnen", "lange Fahrt"],
- "exam_relevance": 2, "difficulty": 1,
- "sources": [{"type": "driving_school", "ref": "Allgemeines Ausbildungswissen (eigene Zusammenfassung); Grundpflicht: § 3 Abs. 1 StVO (persönliche Fähigkeiten)"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 3", "para": "Abs. 1 Satz 2", "evidence": "Die Geschwindigkeit ist insbesondere den Straßen-, Verkehrs-, Sicht- und Wetterverhältnissen sowie den persönlichen Fähigkeiten und den Eigenschaften von Fahrzeug und Ladung anzupassen."}],
- "claims": [
-  {"context": ["Müdigkeit", "Anzeichen", "lange Fahrt"], "statement": "Bei Müdigkeit sollte ich eine Pause einlegen", "truth": true},
-  {"context": ["Müdigkeit", "Anzeichen"], "statement": "Laute Musik und ein offenes Fenster beseitigen die Müdigkeit zuverlässig", "truth": false},
-  {"context": ["Müdigkeit", "Sekundenschlaf"], "statement": "Müdigkeit kann zu Sekundenschlaf führen", "truth": true}]},
-
-{"id": "HUM_ALCOHOL", "topic": "02_human_risk", "subtopic": "alkohol", "title": "Alkohol",
- "rule": "Alkohol verlängert die Reaktionszeit, verengt das Blickfeld, erhöht die Risikobereitschaft; der Abbau erfolgt langsam (nur Zeit hilft). Grenzwerte (0,5 ‰ Ordnungswidrigkeit, 0,0 ‰ in der Probezeit und unter 21) stehen im StVG – im Container NICHT amtlich verifiziert.",
- "numeric_refs": ["STVG_24A_ALCOHOL_05", "STVG_24C_NOVICE_ZERO"],
- "concepts": ["alkohol", "fahrtuechtigkeit", "probezeit"], "keywords": ["Alkohol", "Promille", "Restalkohol", "Probezeit", "Fahranfänger", "Kaffee"],
- "exam_relevance": 3, "difficulty": 2, "confidence": 0.8,
- "sources": [{"type": "law", "law": "stvg", "norm": "§ 24a", "ref": "StVG §§ 24a, 24c – nicht im RIS-Testbestand, NICHT verifiziert"}],
- "claims": [
-  {"context": ["Alkohol", "Abbau", "beschleunigen"], "statement": "Kaffee oder kaltes Duschen beschleunigt den Alkoholabbau", "truth": false},
-  {"context": ["Alkohol", "Wirkung"], "statement": "Alkohol verlängert die Reaktionszeit und erhöht die Risikobereitschaft", "truth": true},
-  {"context": ["Alkohol", "Probezeit", "Grenze"], "statement": "In der Probezeit gilt ein absolutes Alkoholverbot am Steuer", "truth": true}]},
-
-{"id": "HUM_EMOTIONS", "topic": "02_human_risk", "subtopic": "emotionen", "title": "Emotionen, Stress, Gruppendruck",
- "rule": "Ärger, Zeitdruck, Imponiergehabe oder Gruppendruck führen zu riskantem Fahren. Defensiv fahren, Provokationen nicht erwidern, Vorrang nicht erzwingen.",
- "concepts": ["emotionen", "risiko", "defensiv"], "keywords": ["Ärger", "Stress", "Zeitdruck", "aggressiv", "Gruppendruck", "defensiv", "Drängler"],
- "exam_relevance": 2, "difficulty": 1,
- "sources": [{"type": "driving_school", "ref": "Allgemeines Ausbildungswissen (eigene Zusammenfassung)"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 1", "evidence": "Die Teilnahme am Straßenverkehr erfordert ständige Vorsicht und gegenseitige Rücksicht."}],
- "claims": [
-  {"context": ["Drängler", "dicht auffahren", "ärgern"], "statement": "Ich sollte gelassen bleiben und den Drängler bei Gelegenheit vorbeilassen", "truth": true},
-  {"context": ["Drängler", "dicht auffahren", "ärgern"], "statement": "Ich sollte kurz bremsen, um den Drängler zu warnen", "truth": false}]}
-]}
+{
+ "items": [
+  {
+   "id": "HUM_DISTRACTION",
+   "topic": "02_human_risk",
+   "subtopic": "ablenkung",
+   "title": "Ablenkung, Sicht und Gehör",
+   "rule": "Wer fährt, ist verantwortlich, dass Sicht und Gehör nicht durch Besetzung, Tiere, Ladung, Geräte oder den Fahrzeugzustand beeinträchtigt werden. Handy/Navi nur nach § 23 Abs. 1a. Ablenkung verlängert die Reaktionszeit und damit den Reaktionsweg.",
+   "concepts": [
+    "ablenkung",
+    "reaktionsweg",
+    "aufmerksamkeit"
+   ],
+   "keywords": [
+    "Ablenkung",
+    "Sicht",
+    "Gehör",
+    "Kopfhörer",
+    "Tiere",
+    "Aufmerksamkeit",
+    "Reaktionszeit"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 23",
+     "para": "Abs. 1",
+     "evidence": "Wer ein Fahrzeug führt, ist dafür verantwortlich, dass seine Sicht und das Gehör nicht durch die Besetzung, Tiere, die Ladung, Geräte oder den Zustand des Fahrzeugs beeinträchtigt werden."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Sicht",
+      "Gehör",
+      "beeinträchtigt"
+     ],
+     "statement": "Ich bin dafür verantwortlich, dass meine Sicht und mein Gehör nicht durch Ladung, Tiere oder Geräte beeinträchtigt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Ablenkung",
+      "Reaktionsweg"
+     ],
+     "statement": "Ablenkung verlängert den Reaktionsweg",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "HUM_FATIGUE",
+   "topic": "02_human_risk",
+   "subtopic": "muedigkeit",
+   "title": "Müdigkeit",
+   "rule": "Müdigkeit verlängert die Reaktionszeit, verursacht Sekundenschlaf und Fehleinschätzungen. Gegenmittel: Pause mit Bewegung/kurzer Schlaf; Kaffee, Musik oder offenes Fenster helfen nur kurz und beseitigen Müdigkeit nicht.",
+   "concepts": [
+    "muedigkeit",
+    "reaktionsweg",
+    "fahrtuechtigkeit"
+   ],
+   "keywords": [
+    "Müdigkeit",
+    "Sekundenschlaf",
+    "Pause",
+    "Gähnen",
+    "lange Fahrt"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 1,
+   "sources": [
+    {
+     "type": "driving_school",
+     "ref": "Allgemeines Ausbildungswissen (eigene Zusammenfassung); Grundpflicht: § 3 Abs. 1 StVO (persönliche Fähigkeiten)"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 1 Satz 2",
+     "evidence": "Die Geschwindigkeit ist insbesondere den Straßen-, Verkehrs-, Sicht- und Wetterverhältnissen sowie den persönlichen Fähigkeiten und den Eigenschaften von Fahrzeug und Ladung anzupassen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Müdigkeit",
+      "Anzeichen",
+      "lange Fahrt"
+     ],
+     "statement": "Bei Müdigkeit sollte ich eine Pause einlegen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Müdigkeit",
+      "Anzeichen"
+     ],
+     "statement": "Laute Musik und ein offenes Fenster beseitigen die Müdigkeit zuverlässig",
+     "truth": false
+    },
+    {
+     "context": [
+      "Müdigkeit",
+      "Sekundenschlaf"
+     ],
+     "statement": "Müdigkeit kann zu Sekundenschlaf führen",
+     "truth": true
+    }
+   ],
+   "last_verified": "2026-10-01"
+  },
+  {
+   "id": "HUM_ALCOHOL",
+   "topic": "02_human_risk",
+   "subtopic": "alkohol",
+   "title": "Alkohol",
+   "rule": "Alkohol verlängert die Reaktionszeit, verengt das Blickfeld, erhöht die Risikobereitschaft; der Abbau erfolgt langsam (nur Zeit hilft). Grenzwerte (0,5 ‰ Ordnungswidrigkeit, 0,0 ‰ in der Probezeit und unter 21) stehen im StVG – im Container NICHT amtlich verifiziert.",
+   "numeric_refs": [
+    "STVG_24A_ALCOHOL_05",
+    "STVG_24C_NOVICE_ZERO"
+   ],
+   "concepts": [
+    "alkohol",
+    "fahrtuechtigkeit",
+    "probezeit"
+   ],
+   "keywords": [
+    "Alkohol",
+    "Promille",
+    "Restalkohol",
+    "Probezeit",
+    "Fahranfänger",
+    "Kaffee"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "confidence": 0.8,
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvg",
+     "norm": "§ 24a",
+     "ref": "StVG §§ 24a, 24c – nicht im RIS-Testbestand, NICHT verifiziert"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Alkohol",
+      "Abbau",
+      "beschleunigen"
+     ],
+     "statement": "Kaffee oder kaltes Duschen beschleunigt den Alkoholabbau",
+     "truth": false
+    },
+    {
+     "context": [
+      "Alkohol",
+      "Wirkung"
+     ],
+     "statement": "Alkohol verlängert die Reaktionszeit und erhöht die Risikobereitschaft",
+     "truth": true
+    },
+    {
+     "context": [
+      "Alkohol",
+      "Probezeit",
+      "Grenze"
+     ],
+     "statement": "In der Probezeit gilt ein absolutes Alkoholverbot am Steuer",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "HUM_EMOTIONS",
+   "topic": "02_human_risk",
+   "subtopic": "emotionen",
+   "title": "Emotionen, Stress, Gruppendruck",
+   "rule": "Ärger, Zeitdruck, Imponiergehabe oder Gruppendruck führen zu riskantem Fahren. Defensiv fahren, Provokationen nicht erwidern, Vorrang nicht erzwingen.",
+   "concepts": [
+    "emotionen",
+    "risiko",
+    "defensiv"
+   ],
+   "keywords": [
+    "Ärger",
+    "Stress",
+    "Zeitdruck",
+    "aggressiv",
+    "Gruppendruck",
+    "defensiv",
+    "Drängler"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 1,
+   "sources": [
+    {
+     "type": "driving_school",
+     "ref": "Allgemeines Ausbildungswissen (eigene Zusammenfassung)"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 1",
+     "evidence": "Die Teilnahme am Straßenverkehr erfordert ständige Vorsicht und gegenseitige Rücksicht."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Drängler",
+      "dicht auffahren",
+      "ärgern"
+     ],
+     "statement": "Ich sollte gelassen bleiben und den Drängler bei Gelegenheit vorbeilassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Drängler",
+      "dicht auffahren",
+      "ärgern"
+     ],
+     "statement": "Ich sollte kurz bremsen, um den Drängler zu warnen",
+     "truth": false
+    }
+   ],
+   "last_verified": "2026-10-01"
+  }
+ ]
+}

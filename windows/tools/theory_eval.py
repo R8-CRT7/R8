@@ -26,7 +26,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from smart360.theory.generator import TheoryItem, all_items
 from smart360.theory.kb import KnowledgeBase
-from smart360.theory.reasoning import TheoryResult, solve
+from smart360.theory.reasoning import TheoryResult, Verdict, solve
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -53,7 +53,7 @@ def judge(item: TheoryItem, r: TheoryResult) -> dict:
         ok = _num_eq(r.number_answer, item.number_answer)
     else:
         ok = tuple(sorted(r.selected)) == tuple(sorted(item.correct))
-    decided_ids = {x for e in r.evals if e.verdict.value != "unknown" for x in e.evidence}
+    decided_ids = {x for e in r.evals if e.verdict != Verdict.UNKNOWN for x in e.evidence}
     rule_ok = bool(set(item.sources) & decided_ids) if item.sources and item.variant not in (
         "priority",) and not item.id.startswith(("CALC", "LIC")) else None
     return {"id": item.id, "topic": item.topic, "variant": item.variant, "answered": answered,

@@ -1,8 +1,8 @@
 {
  "overall": {
   "n": 3012,
-  "accuracy": 0.7457,
-  "uncertain_rate": 0.2543,
+  "accuracy": 0.7497,
+  "uncertain_rate": 0.2503,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -15,8 +15,8 @@
  },
  "image": {
   "n": 204,
-  "accuracy": 0.9412,
-  "uncertain_rate": 0.0588,
+  "accuracy": 1.0,
+  "uncertain_rate": 0.0,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -51,8 +51,8 @@
   },
   "priority": {
    "n": 204,
-   "accuracy": 0.9412,
-   "uncertain_rate": 0.0588,
+   "accuracy": 1.0,
+   "uncertain_rate": 0.0,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -95,8 +95,8 @@
   },
   "05_priority": {
    "n": 801,
-   "accuracy": 0.8015,
-   "uncertain_rate": 0.1985,
+   "accuracy": 0.8165,
+   "uncertain_rate": 0.1835,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -279,8 +279,8 @@
   },
   "priority": {
    "n": 204,
-   "accuracy": 0.9412,
-   "uncertain_rate": 0.0588,
+   "accuracy": 1.0,
+   "uncertain_rate": 0.0,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -322,13 +322,13 @@
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
-   142
+   130
   ],
   [
    "rule not verified against an official law text",
    53
   ]
  ],
- "seconds": 23.9,
+ "seconds": 23.2,
  "set": "synthetic"
 }
