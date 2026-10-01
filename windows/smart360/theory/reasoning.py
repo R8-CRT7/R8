@@ -21,7 +21,9 @@ from functools import lru_cache
 from smart360.theory import calc
 from smart360.theory.kb import KnowledgeBase, get_kb
 from smart360.theory.negation import Deontic, Polarity, analyze, asks_for_negative, deontic_truth
+from smart360.theory.numeric_model import comparator_of, judge_number, unit_fits
 from smart360.theory.priority import PriorityDecision, decide
+from smart360.theory.prove_false import prove_false
 from smart360.theory.retrieval import claim_frame, hybrid_retrieve, structural_conflict
 from smart360.theory.scene import Scene, temporal_check
 from smart360.theory.schema import Claim, KnowledgeObject, Sign
@@ -34,10 +36,12 @@ from smart360.theory.semantics import (
     participle_base,
     precedence,
     resolve_answer,
+    resolve_roles,
     separable_verbs,
     situation_conflict,
     split_compound,
     vocab_alias,
+    yes_no_proposition,
 )
 from smart360.theory.text import (
     NUMBER_TOKEN,
@@ -291,6 +295,13 @@ def _claim_verdict(claim: Claim, answer: str, pa: Polarity, numbers_text: str | 
                 uncovered = True  # a number the claim says nothing about
         same_count = len(a_list) == len(numbers(claim.statement)) and sorted(a_list) != sorted(numbers(claim.statement))
         if differs or (same_count and not uncovered):
+            a_text = answer if numbers_text is None else numbers_text
+            a_val, a_unit = a_list[0]
+            c_same = [(v, u) for v, u in c_list if u == a_unit] or c_list
+            c_cmp = comparator_of(claim.statement, c_same[0][0], c_same[0][1])
+            if c_cmp != "eq" and comparator_of(a_text, a_val, a_unit) != c_cmp:
+                # 'mehr als 20 l' (threshold) vs 'mit 5 l': a different value is no contradiction by itself
+                return Verdict.UNKNOWN, ["threshold_not_comparable"]
             if truth:
                 return Verdict.FALSE, ["number_differs"]
             return Verdict.UNKNOWN, ["number_differs_from_false_claim"]
@@ -355,6 +366,8 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
                     continue
             if numeric_only:
                 # "100 km/h", "unter 50 m": the words say nothing - the SITUATION (question vs claim) decides
+                if not all(unit_fits(question, u) for _, u in numbers(answer) if u):
+                    continue  # 'Wie weit ...?' is never answered by a km/h rule
                 c_nums = numbers(" ".join(claim.numbers) or claim.statement)
                 if not {u for _, u in c_nums} & {u for _, u in numbers(answer)}:
                     continue
@@ -497,17 +510,12 @@ _YES_NO_A = re.compile(r"^\s*(ja|nein)\b[\s,.:;-]*(.*)$", re.IGNORECASE)
 
 
 def _answer_proposition(question: str, answer: str) -> tuple[str, str]:
-    """Yes/no questions: 'Dürfen Sie X?' + 'Nein, ...' -> 'Sie dürfen nicht X ...'. The answer alone ('Ja, wenn
-    ich blinke') says nothing without the question."""
-    qa = _YES_NO_A.match(answer)
-    if not (_YES_NO_Q.match(question) and qa):
+    """Yes/no questions: 'Dürfen Sie hier halten?' + 'Nein' -> 'ich darf nicht hier halten' (semantics.Proposition).
+    The answer alone ('Ja, wenn ich blinke') says nothing without the question."""
+    p = yes_no_proposition(question, answer)
+    if p is None:
         return answer, "plain"
-    prop = re.sub(r"\s*\([^)]*\)", "", re.sub(r"[?!.]+\s*$", "", question.strip()))  # (asides) are no part of it
-    prop = re.sub(r",\s*(um|damit|wenn|weil)\b.*$", "", prop)  # purpose/condition of the question is not the claim
-    first, _, rest = prop.partition(" ")
-    if qa.group(1).lower() == "nein":
-        prop = f"{first} nicht {rest}"
-    return prop, "yes_no"
+    return p.text, "yes_no"
 
 
 def _yes_no_reason(answer: str) -> str:
@@ -884,6 +892,9 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
                 elif verdict == Verdict.UNKNOWN and r_verdict != Verdict.UNKNOWN:
                     verdict, best, flags = r_verdict, r_best, [*flags, "yes_no_by_reason"]
         else:
+            a = resolve_roles(q.text, a)  # 'Es muss ...' -> 'Ein Kind muss ...', 'dort' -> 'an der Haltestelle'
+            if a != a_raw:
+                eval_text[i] = a
             matches = match_claims(kb, q.text, a, candidates)
             verdict, best, flags = _decide_claims(matches)
             slot = _slot_proposition(q.text, a)
@@ -951,6 +962,33 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
     # semantic check D (joint answer interpretation): mutually exclusive answers, exam elimination
     joint = _joint_answers(q, evals, n, "negative_question" in kinds)
     trace.append(("semantic_check_D", joint or "no joint inference"))
+
+    # semantic check E: explicit counter-proofs from verified rules for options nothing matched directly
+    proofs = []
+    if not q.number_input:
+        for i, e in evals.items():
+            if e.verdict != Verdict.UNKNOWN or "ocr_unreadable" in e.flags or i > n:
+                continue
+            pf = prove_false(q.text, q.answers[i - 1], candidates, kb)
+            if pf is not None:
+                e.verdict, e.method, e.evidence = Verdict.FALSE, "prove_false", [pf.evidence]
+                e.explanation, e.flags = pf.explanation, [*e.flags, pf.kind]
+                proofs.append(f"{i}:{pf.kind}")
+        # numeric condition model: a bare number judged only by verified facts whose conditions the question names
+        for i, e in evals.items():
+            if e.verdict != Verdict.UNKNOWN or i > n or "ocr_unreadable" in e.flags:
+                continue
+            a_txt = q.answers[i - 1]
+            if not numbers(a_txt) or len({w for w in _core(a_txt) if not NUMBER_TOKEN.match(w)}) > 2:
+                continue
+            ok, fact = judge_number(q.text, a_txt, kb)
+            if ok is not None and fact is not None:
+                e.verdict = Verdict.TRUE if ok else Verdict.FALSE
+                e.method, e.evidence = "numeric_model", [fact.source.split("#")[0]]
+                e.explanation = f"Zahlenregel ({fact.quantity}, {fact.value:g} {fact.unit}) für diese Situation"
+                e.flags = [*e.flags, "numeric_condition_model"]
+                proofs.append(f"{i}:numeric")
+    trace.append(("semantic_check_E", ", ".join(proofs) or "no counter-proof"))
 
     # exception + negation checks
     neg_q = "negative_question" in kinds

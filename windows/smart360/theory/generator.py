@@ -491,4 +491,26 @@ def validation_items(kb: KnowledgeBase, seed: int = 4242) -> list[TheoryItem]:
                 q = TheoryQuestion(f"{situation}. {stem}", [s for s, _ in opts])
                 items.append(TheoryItem(f"VAL:{obj.id}:{ti}:{variant}", obj.topic, obj.subtopic, variant, q, correct,
                                         sources=[obj.id], exam_relevance=obj.exam_relevance))
+    items += _yes_no_items(kb)
     return items
+
+
+_YN_CLAIM = re.compile(r"^(?:Ich|ich) (darf|muss|kann|sollte) (.+)$")
+_YN_SIE = {"darf": "Dürfen", "muss": "Müssen", "kann": "Können", "sollte": "Sollten"}
+
+
+def _yes_no_items(kb: KnowledgeBase) -> list[TheoryItem]:
+    """Validation variant 'val_yesno': a modal rule statement asked as a yes/no question ('Ich darf X' ->
+    'Dürfen Sie X?' / Ja - Nein). Only statements without their own negation (no double negation)."""
+    out = []
+    for obj in kb.objects.values():
+        for ci, c in enumerate(obj.claims):
+            m = _YN_CLAIM.match(c.statement.strip().rstrip("."))
+            if not m or re.search(r"\b(nicht|kein\w*|nie|niemals|niemand)\b", c.statement, re.IGNORECASE):
+                continue
+            rest = re.sub(r"\bmich\b", "sich", re.sub(r"\bmein(e[nmrs]?)?\b", lambda mm: "Ihr" + (mm.group(1) or ""), m.group(2)))
+            situation = ", ".join(c.context) or obj.title
+            q = TheoryQuestion(f"{situation}. {_YN_SIE[m.group(1)]} Sie {rest}?", ["Ja", "Nein"])
+            out.append(TheoryItem(f"VAL:{obj.id}:{ci}:val_yesno", obj.topic, obj.subtopic, "val_yesno", q,
+                                  (1,) if c.truth else (2,), sources=[obj.id], exam_relevance=obj.exam_relevance))
+    return out

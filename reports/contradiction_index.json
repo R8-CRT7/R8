@@ -1,0 +1,4648 @@
+{
+ "relations": [
+  {
+   "a": "ACCELERATE",
+   "relation": "contradicts",
+   "b": "SLOW_DOWN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "ACCELERATE",
+   "relation": "contradicts",
+   "b": "STOP",
+   "origin": "lexicon"
+  },
+  {
+   "a": "ACCELERATE",
+   "relation": "contradicts",
+   "b": "WAIT",
+   "origin": "lexicon"
+  },
+  {
+   "a": "ACCELERATE",
+   "relation": "contradicts",
+   "b": "WALKING_SPEED",
+   "origin": "lexicon"
+  },
+  {
+   "a": "ACCELERATE",
+   "relation": "contradicts",
+   "b": "YIELD",
+   "origin": "lexicon"
+  },
+  {
+   "a": "BRAKE_READY",
+   "relation": "contradicts",
+   "b": "HORN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "BRAKE_READY",
+   "relation": "contradicts",
+   "b": "RELY_ON_OTHERS",
+   "origin": "lexicon"
+  },
+  {
+   "a": "CLEAR_JUNCTION",
+   "relation": "contradicts",
+   "b": "STOP",
+   "origin": "lexicon"
+  },
+  {
+   "a": "CLEAR_JUNCTION",
+   "relation": "contradicts",
+   "b": "WAIT",
+   "origin": "lexicon"
+  },
+  {
+   "a": "CONTINUE",
+   "relation": "contradicts",
+   "b": "REVERSE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "CONTINUE",
+   "relation": "contradicts",
+   "b": "STOP",
+   "origin": "lexicon"
+  },
+  {
+   "a": "CONTINUE",
+   "relation": "contradicts",
+   "b": "TAKE_BREAK",
+   "origin": "lexicon"
+  },
+  {
+   "a": "CONTINUE",
+   "relation": "contradicts",
+   "b": "TURN_AROUND",
+   "origin": "lexicon"
+  },
+  {
+   "a": "CONTINUE",
+   "relation": "contradicts",
+   "b": "WAIT",
+   "origin": "lexicon"
+  },
+  {
+   "a": "CONTINUE",
+   "relation": "contradicts",
+   "b": "YIELD",
+   "origin": "lexicon"
+  },
+  {
+   "a": "DIST_FOLLOW#0",
+   "relation": "exception_to",
+   "b": "DIST_FOLLOW",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_FOLLOW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_FOLLOW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_FOLLOW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_FOLLOW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_FOLLOW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_FOLLOW#2",
+   "relation": "exception_to",
+   "b": "DIST_FOLLOW",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_FOLLOW:BREMS_ALLOWED",
+   "relation": "contradicts",
+   "b": "DIST_FOLLOW:BREMS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_FOLLOW:BREMS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "DIST_FOLLOW:BREMS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_TRUCK_GAP:HALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "DIST_TRUCK_GAP:HALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "DIST_TRUCK_GAP:HALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "DIST_TRUCK_GAP:HALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "EXPECT_MISCONDUCT",
+   "relation": "contradicts",
+   "b": "HORN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "EXPECT_MISCONDUCT",
+   "relation": "contradicts",
+   "b": "RELY_ON_OTHERS",
+   "origin": "lexicon"
+  },
+  {
+   "a": "GO_FIRST",
+   "relation": "contradicts",
+   "b": "STOP",
+   "origin": "lexicon"
+  },
+  {
+   "a": "GO_FIRST",
+   "relation": "contradicts",
+   "b": "WAIT",
+   "origin": "lexicon"
+  },
+  {
+   "a": "GO_FIRST",
+   "relation": "contradicts",
+   "b": "YIELD",
+   "origin": "lexicon"
+  },
+  {
+   "a": "HALT_BAN:ABSOLUTE",
+   "relation": "contradicts",
+   "b": "HALT_BAN:RESTRICTED",
+   "origin": "lexicon"
+  },
+  {
+   "a": "HALT_BAN:RESTRICTED",
+   "relation": "contradicts",
+   "b": "HALT_BAN:ABSOLUTE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "HORN",
+   "relation": "contradicts",
+   "b": "BRAKE_READY",
+   "origin": "lexicon"
+  },
+  {
+   "a": "HORN",
+   "relation": "contradicts",
+   "b": "EXPECT_MISCONDUCT",
+   "origin": "lexicon"
+  },
+  {
+   "a": "HORN",
+   "relation": "contradicts",
+   "b": "SLOW_DOWN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "HUM_ALCOHOL#2",
+   "relation": "exception_to",
+   "b": "HUM_ALCOHOL",
+   "origin": "claims"
+  },
+  {
+   "a": "HUM_EMOTIONS#0",
+   "relation": "contradicts",
+   "b": "HUM_EMOTIONS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "HUM_EMOTIONS#1",
+   "relation": "contradicts",
+   "b": "HUM_EMOTIONS#0",
+   "origin": "claims"
+  },
+  {
+   "a": "HUM_FATIGUE#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "HUM_FATIGUE:FÜHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "HUM_FATIGUE:FÜHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "HUM_FATIGUE:FÜHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "HUM_FATIGUE:FÜHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "INSIST_PRIORITY",
+   "relation": "contradicts",
+   "b": "WAIT",
+   "origin": "lexicon"
+  },
+  {
+   "a": "INSIST_PRIORITY",
+   "relation": "contradicts",
+   "b": "YIELD",
+   "origin": "lexicon"
+  },
+  {
+   "a": "KEEP_SPEED",
+   "relation": "contradicts",
+   "b": "SLOW_DOWN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "KEEP_SPEED",
+   "relation": "contradicts",
+   "b": "WALKING_SPEED",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LEG_PROBATION#0",
+   "relation": "contradicts",
+   "b": "LEG_PROBATION#1",
+   "origin": "claims"
+  },
+  {
+   "a": "LEG_PROBATION#1",
+   "relation": "contradicts",
+   "b": "LEG_PROBATION#0",
+   "origin": "claims"
+  },
+  {
+   "a": "LIGHT_COLOUR:GREEN",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:RED",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:GREEN",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:RED_YELLOW",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:GREEN",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:YELLOW",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:RED",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:GREEN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:RED",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:RED_YELLOW",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:RED",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:YELLOW",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:RED_YELLOW",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:GREEN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:RED_YELLOW",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:RED",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:RED_YELLOW",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:YELLOW",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:YELLOW",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:GREEN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:YELLOW",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:RED",
+   "origin": "lexicon"
+  },
+  {
+   "a": "LIGHT_COLOUR:YELLOW",
+   "relation": "contradicts",
+   "b": "LIGHT_COLOUR:RED_YELLOW",
+   "origin": "lexicon"
+  },
+  {
+   "a": "MAN_BIKE_RULES:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_BIKE_RULES:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_BIKE_RULES:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_BIKE_RULES:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_LANE_CHANGE#0",
+   "relation": "contradicts",
+   "b": "MAN_LANE_CHANGE#1",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_LANE_CHANGE#1",
+   "relation": "contradicts",
+   "b": "MAN_LANE_CHANGE#0",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_LANE_CHANGE#4",
+   "relation": "exception_to",
+   "b": "MAN_LANE_CHANGE",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORCYCLE_LIGHT#0",
+   "relation": "contradicts",
+   "b": "MAN_MOTORCYCLE_LIGHT#1",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORCYCLE_LIGHT#0",
+   "relation": "exception_to",
+   "b": "MAN_MOTORCYCLE_LIGHT",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORCYCLE_LIGHT#1",
+   "relation": "contradicts",
+   "b": "MAN_MOTORCYCLE_LIGHT#0",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORCYCLE_LIGHT:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_MOTORCYCLE_LIGHT:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORCYCLE_LIGHT:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_MOTORCYCLE_LIGHT:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORWAY#0",
+   "relation": "contradicts",
+   "b": "MAN_MOTORWAY#1",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORWAY#1",
+   "relation": "contradicts",
+   "b": "MAN_MOTORWAY#0",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORWAY#2",
+   "relation": "exception_to",
+   "b": "MAN_MOTORWAY",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORWAY#6",
+   "relation": "contradicts",
+   "b": "MAN_MOTORWAY#7",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORWAY#7",
+   "relation": "contradicts",
+   "b": "MAN_MOTORWAY#6",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORWAY:FAHRSTREIF_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_MOTORWAY:FAHRSTREIF_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORWAY:FAHRSTREIF_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_MOTORWAY:FAHRSTREIF_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORWAY:VERBOT_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_MOTORWAY:VERBOT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_MOTORWAY:VERBOT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_MOTORWAY:VERBOT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#1",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS#4",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#3",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS#4",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#4",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#4",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS#3",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#5",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS#9",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#8",
+   "relation": "incompatible_with",
+   "b": "ACTION:SLOW_DOWN",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#8",
+   "relation": "incompatible_with",
+   "b": "ACTION:STOP",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#8",
+   "relation": "incompatible_with",
+   "b": "ACTION:WAIT",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#8",
+   "relation": "incompatible_with",
+   "b": "ACTION:WALKING_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#8",
+   "relation": "incompatible_with",
+   "b": "ACTION:YIELD",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS#9",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS#5",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS:EINORDN_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS:EINORDN_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS:EINORDN_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS:EINORDN_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS:ERHÖH_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS:ERHÖH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS:ERHÖH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS:ERHÖH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS:VERBOT_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS:VERBOT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS:VERBOT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS:VERBOT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS:ÜBERHOL_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS:ÜBERHOL_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_BASICS:ÜBERHOL_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_BASICS:ÜBERHOL_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_GAP#0",
+   "relation": "exception_to",
+   "b": "MAN_OVERTAKE_GAP",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_GAP#1",
+   "relation": "exception_to",
+   "b": "MAN_OVERTAKE_GAP",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_GAP:BETRAG_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_GAP:BETRAG_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_GAP:BETRAG_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_OVERTAKE_GAP:BETRAG_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_RIGHT#1",
+   "relation": "exception_to",
+   "b": "MAN_OVERTAKE_RIGHT",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_RIGHT#2",
+   "relation": "exception_to",
+   "b": "MAN_OVERTAKE_RIGHT",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_OVERTAKE_RIGHT#4",
+   "relation": "exception_to",
+   "b": "MAN_OVERTAKE_RIGHT",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_REVERSE_UTURN#2",
+   "relation": "exception_to",
+   "b": "MAN_REVERSE_UTURN",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_SIGNALS_HORN#2",
+   "relation": "exception_to",
+   "b": "MAN_SIGNALS_HORN",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_SIGNALS_HORN#4",
+   "relation": "exception_to",
+   "b": "MAN_SIGNALS_HORN",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_SIGNALS_HORN#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:BRAKE_READY",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_SIGNALS_HORN#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:EXPECT_MISCONDUCT",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_SIGNALS_HORN#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:SLOW_DOWN",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_SIGNALS_HORN:EINSCHALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_SIGNALS_HORN:EINSCHALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_SIGNALS_HORN:EINSCHALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_SIGNALS_HORN:EINSCHALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_SIGNALS_HORN:HUPE_ALLOWED",
+   "relation": "contradicts",
+   "b": "MAN_SIGNALS_HORN:HUPE_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_SIGNALS_HORN:HUPE_PROHIBITED",
+   "relation": "contradicts",
+   "b": "MAN_SIGNALS_HORN:HUPE_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "MAN_TURNING#1",
+   "relation": "exception_to",
+   "b": "MAN_TURNING",
+   "origin": "claims"
+  },
+  {
+   "a": "POLICE_GESTURE:ARMS_ACROSS",
+   "relation": "contradicts",
+   "b": "POLICE_GESTURE:ARM_UP",
+   "origin": "lexicon"
+  },
+  {
+   "a": "POLICE_GESTURE:ARM_UP",
+   "relation": "contradicts",
+   "b": "POLICE_GESTURE:ARMS_ACROSS",
+   "origin": "lexicon"
+  },
+  {
+   "a": "PRI_CROSSWALK#0",
+   "relation": "exception_to",
+   "b": "PRI_CROSSWALK",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#5",
+   "relation": "contradicts",
+   "b": "PRI_CROSSWALK#6",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#5",
+   "relation": "exception_to",
+   "b": "PRI_CROSSWALK",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK#6",
+   "relation": "contradicts",
+   "b": "PRI_CROSSWALK#5",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK:ERMÖGLICH_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_CROSSWALK:ERMÖGLICH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK:ERMÖGLICH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_CROSSWALK:ERMÖGLICH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_CROSSWALK:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_CROSSWALK:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_CROSSWALK:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#0",
+   "relation": "contradicts",
+   "b": "PRI_EMERGENCY#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#1",
+   "relation": "contradicts",
+   "b": "PRI_EMERGENCY#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#4",
+   "relation": "contradicts",
+   "b": "PRI_EMERGENCY#5",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY#5",
+   "relation": "contradicts",
+   "b": "PRI_EMERGENCY#4",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY:FREIMACH_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_EMERGENCY:FREIMACH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_EMERGENCY:FREIMACH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_EMERGENCY:FREIMACH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#0",
+   "relation": "contradicts",
+   "b": "PRI_GREEN_ARROW#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#0",
+   "relation": "contradicts",
+   "b": "PRI_GREEN_ARROW#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#1",
+   "relation": "contradicts",
+   "b": "PRI_GREEN_ARROW#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#2",
+   "relation": "contradicts",
+   "b": "PRI_GREEN_ARROW#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#5",
+   "relation": "exception_to",
+   "b": "PRI_GREEN_ARROW",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW:BEHINDER_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_GREEN_ARROW:BEHINDER_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_GREEN_ARROW:BEHINDER_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_GREEN_ARROW:BEHINDER_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#0",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#3",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#0",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#4",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#0",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#6",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#0",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#7",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#2",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#3",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#2",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#4",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#2",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#6",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#2",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#7",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#3",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#3",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#4",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#4",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#6",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#6",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#7",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING#7",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING:LASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING:LASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LEFT_TURN_ONCOMING:LASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_LEFT_TURN_ONCOMING:LASS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#2",
+   "relation": "contradicts",
+   "b": "PRI_LIGHTS#3",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#3",
+   "relation": "contradicts",
+   "b": "PRI_LIGHTS#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS:LASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_LIGHTS:LASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_LIGHTS:LASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_LIGHTS:LASS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#0",
+   "relation": "contradicts",
+   "b": "PRI_PASSING_OBSTACLE#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#1",
+   "relation": "contradicts",
+   "b": "PRI_PASSING_OBSTACLE#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#3",
+   "relation": "contradicts",
+   "b": "PRI_PASSING_OBSTACLE#4",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE#4",
+   "relation": "contradicts",
+   "b": "PRI_PASSING_OBSTACLE#3",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE:LASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_PASSING_OBSTACLE:LASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PASSING_OBSTACLE:LASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_PASSING_OBSTACLE:LASS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:STOP",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:WAIT",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#6",
+   "relation": "contradicts",
+   "b": "PRI_POLICE#7",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE#7",
+   "relation": "contradicts",
+   "b": "PRI_POLICE#6",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE:RÄUM_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_POLICE:RÄUM_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_POLICE:RÄUM_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_POLICE:RÄUM_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT:VORLASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_PROPERTY_EXIT:VORLASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_PROPERTY_EXIT:VORLASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_PROPERTY_EXIT:VORLASS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#1",
+   "relation": "contradicts",
+   "b": "PRI_RAIL_CROSSING#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#2",
+   "relation": "contradicts",
+   "b": "PRI_RAIL_CROSSING#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#2",
+   "relation": "contradicts",
+   "b": "PRI_RAIL_CROSSING#7",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#5",
+   "relation": "exception_to",
+   "b": "PRI_RAIL_CROSSING",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#6",
+   "relation": "contradicts",
+   "b": "PRI_RAIL_CROSSING#8",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#7",
+   "relation": "contradicts",
+   "b": "PRI_RAIL_CROSSING#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#8",
+   "relation": "contradicts",
+   "b": "PRI_RAIL_CROSSING#6",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#9",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#9",
+   "relation": "incompatible_with",
+   "b": "ACTION:HORN",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#9",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RAIL_CROSSING#9",
+   "relation": "incompatible_with",
+   "b": "ACTION:RELY_ON_OTHERS",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#0",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#1",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#3",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT#4",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#4",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT#3",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:STOP",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:WAIT",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:YIELD",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#6",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#9",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#9",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#9",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT#9",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT:GEWÄHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT:GEWÄHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT:GEWÄHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT:GEWÄHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT:LASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT:LASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_RIGHT_BEFORE_LEFT:LASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_RIGHT_BEFORE_LEFT:LASS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_ROUNDABOUT#0",
+   "relation": "contradicts",
+   "b": "PRI_ROUNDABOUT#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_ROUNDABOUT#1",
+   "relation": "contradicts",
+   "b": "PRI_ROUNDABOUT#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_ROUNDABOUT#2",
+   "relation": "contradicts",
+   "b": "PRI_ROUNDABOUT#3",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_ROUNDABOUT#3",
+   "relation": "contradicts",
+   "b": "PRI_ROUNDABOUT#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#0",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#1",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#1",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION#5",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#2",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION#3",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#2",
+   "relation": "exception_to",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#3",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#5",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#6",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION#7",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION#7",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION#6",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION:EINFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION:EINFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAFFIC_JAM_JUNCTION:EINFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_TRAFFIC_JAM_JUNCTION:EINFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#0",
+   "relation": "exception_to",
+   "b": "PRI_TRAM_BUS_STOP",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#1",
+   "relation": "contradicts",
+   "b": "PRI_TRAM_BUS_STOP#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#1",
+   "relation": "exception_to",
+   "b": "PRI_TRAM_BUS_STOP",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#2",
+   "relation": "contradicts",
+   "b": "PRI_TRAM_BUS_STOP#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#3",
+   "relation": "exception_to",
+   "b": "PRI_TRAM_BUS_STOP",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#4",
+   "relation": "exception_to",
+   "b": "PRI_TRAM_BUS_STOP",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#5",
+   "relation": "exception_to",
+   "b": "PRI_TRAM_BUS_STOP",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP:ERMÖGLICH_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_TRAM_BUS_STOP:ERMÖGLICH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP:ERMÖGLICH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_TRAM_BUS_STOP:ERMÖGLICH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP:VORBEIGEFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_TRAM_BUS_STOP:VORBEIGEFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TRAM_BUS_STOP:VORBEIGEFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_TRAM_BUS_STOP:VORBEIGEFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#0",
+   "relation": "contradicts",
+   "b": "PRI_TURN_CYCLISTS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#0",
+   "relation": "exception_to",
+   "b": "PRI_TURN_CYCLISTS",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#1",
+   "relation": "contradicts",
+   "b": "PRI_TURN_CYCLISTS#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#2",
+   "relation": "exception_to",
+   "b": "PRI_TURN_CYCLISTS",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#3",
+   "relation": "exception_to",
+   "b": "PRI_TURN_CYCLISTS",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#5",
+   "relation": "exception_to",
+   "b": "PRI_TURN_CYCLISTS",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#5",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS#6",
+   "relation": "exception_to",
+   "b": "PRI_TURN_CYCLISTS",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS:LASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_TURN_CYCLISTS:LASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS:LASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_TURN_CYCLISTS:LASS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS:WART_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_TURN_CYCLISTS:WART_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_TURN_CYCLISTS:WART_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_TURN_CYCLISTS:WART_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_WAIVE:VERTRAU_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_WAIVE:VERTRAU_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_WAIVE:VERTRAU_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_WAIVE:VERTRAU_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "contradicts",
+   "b": "PRI_YIELD_BEHAVIOUR#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:HORN",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:RELY_ON_OTHERS",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#2",
+   "relation": "contradicts",
+   "b": "PRI_YIELD_BEHAVIOUR#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR#3",
+   "relation": "exception_to",
+   "b": "PRI_YIELD_BEHAVIOUR",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR:HINEINTAST_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_YIELD_BEHAVIOUR:HINEINTAST_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR:HINEINTAST_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_YIELD_BEHAVIOUR:HINEINTAST_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR:LASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRI_YIELD_BEHAVIOUR:LASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRI_YIELD_BEHAVIOUR:LASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRI_YIELD_BEHAVIOUR:LASS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#0",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#0",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#7",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#1",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#1",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#7",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#2",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#2",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#2",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#6",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#6",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#2",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#6",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#7",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#7",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#0",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#7",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#1",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_HALT_VS_PARK#7",
+   "relation": "contradicts",
+   "b": "PRK_HALT_VS_PARK#6",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_LEAVING_VEHICLE#0",
+   "relation": "exception_to",
+   "b": "PRK_LEAVING_VEHICLE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_LEAVING_VEHICLE#2",
+   "relation": "exception_to",
+   "b": "PRK_LEAVING_VEHICLE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_LEAVING_VEHICLE#3",
+   "relation": "exception_to",
+   "b": "PRK_LEAVING_VEHICLE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_LEAVING_VEHICLE:VERGEWISSER_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRK_LEAVING_VEHICLE:VERGEWISSER_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_LEAVING_VEHICLE:VERGEWISSER_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRK_LEAVING_VEHICLE:VERGEWISSER_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_NO_PARKING#2",
+   "relation": "exception_to",
+   "b": "PRK_NO_PARKING",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_NO_PARKING#5",
+   "relation": "exception_to",
+   "b": "PRK_NO_PARKING",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_WHERE#0",
+   "relation": "exception_to",
+   "b": "PRK_WHERE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_WHERE#1",
+   "relation": "exception_to",
+   "b": "PRK_WHERE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_WHERE#1",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_WHERE#3",
+   "relation": "contradicts",
+   "b": "PRK_WHERE#4",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_WHERE#3",
+   "relation": "exception_to",
+   "b": "PRK_WHERE",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_WHERE#4",
+   "relation": "contradicts",
+   "b": "PRK_WHERE#3",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_WHERE:PARK_ALLOWED",
+   "relation": "contradicts",
+   "b": "PRK_WHERE:PARK_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "PRK_WHERE:PARK_PROHIBITED",
+   "relation": "contradicts",
+   "b": "PRK_WHERE:PARK_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_LANES_THREE:EINORDN_ALLOWED",
+   "relation": "contradicts",
+   "b": "RDS_LANES_THREE:EINORDN_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_LANES_THREE:EINORDN_PROHIBITED",
+   "relation": "contradicts",
+   "b": "RDS_LANES_THREE:EINORDN_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS#0",
+   "relation": "exception_to",
+   "b": "RDS_MOTORWAY_ACCESS",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS#1",
+   "relation": "exception_to",
+   "b": "RDS_MOTORWAY_ACCESS",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS#2",
+   "relation": "exception_to",
+   "b": "RDS_MOTORWAY_ACCESS",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS#3",
+   "relation": "exception_to",
+   "b": "RDS_MOTORWAY_ACCESS",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS:BENUTZ_ALLOWED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_ACCESS:BENUTZ_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS:BENUTZ_PROHIBITED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_ACCESS:BENUTZ_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS:EINGEFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_ACCESS:EINGEFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS:EINGEFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_ACCESS:EINGEFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS:VERBOT_ALLOWED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_ACCESS:VERBOT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_MOTORWAY_ACCESS:VERBOT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "RDS_MOTORWAY_ACCESS:VERBOT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_RIGHT_LANE_RULE#1",
+   "relation": "contradicts",
+   "b": "RDS_RIGHT_LANE_RULE#2",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_RIGHT_LANE_RULE#1",
+   "relation": "exception_to",
+   "b": "RDS_RIGHT_LANE_RULE",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_RIGHT_LANE_RULE#2",
+   "relation": "contradicts",
+   "b": "RDS_RIGHT_LANE_RULE#1",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_RIGHT_LANE_RULE:BENUTZ_ALLOWED",
+   "relation": "contradicts",
+   "b": "RDS_RIGHT_LANE_RULE:BENUTZ_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "RDS_RIGHT_LANE_RULE:BENUTZ_PROHIBITED",
+   "relation": "contradicts",
+   "b": "RDS_RIGHT_LANE_RULE:BENUTZ_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "RELY_ON_OTHERS",
+   "relation": "contradicts",
+   "b": "BRAKE_READY",
+   "origin": "lexicon"
+  },
+  {
+   "a": "RELY_ON_OTHERS",
+   "relation": "contradicts",
+   "b": "EXPECT_MISCONDUCT",
+   "origin": "lexicon"
+  },
+  {
+   "a": "RELY_ON_OTHERS",
+   "relation": "contradicts",
+   "b": "SLOW_DOWN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "REVERSE",
+   "relation": "contradicts",
+   "b": "CONTINUE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "ROLL_THROUGH",
+   "relation": "contradicts",
+   "b": "STOP",
+   "origin": "lexicon"
+  },
+  {
+   "a": "ROLL_THROUGH",
+   "relation": "contradicts",
+   "b": "WAIT",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SGN_ADDITIONAL#0",
+   "relation": "contradicts",
+   "b": "SGN_ADDITIONAL#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ADDITIONAL#1",
+   "relation": "contradicts",
+   "b": "SGN_ADDITIONAL#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_BENT_PRIORITY#0",
+   "relation": "contradicts",
+   "b": "SGN_BENT_PRIORITY#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_BENT_PRIORITY#1",
+   "relation": "contradicts",
+   "b": "SGN_BENT_PRIORITY#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_BENT_PRIORITY:BLINK_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_BENT_PRIORITY:BLINK_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_BENT_PRIORITY:BLINK_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_BENT_PRIORITY:BLINK_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ENV_ZONE:ZUSATZZEICH_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_ENV_ZONE:ZUSATZZEICH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_ENV_ZONE:ZUSATZZEICH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_ENV_ZONE:ZUSATZZEICH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HALT_BANS#0",
+   "relation": "exception_to",
+   "b": "SGN_HALT_BANS",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HALT_BANS#1",
+   "relation": "contradicts",
+   "b": "SGN_HALT_BANS#3",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HALT_BANS#1",
+   "relation": "exception_to",
+   "b": "SGN_HALT_BANS",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HALT_BANS#2",
+   "relation": "contradicts",
+   "b": "SGN_HALT_BANS#3",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HALT_BANS#3",
+   "relation": "contradicts",
+   "b": "SGN_HALT_BANS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HALT_BANS#3",
+   "relation": "contradicts",
+   "b": "SGN_HALT_BANS#2",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HAZMAT:BENUTZ_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_HAZMAT:BENUTZ_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HAZMAT:BENUTZ_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_HAZMAT:BENUTZ_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HAZMAT:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_HAZMAT:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HAZMAT:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_HAZMAT:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_HIERARCHY#3",
+   "relation": "exception_to",
+   "b": "SGN_HIERARCHY",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_LINES#0",
+   "relation": "exception_to",
+   "b": "SGN_LINES",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_LINES:ÜBERFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_LINES:ÜBERFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_LINES:ÜBERFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_LINES:ÜBERFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_OVERTAKING_BANS#0",
+   "relation": "exception_to",
+   "b": "SGN_OVERTAKING_BANS",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_OVERTAKING_BANS#3",
+   "relation": "exception_to",
+   "b": "SGN_OVERTAKING_BANS",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_OVERTAKING_BANS#4",
+   "relation": "exception_to",
+   "b": "SGN_OVERTAKING_BANS",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_OVERTAKING_BANS#5",
+   "relation": "exception_to",
+   "b": "SGN_OVERTAKING_BANS",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_OVERTAKING_BANS:ÜBERHOL_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_OVERTAKING_BANS:ÜBERHOL_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_OVERTAKING_BANS:ÜBERHOL_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_OVERTAKING_BANS:ÜBERHOL_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#0",
+   "relation": "contradicts",
+   "b": "SGN_PRIORITY_ROAD#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#1",
+   "relation": "contradicts",
+   "b": "SGN_PRIORITY_ROAD#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#4",
+   "relation": "contradicts",
+   "b": "SGN_PRIORITY_ROAD#5",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#4",
+   "relation": "exception_to",
+   "b": "SGN_PRIORITY_ROAD",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#5",
+   "relation": "contradicts",
+   "b": "SGN_PRIORITY_ROAD#4",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD#6",
+   "relation": "exception_to",
+   "b": "SGN_PRIORITY_ROAD",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD:ANHALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_PRIORITY_ROAD:ANHALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_PRIORITY_ROAD:ANHALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_PRIORITY_ROAD:ANHALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED#0",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED#1",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED#2",
+   "relation": "exception_to",
+   "b": "SGN_TRAFFIC_CALMED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED#3",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED#7",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED#4",
+   "relation": "exception_to",
+   "b": "SGN_TRAFFIC_CALMED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED#6",
+   "relation": "exception_to",
+   "b": "SGN_TRAFFIC_CALMED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED#7",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED#3",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED:BENUTZ_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED:BENUTZ_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED:BENUTZ_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED:BENUTZ_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED:SPIEL_ALLOWED",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED:SPIEL_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_TRAFFIC_CALMED:SPIEL_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SGN_TRAFFIC_CALMED:SPIEL_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_WHERE_VALID#0",
+   "relation": "exception_to",
+   "b": "SGN_WHERE_VALID",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_WHERE_VALID#1",
+   "relation": "exception_to",
+   "b": "SGN_WHERE_VALID",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_WHERE_VALID#2",
+   "relation": "contradicts",
+   "b": "SGN_WHERE_VALID#3",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_WHERE_VALID#2",
+   "relation": "exception_to",
+   "b": "SGN_WHERE_VALID",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_WHERE_VALID#3",
+   "relation": "contradicts",
+   "b": "SGN_WHERE_VALID#2",
+   "origin": "claims"
+  },
+  {
+   "a": "SGN_WHERE_VALID#6",
+   "relation": "exception_to",
+   "b": "SGN_WHERE_VALID",
+   "origin": "claims"
+  },
+  {
+   "a": "SIDE:linke",
+   "relation": "contradicts",
+   "b": "SIDE:rechte",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:linkem",
+   "relation": "contradicts",
+   "b": "SIDE:rechtem",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:linken",
+   "relation": "contradicts",
+   "b": "SIDE:rechten",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:linker",
+   "relation": "contradicts",
+   "b": "SIDE:rechter",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:linkes",
+   "relation": "contradicts",
+   "b": "SIDE:rechtes",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:links",
+   "relation": "contradicts",
+   "b": "SIDE:rechts",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:rechte",
+   "relation": "contradicts",
+   "b": "SIDE:linke",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:rechtem",
+   "relation": "contradicts",
+   "b": "SIDE:linkem",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:rechten",
+   "relation": "contradicts",
+   "b": "SIDE:linken",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:rechter",
+   "relation": "contradicts",
+   "b": "SIDE:linker",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:rechtes",
+   "relation": "contradicts",
+   "b": "SIDE:linkes",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:rechts",
+   "relation": "contradicts",
+   "b": "SIDE:links",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:rückwärts",
+   "relation": "contradicts",
+   "b": "SIDE:vorwärts",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SIDE:vorwärts",
+   "relation": "contradicts",
+   "b": "SIDE:rückwärts",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SLOW_DOWN",
+   "relation": "contradicts",
+   "b": "ACCELERATE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SLOW_DOWN",
+   "relation": "contradicts",
+   "b": "HORN",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SLOW_DOWN",
+   "relation": "contradicts",
+   "b": "KEEP_SPEED",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SLOW_DOWN",
+   "relation": "contradicts",
+   "b": "RELY_ON_OTHERS",
+   "origin": "lexicon"
+  },
+  {
+   "a": "SPC_ACCIDENT#4",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT#5",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:INSIST_PRIORITY",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT#5",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT#4",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT#7",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT#8",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT#8",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT#7",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:HELF_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:HELF_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:HELF_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:HELF_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:HINTERLASS_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:HINTERLASS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:HINTERLASS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:HINTERLASS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:SICHER_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:SICHER_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:SICHER_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:SICHER_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:VORWEIS_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:VORWEIS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ACCIDENT:VORWEIS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_ACCIDENT:VORWEIS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_BASIC_RULE#1",
+   "relation": "exception_to",
+   "b": "SPC_BASIC_RULE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_BREAKDOWN#1",
+   "relation": "contradicts",
+   "b": "SPC_BREAKDOWN#2",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_BREAKDOWN#1",
+   "relation": "exception_to",
+   "b": "SPC_BREAKDOWN",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_BREAKDOWN#2",
+   "relation": "contradicts",
+   "b": "SPC_BREAKDOWN#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_BREAKDOWN#3",
+   "relation": "exception_to",
+   "b": "SPC_BREAKDOWN",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_DISTRACTING_ADS:AUSWIRK_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_DISTRACTING_ADS:AUSWIRK_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_DISTRACTING_ADS:AUSWIRK_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_DISTRACTING_ADS:AUSWIRK_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ENVIRONMENT#3",
+   "relation": "exception_to",
+   "b": "SPC_ENVIRONMENT",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ENVIRONMENT:GESCHLOSS_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_ENVIRONMENT:GESCHLOSS_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ENVIRONMENT:GESCHLOSS_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_ENVIRONMENT:GESCHLOSS_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ENVIRONMENT:VERBOT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_ENVIRONMENT:VERBOT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ENVIRONMENT:VERBOT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_ENVIRONMENT:VERBOT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ICE_TYRES:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_ICE_TYRES:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_ICE_TYRES:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_ICE_TYRES:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_OBSTACLES#0",
+   "relation": "contradicts",
+   "b": "SPC_OBSTACLES#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_OBSTACLES#1",
+   "relation": "contradicts",
+   "b": "SPC_OBSTACLES#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_OBSTACLES:MACH_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_OBSTACLES:MACH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_OBSTACLES:MACH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_OBSTACLES:MACH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_SUNDAY_TRUCKS#0",
+   "relation": "exception_to",
+   "b": "SPC_SUNDAY_TRUCKS",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_SUNDAY_TRUCKS#1",
+   "relation": "exception_to",
+   "b": "SPC_SUNDAY_TRUCKS",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_SUNDAY_TRUCKS:BEFÖRDER_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_SUNDAY_TRUCKS:BEFÖRDER_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_SUNDAY_TRUCKS:BEFÖRDER_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_SUNDAY_TRUCKS:BEFÖRDER_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TOWING#0",
+   "relation": "exception_to",
+   "b": "SPC_TOWING",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TOWING:EINSCHALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_TOWING:EINSCHALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TOWING:EINSCHALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_TOWING:EINSCHALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TUNNEL#0",
+   "relation": "contradicts",
+   "b": "SPC_TUNNEL#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TUNNEL#1",
+   "relation": "contradicts",
+   "b": "SPC_TUNNEL#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TUNNEL#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TUNNEL:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_TUNNEL:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TUNNEL:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_TUNNEL:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TUNNEL:VERBOT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPC_TUNNEL:VERBOT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPC_TUNNEL:VERBOT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPC_TUNNEL:VERBOT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CLEAR_JUNCTION",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:GO_FIRST",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:ROLL_THROUGH",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT:ANHALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPD_ADAPT:ANHALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADAPT:ANHALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPD_ADAPT:ANHALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADVISORY_130#0",
+   "relation": "contradicts",
+   "b": "SPD_ADVISORY_130#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_ADVISORY_130#1",
+   "relation": "contradicts",
+   "b": "SPD_ADVISORY_130#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#0",
+   "relation": "contradicts",
+   "b": "SPD_CHILDREN_ELDERLY#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#0",
+   "relation": "contradicts",
+   "b": "SPD_CHILDREN_ELDERLY#2",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#0",
+   "relation": "exception_to",
+   "b": "SPD_CHILDREN_ELDERLY",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:HORN",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#0",
+   "relation": "incompatible_with",
+   "b": "ACTION:RELY_ON_OTHERS",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#1",
+   "relation": "contradicts",
+   "b": "SPD_CHILDREN_ELDERLY#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#2",
+   "relation": "contradicts",
+   "b": "SPD_CHILDREN_ELDERLY#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:HORN",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#3",
+   "relation": "incompatible_with",
+   "b": "ACTION:RELY_ON_OTHERS",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#4",
+   "relation": "contradicts",
+   "b": "SPD_CHILDREN_ELDERLY#5",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#4",
+   "relation": "exception_to",
+   "b": "SPD_CHILDREN_ELDERLY",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:HORN",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#4",
+   "relation": "incompatible_with",
+   "b": "ACTION:RELY_ON_OTHERS",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_CHILDREN_ELDERLY#5",
+   "relation": "contradicts",
+   "b": "SPD_CHILDREN_ELDERLY#4",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50#0",
+   "relation": "exception_to",
+   "b": "SPD_FOG_50",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50#1",
+   "relation": "contradicts",
+   "b": "SPD_FOG_50#5",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50#1",
+   "relation": "exception_to",
+   "b": "SPD_FOG_50",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50#2",
+   "relation": "exception_to",
+   "b": "SPD_FOG_50",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50#5",
+   "relation": "contradicts",
+   "b": "SPD_FOG_50#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50#6",
+   "relation": "exception_to",
+   "b": "SPD_FOG_50",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPD_FOG_50:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPD_FOG_50:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50:GEFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPD_FOG_50:GEFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_FOG_50:GEFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPD_FOG_50:GEFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_CAR#0",
+   "relation": "exception_to",
+   "b": "SPD_LIMITS_CAR",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_CAR#1",
+   "relation": "exception_to",
+   "b": "SPD_LIMITS_CAR",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_CAR#2",
+   "relation": "exception_to",
+   "b": "SPD_LIMITS_CAR",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_CAR:GEFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPD_LIMITS_CAR:GEFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_CAR:GEFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPD_LIMITS_CAR:GEFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_TRAILER#0",
+   "relation": "exception_to",
+   "b": "SPD_LIMITS_TRAILER",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_TRAILER#1",
+   "relation": "exception_to",
+   "b": "SPD_LIMITS_TRAILER",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_TRAILER:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPD_LIMITS_TRAILER:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_TRAILER:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPD_LIMITS_TRAILER:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_TRAILER:GEFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPD_LIMITS_TRAILER:GEFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_LIMITS_TRAILER:GEFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPD_LIMITS_TRAILER:GEFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_TOO_SLOW#0",
+   "relation": "contradicts",
+   "b": "SPD_TOO_SLOW#1",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_TOO_SLOW#1",
+   "relation": "contradicts",
+   "b": "SPD_TOO_SLOW#0",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_TOO_SLOW:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "SPD_TOO_SLOW:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "SPD_TOO_SLOW:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "SPD_TOO_SLOW:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "STOP",
+   "relation": "contradicts",
+   "b": "ACCELERATE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "STOP",
+   "relation": "contradicts",
+   "b": "CLEAR_JUNCTION",
+   "origin": "lexicon"
+  },
+  {
+   "a": "STOP",
+   "relation": "contradicts",
+   "b": "CONTINUE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "STOP",
+   "relation": "contradicts",
+   "b": "GO_FIRST",
+   "origin": "lexicon"
+  },
+  {
+   "a": "STOP",
+   "relation": "contradicts",
+   "b": "ROLL_THROUGH",
+   "origin": "lexicon"
+  },
+  {
+   "a": "TAKE_BREAK",
+   "relation": "contradicts",
+   "b": "CONTINUE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "TEC_DEVICES:NEHM_ALLOWED",
+   "relation": "contradicts",
+   "b": "TEC_DEVICES:NEHM_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_DEVICES:NEHM_PROHIBITED",
+   "relation": "contradicts",
+   "b": "TEC_DEVICES:NEHM_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_HU#1",
+   "relation": "contradicts",
+   "b": "TEC_HU#2",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_HU#2",
+   "relation": "contradicts",
+   "b": "TEC_HU#1",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS#4",
+   "relation": "exception_to",
+   "b": "TEC_LIGHTS",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS#5",
+   "relation": "exception_to",
+   "b": "TEC_LIGHTS",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS:ABBLEND_ALLOWED",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS:ABBLEND_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS:ABBLEND_PROHIBITED",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS:ABBLEND_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS:EINSCHALT_ALLOWED",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS:EINSCHALT_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS:EINSCHALT_PROHIBITED",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS:EINSCHALT_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS:GEFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS:GEFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LIGHTS:GEFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "TEC_LIGHTS:GEFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LOAD#0",
+   "relation": "exception_to",
+   "b": "TEC_LOAD",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LOAD#1",
+   "relation": "contradicts",
+   "b": "TEC_LOAD#2",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LOAD#2",
+   "relation": "contradicts",
+   "b": "TEC_LOAD#1",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LOAD:HINAUSRAG_ALLOWED",
+   "relation": "contradicts",
+   "b": "TEC_LOAD:HINAUSRAG_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_LOAD:HINAUSRAG_PROHIBITED",
+   "relation": "contradicts",
+   "b": "TEC_LOAD:HINAUSRAG_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_SAFETY_KIT#0",
+   "relation": "contradicts",
+   "b": "TEC_SAFETY_KIT#2",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_SAFETY_KIT#1",
+   "relation": "contradicts",
+   "b": "TEC_SAFETY_KIT#2",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_SAFETY_KIT#2",
+   "relation": "contradicts",
+   "b": "TEC_SAFETY_KIT#0",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_SAFETY_KIT#2",
+   "relation": "contradicts",
+   "b": "TEC_SAFETY_KIT#1",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_TYRES#0",
+   "relation": "contradicts",
+   "b": "TEC_TYRES#1",
+   "origin": "claims"
+  },
+  {
+   "a": "TEC_TYRES#1",
+   "relation": "contradicts",
+   "b": "TEC_TYRES#0",
+   "origin": "claims"
+  },
+  {
+   "a": "TRL_LENGTH_GAP#0",
+   "relation": "contradicts",
+   "b": "TRL_LENGTH_GAP#1",
+   "origin": "claims"
+  },
+  {
+   "a": "TRL_LENGTH_GAP#1",
+   "relation": "contradicts",
+   "b": "TRL_LENGTH_GAP#0",
+   "origin": "claims"
+  },
+  {
+   "a": "TRL_SPEED#0",
+   "relation": "contradicts",
+   "b": "TRL_SPEED#1",
+   "origin": "claims"
+  },
+  {
+   "a": "TRL_SPEED#1",
+   "relation": "contradicts",
+   "b": "TRL_SPEED#0",
+   "origin": "claims"
+  },
+  {
+   "a": "TURN_AROUND",
+   "relation": "contradicts",
+   "b": "CONTINUE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "USR_ANIMALS:FÜHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_ANIMALS:FÜHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ANIMALS:FÜHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_ANIMALS:FÜHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CHILDREN_BIKES:ABSTEIG_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_CHILDREN_BIKES:ABSTEIG_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CHILDREN_BIKES:ABSTEIG_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_CHILDREN_BIKES:ABSTEIG_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CHILDREN_BIKES:BENUTZ_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_CHILDREN_BIKES:BENUTZ_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CHILDREN_BIKES:BENUTZ_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_CHILDREN_BIKES:BENUTZ_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CYCLISTS#0",
+   "relation": "contradicts",
+   "b": "USR_CYCLISTS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CYCLISTS#1",
+   "relation": "contradicts",
+   "b": "USR_CYCLISTS#0",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CYCLISTS:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_CYCLISTS:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CYCLISTS:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_CYCLISTS:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CYCLISTS:ÜBERHOL_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_CYCLISTS:ÜBERHOL_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_CYCLISTS:ÜBERHOL_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_CYCLISTS:ÜBERHOL_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER#0",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER#1",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER#1",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER#0",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER#5",
+   "relation": "exception_to",
+   "b": "USR_ESCOOTER",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER:MITFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER:MITFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_ESCOOTER:MITFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_ESCOOTER:MITFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS#0",
+   "relation": "contradicts",
+   "b": "USR_GROUPS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS#0",
+   "relation": "exception_to",
+   "b": "USR_GROUPS",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS#1",
+   "relation": "contradicts",
+   "b": "USR_GROUPS#0",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS#2",
+   "relation": "contradicts",
+   "b": "USR_GROUPS#3",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS#3",
+   "relation": "contradicts",
+   "b": "USR_GROUPS#2",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS:FAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_GROUPS:FAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS:FAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_GROUPS:FAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS:UNTERBRECH_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_GROUPS:UNTERBRECH_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_GROUPS:UNTERBRECH_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_GROUPS:UNTERBRECH_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_HELMET_BELTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:ACCELERATE",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_HELMET_BELTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:CONTINUE",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_HELMET_BELTS#2",
+   "relation": "incompatible_with",
+   "b": "ACTION:KEEP_SPEED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS#0",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS#0",
+   "relation": "exception_to",
+   "b": "USR_PASSENGERS",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS#1",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS#0",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS#2",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS#3",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS#2",
+   "relation": "exception_to",
+   "b": "USR_PASSENGERS",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS#3",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS#2",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS#5",
+   "relation": "exception_to",
+   "b": "USR_PASSENGERS",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS:MITFAHR_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS:MITFAHR_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS:MITFAHR_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS:MITFAHR_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS:MITGENOMM_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS:MITGENOMM_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS:MITGENOMM_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS:MITGENOMM_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS:VORHAND_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS:VORHAND_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PASSENGERS:VORHAND_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_PASSENGERS:VORHAND_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS#0",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS#0",
+   "relation": "exception_to",
+   "b": "USR_PEDESTRIANS",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS#1",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS#0",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS#1",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS#4",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS#3",
+   "relation": "exception_to",
+   "b": "USR_PEDESTRIANS",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS#4",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS#1",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS#4",
+   "relation": "exception_to",
+   "b": "USR_PEDESTRIANS",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS:FORTSETZ_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS:FORTSETZ_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS:FORTSETZ_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS:FORTSETZ_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS:GEHE_ALLOWED",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS:GEHE_PROHIBITED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_PEDESTRIANS:GEHE_PROHIBITED",
+   "relation": "contradicts",
+   "b": "USR_PEDESTRIANS:GEHE_ALLOWED",
+   "origin": "claims"
+  },
+  {
+   "a": "USR_SKATES#0",
+   "relation": "exception_to",
+   "b": "USR_SKATES",
+   "origin": "claims"
+  },
+  {
+   "a": "WAIT",
+   "relation": "contradicts",
+   "b": "ACCELERATE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "WAIT",
+   "relation": "contradicts",
+   "b": "CLEAR_JUNCTION",
+   "origin": "lexicon"
+  },
+  {
+   "a": "WAIT",
+   "relation": "contradicts",
+   "b": "CONTINUE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "WAIT",
+   "relation": "contradicts",
+   "b": "GO_FIRST",
+   "origin": "lexicon"
+  },
+  {
+   "a": "WAIT",
+   "relation": "contradicts",
+   "b": "INSIST_PRIORITY",
+   "origin": "lexicon"
+  },
+  {
+   "a": "WAIT",
+   "relation": "contradicts",
+   "b": "ROLL_THROUGH",
+   "origin": "lexicon"
+  },
+  {
+   "a": "WALKING_SPEED",
+   "relation": "contradicts",
+   "b": "ACCELERATE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "WALKING_SPEED",
+   "relation": "contradicts",
+   "b": "KEEP_SPEED",
+   "origin": "lexicon"
+  },
+  {
+   "a": "YIELD",
+   "relation": "contradicts",
+   "b": "ACCELERATE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "YIELD",
+   "relation": "contradicts",
+   "b": "CONTINUE",
+   "origin": "lexicon"
+  },
+  {
+   "a": "YIELD",
+   "relation": "contradicts",
+   "b": "GO_FIRST",
+   "origin": "lexicon"
+  },
+  {
+   "a": "YIELD",
+   "relation": "contradicts",
+   "b": "INSIST_PRIORITY",
+   "origin": "lexicon"
+  },
+  {
+   "a": "ablenkung",
+   "relation": "broader_than",
+   "b": "handy",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "ampel",
+   "relation": "narrower_than",
+   "b": "rangfolge",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "andreaskreuz",
+   "relation": "narrower_than",
+   "b": "bahnuebergang",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "anhalteweg",
+   "relation": "broader_than",
+   "b": "bremsweg",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "anhalteweg",
+   "relation": "broader_than",
+   "b": "reaktionsweg",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "anhang",
+   "relation": "broader_than",
+   "b": "wohnanhang",
+   "origin": "qualifiers"
+  },
+  {
+   "a": "bahnuebergang",
+   "relation": "broader_than",
+   "b": "andreaskreuz",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "bremsweg",
+   "relation": "narrower_than",
+   "b": "anhalteweg",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "einfahren",
+   "relation": "exception_to",
+   "b": "vorfahrt",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "gruenpfeil",
+   "relation": "exception_to",
+   "b": "ampel",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "handy",
+   "relation": "narrower_than",
+   "b": "ablenkung",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "polizei",
+   "relation": "narrower_than",
+   "b": "rangfolge",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "rangfolge",
+   "relation": "broader_than",
+   "b": "ampel",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "rangfolge",
+   "relation": "broader_than",
+   "b": "polizei",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "rangfolge",
+   "relation": "broader_than",
+   "b": "rechts_vor_links",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "rangfolge",
+   "relation": "broader_than",
+   "b": "verkehrszeichen",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "reaktionsweg",
+   "relation": "narrower_than",
+   "b": "anhalteweg",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "rechts_vor_links",
+   "relation": "narrower_than",
+   "b": "rangfolge",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "verkehrszeichen",
+   "relation": "narrower_than",
+   "b": "rangfolge",
+   "origin": "concept_graph"
+  },
+  {
+   "a": "wohnanhang",
+   "relation": "narrower_than",
+   "b": "anhang",
+   "origin": "qualifiers"
+  }
+ ]
+}

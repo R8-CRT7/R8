@@ -447,3 +447,84 @@ def resolve_answer(question: str, answer: str) -> str | None:
             out = re.sub(r"\bihr(e[nmrs]?)?\b", lambda mm: "mein" + (mm.group(1) or ""), out)
             return re.sub(r"\s+", " ", out).strip()
     return None
+
+
+# ----------------------------------------------------------------------------- yes/no propositions
+_YN_VERB = re.compile(r"^\s*(darf|dürfen|muss|müssen|ist|sind|kann|können|reicht|reichen|gilt|gelten|braucht|brauchen|"
+                      r"hat|haben|besteht|bestehen|sollte|sollten|soll|wird|werden|gehört|gehören|genügt|genügen)\s+(.*)$",
+                      re.IGNORECASE)
+_YN_ANSWER = re.compile(r"^\s*(ja|nein)\b[\s,.:;-]*(.*)$", re.IGNORECASE)
+_ICH_FORM = {"dürfen": "darf", "müssen": "muss", "können": "kann", "sollten": "sollte", "brauchen": "brauche",
+             "haben": "habe", "sind": "bin", "werden": "werde"}
+_ARTICLE = r"(der|die|das|den|dem|ein|eine|einen|einem|kein\w*|mein\w*|dies\w*|jede[rsnm]?|alle)"
+
+
+@dataclass(frozen=True)
+class Proposition:
+    """'Dürfen Sie hier halten?' + 'Nein.' -> subject='ich', verb='darf', negated=True, rest='hier halten'
+    -> text 'ich darf nicht hier halten' (driver may stop here = FALSE)."""
+
+    subject: str
+    verb: str
+    rest: str
+    negated: bool
+    reason: str = ""
+
+    @property
+    def text(self) -> str:
+        return re.sub(r"\s+", " ", f"{self.subject} {self.verb} {'nicht ' if self.negated else ''}{self.rest}").strip()
+
+
+def yes_no_proposition(question: str, answer: str) -> Proposition | None:
+    """Full proposition from a yes/no question and its 'Ja'/'Nein' answer, or None if this is no yes/no pair.
+    Only the last question sentence counts; earlier sentences are the situation."""
+    qa = _YN_ANSWER.match(answer)
+    if not qa:
+        return None
+    sentences = re.split(r"(?<=[.!:])\s+", question.strip())
+    last = sentences[-1] if sentences else question
+    last = re.sub(r"\s*\([^)]*\)", "", re.sub(r"[?!.]+\s*$", "", last.strip()))
+    last = re.sub(r",\s*(um|damit)\b.*$", "", last)  # a purpose clause is no part of the rule; a condition is
+    m = _YN_VERB.match(last)
+    if not m:
+        return None
+    verb, rest = m.group(1).lower(), m.group(2)
+    sm = re.match(r"^(sie|man|ich)\b\s*(.*)$", rest, re.IGNORECASE)
+    if sm:
+        subject, rest = "ich", sm.group(2)
+        verb = _ICH_FORM.get(verb, verb)
+    else:
+        am = re.match(rf"^({_ARTICLE}\s+(\w+\s+)?[A-ZÄÖÜ][\w-]*|[A-ZÄÖÜ][\w-]*|das|dies|es|er)\b\s*(.*)$", rest)
+        if am:
+            subject, rest = am.group(1), am.group(am.lastindex or 1)
+        else:
+            subject = ""
+    return Proposition(subject, verb, rest, qa.group(1).lower() == "nein", qa.group(2).strip())
+
+
+# ----------------------------------------------------------------------------- role resolution (domain-specific)
+_ROAD_USERS = (r"kind(er)?|mofa|pkw|lkw|radfahrer(in)?|fußgänger(in)?|fussgänger(in)?|bus|schulbus|linienbus|fahrzeug|"
+               r"motorrad|kraftrad|straßenbahn|strassenbahn|rettungswagen|einsatzfahrzeug|traktor|anhänger|"
+               r"wohnanhänger|gespann|e-scooter|polizeibeamte[rn]?|gegenverkehr|vorausfahrende[rn]?")
+_REFERENT = re.compile(rf"\b(ein|eine|einen|der|die|das|dem|den)\s+(?:\w+e[nrs]?\s+)?({_ROAD_USERS})\b", re.IGNORECASE)
+_PLACE = re.compile(r"\b((?:an|auf|in|im|am|vor|hinter|neben|über)\s+(?:der|dem|den|einer|einem|einen)?\s*"
+                    r"(?:\w+e[nrs]?\s+)?[A-ZÄÖÜ][\w-]+)")
+_NOMINATIVE = {"einen": "ein", "dem": "der", "den": "der", "einem": "ein", "einer": "eine"}
+
+
+def resolve_roles(question: str, answer: str) -> str:
+    """Resolve references in an answer with the roles of the question (Fahrschul-specific, no general NLP):
+    'Sie ...' -> 'ich ...', 'Ihr/Ihre' -> 'mein/meine', 'Es/Er/Dieses Fahrzeug ...' -> the road user the question
+    named last ('ein Kind'), 'dort/hier' -> the place the question named last ('an der Haltestelle')."""
+    a = answer.strip()
+    a = re.sub(r"^Sie\b", "Ich", a)
+    a = re.sub(r"\bIhr(e[nmrs]?)?\b", lambda m: "mein" + (m.group(1) or ""), a)
+    refs = list(_REFERENT.finditer(question))
+    if refs:
+        art, noun = refs[-1].group(1).lower(), refs[-1].group(2)
+        ref = f"{_NOMINATIVE.get(art, art)} {noun}"
+        a = re.sub(r"^(Es|Er|Dieses Fahrzeug|Das Fahrzeug|Dieser|Diese)\b", ref[0].upper() + ref[1:], a)
+    places = list(_PLACE.finditer(question))
+    if places and re.search(r"\b(dort|hier|da)\b", a, re.IGNORECASE):
+        a = re.sub(r"\b(dort|hier|da)\b", places[-1].group(1), a, count=1, flags=re.IGNORECASE)
+    return a

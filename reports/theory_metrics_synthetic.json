@@ -1,19 +1,19 @@
 {
  "overall": {
   "n": 5240,
-  "accuracy": 0.7727,
-  "coverage": 0.7727,
+  "accuracy": 0.7754,
+  "coverage": 0.7754,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.2273,
+  "uncertain_rate": 0.2246,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
  "multiselect_exact_match": {
   "n": 880,
-  "accuracy": 0.7318,
-  "coverage": 0.7318,
+  "accuracy": 0.7364,
+  "coverage": 0.7364,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.2682,
+  "uncertain_rate": 0.2636,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -29,10 +29,10 @@
  "by_category": {
   "claims": {
    "n": 3309,
-   "accuracy": 0.7135,
-   "coverage": 0.7135,
+   "accuracy": 0.7165,
+   "coverage": 0.7165,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2865,
+   "uncertain_rate": 0.2835,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -47,10 +47,10 @@
   },
   "negation": {
    "n": 762,
-   "accuracy": 0.7283,
-   "coverage": 0.7283,
+   "accuracy": 0.7336,
+   "coverage": 0.7336,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2717,
+   "uncertain_rate": 0.2664,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -121,10 +121,10 @@
   },
   "05_priority": {
    "n": 1660,
-   "accuracy": 0.8446,
-   "coverage": 0.8446,
+   "accuracy": 0.8518,
+   "coverage": 0.8518,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1554,
+   "uncertain_rate": 0.1482,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -148,10 +148,10 @@
   },
   "08_speed_distance": {
    "n": 916,
-   "accuracy": 0.9192,
-   "coverage": 0.9192,
+   "accuracy": 0.9214,
+   "coverage": 0.9214,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.0808,
+   "uncertain_rate": 0.0786,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -204,10 +204,10 @@
  "by_variant": {
   "base": {
    "n": 428,
-   "accuracy": 0.7593,
-   "coverage": 0.7593,
+   "accuracy": 0.764,
+   "coverage": 0.764,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2407,
+   "uncertain_rate": 0.236,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -258,10 +258,10 @@
   },
   "context": {
    "n": 577,
-   "accuracy": 0.6603,
-   "coverage": 0.6603,
+   "accuracy": 0.6638,
+   "coverage": 0.6638,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.3397,
+   "uncertain_rate": 0.3362,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -312,10 +312,10 @@
   },
   "negative_question": {
    "n": 572,
-   "accuracy": 0.7483,
-   "coverage": 0.7483,
+   "accuracy": 0.7552,
+   "coverage": 0.7552,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2517,
+   "uncertain_rate": 0.2448,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -339,19 +339,19 @@
   },
   "ocr_noise": {
    "n": 1218,
-   "accuracy": 0.7192,
-   "coverage": 0.7192,
+   "accuracy": 0.7233,
+   "coverage": 0.7233,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2808,
+   "uncertain_rate": 0.2767,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "paraphrase": {
    "n": 563,
-   "accuracy": 0.7158,
-   "coverage": 0.7158,
+   "accuracy": 0.7176,
+   "coverage": 0.7176,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2842,
+   "uncertain_rate": 0.2824,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -401,16 +401,16 @@
    "precision_when_answered": 1.0
   }
  },
- "rule_selection_accuracy": 0.9944,
+ "rule_selection_accuracy": 0.9945,
  "uncertain_acceptable": 13,
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   1129
+   1115
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
-   123
+   121
   ],
   [
    "rule not verified against an official law text",
@@ -419,21 +419,21 @@
  ],
  "latency_ms": {
   "total_theory_latency": {
-   "p50": 12.35,
-   "p95": 24.3,
-   "max": 1893.69
+   "p50": 10.92,
+   "p95": 21.46,
+   "max": 1948.47
   },
   "retrieval_latency": {
-   "p50": 8.26,
-   "p95": 15.36,
-   "max": 1648.17
+   "p50": 7.22,
+   "p95": 13.55,
+   "max": 1747.96
   },
   "reasoning_latency": {
-   "p50": 3.97,
-   "p95": 10.05,
-   "max": 245.46
+   "p50": 3.34,
+   "p95": 8.39,
+   "max": 470.98
   }
  },
- "seconds": 71.0,
+ "seconds": 60.5,
  "set": "synthetic"
 }
