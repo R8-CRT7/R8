@@ -10,6 +10,7 @@ as one more vote: disagreement makes the result UNCERTAIN, agreement never lifts
 
 from __future__ import annotations
 
+import dataclasses
 import math
 import re
 from dataclasses import dataclass, field
@@ -20,13 +21,15 @@ from smart360.theory.kb import KnowledgeBase, get_kb
 from smart360.theory.negation import Deontic, Polarity, analyze, asks_for_negative, deontic_truth
 from smart360.theory.priority import PriorityDecision, decide
 from smart360.theory.scene import Scene, temporal_check
-from smart360.theory.schema import Claim, KnowledgeObject
-from smart360.theory.text import NUMBER_TOKEN, content, cosine, fold, numbers, similarity, stem
+from smart360.theory.schema import Claim, KnowledgeObject, Sign
+from smart360.theory.text import NUMBER_TOKEN, content, cosine, fold, numbers, ocr_repair, similarity, stem
 
 DEFAULT_THRESHOLD = 0.75
 MATCH_MIN = 0.55  # minimum statement similarity for a claim to count
 AMBIGUITY_GAP = 0.08
 NUMERIC_SITUATION_MIN = 0.3
+SIGN_MATCH_MIN = 0.35
+COMPOSITE_Q_MIN = 0.25  # question-vs-claim cosine for composite (question+short answer) matching  # cosine between an answer and a sign description
 # Words that change which number applies. If the question contains one that the matched claim does not, a
 # numeric answer is not decided from that claim (protects against e.g. "Pkw mit Anhänger" -> Pkw limit).
 QUALIFIERS = frozenset(content(" ".join((
@@ -90,6 +93,24 @@ _RESULT_FACTOR_WORDS = {"verdoppelt": 2, "verdreifacht": 3, "vervierfacht": 4, "
                         "versechsfacht": 6}
 
 
+_KEYWORDS = ("gefahrbremsung", "notbremsung", "vollbremsung", "anhalteweg", "bremsweg", "reaktionsweg",
+             "sicherheitsabstand", "verdoppelt", "verdreifacht", "halbiert")
+
+
+def _repair_keywords(t: str) -> str:
+    """OCR-tolerant keyword spotting: a token within one edit of a calculation keyword is replaced by it
+    ('gcfahrbremsung' -> 'gefahrbremsung'). Only these few keywords - never free text."""
+    from rapidfuzz.distance import Levenshtein
+
+    out = []
+    for w in t.split(" "):
+        core = w.strip(".,;:?!()")
+        hit = next((k for k in _KEYWORDS if core != k and len(core) >= 7
+                    and Levenshtein.distance(core, k, score_cutoff=1) <= 1), None)
+        out.append(w.replace(core, hit) if hit else w)
+    return " ".join(out)
+
+
 def classify(q: TheoryQuestion) -> tuple[set[str], dict]:
     t = fold(q.text)
     kinds: set[str] = set()
@@ -99,6 +120,7 @@ def classify(q: TheoryQuestion) -> tuple[set[str], dict]:
     if q.number_input:
         kinds.add("number_input")
     speeds = [v for v, u in numbers(q.text) if u == "km/h"]
+    t = _repair_keywords(t)
     emergency = bool(re.search(r"gefahr(en)?bremsung|notbremsung|vollbremsung", t))
     if "bremsweg" in t and any(w in t for w in _FACTOR_WORDS) and not speeds:
         k = next(v for w, v in _FACTOR_WORDS.items() if w in t)
@@ -125,6 +147,8 @@ def classify(q: TheoryQuestion) -> tuple[set[str], dict]:
         task = task or {"licence": masses}
     if q.sign_ids or re.search(r"\b(zeichen|schild|verkehrszeichen)\b", t):
         kinds.add("sign")
+        if q.sign_ids or re.search(r"\bbedeut|\bwas (zeigt|sagt|gilt bei) (das|dieses) (zeichen|schild)|\bwelche bedeutung", t):
+            kinds.add("sign_meaning")
     if q.scene is not None or re.search(r"vorfahrt|zuerst|reihenfolge|durchfahren lassen|vorrang", t):
         kinds.add("priority")
     if q.has_image or q.scene is not None:
@@ -154,29 +178,65 @@ class _Match:
     flags: list[str]
 
 
-def _claim_verdict(claim: Claim, answer: str, pa: Polarity) -> tuple[Verdict, list[str]]:
+_CONJ = r"(solange|wenn|weil|dass|ob|bis|obwohl|falls|sofern|nachdem|bevor|damit|sodass|während|sobald)"
+_SUBCLAUSE_MID = re.compile(r",\s*(" + _CONJ[1:-1] + r"|die|der|das|welche[rs]?|den|dem|deren|dessen)\b[^,]*(,|$)",
+                            re.IGNORECASE)
+_LEADING_CONDITION = re.compile(
+    r"^\s*(" + _CONJ[1:-1] + r"|kann|können|ist|sind|hat|haben|muss|müssen|darf|dürfen|steht|stehen|wird|werden|"
+    r"gibt|kommt|kommen|fährt|fahren|nähert|liegt|bleibt)\b[^,]*,\s*(.+)$", re.IGNORECASE)
+
+
+def main_clause(text: str) -> str:
+    """Only the main clause carries the polarity of a statement:
+    'Ich darf durchfahren, solange die Schranke nicht geschlossen ist' -> 'Ich darf durchfahren'
+    'Kinder, die kleiner als 150 cm sind, brauchen ...'                 -> 'Kinder brauchen ...'
+    'Kann ich den Übergang nicht räumen, muss ich warten'              -> 'muss ich warten'"""
+    t = text.strip()
+    m = _LEADING_CONDITION.match(t)
+    if m:
+        t = m.group(2)
+    prev = None
+    while prev != t:
+        prev = t
+        t = _SUBCLAUSE_MID.sub(lambda mm: " " if mm.group(2) == "," else "", t, count=1)
+    return re.sub(r"\s+", " ", t).strip() or text
+
+
+def condition_part(text: str) -> str:
+    """Everything that main_clause() removed (conditions, relative clauses)."""
+    main = set(main_clause(text).lower().split())
+    return " ".join(w for w in text.lower().replace(",", " ").split() if w not in main)
+
+
+def _claim_verdict(claim: Claim, answer: str, pa: Polarity, numbers_text: str | None = None) -> tuple[Verdict, list[str]]:
     flags: list[str] = []
-    pc = analyze(claim.statement)
+    pc = analyze(main_clause(claim.statement))
     truth = claim.truth
     # numbers are compared per unit: a different value in the same unit as a TRUE claim -> the answer is false;
     # a number the claim does not cover (other unit / claim without numbers) -> not decidable from this claim
-    a_nums = {(v, u) for v, u in numbers(answer)}
-    c_nums = {(v, u) for v, u in numbers(" ".join(claim.numbers) or claim.statement)}
-    if a_nums:
-        if not c_nums:
+    a_list = numbers(answer if numbers_text is None else numbers_text)
+    c_list = numbers(" ".join([*claim.numbers, claim.statement]))
+    if a_list:
+        if not c_list:
             return Verdict.UNKNOWN, ["number_not_covered"]
-        differs = covered = False
-        for v, u in a_nums:
-            same_unit = {cv for cv, cu in c_nums if cu == u}
-            if same_unit:
-                covered = True
-                differs |= v not in same_unit
-        if not covered:
-            return Verdict.UNKNOWN, ["unit_mismatch"]
-        if differs:
+        c_set = set(c_list)
+        c_units = {u for _, u in c_list}
+        differs = False
+        uncovered = False
+        for v, u in a_list:
+            if (v, u) in c_set:
+                continue
+            if u in c_units:
+                differs = True  # same unit, other value
+            else:
+                uncovered = True  # a number the claim says nothing about
+        same_count = len(a_list) == len(numbers(claim.statement)) and sorted(a_list) != sorted(numbers(claim.statement))
+        if differs or (same_count and not uncovered):
             if truth:
                 return Verdict.FALSE, ["number_differs"]
             return Verdict.UNKNOWN, ["number_differs_from_false_claim"]
+        if uncovered:
+            return Verdict.UNKNOWN, ["number_not_covered"]
     if Deontic.NONE not in (pa.deontic, pc.deontic):
         r = deontic_truth(pc.deontic, pa.deontic, truth)
         if r is None:
@@ -195,6 +255,10 @@ def _claim_verdict(claim: Claim, answer: str, pa: Polarity) -> tuple[Verdict, li
     if pa.negated != pc.negated:
         v = not v
         flags.append("negation_flip")
+    # a negated CONDITION states a different rule ('Kann ich ... zügig räumen, muss ich warten' is not the rule)
+    a_cond, c_cond = condition_part(answer), condition_part(claim.statement)
+    if a_cond and c_cond and analyze(a_cond).negated != analyze(c_cond).negated:
+        return Verdict.UNKNOWN, ["condition_polarity_differs"]
     if pa.absolutes and not set(pa.absolutes) & set(pc.absolutes):
         flags.append("absolute_quantifier")
     return (Verdict.TRUE if v else Verdict.FALSE), flags
@@ -204,7 +268,7 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
                  use_context: bool = True) -> list[_Match]:
     q_core = _core(question)
     a_core = _core(answer)
-    pa = analyze(answer)
+    pa = analyze(main_clause(answer))
     a_words = {w for w in a_core if not NUMBER_TOKEN.match(w)}
     numeric_only = bool(numbers(answer)) and len(a_words) <= 1
     out: list[_Match] = []
@@ -221,7 +285,11 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
                     continue
                 verdict, flags = _claim_verdict(claim, answer, pa)
                 flags = [*flags, "numeric_answer"]
-                missing = (q_core & QUALIFIERS) - c_all
+                missing = (q_core & QUALIFIERS) - c_all - _negated_qualifiers(question)
+                excluded = _negated_qualifiers(question) & c_all
+                if excluded:  # question says 'ohne Anhänger' but the claim is about the trailer case
+                    flags.append("qualifier_excluded")
+                    s_sit *= 0.25
                 if missing:  # the question names a situation (Anhänger, Lkw, Nebel ...) this claim does not cover
                     flags.append("qualifier_missing")
                     s_sit *= 0.5 ** len(missing)
@@ -235,10 +303,75 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
             if use_context and claim.context and s_ctx < 0.2:
                 continue  # the claim belongs to a different situation
             score = s_stmt * ((0.5 + 0.5 * s_ctx) if use_context else 1.0)
+            # specificity: answer words the claim does not cover ('Feldweg') lower the score, so the more
+            # specific claim wins over a general one that only matches part of the answer
+            covered = len(a_core & (_core(claim.statement) | ctx)) / len(a_core) if a_core else 1.0
+            score *= covered ** 2
             verdict, flags = _claim_verdict(claim, answer, pa)
             if obj.exceptions and "absolute_quantifier" in flags:
                 flags.append("exception_risk")
             out.append(_Match(obj, claim, score, verdict, flags))
+    out.sort(key=lambda m: -m.score)
+    return out
+
+
+def _negated_qualifiers(text: str) -> set[str]:
+    """Qualifiers the question explicitly excludes: 'ohne Anhänger', 'kein Lkw'."""
+    out: set[str] = set()
+    for m in re.finditer(r"\b(ohne|kein\w*)\s+(\w+)", fold(text)):
+        out |= content(m.group(2)) & QUALIFIERS
+    return out
+
+
+_YES_NO_Q = re.compile(r"^\s*(darf|dürfen|muss|müssen|ist|sind|kann|können|reicht|gilt|gelten|braucht|brauchen|"
+                       r"hat|haben|besteht|sollten?|wird|werden)\b", re.IGNORECASE)
+_YES_NO_A = re.compile(r"^\s*(ja|nein)\b[\s,.:;-]*(.*)$", re.IGNORECASE)
+
+
+def _answer_proposition(question: str, answer: str) -> tuple[str, str]:
+    """Yes/no questions: 'Dürfen Sie X?' + 'Nein, ...' -> 'Sie dürfen nicht X ...'. The answer alone ('Ja, wenn
+    ich blinke') says nothing without the question."""
+    qa = _YES_NO_A.match(answer)
+    if not (_YES_NO_Q.match(question) and qa):
+        return answer, "plain"
+    prop = re.sub(r"[?!.]+\s*$", "", question.strip())
+    prop = re.sub(r",\s*(um|damit|wenn|weil)\b.*$", "", prop)  # purpose/condition of the question is not the claim
+    first, _, rest = prop.partition(" ")
+    if qa.group(1).lower() == "nein":
+        prop = f"{first} nicht {rest}"
+    return prop, "yes_no"
+
+
+def _yes_no_reason(answer: str) -> str:
+    qa = _YES_NO_A.match(answer)
+    return qa.group(2).strip() if qa else ""
+
+
+def _is_short(answer: str) -> bool:
+    return len({w for w in _core(answer) if not NUMBER_TOKEN.match(w)}) <= 4
+
+
+def match_composite(question: str, answer: str, candidates: list[KnowledgeObject]) -> list[_Match]:
+    """Short answers ('Auf dem Gehweg', 'Der Pkw von rechts') only mean something together with the question.
+    A claim matches if it covers the answer's distinctive words AND fits the question's situation."""
+    q_core = _core(question)
+    a_core = {w for w in _core(answer) if not NUMBER_TOKEN.match(w)}
+    if not a_core:
+        return []
+    pa = analyze(main_clause(answer))  # polarity of the ANSWER - a 'nicht' in the question is situation, not claim
+    out: list[_Match] = []
+    for obj in candidates:
+        for claim in obj.claims:
+            c_core = _core(claim.statement) | _core(" ".join(claim.context))
+            a_cov = len(a_core & c_core) / len(a_core)
+            if a_cov < 0.99:  # every distinctive answer word must be covered ('auf dem Übergang' != 'vor dem Kreuz')
+                continue
+            q_sim = cosine(q_core, c_core)
+            if q_sim < COMPOSITE_Q_MIN:
+                continue
+            score = 0.5 * a_cov + 0.5 * min(1.0, q_sim * 1.5)
+            verdict, flags = _claim_verdict(claim, answer, pa)
+            out.append(_Match(obj, claim, score, verdict, [*flags, "composite"]))
     out.sort(key=lambda m: -m.score)
     return out
 
@@ -325,6 +458,11 @@ def _target_sign(kb: KnowledgeBase, q: TheoryQuestion) -> str | None:
     return m.group(1) if m and m.group(1) in kb.signs else None
 
 
+def _negative(text: str) -> bool:
+    p = analyze(text)
+    return p.negated != (p.deontic in (Deontic.FORBIDDEN, Deontic.NOT_OBLIGATORY))
+
+
 def _eval_sign(kb: KnowledgeBase, q: TheoryQuestion) -> list[AnswerEval]:
     num = _target_sign(kb, q)
     if num is None:
@@ -332,17 +470,23 @@ def _eval_sign(kb: KnowledgeBase, q: TheoryQuestion) -> list[AnswerEval]:
     target = kb.signs[num]
     rivals = [kb.signs[c] for c in target.confusions if c in kb.signs]
     evals = []
+
+    def desc(sg: Sign) -> str:
+        return f"{sg.name} {sg.meaning} {' '.join(sg.keywords)}"
+
     for i, a in enumerate(q.answers, start=1):
         a_core = _core(a)
-        pa = analyze(a)
-        s_t = similarity(a_core, _core(f"{target.name} {target.meaning} {' '.join(target.keywords)}"))
-        s_r = max((similarity(a_core, _core(f"{r.name} {r.meaning} {' '.join(r.keywords)}")) for r in rivals), default=0)
-        if max(s_t, s_r) < MATCH_MIN or abs(s_t - s_r) < AMBIGUITY_GAP:
+        s_t = cosine(a_core, _core(desc(target)))
+        scored = sorted(((cosine(a_core, _core(desc(r))), r) for r in rivals), key=lambda x: -x[0])
+        s_r = scored[0][0] if scored else 0.0
+        if max(s_t, s_r) < SIGN_MATCH_MIN or abs(s_t - s_r) < AMBIGUITY_GAP:
             evals.append(AnswerEval(i, Verdict.UNKNOWN, "sign", [f"SIGN_{num}"], "Bedeutung nicht eindeutig zuzuordnen",
                                     max(s_t, s_r)))
             continue
+        matched = target if s_t > s_r else scored[0][1]
         v = s_t > s_r
-        if pa.negated:
+        # negation relative to the matched meaning ("darf nicht halten" in the meaning itself is no negation)
+        if _negative(a) != _negative(matched.meaning):
             v = not v
         evals.append(AnswerEval(i, Verdict.TRUE if v else Verdict.FALSE, "sign", [f"SIGN_{num}"],
                                 f"Zeichen {num} ({target.name}): {target.meaning}", max(s_t, s_r)))
@@ -402,6 +546,12 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
     kb = kb or get_kb()
     trace: list[tuple[str, str]] = []
     reasons: list[str] = []
+    fixed_q, n_fix = ocr_repair(q.text)
+    fixed_a = [ocr_repair(a) for a in q.answers]
+    n_fix += sum(n for _, n in fixed_a)
+    if n_fix:
+        q = dataclasses.replace(q, text=fixed_q, answers=[a for a, _ in fixed_a])
+        trace.append(("ocr_repair", f"{n_fix} polarity word(s) repaired"))
     norm_q = fold(q.text)
     trace.append(("normalization", norm_q[:200]))
     kinds, task = classify(q)
@@ -443,7 +593,7 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
         calc_used = True
 
     # signs / right of way (structured evidence first)
-    if "sign" in kinds:
+    if "sign_meaning" in kinds:
         for e in _eval_sign(kb, q):
             if e.verdict != Verdict.UNKNOWN or e.index not in evals:
                 evals.setdefault(e.index, e)
@@ -461,8 +611,25 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
     for i, a in enumerate(q.answers, start=1):
         if i in evals and evals[i].verdict != Verdict.UNKNOWN:
             continue
-        matches = match_claims(kb, q.text, a, candidates)
-        verdict, best, flags = _decide_claims(matches)
+        a_eval, a_mode = _answer_proposition(q.text, a)
+        if a_mode == "yes_no":
+            verdict, best, flags = _decide_claims(match_claims(kb, q.text, a_eval, candidates))
+            flags = [*flags, "yes_no"]
+            reason = _yes_no_reason(a)
+            if reason and len(_core(reason)) >= 2 and not re.match(r"(wenn|falls|sofern|solange|weil)\b", reason, re.I):
+                r_verdict, r_best, _ = _decide_claims(match_claims(kb, q.text, reason, candidates))
+                if r_verdict != Verdict.UNKNOWN and verdict not in (Verdict.UNKNOWN, r_verdict):
+                    verdict, flags = Verdict.UNKNOWN, [*flags, "yes_no_reason_conflict"]
+                elif verdict == Verdict.UNKNOWN and r_verdict != Verdict.UNKNOWN:
+                    verdict, best, flags = r_verdict, r_best, [*flags, "yes_no_by_reason"]
+        else:
+            matches = match_claims(kb, q.text, a, candidates)
+            verdict, best, flags = _decide_claims(matches)
+            if verdict == Verdict.UNKNOWN and _is_short(a):
+                c_matches = match_composite(q.text, a, candidates)
+                c_verdict, c_best, c_flags = _decide_claims(c_matches)
+                if c_best is not None and (best is None or c_verdict != Verdict.UNKNOWN):
+                    verdict, best, flags = c_verdict, c_best, [*c_flags, "composite"]
         claim_matches[i] = best
         if best is not None:
             evals[i] = AnswerEval(i, verdict, "claim", [best.obj.id], _explain(best), best.score, flags)

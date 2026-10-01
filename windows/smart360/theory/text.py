@@ -45,7 +45,7 @@ def ascii_fold(text: str) -> str:
     return fold(text).translate(str.maketrans("äöü", "aou"))
 
 
-_NUM = re.compile(r"(\d+(?:[.,]\d+)?)\s*(km/h|‰|%|mm|cm|m|kg|t|s|jahre|ng/ml|punkte?)?(?![a-zäöü])")
+_NUM = re.compile(r"(\d+(?:[.,]\d+)?)\s*(km/h|km|‰|%|mm|cm|m|kg|t|s|jahre|monate|minuten|ng/ml|punkte?)?(?![a-zäöü])")
 
 
 def numbers(text: str) -> list[tuple[float, str]]:
@@ -121,7 +121,52 @@ def content(text: str, keep: frozenset[str] = frozenset()) -> set[str]:
     return {stem(w).translate(_UMLAUT) for w in words(text) if (w not in STOPWORDS or w in keep) and len(w) > 1}
 
 
-NUMBER_TOKEN = re.compile(r"^(\d+([.,]\d+)?|km/h|m|cm|mm|kg|t|s|‰|%|jahre|monate|minuten)$")
+NUMBER_TOKEN = re.compile(r"^(\d+([.,]\d+)?|km/h|km|m|cm|mm|kg|t|s|‰|%|jahre|monate|minuten)$")
+
+# --------------------------------------------------------------------------- OCR repair of polarity words
+# Only words that flip or qualify meaning, and only with typical OCR confusions - a general spell checker would
+# invent meaning. 'kcin' -> 'kein', 'nlcht' -> 'nicht', 'rnuss' -> 'muss'.
+POLARITY_LEXICON = ("nicht", "kein", "keine", "keinen", "keiner", "keinem", "keines", "nie", "niemals", "darf",
+                    "dürfen", "muss", "müssen", "verboten", "erlaubt", "immer", "ausnahme", "ausnahmen", "unzulässig",
+                    "zulässig", "solange", "wenn", "falls", "sofern", "sobald", "während", "bevor", "nachdem")
+_OCR_EQUIV = [("rn", "m"), ("c", "e"), ("l", "i"), ("I", "i"), ("1", "i"), ("|", "i"), ("0", "o"), ("u", "ü"),
+              ("a", "ä"), ("o", "ö"), ("ii", "ü"), ("l", "I")]
+
+
+def _ocr_variants(word: str) -> set[str]:
+    out = {word}
+    for a, b in _OCR_EQUIV:
+        for x, y in ((a, b), (b, a)):
+            i = word.find(x)
+            while i != -1:
+                out.add(word[:i] + y + word[i + len(x):])
+                i = word.find(x, i + 1)
+    return out
+
+
+_POLARITY_BY_VARIANT: dict[str, str] = {}
+for _w in POLARITY_LEXICON:
+    for _v in _ocr_variants(_w):
+        _POLARITY_BY_VARIANT.setdefault(_v, _w)
+for _w in POLARITY_LEXICON:  # real words always map to themselves
+    _POLARITY_BY_VARIANT[_w] = _w
+
+
+def ocr_repair(text: str) -> tuple[str, int]:
+    """Repair OCR-damaged polarity words (one typical confusion). Returns (text, number of repairs)."""
+    n = 0
+
+    def fix(m: re.Match[str]) -> str:
+        nonlocal n
+        w = m.group(0)
+        low = w.lower()
+        rep = _POLARITY_BY_VARIANT.get(low)
+        if rep is None or rep == low:
+            return w
+        n += 1
+        return rep if w[:1].islower() else rep.capitalize()
+
+    return re.sub(r"[A-Za-zÄÖÜäöüß|01]+", fix, text), n
 
 
 def cosine(a: set[str], b: set[str]) -> float:

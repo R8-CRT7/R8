@@ -74,12 +74,32 @@ _NEG_INSERT = re.compile(r"\b(darf|dürfen|muss|müssen|ist|sind|hat|haben|kann|
 
 def negate(statement: str) -> str | None:
     """Insert 'nicht' after the first finite verb ('darf überholen' -> 'darf nicht überholen')."""
-    if re.search(r"\b(nicht|kein\w*|nie)\b", statement, re.IGNORECASE):
-        return re.sub(r"\s*\bnicht\b", "", statement, count=1, flags=re.IGNORECASE)
-    m = _NEG_INSERT.search(statement)
-    if not m:
-        return None
-    return statement[: m.end()] + " nicht" + statement[m.end():]
+    if re.search(r"\bnicht\b", statement, re.IGNORECASE):
+        out = re.sub(r"\s*\bnicht\b", "", statement, count=1, flags=re.IGNORECASE)
+    elif re.search(r"\bkeine?[nmrs]?\b", statement, re.IGNORECASE):
+        out = re.sub(r"\s*\bkeine?[nmrs]?\b", "", statement, count=1, flags=re.IGNORECASE)
+    elif re.search(r"\b(nie|niemals|kein\w*)\b", statement, re.IGNORECASE):
+        return None  # no clean affirmative form - skip rather than produce a wrong ground truth
+    else:
+        out = None
+    if out is not None:
+        return out if out != statement else None
+    # insert after the first finite verb of the MAIN clause (not inside ', die ...,' or ', wenn ...')
+    spans = [(m.start(), m.end()) for m in re.finditer(r",\s*(die|der|das|wenn|weil|dass|solange|falls|sofern|bis)\b[^,]*(,|$)",
+                                                       statement, re.IGNORECASE)]
+    for m in _NEG_INSERT.finditer(statement):
+        if not any(a <= m.start() < b for a, b in spans):
+            return statement[: m.end()] + " nicht" + statement[m.end():]
+    return None
+
+
+def _same_situation(a: Claim, b: Claim) -> bool:
+    """Two TRUE claims may appear in one item only if they describe the same situation - otherwise a statement
+    that is true for sign 301 would be marked true in a question about sign 306."""
+    from smart360.theory.text import content
+
+    ca, cb = content(" ".join(a.context)), content(" ".join(b.context))
+    return bool(ca and cb) and len(ca & cb) / min(len(ca), len(cb)) >= 0.5
 
 
 def _stem_question(obj: KnowledgeObject, claim: Claim) -> str:
@@ -99,33 +119,42 @@ def _change_number(statement: str, rng: random.Random) -> str | None:
     return statement[: m.start()] + nv_txt + statement[m.end():]
 
 
-def claim_items(kb: KnowledgeBase, seed: int = 7, per_object: int = 12) -> list[TheoryItem]:
+VARIANT_REPS = {"base": 2, "paraphrase": 3, "negation": 1, "negative_question": 2, "multiselect": 2,
+                "ocr_noise": 3, "number_change": 2, "unit_error": 1, "exception": 1, "context": 2}
+
+
+def claim_items(kb: KnowledgeBase, seed: int = 7, per_object: int = 200) -> list[TheoryItem]:
+    """For EVERY true claim of every rule: all variant types (several random paraphrase/OCR/distractor draws).
+    Identical generated questions are de-duplicated."""
     rng = random.Random(seed)
     items: list[TheoryItem] = []
-    by_sub: dict[str, list[KnowledgeObject]] = {}
-    for o in kb.objects.values():
-        by_sub.setdefault(o.subtopic, []).append(o)
+    seen: set[tuple[str, tuple[str, ...]]] = set()
     for obj in kb.objects.values():
         trues = [c for c in obj.claims if c.truth]
         falses = [c for c in obj.claims if not c.truth]
         if not trues or not falses:
             continue
         n = 0
-        for variant in ("base", "paraphrase", "negation", "negative_question", "multiselect", "ocr_noise",
-                        "number_change", "unit_error", "exception", "context"):
-            for rep in range(2 if variant in ("base", "paraphrase", "ocr_noise", "multiselect") else 1):
-                if n >= per_object:
-                    break
-                it = _make_variant(obj, trues, falses, variant, rng, f"{obj.id}:{variant}:{rep}")
-                if it is not None:
+        for ti, t in enumerate(trues):
+            for variant, reps in VARIANT_REPS.items():
+                for rep in range(reps):
+                    if n >= per_object:
+                        break
+                    it = _make_variant(obj, trues, falses, variant, rng, f"{obj.id}:{ti}:{variant}:{rep}", t)
+                    if it is None:
+                        continue
+                    key = (it.question.text, tuple(it.question.answers))
+                    if key in seen:
+                        continue
+                    seen.add(key)
                     items.append(it)
                     n += 1
     return items
 
 
 def _make_variant(obj: KnowledgeObject, trues: list[Claim], falses: list[Claim], variant: str,
-                  rng: random.Random, iid: str) -> TheoryItem | None:
-    t = rng.choice(trues)
+                  rng: random.Random, iid: str, t: Claim | None = None) -> TheoryItem | None:
+    t = t or rng.choice(trues)
     f_pool = list(falses)
     rng.shuffle(f_pool)
     opts: list[tuple[str, bool]] = [(t.statement, True)] + [(f.statement, False) for f in f_pool[:2]]
@@ -138,8 +167,9 @@ def _make_variant(obj: KnowledgeObject, trues: list[Claim], falses: list[Claim],
         if neg is None:
             return None
         opts[0] = (neg, False)
-        if len(trues) > 1:
-            opts.append((rng.choice([c for c in trues if c is not t]).statement, True))
+        same = [c for c in trues if c is not t and _same_situation(c, t)]
+        if same:
+            opts.append((rng.choice(same).statement, True))
         else:
             negf = negate(f_pool[0].statement)
             if negf is None:
@@ -149,7 +179,7 @@ def _make_variant(obj: KnowledgeObject, trues: list[Claim], falses: list[Claim],
         stem = f"{obj.title} ({', '.join(t.context) or obj.title}). Welche Aussage ist falsch?"
         opts = [(s, v) for s, v in opts]
     elif variant == "multiselect":
-        extra = [c for c in trues if c is not t]
+        extra = [c for c in trues if c is not t and _same_situation(c, t)]
         if not extra:
             return None
         opts.append((rng.choice(extra).statement, True))
