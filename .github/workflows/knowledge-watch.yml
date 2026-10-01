@@ -9,6 +9,11 @@ on:
   schedule:
     - cron: "17 4 * * *"
   workflow_dispatch:
+    inputs:
+      fetch_gii:
+        description: "Also download FeV / StVG / BKatV xml.zip from gesetze-im-internet.de (official BMJ downloads) and commit the unmodified files to knowledge/sources/manual/"
+        type: boolean
+        default: false
   push:
     branches: ["feature/**", "claude/**"]
     paths: ["windows/tools/knowledge_watch.py", "knowledge/watch/**", ".github/workflows/knowledge-watch.yml"]
@@ -25,6 +30,30 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Official downloads from gesetze-im-internet.de (FeV, StVG, BKatV) - only on manual request
+        if: github.event_name == 'workflow_dispatch' && inputs.fetch_gii
+        continue-on-error: true
+        run: |
+          mkdir -p knowledge/sources/manual
+          {
+            echo "## gesetze-im-internet.de (official XML downloads)"
+            for slug in fev_2010 stvg bkatv_2013; do
+              code=$(curl -sS -L -o "knowledge/sources/manual/${slug}_xml.zip" -w '%{http_code}' --max-time 60 \
+                     "https://www.gesetze-im-internet.de/${slug}/xml.zip" || echo "000")
+              if [ "$code" = "200" ] && unzip -tq "knowledge/sources/manual/${slug}_xml.zip" >/dev/null 2>&1; then
+                echo "- ${slug}: HTTP ${code}, sha256 $(sha256sum knowledge/sources/manual/${slug}_xml.zip | cut -c1-16)…"
+              else
+                echo "- ${slug}: not available (HTTP ${code})"
+                rm -f "knowledge/sources/manual/${slug}_xml.zip"
+              fi
+            done
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+          git config user.name "knowledge-watch[bot]"
+          git config user.email "knowledge-watch@users.noreply.github.com"
+          git add knowledge/sources/manual/*_xml.zip 2>/dev/null || true
+          git diff --cached --quiet && echo "nothing downloaded" && exit 0
+          git commit -m "sources: official FeV/StVG/BKatV XML downloads from gesetze-im-internet.de, unmodified [skip ci]"
+          git push origin HEAD:${{ github.ref_name }}
       - name: Fetch official sources (RIS API)
         timeout-minutes: 15
         run: python windows/tools/knowledge_watch.py fetch-raw --out "$RUNNER_TEMP/raw"
