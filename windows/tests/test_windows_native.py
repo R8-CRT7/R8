@@ -222,7 +222,7 @@ def test_real_dry_run_shows_targets_and_sends_no_input(qtbot, tmp_path):
         print("dry run:", ev.data["message"])
         assert ev.data["ok"] and ev.data["dry_run"]
         qtbot.wait(600)
-        assert sim.clicks == [] and sim.state.selected == set()
+        assert len(sim.clicks) == 0 and sim.state.selected == set()  # deque, not list
         ox, oy = sim.origin
         for c in ev.data["clicks"]:
             box = sim._checkboxes[c["answer"]]

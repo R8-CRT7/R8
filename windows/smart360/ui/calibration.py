@@ -315,7 +315,8 @@ class CalibrationWizard(QWidget):
             for a in self.test_result.answers:
                 if a.checkbox:
                     cb = QRectF(a.checkbox.x, a.checkbox.y, a.checkbox.w, a.checkbox.h)
-                    p.setPen(QPen(C.SUCCESS, 2))
+                    # green = box really found, orange = position only estimated (safe mode won't click)
+                    p.setPen(QPen(C.SUCCESS if a.checkbox_found else C.WARNING, 2))
                     p.setBrush(Qt.BrushStyle.NoBrush)
                     p.drawRoundedRect(self._to_screen(cb), 3, 3)
         p.end()
