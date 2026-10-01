@@ -1,0 +1,58 @@
+{
+ "items": [
+  {
+   "id": "SPD_ADVISORY_130",
+   "topic": "08_speed_distance",
+   "subtopic": "richtgeschwindigkeit",
+   "title": "Autobahn-Richtgeschwindigkeit 130 km/h",
+   "rule": "Für Pkw und Kfz bis 3,5 t wird auf Autobahnen (und außerorts auf Straßen mit baulich getrennten Richtungsfahrbahnen oder mindestens zwei markierten Fahrstreifen je Richtung) empfohlen, nicht schneller als 130 km/h zu fahren - eine Empfehlung, keine Höchstgeschwindigkeit.",
+   "numeric_refs": [
+    "BABRIGESCHWV_130"
+   ],
+   "concepts": [
+    "geschwindigkeit",
+    "autobahn"
+   ],
+   "keywords": [
+    "Richtgeschwindigkeit",
+    "130 km/h",
+    "Autobahn",
+    "Empfehlung"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "babrigeschwv",
+     "norm": "§ 1",
+     "evidence": "nicht schneller als 130 km/h zu fahren (Autobahn-Richtgeschwindigkeit)"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Autobahn",
+      "Richtgeschwindigkeit",
+      "Pkw"
+     ],
+     "statement": "Die Richtgeschwindigkeit auf Autobahnen beträgt 130 km/h",
+     "truth": true,
+     "numbers": [
+      "130 km/h"
+     ]
+    },
+    {
+     "context": [
+      "Autobahn",
+      "Richtgeschwindigkeit",
+      "Pkw"
+     ],
+     "statement": "Die Richtgeschwindigkeit ist eine verbindliche Höchstgeschwindigkeit",
+     "truth": false
+    }
+   ]
+  }
+ ]
+}

@@ -2,10 +2,10 @@
 
 _Automatisch erzeugt von `windows/tools/knowledge_coverage.py` - nicht von Hand bearbeiten._
 
-Amtliche Quellen (Rechtsinformationsportal des Bundes, LegalDocML): stvo_2013 (StVO, eli/bund/bgbl-1/2013/s367/2025-01-01/1/deu, abgerufen 2026-10-01), stvzo_2012 (StVZO, eli/bund/bgbl-1/2012/s679/2024-10-01/1/deu, abgerufen 2026-10-01).
+Amtliche Quellen (Rechtsinformationsportal des Bundes, LegalDocML): babrigeschwv (BABRiGeschwV 1978, eli/bund/bgbl-1/1978/s1824/2009-09-01/1/deu, abgerufen 2026-10-01), ekfv (eKFV, eli/bund/bgbl-1/2019/s756/2026-04-01/1/deu, abgerufen 2026-10-01), stvo_2013 (StVO, eli/bund/bgbl-1/2013/s367/2025-01-01/1/deu, abgerufen 2026-10-01), stvzo_2012 (StVZO, eli/bund/bgbl-1/2012/s679/2024-10-01/1/deu, abgerufen 2026-10-01).
 Nicht verfügbar (nicht im RIS-Testbestand, Netzwerkrichtlinie blockiert gesetze-im-internet.de): FeV, StVG, BKatV - Regeln daraus sind als **unverified** markiert und führen in der Engine zu UNCERTAIN.
 
-**Gesamt:** 85 Regeln · 66 Zahlenregeln · 185 Verkehrszeichen · 382 Aussagen (Claims) · 52 Konzept-Kanten · 5051 synthetische Testvarianten · Evidence-Fehler: 0
+**Gesamt:** 87 Regeln · 69 Zahlenregeln · 185 Verkehrszeichen · 390 Aussagen (Claims) · 52 Konzept-Kanten · 5152 synthetische Testvarianten · Evidence-Fehler: 0
 
 | Thema | Regeln (verified / unverified / secondary) | Zahlen | Tests | Bildtests | Genauigkeit synth. | UNCERTAIN synth. | letzte Validierung |
 |---|---|---|---|---|---|---|---|
@@ -15,14 +15,14 @@ Nicht verfügbar (nicht im RIS-Testbestand, Netzwerkrichtlinie blockiert gesetze
 | 04_road_system Straßenverkehrssystem und Bahnübergänge | 3 (3 / 0 / 0) | 4 | 73 | 0 | 75% | 25% | 2026-10-01 |
 | 05_priority Grundregel, Vorfahrt und Verkehrsregelungen | 16 (16 / 0 / 0) | 0 | 1648 | 408 | 85% | 15% | 2026-10-01 |
 | 06_signs Verkehrszeichen und Verkehrseinrichtungen | 8 (8 / 0 / 0) | 3 | 540 | 0 | 80% | 20% | 2026-10-01 |
-| 07_road_users Teilnehmer am Straßenverkehr - Besonderheiten und Verhalten | 9 (9 / 0 / 0) | 5 | 370 | 0 | 64% | 36% | 2026-10-01 |
-| 08_speed_distance Geschwindigkeit, Abstand und umweltschonende Fahrweise | 8 (8 / 0 / 0) | 8 | 902 | 0 | 91% | 9% | 2026-10-01 |
-| 09_manoeuvres Verkehrsbeobachtung und Verkehrsverhalten bei Fahrmanövern | 9 (9 / 0 / 0) | 3 | 518 | 0 | 60% | 40% | 2026-10-01 |
-| 10_parking Ruhender Verkehr | 4 (4 / 0 / 0) | 12 | 249 | 0 | 80% | 20% | 2026-10-01 |
-| 11_special Verhalten in besonderen Situationen und Folgen von Verkehrsverstößen | 7 (7 / 0 / 0) | 1 | 270 | 0 | 47% | 53% | 2026-10-01 |
+| 07_road_users Teilnehmer am Straßenverkehr - Besonderheiten und Verhalten | 10 (10 / 0 / 0) | 7 | 439 | 0 | 70% | 30% | 2026-10-01 |
+| 08_speed_distance Geschwindigkeit, Abstand und umweltschonende Fahrweise | 9 (9 / 0 / 0) | 9 | 923 | 0 | 91% | 9% | 2026-10-01 |
+| 09_manoeuvres Verkehrsbeobachtung und Verkehrsverhalten bei Fahrmanövern | 9 (9 / 0 / 0) | 3 | 519 | 0 | 59% | 41% | 2026-10-01 |
+| 10_parking Ruhender Verkehr | 4 (4 / 0 / 0) | 12 | 246 | 0 | 81% | 19% | 2026-10-01 |
+| 11_special Verhalten in besonderen Situationen und Folgen von Verkehrsverstößen | 7 (7 / 0 / 0) | 1 | 276 | 0 | 47% | 53% | 2026-10-01 |
 | 12_learning Lebenslanges Lernen | 2 (0 / 1 / 1) | 2 | 0 | 0 | - | - | - |
-| 13_vehicle_technology Technische Bedingungen, Personen-/Güterbeförderung und umweltbewusster Umgang | 7 (7 / 0 / 0) | 18 | 328 | 0 | 49% | 51% | 2026-10-01 |
-| 14_trailers Fahren mit Solokraftfahrzeugen und Zügen | 3 (2 / 1 / 0) | 6 | 58 | 0 | 52% | 48% | 2026-10-01 |
+| 13_vehicle_technology Technische Bedingungen, Personen-/Güterbeförderung und umweltbewusster Umgang | 7 (7 / 0 / 0) | 18 | 337 | 0 | 51% | 49% | 2026-10-01 |
+| 14_trailers Fahren mit Solokraftfahrzeugen und Zügen | 3 (2 / 1 / 0) | 6 | 56 | 0 | 50% | 50% | 2026-10-01 |
 
 ## Quellen je Thema
 
@@ -32,8 +32,8 @@ Nicht verfügbar (nicht im RIS-Testbestand, Netzwerkrichtlinie blockiert gesetze
 - **04_road_system:** stvo_2013 § 18, stvo_2013 § 2, stvo_2013 § 7
 - **05_priority:** stvo_2013 Anlage 2, stvo_2013 § 10, stvo_2013 § 11, stvo_2013 § 19, stvo_2013 § 20, stvo_2013 § 26, stvo_2013 § 36, stvo_2013 § 37, stvo_2013 § 38, stvo_2013 § 6, stvo_2013 § 8, stvo_2013 § 9
 - **06_signs:** stvo_2013 Anlage 2 Nr. 23, stvo_2013 Anlage 2 Nr. 3, stvo_2013 Anlage 2 Nr. 54.4, stvo_2013 Anlage 2 Nr. 62, stvo_2013 Anlage 2 Nr. 63, stvo_2013 Anlage 2 Nr. 68, stvo_2013 Anlage 2 Nr. 69, stvo_2013 Anlage 2 Nr. Zu 53, 54 und 54.4, stvo_2013 Anlage 3, stvo_2013 Anlage 3 Nr. 1, stvo_2013 Anlage 3 Nr. 12, stvo_2013 Anlage 3 Nr. 2, stvo_2013 § 36, stvo_2013 § 37, stvo_2013 § 39, stvo_2013 § 40, stvo_2013 § 41
-- **07_road_users:** stvo_2013 § 2, stvo_2013 § 21, stvo_2013 § 21a, stvo_2013 § 23, stvo_2013 § 24, stvo_2013 § 25, stvo_2013 § 27, stvo_2013 § 28, stvo_2013 § 31, stvo_2013 § 37, stvo_2013 § 5
-- **08_speed_distance:** rule_of_thumb, stvo_2013 § 17, stvo_2013 § 18, stvo_2013 § 3, stvo_2013 § 4
+- **07_road_users:** ekfv § 10, ekfv § 11, ekfv § 3, ekfv § 8, stvo_2013 § 2, stvo_2013 § 21, stvo_2013 § 21a, stvo_2013 § 23, stvo_2013 § 24, stvo_2013 § 25, stvo_2013 § 27, stvo_2013 § 28, stvo_2013 § 31, stvo_2013 § 37, stvo_2013 § 5
+- **08_speed_distance:** babrigeschwv § 1, rule_of_thumb, stvo_2013 § 17, stvo_2013 § 18, stvo_2013 § 3, stvo_2013 § 4
 - **09_manoeuvres:** stvo_2013 § 16, stvo_2013 § 17, stvo_2013 § 18, stvo_2013 § 2, stvo_2013 § 5, stvo_2013 § 7, stvo_2013 § 7a, stvo_2013 § 9
 - **10_parking:** stvo_2013 § 12, stvo_2013 § 14, stvo_2013 § 17
 - **11_special:** stvo_2013 § 1, stvo_2013 § 15, stvo_2013 § 15a, stvo_2013 § 2, stvo_2013 § 30, stvo_2013 § 32, stvo_2013 § 34

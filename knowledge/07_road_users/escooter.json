@@ -1,0 +1,113 @@
+{
+ "items": [
+  {
+   "id": "USR_ESCOOTER",
+   "topic": "07_road_users",
+   "subtopic": "elektrokleinstfahrzeuge",
+   "title": "E-Scooter (Elektrokleinstfahrzeuge)",
+   "rule": "E-Scooter (eKFV): bauartbedingt mehr als 6 bis höchstens 20 km/h; Mindestalter 14 Jahre; keine Personenbeförderung, kein Anhänger; einzeln hintereinander, nicht freihändig, nicht anhängen. Innerorts nur Radwege/Radfahrstreifen/Fahrradstraßen, wenn keine da sind Fahrbahn oder verkehrsberuhigter Bereich - nicht auf Gehwegen (außer Zusatzzeichen). Ampel: Radverkehrs-Lichtzeichen. Auf gemeinsamen Geh- und Radwegen haben Fußgänger Vorrang.",
+   "numeric_refs": [
+    "EKFV_3_MIN_AGE",
+    "EKFV_1_MAX_SPEED"
+   ],
+   "concepts": [
+    "escooter",
+    "radweg"
+   ],
+   "keywords": [
+    "E-Scooter",
+    "Elektrokleinstfahrzeug",
+    "Tretroller",
+    "14 Jahre",
+    "Gehweg",
+    "Radweg",
+    "Personenbeförderung",
+    "zu zweit"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 3",
+     "evidence": "Zum Führen eines Elektrokleinstfahrzeugs sind Personen berechtigt, die das 14. Lebensjahr vollendet haben."
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 8",
+     "evidence": "Die Personenbeförderung sowie der Anhängerbetrieb sind für Elektrokleinstfahrzeuge nicht gestattet."
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 11",
+     "para": "Abs. 1",
+     "evidence": "Wer ein Elektrokleinstfahrzeug führt, muss einzeln hintereinander fahren, darf sich nicht an fahrende Fahrzeuge anhängen und nicht freihändig fahren."
+    },
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 10",
+     "para": "Abs. 1",
+     "evidence": "Wenn solche nicht vorhanden sind, darf auf Fahrbahnen oder in verkehrsberuhigten Bereichen (Zeichen 325.1 der Anlage 3 zur Straßenverkehrs-Ordnung) gefahren werden."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "E-Scooter",
+      "Mindestalter"
+     ],
+     "statement": "E-Scooter dürfen ab dem vollendeten 14. Lebensjahr gefahren werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Mindestalter"
+     ],
+     "statement": "E-Scooter dürfen schon mit 12 Jahren gefahren werden",
+     "truth": false
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "zu zweit",
+      "mitnehmen"
+     ],
+     "statement": "Auf einem E-Scooter darf keine zweite Person mitfahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Gehweg"
+     ],
+     "statement": "Mit dem E-Scooter darf ich ohne Zusatzzeichen auf dem Gehweg fahren",
+     "truth": false
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "nebeneinander"
+     ],
+     "statement": "E-Scooter-Fahrer müssen einzeln hintereinander fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "E-Scooter",
+      "Radweg",
+      "kein Radweg",
+      "innerorts"
+     ],
+     "statement": "Gibt es keinen Radweg, darf innerorts auf der Fahrbahn gefahren werden",
+     "truth": true
+    }
+   ]
+  }
+ ]
+}

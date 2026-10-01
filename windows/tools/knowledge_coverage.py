@@ -14,9 +14,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from smart360.theory.generator import all_items  # noqa: E402
-from smart360.theory.kb import KnowledgeBase  # noqa: E402
-from smart360.theory.schema import TOPICS  # noqa: E402
+from smart360.theory.generator import all_items
+from smart360.theory.kb import KnowledgeBase
+from smart360.theory.schema import TOPICS
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "docs" / "KNOWLEDGE_COVERAGE.md"
@@ -51,7 +51,7 @@ def build() -> str:
     for o in kb.objects.values():
         status[o.topic][kb.status[o.id]] += 1
         for s in o.sources:
-            sources[o.topic].add(f"{s.law} {s.norm}" if s.law else (s.type if not s.ref else s.type))
+            sources[o.topic].add(f"{s.law} {s.norm}" if s.law else s.type)
         if o.last_verified:
             last[o.topic] = max(last.get(o.topic, ""), o.last_verified)
     snaps = ", ".join(f"{k} ({v.get('abbreviation')}, {v.get('eli')}, abgerufen {v.get('fetched_at', '')[:10]})"

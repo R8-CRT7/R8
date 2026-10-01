@@ -49,7 +49,7 @@ def test_synthetic_category_gates(synthetic):
 @pytest.mark.parametrize("name", sorted(GOLDEN_SHA256))
 def test_golden_sets_are_frozen(name):
     """A golden set must not be edited to fit the engine - a new version gets a new file."""
-    data = (GOLDEN_DIR / name).read_bytes()
+    data = (GOLDEN_DIR / name).read_bytes().replace(b"\r\n", b"\n")  # git may check out CRLF on Windows
     assert hashlib.sha256(data).hexdigest() == GOLDEN_SHA256[name]
 
 

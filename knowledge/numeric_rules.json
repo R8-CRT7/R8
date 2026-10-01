@@ -1570,6 +1570,72 @@
      "evidence": "Mehr als 15 Rad Fahrende dürfen einen geschlossenen Verband bilden."
     }
    ]
+  },
+  {
+   "id": "EKFV_3_MIN_AGE",
+   "topic": "07_road_users",
+   "quantity": "age",
+   "value": 14,
+   "unit": "years",
+   "comparator": "min",
+   "value_text": "14. Lebensjahr",
+   "applies_to": "Mindestalter für E-Scooter (Elektrokleinstfahrzeuge)",
+   "keywords": [
+    "E-Scooter"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 3",
+     "evidence": "Zum Führen eines Elektrokleinstfahrzeugs sind Personen berechtigt, die das 14. Lebensjahr vollendet haben."
+    }
+   ]
+  },
+  {
+   "id": "EKFV_1_MAX_SPEED",
+   "topic": "07_road_users",
+   "quantity": "max_design_speed",
+   "value": 20,
+   "unit": "km/h",
+   "comparator": "max",
+   "value_text": "20 km/h",
+   "applies_to": "E-Scooter: bauartbedingte Höchstgeschwindigkeit mehr als 6 und höchstens 20 km/h",
+   "keywords": [
+    "E-Scooter"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "ekfv",
+     "norm": "§ 1",
+     "evidence": "bauartbedingten Höchstgeschwindigkeit von mehr als 6 km/h und nicht mehr als 20 km/h"
+    }
+   ]
+  },
+  {
+   "id": "BABRIGESCHWV_130",
+   "topic": "08_speed_distance",
+   "quantity": "advisory_speed",
+   "value": 130,
+   "unit": "km/h",
+   "comparator": "eq",
+   "value_text": "130 km/h",
+   "applies_to": "Autobahn-Richtgeschwindigkeit (Empfehlung) für Pkw und Kfz bis 3,5 t",
+   "keywords": [
+    "Richtgeschwindigkeit"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "babrigeschwv",
+     "norm": "§ 1",
+     "evidence": "nicht schneller als 130 km/h zu fahren (Autobahn-Richtgeschwindigkeit)"
+    }
+   ]
   }
  ]
 }

@@ -23,14 +23,15 @@ def _raw(tmp_path, v):
     (d / "regelungstext-verkuendung-1.xml.gz").write_bytes(gzip.compress(MAIN.replace("{v}", str(v)).encode()))
     (d / "anlage-regelungstext-2.xml.gz").write_bytes(gzip.compress(ANNEX.encode()))
     (d / "meta.json").write_text(json.dumps({"name": "StVO", "abbreviation": "StVO", "eli": "eli/bund/x",
-                                             "zip_url": "https://example/x.zip", "fetched_at": "2026-10-01T00:00:00Z"}))
+                                             "zip_url": "https://example/x.zip", "fetched_at": "2026-10-01T00:00:00Z"}),
+                                 encoding="utf-8")
     return d.parent
 
 
 def test_parse_ldml_articles_and_sign_rows(tmp_path):
     out = tmp_path / "snap"
     kw.parse_raw(_raw(tmp_path, 50), out)
-    snap = json.loads((out / "stvo_2013.json").read_text())
+    snap = json.loads((out / "stvo_2013.json").read_text(encoding="utf-8"))
     assert "Schneeketten" in snap["norms"]["§ 3"]["text"]
     assert snap["norms"]["§ 3"]["paragraphs"]["(4)"]
     assert snap["sign_index"]["205"] == "Anlage 2 Nr. 2"
@@ -45,7 +46,7 @@ def test_compare_detects_legal_change_and_broken_evidence(tmp_path):
     kdir = tmp_path / "knowledge" / "08_speed_distance"
     kdir.mkdir(parents=True)
     (kdir / "a.json").write_text(json.dumps({"items": [{"id": "SNOW", "sources": [
-        {"type": "law", "law": "stvo_2013", "norm": "§ 3", "evidence": "mit Schneeketten auch unter günstigsten Umständen 50 km/h"}]}]}))
+        {"type": "law", "law": "stvo_2013", "norm": "§ 3", "evidence": "mit Schneeketten auch unter günstigsten Umständen 50 km/h"}]}]}), encoding="utf-8")
     res = kw.compare(old, new, tmp_path / "knowledge")
     assert res["status"] == "URGENT_REVIEW"
     assert res["broken_evidence"][0]["id"] == "SNOW"
@@ -66,6 +67,6 @@ def test_committed_snapshots_match_committed_raw_sources(tmp_path):
     out = tmp_path / "s"
     kw.parse_raw(kw.ROOT / "knowledge" / "sources" / "raw", out)
     for p in out.glob("*.json"):
-        mine = json.loads(p.read_text())["norms"]
-        committed = json.loads((kw.ROOT / "knowledge" / "sources" / "snapshots" / p.name).read_text())["norms"]
+        mine = json.loads(p.read_text(encoding="utf-8"))["norms"]
+        committed = json.loads((kw.ROOT / "knowledge" / "sources" / "snapshots" / p.name).read_text(encoding="utf-8"))["norms"]
         assert {k: v["sha256"] for k, v in mine.items()} == {k: v["sha256"] for k, v in committed.items()}

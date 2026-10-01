@@ -236,7 +236,7 @@
    "topic": "08_speed_distance",
    "subtopic": "hoechstgeschwindigkeit_pkw",
    "title": "Höchstgeschwindigkeiten Pkw",
-   "rule": "Pkw (und Kfz bis 3,5 t): innerorts 50 km/h, außerorts 100 km/h. Auf Autobahnen und Straßen mit baulich getrennten Richtungsfahrbahnen bzw. mindestens zwei markierten Fahrstreifen je Richtung gilt die 100-km/h-Grenze nicht (Richtgeschwindigkeit 130 km/h nach Autobahn-Richtgeschwindigkeits-V).",
+   "rule": "Pkw (und Kfz bis 3,5 t): innerorts 50 km/h, außerorts 100 km/h. Auf Autobahnen und Straßen mit baulich getrennten Richtungsfahrbahnen bzw. mindestens zwei markierten Fahrstreifen je Richtung gilt die 100-km/h-Grenze nicht (dort gilt die Autobahn-Richtgeschwindigkeit als Empfehlung, siehe SPD_ADVISORY_130).",
    "numeric_refs": [
     "STVO_3_INNERORTS",
     "STVO_3_AUSSERORTS_PKW"

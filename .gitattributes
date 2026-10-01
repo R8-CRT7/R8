@@ -1,0 +1,3 @@
+# knowledge data and golden sets: byte-identical on every OS (hashes, verbatim evidence)
+knowledge/**/*.json text eol=lf
+windows/tests/theory/golden/*.json text eol=lf

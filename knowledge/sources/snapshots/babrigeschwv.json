@@ -1,0 +1,49 @@
+{
+ "law": "babrigeschwv",
+ "name": "Verordnung über eine allgemeine Richtgeschwindigkeit auf Autobahnen und ähnlichen Straßen",
+ "abbreviation": "BABRiGeschwV 1978",
+ "eli": "eli/bund/bgbl-1/1978/s1824/2009-09-01/1/deu",
+ "source_url": "https://testphase.rechtsinformationen.bund.de/v1/legislation/eli/bund/bgbl-1/1978/s1824/2009-09-01/1/deu/2025-07-11.zip",
+ "source_priority": 1,
+ "fetched_at": "2026-10-01T10:42:41Z",
+ "missing_norms": [],
+ "sign_index": {},
+ "norms": {
+  "§ 1": {
+   "enbez": "§ 1",
+   "title": "",
+   "text": "Den Führern von Personenkraftwagen sowie von anderen Kraftfahrzeugen mit einem zulässigen Gesamtgewicht bis zu 3,5 t wird empfohlen, auch bei günstigen Straßen-, Verkehrs-, Sicht- und Wetterverhältnissen\n1.\nauf Autobahnen (Zeichen 330.1),\n2.\naußerhalb geschlossener Ortschaften auf anderen Straßen mit Fahrbahnen für eine Richtung, die durch Mittelstreifen oder sonstige bauliche Einrichtungen getrennt sind, und\n3.\naußerhalb geschlossener Ortschaften auf Straßen, die mindestens zwei durch Fahrstreifenbegrenzung (Zeichen 295) oder durch Leitlinien (Zeichen 340) markierte Fahrstreifen für jede Richtung haben,\nnicht schneller als 130 km/h zu fahren (Autobahn-Richtgeschwindigkeit). Das gilt nicht, soweit nach der StVO oder nach deren Zeichen Höchstgeschwindigkeiten (Zeichen 274) bestehen.",
+   "sha256": "1de76c69d44481f10bacba1b016a61dd400f6b632d65de26cc1d379d7a3d0c61",
+   "paragraphs": {
+    "": "Den Führern von Personenkraftwagen sowie von anderen Kraftfahrzeugen mit einem zulässigen Gesamtgewicht bis zu 3,5 t wird empfohlen, auch bei günstigen Straßen-, Verkehrs-, Sicht- und Wetterverhältnissen\n1.\nauf Autobahnen (Zeichen 330.1),\n2.\naußerhalb geschlossener Ortschaften auf anderen Straßen mit Fahrbahnen für eine Richtung, die durch Mittelstreifen oder sonstige bauliche Einrichtungen getrennt sind, und\n3.\naußerhalb geschlossener Ortschaften auf Straßen, die mindestens zwei durch Fahrstreifenbegrenzung (Zeichen 295) oder durch Leitlinien (Zeichen 340) markierte Fahrstreifen für jede Richtung haben,\nnicht schneller als 130 km/h zu fahren (Autobahn-Richtgeschwindigkeit). Das gilt nicht, soweit nach der StVO oder nach deren Zeichen Höchstgeschwindigkeiten (Zeichen 274) bestehen."
+   }
+  },
+  "§ 2": {
+   "enbez": "§ 2",
+   "title": "",
+   "text": "Im übrigen bleiben die Vorschriften der Straßenverkehrs-Ordnung unberührt und gelten entsprechend für diese Verordnung. Die in § 1 genannten Zeichen sind die der Straßenverkehrs-Ordnung.",
+   "sha256": "0d89bcca16e2c6b3abcae5a87d76e54928cc5897c9a8abcf7a69a7e21dda8086",
+   "paragraphs": {
+    "": "Im übrigen bleiben die Vorschriften der Straßenverkehrs-Ordnung unberührt und gelten entsprechend für diese Verordnung. Die in § 1 genannten Zeichen sind die der Straßenverkehrs-Ordnung."
+   }
+  },
+  "§ 3": {
+   "enbez": "§ 3",
+   "title": "",
+   "text": "Diese Verordnung gilt nach § 14 des Dritten Überleitungsgesetzes in Verbindung mit Artikel 33 Abs. 2 des Kostenermächtigungs-Änderungsgesetzes vom 23. Juni 1970 (BGBl. I S. 805) auch im Land Berlin.",
+   "sha256": "7773acc222ff647fed35829877d5807537936270c05038e5e4b484e8ffa4c586",
+   "paragraphs": {
+    "": "Diese Verordnung gilt nach § 14 des Dritten Überleitungsgesetzes in Verbindung mit Artikel 33 Abs. 2 des Kostenermächtigungs-Änderungsgesetzes vom 23. Juni 1970 (BGBl. I S. 805) auch im Land Berlin."
+   }
+  },
+  "§ 4": {
+   "enbez": "§ 4",
+   "title": "",
+   "text": "Diese Verordnung tritt am Tage nach der Verkündung in Kraft.",
+   "sha256": "03d7b8fdca11cca96b068c548a98a1182d0a251e1d24ac5b8143c67624246e72",
+   "paragraphs": {
+    "": "Diese Verordnung tritt am Tage nach der Verkündung in Kraft."
+   }
+  }
+ }
+}

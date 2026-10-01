@@ -6,8 +6,8 @@ Branch: `feature/driver-theory-knowledge-engine` (Basis: v0.5.0-alpha.3). **Nich
 * **Regeln verstehen statt Fragen auswendig lernen.** Die Wissensbasis enthält Regeln, Zahlen, Ausnahmen und
   eigene Kurzfassungen – keine kopierten Prüfungsfragen, keine Buch- oder Katalogpassagen.
 * **Gesetz vor allem anderen.** Jede Gesetzes-Zitation trägt einen wörtlichen Auszug (`evidence`), der beim
-  Laden und in den Tests gegen den amtlichen Text geprüft wird (StVO und StVZO aus dem Rechtsinformationsportal
-  des Bundes, LegalDocML). Gesetzestexte sind amtliche Werke (§ 5 UrhG).
+  Laden und in den Tests gegen den amtlichen Text geprüft wird (StVO, StVZO, eKFV und Autobahn-Richtgeschwindigkeits-V aus dem
+  Rechtsinformationsportal des Bundes, LegalDocML). Gesetzestexte sind amtliche Werke (§ 5 UrhG).
 * **Kein Zahlenwert aus Modellwissen.** Jede Zahlenregel braucht ihren `value_text` in der Evidenz. Was nicht
   amtlich prüfbar ist (FeV, StVG, BKatV – nicht im RIS-Testbestand, gesetze-im-internet.de ist in dieser
   Umgebung gesperrt), ist als **unverified** markiert. Die Engine antwortet darauf **UNCERTAIN**, und der
@@ -92,10 +92,10 @@ Wichtige Schutzmechanismen, jeweils aus einem gemessenen Fehler entstanden:
 ## Messungen (alle aus diesem Branch, keine echten Prüfungsfragen)
 | Satz | n | Genauigkeit | UNCERTAIN | false-confident | Präzision wenn beantwortet |
 |---|---|---|---|---|---|
-| Synthetisch (aus den Regeln erzeugt) | 5 051 | 75,7 % | 24,3 % | **0,0 %** | 100 % |
-| ↳ Mehrfachauswahl exakt | 838 | 69,6 % | 30,4 % | 0,0 % | 100 % |
-| ↳ Rechnen | 629 | 98,9 % | 1,1 % | 0,0 % | 100 % |
-| ↳ Negation / Frage nach dem Falschen | 725 | 71,2 % | 28,8 % | 0,0 % | 100 % |
+| Synthetisch (aus den Regeln erzeugt) | 5 152 | 76,0 % | 24,0 % | **0,0 %** | 100,0 % |
+| ↳ Mehrfachauswahl exakt | 862 | 70,5 % | 29,5 % | 0,0 % | 100,0 % |
+| ↳ Rechnen | 632 | 98,4 % | 1,6 % | 0,0 % | 100,0 % |
+| ↳ Negation / Frage nach dem Falschen | 752 | 71,4 % | 28,6 % | 0,0 % | 100,0 % |
 | ↳ Bild (Vorfahrt-Szenen) | 408 | 100 % | 0 % | 0,0 % | 100 % |
 | ↳ Zeichen | 102 | 94,1 % | 5,9 % | 0,0 % | 100 % |
 | ↳ Fahrerlaubnisklasse (FeV, unverified) | 26 | 0 % | 100 % | 0,0 % | – |
