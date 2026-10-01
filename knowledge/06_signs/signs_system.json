@@ -1,108 +1,703 @@
-{"items": [
-{"id": "SGN_HIERARCHY", "topic": "06_signs", "subtopic": "rangfolge", "title": "Rangfolge der Regelungen",
- "rule": "Polizeibeamte > Lichtzeichen > Verkehrszeichen / Verkehrseinrichtungen > allgemeine Verkehrsregeln (z. B. rechts vor links). Verkehrszeichen an Fahrzeugen gehen ortsfesten Zeichen vor.",
- "concepts": ["rangfolge", "verkehrszeichen", "polizei", "ampel"], "keywords": ["Rangfolge", "Vorrang", "Verkehrszeichen", "allgemeine Verkehrsregeln", "Polizei", "Lichtzeichen"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 39", "para": "Abs. 2", "evidence": "Regelungen durch Verkehrszeichen gehen den allgemeinen Verkehrsregeln vor."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 37", "para": "Abs. 1", "evidence": "Lichtzeichen gehen Vorrangregeln und Vorrang regelnden Verkehrszeichen vor."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 36", "para": "Abs. 1", "evidence": "Sie gehen allen anderen Anordnungen und sonstigen Regeln vor"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 39", "para": "Abs. 6", "evidence": "Sie gehen den Anordnungen der ortsfest angebrachten Verkehrszeichen vor."}],
- "claims": [
-  {"context": ["Rangfolge", "Verkehrszeichen", "allgemeine Regeln"], "statement": "Verkehrszeichen gehen den allgemeinen Verkehrsregeln vor", "truth": true},
-  {"context": ["Rangfolge", "Ampel", "Verkehrszeichen"], "statement": "Verkehrszeichen gehen Lichtzeichen vor", "truth": false},
-  {"context": ["Rangfolge", "Polizei"], "statement": "Weisungen von Polizeibeamten haben den höchsten Rang", "truth": true},
-  {"context": ["Verkehrszeichen", "Fahrzeug", "angebracht"], "statement": "Verkehrszeichen an Fahrzeugen gelten auch während der Fahrt und gehen ortsfesten Zeichen vor", "truth": true}],
- "mnemonic": "P-A-S-R: Polizei, Ampel, Schild, Regel."},
-
-{"id": "SGN_WHERE_VALID", "topic": "06_signs", "subtopic": "geltungsbereich", "title": "Wo Zeichen gelten, Zusatzzeichen",
- "rule": "Vorschrift- und Richtzeichen gelten dort, wo oder ab wo sie stehen (sonst Entfernung auf Zusatzzeichen). Zusatzzeichen sind Verkehrszeichen, stehen unter dem Zeichen und beschränken oder erweitern es. Gefahrzeichen stehen außerorts meist 150–250 m, innerorts kurz vor der Gefahrstelle. Gelbe Markierungen heben weiße auf.",
- "numeric_refs": ["STVO_40_DANGER_150", "STVO_40_DANGER_250"],
- "concepts": ["verkehrszeichen", "zusatzzeichen", "markierung"], "keywords": ["Zusatzzeichen", "Gefahrzeichen", "150 bis 250 m", "gelbe Markierung", "Baustelle", "Vorschriftzeichen", "ab Standort"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 41", "para": "Abs. 2", "evidence": "Vorschriftzeichen stehen vorbehaltlich des Satzes 2 dort, wo oder von wo an die Anordnung zu befolgen ist."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 40", "para": "Abs. 2", "evidence": "Außerhalb geschlossener Ortschaften stehen sie im Allgemeinen 150 bis 250 m vor den Gefahrstellen."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 39", "para": "Abs. 5", "evidence": "Nur als vorübergehend gültige Markierungen sind sie gelb; dann heben sie die weißen Markierungen auf."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 39", "para": "Abs. 3", "evidence": "Auch Zusatzzeichen sind Verkehrszeichen."}],
- "claims": [
-  {"context": ["Gefahrzeichen", "außerorts", "Entfernung"], "statement": "Gefahrzeichen stehen außerorts im Allgemeinen 150 bis 250 m vor der Gefahrstelle", "truth": true},
-  {"context": ["Gefahrzeichen", "innerorts", "Entfernung"], "statement": "Gefahrzeichen stehen innerorts im Allgemeinen kurz vor der Gefahrstelle", "truth": true},
-  {"context": ["gelbe Markierung", "weiße Markierung", "Baustelle"], "statement": "Gelbe Markierungen heben weiße Markierungen auf", "truth": true},
-  {"context": ["gelbe Markierung", "weiße Markierung", "Baustelle"], "statement": "Es gelten weiterhin die weißen Markierungen", "truth": false},
-  {"context": ["Zusatzzeichen"], "statement": "Zusatzzeichen sind ebenfalls Verkehrszeichen", "truth": true},
-  {"context": ["Gefahrzeichen", "Bedeutung"], "statement": "Gefahrzeichen mahnen zu erhöhter Aufmerksamkeit, insbesondere zur Verringerung der Geschwindigkeit", "truth": true}]},
-
-{"id": "SGN_PRIORITY_ROAD", "topic": "06_signs", "subtopic": "vorfahrtszeichen", "title": "Vorfahrt-Zeichen 205, 206, 301, 306, 307",
- "rule": "Zeichen 301: Vorfahrt nur an der nächsten Kreuzung/Einmündung. Zeichen 306 (Vorfahrtstraße): Vorfahrt bis zum nächsten 205, 206 oder 307; außerorts Parkverbot auf der Fahrbahn. Zeichen 205: Vorfahrt gewähren. Zeichen 206: anhalten (an der Haltlinie, sonst mit Sicht) und Vorfahrt gewähren.",
- "concepts": ["vorfahrt", "verkehrszeichen"], "keywords": ["Vorfahrtstraße", "Zeichen 306", "Zeichen 301", "Zeichen 205", "Zeichen 206", "Stoppschild", "abknickende Vorfahrt"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "Anlage 3 Nr. 1", "evidence": "Das Zeichen zeigt an, dass an der nächsten Kreuzung oder Einmündung Vorfahrt besteht."},
-             {"type": "law", "law": "stvo_2013", "norm": "Anlage 3 Nr. 2", "evidence": "Das Zeichen zeigt an, dass Vorfahrt besteht bis zum nächsten Zeichen 205 „Vorfahrt gewähren.“, 206 „Halt. Vorfahrt gewähren.“ oder 307 „Ende der Vorfahrtstraße“."},
-             {"type": "law", "law": "stvo_2013", "norm": "Anlage 2 Nr. 3", "evidence": "Wer ein Fahrzeug führt, muss anhalten und Vorfahrt gewähren."}],
- "claims": [
-  {"context": ["Zeichen 301", "Vorfahrt"], "statement": "Die Vorfahrt gilt nur an der nächsten Kreuzung oder Einmündung", "truth": true},
-  {"context": ["Zeichen 301", "Vorfahrt"], "statement": "Die Vorfahrt gilt bis zum Ende der Vorfahrtstraße", "truth": false},
-  {"context": ["Zeichen 306", "Vorfahrtstraße", "parken"], "statement": "Außerorts darf auf der Fahrbahn einer Vorfahrtstraße nicht geparkt werden", "truth": true},
-  {"context": ["Zeichen 306", "Vorfahrtstraße", "parken", "innerorts"], "statement": "Innerorts ist das Parken auf Vorfahrtstraßen durch das Zeichen 306 immer verboten", "truth": false},
-  {"context": ["Zeichen 206", "Stoppschild"], "statement": "Ich muss auch bei freier Straße anhalten", "truth": true},
-  {"context": ["Zeichen 206", "Stoppschild"], "statement": "Ich darf langsam durchrollen, wenn kein Querverkehr kommt", "truth": false}],
- "mnemonic": "301 = einmal, 306 = bis auf Widerruf."},
-
-{"id": "SGN_BENT_PRIORITY", "topic": "06_signs", "subtopic": "abknickende_vorfahrt", "title": "Abknickende Vorfahrt",
- "rule": "Zusatzzeichen zu 306/205/206 zeigt den Verlauf der Vorfahrtstraße. Wer der abknickenden Vorfahrtstraße folgt, blinkt. Untereinander gilt für Fahrzeuge auf der Vorfahrtstraße die Abbiegeregel (Gegenverkehr beachten), für Fahrzeuge auf den untergeordneten Straßen untereinander rechts vor links.",
- "concepts": ["vorfahrt", "abknickende_vorfahrt", "blinken"], "keywords": ["abknickende Vorfahrt", "Zusatzzeichen", "Verlauf der Vorfahrtstraße", "blinken"],
- "exam_relevance": 3, "difficulty": 3, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "Anlage 3", "para": "Zeichen 306 Zusatzzeichen", "evidence": "Wer ein Fahrzeug führt und dem Verlauf der abknickenden Vorfahrtstraße folgen will, muss dies rechtzeitig und deutlich ankündigen; dabei sind die Fahrtrichtungsanzeiger zu benutzen."}],
- "claims": [
-  {"context": ["abknickende Vorfahrt", "folgen", "blinken"], "statement": "Wer der abknickenden Vorfahrtstraße folgt, muss blinken", "truth": true},
-  {"context": ["abknickende Vorfahrt", "folgen", "blinken"], "statement": "Wer der abknickenden Vorfahrt folgt, braucht nicht zu blinken", "truth": false}]},
-
-{"id": "SGN_OVERTAKING_BANS", "topic": "06_signs", "subtopic": "ueberholverbote", "title": "Überholverbote 276, 277, 277.1",
- "rule": "Zeichen 276/277 verbieten Kfz das Überholen mehrspuriger Kfz und von Krafträdern mit Beiwagen (277 nur für Kfz über 3,5 t und Zugmaschinen, Pkw und Busse ausgenommen). Einspurige Fahrzeuge dürfen dabei überholt werden. Zeichen 277.1: mehrspurige Kfz dürfen ein- und mehrspurige Fahrzeuge nicht überholen.",
- "concepts": ["ueberholen", "verkehrszeichen"], "keywords": ["Überholverbot", "Zeichen 276", "Zeichen 277", "Zeichen 277.1", "Fahrrad überholen", "Motorrad"],
- "exam_relevance": 3, "difficulty": 3, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "Anlage 2 Nr. Zu 53, 54 und 54.4", "evidence": "Die nachfolgenden Zeichen 276 und 277 verbieten Kraftfahrzeugen das Überholen von mehrspurigen Kraftfahrzeugen und Krafträdern mit Beiwagen."},
-             {"type": "law", "law": "stvo_2013", "norm": "Anlage 2 Nr. 54.4", "evidence": "Wer ein mehrspuriges Kraftfahrzeug führt, darf ein- und mehrspurige Fahrzeuge nicht überholen."}],
- "claims": [
-  {"context": ["Zeichen 276", "Überholverbot", "Radfahrer"], "statement": "Radfahrer dürfen trotz Zeichen 276 überholt werden", "truth": true},
-  {"context": ["Zeichen 276", "Überholverbot", "Pkw"], "statement": "Pkw dürfen trotz Zeichen 276 überholt werden", "truth": false},
-  {"context": ["Zeichen 276", "Überholverbot", "Traktor"], "statement": "Ein mehrspuriger Traktor darf bei Zeichen 276 nicht überholt werden", "truth": true},
-  {"context": ["Zeichen 277.1", "Radfahrer"], "statement": "Bei Zeichen 277.1 darf ich mit dem Pkw auch Radfahrer nicht überholen", "truth": true},
-  {"context": ["Zeichen 277", "Pkw"], "statement": "Zeichen 277 gilt auch für Pkw", "truth": false}]},
-
-{"id": "SGN_HALT_BANS", "topic": "06_signs", "subtopic": "haltverbote", "title": "Haltverbote 283, 286",
- "rule": "Zeichen 283 (absolutes Haltverbot): Halten auf der Fahrbahn verboten. Zeichen 286 (eingeschränktes Haltverbot): höchstens drei Minuten halten, ausgenommen Ein-/Aussteigen und Be-/Entladen (Ladegeschäfte ohne Verzögerung).",
- "concepts": ["halten", "parken", "verkehrszeichen"], "keywords": ["Halteverbot", "absolutes Haltverbot", "eingeschränktes Haltverbot", "Zeichen 283", "Zeichen 286", "Laden", "Aussteigen"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "Anlage 2 Nr. 62", "evidence": "Das Halten auf der Fahrbahn ist verboten."},
-             {"type": "law", "law": "stvo_2013", "norm": "Anlage 2 Nr. 63", "evidence": "Wer ein Fahrzeug führt, darf nicht länger als drei Minuten auf der Fahrbahn halten, ausgenommen zum Ein- oder Aussteigen oder zum Be- oder Entladen."}],
- "claims": [
-  {"context": ["Zeichen 283", "absolutes Haltverbot"], "statement": "Ich darf auf der Fahrbahn auch nicht kurz zum Aussteigen lassen halten", "truth": true},
-  {"context": ["Zeichen 286", "eingeschränktes Haltverbot"], "statement": "Ich darf zum Be- oder Entladen auch länger als drei Minuten halten", "truth": true},
-  {"context": ["Zeichen 286", "eingeschränktes Haltverbot"], "statement": "Ich darf dort bis zu drei Minuten halten", "truth": true},
-  {"context": ["Zeichen 286", "eingeschränktes Haltverbot"], "statement": "Ich darf dort bis zu zehn Minuten parken", "truth": false}]},
-
-{"id": "SGN_TRAFFIC_CALMED", "topic": "06_signs", "subtopic": "verkehrsberuhigt", "title": "Verkehrsberuhigter Bereich, Tempo-30-Zone, Fußgängerzone, Fahrradstraße",
- "rule": "Verkehrsberuhigter Bereich (325.1): Schrittgeschwindigkeit, Fußgänger nicht gefährden/behindern (ggf. warten), Fußgänger dürfen die ganze Straße nutzen, Kinderspiele überall erlaubt, Parken nur auf gekennzeichneten Flächen. Tempo-30-Zone (274.1): angegebene Höchstgeschwindigkeit in der ganzen Zone. Fußgängerzone (242.1): nur Fußgänger, außer Zusatzzeichen. Fahrradstraße (244.1): andere Fahrzeuge nur mit Zusatzzeichen, höchstens 30 km/h, Radfahrer dürfen nebeneinander fahren.",
- "concepts": ["verkehrsberuhigt", "schrittgeschwindigkeit", "fussgaenger", "radfahrer"], "keywords": ["verkehrsberuhigter Bereich", "Spielstraße", "Schrittgeschwindigkeit", "Tempo 30-Zone", "Fußgängerzone", "Fahrradstraße", "Kinderspiele"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "Anlage 3 Nr. 12", "evidence": "Wer ein Fahrzeug führt, muss mit Schrittgeschwindigkeit fahren."},
-             {"type": "law", "law": "stvo_2013", "norm": "Anlage 3 Nr. 12", "evidence": "Wer zu Fuß geht, darf die Straße in ihrer ganzen Breite benutzen; Kinderspiele sind überall erlaubt."},
-             {"type": "law", "law": "stvo_2013", "norm": "Anlage 2 Nr. 23", "evidence": "Für den Fahrverkehr gilt eine Höchstgeschwindigkeit von 30 km/h."}],
- "claims": [
-  {"context": ["verkehrsberuhigter Bereich", "Geschwindigkeit"], "statement": "Im verkehrsberuhigten Bereich muss ich Schrittgeschwindigkeit fahren", "truth": true},
-  {"context": ["verkehrsberuhigter Bereich", "Geschwindigkeit"], "statement": "Im verkehrsberuhigten Bereich darf ich 30 km/h fahren", "truth": false},
-  {"context": ["verkehrsberuhigter Bereich", "Kinder", "spielen"], "statement": "Kinder dürfen überall auf der Straße spielen", "truth": true},
-  {"context": ["verkehrsberuhigter Bereich", "parken"], "statement": "Parken ist nur auf gekennzeichneten Flächen erlaubt", "truth": true},
-  {"context": ["Fahrradstraße", "Radfahrer", "nebeneinander"], "statement": "Radfahrer dürfen in der Fahrradstraße nebeneinander fahren", "truth": true},
-  {"context": ["Fahrradstraße", "Geschwindigkeit"], "statement": "In der Fahrradstraße gilt für den Fahrverkehr höchstens 30 km/h", "truth": true, "numbers": ["30 km/h"]}]},
-
-{"id": "SGN_LINES", "topic": "06_signs", "subtopic": "markierungen", "title": "Fahrstreifenbegrenzung und Leitlinie",
- "rule": "Durchgehende Linie (Zeichen 295): nicht überfahren und nicht auf ihr fahren. Leitlinie (Zeichen 340, unterbrochen): darf überfahren werden, wenn der Verkehr dadurch nicht gefährdet wird. Einseitige Fahrstreifenbegrenzung (296): durchgehende Seite nicht überfahren.",
- "concepts": ["markierung", "ueberholen", "fahrstreifen"], "keywords": ["durchgezogene Linie", "Fahrstreifenbegrenzung", "Leitlinie", "unterbrochene Linie", "überfahren"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "Anlage 2 Nr. 68", "evidence": "Wer ein Fahrzeug führt, darf die durchgehende Linie auch nicht teilweise überfahren."},
-             {"type": "law", "law": "stvo_2013", "norm": "Anlage 2 Nr. 69", "evidence": "Wer ein Fahrzeug führt, darf die durchgehende Linie nicht überfahren oder auf ihr fahren."}],
- "claims": [
-  {"context": ["durchgezogene Linie", "Fahrstreifenbegrenzung", "überholen"], "statement": "Die durchgehende Linie darf auch zum Überholen nicht überfahren werden", "truth": true},
-  {"context": ["durchgezogene Linie", "Fahrstreifenbegrenzung"], "statement": "Die durchgehende Linie darf teilweise überfahren werden, wenn kein Gegenverkehr kommt", "truth": false}]}
-]}
+{
+ "items": [
+  {
+   "id": "SGN_HIERARCHY",
+   "topic": "06_signs",
+   "subtopic": "rangfolge",
+   "title": "Rangfolge der Regelungen",
+   "rule": "Polizeibeamte > Lichtzeichen > Verkehrszeichen / Verkehrseinrichtungen > allgemeine Verkehrsregeln (z. B. rechts vor links). Verkehrszeichen an Fahrzeugen gehen ortsfesten Zeichen vor.",
+   "concepts": [
+    "rangfolge",
+    "verkehrszeichen",
+    "polizei",
+    "ampel"
+   ],
+   "keywords": [
+    "Rangfolge",
+    "Vorrang",
+    "Verkehrszeichen",
+    "allgemeine Verkehrsregeln",
+    "Polizei",
+    "Lichtzeichen"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 39",
+     "para": "Abs. 2",
+     "evidence": "Regelungen durch Verkehrszeichen gehen den allgemeinen Verkehrsregeln vor."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 1",
+     "evidence": "Lichtzeichen gehen Vorrangregeln und Vorrang regelnden Verkehrszeichen vor."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 36",
+     "para": "Abs. 1",
+     "evidence": "Sie gehen allen anderen Anordnungen und sonstigen Regeln vor"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 39",
+     "para": "Abs. 6",
+     "evidence": "Sie gehen den Anordnungen der ortsfest angebrachten Verkehrszeichen vor."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Rangfolge",
+      "Verkehrszeichen",
+      "allgemeine Regeln"
+     ],
+     "statement": "Verkehrszeichen gehen den allgemeinen Verkehrsregeln vor",
+     "truth": true
+    },
+    {
+     "context": [
+      "Rangfolge",
+      "Ampel",
+      "Verkehrszeichen"
+     ],
+     "statement": "Verkehrszeichen gehen Lichtzeichen vor",
+     "truth": false
+    },
+    {
+     "context": [
+      "Rangfolge",
+      "Polizei"
+     ],
+     "statement": "Weisungen von Polizeibeamten haben den höchsten Rang",
+     "truth": true
+    },
+    {
+     "context": [
+      "Verkehrszeichen",
+      "Fahrzeug",
+      "angebracht"
+     ],
+     "statement": "Verkehrszeichen an Fahrzeugen gelten auch während der Fahrt und gehen ortsfesten Zeichen vor",
+     "truth": true
+    }
+   ],
+   "mnemonic": "P-A-S-R: Polizei, Ampel, Schild, Regel."
+  },
+  {
+   "id": "SGN_WHERE_VALID",
+   "topic": "06_signs",
+   "subtopic": "geltungsbereich",
+   "title": "Wo Zeichen gelten, Zusatzzeichen",
+   "rule": "Vorschrift- und Richtzeichen gelten dort, wo oder ab wo sie stehen (sonst Entfernung auf Zusatzzeichen). Zusatzzeichen sind Verkehrszeichen, stehen unter dem Zeichen und beschränken oder erweitern es. Gefahrzeichen stehen außerorts meist 150–250 m, innerorts kurz vor der Gefahrstelle. Gelbe Markierungen heben weiße auf.",
+   "numeric_refs": [
+    "STVO_40_DANGER_150",
+    "STVO_40_DANGER_250"
+   ],
+   "concepts": [
+    "verkehrszeichen",
+    "zusatzzeichen",
+    "markierung"
+   ],
+   "keywords": [
+    "Zusatzzeichen",
+    "Gefahrzeichen",
+    "150 bis 250 m",
+    "gelbe Markierung",
+    "Baustelle",
+    "Vorschriftzeichen",
+    "ab Standort"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 41",
+     "para": "Abs. 2",
+     "evidence": "Vorschriftzeichen stehen vorbehaltlich des Satzes 2 dort, wo oder von wo an die Anordnung zu befolgen ist."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 40",
+     "para": "Abs. 2",
+     "evidence": "Außerhalb geschlossener Ortschaften stehen sie im Allgemeinen 150 bis 250 m vor den Gefahrstellen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 39",
+     "para": "Abs. 5",
+     "evidence": "Nur als vorübergehend gültige Markierungen sind sie gelb; dann heben sie die weißen Markierungen auf."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 39",
+     "para": "Abs. 3",
+     "evidence": "Auch Zusatzzeichen sind Verkehrszeichen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Gefahrzeichen",
+      "außerorts",
+      "Entfernung"
+     ],
+     "statement": "Gefahrzeichen stehen außerorts im Allgemeinen 150 bis 250 m vor der Gefahrstelle",
+     "truth": true
+    },
+    {
+     "context": [
+      "Gefahrzeichen",
+      "innerorts",
+      "Entfernung"
+     ],
+     "statement": "Gefahrzeichen stehen innerorts im Allgemeinen kurz vor der Gefahrstelle",
+     "truth": true
+    },
+    {
+     "context": [
+      "gelbe Markierung",
+      "weiße Markierung",
+      "Baustelle"
+     ],
+     "statement": "Gelbe Markierungen heben weiße Markierungen auf",
+     "truth": true
+    },
+    {
+     "context": [
+      "gelbe Markierung",
+      "weiße Markierung",
+      "Baustelle"
+     ],
+     "statement": "Es gelten weiterhin die weißen Markierungen",
+     "truth": false
+    },
+    {
+     "context": [
+      "Zusatzzeichen"
+     ],
+     "statement": "Zusatzzeichen sind ebenfalls Verkehrszeichen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Gefahrzeichen",
+      "Bedeutung"
+     ],
+     "statement": "Gefahrzeichen mahnen zu erhöhter Aufmerksamkeit, insbesondere zur Verringerung der Geschwindigkeit",
+     "truth": true
+    },
+    {
+     "context": [
+      "Baustelle",
+      "gelbe Markierung"
+     ],
+     "statement": "Bei gelben und weißen Markierungen gelten die gelben",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "SGN_PRIORITY_ROAD",
+   "topic": "06_signs",
+   "subtopic": "vorfahrtszeichen",
+   "title": "Vorfahrt-Zeichen 205, 206, 301, 306, 307",
+   "rule": "Zeichen 301: Vorfahrt nur an der nächsten Kreuzung/Einmündung. Zeichen 306 (Vorfahrtstraße): Vorfahrt bis zum nächsten 205, 206 oder 307; außerorts Parkverbot auf der Fahrbahn. Zeichen 205: Vorfahrt gewähren. Zeichen 206: anhalten (an der Haltlinie, sonst mit Sicht) und Vorfahrt gewähren.",
+   "concepts": [
+    "vorfahrt",
+    "verkehrszeichen"
+   ],
+   "keywords": [
+    "Vorfahrtstraße",
+    "Zeichen 306",
+    "Zeichen 301",
+    "Zeichen 205",
+    "Zeichen 206",
+    "Stoppschild",
+    "abknickende Vorfahrt"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 1",
+     "evidence": "Das Zeichen zeigt an, dass an der nächsten Kreuzung oder Einmündung Vorfahrt besteht."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 2",
+     "evidence": "Das Zeichen zeigt an, dass Vorfahrt besteht bis zum nächsten Zeichen 205 „Vorfahrt gewähren.“, 206 „Halt. Vorfahrt gewähren.“ oder 307 „Ende der Vorfahrtstraße“."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 3",
+     "evidence": "Wer ein Fahrzeug führt, muss anhalten und Vorfahrt gewähren."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zeichen 301",
+      "Vorfahrt"
+     ],
+     "statement": "Die Vorfahrt gilt nur an der nächsten Kreuzung oder Einmündung",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zeichen 301",
+      "Vorfahrt"
+     ],
+     "statement": "Die Vorfahrt gilt bis zum Ende der Vorfahrtstraße",
+     "truth": false
+    },
+    {
+     "context": [
+      "Zeichen 306",
+      "Vorfahrtstraße",
+      "parken"
+     ],
+     "statement": "Außerorts darf auf der Fahrbahn einer Vorfahrtstraße nicht geparkt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zeichen 306",
+      "Vorfahrtstraße",
+      "parken",
+      "innerorts"
+     ],
+     "statement": "Innerorts ist das Parken auf Vorfahrtstraßen durch das Zeichen 306 immer verboten",
+     "truth": false
+    },
+    {
+     "context": [
+      "Zeichen 206",
+      "Stoppschild"
+     ],
+     "statement": "Ich muss auch bei freier Straße anhalten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zeichen 206",
+      "Stoppschild"
+     ],
+     "statement": "Ich darf langsam durchrollen, wenn kein Querverkehr kommt",
+     "truth": false
+    },
+    {
+     "context": [
+      "Stoppschild",
+      "frei"
+     ],
+     "statement": "Am Stoppschild halte ich auch dann an, wenn die Straße frei ist",
+     "truth": true
+    }
+   ],
+   "mnemonic": "301 = einmal, 306 = bis auf Widerruf."
+  },
+  {
+   "id": "SGN_BENT_PRIORITY",
+   "topic": "06_signs",
+   "subtopic": "abknickende_vorfahrt",
+   "title": "Abknickende Vorfahrt",
+   "rule": "Zusatzzeichen zu 306/205/206 zeigt den Verlauf der Vorfahrtstraße. Wer der abknickenden Vorfahrtstraße folgt, blinkt. Untereinander gilt für Fahrzeuge auf der Vorfahrtstraße die Abbiegeregel (Gegenverkehr beachten), für Fahrzeuge auf den untergeordneten Straßen untereinander rechts vor links.",
+   "concepts": [
+    "vorfahrt",
+    "abknickende_vorfahrt",
+    "blinken"
+   ],
+   "keywords": [
+    "abknickende Vorfahrt",
+    "Zusatzzeichen",
+    "Verlauf der Vorfahrtstraße",
+    "blinken"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 3,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3",
+     "para": "Zeichen 306 Zusatzzeichen",
+     "evidence": "Wer ein Fahrzeug führt und dem Verlauf der abknickenden Vorfahrtstraße folgen will, muss dies rechtzeitig und deutlich ankündigen; dabei sind die Fahrtrichtungsanzeiger zu benutzen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "abknickende Vorfahrt",
+      "folgen",
+      "blinken"
+     ],
+     "statement": "Wer der abknickenden Vorfahrtstraße folgt, muss blinken",
+     "truth": true
+    },
+    {
+     "context": [
+      "abknickende Vorfahrt",
+      "folgen",
+      "blinken"
+     ],
+     "statement": "Wer der abknickenden Vorfahrt folgt, braucht nicht zu blinken",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "SGN_OVERTAKING_BANS",
+   "topic": "06_signs",
+   "subtopic": "ueberholverbote",
+   "title": "Überholverbote 276, 277, 277.1",
+   "rule": "Zeichen 276/277 verbieten Kfz das Überholen mehrspuriger Kfz und von Krafträdern mit Beiwagen (277 nur für Kfz über 3,5 t und Zugmaschinen, Pkw und Busse ausgenommen). Einspurige Fahrzeuge dürfen dabei überholt werden. Zeichen 277.1: mehrspurige Kfz dürfen ein- und mehrspurige Fahrzeuge nicht überholen.",
+   "concepts": [
+    "ueberholen",
+    "verkehrszeichen"
+   ],
+   "keywords": [
+    "Überholverbot",
+    "Zeichen 276",
+    "Zeichen 277",
+    "Zeichen 277.1",
+    "Fahrrad überholen",
+    "Motorrad"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 3,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. Zu 53, 54 und 54.4",
+     "evidence": "Die nachfolgenden Zeichen 276 und 277 verbieten Kraftfahrzeugen das Überholen von mehrspurigen Kraftfahrzeugen und Krafträdern mit Beiwagen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 54.4",
+     "evidence": "Wer ein mehrspuriges Kraftfahrzeug führt, darf ein- und mehrspurige Fahrzeuge nicht überholen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zeichen 276",
+      "Überholverbot",
+      "Radfahrer"
+     ],
+     "statement": "Radfahrer dürfen trotz Zeichen 276 überholt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zeichen 276",
+      "Überholverbot",
+      "Pkw"
+     ],
+     "statement": "Pkw dürfen trotz Zeichen 276 überholt werden",
+     "truth": false
+    },
+    {
+     "context": [
+      "Zeichen 276",
+      "Überholverbot",
+      "Traktor"
+     ],
+     "statement": "Ein mehrspuriger Traktor darf bei Zeichen 276 nicht überholt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zeichen 277.1",
+      "Radfahrer"
+     ],
+     "statement": "Bei Zeichen 277.1 darf ich mit dem Pkw auch Radfahrer nicht überholen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zeichen 277",
+      "Pkw"
+     ],
+     "statement": "Zeichen 277 gilt auch für Pkw",
+     "truth": false
+    },
+    {
+     "context": [
+      "Zeichen 276",
+      "Überholverbot",
+      "Motorrad"
+     ],
+     "statement": "Ein Motorrad ohne Beiwagen darf trotz Zeichen 276 überholt werden",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "SGN_HALT_BANS",
+   "topic": "06_signs",
+   "subtopic": "haltverbote",
+   "title": "Haltverbote 283, 286",
+   "rule": "Zeichen 283 (absolutes Haltverbot): Halten auf der Fahrbahn verboten. Zeichen 286 (eingeschränktes Haltverbot): höchstens drei Minuten halten, ausgenommen Ein-/Aussteigen und Be-/Entladen (Ladegeschäfte ohne Verzögerung).",
+   "concepts": [
+    "halten",
+    "parken",
+    "verkehrszeichen"
+   ],
+   "keywords": [
+    "Halteverbot",
+    "absolutes Haltverbot",
+    "eingeschränktes Haltverbot",
+    "Zeichen 283",
+    "Zeichen 286",
+    "Laden",
+    "Aussteigen"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 62",
+     "evidence": "Das Halten auf der Fahrbahn ist verboten."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 63",
+     "evidence": "Wer ein Fahrzeug führt, darf nicht länger als drei Minuten auf der Fahrbahn halten, ausgenommen zum Ein- oder Aussteigen oder zum Be- oder Entladen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zeichen 283",
+      "absolutes Haltverbot"
+     ],
+     "statement": "Ich darf auf der Fahrbahn auch nicht kurz zum Aussteigen lassen halten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zeichen 286",
+      "eingeschränktes Haltverbot"
+     ],
+     "statement": "Ich darf zum Be- oder Entladen auch länger als drei Minuten halten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zeichen 286",
+      "eingeschränktes Haltverbot"
+     ],
+     "statement": "Ich darf dort bis zu drei Minuten halten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zeichen 286",
+      "eingeschränktes Haltverbot"
+     ],
+     "statement": "Ich darf dort bis zu zehn Minuten parken",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "SGN_TRAFFIC_CALMED",
+   "topic": "06_signs",
+   "subtopic": "verkehrsberuhigt",
+   "title": "Verkehrsberuhigter Bereich, Tempo-30-Zone, Fußgängerzone, Fahrradstraße",
+   "rule": "Verkehrsberuhigter Bereich (325.1): Schrittgeschwindigkeit, Fußgänger nicht gefährden/behindern (ggf. warten), Fußgänger dürfen die ganze Straße nutzen, Kinderspiele überall erlaubt, Parken nur auf gekennzeichneten Flächen. Tempo-30-Zone (274.1): angegebene Höchstgeschwindigkeit in der ganzen Zone. Fußgängerzone (242.1): nur Fußgänger, außer Zusatzzeichen. Fahrradstraße (244.1): andere Fahrzeuge nur mit Zusatzzeichen, höchstens 30 km/h, Radfahrer dürfen nebeneinander fahren.",
+   "concepts": [
+    "verkehrsberuhigt",
+    "schrittgeschwindigkeit",
+    "fussgaenger",
+    "radfahrer"
+   ],
+   "keywords": [
+    "verkehrsberuhigter Bereich",
+    "Spielstraße",
+    "Schrittgeschwindigkeit",
+    "Tempo 30-Zone",
+    "Fußgängerzone",
+    "Fahrradstraße",
+    "Kinderspiele"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 12",
+     "evidence": "Wer ein Fahrzeug führt, muss mit Schrittgeschwindigkeit fahren."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 12",
+     "evidence": "Wer zu Fuß geht, darf die Straße in ihrer ganzen Breite benutzen; Kinderspiele sind überall erlaubt."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 23",
+     "evidence": "Für den Fahrverkehr gilt eine Höchstgeschwindigkeit von 30 km/h."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "verkehrsberuhigter Bereich",
+      "Geschwindigkeit"
+     ],
+     "statement": "Im verkehrsberuhigten Bereich muss ich Schrittgeschwindigkeit fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "verkehrsberuhigter Bereich",
+      "Geschwindigkeit"
+     ],
+     "statement": "Im verkehrsberuhigten Bereich darf ich 30 km/h fahren",
+     "truth": false
+    },
+    {
+     "context": [
+      "verkehrsberuhigter Bereich",
+      "Kinder",
+      "spielen"
+     ],
+     "statement": "Kinder dürfen überall auf der Straße spielen",
+     "truth": true
+    },
+    {
+     "context": [
+      "verkehrsberuhigter Bereich",
+      "parken"
+     ],
+     "statement": "Parken ist nur auf gekennzeichneten Flächen erlaubt",
+     "truth": true
+    },
+    {
+     "context": [
+      "Fahrradstraße",
+      "Radfahrer",
+      "nebeneinander"
+     ],
+     "statement": "Radfahrer dürfen in der Fahrradstraße nebeneinander fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "Fahrradstraße",
+      "Geschwindigkeit"
+     ],
+     "statement": "In der Fahrradstraße gilt für den Fahrverkehr höchstens 30 km/h",
+     "truth": true,
+     "numbers": [
+      "30 km/h"
+     ]
+    },
+    {
+     "context": [
+      "verkehrsberuhigter Bereich",
+      "Fußgänger"
+     ],
+     "statement": "Fußgänger dürfen im verkehrsberuhigten Bereich die ganze Straße benutzen",
+     "truth": true
+    },
+    {
+     "context": [
+      "verkehrsberuhigter Bereich",
+      "parken"
+     ],
+     "statement": "Im verkehrsberuhigten Bereich darf ich überall am Rand parken",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "SGN_LINES",
+   "topic": "06_signs",
+   "subtopic": "markierungen",
+   "title": "Fahrstreifenbegrenzung und Leitlinie",
+   "rule": "Durchgehende Linie (Zeichen 295): nicht überfahren und nicht auf ihr fahren. Leitlinie (Zeichen 340, unterbrochen): darf überfahren werden, wenn der Verkehr dadurch nicht gefährdet wird. Einseitige Fahrstreifenbegrenzung (296): durchgehende Seite nicht überfahren.",
+   "concepts": [
+    "markierung",
+    "ueberholen",
+    "fahrstreifen"
+   ],
+   "keywords": [
+    "durchgezogene Linie",
+    "Fahrstreifenbegrenzung",
+    "Leitlinie",
+    "unterbrochene Linie",
+    "überfahren"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 68",
+     "evidence": "Wer ein Fahrzeug führt, darf die durchgehende Linie auch nicht teilweise überfahren."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 69",
+     "evidence": "Wer ein Fahrzeug führt, darf die durchgehende Linie nicht überfahren oder auf ihr fahren."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "durchgezogene Linie",
+      "Fahrstreifenbegrenzung",
+      "überholen"
+     ],
+     "statement": "Die durchgehende Linie darf auch zum Überholen nicht überfahren werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "durchgezogene Linie",
+      "Fahrstreifenbegrenzung"
+     ],
+     "statement": "Die durchgehende Linie darf teilweise überfahren werden, wenn kein Gegenverkehr kommt",
+     "truth": false
+    }
+   ]
+  }
+ ]
+}

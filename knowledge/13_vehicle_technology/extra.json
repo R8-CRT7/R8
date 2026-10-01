@@ -1,0 +1,60 @@
+{
+ "items": [
+  {
+   "id": "SPC_SUNDAY_TRUCKS",
+   "topic": "13_vehicle_technology",
+   "subtopic": "sonntagsfahrverbot",
+   "title": "Sonn- und Feiertagsfahrverbot für Lkw",
+   "rule": "An Sonn- und Feiertagen von 0 bis 22 Uhr dürfen Lkw über 7,5 t sowie Anhänger hinter Lkw zur geschäftsmäßigen Güterbeförderung nicht fahren (Ausnahmen u. a. frische Lebensmittel, Pannenhilfe). Gilt nicht für Pkw mit Anhänger.",
+   "numeric_refs": [
+    "STVO_30_SUNDAY_75T"
+   ],
+   "concepts": [
+    "lkw",
+    "gueterbefoerderung"
+   ],
+   "keywords": [
+    "Sonntag",
+    "Feiertag",
+    "Fahrverbot",
+    "Lkw",
+    "7,5 t",
+    "22 Uhr"
+   ],
+   "exam_relevance": 1,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 30",
+     "para": "Abs. 3",
+     "evidence": "An Sonntagen und Feiertagen dürfen in der Zeit von 0.00 bis 22.00 Uhr zur geschäftsmäßigen oder entgeltlichen Beförderung von Gütern einschließlich damit verbundener Leerfahrten Lastkraftwagen mit einer zulässigen Gesamtmasse über 7,5 t sowie Anhänger hinter Lastkraftwagen nicht geführt werden."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Sonntag",
+      "Feiertag",
+      "Lkw",
+      "Fahrverbot"
+     ],
+     "statement": "Lkw über 7,5 t dürfen an Sonn- und Feiertagen von 0 bis 22 Uhr keine Güter geschäftsmäßig befördern",
+     "truth": true
+    },
+    {
+     "context": [
+      "Sonntag",
+      "Feiertag",
+      "Pkw",
+      "Anhänger"
+     ],
+     "statement": "Das Sonntagsfahrverbot gilt auch für private Pkw mit Anhänger",
+     "truth": false
+    }
+   ]
+  }
+ ]
+}

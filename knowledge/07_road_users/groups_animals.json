@@ -1,0 +1,34 @@
+{"items": [
+{"id": "USR_GROUPS", "topic": "07_road_users", "subtopic": "verbaende", "title": "Geschlossene Verbände",
+ "rule": "Mehr als 15 Radfahrer dürfen einen geschlossenen Verband bilden und dann zu zweit nebeneinander auf der Fahrbahn fahren. Geschlossene Verbände, Leichenzüge und Prozessionen dürfen nicht unterbrochen werden (sie lassen bei großer Länge Lücken). Kinder- und Jugendgruppen zu Fuß benutzen möglichst die Gehwege.",
+ "concepts": ["verband", "radfahrer"], "keywords": ["Verband", "Radfahrergruppe", "15 Radfahrer", "Prozession", "Leichenzug", "unterbrechen", "nebeneinander"],
+ "exam_relevance": 2, "difficulty": 2, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 27", "para": "Abs. 1", "evidence": "Mehr als 15 Rad Fahrende dürfen einen geschlossenen Verband bilden. Dann dürfen sie zu zweit nebeneinander auf der Fahrbahn fahren."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 27", "para": "Abs. 2", "evidence": "an anderen Stellen darf dieser sie nicht unterbrechen."}],
+ "claims": [
+  {"context": ["Radfahrer", "Gruppe", "Verband"], "statement": "Mehr als 15 Radfahrer dürfen einen geschlossenen Verband bilden und zu zweit nebeneinander fahren", "truth": true},
+  {"context": ["Radfahrer", "Gruppe", "Verband"], "statement": "Schon 5 Radfahrer dürfen einen geschlossenen Verband bilden", "truth": false},
+  {"context": ["Verband", "Prozession", "Leichenzug", "unterbrechen"], "statement": "Einen geschlossenen Verband darf ich nicht unterbrechen", "truth": true},
+  {"context": ["Verband", "Prozession", "Leichenzug", "unterbrechen"], "statement": "Ich darf mich in einen Leichenzug einreihen, um schneller voranzukommen", "truth": false}]},
+
+{"id": "USR_ANIMALS", "topic": "07_road_users", "subtopic": "tiere", "title": "Tiere im Straßenverkehr",
+ "rule": "Haus- und Stalltiere, die den Verkehr gefährden können, von der Straße fernhalten; nur mit geeigneten Begleitpersonen. Tiere dürfen nicht von Kraftfahrzeugen aus geführt werden; vom Fahrrad aus nur Hunde. Reiter und Viehtreiber unterliegen sinngemäß den Regeln für den Fahrverkehr.",
+ "concepts": ["tiere"], "keywords": ["Tiere", "Hund", "Pferd", "Reiter", "Vieh", "Fahrrad", "führen"],
+ "exam_relevance": 1, "difficulty": 1, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 28", "para": "Abs. 1", "evidence": "Es ist verboten, Tiere von Kraftfahrzeugen aus zu führen. Von Fahrrädern aus dürfen nur Hunde geführt werden."},
+             {"type": "law", "law": "stvo_2013", "norm": "§ 28", "para": "Abs. 2", "evidence": "Wer reitet, Pferde oder Vieh führt oder Vieh treibt, unterliegt sinngemäß den für den gesamten Fahrverkehr einheitlich bestehenden Verkehrsregeln und Anordnungen."}],
+ "claims": [
+  {"context": ["Tiere", "Kraftfahrzeug", "führen"], "statement": "Es ist verboten, Tiere von Kraftfahrzeugen aus zu führen", "truth": true},
+  {"context": ["Tiere", "Fahrrad", "Hund"], "statement": "Vom Fahrrad aus dürfen nur Hunde geführt werden", "truth": true},
+  {"context": ["Tiere", "Fahrrad", "Pferd"], "statement": "Vom Fahrrad aus darf ein Pferd geführt werden", "truth": false},
+  {"context": ["Reiter", "Verkehrsregeln"], "statement": "Reiter unterliegen sinngemäß den Regeln für den Fahrverkehr", "truth": true}]},
+
+{"id": "USR_SKATES", "topic": "07_road_users", "subtopic": "sport_spiel", "title": "Sport und Spiel, Inline-Skates",
+ "rule": "Sport und Spiel auf der Fahrbahn, den Seitenstreifen und Radwegen sind nicht erlaubt, außer ein Zusatzzeichen lässt es zu. Wo Inline-Skaten zugelassen ist: äußerste Vorsicht, am rechten Rand, Fahrzeugen das Überholen ermöglichen.",
+ "concepts": ["fussgaenger", "sport"], "keywords": ["Inline-Skates", "Rollschuhe", "Sport", "Spiel", "Fahrbahn", "Radweg"],
+ "exam_relevance": 1, "difficulty": 1, "last_verified": "2026-10-01",
+ "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 31", "para": "Abs. 1", "evidence": "Sport und Spiel auf der Fahrbahn, den Seitenstreifen und auf Radwegen sind nicht erlaubt."}],
+ "claims": [
+  {"context": ["Sport", "Spiel", "Fahrbahn", "Radweg"], "statement": "Sport und Spiel sind auf der Fahrbahn und auf Radwegen nicht erlaubt, außer ein Zusatzzeichen lässt es zu", "truth": true},
+  {"context": ["Inline-Skates", "Radweg"], "statement": "Inline-Skater dürfen grundsätzlich auf dem Radweg fahren", "truth": false}]}
+]}

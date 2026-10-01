@@ -119,8 +119,8 @@ def _change_number(statement: str, rng: random.Random) -> str | None:
     return statement[: m.start()] + nv_txt + statement[m.end():]
 
 
-VARIANT_REPS = {"base": 2, "paraphrase": 3, "negation": 1, "negative_question": 2, "multiselect": 2,
-                "ocr_noise": 3, "number_change": 2, "unit_error": 1, "exception": 1, "context": 2}
+VARIANT_REPS = {"base": 2, "paraphrase": 4, "negation": 1, "negative_question": 3, "multiselect": 3,
+                "ocr_noise": 5, "number_change": 2, "unit_error": 1, "exception": 1, "context": 3}
 
 
 def claim_items(kb: KnowledgeBase, seed: int = 7, per_object: int = 200) -> list[TheoryItem]:
@@ -397,12 +397,19 @@ def priority_items() -> list[TheoryItem]:
                     p["labels"] = ["ich"] if p["id"] == "me" else [label]
                 d["confidence"] = 0.95
                 scene = scene_from_dict(d)
-                opts = [f"Ich muss den {label} durchfahren lassen" if kind != "pedestrian" else "Ich muss den Fußgänger durchgehen lassen",
-                        f"Der {label} muss mich durchfahren lassen" if kind != "pedestrian" else "Der Fußgänger muss mich durchfahren lassen"]
-                corr = (1,) if expect == "me_waits" else (2,)
-                q = TheoryQuestion("Wie verhalten Sie sich an dieser Kreuzung?", opts, has_image=True, scene=scene)
-                items.append(TheoryItem(f"PRIO:{name}:{rot}:{li}", "05_priority", name, "priority", q, corr,
-                                        sources=[name], exam_relevance=3))
+                who = "Fußgänger" if kind == "pedestrian" else label
+                wordings = [
+                    ("Wie verhalten Sie sich an dieser Kreuzung?",
+                     [f"Ich muss den {who} durchfahren lassen" if kind != "pedestrian" else "Ich muss den Fußgänger durchgehen lassen",
+                      f"Der {who} muss mich durchfahren lassen"]),
+                    ("Wer muss hier warten?",
+                     ["Ich muss warten", f"Der {who} muss warten"]),
+                ]
+                for wi, (qtext, opts) in enumerate(wordings):
+                    corr = (1,) if expect == "me_waits" else (2,)
+                    q = TheoryQuestion(qtext, opts, has_image=True, scene=scene)
+                    items.append(TheoryItem(f"PRIO:{name}:{rot}:{li}:{wi}", "05_priority", name, "priority", q, corr,
+                                            sources=[name], exam_relevance=3))
     return items
 
 

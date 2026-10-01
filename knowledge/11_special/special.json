@@ -1,62 +1,417 @@
-{"items": [
-{"id": "SPC_ACCIDENT", "topic": "11_special", "subtopic": "unfall", "title": "Verhalten nach einem Unfall",
- "rule": "Beteiligte müssen: unverzüglich halten, den Verkehr sichern (bei geringfügigem Schaden sofort beiseite fahren), sich über die Folgen vergewissern, Verletzten helfen, anderen Beteiligten die Beteiligung angeben und auf Verlangen Name, Anschrift, Führerschein, Fahrzeugschein und Haftpflicht-Angaben machen, am Unfallort bleiben (oder angemessene Zeit warten und Namen/Anschrift hinterlassen) und Feststellungen nachträglich ermöglichen. Unfallspuren nicht vor den Feststellungen beseitigen. Beteiligt ist jeder, dessen Verhalten zum Unfall beigetragen haben kann.",
- "concepts": ["unfall", "erste_hilfe", "absichern"], "keywords": ["Unfall", "Unfallort", "Verletzte", "absichern", "Warndreieck", "Unfallflucht", "Personalien", "Spuren", "beiseite fahren", "Kleinschaden"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 34", "para": "Abs. 1", "evidence": "den Verkehr zu sichern und bei geringfügigem Schaden unverzüglich beiseite zu fahren,"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 34", "para": "Abs. 1 Nr. 4", "evidence": "Verletzten zu helfen (§ 323c des Strafgesetzbuchs),"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 34", "para": "Abs. 3", "evidence": "Unfallspuren dürfen nicht beseitigt werden, bevor die notwendigen Feststellungen getroffen worden sind."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 34", "para": "Abs. 2", "evidence": "Beteiligt an einem Verkehrsunfall ist jede Person, deren Verhalten nach den Umständen zum Unfall beigetragen haben kann."}],
- "claims": [
-  {"context": ["Unfall", "beteiligt"], "statement": "Ich muss unverzüglich halten und den Verkehr sichern", "truth": true},
-  {"context": ["Unfall", "geringfügiger Schaden"], "statement": "Bei geringfügigem Schaden muss ich unverzüglich beiseite fahren", "truth": true},
-  {"context": ["Unfall", "Verletzte"], "statement": "Ich muss Verletzten helfen", "truth": true},
-  {"context": ["Unfall", "Spuren"], "statement": "Unfallspuren darf ich sofort beseitigen, damit der Verkehr fließt", "truth": false},
-  {"context": ["Unfall", "niemand da", "parkendes Auto"], "statement": "Ich muss eine angemessene Zeit warten und Namen und Anschrift hinterlassen, wenn niemand Feststellungen treffen will", "truth": true},
-  {"context": ["Unfall", "niemand da", "parkendes Auto"], "statement": "Ein Zettel mit meiner Telefonnummer reicht, dann darf ich sofort wegfahren", "truth": false},
-  {"context": ["Unfall", "Personalien", "Verlangen"], "statement": "Auf Verlangen muss ich Namen, Anschrift, Führerschein und Fahrzeugschein vorweisen", "truth": true}]},
-
-{"id": "SPC_BREAKDOWN", "topic": "11_special", "subtopic": "panne", "title": "Liegenbleiben (Panne) und Warnzeichen",
- "rule": "Bleibt ein mehrspuriges Fahrzeug an einer Stelle liegen, an der es nicht rechtzeitig als Hindernis erkannt werden kann: sofort Warnblinklicht, dann mindestens ein auffälliges Warnzeichen in ausreichender Entfernung aufstellen – bei schnellem Verkehr etwa 100 m; Warndreieck verwenden.",
- "numeric_refs": ["STVO_15_WARNING_100M"],
- "concepts": ["panne", "absichern", "warnblinklicht"], "keywords": ["Panne", "liegenbleiben", "Warndreieck", "Warnblinklicht", "100 m", "Warnweste", "absichern"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 15", "evidence": "ist sofort Warnblinklicht einzuschalten. Danach ist mindestens ein auffällig warnendes Zeichen gut sichtbar in ausreichender Entfernung aufzustellen, und zwar bei schnellem Verkehr in etwa 100 m Entfernung"}],
- "claims": [
-  {"context": ["Panne", "liegenbleiben", "zuerst"], "statement": "Zuerst schalte ich das Warnblinklicht ein", "truth": true},
-  {"context": ["Panne", "Warndreieck", "schneller Verkehr", "Autobahn"], "statement": "Bei schnellem Verkehr stelle ich das Warndreieck in etwa 100 m Entfernung auf", "truth": true, "numbers": ["100 m"]},
-  {"context": ["Panne", "Warndreieck", "schneller Verkehr", "Autobahn"], "statement": "Das Warndreieck stelle ich direkt hinter dem Fahrzeug auf", "truth": false}]},
-
-{"id": "SPC_TOWING", "topic": "11_special", "subtopic": "abschleppen", "title": "Abschleppen",
- "rule": "Auf der Autobahn liegengebliebenes Fahrzeug: Autobahn bei der nächsten Ausfahrt verlassen. Außerhalb liegengebliebenes Fahrzeug: nicht in die Autobahn einfahren. Beide Fahrzeuge Warnblinklicht. Krafträder dürfen nicht abgeschleppt werden.",
- "concepts": ["abschleppen", "autobahn", "warnblinklicht"], "keywords": ["Abschleppen", "Abschleppseil", "Warnblinklicht", "nächste Ausfahrt", "Kraftrad"],
- "exam_relevance": 2, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 15a", "evidence": "Beim Abschleppen eines auf der Autobahn liegen gebliebenen Fahrzeugs ist die Autobahn (Zeichen 330.1) bei der nächsten Ausfahrt zu verlassen."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 15a", "para": "Abs. 3-4", "evidence": "Während des Abschleppens haben beide Fahrzeuge Warnblinklicht einzuschalten."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 15a", "para": "Abs. 4", "evidence": "Krafträder dürfen nicht abgeschleppt werden."}],
- "claims": [
-  {"context": ["Abschleppen", "Autobahn"], "statement": "Ich muss die Autobahn bei der nächsten Ausfahrt verlassen", "truth": true},
-  {"context": ["Abschleppen", "Autobahn", "einfahren"], "statement": "Mit einem außerhalb der Autobahn liegengebliebenen Fahrzeug darf ich zum Abschleppen auf die Autobahn fahren", "truth": false},
-  {"context": ["Abschleppen", "Warnblinklicht"], "statement": "Beim Abschleppen müssen beide Fahrzeuge das Warnblinklicht einschalten", "truth": true},
-  {"context": ["Abschleppen", "Kraftrad", "Motorrad"], "statement": "Krafträder dürfen abgeschleppt werden", "truth": false}]},
-
-{"id": "SPC_BASIC_RULE", "topic": "11_special", "subtopic": "grundregel", "title": "Grundregel § 1 StVO",
- "rule": "Ständige Vorsicht und gegenseitige Rücksicht. Niemand darf geschädigt, gefährdet oder mehr als unvermeidbar behindert oder belästigt werden.",
- "concepts": ["grundregel", "vorsicht", "ruecksicht"], "keywords": ["Grundregel", "Vorsicht", "Rücksicht", "gefährden", "behindern", "belästigen"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 1", "evidence": "Die Teilnahme am Straßenverkehr erfordert ständige Vorsicht und gegenseitige Rücksicht."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 1", "para": "Abs. 2", "evidence": "hat sich so zu verhalten, dass kein Anderer geschädigt, gefährdet oder mehr, als nach den Umständen unvermeidbar, behindert oder belästigt wird."}],
- "claims": [
-  {"context": ["Grundregel", "Straßenverkehr"], "statement": "Die Teilnahme am Straßenverkehr erfordert ständige Vorsicht und gegenseitige Rücksicht", "truth": true},
-  {"context": ["Grundregel", "Vorfahrt", "Recht"], "statement": "Wer Vorfahrt hat, darf sie auch erzwingen", "truth": false}]},
-
-{"id": "SPC_ICE_TYRES", "topic": "11_special", "subtopic": "winter", "title": "Winterliche Glätte: wintertaugliche Reifen",
- "rule": "Bei Glatteis, Schneeglätte, Schneematsch, Eis- oder Reifglätte dürfen Kfz nur mit Reifen nach § 36 Abs. 4 StVZO (wintertauglich) an allen Rädern gefahren werden (Ausnahmen u. a. einspurige Kfz).",
- "concepts": ["winter", "reifen", "glaette"], "keywords": ["Winterreifen", "Glatteis", "Schneeglätte", "Schneematsch", "Reifglätte", "situative Winterreifenpflicht"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 2", "para": "Abs. 3a", "evidence": "Der Führer eines Kraftfahrzeuges darf dies bei Glatteis, Schneeglätte, Schneematsch, Eisglätte oder Reifglätte nur fahren, wenn alle Räder mit Reifen ausgerüstet sind"}],
- "claims": [
-  {"context": ["Winterreifen", "Schneeglätte", "Pkw"], "statement": "Bei Schneeglätte darf ich mit dem Pkw nur mit wintertauglichen Reifen an allen Rädern fahren", "truth": true},
-  {"context": ["Winterreifen", "Pflicht", "Datum"], "statement": "Winterreifen sind von Oktober bis Ostern immer vorgeschrieben, unabhängig vom Wetter", "truth": false},
-  {"context": ["Winterreifen", "Schneeglätte"], "statement": "Es genügt, wenn nur die Antriebsräder Winterreifen haben", "truth": false}]}
-]}
+{
+ "items": [
+  {
+   "id": "SPC_ACCIDENT",
+   "topic": "11_special",
+   "subtopic": "unfall",
+   "title": "Verhalten nach einem Unfall",
+   "rule": "Beteiligte müssen: unverzüglich halten, den Verkehr sichern (bei geringfügigem Schaden sofort beiseite fahren), sich über die Folgen vergewissern, Verletzten helfen, anderen Beteiligten die Beteiligung angeben und auf Verlangen Name, Anschrift, Führerschein, Fahrzeugschein und Haftpflicht-Angaben machen, am Unfallort bleiben (oder angemessene Zeit warten und Namen/Anschrift hinterlassen) und Feststellungen nachträglich ermöglichen. Unfallspuren nicht vor den Feststellungen beseitigen. Beteiligt ist jeder, dessen Verhalten zum Unfall beigetragen haben kann.",
+   "concepts": [
+    "unfall",
+    "erste_hilfe",
+    "absichern"
+   ],
+   "keywords": [
+    "Unfall",
+    "Unfallort",
+    "Verletzte",
+    "absichern",
+    "Warndreieck",
+    "Unfallflucht",
+    "Personalien",
+    "Spuren",
+    "beiseite fahren",
+    "Kleinschaden"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 34",
+     "para": "Abs. 1",
+     "evidence": "den Verkehr zu sichern und bei geringfügigem Schaden unverzüglich beiseite zu fahren,"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 34",
+     "para": "Abs. 1 Nr. 4",
+     "evidence": "Verletzten zu helfen (§ 323c des Strafgesetzbuchs),"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 34",
+     "para": "Abs. 3",
+     "evidence": "Unfallspuren dürfen nicht beseitigt werden, bevor die notwendigen Feststellungen getroffen worden sind."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 34",
+     "para": "Abs. 2",
+     "evidence": "Beteiligt an einem Verkehrsunfall ist jede Person, deren Verhalten nach den Umständen zum Unfall beigetragen haben kann."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Unfall",
+      "beteiligt"
+     ],
+     "statement": "Ich muss unverzüglich halten und den Verkehr sichern",
+     "truth": true
+    },
+    {
+     "context": [
+      "Unfall",
+      "geringfügiger Schaden"
+     ],
+     "statement": "Bei geringfügigem Schaden muss ich unverzüglich beiseite fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "Unfall",
+      "Verletzte"
+     ],
+     "statement": "Ich muss Verletzten helfen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Unfall",
+      "Spuren"
+     ],
+     "statement": "Unfallspuren darf ich sofort beseitigen, damit der Verkehr fließt",
+     "truth": false
+    },
+    {
+     "context": [
+      "Unfall",
+      "niemand da",
+      "parkendes Auto"
+     ],
+     "statement": "Ich muss eine angemessene Zeit warten und Namen und Anschrift hinterlassen, wenn niemand Feststellungen treffen will",
+     "truth": true
+    },
+    {
+     "context": [
+      "Unfall",
+      "niemand da",
+      "parkendes Auto"
+     ],
+     "statement": "Ein Zettel mit meiner Telefonnummer reicht, dann darf ich sofort wegfahren",
+     "truth": false
+    },
+    {
+     "context": [
+      "Unfall",
+      "Personalien",
+      "Verlangen"
+     ],
+     "statement": "Auf Verlangen muss ich Namen, Anschrift, Führerschein und Fahrzeugschein vorweisen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Unfall",
+      "Sachschaden",
+      "geparkt",
+      "Halter nicht da"
+     ],
+     "statement": "Ich warte eine angemessene Zeit und hinterlasse dann Namen und Anschrift",
+     "truth": true
+    },
+    {
+     "context": [
+      "Unfall",
+      "Sachschaden",
+      "geparkt",
+      "Halter nicht da"
+     ],
+     "statement": "Ich klemme einen Zettel hinter den Scheibenwischer und fahre sofort weiter",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "SPC_BREAKDOWN",
+   "topic": "11_special",
+   "subtopic": "panne",
+   "title": "Liegenbleiben (Panne) und Warnzeichen",
+   "rule": "Bleibt ein mehrspuriges Fahrzeug an einer Stelle liegen, an der es nicht rechtzeitig als Hindernis erkannt werden kann: sofort Warnblinklicht, dann mindestens ein auffälliges Warnzeichen in ausreichender Entfernung aufstellen – bei schnellem Verkehr etwa 100 m; Warndreieck verwenden.",
+   "numeric_refs": [
+    "STVO_15_WARNING_100M"
+   ],
+   "concepts": [
+    "panne",
+    "absichern",
+    "warnblinklicht"
+   ],
+   "keywords": [
+    "Panne",
+    "liegenbleiben",
+    "Warndreieck",
+    "Warnblinklicht",
+    "100 m",
+    "Warnweste",
+    "absichern"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 15",
+     "evidence": "ist sofort Warnblinklicht einzuschalten. Danach ist mindestens ein auffällig warnendes Zeichen gut sichtbar in ausreichender Entfernung aufzustellen, und zwar bei schnellem Verkehr in etwa 100 m Entfernung"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Panne",
+      "liegenbleiben",
+      "zuerst"
+     ],
+     "statement": "Zuerst schalte ich das Warnblinklicht ein",
+     "truth": true
+    },
+    {
+     "context": [
+      "Panne",
+      "Warndreieck",
+      "schneller Verkehr",
+      "Autobahn"
+     ],
+     "statement": "Bei schnellem Verkehr stelle ich das Warndreieck in etwa 100 m Entfernung auf",
+     "truth": true,
+     "numbers": [
+      "100 m"
+     ]
+    },
+    {
+     "context": [
+      "Panne",
+      "Warndreieck",
+      "schneller Verkehr",
+      "Autobahn"
+     ],
+     "statement": "Das Warndreieck stelle ich direkt hinter dem Fahrzeug auf",
+     "truth": false
+    },
+    {
+     "context": [
+      "Panne",
+      "Autobahn",
+      "zuerst"
+     ],
+     "statement": "Ich schalte sofort das Warnblinklicht ein",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "SPC_TOWING",
+   "topic": "11_special",
+   "subtopic": "abschleppen",
+   "title": "Abschleppen",
+   "rule": "Auf der Autobahn liegengebliebenes Fahrzeug: Autobahn bei der nächsten Ausfahrt verlassen. Außerhalb liegengebliebenes Fahrzeug: nicht in die Autobahn einfahren. Beide Fahrzeuge Warnblinklicht. Krafträder dürfen nicht abgeschleppt werden.",
+   "concepts": [
+    "abschleppen",
+    "autobahn",
+    "warnblinklicht"
+   ],
+   "keywords": [
+    "Abschleppen",
+    "Abschleppseil",
+    "Warnblinklicht",
+    "nächste Ausfahrt",
+    "Kraftrad"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 15a",
+     "evidence": "Beim Abschleppen eines auf der Autobahn liegen gebliebenen Fahrzeugs ist die Autobahn (Zeichen 330.1) bei der nächsten Ausfahrt zu verlassen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 15a",
+     "para": "Abs. 3-4",
+     "evidence": "Während des Abschleppens haben beide Fahrzeuge Warnblinklicht einzuschalten."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 15a",
+     "para": "Abs. 4",
+     "evidence": "Krafträder dürfen nicht abgeschleppt werden."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Abschleppen",
+      "Autobahn"
+     ],
+     "statement": "Ich muss die Autobahn bei der nächsten Ausfahrt verlassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Abschleppen",
+      "Autobahn",
+      "einfahren"
+     ],
+     "statement": "Mit einem außerhalb der Autobahn liegengebliebenen Fahrzeug darf ich zum Abschleppen auf die Autobahn fahren",
+     "truth": false
+    },
+    {
+     "context": [
+      "Abschleppen",
+      "Warnblinklicht"
+     ],
+     "statement": "Beim Abschleppen müssen beide Fahrzeuge das Warnblinklicht einschalten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Abschleppen",
+      "Kraftrad",
+      "Motorrad"
+     ],
+     "statement": "Krafträder dürfen abgeschleppt werden",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "SPC_BASIC_RULE",
+   "topic": "11_special",
+   "subtopic": "grundregel",
+   "title": "Grundregel § 1 StVO",
+   "rule": "Ständige Vorsicht und gegenseitige Rücksicht. Niemand darf geschädigt, gefährdet oder mehr als unvermeidbar behindert oder belästigt werden.",
+   "concepts": [
+    "grundregel",
+    "vorsicht",
+    "ruecksicht"
+   ],
+   "keywords": [
+    "Grundregel",
+    "Vorsicht",
+    "Rücksicht",
+    "gefährden",
+    "behindern",
+    "belästigen"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 1",
+     "evidence": "Die Teilnahme am Straßenverkehr erfordert ständige Vorsicht und gegenseitige Rücksicht."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 1",
+     "para": "Abs. 2",
+     "evidence": "hat sich so zu verhalten, dass kein Anderer geschädigt, gefährdet oder mehr, als nach den Umständen unvermeidbar, behindert oder belästigt wird."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Grundregel",
+      "Straßenverkehr"
+     ],
+     "statement": "Die Teilnahme am Straßenverkehr erfordert ständige Vorsicht und gegenseitige Rücksicht",
+     "truth": true
+    },
+    {
+     "context": [
+      "Grundregel",
+      "Vorfahrt",
+      "Recht"
+     ],
+     "statement": "Wer Vorfahrt hat, darf sie auch erzwingen",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "SPC_ICE_TYRES",
+   "topic": "11_special",
+   "subtopic": "winter",
+   "title": "Winterliche Glätte: wintertaugliche Reifen",
+   "rule": "Bei Glatteis, Schneeglätte, Schneematsch, Eis- oder Reifglätte dürfen Kfz nur mit Reifen nach § 36 Abs. 4 StVZO (wintertauglich) an allen Rädern gefahren werden (Ausnahmen u. a. einspurige Kfz).",
+   "concepts": [
+    "winter",
+    "reifen",
+    "glaette"
+   ],
+   "keywords": [
+    "Winterreifen",
+    "Glatteis",
+    "Schneeglätte",
+    "Schneematsch",
+    "Reifglätte",
+    "situative Winterreifenpflicht"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 2",
+     "para": "Abs. 3a",
+     "evidence": "Der Führer eines Kraftfahrzeuges darf dies bei Glatteis, Schneeglätte, Schneematsch, Eisglätte oder Reifglätte nur fahren, wenn alle Räder mit Reifen ausgerüstet sind"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Winterreifen",
+      "Schneeglätte",
+      "Pkw"
+     ],
+     "statement": "Bei Schneeglätte darf ich mit dem Pkw nur mit wintertauglichen Reifen an allen Rädern fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "Winterreifen",
+      "Pflicht",
+      "Datum"
+     ],
+     "statement": "Winterreifen sind von Oktober bis Ostern immer vorgeschrieben, unabhängig vom Wetter",
+     "truth": false
+    },
+    {
+     "context": [
+      "Winterreifen",
+      "Schneeglätte"
+     ],
+     "statement": "Es genügt, wenn nur die Antriebsräder Winterreifen haben",
+     "truth": false
+    }
+   ]
+  }
+ ]
+}

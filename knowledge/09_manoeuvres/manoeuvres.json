@@ -1,109 +1,764 @@
-{"items": [
-{"id": "MAN_OVERTAKE_BASICS", "topic": "09_manoeuvres", "subtopic": "ueberholen_grundregeln", "title": "Überholen: Grundregeln",
- "rule": "Links überholen. Nur, wer übersehen kann, dass während des ganzen Überholvorgangs jede Behinderung des Gegenverkehrs ausgeschlossen ist, und mit wesentlich höherer Geschwindigkeit fährt. Verboten bei unklarer Verkehrslage oder durch Zeichen 276/277. Ausscheren und Wiedereinordnen ankündigen (blinken), nachfolgenden Verkehr nicht gefährden, so bald wie möglich wieder rechts einordnen, den Überholten nicht behindern. Wer überholt wird, darf nicht schneller werden.",
- "concepts": ["ueberholen", "gegenverkehr", "blinken"], "keywords": ["überholen", "Gegenverkehr", "unklare Verkehrslage", "wesentlich höhere Geschwindigkeit", "Ausscheren", "Wiedereinordnen", "überholt werden"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 5", "para": "Abs. 1-3", "evidence": "Überholen darf nur, wer übersehen kann, dass während des ganzen Überholvorgangs jede Behinderung des Gegenverkehrs ausgeschlossen ist. Überholen darf ferner nur, wer mit wesentlich höherer Geschwindigkeit als der zu Überholende fährt."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 5", "para": "Abs. 3 Nr. 1", "evidence": "bei unklarer Verkehrslage oder"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 5", "para": "Abs. 6", "evidence": "Wer überholt wird, darf seine Geschwindigkeit nicht erhöhen."}],
- "claims": [
-  {"context": ["überholen", "Gegenverkehr"], "statement": "Ich darf nur überholen, wenn eine Behinderung des Gegenverkehrs während des ganzen Überholvorgangs ausgeschlossen ist", "truth": true},
-  {"context": ["überholen", "Geschwindigkeit"], "statement": "Ich darf nur überholen, wenn ich mit wesentlich höherer Geschwindigkeit fahre", "truth": true},
-  {"context": ["überholen", "unklare Verkehrslage"], "statement": "Bei unklarer Verkehrslage ist das Überholen verboten", "truth": true},
-  {"context": ["überholt werden", "Geschwindigkeit"], "statement": "Wer überholt wird, darf seine Geschwindigkeit nicht erhöhen", "truth": true},
-  {"context": ["überholt werden", "Geschwindigkeit"], "statement": "Wer überholt wird, sollte beschleunigen, damit der Überholvorgang schneller geht", "truth": false},
-  {"context": ["überholen", "Seite"], "statement": "Es ist grundsätzlich rechts zu überholen", "truth": false},
-  {"context": ["überholen", "wieder einordnen"], "statement": "Nach dem Überholen muss ich mich so bald wie möglich wieder rechts einordnen", "truth": true}],
- "mnemonic": "Sicht frei, deutlich schneller, blinken raus, blinken rein."},
-
-{"id": "MAN_OVERTAKE_GAP", "topic": "09_manoeuvres", "subtopic": "seitenabstand", "title": "Seitenabstand beim Überholen",
- "rule": "Beim Überholen von Fußgängern, Radfahrern und E-Scooter-Fahrern mit Kfz mindestens 1,5 m innerorts und 2 m außerorts Seitenabstand (nicht an Kreuzungen, wenn Radfahrende wartende Kfz rechts überholt haben).",
- "numeric_refs": ["STVO_5_PASS_GAP_IN", "STVO_5_PASS_GAP_OUT"],
- "concepts": ["ueberholen", "radfahrer", "seitenabstand"], "keywords": ["Seitenabstand", "Radfahrer", "1,5 m", "2 m", "Fußgänger", "E-Scooter"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 5", "para": "Abs. 4 Satz 3", "evidence": "Beim Überholen mit Kraftfahrzeugen von zu Fuß Gehenden, Rad Fahrenden und Elektrokleinstfahrzeug Führenden beträgt der ausreichende Seitenabstand innerorts mindestens 1,5 m und außerorts mindestens 2 m."}],
- "claims": [
-  {"context": ["Radfahrer", "überholen", "innerorts", "Seitenabstand"], "statement": "Innerorts muss der Seitenabstand mindestens 1,5 m betragen", "truth": true, "numbers": ["1,5 m"]},
-  {"context": ["Radfahrer", "überholen", "außerorts", "Seitenabstand"], "statement": "Außerorts muss der Seitenabstand mindestens 2 m betragen", "truth": true, "numbers": ["2 m"]},
-  {"context": ["Radfahrer", "überholen", "Seitenabstand"], "statement": "Ein Seitenabstand von 1 m reicht innerorts aus", "truth": false}]},
-
-{"id": "MAN_OVERTAKE_RIGHT", "topic": "09_manoeuvres", "subtopic": "rechts_ueberholen", "title": "Rechts überholen – Ausnahmen",
- "rule": "Rechts überholt werden: wer sich zum Linksabbiegen eingeordnet und es angekündigt hat; Schienenfahrzeuge (links nur, wenn die Schienen zu weit rechts liegen; auf Einbahnstraßen auch links). Radfahrer/Mofas dürfen wartende Fahrzeuge rechts mit mäßiger Geschwindigkeit überholen. Bei Fahrzeugschlangen links darf mit geringfügig höherer Geschwindigkeit rechts überholt werden. Innerorts mit markierten Fahrstreifen (Kfz bis 3,5 t) freie Fahrstreifenwahl, rechts schneller als links erlaubt.",
- "concepts": ["ueberholen", "fahrstreifen"], "keywords": ["rechts überholen", "Linksabbieger", "Straßenbahn", "Fahrzeugschlange", "freie Fahrstreifenwahl", "eingeordnet"],
- "exam_relevance": 3, "difficulty": 3, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 5", "para": "Abs. 7", "evidence": "Wer seine Absicht, nach links abzubiegen, ankündigt und sich eingeordnet hat, ist rechts zu überholen. Schienenfahrzeuge sind rechts zu überholen."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 7", "para": "Abs. 2a", "evidence": "Wenn auf der Fahrbahn für eine Richtung eine Fahrzeugschlange auf dem jeweils linken Fahrstreifen steht oder langsam fährt, dürfen Fahrzeuge diese mit geringfügig höherer Geschwindigkeit und mit äußerster Vorsicht rechts überholen."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 7", "para": "Abs. 3", "evidence": "Dann darf rechts schneller als links gefahren werden."}],
- "claims": [
-  {"context": ["Linksabbieger", "eingeordnet", "überholen"], "statement": "Ein eingeordneter Linksabbieger ist rechts zu überholen", "truth": true},
-  {"context": ["Straßenbahn", "überholen"], "statement": "Schienenfahrzeuge sind grundsätzlich rechts zu überholen", "truth": true},
-  {"context": ["Straßenbahn", "überholen", "Einbahnstraße"], "statement": "In Einbahnstraßen dürfen Straßenbahnen auch links überholt werden", "truth": true},
-  {"context": ["Autobahn", "außerorts", "rechts überholen", "frei"], "statement": "Auf der Autobahn darf bei freier Fahrbahn rechts überholt werden", "truth": false},
-  {"context": ["innerorts", "markierte Fahrstreifen", "freie Fahrstreifenwahl"], "statement": "Innerorts darf ich auf markierten Fahrstreifen mit dem Pkw rechts schneller fahren als links", "truth": true}]},
-
-{"id": "MAN_LANE_CHANGE", "topic": "09_manoeuvres", "subtopic": "fahrstreifenwechsel", "title": "Fahrstreifenwechsel und Reißverschluss",
- "rule": "Fahrstreifenwechsel nur, wenn eine Gefährdung anderer ausgeschlossen ist; rechtzeitig und deutlich blinken. Endet ein Fahrstreifen, wird unmittelbar vor Beginn der Verengung abwechselnd eingefädelt (Reißverschlussverfahren). Rechtsfahrgebot: möglichst weit rechts fahren.",
- "concepts": ["fahrstreifen", "blinken", "reissverschluss"], "keywords": ["Fahrstreifenwechsel", "Reißverschluss", "Verengung", "Rechtsfahrgebot", "möglichst weit rechts", "einfädeln"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 7", "para": "Abs. 5", "evidence": "In allen Fällen darf ein Fahrstreifen nur gewechselt werden, wenn eine Gefährdung anderer Verkehrsteilnehmer ausgeschlossen ist."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 7", "para": "Abs. 4", "evidence": "dass sich diese Fahrzeuge unmittelbar vor Beginn der Verengung jeweils im Wechsel nach einem auf dem durchgehenden Fahrstreifen fahrenden Fahrzeug einordnen können (Reißverschlussverfahren)."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 2", "para": "Abs. 2", "evidence": "Es ist möglichst weit rechts zu fahren"}],
- "claims": [
-  {"context": ["Reißverschluss", "Fahrstreifen endet", "Verengung"], "statement": "Eingefädelt wird unmittelbar vor Beginn der Verengung im Wechsel", "truth": true},
-  {"context": ["Reißverschluss", "Fahrstreifen endet", "Verengung"], "statement": "Man sollte möglichst früh auf den durchgehenden Fahrstreifen wechseln", "truth": false},
-  {"context": ["Fahrstreifenwechsel"], "statement": "Ein Fahrstreifenwechsel ist nur erlaubt, wenn eine Gefährdung anderer ausgeschlossen ist", "truth": true},
-  {"context": ["Fahrstreifenwechsel", "blinken"], "statement": "Jeder Fahrstreifenwechsel ist rechtzeitig und deutlich mit dem Blinker anzukündigen", "truth": true}]},
-
-{"id": "MAN_TURNING", "topic": "09_manoeuvres", "subtopic": "abbiegen_einordnen", "title": "Abbiegen: ankündigen, einordnen, Schulterblick",
- "rule": "Abbiegen rechtzeitig und deutlich ankündigen (blinken). Rechtsabbieger möglichst weit rechts, Linksabbieger bis zur Mitte (Einbahnstraße: möglichst weit links) rechtzeitig einordnen. Vor dem Einordnen und nochmals vor dem Abbiegen auf den nachfolgenden Verkehr achten. Lkw über 3,5 t innerorts: Rechtsabbiegen mit Schrittgeschwindigkeit, wenn mit Rad- oder Fußverkehr zu rechnen ist.",
- "numeric_refs": ["STVO_9_TRUCK_RIGHT_TURN"],
- "concepts": ["abbiegen", "blinken", "schulterblick"], "keywords": ["abbiegen", "einordnen", "Schulterblick", "Rückspiegel", "blinken", "Mitte", "Rechtsabbieger", "Linksabbieger"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 9", "para": "Abs. 1", "evidence": "Wer nach rechts abbiegen will, hat sein Fahrzeug möglichst weit rechts, wer nach links abbiegen will, bis zur Mitte, auf Fahrbahnen für eine Richtung möglichst weit links, einzuordnen, und zwar rechtzeitig."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 9", "para": "Abs. 1 Satz 4", "evidence": "Vor dem Einordnen und nochmals vor dem Abbiegen ist auf den nachfolgenden Verkehr zu achten"}],
- "claims": [
-  {"context": ["links abbiegen", "einordnen"], "statement": "Zum Linksabbiegen ordne ich mich bis zur Mitte ein", "truth": true},
-  {"context": ["links abbiegen", "Einbahnstraße", "einordnen"], "statement": "In einer Einbahnstraße ordne ich mich zum Linksabbiegen möglichst weit links ein", "truth": true},
-  {"context": ["abbiegen", "nachfolgender Verkehr"], "statement": "Vor dem Einordnen und nochmals vor dem Abbiegen achte ich auf den nachfolgenden Verkehr", "truth": true},
-  {"context": ["abbiegen", "blinken"], "statement": "Blinken ist beim Abbiegen nur nötig, wenn andere Fahrzeuge in der Nähe sind", "truth": false}]},
-
-{"id": "MAN_REVERSE_UTURN", "topic": "09_manoeuvres", "subtopic": "wenden_rueckwaerts", "title": "Wenden, Rückwärtsfahren, Abbiegen in ein Grundstück",
- "rule": "Beim Abbiegen in ein Grundstück, beim Wenden und Rückwärtsfahren muss eine Gefährdung anderer ausgeschlossen sein; wenn nötig einweisen lassen. Auf Autobahnen und Kraftfahrstraßen sind Wenden und Rückwärtsfahren verboten.",
- "concepts": ["wenden", "rueckwaerts", "autobahn"], "keywords": ["Wenden", "Rückwärtsfahren", "Grundstück", "einweisen", "Gefährdung ausgeschlossen", "Autobahn"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 9", "para": "Abs. 5", "evidence": "Wer ein Fahrzeug führt, muss sich beim Abbiegen in ein Grundstück, beim Wenden und beim Rückwärtsfahren darüber hinaus so verhalten, dass eine Gefährdung anderer Verkehrsteilnehmer ausgeschlossen ist; erforderlichenfalls muss man sich einweisen lassen."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 18", "para": "Abs. 7", "evidence": "Wenden und Rückwärtsfahren sind verboten."}],
- "claims": [
-  {"context": ["rückwärts", "Wenden", "Grundstück"], "statement": "Eine Gefährdung anderer muss ausgeschlossen sein, notfalls lasse ich mich einweisen", "truth": true},
-  {"context": ["Autobahn", "Ausfahrt verpasst", "rückwärts"], "statement": "Auf der Autobahn darf ich auf dem Seitenstreifen zurücksetzen, wenn ich die Ausfahrt verpasst habe", "truth": false},
-  {"context": ["Autobahn", "Ausfahrt verpasst"], "statement": "Habe ich die Ausfahrt verpasst, fahre ich bis zur nächsten Ausfahrt weiter", "truth": true}]},
-
-{"id": "MAN_MOTORWAY", "topic": "09_manoeuvres", "subtopic": "autobahn", "title": "Autobahn und Kraftfahrstraße",
- "rule": "Nur Kfz mit bauartbedingt mehr als 60 km/h. Einfahren auf Autobahnen nur an Anschlussstellen, auf Kraftfahrstraßen an Kreuzungen/Einmündungen; Verkehr auf der durchgehenden Fahrbahn hat Vorfahrt. Halten auch auf dem Seitenstreifen verboten, Wenden/Rückwärtsfahren verboten, Fußgänger dürfen Autobahnen nicht betreten. Auf Einfädelungsstreifen darf schneller gefahren werden als auf den durchgehenden Fahrstreifen, auf Ausfädelungsstreifen nicht.",
- "numeric_refs": ["STVO_18_MIN_DESIGN_SPEED"],
- "concepts": ["autobahn", "kraftfahrstrasse", "einfahren", "vorfahrt"], "keywords": ["Autobahn", "Kraftfahrstraße", "Beschleunigungsstreifen", "Einfädelungsstreifen", "Ausfädelungsstreifen", "Seitenstreifen", "durchgehende Fahrbahn", "Anschlussstelle", "60 km/h"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 18", "para": "Abs. 3", "evidence": "Der Verkehr auf der durchgehenden Fahrbahn hat die Vorfahrt."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 18", "para": "Abs. 8", "evidence": "Halten, auch auf Seitenstreifen, ist verboten."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 7a", "para": "Abs. 2-3", "evidence": "Auf Autobahnen und anderen Straßen außerhalb geschlossener Ortschaften darf auf Einfädelungsstreifen schneller gefahren werden als auf den durchgehenden Fahrstreifen."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 7a", "para": "Abs. 3", "evidence": "Auf Ausfädelungsstreifen darf nicht schneller gefahren werden als auf den durchgehenden Fahrstreifen."}],
- "claims": [
-  {"context": ["Autobahn", "einfahren", "Vorfahrt"], "statement": "Der Verkehr auf der durchgehenden Fahrbahn hat Vorfahrt", "truth": true},
-  {"context": ["Autobahn", "einfahren", "Vorfahrt"], "statement": "Wer auf die Autobahn auffährt, hat Vorfahrt", "truth": false},
-  {"context": ["Autobahn", "halten", "Seitenstreifen"], "statement": "Halten ist auf der Autobahn auch auf dem Seitenstreifen verboten", "truth": true},
-  {"context": ["Autobahn", "Einfädelungsstreifen", "Geschwindigkeit"], "statement": "Auf dem Einfädelungsstreifen darf schneller gefahren werden als auf den durchgehenden Fahrstreifen", "truth": true},
-  {"context": ["Autobahn", "Ausfädelungsstreifen", "Geschwindigkeit"], "statement": "Auf dem Ausfädelungsstreifen darf schneller gefahren werden als auf den durchgehenden Fahrstreifen", "truth": false},
-  {"context": ["Autobahn", "Fahrzeug", "bauartbedingt"], "statement": "Die Autobahn darf nur mit Kfz benutzt werden, deren bauartbedingte Höchstgeschwindigkeit mehr als 60 km/h beträgt", "truth": true, "numbers": ["60 km/h"]}]},
-
-{"id": "MAN_SIGNALS_HORN", "topic": "09_manoeuvres", "subtopic": "warnzeichen", "title": "Schall- und Leuchtzeichen, Warnblinklicht",
- "rule": "Hupe und Lichthupe nur außerorts zum Ankündigen des Überholens oder bei Gefährdung. Warnblinklicht außer bei Panne und Abschleppen nur, wer andere gefährdet oder vor Gefahren warnen will (z. B. Stauende, sehr langsames Fahren auf Autobahnen).",
- "concepts": ["warnzeichen", "ueberholen", "stau"], "keywords": ["Hupe", "Lichthupe", "Schallzeichen", "Leuchtzeichen", "Warnblinklicht", "Stauende"],
- "exam_relevance": 2, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 16", "para": "Abs. 1", "evidence": "wer außerhalb geschlossener Ortschaften überholt (§ 5 Absatz 5) oder"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 16", "para": "Abs. 2", "evidence": "zum Beispiel bei Annäherung an einen Stau oder bei besonders langsamer Fahrgeschwindigkeit auf Autobahnen und anderen schnell befahrenen Straßen."}],
- "claims": [
-  {"context": ["Hupe", "Lichthupe", "innerorts", "überholen"], "statement": "Innerorts darf ich das Überholen durch Hupen ankündigen", "truth": false},
-  {"context": ["Hupe", "Gefahr"], "statement": "Schallzeichen darf geben, wer sich oder andere gefährdet sieht", "truth": true},
-  {"context": ["Warnblinklicht", "Stau", "Autobahn"], "statement": "Bei Annäherung an ein Stauende darf ich das Warnblinklicht einschalten", "truth": true},
-  {"context": ["Warnblinklicht", "Parken", "zweite Reihe"], "statement": "Mit Warnblinklicht darf ich in zweiter Reihe parken", "truth": false}]}
-]}
+{
+ "items": [
+  {
+   "id": "MAN_OVERTAKE_BASICS",
+   "topic": "09_manoeuvres",
+   "subtopic": "ueberholen_grundregeln",
+   "title": "Überholen: Grundregeln",
+   "rule": "Links überholen. Nur, wer übersehen kann, dass während des ganzen Überholvorgangs jede Behinderung des Gegenverkehrs ausgeschlossen ist, und mit wesentlich höherer Geschwindigkeit fährt. Verboten bei unklarer Verkehrslage oder durch Zeichen 276/277. Ausscheren und Wiedereinordnen ankündigen (blinken), nachfolgenden Verkehr nicht gefährden, so bald wie möglich wieder rechts einordnen, den Überholten nicht behindern. Wer überholt wird, darf nicht schneller werden.",
+   "concepts": [
+    "ueberholen",
+    "gegenverkehr",
+    "blinken"
+   ],
+   "keywords": [
+    "überholen",
+    "Gegenverkehr",
+    "unklare Verkehrslage",
+    "wesentlich höhere Geschwindigkeit",
+    "Ausscheren",
+    "Wiedereinordnen",
+    "überholt werden"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 1-3",
+     "evidence": "Überholen darf nur, wer übersehen kann, dass während des ganzen Überholvorgangs jede Behinderung des Gegenverkehrs ausgeschlossen ist. Überholen darf ferner nur, wer mit wesentlich höherer Geschwindigkeit als der zu Überholende fährt."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 3 Nr. 1",
+     "evidence": "bei unklarer Verkehrslage oder"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 6",
+     "evidence": "Wer überholt wird, darf seine Geschwindigkeit nicht erhöhen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "überholen",
+      "Gegenverkehr"
+     ],
+     "statement": "Ich darf nur überholen, wenn eine Behinderung des Gegenverkehrs während des ganzen Überholvorgangs ausgeschlossen ist",
+     "truth": true
+    },
+    {
+     "context": [
+      "überholen",
+      "Geschwindigkeit"
+     ],
+     "statement": "Ich darf nur überholen, wenn ich mit wesentlich höherer Geschwindigkeit fahre",
+     "truth": true
+    },
+    {
+     "context": [
+      "überholen",
+      "unklare Verkehrslage"
+     ],
+     "statement": "Bei unklarer Verkehrslage ist das Überholen verboten",
+     "truth": true
+    },
+    {
+     "context": [
+      "überholt werden",
+      "Geschwindigkeit"
+     ],
+     "statement": "Wer überholt wird, darf seine Geschwindigkeit nicht erhöhen",
+     "truth": true
+    },
+    {
+     "context": [
+      "überholt werden",
+      "Geschwindigkeit"
+     ],
+     "statement": "Wer überholt wird, sollte beschleunigen, damit der Überholvorgang schneller geht",
+     "truth": false
+    },
+    {
+     "context": [
+      "überholen",
+      "Seite"
+     ],
+     "statement": "Es ist grundsätzlich rechts zu überholen",
+     "truth": false
+    },
+    {
+     "context": [
+      "überholen",
+      "wieder einordnen"
+     ],
+     "statement": "Nach dem Überholen muss ich mich so bald wie möglich wieder rechts einordnen",
+     "truth": true
+    },
+    {
+     "context": [
+      "überholen",
+      "unklar"
+     ],
+     "statement": "Bei unklarer Verkehrslage überhole ich nicht",
+     "truth": true
+    },
+    {
+     "context": [
+      "überholt werden"
+     ],
+     "statement": "Wenn ich überholt werde, beschleunige ich nicht",
+     "truth": true
+    },
+    {
+     "context": [
+      "überholen",
+      "Seite"
+     ],
+     "statement": "Grundsätzlich überhole ich auf der linken Seite",
+     "truth": true
+    }
+   ],
+   "mnemonic": "Sicht frei, deutlich schneller, blinken raus, blinken rein."
+  },
+  {
+   "id": "MAN_OVERTAKE_GAP",
+   "topic": "09_manoeuvres",
+   "subtopic": "seitenabstand",
+   "title": "Seitenabstand beim Überholen",
+   "rule": "Beim Überholen von Fußgängern, Radfahrern und E-Scooter-Fahrern mit Kfz mindestens 1,5 m innerorts und 2 m außerorts Seitenabstand (nicht an Kreuzungen, wenn Radfahrende wartende Kfz rechts überholt haben).",
+   "numeric_refs": [
+    "STVO_5_PASS_GAP_IN",
+    "STVO_5_PASS_GAP_OUT"
+   ],
+   "concepts": [
+    "ueberholen",
+    "radfahrer",
+    "seitenabstand"
+   ],
+   "keywords": [
+    "Seitenabstand",
+    "Radfahrer",
+    "1,5 m",
+    "2 m",
+    "Fußgänger",
+    "E-Scooter"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 4 Satz 3",
+     "evidence": "Beim Überholen mit Kraftfahrzeugen von zu Fuß Gehenden, Rad Fahrenden und Elektrokleinstfahrzeug Führenden beträgt der ausreichende Seitenabstand innerorts mindestens 1,5 m und außerorts mindestens 2 m."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Radfahrer",
+      "überholen",
+      "innerorts",
+      "Seitenabstand"
+     ],
+     "statement": "Innerorts muss der Seitenabstand mindestens 1,5 m betragen",
+     "truth": true,
+     "numbers": [
+      "1,5 m"
+     ]
+    },
+    {
+     "context": [
+      "Radfahrer",
+      "überholen",
+      "außerorts",
+      "Seitenabstand"
+     ],
+     "statement": "Außerorts muss der Seitenabstand mindestens 2 m betragen",
+     "truth": true,
+     "numbers": [
+      "2 m"
+     ]
+    },
+    {
+     "context": [
+      "Radfahrer",
+      "überholen",
+      "Seitenabstand"
+     ],
+     "statement": "Ein Seitenabstand von 1 m reicht innerorts aus",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "MAN_OVERTAKE_RIGHT",
+   "topic": "09_manoeuvres",
+   "subtopic": "rechts_ueberholen",
+   "title": "Rechts überholen – Ausnahmen",
+   "rule": "Rechts überholt werden: wer sich zum Linksabbiegen eingeordnet und es angekündigt hat; Schienenfahrzeuge (links nur, wenn die Schienen zu weit rechts liegen; auf Einbahnstraßen auch links). Radfahrer/Mofas dürfen wartende Fahrzeuge rechts mit mäßiger Geschwindigkeit überholen. Bei Fahrzeugschlangen links darf mit geringfügig höherer Geschwindigkeit rechts überholt werden. Innerorts mit markierten Fahrstreifen (Kfz bis 3,5 t) freie Fahrstreifenwahl, rechts schneller als links erlaubt.",
+   "concepts": [
+    "ueberholen",
+    "fahrstreifen"
+   ],
+   "keywords": [
+    "rechts überholen",
+    "Linksabbieger",
+    "Straßenbahn",
+    "Fahrzeugschlange",
+    "freie Fahrstreifenwahl",
+    "eingeordnet"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 3,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 7",
+     "evidence": "Wer seine Absicht, nach links abzubiegen, ankündigt und sich eingeordnet hat, ist rechts zu überholen. Schienenfahrzeuge sind rechts zu überholen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 7",
+     "para": "Abs. 2a",
+     "evidence": "Wenn auf der Fahrbahn für eine Richtung eine Fahrzeugschlange auf dem jeweils linken Fahrstreifen steht oder langsam fährt, dürfen Fahrzeuge diese mit geringfügig höherer Geschwindigkeit und mit äußerster Vorsicht rechts überholen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 7",
+     "para": "Abs. 3",
+     "evidence": "Dann darf rechts schneller als links gefahren werden."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Linksabbieger",
+      "eingeordnet",
+      "überholen"
+     ],
+     "statement": "Ein eingeordneter Linksabbieger ist rechts zu überholen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Straßenbahn",
+      "überholen"
+     ],
+     "statement": "Schienenfahrzeuge sind grundsätzlich rechts zu überholen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Straßenbahn",
+      "überholen",
+      "Einbahnstraße"
+     ],
+     "statement": "In Einbahnstraßen dürfen Straßenbahnen auch links überholt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Autobahn",
+      "außerorts",
+      "rechts überholen",
+      "frei"
+     ],
+     "statement": "Auf der Autobahn darf bei freier Fahrbahn rechts überholt werden",
+     "truth": false
+    },
+    {
+     "context": [
+      "innerorts",
+      "markierte Fahrstreifen",
+      "freie Fahrstreifenwahl"
+     ],
+     "statement": "Innerorts darf ich auf markierten Fahrstreifen mit dem Pkw rechts schneller fahren als links",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "MAN_LANE_CHANGE",
+   "topic": "09_manoeuvres",
+   "subtopic": "fahrstreifenwechsel",
+   "title": "Fahrstreifenwechsel und Reißverschluss",
+   "rule": "Fahrstreifenwechsel nur, wenn eine Gefährdung anderer ausgeschlossen ist; rechtzeitig und deutlich blinken. Endet ein Fahrstreifen, wird unmittelbar vor Beginn der Verengung abwechselnd eingefädelt (Reißverschlussverfahren). Rechtsfahrgebot: möglichst weit rechts fahren.",
+   "concepts": [
+    "fahrstreifen",
+    "blinken",
+    "reissverschluss"
+   ],
+   "keywords": [
+    "Fahrstreifenwechsel",
+    "Reißverschluss",
+    "Verengung",
+    "Rechtsfahrgebot",
+    "möglichst weit rechts",
+    "einfädeln"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 7",
+     "para": "Abs. 5",
+     "evidence": "In allen Fällen darf ein Fahrstreifen nur gewechselt werden, wenn eine Gefährdung anderer Verkehrsteilnehmer ausgeschlossen ist."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 7",
+     "para": "Abs. 4",
+     "evidence": "dass sich diese Fahrzeuge unmittelbar vor Beginn der Verengung jeweils im Wechsel nach einem auf dem durchgehenden Fahrstreifen fahrenden Fahrzeug einordnen können (Reißverschlussverfahren)."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 2",
+     "para": "Abs. 2",
+     "evidence": "Es ist möglichst weit rechts zu fahren"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Reißverschluss",
+      "Fahrstreifen endet",
+      "Verengung"
+     ],
+     "statement": "Eingefädelt wird unmittelbar vor Beginn der Verengung im Wechsel",
+     "truth": true
+    },
+    {
+     "context": [
+      "Reißverschluss",
+      "Fahrstreifen endet",
+      "Verengung"
+     ],
+     "statement": "Man sollte möglichst früh auf den durchgehenden Fahrstreifen wechseln",
+     "truth": false
+    },
+    {
+     "context": [
+      "Fahrstreifenwechsel"
+     ],
+     "statement": "Ein Fahrstreifenwechsel ist nur erlaubt, wenn eine Gefährdung anderer ausgeschlossen ist",
+     "truth": true
+    },
+    {
+     "context": [
+      "Fahrstreifenwechsel",
+      "blinken"
+     ],
+     "statement": "Jeder Fahrstreifenwechsel ist rechtzeitig und deutlich mit dem Blinker anzukündigen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Fahrstreifen endet",
+      "Baustelle",
+      "einfädeln"
+     ],
+     "statement": "Ich fädle mich erst unmittelbar vor der Engstelle im Wechsel ein",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "MAN_TURNING",
+   "topic": "09_manoeuvres",
+   "subtopic": "abbiegen_einordnen",
+   "title": "Abbiegen: ankündigen, einordnen, Schulterblick",
+   "rule": "Abbiegen rechtzeitig und deutlich ankündigen (blinken). Rechtsabbieger möglichst weit rechts, Linksabbieger bis zur Mitte (Einbahnstraße: möglichst weit links) rechtzeitig einordnen. Vor dem Einordnen und nochmals vor dem Abbiegen auf den nachfolgenden Verkehr achten. Lkw über 3,5 t innerorts: Rechtsabbiegen mit Schrittgeschwindigkeit, wenn mit Rad- oder Fußverkehr zu rechnen ist.",
+   "numeric_refs": [
+    "STVO_9_TRUCK_RIGHT_TURN"
+   ],
+   "concepts": [
+    "abbiegen",
+    "blinken",
+    "schulterblick"
+   ],
+   "keywords": [
+    "abbiegen",
+    "einordnen",
+    "Schulterblick",
+    "Rückspiegel",
+    "blinken",
+    "Mitte",
+    "Rechtsabbieger",
+    "Linksabbieger"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 1",
+     "evidence": "Wer nach rechts abbiegen will, hat sein Fahrzeug möglichst weit rechts, wer nach links abbiegen will, bis zur Mitte, auf Fahrbahnen für eine Richtung möglichst weit links, einzuordnen, und zwar rechtzeitig."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 1 Satz 4",
+     "evidence": "Vor dem Einordnen und nochmals vor dem Abbiegen ist auf den nachfolgenden Verkehr zu achten"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "links abbiegen",
+      "einordnen"
+     ],
+     "statement": "Zum Linksabbiegen ordne ich mich bis zur Mitte ein",
+     "truth": true
+    },
+    {
+     "context": [
+      "links abbiegen",
+      "Einbahnstraße",
+      "einordnen"
+     ],
+     "statement": "In einer Einbahnstraße ordne ich mich zum Linksabbiegen möglichst weit links ein",
+     "truth": true
+    },
+    {
+     "context": [
+      "abbiegen",
+      "nachfolgender Verkehr"
+     ],
+     "statement": "Vor dem Einordnen und nochmals vor dem Abbiegen achte ich auf den nachfolgenden Verkehr",
+     "truth": true
+    },
+    {
+     "context": [
+      "abbiegen",
+      "blinken"
+     ],
+     "statement": "Blinken ist beim Abbiegen nur nötig, wenn andere Fahrzeuge in der Nähe sind",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "MAN_REVERSE_UTURN",
+   "topic": "09_manoeuvres",
+   "subtopic": "wenden_rueckwaerts",
+   "title": "Wenden, Rückwärtsfahren, Abbiegen in ein Grundstück",
+   "rule": "Beim Abbiegen in ein Grundstück, beim Wenden und Rückwärtsfahren muss eine Gefährdung anderer ausgeschlossen sein; wenn nötig einweisen lassen. Auf Autobahnen und Kraftfahrstraßen sind Wenden und Rückwärtsfahren verboten.",
+   "concepts": [
+    "wenden",
+    "rueckwaerts",
+    "autobahn"
+   ],
+   "keywords": [
+    "Wenden",
+    "Rückwärtsfahren",
+    "Grundstück",
+    "einweisen",
+    "Gefährdung ausgeschlossen",
+    "Autobahn"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 5",
+     "evidence": "Wer ein Fahrzeug führt, muss sich beim Abbiegen in ein Grundstück, beim Wenden und beim Rückwärtsfahren darüber hinaus so verhalten, dass eine Gefährdung anderer Verkehrsteilnehmer ausgeschlossen ist; erforderlichenfalls muss man sich einweisen lassen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 18",
+     "para": "Abs. 7",
+     "evidence": "Wenden und Rückwärtsfahren sind verboten."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "rückwärts",
+      "Wenden",
+      "Grundstück"
+     ],
+     "statement": "Eine Gefährdung anderer muss ausgeschlossen sein, notfalls lasse ich mich einweisen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Autobahn",
+      "Ausfahrt verpasst",
+      "rückwärts"
+     ],
+     "statement": "Auf der Autobahn darf ich auf dem Seitenstreifen zurücksetzen, wenn ich die Ausfahrt verpasst habe",
+     "truth": false
+    },
+    {
+     "context": [
+      "Autobahn",
+      "Ausfahrt verpasst"
+     ],
+     "statement": "Habe ich die Ausfahrt verpasst, fahre ich bis zur nächsten Ausfahrt weiter",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "MAN_MOTORWAY",
+   "topic": "09_manoeuvres",
+   "subtopic": "autobahn",
+   "title": "Autobahn und Kraftfahrstraße",
+   "rule": "Nur Kfz mit bauartbedingt mehr als 60 km/h. Einfahren auf Autobahnen nur an Anschlussstellen, auf Kraftfahrstraßen an Kreuzungen/Einmündungen; Verkehr auf der durchgehenden Fahrbahn hat Vorfahrt. Halten auch auf dem Seitenstreifen verboten, Wenden/Rückwärtsfahren verboten, Fußgänger dürfen Autobahnen nicht betreten. Auf Einfädelungsstreifen darf schneller gefahren werden als auf den durchgehenden Fahrstreifen, auf Ausfädelungsstreifen nicht.",
+   "numeric_refs": [
+    "STVO_18_MIN_DESIGN_SPEED"
+   ],
+   "concepts": [
+    "autobahn",
+    "kraftfahrstrasse",
+    "einfahren",
+    "vorfahrt"
+   ],
+   "keywords": [
+    "Autobahn",
+    "Kraftfahrstraße",
+    "Beschleunigungsstreifen",
+    "Einfädelungsstreifen",
+    "Ausfädelungsstreifen",
+    "Seitenstreifen",
+    "durchgehende Fahrbahn",
+    "Anschlussstelle",
+    "60 km/h"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 18",
+     "para": "Abs. 3",
+     "evidence": "Der Verkehr auf der durchgehenden Fahrbahn hat die Vorfahrt."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 18",
+     "para": "Abs. 8",
+     "evidence": "Halten, auch auf Seitenstreifen, ist verboten."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 7a",
+     "para": "Abs. 2-3",
+     "evidence": "Auf Autobahnen und anderen Straßen außerhalb geschlossener Ortschaften darf auf Einfädelungsstreifen schneller gefahren werden als auf den durchgehenden Fahrstreifen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 7a",
+     "para": "Abs. 3",
+     "evidence": "Auf Ausfädelungsstreifen darf nicht schneller gefahren werden als auf den durchgehenden Fahrstreifen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Autobahn",
+      "einfahren",
+      "Vorfahrt"
+     ],
+     "statement": "Der Verkehr auf der durchgehenden Fahrbahn hat Vorfahrt",
+     "truth": true
+    },
+    {
+     "context": [
+      "Autobahn",
+      "einfahren",
+      "Vorfahrt"
+     ],
+     "statement": "Wer auf die Autobahn auffährt, hat Vorfahrt",
+     "truth": false
+    },
+    {
+     "context": [
+      "Autobahn",
+      "halten",
+      "Seitenstreifen"
+     ],
+     "statement": "Halten ist auf der Autobahn auch auf dem Seitenstreifen verboten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Autobahn",
+      "Einfädelungsstreifen",
+      "Geschwindigkeit"
+     ],
+     "statement": "Auf dem Einfädelungsstreifen darf schneller gefahren werden als auf den durchgehenden Fahrstreifen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Autobahn",
+      "Ausfädelungsstreifen",
+      "Geschwindigkeit"
+     ],
+     "statement": "Auf dem Ausfädelungsstreifen darf schneller gefahren werden als auf den durchgehenden Fahrstreifen",
+     "truth": false
+    },
+    {
+     "context": [
+      "Autobahn",
+      "Fahrzeug",
+      "bauartbedingt"
+     ],
+     "statement": "Die Autobahn darf nur mit Kfz benutzt werden, deren bauartbedingte Höchstgeschwindigkeit mehr als 60 km/h beträgt",
+     "truth": true,
+     "numbers": [
+      "60 km/h"
+     ]
+    },
+    {
+     "context": [
+      "Autobahn",
+      "Ausfahrt verpasst"
+     ],
+     "statement": "Ich fahre zur nächsten Ausfahrt",
+     "truth": true
+    },
+    {
+     "context": [
+      "Autobahn",
+      "Ausfahrt verpasst"
+     ],
+     "statement": "Ich wende auf der Autobahn, wenn kein Verkehr kommt",
+     "truth": false
+    },
+    {
+     "context": [
+      "Autobahn",
+      "Seitenstreifen",
+      "telefonieren"
+     ],
+     "statement": "Auf dem Seitenstreifen darf ich zum Telefonieren anhalten",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "MAN_SIGNALS_HORN",
+   "topic": "09_manoeuvres",
+   "subtopic": "warnzeichen",
+   "title": "Schall- und Leuchtzeichen, Warnblinklicht",
+   "rule": "Hupe und Lichthupe nur außerorts zum Ankündigen des Überholens oder bei Gefährdung. Warnblinklicht außer bei Panne und Abschleppen nur, wer andere gefährdet oder vor Gefahren warnen will (z. B. Stauende, sehr langsames Fahren auf Autobahnen).",
+   "concepts": [
+    "warnzeichen",
+    "ueberholen",
+    "stau"
+   ],
+   "keywords": [
+    "Hupe",
+    "Lichthupe",
+    "Schallzeichen",
+    "Leuchtzeichen",
+    "Warnblinklicht",
+    "Stauende"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 16",
+     "para": "Abs. 1",
+     "evidence": "wer außerhalb geschlossener Ortschaften überholt (§ 5 Absatz 5) oder"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 16",
+     "para": "Abs. 2",
+     "evidence": "zum Beispiel bei Annäherung an einen Stau oder bei besonders langsamer Fahrgeschwindigkeit auf Autobahnen und anderen schnell befahrenen Straßen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Hupe",
+      "Lichthupe",
+      "innerorts",
+      "überholen"
+     ],
+     "statement": "Innerorts darf ich das Überholen durch Hupen ankündigen",
+     "truth": false
+    },
+    {
+     "context": [
+      "Hupe",
+      "Gefahr"
+     ],
+     "statement": "Schallzeichen darf geben, wer sich oder andere gefährdet sieht",
+     "truth": true
+    },
+    {
+     "context": [
+      "Warnblinklicht",
+      "Stau",
+      "Autobahn"
+     ],
+     "statement": "Bei Annäherung an ein Stauende darf ich das Warnblinklicht einschalten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Warnblinklicht",
+      "Parken",
+      "zweite Reihe"
+     ],
+     "statement": "Mit Warnblinklicht darf ich in zweiter Reihe parken",
+     "truth": false
+    },
+    {
+     "context": [
+      "Hupe",
+      "innerorts",
+      "überholen"
+     ],
+     "statement": "Innerorts darf ich nur hupen, wenn ich mich oder andere gefährdet sehe",
+     "truth": true
+    }
+   ]
+  }
+ ]
+}

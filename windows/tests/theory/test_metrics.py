@@ -22,7 +22,7 @@ def synthetic(kb):
 
 def test_synthetic_size(synthetic):
     _, m = synthetic
-    assert m["overall"]["n"] >= 3000
+    assert m["overall"]["n"] >= 5000
 
 
 def test_synthetic_false_confident_is_zero(synthetic):
@@ -58,7 +58,7 @@ def test_golden_set_does_not_reuse_knowledge_claims(kb):
     """Independence check: golden answers are not verbatim knowledge-base claims."""
     claims = {c.statement.strip().lower() for o in kb.objects.values() for c in o.claims}
     reused = [a for it in load_golden() for a in it.question.answers if a.strip().lower() in claims]
-    assert len(reused) <= 3, reused
+    assert reused == [], reused
 
 
 def test_eval_tool_writes_report(tmp_path, kb, monkeypatch):

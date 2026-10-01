@@ -38,6 +38,7 @@ class KnowledgeBase:
     by_concept: dict[str, list[str]] = field(default_factory=lambda: defaultdict(list))
     status: dict[str, str] = field(default_factory=dict)  # id -> verified | unverified | secondary
     evidence_errors: list[str] = field(default_factory=list)
+    _vocab: frozenset[str] | None = field(default=None, repr=False)
 
     # ------------------------------------------------------------------ loading
     @classmethod
@@ -107,6 +108,21 @@ class KnowledgeBase:
                     self.evidence_errors.append(f"{it.id}: value_text {it.value_text!r} not in its evidence")
                     ok = False
             self.status[it.id] = "verified" if ok else ("unverified" if missing else "secondary")
+
+    @property
+    def vocabulary(self) -> frozenset[str]:
+        """Lower-case words of the knowledge base and the official law snapshots (for OCR repair)."""
+        if self._vocab is None:
+            parts: list[str] = []
+            for o in self.objects.values():
+                parts += [o.title, o.rule, " ".join(o.keywords), " ".join(o.conditions), " ".join(o.exceptions)]
+                parts += [" ".join(c.context) + " " + c.statement for c in o.claims]
+            for sg in self.signs.values():
+                parts += [sg.name, sg.meaning, " ".join(sg.keywords)]
+            for snap in self.snapshots.values():
+                parts += [n["text"] for n in snap["norms"].values()]
+            self._vocab = frozenset(w.lower() for w in re.findall(r"[A-Za-zÄÖÜäöüß]+", " ".join(parts)))
+        return self._vocab
 
     def verified(self, item_id: str) -> bool:
         return self.status.get(item_id) != "unverified"

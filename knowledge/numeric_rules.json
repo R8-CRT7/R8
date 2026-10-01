@@ -1523,6 +1523,53 @@
      "evidence": "für die weiteren Hauptuntersuchungen\n24"
     }
    ]
+  },
+  {
+   "id": "STVO_30_SUNDAY_75T",
+   "topic": "13_vehicle_technology",
+   "quantity": "mass",
+   "value": 7.5,
+   "unit": "t",
+   "comparator": "min",
+   "value_text": "7,5 t",
+   "applies_to": "Sonn-/Feiertagsfahrverbot für Lkw über 7,5 t (0-22 Uhr, geschäftsmäßige Güterbeförderung)",
+   "keywords": [
+    "Sonntagsfahrverbot"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 30",
+     "para": "Abs. 3",
+     "evidence": "Lastkraftwagen mit einer zulässigen Gesamtmasse über 7,5 t sowie Anhänger hinter Lastkraftwagen nicht geführt werden"
+    }
+   ]
+  },
+  {
+   "id": "STVO_27_BIKE_GROUP_15",
+   "topic": "07_road_users",
+   "quantity": "count",
+   "value": 15,
+   "unit": "persons",
+   "comparator": "min",
+   "value_text": "15",
+   "applies_to": "Mehr als 15 Radfahrer dürfen einen geschlossenen Verband bilden",
+   "keywords": [
+    "Verband",
+    "Radfahrer"
+   ],
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 27",
+     "para": "Abs. 1",
+     "evidence": "Mehr als 15 Rad Fahrende dürfen einen geschlossenen Verband bilden."
+    }
+   ]
   }
  ]
 }

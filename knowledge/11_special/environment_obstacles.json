@@ -1,0 +1,129 @@
+{
+ "items": [
+  {
+   "id": "SPC_ENVIRONMENT",
+   "topic": "11_special",
+   "subtopic": "umweltschutz",
+   "title": "Unnötiger Lärm und Abgase",
+   "rule": "Unnötiger Lärm und vermeidbare Abgasbelästigungen sind verboten: Motoren nicht unnötig laufen lassen, Türen nicht übermäßig laut schließen; unnützes Hin- und Herfahren innerorts ist verboten, wenn andere belästigt werden.",
+   "concepts": [
+    "umwelt",
+    "laerm"
+   ],
+   "keywords": [
+    "Lärm",
+    "Abgase",
+    "Motor laufen lassen",
+    "warmlaufen",
+    "Türen",
+    "Hin- und Herfahren",
+    "umweltschonend"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 30",
+     "para": "Abs. 1",
+     "evidence": "Bei der Benutzung von Fahrzeugen sind unnötiger Lärm und vermeidbare Abgasbelästigungen verboten. Es ist insbesondere verboten, Fahrzeugmotoren unnötig laufen zu lassen und Fahrzeugtüren übermäßig laut zu schließen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Motor",
+      "warmlaufen",
+      "Stand"
+     ],
+     "statement": "Es ist verboten, den Motor unnötig laufen zu lassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Motor",
+      "warmlaufen",
+      "Stand",
+      "Winter"
+     ],
+     "statement": "Im Winter darf der Motor im Stand warmlaufen",
+     "truth": false
+    },
+    {
+     "context": [
+      "Lärm",
+      "Türen",
+      "schließen"
+     ],
+     "statement": "Fahrzeugtüren dürfen nicht übermäßig laut geschlossen werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "innerorts",
+      "Hin- und Herfahren"
+     ],
+     "statement": "Unnützes Hin- und Herfahren innerorts ist verboten, wenn andere dadurch belästigt werden",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "SPC_OBSTACLES",
+   "topic": "11_special",
+   "subtopic": "verkehrshindernisse",
+   "title": "Verkehrshindernisse und Verschmutzung",
+   "rule": "Straße nicht verschmutzen oder Gegenstände liegen lassen, wenn der Verkehr gefährdet oder erschwert werden kann. Wer verantwortlich ist, muss das Hindernis unverzüglich beseitigen und bis dahin kenntlich machen (wenn nötig beleuchten).",
+   "concepts": [
+    "hindernis",
+    "absichern"
+   ],
+   "keywords": [
+    "verschmutzt",
+    "Ladung verloren",
+    "Gegenstand",
+    "Hindernis",
+    "beseitigen",
+    "kenntlich",
+    "Erde",
+    "Traktor"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 32",
+     "para": "Abs. 1",
+     "evidence": "Wer für solche verkehrswidrigen Zustände verantwortlich ist, hat diese unverzüglich zu beseitigen und diese bis dahin ausreichend kenntlich zu machen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Gegenstand",
+      "verloren",
+      "Fahrbahn",
+      "Hindernis"
+     ],
+     "statement": "Ich muss das Hindernis unverzüglich beseitigen und bis dahin kenntlich machen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Gegenstand",
+      "verloren",
+      "Fahrbahn",
+      "Hindernis"
+     ],
+     "statement": "Ich darf weiterfahren, die Straßenmeisterei räumt das weg",
+     "truth": false
+    }
+   ]
+  }
+ ]
+}

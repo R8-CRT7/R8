@@ -182,3 +182,42 @@ def similarity(a: set[str], b: set[str]) -> float:
         return 0.0
     inter = len(a & b)
     return inter / min(len(a), len(b)) * (0.6 + 0.4 * inter / max(len(a), len(b)))
+
+
+# --------------------------------------------------------------------------- OCR repair against the domain vocabulary
+_SINGLE_EQUIV = [(a, b) for a, b in _OCR_EQUIV] + [(b, a) for a, b in _OCR_EQUIV]
+
+
+def _neighbours(word: str) -> set[str]:
+    out = set()
+    for x, y in _SINGLE_EQUIV:
+        i = word.find(x)
+        while i != -1:
+            out.add(word[:i] + y + word[i + len(x):])
+            i = word.find(x, i + 1)
+    return out
+
+
+def vocab_repair(text: str, vocab: frozenset[str]) -> tuple[str, int, list[str]]:
+    """Repair OCR-damaged words that are 1-2 typical confusions away from a known domain word
+    ('Fcldweg' -> 'Feldweg', 'vcrbotcn' -> 'verboten'). Returns (text, repairs, words still unknown)."""
+    fixed = 0
+    unknown: list[str] = []
+
+    def fix(m: re.Match[str]) -> str:
+        nonlocal fixed
+        w = m.group(0)
+        low = w.lower()
+        if len(low) < 4 or low in vocab or low.replace("ß", "ss") in vocab:
+            return w
+        one = _neighbours(low)
+        hit = next((c for c in one if c in vocab), None)
+        if hit is None and len(low) >= 6:
+            hit = next((c2 for c in one for c2 in _neighbours(c) if c2 in vocab), None)
+        if hit is None:
+            unknown.append(w)
+            return w
+        fixed += 1
+        return hit if w[:1].islower() else hit[:1].upper() + hit[1:]
+
+    return re.sub(r"[A-Za-zÄÖÜäöüß|]+", fix, text), fixed, unknown

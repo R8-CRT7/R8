@@ -1,215 +1,1659 @@
-{"items": [
-{"id": "PRI_RIGHT_BEFORE_LEFT", "topic": "05_priority", "subtopic": "rechts_vor_links", "title": "Rechts vor links",
- "rule": "An Kreuzungen und Einmündungen hat Vorfahrt, wer von rechts kommt – außer die Vorfahrt ist durch Zeichen 205, 206, 301 oder 306 geregelt oder man kommt aus einem Feld- oder Waldweg.",
- "exceptions": ["Vorfahrt durch Verkehrszeichen geregelt (Zeichen 205, 206, 301, 306)", "Wer aus einem Feld- oder Waldweg kommt, hat keine Vorfahrt", "Lichtzeichen und Polizeibeamte gehen vor"],
- "concepts": ["vorfahrt", "kreuzung", "rechts_vor_links"], "keywords": ["rechts vor links", "Kreuzung", "Einmündung", "von rechts", "Vorfahrt", "gleichrangig"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 8", "para": "Abs. 1", "evidence": "An Kreuzungen und Einmündungen hat die Vorfahrt, wer von rechts kommt."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 8", "para": "Abs. 1 Satz 2 Nr. 2", "evidence": "für Fahrzeuge, die aus einem Feld- oder Waldweg auf eine andere Straße kommen."}],
- "claims": [
-  {"context": ["Kreuzung", "keine Verkehrszeichen", "Vorfahrt"], "statement": "Wer von rechts kommt, hat Vorfahrt", "truth": true},
-  {"context": ["Kreuzung", "keine Verkehrszeichen", "Vorfahrt"], "statement": "Wer von links kommt, hat Vorfahrt", "truth": false},
-  {"context": ["Kreuzung", "Vorfahrt", "breitere Straße"], "statement": "Wer auf der breiteren oder besser ausgebauten Straße fährt, hat Vorfahrt", "truth": false},
-  {"context": ["Feldweg", "Waldweg", "Vorfahrt"], "statement": "Wer aus einem Feld- oder Waldweg kommt, muss Vorfahrt gewähren", "truth": true},
-  {"context": ["Feldweg", "Waldweg", "Vorfahrt"], "statement": "Wer aus einem Feldweg von rechts kommt, hat Vorfahrt", "truth": false}],
- "mnemonic": "Keine Schilder, keine Ampel, kein Polizist → rechts vor links."},
-
-{"id": "PRI_YIELD_BEHAVIOUR", "topic": "05_priority", "subtopic": "wartepflicht_verhalten", "title": "Verhalten als Wartepflichtiger",
- "rule": "Wer Vorfahrt zu beachten hat, zeigt rechtzeitig durch mäßige Geschwindigkeit, dass er wartet; weiterfahren nur, wenn der Berechtigte weder gefährdet noch wesentlich behindert wird; bei Unübersichtlichkeit vorsichtig hineintasten.",
- "concepts": ["vorfahrt", "wartepflicht"], "keywords": ["wartepflichtig", "hineintasten", "mäßige Geschwindigkeit", "behindern", "unübersichtlich"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 8", "para": "Abs. 2", "evidence": "Wer die Vorfahrt zu beachten hat, muss rechtzeitig durch sein Fahrverhalten, insbesondere durch mäßige Geschwindigkeit, erkennen lassen, dass gewartet wird."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 8", "para": "Abs. 2 Satz 3", "evidence": "so darf sich vorsichtig in die Kreuzung oder Einmündung hineingetastet werden, bis die Übersicht gegeben ist."}],
- "claims": [
-  {"context": ["Vorfahrt", "unübersichtlich", "Einmündung"], "statement": "Ich darf mich vorsichtig in die Kreuzung hineintasten, bis ich Übersicht habe", "truth": true},
-  {"context": ["Vorfahrt", "wartepflichtig"], "statement": "Ich muss durch mäßige Geschwindigkeit rechtzeitig erkennen lassen, dass ich warte", "truth": true},
-  {"context": ["Vorfahrt", "wartepflichtig"], "statement": "Ich darf weiterfahren, wenn der Vorfahrtberechtigte nur wesentlich behindert wird", "truth": false},
-  {"context": ["Vorfahrt", "abbiegen", "Berechtigter"], "statement": "Der Vorfahrtberechtigte darf auch beim Abbiegen nicht wesentlich behindert werden", "truth": true}]},
-
-{"id": "PRI_ROUNDABOUT", "topic": "05_priority", "subtopic": "kreisverkehr", "title": "Kreisverkehr",
- "rule": "Steht Zeichen 215 unter Zeichen 205, hat der Verkehr auf der Kreisfahrbahn Vorfahrt. Beim Einfahren nicht blinken; beim Ausfahren blinken. Im Kreisverkehr rechts herum fahren, Mittelinsel nicht überfahren (Ausnahme große Fahrzeuge), auf der Kreisfahrbahn nicht halten.",
- "exceptions": ["Ohne Zeichen 205 an der Einfahrt gilt die allgemeine Regel (z. B. rechts vor links)", "Fahrzeuge, die wegen ihrer Abmessungen anders nicht durchkommen, dürfen die Mittelinsel überfahren"],
- "concepts": ["vorfahrt", "kreisverkehr", "blinken"], "keywords": ["Kreisverkehr", "Kreisfahrbahn", "Zeichen 215", "blinken", "Fahrtrichtungsanzeiger", "Mittelinsel", "einfahren", "ausfahren"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 8", "para": "Abs. 1a", "evidence": "Ist an der Einmündung in einen Kreisverkehr Zeichen 215 (Kreisverkehr) unter dem Zeichen 205 (Vorfahrt gewähren) angeordnet, hat der Verkehr auf der Kreisfahrbahn Vorfahrt. Bei der Einfahrt in einen solchen Kreisverkehr ist die Benutzung des Fahrtrichtungsanzeigers unzulässig."},
-             {"type": "law", "law": "stvo_2013", "norm": "Anlage 2", "para": "Zeichen 215", "evidence": "Es darf innerhalb des Kreisverkehrs auf der Fahrbahn nicht gehalten werden."}],
- "claims": [
-  {"context": ["Kreisverkehr", "Zeichen 215", "Vorfahrt"], "statement": "Der Verkehr auf der Kreisfahrbahn hat Vorfahrt", "truth": true},
-  {"context": ["Kreisverkehr", "Zeichen 215", "Vorfahrt"], "statement": "Wer in den Kreisverkehr einfährt, hat Vorfahrt", "truth": false},
-  {"context": ["Kreisverkehr", "einfahren", "blinken"], "statement": "Beim Einfahren in den Kreisverkehr muss ich blinken", "truth": false},
-  {"context": ["Kreisverkehr", "einfahren", "blinken"], "statement": "Beim Einfahren in den Kreisverkehr darf ich nicht blinken", "truth": true},
-  {"context": ["Kreisverkehr", "ausfahren", "blinken"], "statement": "Beim Verlassen des Kreisverkehrs muss ich blinken", "truth": true},
-  {"context": ["Kreisverkehr", "halten"], "statement": "Auf der Kreisfahrbahn darf gehalten werden", "truth": false},
-  {"context": ["Kreisverkehr", "Mittelinsel"], "statement": "Die Mittelinsel darf von Pkw überfahren werden", "truth": false}],
- "mnemonic": "Rein ohne Blinker, raus mit Blinker."},
-
-{"id": "PRI_LEFT_TURN_ONCOMING", "topic": "05_priority", "subtopic": "abbiegen_gegenverkehr", "title": "Linksabbiegen und Gegenverkehr",
- "rule": "Wer links abbiegt, lässt entgegenkommende Fahrzeuge durchfahren – auch solche, die rechts abbiegen. Zwei einander entgegenkommende Linksabbieger biegen voreinander (tangential) ab, wenn Verkehrslage oder Kreuzung nichts anderes verlangen.",
- "concepts": ["abbiegen", "gegenverkehr", "vorfahrt"], "keywords": ["links abbiegen", "Gegenverkehr", "entgegenkommend", "voreinander", "tangential"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 9", "para": "Abs. 4", "evidence": "Wer nach links abbiegen will, muss entgegenkommende Fahrzeuge, die ihrerseits nach rechts abbiegen wollen, durchfahren lassen. Einander entgegenkommende Fahrzeuge, die jeweils nach links abbiegen wollen, müssen voreinander abbiegen"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 9", "para": "Abs. 3", "evidence": "Wer abbiegen will, muss entgegenkommende Fahrzeuge durchfahren lassen"}],
- "claims": [
-  {"context": ["links abbiegen", "Gegenverkehr"], "statement": "Ich muss den entgegenkommenden Verkehr durchfahren lassen", "truth": true},
-  {"context": ["links abbiegen", "Gegenverkehr", "rechts abbiegen"], "statement": "Ich muss Entgegenkommende, die rechts abbiegen, durchfahren lassen", "truth": true},
-  {"context": ["links abbiegen", "Gegenverkehr", "links abbiegen"], "statement": "Zwei entgegenkommende Linksabbieger biegen in der Regel voreinander ab", "truth": true},
-  {"context": ["links abbiegen", "Gegenverkehr", "links abbiegen"], "statement": "Zwei entgegenkommende Linksabbieger müssen hintereinander umeinander herum abbiegen", "truth": false},
-  {"context": ["links abbiegen", "Gegenverkehr"], "statement": "Als Linksabbieger habe ich Vorrang vor dem Gegenverkehr", "truth": false}],
- "mnemonic": "Links abbiegen = immer warten auf Gegenverkehr."},
-
-{"id": "PRI_TURN_CYCLISTS", "topic": "05_priority", "subtopic": "abbiegen_radfahrer", "title": "Abbiegen: Rad, Bahn, Busse, Fußgänger",
- "rule": "Wer abbiegt, lässt auch Schienenfahrzeuge, Fahrräder (mit Hilfsmotor) und E-Scooter durchfahren, die auf oder neben der Fahrbahn in gleicher Richtung fahren, ebenso Linienbusse auf Sonderfahrstreifen. Auf Fußgänger besondere Rücksicht, wenn nötig warten.",
- "concepts": ["abbiegen", "radfahrer", "fussgaenger"], "keywords": ["abbiegen", "Radfahrer", "Radweg", "gleiche Richtung", "geradeaus", "Fußgänger", "Straßenbahn", "toter Winkel", "Schulterblick"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 9", "para": "Abs. 3", "evidence": "Schienenfahrzeuge, Fahrräder mit Hilfsmotor, Fahrräder und Elektrokleinstfahrzeuge auch dann, wenn sie auf oder neben der Fahrbahn in der gleichen Richtung fahren."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 9", "para": "Abs. 3 Satz 3", "evidence": "Auf zu Fuß Gehende ist besondere Rücksicht zu nehmen; wenn nötig, ist zu warten."}],
- "claims": [
-  {"context": ["rechts abbiegen", "Radfahrer", "Radweg", "geradeaus"], "statement": "Ich muss den geradeaus fahrenden Radfahrer durchfahren lassen", "truth": true},
-  {"context": ["rechts abbiegen", "Radfahrer", "Radweg", "geradeaus"], "statement": "Ich darf vor dem Radfahrer abbiegen, weil er auf dem Radweg fährt", "truth": false},
-  {"context": ["abbiegen", "Fußgänger"], "statement": "Auf Fußgänger ist besondere Rücksicht zu nehmen; wenn nötig, muss ich warten", "truth": true},
-  {"context": ["abbiegen", "Straßenbahn", "gleiche Richtung"], "statement": "Ich muss eine in gleicher Richtung fahrende Straßenbahn durchfahren lassen", "truth": true},
-  {"context": ["abbiegen", "Schulterblick"], "statement": "Vor dem Abbiegen ist auf den nachfolgenden Verkehr zu achten", "truth": true}]},
-
-{"id": "PRI_PROPERTY_EXIT", "topic": "05_priority", "subtopic": "grundstueck_bordstein", "title": "Ausfahren aus Grundstück, abgesenkter Bordstein, verkehrsberuhigter Bereich",
- "rule": "Wer aus einem Grundstück, einer Fußgängerzone, einem verkehrsberuhigten Bereich, von anderen Straßenteilen oder über einen abgesenkten Bordstein einfährt oder vom Fahrbahnrand anfährt, muss eine Gefährdung anderer ausschließen (höchste Sorgfalt), ggf. einweisen lassen, und blinken.",
- "concepts": ["vorfahrt", "einfahren", "anfahren"], "keywords": ["Grundstück", "Ausfahrt", "abgesenkter Bordstein", "verkehrsberuhigter Bereich", "Fußgängerzone", "anfahren", "Fahrbahnrand", "einfahren"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 10", "evidence": "über einen abgesenkten Bordstein hinweg auf die Fahrbahn einfahren oder vom Fahrbahnrand anfahren will, hat sich dabei so zu verhalten, dass eine Gefährdung anderer Verkehrsteilnehmer ausgeschlossen ist"}],
- "claims": [
-  {"context": ["Grundstück", "Ausfahrt", "einfahren"], "statement": "Ich muss alle Verkehrsteilnehmer auf der Straße vorlassen", "truth": true},
-  {"context": ["Grundstück", "Ausfahrt", "von rechts"], "statement": "Wer von rechts aus einem Grundstück kommt, hat Vorfahrt", "truth": false},
-  {"context": ["abgesenkter Bordstein", "einfahren"], "statement": "Eine Gefährdung anderer muss ausgeschlossen sein", "truth": true},
-  {"context": ["verkehrsberuhigter Bereich", "ausfahren", "von rechts"], "statement": "Wer aus einem verkehrsberuhigten Bereich kommt, hat rechts vor links", "truth": false},
-  {"context": ["Fahrbahnrand", "anfahren"], "statement": "Beim Anfahren vom Fahrbahnrand muss ich blinken und den fließenden Verkehr vorlassen", "truth": true}]},
-
-{"id": "PRI_TRAFFIC_JAM_JUNCTION", "topic": "05_priority", "subtopic": "stau_kreuzung", "title": "Stau: nicht in die Kreuzung",
- "rule": "Stockt der Verkehr, darf trotz Vorfahrt oder Grün nicht in die Kreuzung eingefahren werden, wenn man auf ihr warten müsste. Bei stockendem Verkehr auf Autobahnen/mehrspurigen Außerortsstraßen Rettungsgasse zwischen äußerst linkem und rechts daneben liegendem Fahrstreifen bilden.",
- "concepts": ["stau", "kreuzung", "rettungsgasse"], "keywords": ["stockt", "Stau", "Kreuzung", "grün", "Rettungsgasse", "Schrittgeschwindigkeit", "Stillstand"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 11", "para": "Abs. 1", "evidence": "Stockt der Verkehr, darf trotz Vorfahrt oder grünem Lichtzeichen nicht in die Kreuzung oder Einmündung eingefahren werden, wenn auf ihr gewartet werden müsste."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 11", "para": "Abs. 2", "evidence": "zwischen dem äußerst linken und dem unmittelbar rechts daneben liegenden Fahrstreifen für eine Richtung eine freie Gasse bilden."}],
- "claims": [
-  {"context": ["Stau", "Kreuzung", "grün"], "statement": "Ich darf nicht in die Kreuzung einfahren, wenn ich dort warten müsste", "truth": true},
-  {"context": ["Stau", "Kreuzung", "grün"], "statement": "Bei Grün darf ich immer in die Kreuzung einfahren", "truth": false},
-  {"context": ["Rettungsgasse", "Autobahn", "Stau"], "statement": "Die Rettungsgasse wird zwischen dem äußerst linken und dem rechts daneben liegenden Fahrstreifen gebildet", "truth": true},
-  {"context": ["Rettungsgasse", "Autobahn", "Stau"], "statement": "Die Rettungsgasse wird erst gebildet, wenn ein Einsatzfahrzeug zu hören ist", "truth": false},
-  {"context": ["Rettungsgasse", "Autobahn", "Stau", "drei Fahrstreifen"], "statement": "Bei drei Fahrstreifen wird die Gasse zwischen dem mittleren und dem rechten Fahrstreifen gebildet", "truth": false}],
- "mnemonic": "Rettungsgasse: ganz links nach links, alle anderen nach rechts."},
-
-{"id": "PRI_WAIVE", "topic": "05_priority", "subtopic": "vorrang_verzicht", "title": "Verzicht auf Vorrang",
- "rule": "Auch wer Vorrang hat, muss darauf verzichten, wenn die Verkehrslage es erfordert. Auf einen Verzicht des anderen darf man nur vertrauen, wenn man sich mit ihm verständigt hat.",
- "concepts": ["vorfahrt", "verstaendigung", "vertrauensgrundsatz"], "keywords": ["Verzicht", "verständigen", "Handzeichen", "Vorrang"],
- "exam_relevance": 2, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 11", "para": "Abs. 3", "evidence": "auf einen Verzicht darf man nur vertrauen, wenn man sich mit dem oder der Verzichtenden verständigt hat."}],
- "claims": [
-  {"context": ["Verzicht", "Vorfahrt", "verständigen"], "statement": "Auf einen Vorfahrtverzicht darf ich nur vertrauen, wenn ich mich mit dem anderen verständigt habe", "truth": true},
-  {"context": ["Verzicht", "Vorfahrt", "langsamer"], "statement": "Wenn der Vorfahrtberechtigte langsamer wird, darf ich auf seinen Verzicht vertrauen", "truth": false}]},
-
-{"id": "PRI_POLICE", "topic": "05_priority", "subtopic": "polizei", "title": "Zeichen der Polizei",
- "rule": "Zeichen und Weisungen der Polizei gehen allen anderen Anordnungen und Regeln vor (auch Ampeln und Schildern). Arme seitlich quer zur Fahrtrichtung: „Halt vor der Kreuzung“, Querverkehr frei. Arm hoch: vor der Kreuzung auf das nächste Zeichen warten, wer in der Kreuzung ist, räumt sie.",
- "concepts": ["polizei", "rangfolge", "vorfahrt"], "keywords": ["Polizei", "Polizeibeamter", "Handzeichen", "Arm", "Weisung", "Winkerkelle", "Kreuzung räumen"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 36", "para": "Abs. 1", "evidence": "Die Zeichen und Weisungen der Polizeibeamten sind zu befolgen. Sie gehen allen anderen Anordnungen und sonstigen Regeln vor, entbinden den Verkehrsteilnehmer jedoch nicht von seiner Sorgfaltspflicht."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 36", "para": "Abs. 2", "evidence": "Seitliches Ausstrecken eines Armes oder beider Arme quer zur Fahrtrichtung: „Halt vor der Kreuzung“."}],
- "claims": [
-  {"context": ["Polizei", "Ampel", "Vorrang"], "statement": "Zeichen von Polizeibeamten gehen Lichtzeichen und Verkehrszeichen vor", "truth": true},
-  {"context": ["Polizei", "Ampel", "grün"], "statement": "Bei grüner Ampel muss ich die Haltezeichen des Polizeibeamten nicht beachten", "truth": false},
-  {"context": ["Polizei", "Arm", "quer zur Fahrtrichtung"], "statement": "Ausgestreckte Arme quer zu meiner Fahrtrichtung bedeuten: Halt vor der Kreuzung", "truth": true},
-  {"context": ["Polizei", "Arm", "hochheben"], "statement": "Ein hochgehobener Arm bedeutet: vor der Kreuzung auf das nächste Zeichen warten", "truth": true},
-  {"context": ["Polizei", "Arm", "hochheben", "in der Kreuzung"], "statement": "Wer sich in der Kreuzung befindet, muss die Kreuzung räumen", "truth": true}],
- "mnemonic": "Polizist > Ampel > Schild > rechts vor links."},
-
-{"id": "PRI_LIGHTS", "topic": "05_priority", "subtopic": "lichtzeichen", "title": "Ampel (Wechsellichtzeichen) und Rangfolge",
- "rule": "Lichtzeichen gehen Vorrangregeln und Vorrangschildern vor. Farbfolge Grün – Gelb – Rot – Rot+Gelb – Grün. Gelb: vor der Kreuzung auf das nächste Zeichen warten. Rot: Halt vor der Kreuzung. Grün: freigegeben, Abbiegen nach § 9 (Gegenverkehr beachten).",
- "concepts": ["ampel", "rangfolge", "vorfahrt"], "keywords": ["Ampel", "Lichtzeichen", "grün", "gelb", "rot", "Farbfolge", "Wechsellichtzeichen"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 37", "para": "Abs. 1", "evidence": "Lichtzeichen gehen Vorrangregeln und Vorrang regelnden Verkehrszeichen vor."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 37", "para": "Abs. 2", "evidence": "Wechsellichtzeichen haben die Farbfolge Grün – Gelb – Rot – Rot und Gelb (gleichzeitig) – Grün."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 37", "para": "Abs. 2 Nr. 1", "evidence": "Gelb ordnet an: „Vor der Kreuzung auf das nächste Zeichen warten“."}],
- "claims": [
-  {"context": ["Ampel", "Verkehrszeichen", "Vorrang"], "statement": "Lichtzeichen gehen Vorfahrtsschildern vor", "truth": true},
-  {"context": ["Ampel", "ausgefallen", "Verkehrszeichen"], "statement": "Ist die Ampel ausgeschaltet, gelten die Verkehrszeichen", "truth": true},
-  {"context": ["Ampel", "gelb"], "statement": "Gelb bedeutet: vor der Kreuzung auf das nächste Zeichen warten", "truth": true},
-  {"context": ["Ampel", "gelb"], "statement": "Bei Gelb darf ich noch schnell beschleunigen und durchfahren", "truth": false},
-  {"context": ["Ampel", "grün", "links abbiegen"], "statement": "Bei Grün darf ich links abbiegen, muss aber den Gegenverkehr durchfahren lassen", "truth": true},
-  {"context": ["Ampel", "grün", "Sorgfaltspflicht"], "statement": "Grün entbindet nicht von der Sorgfaltspflicht", "truth": true}]},
-
-{"id": "PRI_GREEN_ARROW", "topic": "05_priority", "subtopic": "gruenpfeil", "title": "Grünpfeil-Schild und grüner Pfeil",
- "rule": "Grünpfeil-Schild (grüner Pfeil auf schwarzem Grund) rechts neben Rot: nach dem ANHALTEN rechts abbiegen erlaubt, nur aus dem rechten Fahrstreifen, ohne Behinderung oder Gefährdung anderer (besonders Fußgänger und Fahrzeugverkehr der freigegebenen Richtung). Grüner Lichtpfeil: nur in Pfeilrichtung freigegeben; grüner Pfeil links hinter der Kreuzung: Gegenverkehr steht bei Rot.",
- "concepts": ["ampel", "gruenpfeil", "abbiegen"], "keywords": ["Grünpfeil", "grüner Pfeil", "schwarzer Grund", "rechts abbiegen", "Rot", "anhalten"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 37", "para": "Abs. 2 Nr. 1", "evidence": "Nach dem Anhalten ist das Abbiegen nach rechts auch bei Rot erlaubt, wenn rechts neben dem Lichtzeichen Rot ein Schild mit grünem Pfeil auf schwarzem Grund (Grünpfeil) angebracht ist."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 37", "para": "Abs. 2 Nr. 1", "evidence": "Wer ein Fahrzeug führt, darf nur aus dem rechten Fahrstreifen abbiegen."}],
- "claims": [
-  {"context": ["Grünpfeil", "Rot", "rechts abbiegen"], "statement": "Ich muss zuerst anhalten und darf dann rechts abbiegen, wenn niemand behindert oder gefährdet wird", "truth": true},
-  {"context": ["Grünpfeil", "Rot", "rechts abbiegen"], "statement": "Ich darf ohne anzuhalten rechts abbiegen", "truth": false},
-  {"context": ["Grünpfeil", "Rot", "rechts abbiegen"], "statement": "Ich habe beim Abbiegen Vorrang vor Fußgängern", "truth": false},
-  {"context": ["Grünpfeil", "Fahrstreifen"], "statement": "Ich darf nur aus dem rechten Fahrstreifen abbiegen", "truth": true},
-  {"context": ["grüner Pfeil", "links hinter der Kreuzung", "Ampel"], "statement": "Ein grüner Pfeil links zeigt, dass der Gegenverkehr durch Rot angehalten ist", "truth": true}]},
-
-{"id": "PRI_EMERGENCY", "topic": "05_priority", "subtopic": "einsatzfahrzeuge", "title": "Blaues Blinklicht mit Einsatzhorn",
- "rule": "Blaues Blinklicht zusammen mit Einsatzhorn ordnet an: alle übrigen Verkehrsteilnehmer haben sofort freie Bahn zu schaffen. Blaues Blinklicht allein warnt (Unfall-/Einsatzstelle, Begleitung). Gelbes Blinklicht warnt vor Gefahren.",
- "concepts": ["einsatzfahrzeug", "rangfolge", "vorfahrt"], "keywords": ["Blaulicht", "Martinshorn", "Einsatzhorn", "freie Bahn", "Einsatzfahrzeug", "Rettungswagen", "gelbes Blinklicht"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 38", "para": "Abs. 1", "evidence": "„Alle übrigen Verkehrsteilnehmer haben sofort freie Bahn zu schaffen“."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 38", "para": "Abs. 3", "evidence": "Gelbes Blinklicht warnt vor Gefahren."}],
- "claims": [
-  {"context": ["Blaulicht", "Einsatzhorn", "Martinshorn"], "statement": "Ich muss sofort freie Bahn schaffen", "truth": true},
-  {"context": ["Blaulicht", "Einsatzhorn", "Martinshorn"], "statement": "Ich darf meine Vorfahrt behalten, wenn ich grün habe", "truth": false},
-  {"context": ["Blaulicht", "allein", "ohne Einsatzhorn"], "statement": "Blaues Blinklicht allein ordnet nicht an, freie Bahn zu schaffen, sondern warnt", "truth": true},
-  {"context": ["gelbes Blinklicht"], "statement": "Gelbes Blinklicht warnt vor Gefahren", "truth": true}]},
-
-{"id": "PRI_TRAM_BUS_STOP", "topic": "05_priority", "subtopic": "bus_strassenbahn", "title": "Linienbus, Straßenbahn, Schulbus an Haltestellen",
- "rule": "An haltenden Linienbussen, Straßenbahnen und Schulbussen an Haltestellen nur vorsichtig vorbeifahren (auch Gegenverkehr). Steigen Fahrgäste ein/aus: rechts nur Schrittgeschwindigkeit und mit Abstand, ggf. warten. Mit Warnblinklicht haltend: Schrittgeschwindigkeit, auch für den Gegenverkehr. Bus mit Warnblinklicht, der sich der Haltestelle nähert: nicht überholen. Abfahren vom Haltestellenbereich ermöglichen, ggf. warten.",
- "concepts": ["bus", "haltestelle", "schrittgeschwindigkeit"], "keywords": ["Bus", "Linienbus", "Schulbus", "Haltestelle", "Warnblinklicht", "Schrittgeschwindigkeit", "Straßenbahn", "Fahrgäste"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 20", "para": "Abs. 3", "evidence": "Omnibusse des Linienverkehrs und gekennzeichnete Schulbusse, die sich einer Haltestelle (Zeichen 224) nähern und Warnblinklicht eingeschaltet haben, dürfen nicht überholt werden."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 20", "para": "Abs. 4", "evidence": "Die Schrittgeschwindigkeit gilt auch für den Gegenverkehr auf derselben Fahrbahn."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 20", "para": "Abs. 5", "evidence": "Omnibussen des Linienverkehrs und Schulbussen ist das Abfahren von gekennzeichneten Haltestellen zu ermöglichen. Wenn nötig, müssen andere Fahrzeuge warten."}],
- "claims": [
-  {"context": ["Bus", "Haltestelle", "Warnblinklicht", "nähert sich"], "statement": "Der Bus darf nicht überholt werden", "truth": true},
-  {"context": ["Bus", "Haltestelle", "Warnblinklicht", "hält"], "statement": "Ich darf nur mit Schrittgeschwindigkeit vorbeifahren, auch im Gegenverkehr", "truth": true},
-  {"context": ["Bus", "Haltestelle", "Warnblinklicht", "hält"], "statement": "Der Gegenverkehr darf mit normaler Geschwindigkeit vorbeifahren", "truth": false},
-  {"context": ["Bus", "Haltestelle", "abfahren", "Blinker"], "statement": "Ich muss dem Linienbus das Abfahren ermöglichen, wenn nötig warten", "truth": true},
-  {"context": ["Straßenbahn", "Haltestelle", "Fahrgäste", "rechts"], "statement": "Steigen Fahrgäste aus, darf rechts nur mit Schrittgeschwindigkeit vorbeigefahren werden", "truth": true}]},
-
-{"id": "PRI_CROSSWALK", "topic": "05_priority", "subtopic": "fussgaengerueberweg", "title": "Fußgängerüberweg (Zebrastreifen)",
- "rule": "An Fußgängerüberwegen müssen Fahrzeuge (außer Schienenfahrzeuge) Fußgängern und Rollstuhlfahrern, die erkennbar queren wollen, das Überqueren ermöglichen: mäßige Geschwindigkeit, wenn nötig warten. Bei Stau nicht auf den Überweg fahren. An Überwegen nicht überholen. Halten bis 5 m vor dem Überweg verboten.",
- "concepts": ["fussgaenger", "zebrastreifen", "vorfahrt"], "keywords": ["Fußgängerüberweg", "Zebrastreifen", "Zeichen 293", "Fußgänger", "überholen", "Rollstuhl"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 26", "para": "Abs. 1", "evidence": "An Fußgängerüberwegen haben Fahrzeuge mit Ausnahme von Schienenfahrzeugen den zu Fuß Gehenden sowie Fahrenden von Krankenfahrstühlen oder Rollstühlen, welche den Überweg erkennbar benutzen wollen, das Überqueren der Fahrbahn zu ermöglichen."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 26", "para": "Abs. 3", "evidence": "An Überwegen darf nicht überholt werden."}],
- "claims": [
-  {"context": ["Zebrastreifen", "Fußgänger", "erkennbar"], "statement": "Ich muss dem Fußgänger das Überqueren ermöglichen, wenn nötig warten", "truth": true},
-  {"context": ["Zebrastreifen", "Fußgänger"], "statement": "Ich darf vor dem Fußgänger durchfahren, wenn ich schneller bin", "truth": false},
-  {"context": ["Zebrastreifen", "überholen"], "statement": "An Fußgängerüberwegen darf nicht überholt werden", "truth": true},
-  {"context": ["Zebrastreifen", "Stau"], "statement": "Bei stockendem Verkehr darf ich nicht auf den Überweg fahren, wenn ich dort warten müsste", "truth": true},
-  {"context": ["Zebrastreifen", "Straßenbahn"], "statement": "Auch Straßenbahnen müssen am Zebrastreifen Fußgänger queren lassen", "truth": false}]},
-
-{"id": "PRI_RAIL_CROSSING", "topic": "05_priority", "subtopic": "bahnuebergang", "title": "Bahnübergänge",
- "rule": "Schienenfahrzeuge haben Vorrang an Bahnübergängen mit Andreaskreuz, über Fuß-, Feld-, Wald- und Radwege sowie in gekennzeichneten Hafen-/Industriegebieten. Nur mit mäßiger Geschwindigkeit nähern. Ab Zeichen 151/156 bis zum Übergang keine Kfz überholen. Vor dem Andreaskreuz warten bei nahendem Zug, rotem Blinklicht, gelbem/rotem Licht, sich senkenden/geschlossenen Schranken, Halt-Zeichen eines Bahnbediensteten oder Pfeifsignal; ebenso, wenn man den Übergang wegen Stau nicht zügig räumen kann.",
- "concepts": ["bahnuebergang", "vorrang", "andreaskreuz"], "keywords": ["Bahnübergang", "Andreaskreuz", "Schranke", "Zug", "rotes Blinklicht", "Baken", "Zeichen 151", "Zeichen 156", "Pfeifsignal"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 19", "para": "Abs. 1", "evidence": "Der Straßenverkehr darf sich solchen Bahnübergängen nur mit mäßiger Geschwindigkeit nähern."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 19", "para": "Abs. 1 Satz 3", "evidence": "Wer ein Fahrzeug führt, darf an Bahnübergängen vom Zeichen 151, 156 an bis einschließlich des Kreuzungsbereichs von Schiene und Straße Kraftfahrzeuge nicht überholen."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 19", "para": "Abs. 3", "evidence": "Kann der Bahnübergang wegen des Straßenverkehrs nicht zügig und ohne Aufenthalt überquert werden, ist vor dem Andreaskreuz zu warten."}],
- "claims": [
-  {"context": ["Bahnübergang", "Andreaskreuz", "Vorrang"], "statement": "Schienenfahrzeuge haben Vorrang", "truth": true},
-  {"context": ["Bahnübergang", "Schranke", "senken"], "statement": "Wenn sich die Schranken senken, muss ich vor dem Andreaskreuz warten", "truth": true},
-  {"context": ["Bahnübergang", "Schranke", "senken"], "statement": "Ich darf noch schnell durchfahren, solange die Schranke nicht ganz geschlossen ist", "truth": false},
-  {"context": ["Bahnübergang", "Stau", "hinter dem Übergang"], "statement": "Kann ich den Bahnübergang nicht zügig räumen, muss ich vor dem Andreaskreuz warten", "truth": true},
-  {"context": ["Bahnübergang", "überholen", "Bake"], "statement": "Ab den Baken (Zeichen 156) bis zum Übergang dürfen keine Kraftfahrzeuge überholt werden", "truth": true},
-  {"context": ["Bahnübergang", "überholen", "Bake", "Radfahrer"], "statement": "Radfahrer dürfen vor dem Bahnübergang überholt werden", "truth": true},
-  {"context": ["Bahnübergang", "rotes Blinklicht"], "statement": "Bei rotem Blinklicht muss ich vor dem Andreaskreuz warten", "truth": true}],
- "mnemonic": "Zug hat immer Vorrang. Baken = 3-2-1 → 240/160/80 m (Zeichen 156/159/162)."},
-
-{"id": "PRI_PASSING_OBSTACLE", "topic": "05_priority", "subtopic": "vorbeifahren_hindernis", "title": "Vorbeifahren an Hindernissen",
- "rule": "Wer an einer Fahrbahnverengung, einem Hindernis oder einem haltenden Fahrzeug links vorbeifahren will, muss Gegenverkehr durchfahren lassen (außer Regelung durch Zeichen 208/308). Ausscheren und Wiedereinordnen ankündigen, auf nachfolgenden Verkehr achten.",
- "concepts": ["vorbeifahren", "gegenverkehr", "hindernis"], "keywords": ["Hindernis", "vorbeifahren", "Engstelle", "haltendes Fahrzeug", "Gegenverkehr", "Zeichen 208", "Zeichen 308"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 6", "evidence": "Wer an einer Fahrbahnverengung, einem Hindernis auf der Fahrbahn oder einem haltenden Fahrzeug links vorbeifahren will, muss entgegenkommende Fahrzeuge durchfahren lassen."}],
- "claims": [
-  {"context": ["Hindernis", "auf meiner Seite", "Gegenverkehr"], "statement": "Ich muss den Gegenverkehr durchfahren lassen", "truth": true},
-  {"context": ["Hindernis", "auf meiner Seite", "Gegenverkehr"], "statement": "Der Gegenverkehr muss mich vorbeilassen", "truth": false},
-  {"context": ["Hindernis", "Zeichen 308", "Vorrang"], "statement": "Mit Zeichen 308 habe ich Vorrang vor dem Gegenverkehr", "truth": true}]}
-]}
+{
+ "items": [
+  {
+   "id": "PRI_RIGHT_BEFORE_LEFT",
+   "topic": "05_priority",
+   "subtopic": "rechts_vor_links",
+   "title": "Rechts vor links",
+   "rule": "An Kreuzungen und Einmündungen hat Vorfahrt, wer von rechts kommt – außer die Vorfahrt ist durch Zeichen 205, 206, 301 oder 306 geregelt oder man kommt aus einem Feld- oder Waldweg.",
+   "exceptions": [
+    "Vorfahrt durch Verkehrszeichen geregelt (Zeichen 205, 206, 301, 306)",
+    "Wer aus einem Feld- oder Waldweg kommt, hat keine Vorfahrt",
+    "Lichtzeichen und Polizeibeamte gehen vor"
+   ],
+   "concepts": [
+    "vorfahrt",
+    "kreuzung",
+    "rechts_vor_links"
+   ],
+   "keywords": [
+    "rechts vor links",
+    "Kreuzung",
+    "Einmündung",
+    "von rechts",
+    "Vorfahrt",
+    "gleichrangig"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 8",
+     "para": "Abs. 1",
+     "evidence": "An Kreuzungen und Einmündungen hat die Vorfahrt, wer von rechts kommt."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 8",
+     "para": "Abs. 1 Satz 2 Nr. 2",
+     "evidence": "für Fahrzeuge, die aus einem Feld- oder Waldweg auf eine andere Straße kommen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Kreuzung",
+      "keine Verkehrszeichen",
+      "Vorfahrt"
+     ],
+     "statement": "Wer von rechts kommt, hat Vorfahrt",
+     "truth": true
+    },
+    {
+     "context": [
+      "Kreuzung",
+      "keine Verkehrszeichen",
+      "Vorfahrt"
+     ],
+     "statement": "Wer von links kommt, hat Vorfahrt",
+     "truth": false
+    },
+    {
+     "context": [
+      "Kreuzung",
+      "Vorfahrt",
+      "breitere Straße"
+     ],
+     "statement": "Wer auf der breiteren oder besser ausgebauten Straße fährt, hat Vorfahrt",
+     "truth": false
+    },
+    {
+     "context": [
+      "Feldweg",
+      "Waldweg",
+      "Vorfahrt"
+     ],
+     "statement": "Wer aus einem Feld- oder Waldweg kommt, muss Vorfahrt gewähren",
+     "truth": true
+    },
+    {
+     "context": [
+      "Feldweg",
+      "Waldweg",
+      "Vorfahrt"
+     ],
+     "statement": "Wer aus einem Feldweg von rechts kommt, hat Vorfahrt",
+     "truth": false
+    },
+    {
+     "context": [
+      "Kreuzung",
+      "gleichrangig",
+      "von rechts"
+     ],
+     "statement": "Das Fahrzeug, das von rechts kommt, darf zuerst fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "Kreuzung",
+      "gleichrangig",
+      "von rechts"
+     ],
+     "statement": "Ich lasse das von rechts kommende Fahrzeug zuerst fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "Kreuzung",
+      "gleichrangig",
+      "geradeaus"
+     ],
+     "statement": "Wer geradeaus fährt, hat immer Vorfahrt",
+     "truth": false
+    },
+    {
+     "context": [
+      "Kreuzung",
+      "gleichrangig",
+      "zuerst"
+     ],
+     "statement": "Wer zuerst an der Kreuzung ankommt, darf zuerst fahren",
+     "truth": false
+    },
+    {
+     "context": [
+      "Feldweg",
+      "Waldweg",
+      "einbiegen"
+     ],
+     "statement": "Wer aus einem Feld- oder Waldweg kommt, muss den Verkehr auf der Straße durchfahren lassen",
+     "truth": true
+    }
+   ],
+   "mnemonic": "Keine Schilder, keine Ampel, kein Polizist → rechts vor links."
+  },
+  {
+   "id": "PRI_YIELD_BEHAVIOUR",
+   "topic": "05_priority",
+   "subtopic": "wartepflicht_verhalten",
+   "title": "Verhalten als Wartepflichtiger",
+   "rule": "Wer Vorfahrt zu beachten hat, zeigt rechtzeitig durch mäßige Geschwindigkeit, dass er wartet; weiterfahren nur, wenn der Berechtigte weder gefährdet noch wesentlich behindert wird; bei Unübersichtlichkeit vorsichtig hineintasten.",
+   "concepts": [
+    "vorfahrt",
+    "wartepflicht"
+   ],
+   "keywords": [
+    "wartepflichtig",
+    "hineintasten",
+    "mäßige Geschwindigkeit",
+    "behindern",
+    "unübersichtlich"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 8",
+     "para": "Abs. 2",
+     "evidence": "Wer die Vorfahrt zu beachten hat, muss rechtzeitig durch sein Fahrverhalten, insbesondere durch mäßige Geschwindigkeit, erkennen lassen, dass gewartet wird."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 8",
+     "para": "Abs. 2 Satz 3",
+     "evidence": "so darf sich vorsichtig in die Kreuzung oder Einmündung hineingetastet werden, bis die Übersicht gegeben ist."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Vorfahrt",
+      "unübersichtlich",
+      "Einmündung"
+     ],
+     "statement": "Ich darf mich vorsichtig in die Kreuzung hineintasten, bis ich Übersicht habe",
+     "truth": true
+    },
+    {
+     "context": [
+      "Vorfahrt",
+      "wartepflichtig"
+     ],
+     "statement": "Ich muss durch mäßige Geschwindigkeit rechtzeitig erkennen lassen, dass ich warte",
+     "truth": true
+    },
+    {
+     "context": [
+      "Vorfahrt",
+      "wartepflichtig"
+     ],
+     "statement": "Ich darf weiterfahren, wenn der Vorfahrtberechtigte nur wesentlich behindert wird",
+     "truth": false
+    },
+    {
+     "context": [
+      "Vorfahrt",
+      "abbiegen",
+      "Berechtigter"
+     ],
+     "statement": "Der Vorfahrtberechtigte darf auch beim Abbiegen nicht wesentlich behindert werden",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "PRI_ROUNDABOUT",
+   "topic": "05_priority",
+   "subtopic": "kreisverkehr",
+   "title": "Kreisverkehr",
+   "rule": "Steht Zeichen 215 unter Zeichen 205, hat der Verkehr auf der Kreisfahrbahn Vorfahrt. Beim Einfahren nicht blinken; beim Ausfahren blinken. Im Kreisverkehr rechts herum fahren, Mittelinsel nicht überfahren (Ausnahme große Fahrzeuge), auf der Kreisfahrbahn nicht halten.",
+   "exceptions": [
+    "Ohne Zeichen 205 an der Einfahrt gilt die allgemeine Regel (z. B. rechts vor links)",
+    "Fahrzeuge, die wegen ihrer Abmessungen anders nicht durchkommen, dürfen die Mittelinsel überfahren"
+   ],
+   "concepts": [
+    "vorfahrt",
+    "kreisverkehr",
+    "blinken"
+   ],
+   "keywords": [
+    "Kreisverkehr",
+    "Kreisfahrbahn",
+    "Zeichen 215",
+    "blinken",
+    "Fahrtrichtungsanzeiger",
+    "Mittelinsel",
+    "einfahren",
+    "ausfahren"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 8",
+     "para": "Abs. 1a",
+     "evidence": "Ist an der Einmündung in einen Kreisverkehr Zeichen 215 (Kreisverkehr) unter dem Zeichen 205 (Vorfahrt gewähren) angeordnet, hat der Verkehr auf der Kreisfahrbahn Vorfahrt. Bei der Einfahrt in einen solchen Kreisverkehr ist die Benutzung des Fahrtrichtungsanzeigers unzulässig."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2",
+     "para": "Zeichen 215",
+     "evidence": "Es darf innerhalb des Kreisverkehrs auf der Fahrbahn nicht gehalten werden."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Kreisverkehr",
+      "Zeichen 215",
+      "Vorfahrt"
+     ],
+     "statement": "Der Verkehr auf der Kreisfahrbahn hat Vorfahrt",
+     "truth": true
+    },
+    {
+     "context": [
+      "Kreisverkehr",
+      "Zeichen 215",
+      "Vorfahrt"
+     ],
+     "statement": "Wer in den Kreisverkehr einfährt, hat Vorfahrt",
+     "truth": false
+    },
+    {
+     "context": [
+      "Kreisverkehr",
+      "einfahren",
+      "blinken"
+     ],
+     "statement": "Beim Einfahren in den Kreisverkehr muss ich blinken",
+     "truth": false
+    },
+    {
+     "context": [
+      "Kreisverkehr",
+      "einfahren",
+      "blinken"
+     ],
+     "statement": "Beim Einfahren in den Kreisverkehr darf ich nicht blinken",
+     "truth": true
+    },
+    {
+     "context": [
+      "Kreisverkehr",
+      "ausfahren",
+      "blinken"
+     ],
+     "statement": "Beim Verlassen des Kreisverkehrs muss ich blinken",
+     "truth": true
+    },
+    {
+     "context": [
+      "Kreisverkehr",
+      "halten"
+     ],
+     "statement": "Auf der Kreisfahrbahn darf gehalten werden",
+     "truth": false
+    },
+    {
+     "context": [
+      "Kreisverkehr",
+      "Mittelinsel"
+     ],
+     "statement": "Die Mittelinsel darf von Pkw überfahren werden",
+     "truth": false
+    }
+   ],
+   "mnemonic": "Rein ohne Blinker, raus mit Blinker."
+  },
+  {
+   "id": "PRI_LEFT_TURN_ONCOMING",
+   "topic": "05_priority",
+   "subtopic": "abbiegen_gegenverkehr",
+   "title": "Linksabbiegen und Gegenverkehr",
+   "rule": "Wer links abbiegt, lässt entgegenkommende Fahrzeuge durchfahren – auch solche, die rechts abbiegen. Zwei einander entgegenkommende Linksabbieger biegen voreinander (tangential) ab, wenn Verkehrslage oder Kreuzung nichts anderes verlangen.",
+   "concepts": [
+    "abbiegen",
+    "gegenverkehr",
+    "vorfahrt"
+   ],
+   "keywords": [
+    "links abbiegen",
+    "Gegenverkehr",
+    "entgegenkommend",
+    "voreinander",
+    "tangential"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 4",
+     "evidence": "Wer nach links abbiegen will, muss entgegenkommende Fahrzeuge, die ihrerseits nach rechts abbiegen wollen, durchfahren lassen. Einander entgegenkommende Fahrzeuge, die jeweils nach links abbiegen wollen, müssen voreinander abbiegen"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 3",
+     "evidence": "Wer abbiegen will, muss entgegenkommende Fahrzeuge durchfahren lassen"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "links abbiegen",
+      "Gegenverkehr"
+     ],
+     "statement": "Ich muss den entgegenkommenden Verkehr durchfahren lassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "links abbiegen",
+      "Gegenverkehr",
+      "rechts abbiegen"
+     ],
+     "statement": "Ich muss Entgegenkommende, die rechts abbiegen, durchfahren lassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "links abbiegen",
+      "Gegenverkehr",
+      "links abbiegen"
+     ],
+     "statement": "Zwei entgegenkommende Linksabbieger biegen in der Regel voreinander ab",
+     "truth": true
+    },
+    {
+     "context": [
+      "links abbiegen",
+      "Gegenverkehr",
+      "links abbiegen"
+     ],
+     "statement": "Zwei entgegenkommende Linksabbieger müssen hintereinander umeinander herum abbiegen",
+     "truth": false
+    },
+    {
+     "context": [
+      "links abbiegen",
+      "Gegenverkehr"
+     ],
+     "statement": "Als Linksabbieger habe ich Vorrang vor dem Gegenverkehr",
+     "truth": false
+    },
+    {
+     "context": [
+      "links abbiegen",
+      "Gegenverkehr",
+      "geradeaus"
+     ],
+     "statement": "Ich warte, bis der entgegenkommende Verkehr vorbei ist",
+     "truth": true
+    },
+    {
+     "context": [
+      "links abbiegen",
+      "Gegenverkehr"
+     ],
+     "statement": "Ich biege vor dem Gegenverkehr ab, wenn ich zuerst an der Kreuzung war",
+     "truth": false
+    },
+    {
+     "context": [
+      "links abbiegen",
+      "Gegenverkehr"
+     ],
+     "statement": "Ich biege noch schnell vor den Entgegenkommenden ab",
+     "truth": false
+    }
+   ],
+   "mnemonic": "Links abbiegen = immer warten auf Gegenverkehr."
+  },
+  {
+   "id": "PRI_TURN_CYCLISTS",
+   "topic": "05_priority",
+   "subtopic": "abbiegen_radfahrer",
+   "title": "Abbiegen: Rad, Bahn, Busse, Fußgänger",
+   "rule": "Wer abbiegt, lässt auch Schienenfahrzeuge, Fahrräder (mit Hilfsmotor) und E-Scooter durchfahren, die auf oder neben der Fahrbahn in gleicher Richtung fahren, ebenso Linienbusse auf Sonderfahrstreifen. Auf Fußgänger besondere Rücksicht, wenn nötig warten.",
+   "concepts": [
+    "abbiegen",
+    "radfahrer",
+    "fussgaenger"
+   ],
+   "keywords": [
+    "abbiegen",
+    "Radfahrer",
+    "Radweg",
+    "gleiche Richtung",
+    "geradeaus",
+    "Fußgänger",
+    "Straßenbahn",
+    "toter Winkel",
+    "Schulterblick"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 3",
+     "evidence": "Schienenfahrzeuge, Fahrräder mit Hilfsmotor, Fahrräder und Elektrokleinstfahrzeuge auch dann, wenn sie auf oder neben der Fahrbahn in der gleichen Richtung fahren."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 3 Satz 3",
+     "evidence": "Auf zu Fuß Gehende ist besondere Rücksicht zu nehmen; wenn nötig, ist zu warten."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "rechts abbiegen",
+      "Radfahrer",
+      "Radweg",
+      "geradeaus"
+     ],
+     "statement": "Ich muss den geradeaus fahrenden Radfahrer durchfahren lassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "rechts abbiegen",
+      "Radfahrer",
+      "Radweg",
+      "geradeaus"
+     ],
+     "statement": "Ich darf vor dem Radfahrer abbiegen, weil er auf dem Radweg fährt",
+     "truth": false
+    },
+    {
+     "context": [
+      "abbiegen",
+      "Fußgänger"
+     ],
+     "statement": "Auf Fußgänger ist besondere Rücksicht zu nehmen; wenn nötig, muss ich warten",
+     "truth": true
+    },
+    {
+     "context": [
+      "abbiegen",
+      "Straßenbahn",
+      "gleiche Richtung"
+     ],
+     "statement": "Ich muss eine in gleicher Richtung fahrende Straßenbahn durchfahren lassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "abbiegen",
+      "Schulterblick"
+     ],
+     "statement": "Vor dem Abbiegen ist auf den nachfolgenden Verkehr zu achten",
+     "truth": true
+    },
+    {
+     "context": [
+      "rechts abbiegen",
+      "Radfahrer",
+      "geradeaus"
+     ],
+     "statement": "Ich lasse den Radfahrer zuerst geradeaus fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "rechts abbiegen",
+      "Radfahrer",
+      "Schulterblick"
+     ],
+     "statement": "Vor dem Abbiegen prüfe ich mit dem Schulterblick, ob ein Radfahrer neben mir fährt",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "PRI_PROPERTY_EXIT",
+   "topic": "05_priority",
+   "subtopic": "grundstueck_bordstein",
+   "title": "Ausfahren aus Grundstück, abgesenkter Bordstein, verkehrsberuhigter Bereich",
+   "rule": "Wer aus einem Grundstück, einer Fußgängerzone, einem verkehrsberuhigten Bereich, von anderen Straßenteilen oder über einen abgesenkten Bordstein einfährt oder vom Fahrbahnrand anfährt, muss eine Gefährdung anderer ausschließen (höchste Sorgfalt), ggf. einweisen lassen, und blinken.",
+   "concepts": [
+    "vorfahrt",
+    "einfahren",
+    "anfahren"
+   ],
+   "keywords": [
+    "Grundstück",
+    "Ausfahrt",
+    "abgesenkter Bordstein",
+    "verkehrsberuhigter Bereich",
+    "Fußgängerzone",
+    "anfahren",
+    "Fahrbahnrand",
+    "einfahren"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 10",
+     "evidence": "über einen abgesenkten Bordstein hinweg auf die Fahrbahn einfahren oder vom Fahrbahnrand anfahren will, hat sich dabei so zu verhalten, dass eine Gefährdung anderer Verkehrsteilnehmer ausgeschlossen ist"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Grundstück",
+      "Ausfahrt",
+      "einfahren"
+     ],
+     "statement": "Ich muss alle Verkehrsteilnehmer auf der Straße vorlassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Grundstück",
+      "Ausfahrt",
+      "von rechts"
+     ],
+     "statement": "Wer von rechts aus einem Grundstück kommt, hat Vorfahrt",
+     "truth": false
+    },
+    {
+     "context": [
+      "abgesenkter Bordstein",
+      "einfahren"
+     ],
+     "statement": "Eine Gefährdung anderer muss ausgeschlossen sein",
+     "truth": true
+    },
+    {
+     "context": [
+      "verkehrsberuhigter Bereich",
+      "ausfahren",
+      "von rechts"
+     ],
+     "statement": "Wer aus einem verkehrsberuhigten Bereich kommt, hat rechts vor links",
+     "truth": false
+    },
+    {
+     "context": [
+      "Fahrbahnrand",
+      "anfahren"
+     ],
+     "statement": "Beim Anfahren vom Fahrbahnrand muss ich blinken und den fließenden Verkehr vorlassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Grundstück",
+      "Ausfahrt",
+      "Straße"
+     ],
+     "statement": "Ich lasse alle Fahrzeuge auf der Straße vorbei",
+     "truth": true
+    },
+    {
+     "context": [
+      "Grundstück",
+      "Ausfahrt",
+      "von links"
+     ],
+     "statement": "Fahrzeuge von links müssen mich ausfahren lassen",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "PRI_TRAFFIC_JAM_JUNCTION",
+   "topic": "05_priority",
+   "subtopic": "stau_kreuzung",
+   "title": "Stau: nicht in die Kreuzung",
+   "rule": "Stockt der Verkehr, darf trotz Vorfahrt oder Grün nicht in die Kreuzung eingefahren werden, wenn man auf ihr warten müsste. Bei stockendem Verkehr auf Autobahnen/mehrspurigen Außerortsstraßen Rettungsgasse zwischen äußerst linkem und rechts daneben liegendem Fahrstreifen bilden.",
+   "concepts": [
+    "stau",
+    "kreuzung",
+    "rettungsgasse"
+   ],
+   "keywords": [
+    "stockt",
+    "Stau",
+    "Kreuzung",
+    "grün",
+    "Rettungsgasse",
+    "Schrittgeschwindigkeit",
+    "Stillstand"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 11",
+     "para": "Abs. 1",
+     "evidence": "Stockt der Verkehr, darf trotz Vorfahrt oder grünem Lichtzeichen nicht in die Kreuzung oder Einmündung eingefahren werden, wenn auf ihr gewartet werden müsste."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 11",
+     "para": "Abs. 2",
+     "evidence": "zwischen dem äußerst linken und dem unmittelbar rechts daneben liegenden Fahrstreifen für eine Richtung eine freie Gasse bilden."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Stau",
+      "Kreuzung",
+      "grün"
+     ],
+     "statement": "Ich darf nicht in die Kreuzung einfahren, wenn ich dort warten müsste",
+     "truth": true
+    },
+    {
+     "context": [
+      "Stau",
+      "Kreuzung",
+      "grün"
+     ],
+     "statement": "Bei Grün darf ich immer in die Kreuzung einfahren",
+     "truth": false
+    },
+    {
+     "context": [
+      "Rettungsgasse",
+      "Autobahn",
+      "Stau"
+     ],
+     "statement": "Die Rettungsgasse wird zwischen dem äußerst linken und dem rechts daneben liegenden Fahrstreifen gebildet",
+     "truth": true
+    },
+    {
+     "context": [
+      "Rettungsgasse",
+      "Autobahn",
+      "Stau"
+     ],
+     "statement": "Die Rettungsgasse wird erst gebildet, wenn ein Einsatzfahrzeug zu hören ist",
+     "truth": false
+    },
+    {
+     "context": [
+      "Rettungsgasse",
+      "Autobahn",
+      "Stau",
+      "drei Fahrstreifen"
+     ],
+     "statement": "Bei drei Fahrstreifen wird die Gasse zwischen dem mittleren und dem rechten Fahrstreifen gebildet",
+     "truth": false
+    },
+    {
+     "context": [
+      "Stau",
+      "Kreuzung",
+      "grün"
+     ],
+     "statement": "Ich bleibe vor der Kreuzung stehen, bis hinter der Kreuzung Platz ist",
+     "truth": true
+    },
+    {
+     "context": [
+      "Rettungsgasse",
+      "drei Fahrstreifen"
+     ],
+     "statement": "Die Gasse wird zwischen dem linken und dem mittleren Fahrstreifen gebildet",
+     "truth": true
+    },
+    {
+     "context": [
+      "Rettungsgasse",
+      "drei Fahrstreifen"
+     ],
+     "statement": "Die Gasse wird auf dem Seitenstreifen gebildet",
+     "truth": false
+    }
+   ],
+   "mnemonic": "Rettungsgasse: ganz links nach links, alle anderen nach rechts."
+  },
+  {
+   "id": "PRI_WAIVE",
+   "topic": "05_priority",
+   "subtopic": "vorrang_verzicht",
+   "title": "Verzicht auf Vorrang",
+   "rule": "Auch wer Vorrang hat, muss darauf verzichten, wenn die Verkehrslage es erfordert. Auf einen Verzicht des anderen darf man nur vertrauen, wenn man sich mit ihm verständigt hat.",
+   "concepts": [
+    "vorfahrt",
+    "verstaendigung",
+    "vertrauensgrundsatz"
+   ],
+   "keywords": [
+    "Verzicht",
+    "verständigen",
+    "Handzeichen",
+    "Vorrang"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 11",
+     "para": "Abs. 3",
+     "evidence": "auf einen Verzicht darf man nur vertrauen, wenn man sich mit dem oder der Verzichtenden verständigt hat."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Verzicht",
+      "Vorfahrt",
+      "verständigen"
+     ],
+     "statement": "Auf einen Vorfahrtverzicht darf ich nur vertrauen, wenn ich mich mit dem anderen verständigt habe",
+     "truth": true
+    },
+    {
+     "context": [
+      "Verzicht",
+      "Vorfahrt",
+      "langsamer"
+     ],
+     "statement": "Wenn der Vorfahrtberechtigte langsamer wird, darf ich auf seinen Verzicht vertrauen",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "PRI_POLICE",
+   "topic": "05_priority",
+   "subtopic": "polizei",
+   "title": "Zeichen der Polizei",
+   "rule": "Zeichen und Weisungen der Polizei gehen allen anderen Anordnungen und Regeln vor (auch Ampeln und Schildern). Arme seitlich quer zur Fahrtrichtung: „Halt vor der Kreuzung“, Querverkehr frei. Arm hoch: vor der Kreuzung auf das nächste Zeichen warten, wer in der Kreuzung ist, räumt sie.",
+   "concepts": [
+    "polizei",
+    "rangfolge",
+    "vorfahrt"
+   ],
+   "keywords": [
+    "Polizei",
+    "Polizeibeamter",
+    "Handzeichen",
+    "Arm",
+    "Weisung",
+    "Winkerkelle",
+    "Kreuzung räumen"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 36",
+     "para": "Abs. 1",
+     "evidence": "Die Zeichen und Weisungen der Polizeibeamten sind zu befolgen. Sie gehen allen anderen Anordnungen und sonstigen Regeln vor, entbinden den Verkehrsteilnehmer jedoch nicht von seiner Sorgfaltspflicht."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 36",
+     "para": "Abs. 2",
+     "evidence": "Seitliches Ausstrecken eines Armes oder beider Arme quer zur Fahrtrichtung: „Halt vor der Kreuzung“."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Polizei",
+      "Ampel",
+      "Vorrang"
+     ],
+     "statement": "Zeichen von Polizeibeamten gehen Lichtzeichen und Verkehrszeichen vor",
+     "truth": true
+    },
+    {
+     "context": [
+      "Polizei",
+      "Ampel",
+      "grün"
+     ],
+     "statement": "Bei grüner Ampel muss ich die Haltezeichen des Polizeibeamten nicht beachten",
+     "truth": false
+    },
+    {
+     "context": [
+      "Polizei",
+      "Arm",
+      "quer zur Fahrtrichtung"
+     ],
+     "statement": "Ausgestreckte Arme quer zu meiner Fahrtrichtung bedeuten: Halt vor der Kreuzung",
+     "truth": true
+    },
+    {
+     "context": [
+      "Polizei",
+      "Arm",
+      "hochheben"
+     ],
+     "statement": "Ein hochgehobener Arm bedeutet: vor der Kreuzung auf das nächste Zeichen warten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Polizei",
+      "Arm",
+      "hochheben",
+      "in der Kreuzung"
+     ],
+     "statement": "Wer sich in der Kreuzung befindet, muss die Kreuzung räumen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Polizei",
+      "Haltzeichen",
+      "grün"
+     ],
+     "statement": "Ich halte an, obwohl die Ampel Grün zeigt",
+     "truth": true
+    },
+    {
+     "context": [
+      "Polizei",
+      "Arm",
+      "quer"
+     ],
+     "statement": "Ich halte vor der Kreuzung",
+     "truth": true
+    },
+    {
+     "context": [
+      "Polizei",
+      "Arm",
+      "quer"
+     ],
+     "statement": "Ich darf weiterfahren",
+     "truth": false
+    }
+   ],
+   "mnemonic": "Polizist > Ampel > Schild > rechts vor links."
+  },
+  {
+   "id": "PRI_LIGHTS",
+   "topic": "05_priority",
+   "subtopic": "lichtzeichen",
+   "title": "Ampel (Wechsellichtzeichen) und Rangfolge",
+   "rule": "Lichtzeichen gehen Vorrangregeln und Vorrangschildern vor. Farbfolge Grün – Gelb – Rot – Rot+Gelb – Grün. Gelb: vor der Kreuzung auf das nächste Zeichen warten. Rot: Halt vor der Kreuzung. Grün: freigegeben, Abbiegen nach § 9 (Gegenverkehr beachten).",
+   "concepts": [
+    "ampel",
+    "rangfolge",
+    "vorfahrt"
+   ],
+   "keywords": [
+    "Ampel",
+    "Lichtzeichen",
+    "grün",
+    "gelb",
+    "rot",
+    "Farbfolge",
+    "Wechsellichtzeichen"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 1",
+     "evidence": "Lichtzeichen gehen Vorrangregeln und Vorrang regelnden Verkehrszeichen vor."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 2",
+     "evidence": "Wechsellichtzeichen haben die Farbfolge Grün – Gelb – Rot – Rot und Gelb (gleichzeitig) – Grün."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 2 Nr. 1",
+     "evidence": "Gelb ordnet an: „Vor der Kreuzung auf das nächste Zeichen warten“."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Ampel",
+      "Verkehrszeichen",
+      "Vorrang"
+     ],
+     "statement": "Lichtzeichen gehen Vorfahrtsschildern vor",
+     "truth": true
+    },
+    {
+     "context": [
+      "Ampel",
+      "ausgefallen",
+      "Verkehrszeichen"
+     ],
+     "statement": "Ist die Ampel ausgeschaltet, gelten die Verkehrszeichen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Ampel",
+      "gelb"
+     ],
+     "statement": "Gelb bedeutet: vor der Kreuzung auf das nächste Zeichen warten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Ampel",
+      "gelb"
+     ],
+     "statement": "Bei Gelb darf ich noch schnell beschleunigen und durchfahren",
+     "truth": false
+    },
+    {
+     "context": [
+      "Ampel",
+      "grün",
+      "links abbiegen"
+     ],
+     "statement": "Bei Grün darf ich links abbiegen, muss aber den Gegenverkehr durchfahren lassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Ampel",
+      "grün",
+      "Sorgfaltspflicht"
+     ],
+     "statement": "Grün entbindet nicht von der Sorgfaltspflicht",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "PRI_GREEN_ARROW",
+   "topic": "05_priority",
+   "subtopic": "gruenpfeil",
+   "title": "Grünpfeil-Schild und grüner Pfeil",
+   "rule": "Grünpfeil-Schild (grüner Pfeil auf schwarzem Grund) rechts neben Rot: nach dem ANHALTEN rechts abbiegen erlaubt, nur aus dem rechten Fahrstreifen, ohne Behinderung oder Gefährdung anderer (besonders Fußgänger und Fahrzeugverkehr der freigegebenen Richtung). Grüner Lichtpfeil: nur in Pfeilrichtung freigegeben; grüner Pfeil links hinter der Kreuzung: Gegenverkehr steht bei Rot.",
+   "concepts": [
+    "ampel",
+    "gruenpfeil",
+    "abbiegen"
+   ],
+   "keywords": [
+    "Grünpfeil",
+    "grüner Pfeil",
+    "schwarzer Grund",
+    "rechts abbiegen",
+    "Rot",
+    "anhalten"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 2 Nr. 1",
+     "evidence": "Nach dem Anhalten ist das Abbiegen nach rechts auch bei Rot erlaubt, wenn rechts neben dem Lichtzeichen Rot ein Schild mit grünem Pfeil auf schwarzem Grund (Grünpfeil) angebracht ist."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 2 Nr. 1",
+     "evidence": "Wer ein Fahrzeug führt, darf nur aus dem rechten Fahrstreifen abbiegen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Grünpfeil",
+      "Rot",
+      "rechts abbiegen"
+     ],
+     "statement": "Ich muss zuerst anhalten und darf dann rechts abbiegen, wenn niemand behindert oder gefährdet wird",
+     "truth": true
+    },
+    {
+     "context": [
+      "Grünpfeil",
+      "Rot",
+      "rechts abbiegen"
+     ],
+     "statement": "Ich darf ohne anzuhalten rechts abbiegen",
+     "truth": false
+    },
+    {
+     "context": [
+      "Grünpfeil",
+      "Rot",
+      "rechts abbiegen"
+     ],
+     "statement": "Ich habe beim Abbiegen Vorrang vor Fußgängern",
+     "truth": false
+    },
+    {
+     "context": [
+      "Grünpfeil",
+      "Fahrstreifen"
+     ],
+     "statement": "Ich darf nur aus dem rechten Fahrstreifen abbiegen",
+     "truth": true
+    },
+    {
+     "context": [
+      "grüner Pfeil",
+      "links hinter der Kreuzung",
+      "Ampel"
+     ],
+     "statement": "Ein grüner Pfeil links zeigt, dass der Gegenverkehr durch Rot angehalten ist",
+     "truth": true
+    },
+    {
+     "context": [
+      "Grünpfeil",
+      "rot",
+      "Fußgänger"
+     ],
+     "statement": "Fußgänger und Radfahrer der freigegebenen Richtung darf ich nicht behindern",
+     "truth": true
+    },
+    {
+     "context": [
+      "Grünpfeil",
+      "rot"
+     ],
+     "statement": "Vor dem Abbiegen halte ich an",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "PRI_EMERGENCY",
+   "topic": "05_priority",
+   "subtopic": "einsatzfahrzeuge",
+   "title": "Blaues Blinklicht mit Einsatzhorn",
+   "rule": "Blaues Blinklicht zusammen mit Einsatzhorn ordnet an: alle übrigen Verkehrsteilnehmer haben sofort freie Bahn zu schaffen. Blaues Blinklicht allein warnt (Unfall-/Einsatzstelle, Begleitung). Gelbes Blinklicht warnt vor Gefahren.",
+   "concepts": [
+    "einsatzfahrzeug",
+    "rangfolge",
+    "vorfahrt"
+   ],
+   "keywords": [
+    "Blaulicht",
+    "Martinshorn",
+    "Einsatzhorn",
+    "freie Bahn",
+    "Einsatzfahrzeug",
+    "Rettungswagen",
+    "gelbes Blinklicht"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 38",
+     "para": "Abs. 1",
+     "evidence": "„Alle übrigen Verkehrsteilnehmer haben sofort freie Bahn zu schaffen“."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 38",
+     "para": "Abs. 3",
+     "evidence": "Gelbes Blinklicht warnt vor Gefahren."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Blaulicht",
+      "Einsatzhorn",
+      "Martinshorn"
+     ],
+     "statement": "Ich muss sofort freie Bahn schaffen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Blaulicht",
+      "Einsatzhorn",
+      "Martinshorn"
+     ],
+     "statement": "Ich darf meine Vorfahrt behalten, wenn ich grün habe",
+     "truth": false
+    },
+    {
+     "context": [
+      "Blaulicht",
+      "allein",
+      "ohne Einsatzhorn"
+     ],
+     "statement": "Blaues Blinklicht allein ordnet nicht an, freie Bahn zu schaffen, sondern warnt",
+     "truth": true
+    },
+    {
+     "context": [
+      "gelbes Blinklicht"
+     ],
+     "statement": "Gelbes Blinklicht warnt vor Gefahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "Blaulicht",
+      "Einsatzhorn",
+      "Rettungswagen"
+     ],
+     "statement": "Ich mache sofort Platz",
+     "truth": true
+    },
+    {
+     "context": [
+      "Blaulicht",
+      "Einsatzhorn",
+      "Rettungswagen"
+     ],
+     "statement": "Ich fahre unverändert weiter, bis er mich überholt",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "PRI_TRAM_BUS_STOP",
+   "topic": "05_priority",
+   "subtopic": "bus_strassenbahn",
+   "title": "Linienbus, Straßenbahn, Schulbus an Haltestellen",
+   "rule": "An haltenden Linienbussen, Straßenbahnen und Schulbussen an Haltestellen nur vorsichtig vorbeifahren (auch Gegenverkehr). Steigen Fahrgäste ein/aus: rechts nur Schrittgeschwindigkeit und mit Abstand, ggf. warten. Mit Warnblinklicht haltend: Schrittgeschwindigkeit, auch für den Gegenverkehr. Bus mit Warnblinklicht, der sich der Haltestelle nähert: nicht überholen. Abfahren vom Haltestellenbereich ermöglichen, ggf. warten.",
+   "concepts": [
+    "bus",
+    "haltestelle",
+    "schrittgeschwindigkeit"
+   ],
+   "keywords": [
+    "Bus",
+    "Linienbus",
+    "Schulbus",
+    "Haltestelle",
+    "Warnblinklicht",
+    "Schrittgeschwindigkeit",
+    "Straßenbahn",
+    "Fahrgäste"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 20",
+     "para": "Abs. 3",
+     "evidence": "Omnibusse des Linienverkehrs und gekennzeichnete Schulbusse, die sich einer Haltestelle (Zeichen 224) nähern und Warnblinklicht eingeschaltet haben, dürfen nicht überholt werden."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 20",
+     "para": "Abs. 4",
+     "evidence": "Die Schrittgeschwindigkeit gilt auch für den Gegenverkehr auf derselben Fahrbahn."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 20",
+     "para": "Abs. 5",
+     "evidence": "Omnibussen des Linienverkehrs und Schulbussen ist das Abfahren von gekennzeichneten Haltestellen zu ermöglichen. Wenn nötig, müssen andere Fahrzeuge warten."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Bus",
+      "Haltestelle",
+      "Warnblinklicht",
+      "nähert sich"
+     ],
+     "statement": "Der Bus darf nicht überholt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bus",
+      "Haltestelle",
+      "Warnblinklicht",
+      "hält"
+     ],
+     "statement": "Ich darf nur mit Schrittgeschwindigkeit vorbeifahren, auch im Gegenverkehr",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bus",
+      "Haltestelle",
+      "Warnblinklicht",
+      "hält"
+     ],
+     "statement": "Der Gegenverkehr darf mit normaler Geschwindigkeit vorbeifahren",
+     "truth": false
+    },
+    {
+     "context": [
+      "Bus",
+      "Haltestelle",
+      "abfahren",
+      "Blinker"
+     ],
+     "statement": "Ich muss dem Linienbus das Abfahren ermöglichen, wenn nötig warten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Straßenbahn",
+      "Haltestelle",
+      "Fahrgäste",
+      "rechts"
+     ],
+     "statement": "Steigen Fahrgäste aus, darf rechts nur mit Schrittgeschwindigkeit vorbeigefahren werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bus",
+      "Haltestelle",
+      "Warnblinklicht",
+      "Gegenverkehr"
+     ],
+     "statement": "Auch im Gegenverkehr fahre ich nur mit Schrittgeschwindigkeit vorbei",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "PRI_CROSSWALK",
+   "topic": "05_priority",
+   "subtopic": "fussgaengerueberweg",
+   "title": "Fußgängerüberweg (Zebrastreifen)",
+   "rule": "An Fußgängerüberwegen müssen Fahrzeuge (außer Schienenfahrzeuge) Fußgängern und Rollstuhlfahrern, die erkennbar queren wollen, das Überqueren ermöglichen: mäßige Geschwindigkeit, wenn nötig warten. Bei Stau nicht auf den Überweg fahren. An Überwegen nicht überholen. Halten bis 5 m vor dem Überweg verboten.",
+   "concepts": [
+    "fussgaenger",
+    "zebrastreifen",
+    "vorfahrt"
+   ],
+   "keywords": [
+    "Fußgängerüberweg",
+    "Zebrastreifen",
+    "Zeichen 293",
+    "Fußgänger",
+    "überholen",
+    "Rollstuhl"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 26",
+     "para": "Abs. 1",
+     "evidence": "An Fußgängerüberwegen haben Fahrzeuge mit Ausnahme von Schienenfahrzeugen den zu Fuß Gehenden sowie Fahrenden von Krankenfahrstühlen oder Rollstühlen, welche den Überweg erkennbar benutzen wollen, das Überqueren der Fahrbahn zu ermöglichen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 26",
+     "para": "Abs. 3",
+     "evidence": "An Überwegen darf nicht überholt werden."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zebrastreifen",
+      "Fußgänger",
+      "erkennbar"
+     ],
+     "statement": "Ich muss dem Fußgänger das Überqueren ermöglichen, wenn nötig warten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zebrastreifen",
+      "Fußgänger"
+     ],
+     "statement": "Ich darf vor dem Fußgänger durchfahren, wenn ich schneller bin",
+     "truth": false
+    },
+    {
+     "context": [
+      "Zebrastreifen",
+      "überholen"
+     ],
+     "statement": "An Fußgängerüberwegen darf nicht überholt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zebrastreifen",
+      "Stau"
+     ],
+     "statement": "Bei stockendem Verkehr darf ich nicht auf den Überweg fahren, wenn ich dort warten müsste",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zebrastreifen",
+      "Straßenbahn"
+     ],
+     "statement": "Auch Straßenbahnen müssen am Zebrastreifen Fußgänger queren lassen",
+     "truth": false
+    },
+    {
+     "context": [
+      "Zebrastreifen",
+      "Fußgänger",
+      "will queren"
+     ],
+     "statement": "Ich halte an und lasse den Fußgänger über die Straße gehen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Zebrastreifen",
+      "Fußgänger",
+      "will queren"
+     ],
+     "statement": "Ich fahre schnell vorbei, bevor der Fußgänger losgeht",
+     "truth": false
+    },
+    {
+     "context": [
+      "Zebrastreifen",
+      "überholen"
+     ],
+     "statement": "Am Zebrastreifen überhole ich nicht",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "PRI_RAIL_CROSSING",
+   "topic": "05_priority",
+   "subtopic": "bahnuebergang",
+   "title": "Bahnübergänge",
+   "rule": "Schienenfahrzeuge haben Vorrang an Bahnübergängen mit Andreaskreuz, über Fuß-, Feld-, Wald- und Radwege sowie in gekennzeichneten Hafen-/Industriegebieten. Nur mit mäßiger Geschwindigkeit nähern. Ab Zeichen 151/156 bis zum Übergang keine Kfz überholen. Vor dem Andreaskreuz warten bei nahendem Zug, rotem Blinklicht, gelbem/rotem Licht, sich senkenden/geschlossenen Schranken, Halt-Zeichen eines Bahnbediensteten oder Pfeifsignal; ebenso, wenn man den Übergang wegen Stau nicht zügig räumen kann.",
+   "concepts": [
+    "bahnuebergang",
+    "vorrang",
+    "andreaskreuz"
+   ],
+   "keywords": [
+    "Bahnübergang",
+    "Andreaskreuz",
+    "Schranke",
+    "Zug",
+    "rotes Blinklicht",
+    "Baken",
+    "Zeichen 151",
+    "Zeichen 156",
+    "Pfeifsignal"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 19",
+     "para": "Abs. 1",
+     "evidence": "Der Straßenverkehr darf sich solchen Bahnübergängen nur mit mäßiger Geschwindigkeit nähern."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 19",
+     "para": "Abs. 1 Satz 3",
+     "evidence": "Wer ein Fahrzeug führt, darf an Bahnübergängen vom Zeichen 151, 156 an bis einschließlich des Kreuzungsbereichs von Schiene und Straße Kraftfahrzeuge nicht überholen."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 19",
+     "para": "Abs. 3",
+     "evidence": "Kann der Bahnübergang wegen des Straßenverkehrs nicht zügig und ohne Aufenthalt überquert werden, ist vor dem Andreaskreuz zu warten."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Bahnübergang",
+      "Andreaskreuz",
+      "Vorrang"
+     ],
+     "statement": "Schienenfahrzeuge haben Vorrang",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "Schranke",
+      "senken"
+     ],
+     "statement": "Wenn sich die Schranken senken, muss ich vor dem Andreaskreuz warten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "Schranke",
+      "senken"
+     ],
+     "statement": "Ich darf noch schnell durchfahren, solange die Schranke nicht ganz geschlossen ist",
+     "truth": false
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "Stau",
+      "hinter dem Übergang"
+     ],
+     "statement": "Kann ich den Bahnübergang nicht zügig räumen, muss ich vor dem Andreaskreuz warten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "überholen",
+      "Bake"
+     ],
+     "statement": "Ab den Baken (Zeichen 156) bis zum Übergang dürfen keine Kraftfahrzeuge überholt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "überholen",
+      "Bake",
+      "Radfahrer"
+     ],
+     "statement": "Radfahrer dürfen vor dem Bahnübergang überholt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "rotes Blinklicht"
+     ],
+     "statement": "Bei rotem Blinklicht muss ich vor dem Andreaskreuz warten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "Schranke",
+      "senken"
+     ],
+     "statement": "Ich halte vor dem Andreaskreuz an",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "rotes Blinklicht"
+     ],
+     "statement": "Bei rotem Blinklicht fahre ich vorsichtig über den Bahnübergang",
+     "truth": false
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "nähern",
+      "Geschwindigkeit"
+     ],
+     "statement": "Ich nähere mich dem Bahnübergang mit mäßiger Geschwindigkeit",
+     "truth": true
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "Stau",
+      "räumen"
+     ],
+     "statement": "Ich warte auf den Gleisen, bis es weitergeht",
+     "truth": false
+    }
+   ],
+   "mnemonic": "Zug hat immer Vorrang. Baken = 3-2-1 → 240/160/80 m (Zeichen 156/159/162)."
+  },
+  {
+   "id": "PRI_PASSING_OBSTACLE",
+   "topic": "05_priority",
+   "subtopic": "vorbeifahren_hindernis",
+   "title": "Vorbeifahren an Hindernissen",
+   "rule": "Wer an einer Fahrbahnverengung, einem Hindernis oder einem haltenden Fahrzeug links vorbeifahren will, muss Gegenverkehr durchfahren lassen (außer Regelung durch Zeichen 208/308). Ausscheren und Wiedereinordnen ankündigen, auf nachfolgenden Verkehr achten.",
+   "concepts": [
+    "vorbeifahren",
+    "gegenverkehr",
+    "hindernis"
+   ],
+   "keywords": [
+    "Hindernis",
+    "vorbeifahren",
+    "Engstelle",
+    "haltendes Fahrzeug",
+    "Gegenverkehr",
+    "Zeichen 208",
+    "Zeichen 308"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 6",
+     "evidence": "Wer an einer Fahrbahnverengung, einem Hindernis auf der Fahrbahn oder einem haltenden Fahrzeug links vorbeifahren will, muss entgegenkommende Fahrzeuge durchfahren lassen."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Hindernis",
+      "auf meiner Seite",
+      "Gegenverkehr"
+     ],
+     "statement": "Ich muss den Gegenverkehr durchfahren lassen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Hindernis",
+      "auf meiner Seite",
+      "Gegenverkehr"
+     ],
+     "statement": "Der Gegenverkehr muss mich vorbeilassen",
+     "truth": false
+    },
+    {
+     "context": [
+      "Hindernis",
+      "Zeichen 308",
+      "Vorrang"
+     ],
+     "statement": "Mit Zeichen 308 habe ich Vorrang vor dem Gegenverkehr",
+     "truth": true
+    },
+    {
+     "context": [
+      "Hindernis",
+      "meine Fahrbahnseite",
+      "Gegenverkehr"
+     ],
+     "statement": "Ich warte und lasse den Gegenverkehr zuerst vorbei",
+     "truth": true
+    },
+    {
+     "context": [
+      "Hindernis",
+      "meine Fahrbahnseite",
+      "Gegenverkehr"
+     ],
+     "statement": "Ich fahre zuerst, der Gegenverkehr muss warten",
+     "truth": false
+    }
+   ]
+  }
+ ]
+}

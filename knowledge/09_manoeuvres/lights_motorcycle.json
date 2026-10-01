@@ -1,0 +1,56 @@
+{
+ "items": [
+  {
+   "id": "MAN_MOTORCYCLE_LIGHT",
+   "topic": "09_manoeuvres",
+   "subtopic": "kraftrad_licht",
+   "title": "Kraftrad: Licht auch am Tag",
+   "rule": "Wer ein Kraftrad führt, muss auch am Tag mit Abblendlicht oder Tagfahrleuchten fahren.",
+   "concepts": [
+    "beleuchtung",
+    "kraftrad"
+   ],
+   "keywords": [
+    "Motorrad",
+    "Kraftrad",
+    "Abblendlicht",
+    "Tag",
+    "Tagfahrlicht"
+   ],
+   "exam_relevance": 1,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 17",
+     "para": "Abs. 2a",
+     "evidence": "Wer ein Kraftrad führt, muss auch am Tag mit Abblendlicht oder eingeschalteten Tagfahrleuchten fahren."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Kraftrad",
+      "Motorrad",
+      "Tag",
+      "Licht"
+     ],
+     "statement": "Mit dem Motorrad muss ich auch am Tag mit Abblendlicht oder Tagfahrlicht fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "Kraftrad",
+      "Motorrad",
+      "Tag",
+      "Licht"
+     ],
+     "statement": "Mit dem Motorrad brauche ich am Tag kein Licht",
+     "truth": false
+    }
+   ]
+  }
+ ]
+}

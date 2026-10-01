@@ -1,0 +1,67 @@
+{
+ "items": [
+  {
+   "id": "MAN_BIKE_RULES",
+   "topic": "07_road_users",
+   "subtopic": "radfahrer_pflichten",
+   "title": "Radfahrer: nicht anhängen, nicht freihändig",
+   "rule": "Rad- und Kraftradfahrer dürfen sich nicht an Fahrzeuge anhängen und nicht freihändig fahren; Füße nur von den Pedalen, wenn der Straßenzustand es erfordert. Radfahrer müssen die Lichtzeichen für den Fahrverkehr beachten (auf Radverkehrsführungen die besonderen Radlichtzeichen).",
+   "concepts": [
+    "radfahrer"
+   ],
+   "keywords": [
+    "freihändig",
+    "anhängen",
+    "Pedale",
+    "Radfahrer",
+    "Ampel für Radfahrer"
+   ],
+   "exam_relevance": 1,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 23",
+     "para": "Abs. 3",
+     "evidence": "Wer ein Fahrrad oder ein Kraftrad fährt, darf sich nicht an Fahrzeuge anhängen. Es darf nicht freihändig gefahren werden."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 2 Nr. 6",
+     "evidence": "Wer ein Rad fährt, hat die Lichtzeichen für den Fahrverkehr zu beachten."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Radfahrer",
+      "freihändig"
+     ],
+     "statement": "Radfahrer dürfen nicht freihändig fahren",
+     "truth": true
+    },
+    {
+     "context": [
+      "Radfahrer",
+      "anhängen",
+      "Fahrzeug"
+     ],
+     "statement": "Radfahrer dürfen sich an langsam fahrende Fahrzeuge anhängen",
+     "truth": false
+    },
+    {
+     "context": [
+      "Radfahrer",
+      "Ampel"
+     ],
+     "statement": "Radfahrer haben die Lichtzeichen für den Fahrverkehr zu beachten, soweit keine besonderen Radlichtzeichen gelten",
+     "truth": true
+    }
+   ]
+  }
+ ]
+}

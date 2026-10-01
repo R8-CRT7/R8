@@ -91,6 +91,15 @@
      ],
      "statement": "Man darf so schnell fahren, wie das Fahrzeug bauartbedingt kann",
      "truth": false
+    },
+    {
+     "context": [
+      "Geschwindigkeit",
+      "Wetter",
+      "Sicht"
+     ],
+     "statement": "Ich passe meine Geschwindigkeit dem Wetter und der Sicht an",
+     "truth": true
     }
    ],
    "mnemonic": "Sehen – Anhalten: Was ich nicht überblicke, muss ich vorher anhalten können."
@@ -206,6 +215,18 @@
      ],
      "statement": "Die 50 km/h dürfen immer ausgefahren werden",
      "truth": false
+    },
+    {
+     "context": [
+      "Nebel",
+      "Sichtweite",
+      "Leitpfosten"
+     ],
+     "statement": "Leitpfosten helfen beim Schätzen der Sichtweite, sie stehen im Abstand von 50 m",
+     "truth": true,
+     "numbers": [
+      "50 m"
+     ]
     }
    ],
    "mnemonic": "50 m Sicht → max. 50 km/h. Leitpfosten stehen im Abstand von 50 m."
@@ -479,6 +500,24 @@
      ],
      "statement": "Mit unvorsichtigem Verhalten älterer Menschen rechnen und bremsbereit sein",
      "truth": true
+    },
+    {
+     "context": [
+      "Kinder",
+      "Straßenrand",
+      "spielen"
+     ],
+     "statement": "Ich verringere das Tempo und halte mich bremsbereit",
+     "truth": true
+    },
+    {
+     "context": [
+      "Kinder",
+      "Straßenrand",
+      "spielen"
+     ],
+     "statement": "Ich verlasse mich darauf, dass die Kinder stehen bleiben",
+     "truth": false
     }
    ],
    "mnemonic": "Kind in Sicht → Fuß vom Gas, Fuß über die Bremse."

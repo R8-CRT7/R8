@@ -1,0 +1,43 @@
+{
+ "items": [
+  {
+   "id": "SPC_DISTRACTING_ADS",
+   "topic": "02_human_risk",
+   "subtopic": "ablenkung_umwelt",
+   "title": "Ablenkung durch Werbung und Lautsprecher",
+   "rule": "Lautsprecher, Warenangebote auf der Straße und außerorts Werbung sind verboten, wenn sie Verkehrsteilnehmer gefährdend ablenken können; Einrichtungen, die mit Verkehrszeichen verwechselt werden können, dürfen dort nicht verwendet werden.",
+   "concepts": [
+    "ablenkung"
+   ],
+   "keywords": [
+    "Werbung",
+    "Lautsprecher",
+    "ablenken",
+    "Verwechslung"
+   ],
+   "exam_relevance": 1,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 33",
+     "para": "Abs. 2",
+     "evidence": "Einrichtungen, die Zeichen oder Verkehrseinrichtungen (§§ 36 bis 43 in Verbindung mit den Anlagen 1 bis 4) gleichen, mit ihnen verwechselt werden können oder deren Wirkung beeinträchtigen können, dürfen dort nicht angebracht oder sonst verwendet werden, wo sie sich auf den Verkehr auswirken können."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Werbung",
+      "verwechselt",
+      "Verkehrszeichen"
+     ],
+     "statement": "Einrichtungen, die mit Verkehrszeichen verwechselt werden können, dürfen nicht dort angebracht werden, wo sie sich auf den Verkehr auswirken",
+     "truth": true
+    }
+   ]
+  }
+ ]
+}

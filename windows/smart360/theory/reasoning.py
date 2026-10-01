@@ -22,7 +22,7 @@ from smart360.theory.negation import Deontic, Polarity, analyze, asks_for_negati
 from smart360.theory.priority import PriorityDecision, decide
 from smart360.theory.scene import Scene, temporal_check
 from smart360.theory.schema import Claim, KnowledgeObject, Sign
-from smart360.theory.text import NUMBER_TOKEN, content, cosine, fold, numbers, ocr_repair, similarity, stem
+from smart360.theory.text import NUMBER_TOKEN, content, cosine, fold, numbers, ocr_repair, similarity, stem, vocab_repair
 
 DEFAULT_THRESHOLD = 0.75
 MATCH_MIN = 0.55  # minimum statement similarity for a claim to count
@@ -494,7 +494,8 @@ def _eval_sign(kb: KnowledgeBase, q: TheoryQuestion) -> list[AnswerEval]:
 
 
 _ME_WAITS = re.compile(r"\bich (muss|lasse|warte|gewähre|halte)\b|\bmuss ich\b|\blasse ich\b|\bwarte ich\b")
-_OTHER_WAITS = re.compile(r"\b(muss|müssen|lässt|lassen) (mich|mir)\b|\bvor mir\b|\bich darf vor\b|\bich habe vorfahrt\b|\bich darf (vor|als erste)|\bmuss warten\b|\bmüssen warten\b")
+_OTHER_WAITS = re.compile(r"\b(muss|müssen|lässt|lassen) (mich|mir)\b|\bvor mir\b|\bich darf vor\b|\bich habe vorfahrt\b|\bich darf (vor|als erste)")
+_WAIT_VERB = re.compile(r"durchfahren lassen|durchgehen lassen|vorlassen|vorfahrt gewähren|\bwarten\b|\bwartet\b")
 _FIRST = re.compile(r"\b(als erste[rs]?|zuerst)\b")
 
 
@@ -508,6 +509,9 @@ def _eval_priority(q: TheoryQuestion) -> tuple[list[AnswerEval], PriorityDecisio
     for i, a in enumerate(q.answers, start=1):
         t = fold(a)
         refs = [p for p in scene.find(a) if not p.is_me]
+        others = [p for p in scene.participants if not p.is_me]
+        if not refs and len(others) == 1 and _WAIT_VERB.search(t) and not _FIRST.search(t):
+            refs = others  # 'Ich muss warten' with exactly one other road user: the reference is unambiguous
         ev = AnswerEval(i, Verdict.UNKNOWN, "priority", sorted({y.rule_id for y in dec.yields}))
         if me is None:
             ev.explanation = "eigenes Fahrzeug nicht im Szenenmodell"
@@ -526,8 +530,10 @@ def _eval_priority(q: TheoryQuestion) -> tuple[list[AnswerEval], PriorityDecisio
                 ev.explanation = "; ".join(pair_unc or dec.uncertain)
             elif _OTHER_WAITS.search(t):
                 ev.verdict = Verdict.TRUE if dec.must_wait_for(other, me.participant.id) else Verdict.FALSE
-            elif _ME_WAITS.search(t) or re.search(r"durchfahren lassen|vorlassen|vorfahrt gewähren|warten", t):
+            elif _ME_WAITS.search(t) or (_WAIT_VERB.search(t) and re.search(r"\bich\b", t)):
                 ev.verdict = Verdict.TRUE if dec.must_wait_for(me.participant.id, other) else Verdict.FALSE
+            elif _WAIT_VERB.search(t):  # subject is the other road user: 'Der blaue Pkw muss warten'
+                ev.verdict = Verdict.TRUE if dec.must_wait_for(other, me.participant.id) else Verdict.FALSE
             if analyze(a).negated and ev.verdict != Verdict.UNKNOWN:
                 ev.verdict = Verdict.FALSE if ev.verdict == Verdict.TRUE else Verdict.TRUE
             why = [f"{y.waits} wartet auf {y.for_} ({y.reason})" for y in dec.yields if me.participant.id in (y.waits, y.for_)]
@@ -549,9 +555,24 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
     fixed_q, n_fix = ocr_repair(q.text)
     fixed_a = [ocr_repair(a) for a in q.answers]
     n_fix += sum(n for _, n in fixed_a)
+    unreadable: dict[int, list[str]] = {}
+    if q.ocr_confidence < 1.0 or n_fix:
+        vocab = kb.vocabulary
+        fixed_q, n_q, _ = vocab_repair(fixed_q, vocab)
+        repaired = []
+        for i, (a, _) in enumerate(fixed_a, start=1):
+            a2, n_a, unk = vocab_repair(a, vocab)
+            n_fix += n_a
+            repaired.append(a2)
+            if unk and q.ocr_confidence < 0.9:
+                unreadable[i] = unk
+        n_fix += n_q
+        fixed_a = [(a, 0) for a in repaired]
     if n_fix:
         q = dataclasses.replace(q, text=fixed_q, answers=[a for a, _ in fixed_a])
-        trace.append(("ocr_repair", f"{n_fix} polarity word(s) repaired"))
+        trace.append(("ocr_repair", f"{n_fix} word(s) repaired"))
+    if unreadable:
+        trace.append(("ocr_unreadable", "; ".join(f"{i}: {', '.join(w)}" for i, w in unreadable.items())))
     norm_q = fold(q.text)
     trace.append(("normalization", norm_q[:200]))
     kinds, task = classify(q)
@@ -636,6 +657,10 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
         else:
             evals.setdefault(i, AnswerEval(i, Verdict.UNKNOWN, "none", [], "keine passende Regel gefunden", 0.0,
                                            flags))
+    for i in unreadable:
+        if i in evals:
+            evals[i].verdict = Verdict.UNKNOWN
+            evals[i].flags.append("ocr_unreadable")
     trace.append(("semantic_check_A", " ".join(f"{i}:{e.verdict}" for i, e in sorted(evals.items()))))
 
     # semantic check B: answer alone against all rules of the retrieved topics (no situation weighting)

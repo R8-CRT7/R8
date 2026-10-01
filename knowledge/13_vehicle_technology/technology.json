@@ -1,84 +1,594 @@
-{"items": [
-{"id": "TEC_LIGHTS", "topic": "13_vehicle_technology", "subtopic": "beleuchtung", "title": "Beleuchtung",
- "rule": "Bei Dämmerung, Dunkelheit oder schlechter Sicht vorgeschriebene Beleuchtung benutzen; nicht verdeckt/verschmutzt. Nicht nur mit Standlicht fahren. Kein Fernlicht auf durchgehend ausreichend beleuchteten Straßen; rechtzeitig abblenden bei Gegenverkehr oder geringem Abstand zum Vorausfahrenden. Bei erheblicher Sichtbehinderung durch Nebel, Schnee, Regen auch tagsüber Abblendlicht; Nebelscheinwerfer nur bei solcher Witterung; Nebelschlussleuchte nur bei Nebel unter 50 m Sicht.",
- "numeric_refs": ["STVO_17_FOG_REAR_LIGHT"],
- "concepts": ["beleuchtung", "sichtweite", "nebel"], "keywords": ["Licht", "Abblendlicht", "Fernlicht", "Standlicht", "Nebelscheinwerfer", "Nebelschlussleuchte", "Dämmerung", "abblenden", "Tagfahrlicht"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 17", "para": "Abs. 2", "evidence": "Mit Begrenzungsleuchten (Standlicht) allein darf nicht gefahren werden. Auf Straßen mit durchgehender, ausreichender Beleuchtung darf auch nicht mit Fernlicht gefahren werden."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 17", "para": "Abs. 3", "evidence": "Behindert Nebel, Schneefall oder Regen die Sicht erheblich, dann ist auch am Tage mit Abblendlicht zu fahren. Nur bei solcher Witterung dürfen Nebelscheinwerfer eingeschaltet sein."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 17", "para": "Abs. 2 Satz 3", "evidence": "Es ist rechtzeitig abzublenden, wenn ein Fahrzeug entgegenkommt oder mit geringem Abstand vorausfährt"}],
- "claims": [
-  {"context": ["Standlicht", "fahren"], "statement": "Mit Standlicht allein darf nicht gefahren werden", "truth": true},
-  {"context": ["Fernlicht", "Straßenbeleuchtung"], "statement": "Auf durchgehend ausreichend beleuchteten Straßen darf nicht mit Fernlicht gefahren werden", "truth": true},
-  {"context": ["Fernlicht", "Gegenverkehr"], "statement": "Bei Gegenverkehr muss ich rechtzeitig abblenden", "truth": true},
-  {"context": ["Nebelscheinwerfer", "klare Nacht"], "statement": "Nebelscheinwerfer dürfen bei klarer Sicht nachts zusätzlich eingeschaltet werden", "truth": false},
-  {"context": ["Regen", "Sicht erheblich", "tagsüber"], "statement": "Wenn Regen die Sicht erheblich behindert, muss ich auch am Tag Abblendlicht einschalten", "truth": true}]},
-
-{"id": "TEC_TYRES", "topic": "13_vehicle_technology", "subtopic": "reifen", "title": "Reifen und Profiltiefe",
- "rule": "Das Hauptprofil muss am ganzen Umfang mindestens 1,6 mm Profiltiefe haben (Mofas, Kleinkrafträder, Leichtkrafträder: 1 mm). Wintertaugliche Reifen bei winterlicher Glätte (§ 2 Abs. 3a StVO).",
- "numeric_refs": ["STVZO_36_TREAD"],
- "concepts": ["reifen", "profil", "aquaplaning"], "keywords": ["Profiltiefe", "Reifen", "1,6 mm", "Hauptprofil", "Aquaplaning"],
- "exam_relevance": 3, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvzo_2012", "norm": "§ 36", "para": "Abs. 3", "evidence": "Das Hauptprofil muss am ganzen Umfang eine Profiltiefe von mindestens 1,6 mm aufweisen"}],
- "claims": [
-  {"context": ["Profiltiefe", "Reifen", "Pkw", "gesetzlich"], "statement": "Die gesetzliche Mindestprofiltiefe beträgt 1,6 mm", "truth": true, "numbers": ["1,6 mm"]},
-  {"context": ["Profiltiefe", "Reifen", "Pkw", "gesetzlich"], "statement": "Die gesetzliche Mindestprofiltiefe beträgt 1 mm", "truth": false},
-  {"context": ["Profiltiefe", "Reifen", "Aquaplaning"], "statement": "Bei geringer Profiltiefe steigt die Aquaplaninggefahr", "truth": true}]},
-
-{"id": "TEC_SAFETY_KIT", "topic": "13_vehicle_technology", "subtopic": "mitfuehrpflicht", "title": "Warndreieck, Warnweste, Erste-Hilfe-Material",
- "rule": "In Pkw: ein Warndreieck und eine Warnweste mitführen; Kfz über 3,5 t zusätzlich eine Warnleuchte. Erste-Hilfe-Material (DIN 13 164) in Kfz mit bauartbedingt über 6 km/h, ausgenommen u. a. Krafträder.",
- "numeric_refs": ["STVZO_35H_FIRST_AID_SPEED"],
- "concepts": ["ausruestung", "panne", "erste_hilfe"], "keywords": ["Warndreieck", "Warnweste", "Verbandkasten", "Erste-Hilfe-Material", "Warnleuchte", "mitführen"],
- "exam_relevance": 2, "difficulty": 1, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvzo_2012", "norm": "§ 53a", "para": "Abs. 2 Nr. 1", "evidence": "in Personenkraftwagen, land- oder forstwirtschaftlichen Zug- oder Arbeitsmaschinen sowie in anderen Kraftfahrzeugen mit einem zulässigen Gesamtgewicht von nicht mehr als 3,5 t:\nein Warndreieck;"},
-             {"type": "law", "law": "stvzo_2012", "norm": "§ 53a", "para": "Abs. 2 Nr. 3", "evidence": "in Personenkraftwagen, Lastkraftwagen, Zug- und Sattelzugmaschinen sowie Kraftomnibussen:\neine Warnweste."},
-             {"type": "law", "law": "stvzo_2012", "norm": "§ 35h", "para": "Abs. 3", "evidence": "ist Erste-Hilfe-Material mitzuführen"}],
- "claims": [
-  {"context": ["Pkw", "mitführen", "Ausrüstung"], "statement": "Im Pkw müssen ein Warndreieck und eine Warnweste mitgeführt werden", "truth": true},
-  {"context": ["Pkw", "mitführen", "Ausrüstung"], "statement": "Im Pkw muss Erste-Hilfe-Material mitgeführt werden", "truth": true},
-  {"context": ["Pkw", "mitführen", "Ausrüstung"], "statement": "Im Pkw ist eine Warnleuchte vorgeschrieben", "truth": false},
-  {"context": ["Motorrad", "Kraftrad", "Erste-Hilfe-Material"], "statement": "Auf dem Motorrad ist Erste-Hilfe-Material vorgeschrieben", "truth": false}]},
-
-{"id": "TEC_HU", "topic": "13_vehicle_technology", "subtopic": "hauptuntersuchung", "title": "Hauptuntersuchung (HU)",
- "rule": "Pkw: erste HU nach 36 Monaten, danach alle 24 Monate (Taxen/Mietwagen nach PBefG 12 Monate). Krafträder 24 Monate. Prüfplakette auf dem hinteren Kennzeichen zeigt den Monat und das Jahr; sie wird mit Ablauf des angegebenen Monats ungültig.",
- "numeric_refs": ["STVZO_A8_PKW_FIRST_HU", "STVZO_A8_PKW_HU"],
- "concepts": ["hauptuntersuchung", "pruefplakette"], "keywords": ["HU", "TÜV", "Hauptuntersuchung", "Prüfplakette", "24 Monate", "36 Monate", "Kennzeichen"],
- "exam_relevance": 2, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvzo_2012", "norm": "Anlage VIII", "para": "Nr. 2.1.2.1", "evidence": "für die zweite Hauptuntersuchung\n36"},
-             {"type": "law", "law": "stvzo_2012", "norm": "Anlage VIII", "para": "Nr. 2.1.2.1.2", "evidence": "für die weiteren Hauptuntersuchungen\n24"},
-             {"type": "law", "law": "stvzo_2012", "norm": "§ 29", "para": "Abs. 7", "evidence": "Die Prüfplakette und die Prüfmarke werden mit Ablauf des jeweils angegebenen Monats ungültig."}],
- "claims": [
-  {"context": ["Hauptuntersuchung", "Pkw", "neu", "erste"], "statement": "Ein neuer Pkw muss erstmals nach 36 Monaten zur Hauptuntersuchung", "truth": true, "numbers": ["36"]},
-  {"context": ["Hauptuntersuchung", "Pkw", "danach"], "statement": "Danach muss ein Pkw alle 24 Monate zur Hauptuntersuchung", "truth": true, "numbers": ["24"]},
-  {"context": ["Hauptuntersuchung", "Pkw", "danach"], "statement": "Ein privater Pkw muss jedes Jahr zur Hauptuntersuchung", "truth": false},
-  {"context": ["Prüfplakette", "gültig"], "statement": "Die Prüfplakette wird mit Ablauf des angegebenen Monats ungültig", "truth": true}]},
-
-{"id": "TEC_LOAD", "topic": "13_vehicle_technology", "subtopic": "ladung", "title": "Ladung sichern und Überstände",
- "rule": "Ladung so sichern, dass sie selbst bei Vollbremsung oder plötzlichem Ausweichen nicht verrutscht, umfällt, rollt, herabfällt oder vermeidbaren Lärm macht. Fahrzeug+Ladung max. 2,55 m breit, 4 m hoch. Nach hinten bis 1,50 m (bei Fahrten bis 100 km bis 3 m). Ragt die Ladung mehr als 1 m über die Rückstrahler, kenntlich machen (hellrote Fahne mind. 30 × 30 cm, bei Dunkelheit rote Leuchte und Rückstrahler). Nach vorn: bis 2,50 m Höhe nicht über das Fahrzeug, sonst bis 50 cm.",
- "numeric_refs": ["STVO_22_WIDTH", "STVO_22_HEIGHT", "STVO_22_REAR_OVERHANG", "STVO_22_REAR_OVERHANG_100KM", "STVO_22_MARK_1M", "STVO_22_FLAG_SIZE", "STVO_22_FRONT_OVERHANG"],
- "concepts": ["ladung", "ladungssicherung"], "keywords": ["Ladung", "Ladungssicherung", "Vollbremsung", "hinausragen", "Fahne", "1,50 m", "1 m", "Rückstrahler", "Dachgepäckträger"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 22", "para": "Abs. 1", "evidence": "Die Ladung einschließlich Geräte zur Ladungssicherung sowie Ladeeinrichtungen sind so zu verstauen und zu sichern, dass sie selbst bei Vollbremsung oder plötzlicher Ausweichbewegung nicht verrutschen, umfallen, hin- und herrollen, herabfallen oder vermeidbaren Lärm erzeugen können."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 22", "para": "Abs. 4", "evidence": "Nach hinten darf die Ladung bis zu 1,50 m hinausragen"}],
- "claims": [
-  {"context": ["Ladung", "sichern"], "statement": "Die Ladung muss so gesichert sein, dass sie auch bei einer Vollbremsung nicht verrutscht", "truth": true},
-  {"context": ["Ladung", "hinten", "hinausragen", "kenntlich"], "statement": "Ragt die Ladung mehr als 1 m über die Rückstrahler hinaus, muss sie kenntlich gemacht werden", "truth": true, "numbers": ["1 m"]},
-  {"context": ["Ladung", "hinten", "hinausragen", "kenntlich"], "statement": "Eine Kennzeichnung ist erst ab 2 m Überstand nötig", "truth": false},
-  {"context": ["Ladung", "Fahne", "Größe"], "statement": "Die Fahne muss hellrot und mindestens 30 x 30 cm groß sein", "truth": true},
-  {"context": ["Ladung", "hinten", "hinausragen", "100 km"], "statement": "Bei Fahrten bis 100 km darf die Ladung bis zu 3 m nach hinten hinausragen", "truth": true, "numbers": ["3 m"]}]},
-
-{"id": "TEC_DEVICES", "topic": "13_vehicle_technology", "subtopic": "elektronische_geraete", "title": "Handy und elektronische Geräte am Steuer",
- "rule": "Elektronische Geräte zur Kommunikation, Information oder Organisation (Handy, Navi, Tablet …) nur benutzen, wenn sie weder aufgenommen noch gehalten werden und nur Sprachsteuerung/Vorlesefunktion oder eine kurze, den Verhältnissen angepasste Blickzuwendung nötig ist. Ausnahme: stehendes Fahrzeug mit vollständig ausgeschaltetem Motor (Start-Stopp zählt nicht). Videobrillen verboten. Radarwarner verboten.",
- "concepts": ["ablenkung", "handy", "aufmerksamkeit"], "keywords": ["Handy", "Mobiltelefon", "Smartphone", "Navi", "aufnehmen", "halten", "Sprachsteuerung", "Start-Stopp", "Motor aus", "Radarwarner", "Blitzer-App"],
- "exam_relevance": 3, "difficulty": 2, "last_verified": "2026-10-01",
- "sources": [{"type": "law", "law": "stvo_2013", "norm": "§ 23", "para": "Abs. 1a", "evidence": "hierfür das Gerät weder aufgenommen noch gehalten wird und"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 23", "para": "Abs. 1b", "evidence": "ein stehendes Fahrzeug, im Falle eines Kraftfahrzeuges vorbehaltlich der Nummer 3 nur, wenn der Motor vollständig ausgeschaltet ist,"},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 23", "para": "Abs. 1b Satz 2", "evidence": "Das fahrzeugseitige automatische Abschalten des Motors im Verbrennungsbetrieb oder das Ruhen des elektrischen Antriebes ist kein Ausschalten des Motors in diesem Sinne."},
-             {"type": "law", "law": "stvo_2013", "norm": "§ 23", "para": "Abs. 1c", "evidence": "Wer ein Fahrzeug führt, darf ein technisches Gerät nicht betreiben oder betriebsbereit mitführen, das dafür bestimmt ist, Verkehrsüberwachungsmaßnahmen anzuzeigen oder zu stören."}],
- "claims": [
-  {"context": ["Handy", "Ampel", "rot", "Start-Stopp"], "statement": "An der roten Ampel darf ich das Handy in die Hand nehmen, wenn die Start-Stopp-Automatik den Motor abgeschaltet hat", "truth": false},
-  {"context": ["Handy", "Motor", "vollständig ausgeschaltet", "stehend"], "statement": "Bei stehendem Fahrzeug und vollständig ausgeschaltetem Motor darf ich das Handy in die Hand nehmen", "truth": true},
-  {"context": ["Handy", "Fahrt", "Sprachsteuerung", "Halterung"], "statement": "Während der Fahrt darf ich das Handy mit Sprachsteuerung nutzen, wenn ich es nicht aufnehme oder halte", "truth": true},
-  {"context": ["Handy", "Fahrt", "halten"], "statement": "Während der Fahrt darf ich das Handy kurz in die Hand nehmen, um eine Nachricht zu lesen", "truth": false},
-  {"context": ["Radarwarner", "Blitzer"], "statement": "Geräte, die Verkehrsüberwachungsmaßnahmen anzeigen, dürfen nicht betriebsbereit mitgeführt werden", "truth": true}]}
-]}
+{
+ "items": [
+  {
+   "id": "TEC_LIGHTS",
+   "topic": "13_vehicle_technology",
+   "subtopic": "beleuchtung",
+   "title": "Beleuchtung",
+   "rule": "Bei Dämmerung, Dunkelheit oder schlechter Sicht vorgeschriebene Beleuchtung benutzen; nicht verdeckt/verschmutzt. Nicht nur mit Standlicht fahren. Kein Fernlicht auf durchgehend ausreichend beleuchteten Straßen; rechtzeitig abblenden bei Gegenverkehr oder geringem Abstand zum Vorausfahrenden. Bei erheblicher Sichtbehinderung durch Nebel, Schnee, Regen auch tagsüber Abblendlicht; Nebelscheinwerfer nur bei solcher Witterung; Nebelschlussleuchte nur bei Nebel unter 50 m Sicht.",
+   "numeric_refs": [
+    "STVO_17_FOG_REAR_LIGHT"
+   ],
+   "concepts": [
+    "beleuchtung",
+    "sichtweite",
+    "nebel"
+   ],
+   "keywords": [
+    "Licht",
+    "Abblendlicht",
+    "Fernlicht",
+    "Standlicht",
+    "Nebelscheinwerfer",
+    "Nebelschlussleuchte",
+    "Dämmerung",
+    "abblenden",
+    "Tagfahrlicht"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 17",
+     "para": "Abs. 2",
+     "evidence": "Mit Begrenzungsleuchten (Standlicht) allein darf nicht gefahren werden. Auf Straßen mit durchgehender, ausreichender Beleuchtung darf auch nicht mit Fernlicht gefahren werden."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 17",
+     "para": "Abs. 3",
+     "evidence": "Behindert Nebel, Schneefall oder Regen die Sicht erheblich, dann ist auch am Tage mit Abblendlicht zu fahren. Nur bei solcher Witterung dürfen Nebelscheinwerfer eingeschaltet sein."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 17",
+     "para": "Abs. 2 Satz 3",
+     "evidence": "Es ist rechtzeitig abzublenden, wenn ein Fahrzeug entgegenkommt oder mit geringem Abstand vorausfährt"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Standlicht",
+      "fahren"
+     ],
+     "statement": "Mit Standlicht allein darf nicht gefahren werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Fernlicht",
+      "Straßenbeleuchtung"
+     ],
+     "statement": "Auf durchgehend ausreichend beleuchteten Straßen darf nicht mit Fernlicht gefahren werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Fernlicht",
+      "Gegenverkehr"
+     ],
+     "statement": "Bei Gegenverkehr muss ich rechtzeitig abblenden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Nebelscheinwerfer",
+      "klare Nacht"
+     ],
+     "statement": "Nebelscheinwerfer dürfen bei klarer Sicht nachts zusätzlich eingeschaltet werden",
+     "truth": false
+    },
+    {
+     "context": [
+      "Regen",
+      "Sicht erheblich",
+      "tagsüber"
+     ],
+     "statement": "Wenn Regen die Sicht erheblich behindert, muss ich auch am Tag Abblendlicht einschalten",
+     "truth": true
+    },
+    {
+     "context": [
+      "Fernlicht",
+      "beleuchtet",
+      "innerorts"
+     ],
+     "statement": "Auf gut beleuchteten Straßen fahre ich nicht mit Fernlicht",
+     "truth": true
+    },
+    {
+     "context": [
+      "Nebelschlussleuchte",
+      "Regen"
+     ],
+     "statement": "Bei starkem Regen schalte ich die Nebelschlussleuchte ein",
+     "truth": false
+    }
+   ]
+  },
+  {
+   "id": "TEC_TYRES",
+   "topic": "13_vehicle_technology",
+   "subtopic": "reifen",
+   "title": "Reifen und Profiltiefe",
+   "rule": "Das Hauptprofil muss am ganzen Umfang mindestens 1,6 mm Profiltiefe haben (Mofas, Kleinkrafträder, Leichtkrafträder: 1 mm). Wintertaugliche Reifen bei winterlicher Glätte (§ 2 Abs. 3a StVO).",
+   "numeric_refs": [
+    "STVZO_36_TREAD"
+   ],
+   "concepts": [
+    "reifen",
+    "profil",
+    "aquaplaning"
+   ],
+   "keywords": [
+    "Profiltiefe",
+    "Reifen",
+    "1,6 mm",
+    "Hauptprofil",
+    "Aquaplaning"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 36",
+     "para": "Abs. 3",
+     "evidence": "Das Hauptprofil muss am ganzen Umfang eine Profiltiefe von mindestens 1,6 mm aufweisen"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Profiltiefe",
+      "Reifen",
+      "Pkw",
+      "gesetzlich"
+     ],
+     "statement": "Die gesetzliche Mindestprofiltiefe beträgt 1,6 mm",
+     "truth": true,
+     "numbers": [
+      "1,6 mm"
+     ]
+    },
+    {
+     "context": [
+      "Profiltiefe",
+      "Reifen",
+      "Pkw",
+      "gesetzlich"
+     ],
+     "statement": "Die gesetzliche Mindestprofiltiefe beträgt 1 mm",
+     "truth": false
+    },
+    {
+     "context": [
+      "Profiltiefe",
+      "Reifen",
+      "Aquaplaning"
+     ],
+     "statement": "Bei geringer Profiltiefe steigt die Aquaplaninggefahr",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "TEC_SAFETY_KIT",
+   "topic": "13_vehicle_technology",
+   "subtopic": "mitfuehrpflicht",
+   "title": "Warndreieck, Warnweste, Erste-Hilfe-Material",
+   "rule": "In Pkw: ein Warndreieck und eine Warnweste mitführen; Kfz über 3,5 t zusätzlich eine Warnleuchte. Erste-Hilfe-Material (DIN 13 164) in Kfz mit bauartbedingt über 6 km/h, ausgenommen u. a. Krafträder.",
+   "numeric_refs": [
+    "STVZO_35H_FIRST_AID_SPEED"
+   ],
+   "concepts": [
+    "ausruestung",
+    "panne",
+    "erste_hilfe"
+   ],
+   "keywords": [
+    "Warndreieck",
+    "Warnweste",
+    "Verbandkasten",
+    "Erste-Hilfe-Material",
+    "Warnleuchte",
+    "mitführen"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 1,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 53a",
+     "para": "Abs. 2 Nr. 1",
+     "evidence": "in Personenkraftwagen, land- oder forstwirtschaftlichen Zug- oder Arbeitsmaschinen sowie in anderen Kraftfahrzeugen mit einem zulässigen Gesamtgewicht von nicht mehr als 3,5 t:\nein Warndreieck;"
+    },
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 53a",
+     "para": "Abs. 2 Nr. 3",
+     "evidence": "in Personenkraftwagen, Lastkraftwagen, Zug- und Sattelzugmaschinen sowie Kraftomnibussen:\neine Warnweste."
+    },
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 35h",
+     "para": "Abs. 3",
+     "evidence": "ist Erste-Hilfe-Material mitzuführen"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Pkw",
+      "mitführen",
+      "Ausrüstung"
+     ],
+     "statement": "Im Pkw müssen ein Warndreieck und eine Warnweste mitgeführt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Pkw",
+      "mitführen",
+      "Ausrüstung"
+     ],
+     "statement": "Im Pkw muss Erste-Hilfe-Material mitgeführt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Pkw",
+      "mitführen",
+      "Ausrüstung"
+     ],
+     "statement": "Im Pkw ist eine Warnleuchte vorgeschrieben",
+     "truth": false
+    },
+    {
+     "context": [
+      "Motorrad",
+      "Kraftrad",
+      "Erste-Hilfe-Material"
+     ],
+     "statement": "Auf dem Motorrad ist Erste-Hilfe-Material vorgeschrieben",
+     "truth": false
+    },
+    {
+     "context": [
+      "Pkw",
+      "mitführen"
+     ],
+     "statement": "Warndreieck und Warnweste gehören in jeden Pkw",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "TEC_HU",
+   "topic": "13_vehicle_technology",
+   "subtopic": "hauptuntersuchung",
+   "title": "Hauptuntersuchung (HU)",
+   "rule": "Pkw: erste HU nach 36 Monaten, danach alle 24 Monate (Taxen/Mietwagen nach PBefG 12 Monate). Krafträder 24 Monate. Prüfplakette auf dem hinteren Kennzeichen zeigt den Monat und das Jahr; sie wird mit Ablauf des angegebenen Monats ungültig.",
+   "numeric_refs": [
+    "STVZO_A8_PKW_FIRST_HU",
+    "STVZO_A8_PKW_HU"
+   ],
+   "concepts": [
+    "hauptuntersuchung",
+    "pruefplakette"
+   ],
+   "keywords": [
+    "HU",
+    "TÜV",
+    "Hauptuntersuchung",
+    "Prüfplakette",
+    "24 Monate",
+    "36 Monate",
+    "Kennzeichen"
+   ],
+   "exam_relevance": 2,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "Anlage VIII",
+     "para": "Nr. 2.1.2.1",
+     "evidence": "für die zweite Hauptuntersuchung\n36"
+    },
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "Anlage VIII",
+     "para": "Nr. 2.1.2.1.2",
+     "evidence": "für die weiteren Hauptuntersuchungen\n24"
+    },
+    {
+     "type": "law",
+     "law": "stvzo_2012",
+     "norm": "§ 29",
+     "para": "Abs. 7",
+     "evidence": "Die Prüfplakette und die Prüfmarke werden mit Ablauf des jeweils angegebenen Monats ungültig."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Hauptuntersuchung",
+      "Pkw",
+      "neu",
+      "erste"
+     ],
+     "statement": "Ein neuer Pkw muss erstmals nach 36 Monaten zur Hauptuntersuchung",
+     "truth": true,
+     "numbers": [
+      "36"
+     ]
+    },
+    {
+     "context": [
+      "Hauptuntersuchung",
+      "Pkw",
+      "danach"
+     ],
+     "statement": "Danach muss ein Pkw alle 24 Monate zur Hauptuntersuchung",
+     "truth": true,
+     "numbers": [
+      "24"
+     ]
+    },
+    {
+     "context": [
+      "Hauptuntersuchung",
+      "Pkw",
+      "danach"
+     ],
+     "statement": "Ein privater Pkw muss jedes Jahr zur Hauptuntersuchung",
+     "truth": false
+    },
+    {
+     "context": [
+      "Prüfplakette",
+      "gültig"
+     ],
+     "statement": "Die Prüfplakette wird mit Ablauf des angegebenen Monats ungültig",
+     "truth": true
+    }
+   ]
+  },
+  {
+   "id": "TEC_LOAD",
+   "topic": "13_vehicle_technology",
+   "subtopic": "ladung",
+   "title": "Ladung sichern und Überstände",
+   "rule": "Ladung so sichern, dass sie selbst bei Vollbremsung oder plötzlichem Ausweichen nicht verrutscht, umfällt, rollt, herabfällt oder vermeidbaren Lärm macht. Fahrzeug+Ladung max. 2,55 m breit, 4 m hoch. Nach hinten bis 1,50 m (bei Fahrten bis 100 km bis 3 m). Ragt die Ladung mehr als 1 m über die Rückstrahler, kenntlich machen (hellrote Fahne mind. 30 × 30 cm, bei Dunkelheit rote Leuchte und Rückstrahler). Nach vorn: bis 2,50 m Höhe nicht über das Fahrzeug, sonst bis 50 cm.",
+   "numeric_refs": [
+    "STVO_22_WIDTH",
+    "STVO_22_HEIGHT",
+    "STVO_22_REAR_OVERHANG",
+    "STVO_22_REAR_OVERHANG_100KM",
+    "STVO_22_MARK_1M",
+    "STVO_22_FLAG_SIZE",
+    "STVO_22_FRONT_OVERHANG"
+   ],
+   "concepts": [
+    "ladung",
+    "ladungssicherung"
+   ],
+   "keywords": [
+    "Ladung",
+    "Ladungssicherung",
+    "Vollbremsung",
+    "hinausragen",
+    "Fahne",
+    "1,50 m",
+    "1 m",
+    "Rückstrahler",
+    "Dachgepäckträger"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 1",
+     "evidence": "Die Ladung einschließlich Geräte zur Ladungssicherung sowie Ladeeinrichtungen sind so zu verstauen und zu sichern, dass sie selbst bei Vollbremsung oder plötzlicher Ausweichbewegung nicht verrutschen, umfallen, hin- und herrollen, herabfallen oder vermeidbaren Lärm erzeugen können."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 22",
+     "para": "Abs. 4",
+     "evidence": "Nach hinten darf die Ladung bis zu 1,50 m hinausragen"
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Ladung",
+      "sichern"
+     ],
+     "statement": "Die Ladung muss so gesichert sein, dass sie auch bei einer Vollbremsung nicht verrutscht",
+     "truth": true
+    },
+    {
+     "context": [
+      "Ladung",
+      "hinten",
+      "hinausragen",
+      "kenntlich"
+     ],
+     "statement": "Ragt die Ladung mehr als 1 m über die Rückstrahler hinaus, muss sie kenntlich gemacht werden",
+     "truth": true,
+     "numbers": [
+      "1 m"
+     ]
+    },
+    {
+     "context": [
+      "Ladung",
+      "hinten",
+      "hinausragen",
+      "kenntlich"
+     ],
+     "statement": "Eine Kennzeichnung ist erst ab 2 m Überstand nötig",
+     "truth": false
+    },
+    {
+     "context": [
+      "Ladung",
+      "Fahne",
+      "Größe"
+     ],
+     "statement": "Die Fahne muss hellrot und mindestens 30 x 30 cm groß sein",
+     "truth": true
+    },
+    {
+     "context": [
+      "Ladung",
+      "hinten",
+      "hinausragen",
+      "100 km"
+     ],
+     "statement": "Bei Fahrten bis 100 km darf die Ladung bis zu 3 m nach hinten hinausragen",
+     "truth": true,
+     "numbers": [
+      "3 m"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "TEC_DEVICES",
+   "topic": "13_vehicle_technology",
+   "subtopic": "elektronische_geraete",
+   "title": "Handy und elektronische Geräte am Steuer",
+   "rule": "Elektronische Geräte zur Kommunikation, Information oder Organisation (Handy, Navi, Tablet …) nur benutzen, wenn sie weder aufgenommen noch gehalten werden und nur Sprachsteuerung/Vorlesefunktion oder eine kurze, den Verhältnissen angepasste Blickzuwendung nötig ist. Ausnahme: stehendes Fahrzeug mit vollständig ausgeschaltetem Motor (Start-Stopp zählt nicht). Videobrillen verboten. Radarwarner verboten.",
+   "concepts": [
+    "ablenkung",
+    "handy",
+    "aufmerksamkeit"
+   ],
+   "keywords": [
+    "Handy",
+    "Mobiltelefon",
+    "Smartphone",
+    "Navi",
+    "aufnehmen",
+    "halten",
+    "Sprachsteuerung",
+    "Start-Stopp",
+    "Motor aus",
+    "Radarwarner",
+    "Blitzer-App"
+   ],
+   "exam_relevance": 3,
+   "difficulty": 2,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 23",
+     "para": "Abs. 1a",
+     "evidence": "hierfür das Gerät weder aufgenommen noch gehalten wird und"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 23",
+     "para": "Abs. 1b",
+     "evidence": "ein stehendes Fahrzeug, im Falle eines Kraftfahrzeuges vorbehaltlich der Nummer 3 nur, wenn der Motor vollständig ausgeschaltet ist,"
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 23",
+     "para": "Abs. 1b Satz 2",
+     "evidence": "Das fahrzeugseitige automatische Abschalten des Motors im Verbrennungsbetrieb oder das Ruhen des elektrischen Antriebes ist kein Ausschalten des Motors in diesem Sinne."
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 23",
+     "para": "Abs. 1c",
+     "evidence": "Wer ein Fahrzeug führt, darf ein technisches Gerät nicht betreiben oder betriebsbereit mitführen, das dafür bestimmt ist, Verkehrsüberwachungsmaßnahmen anzuzeigen oder zu stören."
+    }
+   ],
+   "claims": [
+    {
+     "context": [
+      "Handy",
+      "Ampel",
+      "rot",
+      "Start-Stopp"
+     ],
+     "statement": "An der roten Ampel darf ich das Handy in die Hand nehmen, wenn die Start-Stopp-Automatik den Motor abgeschaltet hat",
+     "truth": false
+    },
+    {
+     "context": [
+      "Handy",
+      "Motor",
+      "vollständig ausgeschaltet",
+      "stehend"
+     ],
+     "statement": "Bei stehendem Fahrzeug und vollständig ausgeschaltetem Motor darf ich das Handy in die Hand nehmen",
+     "truth": true
+    },
+    {
+     "context": [
+      "Handy",
+      "Fahrt",
+      "Sprachsteuerung",
+      "Halterung"
+     ],
+     "statement": "Während der Fahrt darf ich das Handy mit Sprachsteuerung nutzen, wenn ich es nicht aufnehme oder halte",
+     "truth": true
+    },
+    {
+     "context": [
+      "Handy",
+      "Fahrt",
+      "halten"
+     ],
+     "statement": "Während der Fahrt darf ich das Handy kurz in die Hand nehmen, um eine Nachricht zu lesen",
+     "truth": false
+    },
+    {
+     "context": [
+      "Radarwarner",
+      "Blitzer"
+     ],
+     "statement": "Geräte, die Verkehrsüberwachungsmaßnahmen anzeigen, dürfen nicht betriebsbereit mitgeführt werden",
+     "truth": true
+    },
+    {
+     "context": [
+      "Handy",
+      "Ampel",
+      "Start-Stopp"
+     ],
+     "statement": "Die Start-Stopp-Automatik gilt nicht als Ausschalten des Motors",
+     "truth": true
+    }
+   ]
+  }
+ ]
+}
