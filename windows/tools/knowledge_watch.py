@@ -102,7 +102,56 @@ def _download(url: str, attempts: int = 4) -> bytes:
     raise RuntimeError(f"download failed: {url}: {last}")
 
 
+def _json(url: str) -> dict:
+    return json.loads(_download(url).decode("utf-8"))
+
+
+def _find_law(api: str, abbr: str, search: str) -> dict:
+    """The in-force consolidated version of a law via the RIS search API (exact abbreviation match)."""
+    from urllib.parse import quote
+
+    res = _json(f"{api}/v1/legislation?searchTerm={quote(search)}&size=50")
+    hits = [m["item"] for m in res.get("member", []) if m.get("item", {}).get("@type") == "Legislation"]
+    exact = [h for h in hits if (h.get("abbreviation") or "").replace(" ", "").lower().startswith(abbr.lower())
+             and "ausn" not in (h.get("abbreviation") or "").lower()]
+    exact = [h for h in exact if h.get("legislationLegalForce") == "InForce"] or exact
+    if not exact:
+        raise RuntimeError(f"{abbr}: not found in RIS search ({[h.get('abbreviation') for h in hits]})")
+    exact.sort(key=lambda h: (len(h.get("abbreviation") or ""), h["legislationIdentifier"]))
+    return exact[0]
+
+
+def fetch_raw(out: Path) -> dict:
+    """Download the official LegalDocML ZIP of every configured law; store each XML gzip-compressed."""
+    import gzip
+
+    cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
+    api = cfg["api"]
+    summary = {}
+    for law in cfg["laws"]:
+        item = _find_law(api, law["abbr"], law["search"])
+        zip_url = next(e["contentUrl"] for e in item["encoding"] if e["encodingFormat"] == "application/zip")
+        data = _download(api + zip_url)
+        d = out / law["slug"]
+        d.mkdir(parents=True, exist_ok=True)
+        names = []
+        with zipfile.ZipFile(io.BytesIO(data)) as z:
+            for name in z.namelist():
+                if name.lower().endswith(".xml"):
+                    (d / (Path(name).name + ".gz")).write_bytes(gzip.compress(z.read(name), mtime=0))
+                    names.append(Path(name).name)
+        meta = {"slug": law["slug"], "abbreviation": item.get("abbreviation"), "name": item.get("name"),
+                "eli": item["legislationIdentifier"], "legal_force": item.get("legislationLegalForce"),
+                "zip_url": api + zip_url, "files": sorted(names),
+                "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+        (d / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
+        summary[law["slug"]] = meta
+        print(f"{law['slug']}: {meta['abbreviation']} {meta['eli']} files={len(names)}", flush=True)
+    return summary
+
+
 def fetch(out: Path) -> dict:
+    """Legacy source (gesetze-im-internet.de XML) - not reachable from the CI runners, kept for local use."""
     cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
     out.mkdir(parents=True, exist_ok=True)
     summary = {}
@@ -118,21 +167,13 @@ def fetch(out: Path) -> dict:
             key = norm_key(enbez)
             if keep != ["all"] and key not in keep:
                 continue
-            norms[key] = {
-                "enbez": enbez,
-                "title": n["title"],
-                "text": n["text"],
-                "sha256": hashlib.sha256(normalize(n["text"]).encode()).hexdigest(),
-            }
-        missing = [k for k in keep if k != "all" and k not in norms]
-        snap = {
-            "law": law["slug"], "name": law["name"], "source_url": url, "source_priority": law["priority"],
-            "builddate": parsed["builddate"], "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            "missing_norms": missing, "norms": norms,
-        }
+            norms[key] = {"enbez": enbez, "title": n["title"], "text": n["text"],
+                          "sha256": hashlib.sha256(normalize(n["text"]).encode()).hexdigest()}
+        snap = {"law": law["slug"], "name": law["name"], "source_url": url, "source_priority": law["priority"],
+                "builddate": parsed["builddate"], "fetched_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                "missing_norms": [k for k in keep if k != "all" and k not in norms], "norms": norms}
         (out / f"{law['slug']}.json").write_text(json.dumps(snap, ensure_ascii=False, indent=1), encoding="utf-8")
-        summary[law["slug"]] = {"norms": len(norms), "missing": missing, "builddate": parsed["builddate"]}
-        print(f"{law['slug']}: {len(norms)} norms, builddate {parsed['builddate']}, missing {missing}")
+        summary[law["slug"]] = {"norms": len(norms)}
     return summary
 
 
@@ -219,6 +260,8 @@ def main(argv: list[str] | None = None) -> int:
     sub = ap.add_subparsers(dest="cmd", required=True)
     f = sub.add_parser("fetch")
     f.add_argument("--out", type=Path, required=True)
+    fr = sub.add_parser("fetch-raw")
+    fr.add_argument("--out", type=Path, required=True)
     c = sub.add_parser("compare")
     c.add_argument("--old", type=Path, default=ROOT / "knowledge" / "sources" / "snapshots")
     c.add_argument("--new", type=Path, required=True)
@@ -232,6 +275,8 @@ def main(argv: list[str] | None = None) -> int:
     a = ap.parse_args(argv)
     if a.cmd == "fetch":
         fetch(a.out)
+    elif a.cmd == "fetch-raw":
+        fetch_raw(a.out)
     elif a.cmd == "compare":
         res = compare(a.old, a.new, a.knowledge)
         md = report_md(res)

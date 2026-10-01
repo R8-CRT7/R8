@@ -1,14 +1,132 @@
 {
-  "_comment": "Official ground truth (source priority 1 = law). Laws are public-domain official works (§ 5 UrhG). Only the listed norms are snapshotted. 'all' keeps every norm.",
-  "laws": [
-    {"slug": "stvo_2013", "name": "Straßenverkehrs-Ordnung (StVO)", "priority": 1,
-     "norms": ["§ 1", "§ 2", "§ 3", "§ 4", "§ 5", "§ 6", "§ 7", "§ 7a", "§ 8", "§ 9", "§ 9a", "§ 10", "§ 11", "§ 12", "§ 13", "§ 14", "§ 15", "§ 15a", "§ 16", "§ 17", "§ 18", "§ 19", "§ 20", "§ 21", "§ 21a", "§ 22", "§ 23", "§ 25", "§ 26", "§ 34", "§ 35", "§ 36", "§ 37", "§ 38", "§ 39", "§ 40", "§ 41", "§ 42", "§ 43", "Anlage 1", "Anlage 2", "Anlage 3", "Anlage 4"]},
-    {"slug": "stvg", "name": "Straßenverkehrsgesetz (StVG)", "priority": 1,
-     "norms": ["§ 2", "§ 2a", "§ 2b", "§ 2c", "§ 4", "§ 24a", "§ 24c"]},
-    {"slug": "fev_2010", "name": "Fahrerlaubnis-Verordnung (FeV)", "priority": 1,
-     "norms": ["§ 4", "§ 5", "§ 6", "§ 10", "§ 15", "§ 16", "§ 17", "§ 32", "§ 34", "§ 48a", "Anlage 7", "Anlage 13"]},
-    {"slug": "stvzo_2012", "name": "Straßenverkehrs-Zulassungs-Ordnung (StVZO)", "priority": 1,
-     "norms": ["§ 29", "§ 32", "§ 34", "§ 35a", "§ 35h", "§ 36", "§ 41", "§ 42", "§ 49a", "§ 50", "§ 51", "§ 52", "§ 53", "§ 53a", "§ 54", "§ 55", "§ 56", "§ 57"]},
-    {"slug": "bkatv_2013", "name": "Bußgeldkatalog-Verordnung (BKatV)", "priority": 1, "norms": ["all"]}
-  ]
+ "_comment": "Official ground truth (source priority 1 = law) from the Rechtsinformationsportal des Bundes (RIS API, testphase.rechtsinformationen.bund.de, BMJ / DigitalService). gesetze-im-internet.de is not reachable from the CI runners. Laws are public-domain official works (§ 5 UrhG). Only the listed norms are snapshotted; 'all' keeps every norm.",
+ "laws": [
+  {
+   "slug": "stvo_2013",
+   "name": "Straßenverkehrs-Ordnung (StVO)",
+   "priority": 1,
+   "norms": [
+    "§ 1",
+    "§ 2",
+    "§ 3",
+    "§ 4",
+    "§ 5",
+    "§ 6",
+    "§ 7",
+    "§ 7a",
+    "§ 8",
+    "§ 9",
+    "§ 9a",
+    "§ 10",
+    "§ 11",
+    "§ 12",
+    "§ 13",
+    "§ 14",
+    "§ 15",
+    "§ 15a",
+    "§ 16",
+    "§ 17",
+    "§ 18",
+    "§ 19",
+    "§ 20",
+    "§ 21",
+    "§ 21a",
+    "§ 22",
+    "§ 23",
+    "§ 25",
+    "§ 26",
+    "§ 34",
+    "§ 35",
+    "§ 36",
+    "§ 37",
+    "§ 38",
+    "§ 39",
+    "§ 40",
+    "§ 41",
+    "§ 42",
+    "§ 43",
+    "Anlage 1",
+    "Anlage 2",
+    "Anlage 3",
+    "Anlage 4"
+   ],
+   "abbr": "StVO",
+   "search": "Straßenverkehrs-Ordnung"
+  },
+  {
+   "slug": "stvg",
+   "name": "Straßenverkehrsgesetz (StVG)",
+   "priority": 1,
+   "norms": [
+    "§ 2",
+    "§ 2a",
+    "§ 2b",
+    "§ 2c",
+    "§ 4",
+    "§ 24a",
+    "§ 24c"
+   ],
+   "abbr": "StVG",
+   "search": "Straßenverkehrsgesetz"
+  },
+  {
+   "slug": "fev_2010",
+   "name": "Fahrerlaubnis-Verordnung (FeV)",
+   "priority": 1,
+   "norms": [
+    "§ 4",
+    "§ 5",
+    "§ 6",
+    "§ 10",
+    "§ 15",
+    "§ 16",
+    "§ 17",
+    "§ 32",
+    "§ 34",
+    "§ 48a",
+    "Anlage 7",
+    "Anlage 13"
+   ],
+   "abbr": "FeV",
+   "search": "Fahrerlaubnis-Verordnung"
+  },
+  {
+   "slug": "stvzo_2012",
+   "name": "Straßenverkehrs-Zulassungs-Ordnung (StVZO)",
+   "priority": 1,
+   "norms": [
+    "§ 29",
+    "§ 32",
+    "§ 34",
+    "§ 35a",
+    "§ 35h",
+    "§ 36",
+    "§ 41",
+    "§ 42",
+    "§ 49a",
+    "§ 50",
+    "§ 51",
+    "§ 52",
+    "§ 53",
+    "§ 53a",
+    "§ 54",
+    "§ 55",
+    "§ 56",
+    "§ 57"
+   ],
+   "abbr": "StVZO",
+   "search": "Straßenverkehrs-Zulassungs-Ordnung"
+  },
+  {
+   "slug": "bkatv_2013",
+   "name": "Bußgeldkatalog-Verordnung (BKatV)",
+   "priority": 1,
+   "norms": [
+    "all"
+   ],
+   "abbr": "BKatV",
+   "search": "Bußgeldkatalog-Verordnung"
+  }
+ ],
+ "api": "https://testphase.rechtsinformationen.bund.de"
 }

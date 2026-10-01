@@ -1,9 +1,9 @@
 name: knowledge watch (official law sources)
 
-# Daily: download the official law texts (gesetze-im-internet.de), compare them with the reviewed snapshots in
-# knowledge/sources/snapshots and report changes + affected knowledge. NEVER changes knowledge automatically.
-# Bootstrap/refresh of the snapshots happens only on a push whose message contains [refresh-sources]
-# (a deliberate, reviewed step).
+# Daily: download the in-force law texts from the Rechtsinformationsportal des Bundes (RIS API), compare them
+# with the reviewed raw sources + snapshots in knowledge/sources and report changes and the affected knowledge.
+# NEVER changes knowledge automatically. Raw sources are refreshed only by an explicit push whose message
+# contains [refresh-sources] (a deliberate, reviewed step).
 
 on:
   schedule:
@@ -25,41 +25,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Connectivity diagnostics
+      - name: Fetch official sources (RIS API)
+        timeout-minutes: 15
+        run: python windows/tools/knowledge_watch.py fetch-raw --out "$RUNNER_TEMP/raw"
+      - name: Compare raw sources with the reviewed ones
+        run: |
+          {
+            echo "# Knowledge watch - $(date -u +%F)"
+            if [ -d knowledge/sources/raw ]; then
+              diff -rq knowledge/sources/raw "$RUNNER_TEMP/raw" | grep -v meta.json && echo "**Status: CHANGE DETECTED - review needed**" || echo "**Status: NO_CHANGE**"
+            else
+              echo "**Status: no reviewed sources yet (bootstrap)**"
+            fi
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Impact analysis (parsed snapshots)
+        if: hashFiles('knowledge/sources/snapshots/*.json') != ''
         continue-on-error: true
         run: |
-          for u in https://www.gesetze-im-internet.de/ https://www.gesetze-im-internet.de/stvo_2013/xml.zip http://www.gesetze-im-internet.de/stvo_2013/xml.zip https://testphase.rechtsinformationen.bund.de/ https://www.recht.bund.de/; do
-            echo "== $u"; curl -sS -o /dev/null -w "http=%{http_code} ip=%{remote_ip} t=%{time_total}s size=%{size_download}\n" --max-time 90 "$u" || true
-          done
-      - name: Discover rechtsinformationen.bund.de API (temporary)
-        continue-on-error: true
-        run: |
-          B=https://testphase.rechtsinformationen.bund.de
-          for path in "/v1/legislation?searchTerm=Stra%C3%9Fenverkehrs-Ordnung&size=3" "/v1/legislation?searchTerm=StVO&size=3" "/v1/legislation?searchTerm=Fahrerlaubnis-Verordnung&size=2" "/v1/document?searchTerm=StVO&size=2" "/openapi.json" "/v3/api-docs"; do
-            echo "======== $path"; curl -sS --max-time 60 "$B$path" | head -c 6000; echo
-          done
-      - name: Fetch official sources
-        timeout-minutes: 8
-        run: python windows/tools/knowledge_watch.py fetch --out "$RUNNER_TEMP/new"
-      - name: Compare with reviewed snapshots + impact analysis
-        run: |
-          python windows/tools/knowledge_watch.py compare --new "$RUNNER_TEMP/new" \
-            --report "$RUNNER_TEMP/report.md" --json "$RUNNER_TEMP/report.json"
+          python windows/tools/knowledge_watch.py parse --raw "$RUNNER_TEMP/raw" --out "$RUNNER_TEMP/snap"
+          python windows/tools/knowledge_watch.py compare --new "$RUNNER_TEMP/snap" --report "$RUNNER_TEMP/report.md" --json "$RUNNER_TEMP/report.json"
           cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"
-      - uses: actions/upload-artifact@v4
-        with:
-          name: knowledge-watch-report
-          path: |
-            ${{ runner.temp }}/report.md
-            ${{ runner.temp }}/report.json
-      - name: Refresh snapshots (only on an explicit [refresh-sources] push)
+      - name: Refresh raw sources (only on an explicit [refresh-sources] push)
         if: github.event_name == 'push' && contains(github.event.head_commit.message, '[refresh-sources]')
         run: |
-          mkdir -p knowledge/sources/snapshots
-          cp "$RUNNER_TEMP"/new/*.json knowledge/sources/snapshots/
+          rm -rf knowledge/sources/raw && mkdir -p knowledge/sources && cp -r "$RUNNER_TEMP/raw" knowledge/sources/raw
           git config user.name "knowledge-watch[bot]"
           git config user.email "knowledge-watch@users.noreply.github.com"
-          git add knowledge/sources/snapshots
-          git diff --cached --quiet && echo "snapshots unchanged" && exit 0
-          git commit -m "sources: official law snapshots ($(date -u +%Y-%m-%d)) [skip ci]"
+          git add knowledge/sources/raw
+          git diff --cached --quiet && echo "sources unchanged" && exit 0
+          git commit -m "sources: official law texts from the RIS API ($(date -u +%Y-%m-%d)) [skip ci]"
           git push origin HEAD:${{ github.ref_name }}
