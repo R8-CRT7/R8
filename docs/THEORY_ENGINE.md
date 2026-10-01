@@ -121,6 +121,86 @@ Regelauswahl-Genauigkeit (synthetisch): 99,4 %.
    (`safety.theory_crosscheck`, Standard aus). Als alleiniger Antwortgeber ist sie (noch) nicht geeignet.
    **Keine Aussage über 100 % Zuverlässigkeit.**
 
+## Meilenstein „Generalisierung + unabhängige Validierung“
+
+**Holdout:** vier getrennte Mengen (`smart360/theory/splits.py`).
+* TRAIN = die synthetischen Varianten (Generator).
+* VALIDATION = eigene Varianten mit Seed 4242: Akteur, Rauschen, Reihenfolge, Fragestamm, negierte Frage,
+  Kurzform, konkurrierende Regel, lange irrelevante Einleitung.
+* GOLDEN INTERNAL = v1 + v2, per SHA-256 eingefroren.
+* GOLDEN EXTERNAL = `tests/theory/golden_external/`, **nur Auswertung**:
+  * `load_golden_external(purpose="evaluation")`, alles andere wird verweigert.
+  * `test_holdout.py` prüft, dass die Wissensbasis, der Generator, die Validierung und die KI-Prompts keine
+    Golden-Datei lesen und keinen Golden-Text enthalten.
+  * Die externe Menge ist **leer**: Sie wartet auf menschlich geschriebene Fragen.
+
+**Eingefrorene Ausgangslage:** `reports/generalization_baseline.json`, Hash-Test in `test_generalization.py`.
+
+**Behobene Ursachen-Klassen** (Ausgangspunkt: Ursachenanalyse `reports/golden_uncertain_analysis.md`; keine
+einzelne Golden-Frage wurde als Claim aufgenommen):
+1. **Semantische Normalisierung** (`knowledge/semantics/lexicon.json`, 57 Einträge):
+   * Jeder Eintrag hat `canonical_concept`, `valid_context`, `invalid_context` und `confidence`.
+   * Handlungskonzepte (WARTEN, WEITERFAHREN, ANHALTEN, VORLASSEN …) mit Unverträglichkeiten.
+   * Exklusive Situationen: Polizeizeichen, Ampelfarbe, Haltverbotsart, Zeichennummer.
+   * Gegensätze: rechts/links.
+   * Eine Verneinung wird nie von einem Platzhalter verschluckt.
+2. **Wortbildung:**
+   * Komposita werden nur in Teile zerlegt, die in der Wissensbasis vorkommen.
+   * Trennbare Verben werden zusammengesetzt („schleppen … ab“).
+   * Partizipien werden auf den Verbstamm zurückgeführt.
+   * Flexions-Alias für Stämme, die der Stemmer verschieden behandelt.
+3. **Bedingungen und Spezialität:**
+   * Qualifier, die die Frage nennt, eine allgemeine Regel aber nicht, machen die allgemeine Regel unsicher.
+   * Ein Oberbegriff deckt den Unterbegriff ab (Wohnanhänger ⊂ Anhänger).
+   * Sonderfälle einer Regel, die die Frage nicht nennt, gelten nicht (`condition_unmet`).
+   * Widerspricht eine situationsspezifischere Regel der allgemeinen, ist das Ergebnis UNKNOWN (Ausnahme).
+4. **Polarität am richtigen Prädikat:**
+   * „nicht X, sondern Y“
+   * ein vorangestelltes „Nichts,“
+   * „niemand“
+   * „nicht mehr X als“ → höchstens
+   * Kurzantworten auf W-Fragen werden mit der Frage gelesen, und eine Negativfrage wird dabei nicht doppelt
+     invertiert.
+   * Eine nackte Zahl übernimmt die Wahrheit des passenden Claims.
+5. **Gemeinsame Lesart der Antworten:**
+   * Schließt die Handlung einer Antwort die einer belegten Antwort aus, ist sie FALSCH.
+   * „Wer hat Vorrang?“: Nur eine Partei hat Vorrang.
+   * „A und B“ wird Teilsatz für Teilsatz geprüft.
+   * **Kein Ausschlussverfahren:** Gemessen machte es aus versteckten Fehlurteilen falsch-sichere Antworten.
+6. **Zeichen:**
+   * Abdeckung statt Kosinus, der amtliche Name zählt.
+   * Eine „ohne X“-Antwort widerspricht einem Zeichen, das X anordnet.
+   * Fällt die Bedeutung zu knapp aus, wird der amtliche Text herangezogen.
+   * Bei unklarer Verneinung: UNKNOWN.
+7. **Fehler im Code:** Modalwörter mit Umlaut (dürfen, müssen, unzulässig) wurden nicht aus den Inhaltswörtern
+   entfernt, weil der Stamm vor der Umlautfaltung gebildet wurde.
+
+**Ergebnisse** (Schwellen unverändert, `safety.theory_crosscheck` bleibt aus):
+
+| Satz | n | overall accuracy | coverage | accuracy_when_answered | UNCERTAIN | false-confident |
+|---|---|---|---|---|---|---|
+| Ausgangslage synthetisch | 5 152 | 76,0 % | 76,0 % | 100 % | 24,0 % | 0 % |
+| Synthetisch jetzt | 5 240 | 77,2 % | 77,2 % | 100 % | 22,8 % | 0 % |
+| Validation (8 Varianten) | 2 016 | 71,4 % | 71,4 % | 100 % | 28,6 % | 0 % |
+| ↳ ohne „konkurrierende Regel“ | 1 764 | ≈ 80 % | | 100 % | ≈ 20 % | 0 % |
+| ↳ konkurrierende Regel als Zusatz-Distraktor | 252 | 9,5 % | 9,5 % | 100 % | 90,5 % | 0 % |
+| Golden v1 (erste Messung → jetzt) | 80 | 21,3 % → **52,5 %** | 52,5 % | 85 % → 100 % | 75,0 % → 47,5 % | 3,75 % → **0 %** |
+| Golden v2 (erste Messung → jetzt) | 80 | 20,0 % → **38,8 %** | 38,8 % | 84 % → 100 % | 76,3 % → 61,3 % | 3,75 % → **0 %** |
+| **Golden intern gesamt** | 160 | **45,6 %** | 45,6 % | 100 % | **54,4 %** | **0 %** |
+| Golden extern | 0 | – (noch keine Fragen) | | | | |
+
+**Ziel verfehlt:** 60 % overall und höchstens 40 % UNCERTAIN wurden nicht erreicht. Das false-confident-Ziel
+(≤ 1 %) ist erfüllt. Die Gründe stehen in `reports/golden_uncertain_analysis.md`. Die größten Restblöcke sind:
+* Paraphrasen ohne Wortüberlappung (22)
+* Falsch-Optionen, die keine Regel ausdrücklich ausschließt (16)
+* Ja/Nein-Fragen zu fehlendem Wissen (13)
+* Zahlen in Bedingungen (8)
+
+Rund 90 Einzelantworten haben **keinen** inhaltlich passenden Claim in der Wissensbasis. Das ist eine
+Wissenslücke, die man nicht mit „Tricks“ schließen darf. Die Golden-Sets wurden zur Ursachenanalyse benutzt und
+sind deshalb **nicht mehr unabhängig**. Die eigentliche Messung der Generalisierung steht noch aus und kann nur
+die externe, menschlich geschriebene Menge liefern.
+
 ## Tägliche Wissensprüfung (`.github/workflows/knowledge-watch.yml`, 04:17 UTC)
 1. **Erkennen:** RIS-API, nur gültige Fassungen.
 2. **Vergleichen:** Rohtexte gegen die geprüften Texte.
@@ -143,9 +223,9 @@ Snapshot.
 * Videos: nur die Vollständigkeitsprüfung (ein Frame reicht nicht). Es gibt noch keine Analyse über mehrere
   Frames.
 * Die Abdeckung ist dünn bei:
-  * Zusatzzeichen
   * Fahrphysik jenseits der Faustformeln
-  * Tunnel und Wild
-  * Gefahrgut
+  * Assistenzsysteme (keine amtliche Norm im Bestand)
   * Umweltfahrweise im Detail
+* Tunnel (Z 327), Zusatzzeichen (§ 39 Abs. 3), Umweltzone (Z 270.1), Gefahrgut (Z 261/269) und Wildwechsel
+  (Z 142) sind nur in Grundzügen abgedeckt (verified).
 * Wenige Paraphrasen: Die Engine versteht vor allem Formulierungen, die nah an ihren Claims sind.

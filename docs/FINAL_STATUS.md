@@ -126,3 +126,24 @@ Architecture, metrics and limits: [`THEORY_ENGINE.md`](THEORY_ENGINE.md). Covera
   diagnosis, secret storage) are unchanged.
 * Daily knowledge watch (`knowledge-watch.yml`): reports changes, never applies them automatically.
 * Real-device status unchanged: real Windows PC ❌, real 360° software ❌, real API call ❌, iPhone ❌.
+
+### Milestone "Generalization + independent validation" (same branch, not released)
+* **Holdout:** four splits (train / validation / golden internal / golden external). The external golden set is
+  evaluation-only and still **empty**: it needs human-written questions. Tests prove that no golden data
+  reaches the knowledge base, generator or prompts. The baseline is frozen in
+  `reports/generalization_baseline.json`.
+* **Golden internal (160 questions):**
+  * overall accuracy: **45.6 %** (first runs: 20-21 %)
+  * UNCERTAIN: **54.4 %**
+  * false-confident: **0 %** (first runs: 3.75 %)
+  * accuracy when answered: 100 %
+* **Target not reached:** the goal was 60 % overall with at most 40 % UNCERTAIN. Root causes are in
+  `reports/golden_uncertain_analysis.md`. No threshold was lowered, and no golden question became a claim.
+* **Other sets:**
+  * Synthetic: 77.2 %, 0 false-confident.
+  * Validation: 71.4 %, 0 false-confident. The competing-rule variant stays mostly UNCERTAIN, by design.
+* **Learn mode:** never explains an option the engine cannot prove. It shows "Diese Regel kann ich noch nicht
+  zuverlässig belegen." instead.
+* **Unchanged:** `safety.theory_crosscheck` default off, safety freeze kept, FeV/StVG/BKatV still unverified
+  (gesetze-im-internet.de blocked).
+* Real-device status unchanged: real Windows PC ❌, real 360° software ❌, real API call ❌, iPhone ❌.

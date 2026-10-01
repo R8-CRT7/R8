@@ -28,25 +28,30 @@ def main() -> int:
             for e in r.evals:
                 if e.verdict == Verdict.UNKNOWN:
                     continue
-                should = e.index in it.correct
+                negative = "negative_question" in r.kinds and "slot_answer" not in e.flags  # 'Welche ist falsch?'
+                should = (e.index in it.correct) != negative
                 if (e.verdict == Verdict.TRUE) != should:
                     hidden.append((it.id, e.index))
     missing = [i for i in unc if i not in LABELS]
     prim = Counter(LABELS[i][0] for i in unc if i in LABELS)
     sec = Counter(s for i in unc if i in LABELS for s in LABELS[i][1])
     n = len(unc)
+    before = Counter(v[0] for v in LABELS.values())
+    nb = len(LABELS)
     lines = ["# Golden v1/v2 – Analyse der UNCERTAIN-Fälle", "",
-             f"Stand: Golden v1+v2 (160 Fragen), {n} UNCERTAIN ({n / len(items):.0%}). "
-             "Jeder Fall wurde **einzeln von Hand** einer Hauptursache zugeordnet "
-             "(`windows/tools/analysis/golden_uncertain_labels.py`); die Engine nutzt diese Labels nicht.",
-             "", "| Kategorie | Anzahl | Prozent | Nebenursache in | Beschreibung | Empfohlene Verbesserung |",
-             "|---|---|---|---|---|---|"]
-    for cat, cnt in prim.most_common():
+             f"Analyse-Zeitpunkt (vor dem Meilenstein): {nb} UNCERTAIN von 160. Jeder Fall wurde **einzeln von Hand** "
+             "einer Hauptursache zugeordnet (`windows/tools/analysis/golden_uncertain_labels.py`); die Engine nutzt "
+             "diese Labels nicht. Behoben wurden nur Ursachen-Klassen (allgemeine Sprach-/Logikregeln), keine "
+             "einzelnen Fragen.",
+             "", f"Jetzt (frischer Lauf): **{n} UNCERTAIN ({n / len(items):.0%})**.", "",
+             "| Kategorie | vorher | vorher % | jetzt | Nebenursache in (jetzt) | Beschreibung | Empfohlene Verbesserung |",
+             "|---|---|---|---|---|---|---|"]
+    for cat, cnt in before.most_common():
         desc, fix = CATEGORIES[cat]
-        lines.append(f"| {cat} | {cnt} | {cnt / n:.0%} | {sec.get(cat, 0)} | {desc} | {fix} |")
+        lines.append(f"| {cat} | {cnt} | {cnt / nb:.0%} | {prim.get(cat, 0)} | {sec.get(cat, 0)} | {desc} | {fix} |")
     lines += ["", "## Beispiele je Kategorie (eigene Kurzbeschreibung)", ""]
-    for cat, _ in prim.most_common():
-        ex = [f"{i}: {LABELS[i][2]}" for i in unc if i in LABELS and LABELS[i][0] == cat][:5]
+    for cat, _ in before.most_common():
+        ex = [f"{i}: {LABELS[i][2]}" for i in LABELS if LABELS[i][0] == cat][:5]
         lines.append(f"**{cat}**")
         lines += [f"- {e}" for e in ex]
         lines.append("")
@@ -57,7 +62,8 @@ def main() -> int:
               "beseitigen statt aufdecken.", "",
               ", ".join(f"{i}#{a}" for i, a in hidden) or "-", ""]
     if missing:
-        lines += ["## Noch nicht gelabelt", "", ", ".join(missing), ""]
+        lines += ["## Neu UNCERTAIN (vorher beantwortet, z. B. durch strengere Sicherheitsregeln)", "",
+                  ", ".join(missing), ""]
     out = ROOT / "reports" / "golden_uncertain_analysis.md"
     out.write_text("\n".join(lines), encoding="utf-8")
     print(f"{n} uncertain, {len(missing)} unlabelled, {len(hidden)} hidden wrong verdicts -> {out}")

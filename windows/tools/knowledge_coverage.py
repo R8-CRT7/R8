@@ -26,12 +26,12 @@ GAPS = {
     "01_personal": "Fahreignung, Sehvermögen, Erste-Hilfe-Pflicht beim Erwerb (FeV, nicht verifizierbar)",
     "02_human_risk": "Drogen/Cannabis-Grenzwerte (StVG § 24a, nicht verifizierbar), Medikamentengruppen",
     "03_legal": "Bußgeldkatalog (BKatV nicht im RIS-Testbestand), Haftung/Versicherung, Fahrerlaubnis auf Probe im Detail",
-    "04_road_system": "Straßenarten im Detail, Tunnel, Bahnübergänge ohne Andreaskreuz in Sonderfällen",
-    "06_signs": "Zusatzzeichen (1000er-Reihe) noch ohne eigene Kurzbedeutungen; viele Zeichen nur mit amtlicher Bezeichnung",
+    "04_road_system": "Straßenarten im Detail, Bahnübergänge ohne Andreaskreuz in Sonderfällen",
+    "06_signs": "Zusatzzeichen nur allgemein (§ 39 Abs. 3), die 1000er-Reihe ohne eigene Kurzbedeutungen; viele Zeichen nur mit amtlicher Bezeichnung",
     "08_speed_distance": "Kurven-/Fliehkraft-Physik, Aquaplaning-Geschwindigkeiten (keine amtliche Zahl)",
-    "11_special": "Verhalten in Tunneln, bei Wildwechsel, Erste Hilfe im Detail",
+    "11_special": "Tunnel (Z 327) und Wildwechsel (Z 142) nur in Grundzügen, Erste Hilfe im Detail",
     "12_learning": "Prüfungsstruktur (FeV Anlage 7) nicht amtlich verifizierbar",
-    "13_vehicle_technology": "Bremsen-/Lenkungsprüfung, Kraftstoffsparen im Detail, Gefahrgut",
+    "13_vehicle_technology": "Bremsen-/Lenkungsprüfung, Kraftstoffsparen im Detail, Assistenzsysteme (keine amtliche Norm im Bestand), Gefahrgut nur Z 261/269",
     "14_trailers": "Fahrerlaubnisklassen B/B96/BE (FeV § 6, nicht verifizierbar), Stützlast, Anhängelast-Berechnung",
 }
 

@@ -943,7 +943,10 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
 
     ordered = [evals[i] for i in range(1, n + 1)]
     want = Verdict.FALSE if neg_q else Verdict.TRUE
-    selected = tuple(e.index for e in ordered if e.verdict == want)
+    # a slot answer was read together with the question ('Wo ist das Halten unzulässig?' + 'Auf Bahnübergängen'),
+    # so its verdict already carries the question's polarity - it must not be inverted a second time
+    selected = tuple(e.index for e in ordered
+                     if e.verdict == (Verdict.TRUE if "slot_answer" in e.flags else want))
 
     # second pass
     unknown = [e.index for e in ordered if e.verdict == Verdict.UNKNOWN]

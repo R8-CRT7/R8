@@ -1,19 +1,21 @@
 # Golden v1/v2 – Analyse der UNCERTAIN-Fälle
 
-Stand: Golden v1+v2 (160 Fragen), 117 UNCERTAIN (73%). Jeder Fall wurde **einzeln von Hand** einer Hauptursache zugeordnet (`windows/tools/analysis/golden_uncertain_labels.py`); die Engine nutzt diese Labels nicht.
+Analyse-Zeitpunkt (vor dem Meilenstein): 117 UNCERTAIN von 160. Jeder Fall wurde **einzeln von Hand** einer Hauptursache zugeordnet (`windows/tools/analysis/golden_uncertain_labels.py`); die Engine nutzt diese Labels nicht. Behoben wurden nur Ursachen-Klassen (allgemeine Sprach-/Logikregeln), keine einzelnen Fragen.
 
-| Kategorie | Anzahl | Prozent | Nebenursache in | Beschreibung | Empfohlene Verbesserung |
-|---|---|---|---|---|---|
-| CONTRARY_NOT_DERIVABLE | 28 | 24% | 8 | Die richtige Option wird gefunden, die falschen Optionen lassen sich aber nicht widerlegen, weil keine Regel die abweichende Handlung ausdrücklich verbietet | Handlungs-Konzepte mit Unverträglichkeiten (WARTEN vs. WEITERFAHREN, ANHALTEN vs. DURCHROLLEN …): eine Option, die der von der Regel verlangten Handlung in derselben Situation widerspricht, ist FALSCH |
-| PARAPHRASE_MISMATCH | 26 | 22% | 9 | Regel vorhanden, die Antwort sagt dasselbe mit anderen Worten/Satzbau | semantische Normalisierung (Konzepte statt Wörter), Handlungs-/Objekt-Konzepte |
-| YES_NO_PROPOSITION | 16 | 14% | 0 | Ja/Nein-Frage; die Aussage steckt in der Frage, die Antwort ist nur 'Ja'/'Nein' | Frage in eine Proposition umbauen (Modalverb + Prädikat) und strukturell prüfen |
-| NUMERIC_CONTEXT | 14 | 12% | 4 | Zahl hängt an einer Bedingung der Frage (Fahrzeug, Sicht, Ort) oder an einer anderen Größe/Einheit; die Zahlenregel wird nicht der Frage zugeordnet | Bedingungs-Extraktion (Fahrzeug, Sicht, Ort, Größe) + Zahlenregeln strukturell abrufen (quantity, applies_to) |
-| ANSWER_REFERENCE_UNKNOWN | 8 | 7% | 1 | Kurzantwort verweist auf eine Rolle der Frage ('Ich', 'Der Gegenverkehr', 'Rechts', 'Die gelben') | Antwort-Rollen auflösen: Sprecher/Akteur/Gegenüber aus der Frage übernehmen |
-| SIGN_NAME_MATCH | 8 | 7% | 0 | 'Was bedeutet Zeichen X?' mit dem amtlichen Namen als Antwort wird nicht sicher zugeordnet | Zeichen-Antworten zuerst gegen die amtlichen Namen aller Zeichen prüfen |
-| QUESTION_TYPE_UNKNOWN | 7 | 6% | 1 | Fragetyp nicht erkannt ('Was ist untersagt?', 'Ab wann …?', 'Welche Aussage ist falsch?' ohne Kontext) | Intent-Erkennung (PROHIBITION, PERMISSION, REQUIRED_ACTION …) und Antwort im Licht des Intents lesen |
-| CONDITION_EXTRACTION | 5 | 4% | 6 | Bedingungen der Frage (Alter, Größe, 'ohne', 'ausgefallen') werden nicht strukturiert und nicht mit den Regelbedingungen verglichen | Bedingungs-Rahmen (Akteur, Fahrzeug, Ort, Wetter, Zustand, Ausnahme) aus der Frage |
-| SOURCE_UNVERIFIED | 4 | 3% | 0 | Regel nur aus nicht verifizierbarer Quelle (FeV/StVG) | amtliche Quelle beschaffen |
-| COMPOSITE_RULE | 1 | 1% | 3 | Antwort braucht mehrere Regeln oder eine Folgerung aus einer Regel (z. B. 'rechten Blinker setzen' widerspricht 'nicht blinken') | Regel-Komposition + Ableitungen über Konzepte |
+Jetzt (frischer Lauf): **87 UNCERTAIN (54%)**.
+
+| Kategorie | vorher | vorher % | jetzt | Nebenursache in (jetzt) | Beschreibung | Empfohlene Verbesserung |
+|---|---|---|---|---|---|---|
+| CONTRARY_NOT_DERIVABLE | 28 | 24% | 16 | 6 | Die richtige Option wird gefunden, die falschen Optionen lassen sich aber nicht widerlegen, weil keine Regel die abweichende Handlung ausdrücklich verbietet | Handlungs-Konzepte mit Unverträglichkeiten (WARTEN vs. WEITERFAHREN, ANHALTEN vs. DURCHROLLEN …): eine Option, die der von der Regel verlangten Handlung in derselben Situation widerspricht, ist FALSCH |
+| PARAPHRASE_MISMATCH | 26 | 22% | 22 | 8 | Regel vorhanden, die Antwort sagt dasselbe mit anderen Worten/Satzbau | semantische Normalisierung (Konzepte statt Wörter), Handlungs-/Objekt-Konzepte |
+| YES_NO_PROPOSITION | 16 | 14% | 13 | 0 | Ja/Nein-Frage; die Aussage steckt in der Frage, die Antwort ist nur 'Ja'/'Nein' | Frage in eine Proposition umbauen (Modalverb + Prädikat) und strukturell prüfen |
+| NUMERIC_CONTEXT | 14 | 12% | 8 | 3 | Zahl hängt an einer Bedingung der Frage (Fahrzeug, Sicht, Ort) oder an einer anderen Größe/Einheit; die Zahlenregel wird nicht der Frage zugeordnet | Bedingungs-Extraktion (Fahrzeug, Sicht, Ort, Größe) + Zahlenregeln strukturell abrufen (quantity, applies_to) |
+| ANSWER_REFERENCE_UNKNOWN | 8 | 7% | 6 | 1 | Kurzantwort verweist auf eine Rolle der Frage ('Ich', 'Der Gegenverkehr', 'Rechts', 'Die gelben') | Antwort-Rollen auflösen: Sprecher/Akteur/Gegenüber aus der Frage übernehmen |
+| SIGN_NAME_MATCH | 8 | 7% | 5 | 0 | 'Was bedeutet Zeichen X?' mit dem amtlichen Namen als Antwort wird nicht sicher zugeordnet | Zeichen-Antworten zuerst gegen die amtlichen Namen aller Zeichen prüfen |
+| QUESTION_TYPE_UNKNOWN | 7 | 6% | 5 | 1 | Fragetyp nicht erkannt ('Was ist untersagt?', 'Ab wann …?', 'Welche Aussage ist falsch?' ohne Kontext) | Intent-Erkennung (PROHIBITION, PERMISSION, REQUIRED_ACTION …) und Antwort im Licht des Intents lesen |
+| CONDITION_EXTRACTION | 5 | 4% | 5 | 3 | Bedingungen der Frage (Alter, Größe, 'ohne', 'ausgefallen') werden nicht strukturiert und nicht mit den Regelbedingungen verglichen | Bedingungs-Rahmen (Akteur, Fahrzeug, Ort, Wetter, Zustand, Ausnahme) aus der Frage |
+| SOURCE_UNVERIFIED | 4 | 3% | 4 | 0 | Regel nur aus nicht verifizierbarer Quelle (FeV/StVG) | amtliche Quelle beschaffen |
+| COMPOSITE_RULE | 1 | 1% | 1 | 3 | Antwort braucht mehrere Regeln oder eine Folgerung aus einer Regel (z. B. 'rechten Blinker setzen' widerspricht 'nicht blinken') | Regel-Komposition + Ableitungen über Konzepte |
 
 ## Beispiele je Kategorie (eigene Kurzbeschreibung)
 
@@ -84,6 +86,10 @@ Stand: Golden v1+v2 (160 Fragen), 117 UNCERTAIN (73%). Jeder Fall wurde **einzel
 
 ## Versteckte Fehlurteile
 
-In UNCERTAIN-Fragen gab es **22 Einzelurteile**, die dem erwarteten Ergebnis widersprechen, aber durch die Gesamt-Unsicherheit verdeckt waren. Wer UNCERTAIN einfach senkt, macht daraus falsch-sichere Antworten – deshalb werden sie hier mitgezählt und jede Verbesserung muss sie beseitigen statt aufdecken.
+In UNCERTAIN-Fragen gab es **1 Einzelurteile**, die dem erwarteten Ergebnis widersprechen, aber durch die Gesamt-Unsicherheit verdeckt waren. Wer UNCERTAIN einfach senkt, macht daraus falsch-sichere Antworten – deshalb werden sie hier mitgezählt und jede Verbesserung muss sie beseitigen statt aufdecken.
 
-G009#2, G014#3, G015#2, G016#1, G026#1, G026#2, G027#2, G031#1, G039#1, G048#2, G049#3, G060#2, G064#2, G069#2, G075#2, G080#1, H012#1, H037#2, H040#2, H048#1, H048#2, H070#1
+G080#1
+
+## Neu UNCERTAIN (vorher beantwortet, z. B. durch strengere Sicherheitsregeln)
+
+G063, H061
