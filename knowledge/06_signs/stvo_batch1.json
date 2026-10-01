@@ -1,0 +1,278 @@
+{
+ "items": [
+  {
+   "id": "SGN_LANE_LIGHTS",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 3",
+     "evidence": "Rote gekreuzte Schrägbalken ordnen an: „Der Fahrstreifen darf nicht benutzt werden“.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 3",
+     "evidence": "Ein grüner, nach unten gerichteter Pfeil bedeutet: „Der Verkehr auf dem Fahrstreifen ist freigegeben“.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 37",
+     "para": "Abs. 3",
+     "evidence": "Ein gelb blinkender, schräg nach unten gerichteter Pfeil ordnet an: „Fahrstreifen in Pfeilrichtung wechseln“.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "lichtzeichen",
+   "title": "Dauerlichtzeichen über Fahrstreifen",
+   "rule": "Rote gekreuzte Schrägbalken: der Fahrstreifen darf nicht benutzt werden. Grüner, nach unten gerichteter Pfeil: der Fahrstreifen ist freigegeben. Gelb blinkender, schräg nach unten gerichteter Pfeil: Fahrstreifen in Pfeilrichtung wechseln.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "lichtzeichen",
+    "fahrstreifen"
+   ],
+   "keywords": [
+    "Dauerlichtzeichen",
+    "rote gekreuzte Schrägbalken",
+    "grüner Pfeil nach unten",
+    "gelb blinkender Pfeil",
+    "Fahrstreifen"
+   ],
+   "claims": [
+    {
+     "context": [
+      "rote gekreuzte Schrägbalken",
+      "Fahrstreifen"
+     ],
+     "statement": "Rote gekreuzte Schrägbalken über einem Fahrstreifen bedeuten: dieser Fahrstreifen darf nicht benutzt werden",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "grüner Pfeil nach unten",
+      "Fahrstreifen"
+     ],
+     "statement": "Ein grüner, nach unten gerichteter Pfeil gibt den Fahrstreifen frei",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "gelb blinkender Pfeil",
+      "Fahrstreifen"
+     ],
+     "statement": "Ein gelb blinkender, schräg nach unten gerichteter Pfeil bedeutet: Fahrstreifen in Pfeilrichtung wechseln",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "rote gekreuzte Schrägbalken",
+      "Fahrstreifen"
+     ],
+     "statement": "Rote gekreuzte Schrägbalken bedeuten nur langsamer fahren",
+     "truth": false,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SGN_SYSTEM_RULES",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 41",
+     "para": "Abs. 1",
+     "evidence": "Wer am Verkehr teilnimmt, hat die durch Vorschriftzeichen nach Anlage 2 angeordneten Ge- oder Verbote zu befolgen.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 42",
+     "para": "Abs. 1",
+     "evidence": "Richtzeichen geben besondere Hinweise zur Erleichterung des Verkehrs. Sie können auch Ge- oder Verbote enthalten.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 42",
+     "para": "Abs. 3",
+     "evidence": "Richtzeichen stehen vorbehaltlich des Satzes 2 dort, wo oder von wo an die Anordnung zu befolgen ist.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 40",
+     "para": "Abs. 4",
+     "evidence": "Ein Zusatzzeichen wie kann die Länge der Gefahrstrecke angeben.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 39",
+     "para": "Abs. 1a",
+     "evidence": "Innerhalb geschlossener Ortschaften ist abseits der Vorfahrtstraßen (Zeichen 306) mit der Anordnung von Tempo 30-Zonen (Zeichen 274.1) zu rechnen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "zeichensystem",
+   "title": "Verkehrszeichen: Arten, Geltung, Tempo-30-Zonen",
+   "rule": "Vorschriftzeichen und Richtzeichen ordnen Ge- oder Verbote an, die zu befolgen sind. Richtzeichen stehen dort, wo oder von wo an die Anordnung gilt; steht ein Zeichen in einer Entfernung, gibt ein Zusatzzeichen die Entfernung an. Ein Zusatzzeichen kann die Länge einer Gefahrstrecke angeben. Innerorts ist abseits von Vorfahrtstraßen mit Tempo-30-Zonen und Fahrradzonen zu rechnen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "verkehrszeichen"
+   ],
+   "keywords": [
+    "Vorschriftzeichen",
+    "Richtzeichen",
+    "Gefahrzeichen",
+    "Zusatzzeichen",
+    "Tempo 30-Zone",
+    "Gefahrstrecke"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Richtzeichen"
+     ],
+     "statement": "Richtzeichen können auch Ge- oder Verbote enthalten",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Richtzeichen"
+     ],
+     "statement": "Richtzeichen sind reine Hinweise und nie verbindlich",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Zusatzzeichen",
+      "Gefahrzeichen"
+     ],
+     "statement": "Ein Zusatzzeichen unter einem Gefahrzeichen kann die Länge der Gefahrstrecke angeben",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "innerorts",
+      "Tempo 30-Zone"
+     ],
+     "statement": "Innerorts muss ich abseits von Vorfahrtstraßen mit Tempo-30-Zonen rechnen",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SGN_TRAFFIC_DEVICES",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 43",
+     "para": "Abs. 1",
+     "evidence": "Verkehrseinrichtungen sind Schranken, Sperrpfosten, Absperrgeräte sowie Leiteinrichtungen, die bis auf Leitpfosten, Leitschwellen und Leitborde rot-weiß gestreift sind.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 43",
+     "para": "Abs. 1",
+     "evidence": "Leitschwellen und Leitborde haben die Funktion einer vorübergehend gültigen Markierung und sind gelb.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 43",
+     "para": "Abs. 3",
+     "evidence": "Die durch Verkehrseinrichtungen (Anlage 4 Nummer 1 bis 7) gekennzeichneten Straßenflächen darf der Verkehrsteilnehmer nicht befahren.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "verkehrseinrichtungen",
+   "title": "Verkehrseinrichtungen",
+   "rule": "Schranken, Sperrpfosten, Absperrgeräte und Leiteinrichtungen sind Verkehrseinrichtungen. Durch Absperrgeräte gekennzeichnete Flächen dürfen nicht befahren werden. Gelbe Leitschwellen und Leitborde wirken wie eine vorübergehend gültige Markierung.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "verkehrseinrichtung"
+   ],
+   "keywords": [
+    "Absperrgerät",
+    "Leitschwelle",
+    "Leitbord",
+    "Sperrpfosten",
+    "rot-weiß"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Absperrgerät",
+      "Fläche"
+     ],
+     "statement": "Durch Absperrgeräte gekennzeichnete Flächen darf ich nicht befahren",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Leitschwelle",
+      "gelb"
+     ],
+     "statement": "Gelbe Leitschwellen haben die Funktion einer vorübergehenden Markierung",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

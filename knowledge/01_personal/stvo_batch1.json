@@ -1,0 +1,51 @@
+{
+ "items": [
+  {
+   "id": "PRS_FACE_COVER",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 23",
+     "para": "Abs. 4",
+     "evidence": "Wer ein Kraftfahrzeug führt, darf sein Gesicht nicht so verhüllen oder verdecken, dass er nicht mehr erkennbar ist.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "01_personal",
+   "subtopic": "fahrer",
+   "title": "Gesicht nicht verhüllen",
+   "rule": "Wer ein Kfz führt, darf sein Gesicht nicht so verhüllen oder verdecken, dass er nicht mehr erkennbar ist (Ausnahme: Schutzhelm auf dem Kraftrad).",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "fahrer"
+   ],
+   "keywords": [
+    "Gesicht",
+    "verhüllen",
+    "erkennbar"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Gesicht",
+      "verhüllen"
+     ],
+     "statement": "Am Steuer darf ich mein Gesicht nicht so verdecken, dass ich nicht mehr erkennbar bin",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

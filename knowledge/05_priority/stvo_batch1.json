@@ -1,0 +1,257 @@
+{
+ "items": [
+  {
+   "id": "PRI_RAIL_WAIT",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 19",
+     "para": "Abs. 2",
+     "evidence": "Fahrzeuge haben vor dem Andreaskreuz, zu Fuß Gehende in sicherer Entfernung vor dem Bahnübergang zu warten, wenn 1. sich ein Schienenfahrzeug nähert, 2. rotes Blinklicht oder gelbe oder rote Lichtzeichen gegeben werden, 3. die Schranken sich senken oder geschlossen sind, 4. ein Bahnbediensteter Halt gebietet oder 5. ein hörbares Signal, wie ein Pfeifsignal des herannahenden Zuges, ertönt.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 19",
+     "para": "Abs. 6",
+     "evidence": "Die Scheinwerfer wartender Kraftfahrzeuge dürfen niemanden blenden.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "05_priority",
+   "subtopic": "bahnuebergang",
+   "title": "Bahnübergang: wann warten, Blendung",
+   "rule": "Vor dem Andreaskreuz warten, wenn sich ein Schienenfahrzeug nähert, rotes Blinklicht oder gelbes/rotes Licht leuchtet, die Schranken sich senken oder geschlossen sind, ein Bahnbediensteter Halt gebietet oder ein hörbares Signal ertönt. Zu Fuß Gehende warten in sicherer Entfernung. Scheinwerfer wartender Fahrzeuge dürfen niemanden blenden.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "bahnuebergang"
+   ],
+   "keywords": [
+    "Andreaskreuz",
+    "Schranken",
+    "Pfeifsignal",
+    "Bahnbediensteter",
+    "warten"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Bahnübergang",
+      "Pfeifsignal"
+     ],
+     "statement": "Ertönt das Pfeifsignal eines herannahenden Zuges, warte ich vor dem Andreaskreuz",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "Bahnbediensteter"
+     ],
+     "statement": "Gebietet ein Bahnbediensteter Halt, warte ich vor dem Andreaskreuz",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "Schranken senken"
+     ],
+     "statement": "Senken sich die Schranken gerade, darf ich noch zügig durchfahren",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Bahnübergang",
+      "warten",
+      "Scheinwerfer"
+     ],
+     "statement": "Beim Warten am Bahnübergang dürfen meine Scheinwerfer niemanden blenden",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "PRI_POLICE_OTHER",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 36",
+     "para": "Abs. 4",
+     "evidence": "An anderen Straßenstellen, wie an Einmündungen und an Fußgängerüberwegen, haben die Zeichen entsprechende Bedeutung.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 36",
+     "para": "Abs. 5",
+     "evidence": "Polizeibeamte dürfen Verkehrsteilnehmer zur Verkehrskontrolle einschließlich der Kontrolle der Verkehrstüchtigkeit und zu Verkehrserhebungen anhalten.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 36",
+     "para": "Abs. 5",
+     "evidence": "Das Zeichen zum Anhalten kann auch durch geeignete technische Einrichtungen am Einsatzfahrzeug, eine Winkerkelle oder eine rote Leuchte gegeben werden.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "05_priority",
+   "subtopic": "polizei",
+   "title": "Polizeizeichen an Einmündungen, Anhalten zur Kontrolle",
+   "rule": "Die Zeichen der Polizei gelten an Einmündungen und Fußgängerüberwegen entsprechend. Polizeibeamte dürfen zur Verkehrskontrolle anhalten; das Zeichen zum Anhalten kann auch mit Winkerkelle oder roter Leuchte gegeben werden.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "polizei"
+   ],
+   "keywords": [
+    "Polizei",
+    "Winkerkelle",
+    "Verkehrskontrolle",
+    "rote Leuchte"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Polizei",
+      "Winkerkelle"
+     ],
+     "statement": "Eine Winkerkelle der Polizei bedeutet: anhalten",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Polizei",
+      "Verkehrskontrolle"
+     ],
+     "statement": "Zur Verkehrskontrolle darf mich die Polizei auch ohne Verdacht anhalten",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "PRI_BLUE_LIGHT_ALONE",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 38",
+     "para": "Abs. 2",
+     "evidence": "Blaues Blinklicht allein darf nur von den damit ausgerüsteten Fahrzeugen und nur zur Warnung an Unfall- oder sonstigen Einsatzstellen, bei Einsatzfahrten oder bei der Begleitung von Fahrzeugen oder von geschlossenen Verbänden verwendet werden.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "05_priority",
+   "subtopic": "einsatz",
+   "title": "Blaues Blinklicht allein",
+   "rule": "Blaues Blinklicht allein darf nur zur Warnung an Unfall- oder sonstigen Einsatzstellen, bei Einsatzfahrten oder bei der Begleitung von Fahrzeugen oder Verbänden verwendet werden.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "einsatz"
+   ],
+   "keywords": [
+    "blaues Blinklicht",
+    "Einsatzstelle",
+    "Warnung",
+    "Begleitung"
+   ],
+   "claims": [
+    {
+     "context": [
+      "blaues Blinklicht allein",
+      "Unfallstelle"
+     ],
+     "statement": "Blaues Blinklicht allein warnt zum Beispiel an einer Unfallstelle",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "PRI_CROSSWALK_OTHER",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 26",
+     "para": "Abs. 4",
+     "evidence": "Führt die Markierung über einen Radweg oder einen anderen Straßenteil, gelten diese Vorschriften entsprechend.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "05_priority",
+   "subtopic": "fussgaengerueberweg",
+   "title": "Fußgängerüberweg über Radweg",
+   "rule": "Führt die Markierung eines Fußgängerüberwegs über einen Radweg oder einen anderen Straßenteil, gelten die Regeln für Fußgängerüberwege dort entsprechend.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "fussgaengerueberweg"
+   ],
+   "keywords": [
+    "Zebrastreifen",
+    "Radweg",
+    "Fußgängerüberweg"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zebrastreifen",
+      "Radweg"
+     ],
+     "statement": "Führt der Zebrastreifen über einen Radweg, müssen auch Radfahrer den Fußgängern das Überqueren ermöglichen",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

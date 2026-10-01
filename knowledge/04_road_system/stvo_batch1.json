@@ -1,0 +1,130 @@
+{
+ "items": [
+  {
+   "id": "RDS_LANES_DENSITY",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 7",
+     "para": "Abs. 1",
+     "evidence": "Auf Fahrbahnen mit mehreren Fahrstreifen für eine Richtung dürfen Kraftfahrzeuge von dem Gebot möglichst weit rechts zu fahren (§ 2 Absatz 2) abweichen, wenn die Verkehrsdichte das rechtfertigt.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "04_road_system",
+   "subtopic": "fahrstreifen",
+   "title": "Mehrere Fahrstreifen: Abweichen vom Rechtsfahrgebot",
+   "rule": "Auf Fahrbahnen mit mehreren Fahrstreifen für eine Richtung dürfen Kfz vom Gebot, möglichst weit rechts zu fahren, abweichen, wenn die Verkehrsdichte das rechtfertigt.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "fahrstreifen"
+   ],
+   "keywords": [
+    "Fahrstreifen",
+    "Verkehrsdichte",
+    "Rechtsfahrgebot"
+   ],
+   "claims": [
+    {
+     "context": [
+      "mehrere Fahrstreifen",
+      "dichter Verkehr"
+     ],
+     "statement": "Bei dichtem Verkehr darf ich auf Fahrbahnen mit mehreren Fahrstreifen vom Rechtsfahrgebot abweichen",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "RDS_MOTORWAY_LIGHT_TRUCKS",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 18",
+     "para": "Abs. 6",
+     "evidence": "Wer auf der Autobahn mit Abblendlicht fährt, braucht seine Geschwindigkeit nicht der Reichweite des Abblendlichts anzupassen, wenn",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 18",
+     "para": "Abs. 6 Nr. 1",
+     "evidence": "die Schlussleuchten des vorausfahrenden Kraftfahrzeugs klar erkennbar sind und ein ausreichender Abstand von ihm eingehalten wird",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 18",
+     "para": "Abs. 11",
+     "evidence": "Lastkraftwagen mit einer zulässigen Gesamtmasse über 7,5 t, einschließlich ihrer Anhänger, sowie Zugmaschinen dürfen, wenn die Sichtweite durch erheblichen Schneefall oder Regen auf 50 m oder weniger eingeschränkt ist, sowie bei Schneeglätte oder Glatteis den äußerst linken Fahrstreifen nicht benutzen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "04_road_system",
+   "subtopic": "autobahn",
+   "title": "Autobahn: Abblendlicht, Lkw-Verbot links bei schlechter Sicht",
+   "rule": "Auf der Autobahn muss die Geschwindigkeit bei Abblendlicht nicht der Reichweite des Abblendlichts angepasst werden, wenn die Schlussleuchten des Vorausfahrenden klar erkennbar sind und ausreichender Abstand besteht. Lkw über 7,5 t und Zugmaschinen dürfen bei Sicht von 50 m oder weniger durch Schneefall oder Regen sowie bei Schneeglätte oder Glatteis den äußerst linken Fahrstreifen nicht benutzen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "autobahn",
+    "licht"
+   ],
+   "keywords": [
+    "Autobahn",
+    "Abblendlicht",
+    "Schlussleuchten",
+    "äußerst linker Fahrstreifen",
+    "Glatteis"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Autobahn",
+      "Abblendlicht",
+      "Schlussleuchten"
+     ],
+     "statement": "Sehe ich auf der Autobahn die Schlussleuchten des Vorausfahrenden klar und halte genug Abstand, muss ich die Geschwindigkeit nicht der Reichweite des Abblendlichts anpassen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Lkw über 7,5 t",
+      "Glatteis",
+      "linker Fahrstreifen"
+     ],
+     "statement": "Bei Glatteis dürfen Lkw über 7,5 t den äußerst linken Fahrstreifen der Autobahn nicht benutzen",
+     "truth": true,
+     "numbers": [
+      "7,5 t"
+     ]
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

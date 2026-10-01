@@ -1,0 +1,157 @@
+{
+ "items": [
+  {
+   "id": "PRK_HEAVY_NIGHT",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 12",
+     "para": "Abs. 3a",
+     "evidence": "Mit Kraftfahrzeugen mit einer zulässigen Gesamtmasse über 7,5 t sowie mit Kraftfahrzeuganhängern über 2 t zulässiger Gesamtmasse ist innerhalb geschlossener Ortschaften",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 12",
+     "para": "Abs. 3a",
+     "evidence": "das regelmäßige Parken in der Zeit von 22.00 bis 06.00 Uhr sowie an Sonn- und Feiertagen unzulässig.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "10_parking",
+   "subtopic": "parkverbote",
+   "title": "Schwere Fahrzeuge: kein regelmäßiges Parken nachts in Wohngebieten",
+   "rule": "Kfz über 7,5 t und Kfz-Anhänger über 2 t dürfen innerorts in reinen und allgemeinen Wohngebieten (auch Erholungs-, Kur- und Klinikgebieten) nicht regelmäßig von 22 bis 6 Uhr sowie an Sonn- und Feiertagen parken.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "parken",
+    "anhaenger"
+   ],
+   "keywords": [
+    "Wohngebiet",
+    "Anhänger über 2 t",
+    "nachts parken",
+    "Sonn- und Feiertage"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Wohngebiet",
+      "Anhänger über 2 t",
+      "nachts"
+     ],
+     "statement": "Einen Anhänger über 2 t darf ich im Wohngebiet nicht regelmäßig nachts zwischen 22 und 6 Uhr parken",
+     "truth": true,
+     "numbers": [
+      "2 t"
+     ]
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "PRK_METERS_DISC",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 13",
+     "para": "Abs. 1",
+     "evidence": "An Parkuhren darf nur während des Laufens der Uhr, an Parkscheinautomaten nur mit einem Parkschein, der am oder im Fahrzeug von außen gut lesbar angebracht sein muss, für die Dauer der zulässigen Parkzeit gehalten werden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 13",
+     "para": "Abs. 1",
+     "evidence": "Ist eine Parkuhr oder ein Parkscheinautomat nicht funktionsfähig, darf nur bis zur angegebenen Höchstparkdauer geparkt werden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 13",
+     "para": "Abs. 4",
+     "evidence": "Einrichtungen und Vorrichtungen zur Überwachung der Parkzeit brauchen nicht betätigt zu werden 1. beim Ein- oder Aussteigen sowie 2. zum Be- oder Entladen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "10_parking",
+   "subtopic": "parkzeit",
+   "title": "Parkuhr, Parkschein, Parkscheibe",
+   "rule": "An Parkuhren nur während die Uhr läuft, an Parkscheinautomaten nur mit gut lesbarem Parkschein parken. Ist die Parkuhr oder der Automat defekt, nur bis zur angegebenen Höchstparkdauer und mit Parkscheibe. Beim Ein- oder Aussteigen und zum Be- oder Entladen müssen die Einrichtungen nicht betätigt werden.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "parken",
+    "parkzeit"
+   ],
+   "keywords": [
+    "Parkuhr",
+    "Parkschein",
+    "Parkscheinautomat",
+    "Parkscheibe",
+    "Höchstparkdauer"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Parkschein",
+      "Parkscheinautomat"
+     ],
+     "statement": "Den Parkschein muss ich von außen gut lesbar am oder im Fahrzeug anbringen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Parkuhr",
+      "defekt"
+     ],
+     "statement": "Ist die Parkuhr defekt, darf ich unbegrenzt parken",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Parkuhr",
+      "defekt"
+     ],
+     "statement": "Ist der Parkscheinautomat defekt, darf ich nur bis zur angegebenen Höchstparkdauer mit Parkscheibe parken",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Parkuhr",
+      "Be- und Entladen"
+     ],
+     "statement": "Zum Be- oder Entladen muss ich die Parkuhr nicht betätigen",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

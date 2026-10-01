@@ -1,0 +1,362 @@
+{
+ "items": [
+  {
+   "id": "USR_CYCLIST_LEFT_TURN",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 2",
+     "evidence": "Wer mit dem Fahrrad nach links abbiegen will, braucht sich nicht einzuordnen, wenn die Fahrbahn hinter der Kreuzung oder Einmündung vom rechten Fahrbahnrand aus überquert werden soll.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 9",
+     "para": "Abs. 2",
+     "evidence": "Beim Überqueren ist der Fahrzeugverkehr aus beiden Richtungen zu beachten.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "07_road_users",
+   "subtopic": "radfahrer",
+   "title": "Radfahrer: indirektes Linksabbiegen",
+   "rule": "Wer mit dem Fahrrad links abbiegen will, braucht sich nicht einzuordnen, wenn die Fahrbahn hinter der Kreuzung vom rechten Fahrbahnrand aus überquert wird; dabei ist der Verkehr aus beiden Richtungen zu beachten.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "radfahrer",
+    "abbiegen"
+   ],
+   "keywords": [
+    "Radfahrer",
+    "links abbiegen",
+    "indirekt",
+    "einordnen"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Radfahrer",
+      "links abbiegen"
+     ],
+     "statement": "Ein Radfahrer darf links abbiegen, indem er die Fahrbahn hinter der Kreuzung vom rechten Rand aus überquert",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "USR_PASSENGERS_EXTRA",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 21",
+     "para": "Abs. 1b",
+     "evidence": "In Fahrzeugen, die nicht mit Sicherheitsgurten ausgerüstet sind, dürfen Kinder unter drei Jahren nicht befördert werden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 21",
+     "para": "Abs. 2",
+     "evidence": "Die Mitnahme von Personen auf der Ladefläche oder in Laderäumen von Kraftfahrzeugen ist verboten.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "07_road_users",
+   "subtopic": "mitfahrer",
+   "title": "Mitnahme: Kinder ohne Gurte, Ladefläche",
+   "rule": "In Fahrzeugen ohne Sicherheitsgurte dürfen Kinder unter drei Jahren nicht befördert werden; Kinder ab drei Jahren unter 150 cm nur auf dem Rücksitz. Personen auf der Ladefläche oder in Laderäumen von Kfz mitzunehmen ist grundsätzlich verboten, auf Ladeflächen von Anhängern darf niemand mitgenommen werden.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "mitfahrer",
+    "kinder"
+   ],
+   "keywords": [
+    "Ladefläche",
+    "ohne Sicherheitsgurte",
+    "Kinder unter drei Jahren",
+    "Rücksitz"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Ladefläche",
+      "Personen"
+     ],
+     "statement": "Personen auf der Ladefläche eines Kraftfahrzeugs mitzunehmen ist grundsätzlich verboten",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Ladefläche",
+      "Personen"
+     ],
+     "statement": "Auf der Ladefläche darf mitfahren, wer sich gut festhält",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "ohne Sicherheitsgurte",
+      "Kind"
+     ],
+     "statement": "In einem Fahrzeug ohne Sicherheitsgurte darf ein Kind unter drei Jahren nicht befördert werden",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "USR_PUBLIC_TRANSPORT_WAIT",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 20",
+     "para": "Abs. 6",
+     "evidence": "Personen, die öffentliche Verkehrsmittel benutzen wollen, müssen sie auf den Gehwegen, den Seitenstreifen oder einer Haltestelleninsel, sonst am Rand der Fahrbahn erwarten.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "07_road_users",
+   "subtopic": "fussgaenger",
+   "title": "Warten auf Bus und Bahn",
+   "rule": "Wer öffentliche Verkehrsmittel benutzen will, wartet auf Gehwegen, Seitenstreifen oder Haltestelleninseln, sonst am Fahrbahnrand.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "fussgaenger",
+    "bus"
+   ],
+   "keywords": [
+    "Haltestelle",
+    "warten",
+    "Gehweg",
+    "Haltestelleninsel"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Haltestelle",
+      "Fahrgäste warten"
+     ],
+     "statement": "Fahrgäste warten auf den Bus auf dem Gehweg, dem Seitenstreifen oder einer Haltestelleninsel",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "USR_PEDESTRIANS_CROSS",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 25",
+     "para": "Abs. 3",
+     "evidence": "Wer zu Fuß geht, hat Fahrbahnen unter Beachtung des Fahrzeugverkehrs zügig auf kurzem Weg quer zur Fahrtrichtung zu überschreiten.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 25",
+     "para": "Abs. 4",
+     "evidence": "Wer zu Fuß geht, darf Absperrungen, wie Stangen- oder Kettengeländer, nicht überschreiten.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 25",
+     "para": "Abs. 5",
+     "evidence": "Gleisanlagen, die nicht zugleich dem sonstigen öffentlichen Straßenverkehr dienen, dürfen nur an den dafür vorgesehenen Stellen betreten werden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 24",
+     "para": "Abs. 2",
+     "evidence": "Mit Krankenfahrstühlen oder mit anderen als in Absatz 1 genannten Rollstühlen darf dort, wo Fußgängerverkehr zulässig ist, gefahren werden, jedoch nur mit Schrittgeschwindigkeit.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "07_road_users",
+   "subtopic": "fussgaenger",
+   "title": "Fußgänger: Fahrbahn überqueren, Absperrungen, Gleise",
+   "rule": "Zu Fuß Gehende überschreiten Fahrbahnen zügig auf kürzestem Weg quer zur Fahrtrichtung und achten auf den Fahrzeugverkehr. Absperrungen (Stangen-, Kettengeländer) dürfen nicht überschritten werden. Gleisanlagen, die nicht zugleich dem Straßenverkehr dienen, nur an vorgesehenen Stellen betreten. Krankenfahrstühle dürfen dort fahren, wo Fußgängerverkehr zulässig ist, aber nur mit Schrittgeschwindigkeit.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "fussgaenger"
+   ],
+   "keywords": [
+    "Fußgänger",
+    "überqueren",
+    "Absperrung",
+    "Gleise",
+    "Krankenfahrstuhl"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Fußgänger",
+      "Fahrbahn überqueren"
+     ],
+     "statement": "Fußgänger überqueren die Fahrbahn zügig auf kürzestem Weg quer zur Fahrtrichtung",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Fußgänger",
+      "Absperrung"
+     ],
+     "statement": "Fußgänger dürfen Kettengeländer übersteigen, wenn es schneller geht",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Krankenfahrstuhl",
+      "Gehweg"
+     ],
+     "statement": "Mit einem Krankenfahrstuhl darf auf dem Gehweg nur mit Schrittgeschwindigkeit gefahren werden",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "USR_GROUPS_SKATES",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 27",
+     "para": "Abs. 3",
+     "evidence": "Geschlossen ist ein Verband, wenn er für andere am Verkehr Teilnehmende als solcher deutlich erkennbar ist.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 27",
+     "para": "Abs. 6",
+     "evidence": "Auf Brücken darf nicht im Gleichschritt marschiert werden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 31",
+     "para": "Abs. 2",
+     "evidence": "Wer sich dort mit Inline-Skates oder Rollschuhen fortbewegt, hat sich mit äußerster Vorsicht und unter besonderer Rücksichtnahme auf den übrigen Verkehr am rechten Rand in Fahrtrichtung zu bewegen und Fahrzeugen das Überholen zu ermöglichen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "07_road_users",
+   "subtopic": "verbaende",
+   "title": "Verbände, Inline-Skater",
+   "rule": "Ein geschlossener Verband muss für andere als solcher deutlich erkennbar sein. Auf Brücken darf nicht im Gleichschritt marschiert werden. Wo ein Zusatzzeichen Inline-Skaten erlaubt, fahren Skater mit äußerster Vorsicht am rechten Rand und ermöglichen das Überholen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "verband",
+    "skater"
+   ],
+   "keywords": [
+    "Verband",
+    "Gleichschritt",
+    "Brücke",
+    "Inline-Skates",
+    "Zusatzzeichen"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Brücke",
+      "marschieren"
+     ],
+     "statement": "Auf Brücken darf nicht im Gleichschritt marschiert werden",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Inline-Skates",
+      "Fahrbahn",
+      "Zusatzzeichen"
+     ],
+     "statement": "Inline-Skater bewegen sich auf der freigegebenen Fahrbahn am rechten Rand",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Inline-Skates",
+      "Fahrbahn",
+      "überholen"
+     ],
+     "statement": "Inline-Skater müssen Fahrzeugen das Überholen ermöglichen",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

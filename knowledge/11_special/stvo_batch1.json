@@ -1,0 +1,99 @@
+{
+ "items": [
+  {
+   "id": "SPC_SERVICE_VEHICLES",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 35",
+     "para": "Abs. 6",
+     "evidence": "Fahrzeuge, die dem Bau, der Unterhaltung oder Reinigung der Straßen und Anlagen im Straßenraum oder der Müllabfuhr dienen und durch weiß-rot-weiße Warneinrichtungen gekennzeichnet sind, dürfen auf allen Straßen und Straßenteilen und auf jeder Straßenseite in jeder Richtung zu allen Zeiten fahren und halten, soweit ihr Einsatz dies erfordert",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "11_special",
+   "subtopic": "sonderfahrzeuge",
+   "title": "Straßendienst- und Müllfahrzeuge",
+   "rule": "Fahrzeuge für Bau, Unterhaltung, Reinigung der Straßen oder Müllabfuhr mit weiß-rot-weißen Warneinrichtungen dürfen auf allen Straßen, auf jeder Straßenseite, in jeder Richtung zu allen Zeiten fahren und halten, soweit ihr Einsatz dies erfordert.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "sonderrechte"
+   ],
+   "keywords": [
+    "Müllabfuhr",
+    "Straßenreinigung",
+    "weiß-rot-weiß",
+    "Sonderrechte"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Müllfahrzeug",
+      "Gegenrichtung"
+     ],
+     "statement": "Ein gekennzeichnetes Müllfahrzeug darf im Einsatz auch auf der linken Straßenseite fahren und halten",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SPC_ADVERTISING",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 33",
+     "para": "Abs. 1 Nr. 3",
+     "evidence": "außerhalb geschlossener Ortschaften jede Werbung und Propaganda durch Bild, Schrift, Licht oder Ton, wenn dadurch am Verkehr Teilnehmende in einer den Verkehr gefährdenden oder erschwerenden Weise abgelenkt oder belästigt werden können.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "11_special",
+   "subtopic": "ablenkung",
+   "title": "Werbung und Ablenkung außerorts",
+   "rule": "Außerorts ist jede Werbung und Propaganda durch Bild, Schrift, Licht oder Ton verboten, wenn dadurch der Verkehr gefährdet oder erschwert werden kann.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "ablenkung"
+   ],
+   "keywords": [
+    "Werbung",
+    "Lautsprecher",
+    "Ablenkung"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Werbung",
+      "außerorts"
+     ],
+     "statement": "Außerorts ist Werbung verboten, die Verkehrsteilnehmer gefährdend ablenken kann",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 1,
+   "difficulty": 2
+  }
+ ]
+}

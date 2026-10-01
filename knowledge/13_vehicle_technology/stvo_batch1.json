@@ -1,0 +1,108 @@
+{
+ "items": [
+  {
+   "id": "TEC_LIGHTS_USE",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 17",
+     "para": "Abs. 1",
+     "evidence": "Während der Dämmerung, bei Dunkelheit oder wenn die Sichtverhältnisse es sonst erfordern, sind die vorgeschriebenen Beleuchtungseinrichtungen zu benutzen.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 17",
+     "para": "Abs. 1",
+     "evidence": "Die Beleuchtungseinrichtungen dürfen nicht verdeckt oder verschmutzt sein.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 23",
+     "para": "Abs. 2",
+     "evidence": "Wer ein Fahrzeug führt, muss das Fahrzeug, den Zug oder das Gespann auf dem kürzesten Weg aus dem Verkehr ziehen, falls unterwegs auftretende Mängel, welche die Verkehrssicherheit wesentlich beeinträchtigen, nicht alsbald beseitigt werden",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "13_vehicle_technology",
+   "subtopic": "beleuchtung",
+   "title": "Beleuchtung benutzen, nicht verdecken; Mängel unterwegs",
+   "rule": "Bei Dämmerung, Dunkelheit oder wenn die Sicht es erfordert, die vorgeschriebene Beleuchtung benutzen; sie darf nicht verdeckt oder verschmutzt sein. Treten unterwegs Mängel auf, die die Verkehrssicherheit wesentlich beeinträchtigen und nicht alsbald behoben werden, das Fahrzeug auf dem kürzesten Weg aus dem Verkehr ziehen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "licht",
+    "fahrzeugmangel"
+   ],
+   "keywords": [
+    "Dämmerung",
+    "Dunkelheit",
+    "Beleuchtung",
+    "verschmutzt",
+    "Mängel unterwegs"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Dämmerung",
+      "Beleuchtung"
+     ],
+     "statement": "Schon bei Dämmerung muss ich die vorgeschriebene Beleuchtung einschalten",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Scheinwerfer",
+      "verschmutzt"
+     ],
+     "statement": "Die Beleuchtungseinrichtungen dürfen nicht verschmutzt sein",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Scheinwerfer",
+      "verdeckt"
+     ],
+     "statement": "Die Beleuchtungseinrichtungen dürfen nicht verdeckt sein",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Mangel",
+      "unterwegs",
+      "Verkehrssicherheit"
+     ],
+     "statement": "Bei einem Mangel, der die Verkehrssicherheit wesentlich beeinträchtigt, ziehe ich das Fahrzeug auf dem kürzesten Weg aus dem Verkehr",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Mangel",
+      "unterwegs",
+      "Verkehrssicherheit"
+     ],
+     "statement": "Mit einem wesentlichen Mangel darf ich bis zum Ziel weiterfahren, wenn ich vorsichtig fahre",
+     "truth": false,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

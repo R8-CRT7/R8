@@ -1,0 +1,187 @@
+{
+ "items": [
+  {
+   "id": "MAN_OVERTAKE_SIGNALS",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 1",
+     "evidence": "Es ist links zu überholen.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 4a",
+     "evidence": "Das Ausscheren zum Überholen und das Wiedereinordnen sind rechtzeitig und deutlich anzukündigen; dabei sind die Fahrtrichtungsanzeiger zu benutzen.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 5",
+     "evidence": "Außerhalb geschlossener Ortschaften darf das Überholen durch kurze Schall- oder Leuchtzeichen angekündigt werden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 5",
+     "para": "Abs. 3a",
+     "evidence": "Wer ein Kraftfahrzeug mit einer zulässigen Gesamtmasse über 7,5 t führt, darf unbeschadet sonstiger Überholverbote nicht überholen, wenn die Sichtweite durch Nebel, Schneefall oder Regen weniger als 50 m beträgt.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "09_manoeuvres",
+   "subtopic": "ueberholen",
+   "title": "Überholen: ankündigen, Lkw bei Sicht unter 50 m",
+   "rule": "Links überholen. Ausscheren und Wiedereinordnen rechtzeitig und deutlich mit dem Fahrtrichtungsanzeiger ankündigen. Außerorts darf das Überholen mit kurzem Schall- oder Leuchtzeichen angekündigt werden (Gegenverkehr nicht blenden). Kfz über 7,5 t dürfen bei Sicht unter 50 m (Nebel, Schneefall, Regen) nicht überholen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "ueberholen",
+    "blinken"
+   ],
+   "keywords": [
+    "Ausscheren",
+    "Wiedereinordnen",
+    "Blinker",
+    "Lichthupe",
+    "Schallzeichen",
+    "Überholen ankündigen"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Ausscheren",
+      "Überholen"
+     ],
+     "statement": "Das Ausscheren zum Überholen kündige ich rechtzeitig mit dem Blinker an",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Wiedereinordnen",
+      "Überholen"
+     ],
+     "statement": "Auch das Wiedereinordnen nach dem Überholen muss ich ankündigen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Ausscheren",
+      "Überholen"
+     ],
+     "statement": "Wenn niemand hinter mir fährt, muss ich das Ausscheren nicht ankündigen",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "außerorts",
+      "Überholen ankündigen"
+     ],
+     "statement": "Außerorts darf ich das Überholen mit kurzer Hupe oder Lichthupe ankündigen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "innerorts",
+      "Überholen ankündigen"
+     ],
+     "statement": "Innerorts darf ich das Überholen durch Hupen ankündigen",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Lichthupe",
+      "Gegenverkehr"
+     ],
+     "statement": "Wenn ich mit Fernlicht blinke, darf ich den Gegenverkehr nicht blenden",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Lkw über 7,5 t",
+      "Nebel",
+      "Sicht unter 50 m"
+     ],
+     "statement": "Ein Lkw über 7,5 t darf bei Sicht unter 50 m durch Nebel nicht überholen",
+     "truth": true,
+     "numbers": [
+      "7,5 t",
+      "50 m"
+     ]
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "MAN_EXIT_LANE",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 7a",
+     "para": "Abs. 1",
+     "evidence": "Gehen Fahrstreifen, insbesondere auf Autobahnen und Kraftfahrstraßen, von der durchgehenden Fahrbahn ab, darf beim Abbiegen vom Beginn einer breiten Leitlinie (Zeichen 340) rechts von dieser schneller als auf der durchgehenden Fahrbahn gefahren werden.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "09_manoeuvres",
+   "subtopic": "fahrstreifen",
+   "title": "Ausfädeln: schneller rechts von der breiten Leitlinie",
+   "rule": "Gehen Fahrstreifen von der durchgehenden Fahrbahn ab (z. B. Autobahnausfahrt), darf beim Abbiegen vom Beginn der breiten Leitlinie (Zeichen 340) an rechts davon schneller gefahren werden als auf der durchgehenden Fahrbahn.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "fahrstreifen",
+    "autobahn"
+   ],
+   "keywords": [
+    "Ausfahrt",
+    "breite Leitlinie",
+    "Zeichen 340",
+    "abgehender Fahrstreifen"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Ausfahrt",
+      "breite Leitlinie",
+      "abbiegen"
+     ],
+     "statement": "Ab Beginn der breiten Leitlinie darf ich beim Abbiegen rechts davon schneller fahren als auf der durchgehenden Fahrbahn",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}
