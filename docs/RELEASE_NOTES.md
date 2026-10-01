@@ -1,40 +1,45 @@
-# 360 SMART 0.5.0-alpha.2 (pre-release)
+# 360 SMART 0.5.0-alpha.3 (pre-release) – ready for the first real-PC test
 
-**Alpha.** Built and verified automatically on a GitHub `windows-latest` runner. It has **not** yet been
-tested against the real 360° online software or on real user hardware. See `docs/FINAL_STATUS.md`.
+**Alpha.** Built and verified automatically on GitHub runners. It has **not** yet been tested against the real
+360° online software, on your own PC or with a real AI key. **Start here:**
+[REAL_DEVICE_TEST.md](https://github.com/R8-CRT7/R8/blob/claude/360-smart-ai-assistant-a4bd4h/REAL_DEVICE_TEST.md)
 
 ## Download
-* `360SmartSetup.exe`: per-user installer, no admin rights, and no Python needed on the target PC.
-* `360SmartSetup.exe.sha256`: checksum. Check it with `Get-FileHash 360SmartSetup.exe` in PowerShell.
+* `360SmartSetup.exe`: per-user installer, no admin rights, no Python needed.
+* `360SmartSetup.exe.sha256`: checksum (`Get-FileHash 360SmartSetup.exe` in PowerShell).
 
-The installer is **unsigned**, so Windows SmartScreen shows "Windows protected your PC". Click
-*More info → Run anyway*. The fix is a paid code-signing certificate (see `docs/RELEASE.md`).
+The installer is **unsigned**, so SmartScreen shows "Windows protected your PC". Click *More info → Run anyway*.
 
-## What was verified in CI for this build
-* 162 unit, integration and UI tests. Linux runs them with real Tesseract OCR; Windows runs them too.
-* Native Windows tests on the real desktop:
-  * DPI awareness
-  * Windows OCR on a rendered question, including 8 concurrent calls
-  * window detection and capture exclusion
-  * Credential Manager
-  * RegisterHotKey via an injected F8
-  * a real capture → Windows OCR → confirmation → SendInput click → verification run
-  * the covered-target click guard
-* PyInstaller build and frozen `--self-test --demo`.
-* The installer build, silent install, self-test of the installed app, silent uninstall, and a check
-  that the files and the registry entry were removed.
+## Safe by default
+* **Dry run is on.** The app does everything up to the click and shows **where** it would click (red cross on
+  screen + message), but clicks nothing. You switch it off in *Settings → Safety*.
+* **Safe mode is on.** There is no click when:
+  * the confidence is low,
+  * a checkbox was only estimated,
+  * the target is ambiguous,
+  * the checkbox state can't be read,
+  * the window moved, or another window covers the answer.
 
-## Changes since alpha.1 (found by CI on real Windows)
-* **Windows OCR:** checkbox glyphs ("C]", "Cl", "Ü") are no longer read as part of the answers. Answer sets
-  read exactly went from 45 % to 81.7 % in the benchmark, and to 100 % on clean screens.
-* **Windows OCR:** there is one OCR engine per thread. Parallel question and answer OCR used to fail.
-* **Confidence:** the "model uncertain" cap is monotone again.
+  Failed clicks are not retried.
+* **Emergency stop:** `Ctrl+Shift+X` (always works), the STOP button or the tray menu. It shows STOPPED and
+  drops pending clicks.
 
-## Windows OCR benchmark (CI, 120 simulator screens)
-The benchmark found **97.5 %** of the questions and read **81.7 %** of the answer sets exactly, at a median
-of **79 ms**. On clean screens it read 100 % of the answer sets exactly.
+## New for the real test
+* **Create diagnosis (ZIP)**: dashboard → *Diagnostics*, the tray menu, or *Start menu → 360 SMART - Diagnose
+  erstellen*. It contains versions, Windows/monitor/DPI info, the detected window, OCR results, confidence,
+  click coordinates, state changes, logs and per-question traces. It contains **no** API keys, passwords or
+  tokens.
+* **Per-question trace and test protocol** (`protocol.csv` + metrics) for the 50-question test.
+
+## Fixed (found by new regression tests)
+* With an unreadable checkbox state the app used to click and then click again on retry, toggling the box
+  back. Now it never clicks without a readable state.
+* An approved answer that matched two answers on screen used to click the first one. Ambiguous targets are
+  now refused.
+* Checkboxes are now really detected (a square outline) instead of estimated. On the simulator 144 of 144
+  were found, with no false positives.
 
 ## Known limitations
-* No live AI call has been made (no API key was available). Demo mode uses the offline practice simulator.
-* The checkbox and region layout of the real 360° online software is unknown. Use the calibration wizard.
-* iOS is source only (Xcode project) and is not part of this download.
+* No live AI call has been made yet.
+* The layout of the real 360° online software is unknown, so calibrate it (guide, part 5.2).
+* iOS is source only and not part of this download.

@@ -1,7 +1,7 @@
 # Release
 
 ## Versions
-`0.1 development` → **`0.5 alpha` (current: 0.5.0-alpha.2)** → `0.9 beta` → `1.0` only when the checklist
+`0.1 development` → **`0.5 alpha` (current: 0.5.0-alpha.3)** → `0.9 beta` → `1.0` only when the checklist
 below is fully green, including tests against the real 360° online software and on a real iPhone.
 
 ## Windows build
@@ -59,13 +59,15 @@ is started explicitly by the user through the system picker (red status bar whil
 
 ## Release checklist
 
-| Item | State (0.5.0-alpha.2) |
+| Item | State (0.5.0-alpha.3) |
 |---|---|
 | Windows app starts | ✅ frozen exe + installed app `--self-test --demo` on windows-latest (CI) |
 | Overlay works | ✅ UI tests on Windows (offscreen) + rendered screenshots; ❌ not yet seen on a real desktop by a person |
 | Question detection works | ✅ real Windows window + capture + Windows OCR (CI); ❌ not yet on real 360° online |
 | AI works | ✅ Mock/demo end-to-end; ❌ no live API call made (no key available) |
 | Confirmation required | ✅ enforced + tested (unit, property, race, engine, app, native E2E) |
+| Safe mode / dry run / emergency stop | ✅ tested incl. native; defaults on; ❌ not yet on a real PC |
+| Diagnosis ZIP without secrets | ✅ tested (planted key/password/token absent), installed-app `--diagnose` in CI |
 | No stale action execution | ✅ tested (question change during approval / before click / window lost) |
 | Cache works | ✅ |
 | Settings persist | ✅ |
@@ -74,6 +76,6 @@ is started explicitly by the user through the system picker (red status bar whil
 | Installer works | ✅ built, silently installed, self-tested, silently uninstalled (CI); ❌ interactive install on a user PC |
 | iOS builds | ✅ simulator + device (unsigned) + analyze (CI); ❌ not signed / installed on an iPhone |
 | iOS workflow documented | ✅ |
-| No critical test failures | ✅ Linux 162 · Windows all + 8/8 native · iOS 17 XCTests |
+| No critical test failures | ✅ Linux 197 · Windows all + 11/11 native · iOS 17 XCTests |
 | No exposed secrets | ✅ redaction tests, bandit, pip-audit, no keys in repo |
 | Docs complete | ✅ |

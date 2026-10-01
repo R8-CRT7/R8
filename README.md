@@ -10,6 +10,9 @@
 > Ende-zu-Ende gegen einen Übungssimulator). Die Windows-spezifischen Teile und der Installer werden per CI auf
 > einem echten Windows-Rechner gebaut und getestet. Gegen die echte „360° online“-Software und auf einem
 > echten iPhone wurde **noch nicht** getestet. Details stehen in [`docs/FINAL_STATUS.md`](docs/FINAL_STATUS.md).
+>
+> **Erster Test auf deinem PC:** [`REAL_DEVICE_TEST.md`](REAL_DEVICE_TEST.md). Die App startet im **Dry Run**
+> (zeigt, wo sie klicken würde, klickt nicht) und im **Safe Mode**. Not-Aus: **Strg+Umschalt+X**.
 
 ---
 

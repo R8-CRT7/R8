@@ -4,7 +4,7 @@
 
 ```bash
 cd windows
-QT_QPA_PLATFORM=offscreen pytest                 # 162 tests (~75 s)
+QT_QPA_PLATFORM=offscreen pytest                 # 197 tests (~100 s)
 pytest -m windows tests/test_windows_native.py   # on Windows, QT_QPA_PLATFORM=windows (CI does this)
 python tools/soak.py --minutes 30                # soak / memory
 python tools/ocr_benchmark.py                    # OCR accuracy + latency (Windows OCR + Tesseract, mismatch samples)
@@ -22,8 +22,10 @@ cd ../ios/Packages/Smart360Core && swift test    # iOS core (macOS)
 | Engine integration | `test_engine_integration.py` | full loop on the simulator with **real Tesseract OCR**: detection → AI → confirmation → click → verification; shuffled answers; next question; plus the race/chaos cases below | 23 |
 | Storage & services | `test_storage_services.py` | config roundtrip/backup/quarantine, secret redaction, history filters (LIKE escaping), privacy mode, retention, health states, leak-slope maths, self-test, report contains no key/question text | 17 |
 | UI | `test_ui.py` | overlay states/modes/signals, Neural Pulse states, all 9 dashboard pages, history filters/empty state, calibration wizard (mouse-drag → valid profile), onboarding flow, **whole app demo round-trip incl. ENTER blocked on manual check**, UI-lag health, single-instance lock | 10 |
-| Chaos / bug hunt | `test_chaos.py` | invalid/degenerate profiles, 1-px and full-window regions, crashing OCR, empty OCR, cache/config deleted while running, wrongly typed config, unknown forced profile, change detection between similar text-only questions (regression), Windows OCR checkbox artefacts ("C]", "Cl", "Ü", verbatim CI samples) and real words that must survive | 26 |
-| Native Windows | `test_windows_native.py` | DPI awareness, Windows OCR on a rendered screen, 8 concurrent Windows OCR calls, window detection + capture exclusion, Credential Manager, RegisterHotKey via injected F8, real capture + Windows OCR + SendInput end-to-end, click refused when a window covers the target | 8 (CI, all pass) |
+| Chaos / bug hunt | `test_chaos.py` | invalid/degenerate profiles, 1-px and full-window regions, crashing OCR, empty OCR, cache/config deleted while running, wrongly typed config, unknown forced profile, change detection between similar text-only questions (regression), Windows OCR checkbox artefacts ("C]", "Cl", "Ü", verbatim CI samples) and real words that must survive, checkbox square detection (3 scales × empty/ticked) and no false positives on text-only rows | 36 |
+| Safety (real-PC phase) | `test_safety.py` | unreadable checkbox state → no click (regression), ambiguous target → no click (regression), safe mode: low confidence / window moved since read / checkbox only estimated / no retries / still clicks when certain, covered target not retried, dry run (targets = checkbox centres, nothing clicked, history DRY_RUN, covered target reported), emergency stop while waiting / during execution (2nd click dropped) / during analysis | 13 |
+| Diagnostics | `test_diagnostics.py` | trace has every stage per question (dry run + real click), blocked reason in the protocol, truncated trace line survives, metric formulas, "not rated yet", CSV for German Excel keeps manual columns, diagnosis ZIP contents + **no planted key/password/bearer token**, `--diagnose` and `--metrics` CLI | 10 |
+| Native Windows | `test_windows_native.py` | DPI awareness, Windows OCR on a rendered screen, 8 concurrent Windows OCR calls, window detection + capture exclusion, Credential Manager, RegisterHotKey via injected F8, real capture + Windows OCR + SendInput end-to-end **in safe mode** (checkboxes really found), **native dry run** (no input reaches the window, planned points = checkbox centres), monitors/DPI/Windows version, diagnosis ZIP on Windows, click refused when a window covers the target (+ dry-run report) | 11 (CI) |
 | iOS core | `CoreTests.swift` | state machine, normalisation/numbers, ratio definition, negation guard, cache safety + remap + corruption, schema validation, Anthropic body shape, confidence caps, phone screenshot parser, frame hash, uncertain-cap monotonicity | 17 (CI, all pass) |
 
 ## Continuous integration (GitHub Actions, all green)
@@ -35,6 +37,13 @@ cd ../ios/Packages/Smart360Core && swift test    # iOS core (macOS)
 
 A GitHub runner cannot run the real 360° online software (licensed and requires a login). No person looks
 at the runner's desktop, and it has no audio device or multiple monitors. See `FINAL_STATUS.md`.
+
+## Real-device test
+Guide: [`REAL_DEVICE_TEST.md`](../REAL_DEVICE_TEST.md). Every question is traced automatically
+(`%APPDATA%\360Smart\trace`), `protocol.csv` is built from the trace (manual columns optional), and
+`metrics.txt` reports Question/Answer OCR accuracy, end-to-end success rate, false click rate, prevented unsafe
+clicks and median/P95 latency. Definitions: `smart360/health/protocol.py`. Results: **not run yet** (needs the
+user's PC and 360° online access).
 
 ## Race-condition & chaos cases (engine level)
 
