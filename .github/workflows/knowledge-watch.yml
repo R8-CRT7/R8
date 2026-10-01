@@ -25,6 +25,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Connectivity diagnostics
+        continue-on-error: true
+        run: |
+          for u in https://www.gesetze-im-internet.de/ https://www.gesetze-im-internet.de/stvo_2013/xml.zip http://www.gesetze-im-internet.de/stvo_2013/xml.zip https://testphase.rechtsinformationen.bund.de/ https://www.recht.bund.de/; do
+            echo "== $u"; curl -sS -o /dev/null -w "http=%{http_code} ip=%{remote_ip} t=%{time_total}s size=%{size_download}\n" --max-time 90 "$u" || true
+          done
       - name: Fetch official sources
         run: python windows/tools/knowledge_watch.py fetch --out "$RUNNER_TEMP/new"
       - name: Compare with reviewed snapshots + impact analysis

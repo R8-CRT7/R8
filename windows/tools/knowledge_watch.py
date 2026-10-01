@@ -88,15 +88,27 @@ def norm_key(enbez: str) -> str:
     return re.sub(r"\s+", " ", m.group(1)) if m else enbez
 
 
+def _download(url: str, attempts: int = 4) -> bytes:
+    last: Exception | None = None
+    for i in range(attempts):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (360SMART knowledge watch)"})
+            with urllib.request.urlopen(req, timeout=180) as r:  # nosec B310 - fixed official https URL
+                return r.read()
+        except OSError as e:  # timeouts / resets: back off and retry
+            last = e
+            print(f"  attempt {i + 1} failed for {url}: {e}", flush=True)
+            time.sleep(10 * (i + 1))
+    raise RuntimeError(f"download failed: {url}: {last}")
+
+
 def fetch(out: Path) -> dict:
     cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
     out.mkdir(parents=True, exist_ok=True)
     summary = {}
     for law in cfg["laws"]:
         url = BASE.format(slug=law["slug"])
-        req = urllib.request.Request(url, headers={"User-Agent": "360SMART-knowledge-watch/1.0"})
-        with urllib.request.urlopen(req, timeout=60) as r:  # nosec B310 - fixed https URL
-            data = r.read()
+        data = _download(url)
         with zipfile.ZipFile(io.BytesIO(data)) as z:
             xml_name = next(n for n in z.namelist() if n.endswith(".xml"))
             parsed = parse_law(z.read(xml_name))
