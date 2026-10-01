@@ -50,8 +50,14 @@
     "Anlage 3",
     "Anlage 4"
    ],
-   "abbr": "StVO",
-   "search": "Straßenverkehrs-Ordnung"
+   "abbreviations": [
+    "StVO",
+    "StVO 2013"
+   ],
+   "search_terms": [
+    "StVO",
+    "Straßenverkehrs-Ordnung"
+   ]
   },
   {
    "slug": "stvg",
@@ -66,8 +72,13 @@
     "§ 24a",
     "§ 24c"
    ],
-   "abbr": "StVG",
-   "search": "Straßenverkehrsgesetz"
+   "abbreviations": [
+    "StVG"
+   ],
+   "search_terms": [
+    "StVG",
+    "Straßenverkehrsgesetz"
+   ]
   },
   {
    "slug": "fev_2010",
@@ -87,8 +98,16 @@
     "Anlage 7",
     "Anlage 13"
    ],
-   "abbr": "FeV",
-   "search": "Fahrerlaubnis-Verordnung"
+   "abbreviations": [
+    "FeV",
+    "FeV 2010",
+    "FeV2010"
+   ],
+   "search_terms": [
+    "FeV",
+    "Fahrerlaubnis-Verordnung",
+    "Verordnung über die Zulassung von Personen zum Straßenverkehr"
+   ]
   },
   {
    "slug": "stvzo_2012",
@@ -114,8 +133,14 @@
     "§ 56",
     "§ 57"
    ],
-   "abbr": "StVZO",
-   "search": "Straßenverkehrs-Zulassungs-Ordnung"
+   "abbreviations": [
+    "StVZO",
+    "StVZO 2012"
+   ],
+   "search_terms": [
+    "StVZO",
+    "Straßenverkehrs-Zulassungs-Ordnung"
+   ]
   },
   {
    "slug": "bkatv_2013",
@@ -124,8 +149,14 @@
    "norms": [
     "all"
    ],
-   "abbr": "BKatV",
-   "search": "Bußgeldkatalog-Verordnung"
+   "abbreviations": [
+    "BKatV",
+    "BKatV 2013"
+   ],
+   "search_terms": [
+    "BKatV",
+    "Bußgeldkatalog-Verordnung"
+   ]
   }
  ],
  "api": "https://testphase.rechtsinformationen.bund.de"

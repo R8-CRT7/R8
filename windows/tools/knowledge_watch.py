@@ -106,19 +106,22 @@ def _json(url: str) -> dict:
     return json.loads(_download(url).decode("utf-8"))
 
 
-def _find_law(api: str, abbr: str, search: str) -> dict:
-    """The in-force consolidated version of a law via the RIS search API (exact abbreviation match)."""
+def _find_law(api: str, abbreviations: list[str], terms: list[str]) -> dict | None:
+    """The in-force consolidated version of a law via the RIS search API (EXACT abbreviation match)."""
     from urllib.parse import quote
 
-    res = _json(f"{api}/v1/legislation?searchTerm={quote(search)}&size=50")
-    hits = [m["item"] for m in res.get("member", []) if m.get("item", {}).get("@type") == "Legislation"]
-    exact = [h for h in hits if (h.get("abbreviation") or "").replace(" ", "").lower().startswith(abbr.lower())
-             and "ausn" not in (h.get("abbreviation") or "").lower()]
-    exact = [h for h in exact if h.get("legislationLegalForce") == "InForce"] or exact
-    if not exact:
-        raise RuntimeError(f"{abbr}: not found in RIS search ({[h.get('abbreviation') for h in hits]})")
-    exact.sort(key=lambda h: (len(h.get("abbreviation") or ""), h["legislationIdentifier"]))
-    return exact[0]
+    wanted = {a.replace(" ", "").lower() for a in abbreviations}
+    seen: list[str] = []
+    for term in terms:
+        res = _json(f"{api}/v1/legislation?searchTerm={quote(term)}&size=100")
+        hits = [m["item"] for m in res.get("member", []) if m.get("item", {}).get("@type") == "Legislation"]
+        seen += [h.get("abbreviation") or "?" for h in hits]
+        exact = [h for h in hits if (h.get("abbreviation") or "").replace(" ", "").lower() in wanted]
+        exact = [h for h in exact if h.get("legislationLegalForce") == "InForce"] or exact
+        if exact:
+            return exact[0]
+    print(f"  NOT FOUND {abbreviations}; abbreviations seen: {sorted(set(seen))[:80]}", flush=True)
+    return None
 
 
 def fetch_raw(out: Path) -> dict:
@@ -129,7 +132,10 @@ def fetch_raw(out: Path) -> dict:
     api = cfg["api"]
     summary = {}
     for law in cfg["laws"]:
-        item = _find_law(api, law["abbr"], law["search"])
+        item = _find_law(api, law["abbreviations"], law["search_terms"])
+        if item is None:
+            summary[law["slug"]] = {"missing": True}
+            continue
         zip_url = next(e["contentUrl"] for e in item["encoding"] if e["encodingFormat"] == "application/zip")
         data = _download(api + zip_url)
         d = out / law["slug"]
