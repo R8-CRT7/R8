@@ -253,7 +253,7 @@
       "eingeordnet",
       "überholen"
      ],
-     "statement": "Ein eingeordneter Linksabbieger ist rechts zu überholen",
+     "statement": "Wer sich zum Linksabbiegen eingeordnet hat, wird auf der rechten Seite überholt",
      "truth": true
     },
     {
@@ -660,7 +660,7 @@
       "Autobahn",
       "Ausfahrt verpasst"
      ],
-     "statement": "Ich wende auf der Autobahn, wenn kein Verkehr kommt",
+     "statement": "Bei leerer Autobahn ist Umdrehen erlaubt",
      "truth": false
     },
     {

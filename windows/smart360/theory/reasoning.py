@@ -15,6 +15,7 @@ import math
 import re
 from dataclasses import dataclass, field
 from enum import StrEnum
+from functools import lru_cache
 
 from smart360.theory import calc
 from smart360.theory.kb import KnowledgeBase, get_kb
@@ -22,6 +23,16 @@ from smart360.theory.negation import Deontic, Polarity, analyze, asks_for_negati
 from smart360.theory.priority import PriorityDecision, decide
 from smart360.theory.scene import Scene, temporal_check
 from smart360.theory.schema import Claim, KnowledgeObject, Sign
+from smart360.theory.semantics import (
+    action_concepts,
+    actor,
+    flip_opposites,
+    load_lexicon,
+    opposite_conflict,
+    precedence,
+    resolve_answer,
+    situation_conflict,
+)
 from smart360.theory.text import (
     NUMBER_TOKEN,
     canon,
@@ -39,14 +50,13 @@ DEFAULT_THRESHOLD = 0.75
 MATCH_MIN = 0.55  # minimum statement similarity for a claim to count
 AMBIGUITY_GAP = 0.08
 NUMERIC_SITUATION_MIN = 0.3
-SIGN_MATCH_MIN = 0.35
-COMPOSITE_Q_MIN = 0.25  # question-vs-claim cosine for composite (question+short answer) matching  # cosine between an answer and a sign description
+SIGN_MATCH_MIN = 0.35  # cosine between an answer and a sign description
 # Words that change which number applies. If the question contains one that the matched claim does not, a
 # numeric answer is not decided from that claim (protects against e.g. "Pkw mit Anhänger" -> Pkw limit).
 QUALIFIERS = frozenset(content(" ".join((
     "anhänger wohnanhänger lkw kraftrad bus kraftomnibus schneeketten nebel schneefall regen glätte autobahn "
     "kraftfahrstraße innerorts außerorts kinder radfahrer fußgänger dunkelheit nacht probezeit fahranfänger "
-    "baustelle tunnel bahnübergang einbahnstraße kreisverkehr").split())))  # numeric-only answers: minimum question-vs-claim situation similarity
+    "baustelle tunnel bahnübergang einbahnstraße kreisverkehr schienenfahrzeug").split())))  # numeric-only answers: minimum question-vs-claim situation similarity
 
 
 class Verdict(StrEnum):
@@ -283,9 +293,19 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
     a_words = {w for w in a_core if not NUMBER_TOKEN.match(w)}
     numeric_only = bool(numbers(answer)) and len(a_words) <= 1
     excluded = _excluded_terms(question)
+    # lex specialis: a question qualifier ('Straßenbahn') that some candidate claim covers shadows the general
+    # claims that do not mention it - they cannot decide alone
+    q_quals = (q_core & QUALIFIERS) - _negated_qualifiers(question)
+    obj_core = {obj.id: _object_core(obj) for obj in candidates}
+    specific = set().union(*(q_quals & c for c in obj_core.values())) if candidates else set()
     out: list[_Match] = []
     for obj in candidates:
+        # rules (objects) that never mention a question qualifier another candidate rule covers are general rules
+        shadowed = specific - obj_core[obj.id]
+        topic_core = _core(obj.title + " " + " ".join(obj.keywords))
         for claim in obj.claims:
+            if situation_conflict(question, " ".join(claim.context) + " " + claim.statement, answer):
+                continue  # 'Arm hoch' claim for an 'Arme quer' question, 'Zeichen 283' for 'Zeichen 286'
             if numeric_only:
                 # "100 km/h", "unter 50 m": the words say nothing - the SITUATION (question vs claim) decides
                 c_nums = numbers(" ".join(claim.numbers) or claim.statement)
@@ -308,6 +328,11 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
                 out.append(_Match(obj, claim, s_sit, verdict, flags))
                 continue
             s_stmt = similarity(a_core, _core(claim.statement))
+            flipped = False
+            if s_stmt < MATCH_MIN and opposite_conflict(answer, claim.statement):
+                # 'Links' vs 'Schienenfahrzeuge sind rechts zu überholen': same proposition, opposite side
+                s_stmt = similarity(_core(flip_opposites(answer)), _core(claim.statement))
+                flipped = True
             if s_stmt < MATCH_MIN:
                 continue
             ctx = _core(" ".join(claim.context)) if claim.context else set()
@@ -316,17 +341,76 @@ def match_claims(kb: KnowledgeBase, question: str, answer: str, candidates: list
             s_ctx = max(similarity(q_core, ctx), similarity(q_core, _core(claim.statement))) if ctx else 0.5
             if use_context and claim.context and s_ctx < 0.2:
                 continue  # the claim belongs to a different situation
+            # same proposition? actor and action concepts must agree (lexicon); precedence order must agree
+            a_act, c_act = action_concepts(main_clause(answer)), action_concepts(main_clause(claim.statement))
+            contrary = flipped or opposite_conflict(answer, claim.statement)  # 'links' vs 'rechts'
+            if a_act and c_act and not a_act & c_act:
+                lex = load_lexicon()
+                if not any(lex.incompatible_with(x, y) for x in a_act for y in c_act):
+                    continue  # different actions - this claim says nothing about the answer
+                contrary = True
+            a_actor, c_actor = actor(main_clause(answer)), actor(main_clause(claim.statement))
+            if a_actor and c_actor and a_actor != c_actor:
+                continue
             score = s_stmt * ((0.5 + 0.5 * s_ctx) if use_context else 1.0)
             # specificity: answer words the claim does not cover ('Feldweg') lower the score, so the more
             # specific claim wins over a general one that only matches part of the answer
             covered = len(a_core & (_core(claim.statement) | ctx)) / len(a_core) if a_core else 1.0
             score *= covered ** 2
-            verdict, flags = _claim_verdict(claim, answer, pa)
+            c_full = _core(" ".join(claim.context) + " " + claim.statement)
+            # condition binding: a special case inside the rule ('In Einbahnstraßen ...') the question does not name
+            unmet = (c_full & QUALIFIERS) - q_core - a_core - topic_core
+            prec = precedence(claim.statement, answer)
+            if prec is not None:
+                verdict, flags = (Verdict.TRUE if prec == claim.truth else Verdict.FALSE), ["precedence"]
+            elif contrary:
+                # the answer does something the claim's action excludes ('anhalten' vs 'weiterfahren')
+                affirms = not pa.negated and pa.deontic in (Deontic.NONE, Deontic.OBLIGATORY, Deontic.PERMITTED)
+                c_pol = analyze(main_clause(claim.statement))
+                c_affirms = not c_pol.negated and c_pol.deontic in (Deontic.NONE, Deontic.OBLIGATORY)
+                verdict = Verdict.FALSE if (claim.truth and affirms and c_affirms) else Verdict.UNKNOWN
+                flags = ["contrary_action"]
+            else:
+                verdict, flags = _claim_verdict(claim, answer, pa)
             if obj.exceptions and "absolute_quantifier" in flags:
                 flags.append("exception_risk")
+            if shadowed:
+                flags = [*flags, "qualifier_missing"]
+                score *= 0.5
+            if unmet and verdict != Verdict.UNKNOWN:
+                verdict, flags = Verdict.UNKNOWN, [*flags, "condition_unmet"]
+                score *= 0.5
             out.append(_Match(obj, claim, score, verdict, flags))
     out.sort(key=lambda m: -m.score)
     return out
+
+
+@lru_cache(maxsize=4096)
+def _object_core_cached(obj_id: str, text: str) -> frozenset[str]:
+    return frozenset(_core(text))
+
+
+def _object_core(obj: KnowledgeObject) -> frozenset[str]:
+    text = " ".join([obj.title, *obj.keywords, *(" ".join(c.context) + " " + c.statement for c in obj.claims)])
+    return _object_core_cached(obj.id, text)
+
+
+_CLAUSE_SPLIT = re.compile(r",(?!\s*(?:" + _CONJ[1:-1] + r"|die|der|das|um|ohne|aber|sondern|denn)\b)\s*|\s+und\s+",
+                           re.IGNORECASE)
+_SUBJECT_START = re.compile(r"^(ich|sie|er|es|wir|man|der|die|das|den|dem|ein|eine|einen|kein\w*|mein\w*|alle\w*)\b",
+                            re.IGNORECASE)
+
+
+def clauses(answer: str) -> list[str]:
+    """'Ich warte und lasse den Gegenverkehr vorbei' -> ['Ich warte', 'ich lasse den Gegenverkehr vorbei'].
+    Only 'ich ...' answers are split; the 'ich' subject is carried over to clauses without a subject."""
+    parts = [p.strip() for p in _CLAUSE_SPLIT.split(answer) if p and p.strip()]
+    if len(parts) < 2 or parts[0].split(" ", 1)[0].lower() != "ich":
+        return [answer]
+    words = [len({w for w in _core(p) if not NUMBER_TOKEN.match(w)}) for p in parts]
+    if min(words) < 1 or sum(words) < 3:
+        return [answer]
+    return [parts[0], *(p if _SUBJECT_START.match(p) else f"ich {p}" for p in parts[1:])]
 
 
 def _excluded_terms(text: str) -> set[str]:
@@ -371,31 +455,6 @@ def _yes_no_reason(answer: str) -> str:
 
 def _is_short(answer: str) -> bool:
     return len({w for w in _core(answer) if not NUMBER_TOKEN.match(w)}) <= 4
-
-
-def match_composite(question: str, answer: str, candidates: list[KnowledgeObject]) -> list[_Match]:
-    """Short answers ('Auf dem Gehweg', 'Der Pkw von rechts') only mean something together with the question.
-    A claim matches if it covers the answer's distinctive words AND fits the question's situation."""
-    q_core = _core(question)
-    a_core = {w for w in _core(answer) if not NUMBER_TOKEN.match(w)}
-    if not a_core:
-        return []
-    pa = analyze(main_clause(answer))  # polarity of the ANSWER - a 'nicht' in the question is situation, not claim
-    out: list[_Match] = []
-    for obj in candidates:
-        for claim in obj.claims:
-            c_core = _core(claim.statement) | _core(" ".join(claim.context))
-            a_cov = len(a_core & c_core) / len(a_core)
-            if a_cov < 0.99:  # every distinctive answer word must be covered ('auf dem Übergang' != 'vor dem Kreuz')
-                continue
-            q_sim = cosine(q_core, c_core)
-            if q_sim < COMPOSITE_Q_MIN:
-                continue
-            score = 0.5 * a_cov + 0.5 * min(1.0, q_sim * 1.5)
-            verdict, flags = _claim_verdict(claim, answer, pa)
-            out.append(_Match(obj, claim, score, verdict, [*flags, "composite"]))
-    out.sort(key=lambda m: -m.score)
-    return out
 
 
 def _decide_claims(matches: list[_Match]) -> tuple[Verdict, _Match | None, list[str]]:
@@ -670,11 +729,26 @@ def solve(q: TheoryQuestion, kb: KnowledgeBase | None = None, threshold: float =
         else:
             matches = match_claims(kb, q.text, a, candidates)
             verdict, best, flags = _decide_claims(matches)
+            parts = clauses(a)
+            if len(parts) > 1:
+                # composition: 'A und B' is true only if every clause is; one false clause makes it false
+                sub = [_decide_claims(match_claims(kb, q.text, c, candidates)) for c in parts]
+                if any(v == Verdict.FALSE for v, _, _ in sub):
+                    if verdict == Verdict.TRUE:
+                        verdict, flags = Verdict.UNKNOWN, [*flags, "clause_conflict"]
+                    elif verdict == Verdict.UNKNOWN:
+                        v, b, f = next(x for x in sub if x[0] == Verdict.FALSE)
+                        verdict, best, flags = v, b, [*f, "clause_false"]
+                elif verdict == Verdict.UNKNOWN and all(v == Verdict.TRUE for v, _, _ in sub):
+                    verdict, best, flags = Verdict.TRUE, min((x[1] for x in sub), key=lambda m: m.score), \
+                        ["clauses_true"]
             if verdict == Verdict.UNKNOWN and _is_short(a):
-                c_matches = match_composite(q.text, a, candidates)
-                c_verdict, c_best, c_flags = _decide_claims(c_matches)
-                if c_best is not None and (best is None or c_verdict != Verdict.UNKNOWN):
-                    verdict, best, flags = c_verdict, c_best, [*c_flags, "composite"]
+                # short answer to a W-question: read it together with the question as one proposition
+                prop = resolve_answer(q.text, a)
+                if prop:
+                    r_verdict, r_best, r_flags = _decide_claims(match_claims(kb, q.text, prop, candidates))
+                    if r_best is not None and (best is None or r_verdict != Verdict.UNKNOWN):
+                        verdict, best, flags = r_verdict, r_best, [*r_flags, "resolved_answer"]
         claim_matches[i] = best
         if best is not None:
             evals[i] = AnswerEval(i, verdict, "claim", [best.obj.id], _explain(best), best.score, flags)

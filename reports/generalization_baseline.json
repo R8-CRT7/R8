@@ -1,0 +1,25 @@
+{
+ "_note": "Generalisierungs-Baseline - eingefroren, darf nicht überschrieben werden (Test: test_generalization_baseline_frozen).",
+ "commit": "2365ca7",
+ "date": "2026-10-01",
+ "synthetic_n": 5152,
+ "synthetic_accuracy": 0.7597,
+ "synthetic_uncertain": 0.2403,
+ "synthetic_false_confident": 0.0,
+ "golden_v1_first_run": {
+  "n": 80,
+  "accuracy": 0.2125,
+  "uncertain_rate": 0.75,
+  "false_confident_rate": 0.0375,
+  "precision_when_answered": 0.85,
+  "commit": "5564557"
+ },
+ "golden_v2_first_run": {
+  "n": 80,
+  "accuracy": 0.2,
+  "uncertain_rate": 0.7625,
+  "false_confident_rate": 0.0375,
+  "precision_when_answered": 0.8421,
+  "commit": "941b5b8"
+ }
+}

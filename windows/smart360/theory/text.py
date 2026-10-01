@@ -27,8 +27,17 @@ OCR_FIXES = (
 UNIT_ALIASES = {
     "kmh": "km/h", "km/std": "km/h", "stundenkilometer": "km/h", "meter": "m", "metern": "m", "metres": "m",
     "zentimeter": "cm", "millimeter": "mm", "promille": "‰", "sekunden": "s", "sekunde": "s", "kilogramm": "kg",
-    "tonnen": "t", "tonne": "t", "jahre": "jahre", "jahren": "jahre", "prozent": "%",
+    "tonnen": "t", "tonne": "t", "jahre": "jahre", "jahren": "jahre", "jahr": "jahre", "prozent": "%",
+    "minuten": "min", "minute": "min", "monaten": "monate", "monat": "monate", "monate": "monate",
+    "tagen": "tage", "tag": "tage", "tage": "tage", "wochen": "wochen", "woche": "wochen",
+    "stunden": "stunden", "stunde": "stunden", "punkten": "punkte", "punkt": "punkte", "kilometer": "km",
 }
+NUMBER_WORDS = {"ein": 1, "eine": 1, "einen": 1, "einer": 1, "zwei": 2, "drei": 3, "vier": 4, "fünf": 5, "sechs": 6,
+                "sieben": 7, "acht": 8, "neun": 9, "zehn": 10, "elf": 11, "zwölf": 12, "fünfzehn": 15,
+                "zwanzig": 20, "dreissig": 30, "vierzig": 40, "fünfzig": 50, "hundert": 100}
+_UNIT_WORDS = r"(minuten?|stunden?|tagen?|tage|tag|wochen?|monaten?|monate|monat|jahren?|jahre|jahr|meter|metern|sekunden?|punkten?|punkte|kilometer)"
+# durations are compared in one unit
+_DURATION = {"wochen": (7.0, "tage"), "stunden": (60.0, "min")}
 
 
 def fold(text: str) -> str:
@@ -45,22 +54,28 @@ def ascii_fold(text: str) -> str:
     return fold(text).translate(str.maketrans("äöü", "aou"))
 
 
-_NUM = re.compile(r"(\d+(?:[.,]\d+)?)\s*(km/h|km|‰|%|mm|cm|m|kg|t|s|jahre|monate|minuten|ng/ml|punkte?)?(?![a-zäöü])")
+_NUM = re.compile(r"(\d+(?:[.,]\d+)?)\s*(km/h|km|‰|%|mm|cm|m|kg|t|s|jahre|monate|min|tage|wochen|stunden|ng/ml|punkte)?(?![a-zäöü])")
 
 
 def numbers(text: str) -> list[tuple[float, str]]:
     """[(value, unit)] - German decimal comma, unit aliases ("Meter" -> m)."""
     t = fold(text)
-    for alias, unit in UNIT_ALIASES.items():
+    t = re.sub(rf"\b({'|'.join(NUMBER_WORDS)})\s+{_UNIT_WORDS}\b",
+               lambda m: f"{NUMBER_WORDS[m.group(1)]} {m.group(2)}", t)
+    for alias, unit in sorted(UNIT_ALIASES.items(), key=lambda x: -len(x[0])):
         t = re.sub(rf"(?<=\d)\s*{re.escape(alias)}\b", f" {unit}", t)
     out = []
     for m in _NUM.finditer(t):
         raw = m.group(1).replace(".", "").replace(",", ".") if re.match(r"^\d{1,3}(\.\d{3})+$", m.group(1)) \
             else m.group(1).replace(",", ".")
         try:
-            out.append((float(raw), m.group(2) or ""))
+            v, u = float(raw), m.group(2) or ""
         except ValueError:
             continue
+        if u in _DURATION:
+            f, u = _DURATION[u]
+            v *= f
+        out.append((v, u))
     return out
 
 
@@ -79,33 +94,11 @@ def stem(word: str) -> str:
     return w
 
 
-# Synonyms used in exam questions -> one canonical token (applied before tokenising)
-SYNONYMS: tuple[tuple[re.Pattern[str], str], ...] = tuple((re.compile(p), r) for p, r in (
-    (r"\baußerhalb geschlossener ortschaften?\b|\bausserhalb geschlossener ortschaften?\b|\baußerorts\b|\bausserorts\b", "außerorts"),
-    (r"\binnerhalb geschlossener ortschaften?\b|\binnerorts\b", "innerorts"),
-    (r"\bzebrastreifens?\b|\bfußgängerüberwege?n?s?\b|\bfussgängerüberwege?n?s?\b|\bzeichen 293\b", "fußgängerüberweg"),
-    (r"\bpersonenkraftwagens?\b|\bpkws?\b", "pkw"),
-    (r"\blastkraftwagens?\b|\blkws?\b", "lkw"),
-    (r"\bmotorrad\w*|\bkrafträder\w*|\bkraftrad\w*", "kraftrad"),
-    (r"\bampel\w*|\blichtzeichenanlage\w*|\blichtzeichen\b", "ampel"),
-    (r"\bstoppschild\w*|\bstop-schild\w*|\bzeichen 206\b", "stoppschild"),
-    (r"\bhandys?\b|\bmobiltelefon\w*|\bsmartphones?\b", "handy"),
-    (r"\bblinker[ns]?\b|\bfahrtrichtungsanzeiger[ns]?\b", "blinker"),
-    (r"\bmartinshorn\b|\beinsatzhorn\b", "einsatzhorn"),
-    (r"\bblaulicht\b|\bblaue[sm]? blinklicht\b", "blaulicht"),
-    (r"\bwarnblinker\b|\bwarnblinkanlage\b|\bwarnblinklicht\b", "warnblinklicht"),
-    (r"\btüv\b|\bhauptuntersuchung\w*", "hauptuntersuchung"),
-    (r"\bwohnwagen\w*|\bwohnanhänger\w*", "wohnanhänger"),
-    (r"\bspielstraße\w*|\bverkehrsberuhigte[nmr]? bereich\w*", "verkehrsberuhigt"),
-    (r"\btempo[- ]?30[- ]zone\w*", "tempo30zone"),
-))
-
-
 def canon(text: str) -> str:
-    t = fold(text)
-    for rx, repl in SYNONYMS:
-        t = rx.sub(repl, t)
-    return t
+    """Folded text after semantic normalisation (knowledge/semantics/lexicon.json)."""
+    from smart360.theory.semantics import canonicalize
+
+    return canonicalize(text).text
 
 
 def words(text: str) -> list[str]:

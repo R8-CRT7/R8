@@ -56,7 +56,9 @@ def _hits(t: str, words: tuple[str, ...]) -> list[str]:
 
 
 def analyze(text: str) -> Polarity:
-    t = fold(text)
+    from smart360.theory.semantics import canonicalize
+
+    t = canonicalize(text).text  # phrases like 'nicht gefährden' are already absorbed into a concept
     n_neg = len(re.findall(r"(?<![a-zäöü])(nicht|kein\w*|nie|niemals|keinesfalls|nichts)(?![a-zäöü])", t))
     prohibit = _hits(t, ("verboten", "untersagt", "unzulässig", "unzulaessig"))
     permit = _hits(t, PERMIT)

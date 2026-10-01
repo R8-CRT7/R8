@@ -1,0 +1,945 @@
+{
+ "_note": "Semantische Normalisierung für Fahrschulsprache. Muster arbeiten auf gefaltetem Text (klein, ß->ss). Jede Regel: canonical_concept, rewrite (wohin umgeschrieben wird), patterns, valid_context (mind. eines muss im Kontext vorkommen; leer = immer), invalid_context (keines darf vorkommen), confidence. Konzept-Token (c...x) werden NICHT gestemmt; Negatoren innerhalb eines Musters werden mit verbraucht. Keine Golden-Fragen als Muster (Test test_holdout).",
+ "entries": [
+  {
+   "id": "ctx_ausserorts",
+   "canonical_concept": "OUTSIDE_BUILT_UP",
+   "rewrite": "außerorts",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "außerhalb (von )?geschlossener ortschaften?",
+    "ausserhalb (von )?geschlossener ortschaften?",
+    "außerhalb (von |der )?ortschaften?",
+    "außerorts",
+    "ausserorts"
+   ]
+  },
+  {
+   "id": "ctx_innerorts",
+   "canonical_concept": "BUILT_UP",
+   "rewrite": "innerorts",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "innerhalb (von )?geschlossener ortschaften?",
+    "innerhalb (von |der )?ortschaften?",
+    "innerorts",
+    "in (der|einer) ortschaft",
+    "im ort\\b",
+    "in der stadt"
+   ]
+  },
+  {
+   "id": "ctx_landstrasse",
+   "canonical_concept": "OUTSIDE_BUILT_UP",
+   "rewrite": "außerorts",
+   "confidence": 0.85,
+   "valid_context": [],
+   "invalid_context": [
+    "innerorts",
+    "innerhalb",
+    "ortschaft"
+   ],
+   "patterns": [
+    "(auf (einer|der) )?(landstraße|landstrasse|bundesstraße|bundesstrasse|kreisstraße|kreisstrasse)"
+   ]
+  },
+  {
+   "id": "obj_fussgaengerueberweg",
+   "canonical_concept": "CROSSWALK",
+   "rewrite": "fußgängerüberweg",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "zebrastreifens?",
+    "fußgängerüberwege?n?s?",
+    "fussgängerüberwege?n?s?",
+    "zeichen 293"
+   ]
+  },
+  {
+   "id": "obj_pkw",
+   "canonical_concept": "CAR",
+   "rewrite": "pkw",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "personenkraftwagens?",
+    "pkws?",
+    "auto\\b",
+    "autos\\b"
+   ]
+  },
+  {
+   "id": "obj_lkw",
+   "canonical_concept": "TRUCK",
+   "rewrite": "lkw",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "lastkraftwagens?",
+    "lkws?"
+   ]
+  },
+  {
+   "id": "obj_kraftrad",
+   "canonical_concept": "MOTORCYCLE",
+   "rewrite": "kraftrad",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "motorrad\\w*",
+    "krafträder\\w*",
+    "kraftrad\\w*"
+   ]
+  },
+  {
+   "id": "obj_radfahrer",
+   "canonical_concept": "CYCLIST",
+   "rewrite": "radfahrer",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "radfahrer(in|innen|n)?",
+    "radfahrende[nr]?",
+    "rad fahrende[nr]?",
+    "fahrradfahrer(in|innen|n)?"
+   ]
+  },
+  {
+   "id": "obj_fussgaenger",
+   "canonical_concept": "PEDESTRIAN",
+   "rewrite": "fußgänger",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "fußgänger(in|innen|n)?",
+    "fussgänger(in|innen|n)?",
+    "zu fuß gehende[nr]?",
+    "zu fuss gehende[nr]?",
+    "passant(in|en)?"
+   ]
+  },
+  {
+   "id": "obj_ampel",
+   "canonical_concept": "TRAFFIC_LIGHT",
+   "rewrite": "ampel",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "ampel\\w*",
+    "lichtzeichenanlage\\w*",
+    "lichtzeichen\\b",
+    "wechsellichtzeichen"
+   ]
+  },
+  {
+   "id": "st_ampel_aus",
+   "canonical_concept": "TRAFFIC_LIGHT_OFF",
+   "rewrite": "ampel campelausx",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "ampel (ist )?(ausgefallen|ausgeschaltet|abgeschaltet|außer betrieb|ausser betrieb|aus|dunkel|defekt)",
+    "(ausgefallene|ausgeschaltete|abgeschaltete|defekte) ampel"
+   ]
+  },
+  {
+   "id": "obj_verkehrszeichen",
+   "canonical_concept": "SIGN",
+   "rewrite": "verkehrszeichen",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "verkehrsschild(er|ern)?",
+    "verkehrszeichen",
+    "schilder(n)?\\b",
+    "vorfahrtsschild(er)?",
+    "vorfahrtszeichen"
+   ]
+  },
+  {
+   "id": "obj_stoppschild",
+   "canonical_concept": "STOP_SIGN",
+   "rewrite": "stoppschild",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "stoppschild\\w*",
+    "stop-schild\\w*",
+    "zeichen 206"
+   ]
+  },
+  {
+   "id": "obj_handy",
+   "canonical_concept": "PHONE",
+   "rewrite": "handy",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "handys?",
+    "mobiltelefon\\w*",
+    "smartphones?"
+   ]
+  },
+  {
+   "id": "obj_blinker",
+   "canonical_concept": "INDICATOR",
+   "rewrite": "blinker",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "blinker[ns]?",
+    "fahrtrichtungsanzeiger[ns]?"
+   ]
+  },
+  {
+   "id": "obj_einsatzhorn",
+   "canonical_concept": "SIREN",
+   "rewrite": "einsatzhorn",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "martinshorn",
+    "einsatzhorn",
+    "sirene"
+   ]
+  },
+  {
+   "id": "obj_blaulicht",
+   "canonical_concept": "BLUE_LIGHT",
+   "rewrite": "blaulicht",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "blaulicht",
+    "blaue[sm]? blinklicht"
+   ]
+  },
+  {
+   "id": "obj_einsatzfahrzeug",
+   "canonical_concept": "EMERGENCY_VEHICLE",
+   "rewrite": "einsatzfahrzeug",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "rettungswagen",
+    "krankenwagen",
+    "notarztwagen",
+    "feuerwehrauto",
+    "feuerwehrfahrzeug",
+    "polizeiwagen",
+    "polizeifahrzeug",
+    "einsatzfahrzeug\\w*"
+   ]
+  },
+  {
+   "id": "obj_warnblinklicht",
+   "canonical_concept": "HAZARD_LIGHTS",
+   "rewrite": "warnblinklicht",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "warnblinker",
+    "warnblinkanlage",
+    "warnblinklicht"
+   ]
+  },
+  {
+   "id": "obj_hu",
+   "canonical_concept": "INSPECTION",
+   "rewrite": "hauptuntersuchung",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "tüv",
+    "hauptuntersuchung\\w*",
+    "\\bhu\\b"
+   ]
+  },
+  {
+   "id": "obj_wohnanhaenger",
+   "canonical_concept": "CARAVAN",
+   "rewrite": "wohnanhänger anhänger",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "wohnwagen\\w*",
+    "wohnanhänger\\w*"
+   ]
+  },
+  {
+   "id": "obj_gespann",
+   "canonical_concept": "COMBINATION",
+   "rewrite": "zug anhänger",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "gespann\\w*",
+    "fahrzeugkombination\\w*"
+   ]
+  },
+  {
+   "id": "obj_verkehrsberuhigt",
+   "canonical_concept": "TRAFFIC_CALMED",
+   "rewrite": "verkehrsberuhigt",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "spielstraße\\w*",
+    "spielstrasse\\w*",
+    "verkehrsberuhigte[nmr]? bereich\\w*"
+   ]
+  },
+  {
+   "id": "obj_tempo30",
+   "canonical_concept": "ZONE_30",
+   "rewrite": "tempo30zone",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "tempo[- ]?30[- ]zone\\w*"
+   ]
+  },
+  {
+   "id": "obj_standlicht",
+   "canonical_concept": "PARKING_LIGHTS",
+   "rewrite": "standlicht",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "standlicht",
+    "begrenzungsleuchten?"
+   ]
+  },
+  {
+   "id": "obj_einfaedel",
+   "canonical_concept": "ACCELERATION_LANE",
+   "rewrite": "einfädelungsstreifen",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "einfädelungsstreifens?",
+    "beschleunigungsstreifens?",
+    "einfädelspur",
+    "auffahrspur"
+   ]
+  },
+  {
+   "id": "obj_ausfaedel",
+   "canonical_concept": "DECELERATION_LANE",
+   "rewrite": "ausfädelungsstreifen",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "ausfädelungsstreifens?",
+    "verzögerungsstreifens?",
+    "ausfädelspur"
+   ]
+  },
+  {
+   "id": "obj_seitenstreifen",
+   "canonical_concept": "HARD_SHOULDER",
+   "rewrite": "seitenstreifen",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "seitenstreifens?",
+    "standstreifens?",
+    "standspur"
+   ]
+  },
+  {
+   "id": "obj_fahrstreifen",
+   "canonical_concept": "LANE",
+   "rewrite": "fahrstreifen",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "fahrspur(en)?",
+    "\\bspur(en)?\\b",
+    "fahrstreifens?",
+    "fahrstreifen"
+   ]
+  },
+  {
+   "id": "obj_schienenfahrzeug",
+   "canonical_concept": "RAIL_VEHICLE",
+   "rewrite": "schienenfahrzeug",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "schienenfahrzeug\\w*",
+    "\\bzug\\b(?! mit)",
+    "\\bzuges\\b",
+    "eisenbahn",
+    "straßenbahn\\w*",
+    "strassenbahn\\w*"
+   ]
+  },
+  {
+   "id": "act_einbiegen",
+   "canonical_concept": "TURN",
+   "rewrite": "abbiegen",
+   "confidence": 0.85,
+   "valid_context": [
+    "kreuzung",
+    "einmündung",
+    "straße",
+    "strasse",
+    "landstraße",
+    "landstrasse",
+    "weg"
+   ],
+   "invalid_context": [
+    "grundstück",
+    "parklücke",
+    "einfahrt"
+   ],
+   "patterns": [
+    "einbiegen",
+    "biege (ich )?ein",
+    "biegt ein",
+    "einzubiegen"
+   ]
+  },
+  {
+   "id": "act_yield",
+   "canonical_concept": "YIELD",
+   "rewrite": "cyieldx",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "(zuerst |vorher )?(durchfahren|vorbeifahren|durchgehen|passieren|abfahren) (zu )?lassen",
+    "lasse \\w+( \\w+){0,4} (zuerst |vorher )?fahren\\b",
+    "lasse \\w+( \\w+){0,3} (zuerst |vorher )?(durchfahren|vorbeifahren|durchgehen|vorbei|vor|passieren)\\b",
+    "vorlassen",
+    "lasse \\w+( \\w+){0,2} vor\\b",
+    "(die )?vorfahrt (zu )?gewähren",
+    "(den )?vorrang (zu )?gewähren",
+    "(den )?vortritt (zu )?lassen",
+    "platz (zu )?machen",
+    "mache (ich )?platz",
+    "freie bahn (zu )?schaffen",
+    "(den )?weg (unverzüglich |sofort )?frei(zu)?machen",
+    "(das )?(überqueren|abfahren|einscheren|einordnen) (zu )?ermöglichen",
+    "ermögliche \\w+( \\w+){0,3} (das )?(überqueren|abfahren|einscheren)"
+   ]
+  },
+  {
+   "id": "act_wait",
+   "canonical_concept": "WAIT",
+   "rewrite": "cwaitx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "\\bwarten\\b",
+    "\\bwarte\\b",
+    "\\bwartet\\b",
+    "stehen bleiben",
+    "bleibe (ich )?stehen",
+    "abwarten"
+   ]
+  },
+  {
+   "id": "act_insist",
+   "canonical_concept": "INSIST_PRIORITY",
+   "rewrite": "cinsistx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "auf (meiner|meine|seiner|ihrer|die) vorfahrt (zu )?bestehen",
+    "(meine )?vorfahrt (zu )?erzwingen",
+    "(meine )?vorfahrt (zu )?behalten",
+    "ich habe vorrang\\b",
+    "habe (ich )?(die )?vorfahrt, weil"
+   ]
+  },
+  {
+   "id": "act_go_first",
+   "canonical_concept": "GO_FIRST",
+   "rewrite": "cgofirstx",
+   "confidence": 0.85,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "(biege|fahre) (ich )?(noch )?(schnell |zügig )?vor (dem|der|den|ihm|ihr|ihnen)( \\w+){0,3}( ab| ein| durch| los)?\\b",
+    "(noch )?(schnell|zügig) (vor|davor) (ab)?(biegen|fahren)",
+    "vor dem gegenverkehr (ab)?(biegen|fahren)",
+    "zuerst (fahren|abbiegen|losfahren)\\b(?! lassen)",
+    "als erste[rs]? fahren"
+   ]
+  },
+  {
+   "id": "act_continue",
+   "canonical_concept": "CONTINUE",
+   "rewrite": "ccontinuex",
+   "confidence": 0.85,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "(einfach |normal |unverändert |zügig )?weiter(zu)?fahren",
+    "fahre (ich )?(einfach |normal |unverändert |zügig )?weiter",
+    "(zügig |schnell )(über|durch)(queren|fahren)",
+    "(zügig |schnell )über (den|die|das) \\w+ fahren",
+    "noch (schnell )?durch(zu)?fahren",
+    "noch schnell (über|durch)\\w*",
+    "darf (los|weiter)?fahren\\b",
+    "(los|weiter)fahren\\b"
+   ]
+  },
+  {
+   "id": "act_accelerate",
+   "canonical_concept": "ACCELERATE",
+   "rewrite": "caccelx",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "beschleunig\\w*",
+    "gas geben",
+    "gebe (ich )?gas",
+    "(geschwindigkeit|tempo) (zu )?erhöhen",
+    "(geschwindigkeit|tempo) erhöhe",
+    "schneller (zu )?(werden|fahren)"
+   ]
+  },
+  {
+   "id": "act_keep_speed",
+   "canonical_concept": "KEEP_SPEED",
+   "rewrite": "ckeepspeedx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "mit unverminderter geschwindigkeit",
+    "unvermindert",
+    "mit unveränderter geschwindigkeit",
+    "ohne (die )?geschwindigkeit zu (verringern|vermindern|reduzieren)",
+    "normale[rn]? geschwindigkeit"
+   ]
+  },
+  {
+   "id": "act_slow",
+   "canonical_concept": "SLOW_DOWN",
+   "rewrite": "cslowx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "langsamer (zu )?(fahren|werden)",
+    "fahre (ich )?langsamer",
+    "(die |das |meine )?(geschwindigkeit|tempo) (zu )?(vermindern|verringern|reduzieren|herabsetzen|drosseln|senken)",
+    "verringere (ich )?(die geschwindigkeit|das tempo)",
+    "verminderung der (fahr)?geschwindigkeit",
+    "fuß vom gas",
+    "fuss vom gas",
+    "mäßige[rn]? geschwindigkeit",
+    "langsam heranfahren"
+   ]
+  },
+  {
+   "id": "act_brake_ready",
+   "canonical_concept": "BRAKE_READY",
+   "rewrite": "cbrakereadyx",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "bremsbereit\\w*",
+    "bremsbereitschaft",
+    "fuß über (der|die) bremse",
+    "fuss über (der|die) bremse"
+   ]
+  },
+  {
+   "id": "act_walking_speed",
+   "canonical_concept": "WALKING_SPEED",
+   "rewrite": "cwalkspeedx",
+   "confidence": 1.0,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "schrittgeschwindigkeit",
+    "schritttempo"
+   ]
+  },
+  {
+   "id": "act_stop",
+   "canonical_concept": "STOP",
+   "rewrite": "cstopx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [
+    "parken",
+    "parke",
+    "geparkt"
+   ],
+   "patterns": [
+    "\\banhalten\\b",
+    "halte (ich )?(zuerst |vorher |trotzdem |immer )?an\\b",
+    "\\bhält an\\b",
+    "zum (stehen|stillstand) kommen",
+    "\\bstoppen\\b",
+    "stoppe\\b",
+    "halt vor der kreuzung"
+   ]
+  },
+  {
+   "id": "act_roll_through",
+   "canonical_concept": "ROLL_THROUGH",
+   "rewrite": "crollx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "ohne (zu )?anzuhalten",
+    "ohne anhalten",
+    "(langsam )?(durch|weiter)(zu)?rollen",
+    "rolle (ich )?(langsam )?(durch|weiter)"
+   ]
+  },
+  {
+   "id": "act_clear_junction",
+   "canonical_concept": "CLEAR_JUNCTION",
+   "rewrite": "cclearjx",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "(die )?kreuzung (zügig |sofort )?räumen",
+    "räume (ich )?die kreuzung",
+    "die kreuzung (zügig )?verlassen"
+   ]
+  },
+  {
+   "id": "act_signal",
+   "canonical_concept": "SIGNAL_DIRECTION",
+   "rewrite": "csignalx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "\\bblinken\\b",
+    "\\bblinke\\b",
+    "(den |die )?(rechten |linken )?blinker (zu )?(setzen|betätigen|einschalten|benutzen|einsetzen)",
+    "setze (ich )?(den )?(rechten |linken )?blinker",
+    "fahrtrichtungsanzeiger (zu )?(benutzen|betätigen|setzen)",
+    "(richtungsänderung|abbiegen|ausscheren|fahrstreifenwechsel) (rechtzeitig |deutlich )*(zu )?ankündigen"
+   ]
+  },
+  {
+   "id": "act_pause",
+   "canonical_concept": "TAKE_BREAK",
+   "rewrite": "cbreakx",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "pause (zu )?(einlegen|machen)",
+    "rast (zu )?(einlegen|machen)",
+    "lege (ich )?eine pause ein",
+    "kurz schlafen"
+   ]
+  },
+  {
+   "id": "act_guide",
+   "canonical_concept": "GET_GUIDED",
+   "rewrite": "cguidex",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "einweisen (zu )?lassen",
+    "lasse (ich )?mich einweisen",
+    "einweiser\\w*",
+    "eingewiesen"
+   ]
+  },
+  {
+   "id": "act_no_endanger",
+   "canonical_concept": "NO_ENDANGERMENT",
+   "rewrite": "cnoendangerx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "(eine )?gefährdung (anderer|der anderen|anderer verkehrsteilnehmer|des nachfolgenden verkehrs|von fahrgästen)?\\s?(ist |muss |sein muss |sollte )?(ausgeschlossen( sein| ist)?|ausschließen|auszuschließen)",
+    "andere (verkehrsteilnehmer )?(dürfen|darf) (dabei )?nicht gefährdet werden",
+    "ohne andere (verkehrsteilnehmer )?zu gefährden",
+    "niemand(en)? (zu )?gefährde[nt]?\\b",
+    "(dass )?niemand gefährdet wird",
+    "keine[n]? (anderen )?(zu )?gefährden"
+   ]
+  },
+  {
+   "id": "act_honk",
+   "canonical_concept": "HORN",
+   "rewrite": "chornx",
+   "confidence": 0.95,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "\\bhupen\\b",
+    "\\bhupe\\b",
+    "schallzeichen (zu )?geben",
+    "hupt\\b"
+   ]
+  },
+  {
+   "id": "act_ignore",
+   "canonical_concept": "RELY_ON_OTHERS",
+   "rewrite": "crelyx",
+   "confidence": 0.85,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "verlasse (ich )?mich darauf",
+    "darauf vertrauen",
+    "vertraue (ich )?darauf",
+    "sich darauf verlassen"
+   ]
+  },
+  {
+   "id": "act_more_distance",
+   "canonical_concept": "INCREASE_DISTANCE",
+   "rewrite": "cmoredistx",
+   "confidence": 0.9,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "(den |meinen )?abstand (zu )?vergrößern",
+    "vergrößere (ich )?(den )?abstand",
+    "größere[nr]? (sicherheits)?abstand",
+    "mehr abstand"
+   ]
+  },
+  {
+   "id": "act_expect_misconduct",
+   "canonical_concept": "EXPECT_MISCONDUCT",
+   "rewrite": "cexpectx",
+   "confidence": 0.85,
+   "valid_context": [],
+   "invalid_context": [],
+   "patterns": [
+    "mit (unvorsichtigem |falschem )?(fehl)?verhalten rechnen",
+    "rechne (ich )?mit (unvorsichtigem |falschem )?(fehl)?verhalten",
+    "mit (unvorsichtigem|falschem) verhalten (\\w+ )?rechnen"
+   ]
+  }
+ ],
+ "incompatible": [
+  [
+   "YIELD",
+   "INSIST_PRIORITY"
+  ],
+  [
+   "YIELD",
+   "GO_FIRST"
+  ],
+  [
+   "YIELD",
+   "ACCELERATE"
+  ],
+  [
+   "WAIT",
+   "GO_FIRST"
+  ],
+  [
+   "WAIT",
+   "CONTINUE"
+  ],
+  [
+   "WAIT",
+   "ACCELERATE"
+  ],
+  [
+   "WAIT",
+   "INSIST_PRIORITY"
+  ],
+  [
+   "STOP",
+   "ROLL_THROUGH"
+  ],
+  [
+   "STOP",
+   "CONTINUE"
+  ],
+  [
+   "STOP",
+   "ACCELERATE"
+  ],
+  [
+   "STOP",
+   "GO_FIRST"
+  ],
+  [
+   "STOP",
+   "CLEAR_JUNCTION"
+  ],
+  [
+   "SLOW_DOWN",
+   "ACCELERATE"
+  ],
+  [
+   "SLOW_DOWN",
+   "KEEP_SPEED"
+  ],
+  [
+   "WALKING_SPEED",
+   "KEEP_SPEED"
+  ],
+  [
+   "WALKING_SPEED",
+   "ACCELERATE"
+  ],
+  [
+   "BRAKE_READY",
+   "HORN"
+  ],
+  [
+   "BRAKE_READY",
+   "RELY_ON_OTHERS"
+  ],
+  [
+   "SLOW_DOWN",
+   "RELY_ON_OTHERS"
+  ],
+  [
+   "EXPECT_MISCONDUCT",
+   "RELY_ON_OTHERS"
+  ],
+  [
+   "EXPECT_MISCONDUCT",
+   "HORN"
+  ],
+  [
+   "TAKE_BREAK",
+   "CONTINUE"
+  ],
+  [
+   "CLEAR_JUNCTION",
+   "WAIT"
+  ]
+ ],
+ "exclusive": [
+  {
+   "group": "POLICE_GESTURE",
+   "_note": "§ 36 StVO: verschiedene Zeichen der Polizei schließen sich in einer Situation aus",
+   "members": {
+    "ARM_UP": [
+     "arm\\w* (\\w+ ){0,2}(hoch|empor)\\w*",
+     "hoch(ge)?(heben|hebt|hoben|gehoben|gestreckt|strecken)\\w*"
+    ],
+    "ARMS_ACROSS": [
+     "arm\\w* (\\w+ ){0,3}(quer|seitlich)\\w*",
+     "(quer|seitlich) (\\w+ ){0,3}arm\\w*",
+     "ausgestreckte arme"
+    ]
+   }
+  },
+  {
+   "group": "LIGHT_COLOUR",
+   "_note": "§ 37 StVO: eine Ampelphase zur Zeit",
+   "members": {
+    "GREEN": [
+     "grün\\w*"
+    ],
+    "YELLOW": [
+     "gelb\\w*"
+    ],
+    "RED": [
+     "rot\\w*"
+    ],
+    "RED_YELLOW": [
+     "rot ?(und|-) ?gelb\\w*"
+    ]
+   }
+  },
+  {
+   "group": "HALT_BAN",
+   "_note": "Zeichen 283 vs 286",
+   "members": {
+    "ABSOLUTE": [
+     "absolute\\w* haltverbot\\w*"
+    ],
+    "RESTRICTED": [
+     "eingeschränkte\\w* haltverbot\\w*"
+    ]
+   }
+  }
+ ],
+ "opposites": [
+  {
+   "dimension": "SIDE",
+   "pairs": [
+    [
+     "rechts",
+     "links"
+    ],
+    [
+     "rechte",
+     "linke"
+    ],
+    [
+     "rechten",
+     "linken"
+    ],
+    [
+     "rechter",
+     "linker"
+    ],
+    [
+     "rechtes",
+     "linkes"
+    ],
+    [
+     "rechtem",
+     "linkem"
+    ]
+   ]
+  },
+  {
+   "dimension": "DIRECTION",
+   "pairs": [
+    [
+     "vorwärts",
+     "rückwärts"
+    ]
+   ]
+  }
+ ]
+}

@@ -1160,7 +1160,7 @@
       "Einsatzhorn",
       "Martinshorn"
      ],
-     "statement": "Ich muss sofort freie Bahn schaffen",
+     "statement": "Alle übrigen Verkehrsteilnehmer müssen den Weg unverzüglich freimachen",
      "truth": true
     },
     {
@@ -1379,7 +1379,7 @@
       "Zebrastreifen",
       "überholen"
      ],
-     "statement": "An Fußgängerüberwegen darf nicht überholt werden",
+     "statement": "Überholen ist an Zebrastreifen unzulässig",
      "truth": true
     },
     {

@@ -1,0 +1,193 @@
+{
+ "overall": {
+  "n": 80,
+  "accuracy": 0.225,
+  "coverage": 0.225,
+  "accuracy_when_answered": 1.0,
+  "uncertain_rate": 0.775,
+  "false_confident_rate": 0.0,
+  "precision_when_answered": 1.0
+ },
+ "multiselect_exact_match": {
+  "n": 1,
+  "accuracy": 0.0,
+  "coverage": 0.0,
+  "accuracy_when_answered": null,
+  "uncertain_rate": 1.0,
+  "false_confident_rate": 0.0,
+  "precision_when_answered": null
+ },
+ "image": {
+  "n": 0,
+  "accuracy": null,
+  "coverage": null,
+  "accuracy_when_answered": null,
+  "uncertain_rate": null,
+  "false_confident_rate": null,
+  "precision_when_answered": null
+ },
+ "by_category": {
+  "claims": {
+   "n": 80,
+   "accuracy": 0.225,
+   "coverage": 0.225,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.775,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  }
+ },
+ "by_topic": {
+  "01_personal": {
+   "n": 1,
+   "accuracy": 0.0,
+   "coverage": 0.0,
+   "accuracy_when_answered": null,
+   "uncertain_rate": 1.0,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": null
+  },
+  "02_human_risk": {
+   "n": 1,
+   "accuracy": 0.0,
+   "coverage": 0.0,
+   "accuracy_when_answered": null,
+   "uncertain_rate": 1.0,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": null
+  },
+  "03_legal": {
+   "n": 1,
+   "accuracy": 0.0,
+   "coverage": 0.0,
+   "accuracy_when_answered": null,
+   "uncertain_rate": 1.0,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": null
+  },
+  "04_road_system": {
+   "n": 2,
+   "accuracy": 0.0,
+   "coverage": 0.0,
+   "accuracy_when_answered": null,
+   "uncertain_rate": 1.0,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": null
+  },
+  "05_priority": {
+   "n": 18,
+   "accuracy": 0.1111,
+   "coverage": 0.1111,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.8889,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  },
+  "06_signs": {
+   "n": 12,
+   "accuracy": 0.3333,
+   "coverage": 0.3333,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.6667,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  },
+  "07_road_users": {
+   "n": 6,
+   "accuracy": 0.5,
+   "coverage": 0.5,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.5,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  },
+  "08_speed_distance": {
+   "n": 8,
+   "accuracy": 0.5,
+   "coverage": 0.5,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.5,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  },
+  "09_manoeuvres": {
+   "n": 10,
+   "accuracy": 0.2,
+   "coverage": 0.2,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.8,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  },
+  "10_parking": {
+   "n": 5,
+   "accuracy": 0.2,
+   "coverage": 0.2,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.8,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  },
+  "11_special": {
+   "n": 5,
+   "accuracy": 0.2,
+   "coverage": 0.2,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.8,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  },
+  "12_learning": {
+   "n": 1,
+   "accuracy": 0.0,
+   "coverage": 0.0,
+   "accuracy_when_answered": null,
+   "uncertain_rate": 1.0,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": null
+  },
+  "13_vehicle_technology": {
+   "n": 8,
+   "accuracy": 0.125,
+   "coverage": 0.125,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.875,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  },
+  "14_trailers": {
+   "n": 2,
+   "accuracy": 0.0,
+   "coverage": 0.0,
+   "accuracy_when_answered": null,
+   "uncertain_rate": 1.0,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": null
+  }
+ },
+ "by_variant": {
+  "golden": {
+   "n": 80,
+   "accuracy": 0.225,
+   "coverage": 0.225,
+   "accuracy_when_answered": 1.0,
+   "uncertain_rate": 0.775,
+   "false_confident_rate": 0.0,
+   "precision_when_answered": 1.0
+  }
+ },
+ "rule_selection_accuracy": null,
+ "uncertain_acceptable": 0,
+ "uncertain_reasons": [
+  [
+   "answers without sufficient evidence",
+   61
+  ],
+  [
+   "no answer selected - an exam question has at least one correct answer",
+   42
+  ]
+ ],
+ "seconds": 2.1,
+ "set": "golden_v2"
+}

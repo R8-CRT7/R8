@@ -56,7 +56,7 @@
       "parken",
       "Definition"
      ],
-     "statement": "Wer länger als drei Minuten hält, parkt",
+     "statement": "Ein Halt von mehr als drei Minuten gilt als Parken",
      "truth": true,
      "numbers": [
       "drei Minuten"

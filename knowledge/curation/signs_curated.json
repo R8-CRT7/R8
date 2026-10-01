@@ -305,7 +305,7 @@
    ]
   },
   "250": {
-   "meaning": "Verbot für Fahrzeuge aller Art (gilt nicht für geschobene Fahrräder/Handfahrzeuge).",
+   "meaning": "Kein Fahrzeug darf einfahren (geschobene Fahrräder und Handfahrzeuge ausgenommen).",
    "effects": [
     "verbot"
    ],
@@ -563,7 +563,7 @@
    ]
   },
   "301": {
-   "meaning": "Vorfahrt an der nächsten Kreuzung oder Einmündung (nur dort).",
+   "meaning": "Vorfahrtsregel gilt ausschließlich an der folgenden Kreuzung bzw. Einmündung.",
    "effects": [
     "vorfahrt"
    ],

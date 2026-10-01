@@ -57,7 +57,7 @@
       "Standlicht",
       "fahren"
      ],
-     "statement": "Mit Standlicht allein darf nicht gefahren werden",
+     "statement": "Nur mit Begrenzungsleuchten zu fahren ist unzulässig",
      "truth": true
     },
     {
@@ -539,7 +539,7 @@
       "rot",
       "Start-Stopp"
      ],
-     "statement": "An der roten Ampel darf ich das Handy in die Hand nehmen, wenn die Start-Stopp-Automatik den Motor abgeschaltet hat",
+     "statement": "Schaltet die Start-Stopp-Automatik vor Rot den Motor ab, ist das Aufnehmen des Mobiltelefons erlaubt",
      "truth": false
     },
     {

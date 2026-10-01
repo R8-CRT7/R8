@@ -123,7 +123,7 @@
       "geparkt",
       "Halter nicht da"
      ],
-     "statement": "Ich warte eine angemessene Zeit und hinterlasse dann Namen und Anschrift",
+     "statement": "Nach angemessener Wartezeit hinterlasse ich Name und Adresse am Unfallort",
      "truth": true
     },
     {
@@ -189,7 +189,7 @@
       "schneller Verkehr",
       "Autobahn"
      ],
-     "statement": "Bei schnellem Verkehr stelle ich das Warndreieck in etwa 100 m Entfernung auf",
+     "statement": "Auf schnell befahrenen Straßen gehört das Warndreieck etwa 100 m hinter das Fahrzeug",
      "truth": true,
      "numbers": [
       "100 m"
@@ -202,7 +202,7 @@
       "schneller Verkehr",
       "Autobahn"
      ],
-     "statement": "Das Warndreieck stelle ich direkt hinter dem Fahrzeug auf",
+     "statement": "Das Warndreieck gehört unmittelbar ans Fahrzeugheck",
      "truth": false
     },
     {
@@ -265,7 +265,7 @@
       "Abschleppen",
       "Autobahn"
      ],
-     "statement": "Ich muss die Autobahn bei der nächsten Ausfahrt verlassen",
+     "statement": "Beim Abschleppen fahre ich an der nächstgelegenen Ausfahrt von der Autobahn ab",
      "truth": true
     },
     {

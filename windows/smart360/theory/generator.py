@@ -420,3 +420,64 @@ def priority_items() -> list[TheoryItem]:
 
 def all_items(kb: KnowledgeBase, seed: int = 7) -> list[TheoryItem]:
     return claim_items(kb, seed) + calc_items() + licence_items() + sign_items(kb) + priority_items()
+
+
+# ----------------------------------------------------------------------------- VALIDATION split
+# Adversarial / paraphrase variants for developing the engine without looking at golden data. Different seed and
+# transformations than the TRAIN variants: other actor (ich -> Sie), irrelevant extra information, reordered or
+# shortened situation, other question forms, negated question, competing rule's false claims as distractors.
+_VAL_STEMS = ("Welches Verhalten ist richtig?", "Was trifft zu?", "Wie verhalten Sie sich richtig?",
+              "Was ist korrekt?", "Welche Aussage stimmt?")
+_VAL_NEG_STEMS = ("Welche Aussage trifft nicht zu?", "Was ist falsch?")
+_VAL_NOISE = ("Es ist Dienstagvormittag.", "Ihr Beifahrer unterhält sich mit Ihnen.", "Das Radio läuft leise.",
+              "Sie sind auf dem Weg zur Arbeit.", "Die Straße ist trocken.")
+_SIE = [(r"\bIch muss\b", "Sie müssen"), (r"\bIch darf\b", "Sie dürfen"), (r"\bich muss\b", "müssen Sie"),
+        (r"\bich darf\b", "dürfen Sie"), (r"\bIch\b", "Sie"), (r"\bmuss ich\b", "müssen Sie"),
+        (r"\bdarf ich\b", "dürfen Sie"), (r"\bmich\b", "sich"), (r"\bmeine\b", "Ihre"), (r"\bmein\b", "Ihr")]
+
+
+def _sie_form(text: str) -> str:
+    out = text
+    for a, b in _SIE:
+        out = re.sub(a, b, out)
+    return out
+
+
+def validation_items(kb: KnowledgeBase, seed: int = 4242) -> list[TheoryItem]:
+    rng = random.Random(seed)
+    items: list[TheoryItem] = []
+    objs = list(kb.objects.values())
+    for obj in objs:
+        trues = [c for c in obj.claims if c.truth]
+        falses = [c for c in obj.claims if not c.truth]
+        if not trues or not falses:
+            continue
+        for ti, t in enumerate(trues):
+            same = [f for f in falses if _same_situation(f, t)] or falses
+            ctx = list(t.context)
+            for variant in ("val_actor", "val_noise", "val_reorder", "val_stem", "val_negq", "val_short"):
+                opts = [(t.statement, True)] + [(f.statement, False) for f in rng.sample(same, min(2, len(same)))]
+                situation = ", ".join(ctx) or obj.title
+                stem = rng.choice(_VAL_STEMS)
+                want_false = False
+                if variant == "val_actor":
+                    opts = [(_sie_form(s), v) for s, v in opts]
+                elif variant == "val_noise":
+                    situation = f"{rng.choice(_VAL_NOISE)} Situation: {situation}"
+                elif variant == "val_reorder":
+                    c2 = ctx[:]
+                    rng.shuffle(c2)
+                    situation = ", ".join(c2) or obj.title
+                elif variant == "val_short":
+                    situation = ctx[0] if ctx else obj.title
+                elif variant == "val_negq":
+                    stem = rng.choice(_VAL_NEG_STEMS)
+                    want_false = True
+                rng.shuffle(opts)
+                correct = tuple(i for i, (_, v) in enumerate(opts, start=1) if v != want_false)
+                if not correct:
+                    continue
+                q = TheoryQuestion(f"{situation}. {stem}", [s for s, _ in opts])
+                items.append(TheoryItem(f"VAL:{obj.id}:{ti}:{variant}", obj.topic, obj.subtopic, variant, q, correct,
+                                        sources=[obj.id], exam_relevance=obj.exam_relevance))
+    return items
