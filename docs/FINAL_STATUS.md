@@ -147,3 +147,36 @@ Architecture, metrics and limits: [`THEORY_ENGINE.md`](THEORY_ENGINE.md). Covera
 * **Unchanged:** `safety.theory_crosscheck` default off, safety freeze kept, FeV/StVG/BKatV still unverified
   (gesetze-im-internet.de blocked).
 * Real-device status unchanged: real Windows PC ❌, real 360° software ❌, real API call ❌, iPhone ❌.
+
+### Milestone "External validation + semantic generalization" (same branch, not released)
+* Golden v1/v2 are now `development_golden`: regression and history only, never a tuning source.
+* **External golden:**
+  * Importer with leakage detection (POSSIBLE_LEAKAGE is excluded from the main metric).
+  * Files are sha256-pinned, and the first measurement is frozen once.
+  * The set is still **empty**, so there is no external measurement yet.
+* **New engine parts:**
+  * hybrid retriever (lexical + semantic + concept graph, structural ranking; semantic only proposes candidates)
+  * contradiction index and prove-false engine (57 proofs on synthetic + validation, all correct)
+  * yes/no propositions, role resolution, numeric condition model (a latent threshold error class closed)
+* **Measured** (thresholds unchanged, 0 % false-confident everywhere):
+
+  | Set | Accuracy | UNCERTAIN |
+  |---|---|---|
+  | synthetic | 77.5 % | 22.5 % |
+  | validation | 72.4 % | 27.6 % |
+  | development golden | 44.4 % | 55.6 % |
+
+  The 60 % target for development golden is **not** reached. The bottleneck is missing knowledge
+  (`reports/knowledge_gap_clusters.md`).
+* **Latency:** p50 11 ms per question after warm-up, cold start about 2 s (prewarmed in the background).
+* **Sources and tutor:**
+  * Manual official-source import for FeV/StVG/BKatV is ready (`knowledge/sources/manual/`). No file has been
+    imported yet, so these laws stay unverified.
+  * Tutor: concept-first feedback, difficulty levels 1–6, and mastery that requires generalization plus a
+    delayed retest.
+* **Unchanged:**
+  * safety freeze
+  * `safety.theory_crosscheck` default off
+  * no release, no alpha.4, no merge
+  * real-device status: PC ❌, 360° software ❌, API call ❌, iPhone ❌
+

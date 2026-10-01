@@ -1,8 +1,11 @@
 """Learn mode and exam mode (headless - the UI and the CLI tools/theory_learn.py sit on top).
 
-Learn loop:  next question (planner: highest mastery gain per minute)  ->  learner answers  ->  check
-             ->  explanation of EVERY option (why right / why wrong)  ->  the rule + official source
-             ->  mnemonic  ->  a similar question (other variant of the same rule)  ->  profile update.
+Learn loop:  next question (planner: highest mastery gain per minute, adaptive level 1-6 per concept)
+             ->  learner answers  ->  check
+             ->  on a mistake FIRST the root concept, then: 1. short rule  2. why (legal basis)  3. mnemonic
+                 4. simple example  5. a NEW variant of the same concept  6. scheduled repetition
+             ->  explanation of every option (only what the engine can prove, otherwise "nicht belegbar")
+             ->  profile update (mastery grows with new wordings, contexts, exceptions and delayed retests).
 
 Ground truth comes from the generated item (knowledge data), never from the engine's guess. Rules whose law
 text could not be verified against an official snapshot are shown with a visible warning."""
@@ -10,6 +13,7 @@ text could not be verified against an official snapshot are shown with a visible
 from __future__ import annotations
 
 import random
+import re
 import time
 from dataclasses import dataclass, field
 
@@ -26,6 +30,7 @@ from smart360.tutor.exam import (
     points_for,
     score_exam,
 )
+from smart360.tutor.levels import level_of, pick_for_level, target_level
 from smart360.tutor.mastery import MasteryState, compute
 from smart360.tutor.planner import NextTask, SubtopicInfo, plan
 from smart360.tutor.store import Attempt, LearnerStore
@@ -56,6 +61,24 @@ class Feedback:
     mastery_after: float
     warnings: list[str] = field(default_factory=list)
     number_expected: str | None = None
+    root_concept: str = ""
+    why: str = ""  # legal basis of the rule (official text excerpt)
+    example: str = ""  # a simple correct statement of the same rule
+    level: int = 1
+    next_level: int = 1
+    review_at: float | None = None  # when this concept comes back
+    learning_only: bool = False  # rule not verified against an official text: learning material, no ground truth
+
+    @property
+    def steps(self) -> list[tuple[str, str]]:
+        """Order in which the tutor presents a mistake: concept first, the answer itself comes last."""
+        out = [("Konzept", self.root_concept), ("Regel", self.rule), ("Warum?", self.why),
+               ("Merksatz", self.mnemonic), ("Beispiel", self.example)]
+        if self.similar is not None:
+            out.append(("Neue Variante", self.similar.question.text))
+        if self.review_at is not None:
+            out.append(("Wiederholung", time.strftime("%d.%m. %H:%M", time.localtime(self.review_at))))
+        return [(k, v) for k, v in out if v]
 
 
 class LearnSession:
@@ -87,11 +110,15 @@ class LearnSession:
                 return self._pick(task.subtopic)
         return None
 
-    def _pick(self, subtopic: str, exclude: str | None = None) -> TheoryItem | None:
-        seen = {a.item_id for a in self.store.attempts(subtopic)}
+    def _pick(self, subtopic: str, exclude: str | None = None, level: int | None = None) -> TheoryItem | None:
+        """Adaptive: an unseen item at the concept's target level, in a wording not used before."""
+        att = self.store.attempts(subtopic)
         pool = [i for i in self.by_sub.get(subtopic, []) if i.id != exclude]
-        fresh = [i for i in pool if i.id not in seen] or pool
-        return self.rng.choice(fresh) if fresh else None
+        if not pool:
+            return None
+        lv = level if level is not None else target_level(att)
+        cands = pick_for_level(pool, lv, {a.item_id for a in att}, {a.variant for a in att if a.correct})
+        return self.rng.choice(cands) if cands else None
 
     # ------------------------------------------------------------------ answering
     def submit(self, item: TheoryItem, chosen: set[int] | None = None, number: str | None = None,
@@ -111,10 +138,32 @@ class LearnSession:
                                expected=",".join(map(str, item.correct)) or (item.number_answer or ""),
                                response_ms=response_ms, difficulty=item.difficulty,
                                mistake_type=diagnosis.cause.value if diagnosis else "", mode="learn", unsure=unsure))
-        after = compute(item.subtopic, self.store.attempts(item.subtopic), now, item.exam_relevance).score
+        state = compute(item.subtopic, self.store.attempts(item.subtopic), now, item.exam_relevance)
         rule, source, mnemonic, warnings = self._rule_info(item)
-        return Feedback(correct, self._explain_options(item, chosen), rule, source, mnemonic, diagnosis,
-                        self._pick(item.subtopic, exclude=item.id), before, after, warnings, item.number_answer)
+        concept, why, example = self._concept_info(item)
+        nxt = target_level(self.store.attempts(item.subtopic))
+        # after a mistake: same concept, same level, other wording; after a success: the next level
+        similar = self._pick(item.subtopic, exclude=item.id, level=level_of(item) if not correct else nxt)
+        review = now + 600 if not correct else state.due_at  # a mistake comes back within the session
+        return Feedback(correct, self._explain_options(item, chosen), _short(rule), source, mnemonic, diagnosis,
+                        similar, before, state.score, warnings, item.number_answer, concept, why, example,
+                        level_of(item), nxt, review, bool(warnings))
+
+    def _concept_info(self, item: TheoryItem) -> tuple[str, str, str]:
+        """Root concept, legal basis and a simple example (a correct statement of the same rule)."""
+        obj = next((self.kb.objects[s] for s in item.sources if s in self.kb.objects), None)
+        if obj is None:
+            sign = next((s for s in self.kb.signs.values() if s.id in item.sources), None)
+            if sign:
+                ev = next((x.evidence for x in sign.sources if x.evidence and len(x.evidence) > 20), "")
+                return f"Zeichen {sign.number} ({sign.name})", ev, sign.meaning
+            return item.subtopic.replace("_", " "), "", ""
+        concept = (obj.concepts[0].replace("_", " ") + " – " if obj.concepts else "") + obj.title
+        ev = next((f"{x.evidence} ({x.law} {x.norm})" for x in obj.sources if x.type == "law" and x.evidence
+                   and len(x.evidence) > 20), "")
+        shown = {a for a in item.question.answers}
+        example = next((c.statement for c in obj.claims if c.truth and c.statement not in shown), "")
+        return concept, ev, example
 
     def _rule_info(self, item: TheoryItem) -> tuple[str, str, str, list[str]]:
         obj = next((self.kb.objects[s] for s in item.sources if s in self.kb.objects), None)
@@ -147,6 +196,12 @@ class LearnSession:
                 why = ("Laut Lösung richtig. " if ok else "Laut Lösung falsch. ") + NOT_PROVABLE
             out.append(OptionFeedback(text, ok, i in chosen, why))
         return out
+
+
+def _short(rule: str) -> str:
+    """First sentence of a rule text (the short rule); the full text stays in the source."""
+    m = re.match(r"^(.+?[.!])(\s|$)", rule.strip())
+    return m.group(1) if m and len(m.group(1)) >= 20 else rule
 
 
 # ----------------------------------------------------------------------------- exam mode

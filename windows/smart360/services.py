@@ -146,6 +146,13 @@ class Services:
 
     def engine_settings(self) -> EngineSettings:
         c = self.config
+        if c.safety.theory_crosscheck and not getattr(self, "_theory_prewarmed", False):
+            import threading
+
+            from smart360.theory.crosscheck import prewarm
+
+            self._theory_prewarmed = True
+            threading.Thread(target=prewarm, name="theory-prewarm", daemon=True).start()
         return EngineSettings(
             confidence_threshold=c.ai.confidence_threshold,
             execute_on_confirm=c.controls.execute_on_confirm,

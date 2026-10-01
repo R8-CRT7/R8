@@ -1,10 +1,10 @@
 {
  "overall": {
   "n": 80,
-  "accuracy": 0.3875,
-  "coverage": 0.3875,
+  "accuracy": 0.4,
+  "coverage": 0.4,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.6125,
+  "uncertain_rate": 0.6,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -29,10 +29,10 @@
  "by_category": {
   "claims": {
    "n": 80,
-   "accuracy": 0.3875,
-   "coverage": 0.3875,
+   "accuracy": 0.4,
+   "coverage": 0.4,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.6125,
+   "uncertain_rate": 0.6,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -76,10 +76,10 @@
   },
   "05_priority": {
    "n": 18,
-   "accuracy": 0.3889,
-   "coverage": 0.3889,
+   "accuracy": 0.5,
+   "coverage": 0.5,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.6111,
+   "uncertain_rate": 0.5,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -103,10 +103,10 @@
   },
   "08_speed_distance": {
    "n": 8,
-   "accuracy": 0.625,
-   "coverage": 0.625,
+   "accuracy": 0.5,
+   "coverage": 0.5,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.375,
+   "uncertain_rate": 0.5,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -166,12 +166,12 @@
   }
  },
  "by_variant": {
-  "golden": {
+  "development_golden": {
    "n": 80,
-   "accuracy": 0.3875,
-   "coverage": 0.3875,
+   "accuracy": 0.4,
+   "coverage": 0.4,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.6125,
+   "uncertain_rate": 0.6,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -181,13 +181,30 @@
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   48
+   47
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
-   30
+   28
   ]
  ],
- "seconds": 2.6,
+ "latency_ms": {
+  "total_theory_latency": {
+   "p50": 18.39,
+   "p95": 184.79,
+   "max": 1952.5
+  },
+  "retrieval_latency": {
+   "p50": 5.99,
+   "p95": 48.13,
+   "max": 1774.27
+  },
+  "reasoning_latency": {
+   "p50": 11.02,
+   "p95": 131.32,
+   "max": 501.56
+  }
+ },
+ "seconds": 4.8,
  "set": "golden_v2"
 }

@@ -201,6 +201,104 @@ Wissenslücke, die man nicht mit „Tricks“ schließen darf. Die Golden-Sets w
 sind deshalb **nicht mehr unabhängig**. Die eigentliche Messung der Generalisierung steht noch aus und kann nur
 die externe, menschlich geschriebene Menge liefern.
 
+## Meilenstein „External Validation + Semantic Generalization“
+
+**Development golden:** v1/v2 heißen im Code `development_golden` (`Split.DEVELOPMENT_GOLDEN`). Sie dienen nur noch
+als Regressionstest und liefern historische Werte. Sie erzeugen keine Claims, Synonyme oder Spezialregeln und
+werden nicht zum Einstellen einzelner Fragen benutzt.
+
+**External golden** (`tests/theory/golden_external/`, nur Auswertung):
+* **Importer** (`tools/external_import.py`) prüft:
+  * Format, Autor, eindeutige IDs
+  * Duplikate, auch gegen frühere Importe
+  * **Leakage-Erkennung** (`smart360/theory/leakage.py`): lexikalische plus normalisierte semantische Ähnlichkeit
+    gegen Claims, Generator, Development Golden, Lexikon und Prompts. Treffer heißen `POSSIBLE_LEAKAGE` und
+    zählen nicht zur unabhängigen Hauptmetrik.
+* Importierte Dateien sind per SHA-256 in `MANIFEST.json` gesperrt.
+* Die erste Messung wird einmalig in `reports/external_first_measurement.json` eingefroren.
+* **Stand: leer.** Es gibt noch keine externe Messung.
+
+**Hybride Regel-Suche** (`retrieval.py`):
+* **RuleFrame** für jede Regel und Frage: intent, actors, action, objects, road/vehicle context, conditions,
+  exceptions, modality, numeric constraints, traffic signs, priority relation.
+* **Kandidaten-Kanäle:**
+  * lexikalisch
+  * semantisch: normalisierte Konzepte plus Zeichen-4-Gramme, TF-IDF. Ein Embedding-Backend lässt sich optional
+    einstecken; ab Werk ist keines aktiv, es gibt keine neue Abhängigkeit.
+  * Concept-Graph-Erweiterung um eine Stufe, nur typisierte Kanten
+* **Ranking:** nach passenden, fehlenden und widersprüchlichen Bedingungen sowie der Quellenqualität.
+* **Semantik schlägt nur Kandidaten vor.** Das Urteil fällt deterministisch. Ein Test mit einem
+  Zufalls-Embedding beweist, dass keine Antwort sicher wird, die die Regeln nicht belegen.
+* Claims, deren Situation der Frage widerspricht, werden übersprungen (innerorts ↔ außerorts, Lkw ↔ nur Pkw).
+
+**Gegenbeweise:**
+* **`contradiction.py`** erzeugt `reports/contradiction_index.json` mit 791 Relationen: contradicts,
+  incompatible_with, exception_to, narrower_than, broader_than. Quellen sind nur Lexikon, Claims, Concept Graph
+  und Qualifier.
+* **`prove_false.py`** macht eine Option nur mit einem Beweis aus **verifiziertem** Wissen in derselben Situation
+  FALSCH:
+  * Handlung widerspricht einer geforderten Handlung
+  * der amtliche Zeichentext verbietet die Handlung, ohne Ausnahmen und ohne Zahlenbedingung
+  * eine verifizierte Ausnahme bricht ein „immer/nie“
+* „A ist richtig, also ist B falsch“ ist kein Beweis.
+* Gemessen: 57 Beweise auf synthetischen und Validierungsfragen, **alle korrekt**.
+
+**Weitere Bausteine:**
+* **Ja/Nein:** volle Proposition aus Frage und Antwort („ich darf nicht hier halten“). Bedingungen bleiben Teil
+  der Aussage. Dazu kommt die neue Validierungs-Variante `val_yesno`.
+* **Rollen:**
+  * Sie → ich
+  * es / dieses Fahrzeug → der Verkehrsteilnehmer aus der Frage
+  * dort / hier → der Ort aus der Frage
+* **Zahlenmodell** (`numeric_model.py`): Zahlen sind Fakten mit Größe, Vergleich und Bedingungen.
+  * Eine nackte Zahl wird nur von verifizierten Fakten beurteilt, deren Bedingungen die Frage nennt.
+  * Welche Größe gefragt ist, kommt nur aus der Fragephrase.
+  * Schwellen-Claims („mehr als 20 l“) werden nicht mehr per Gleichheit verglichen. Das war eine latente
+    Fehlurteilsklasse. Diese strengere Regel kostet 3 Fragen im Development Golden: 10 Zahlenantworten, die
+    vorher per Gleichheit entschieden wurden, sind jetzt UNKNOWN.
+
+**Wissen und Quellen:**
+* **Wissenslücken** (`reports/knowledge_gap_clusters.md`): 59 Antwortoptionen ohne passenden Claim, gruppiert
+  nach nächster amtlicher Norm, Thema und Lückentyp.
+* **Manueller Quellenimport** (`knowledge/sources/manual/`, `tools/manual_source_import.py`) für FeV/StVG/BKatV:
+  parse → amtliche Merkmale prüfen → Snapshot mit Herkunft → Evidenzprüfung → Bericht. Die Wissensbasis wird
+  dabei nie automatisch geändert.
+* **Unverified-Politik:**
+  * Unverifiziertes Wissen erzeugt nie hohe Confidence (Reason → UNCERTAIN).
+  * Es kann den Crosscheck nie blockieren lassen.
+  * Im Tutor erscheint es nur als Lernstoff (`learning_only`).
+
+**Tutor:**
+* Bei einem Fehler kommt zuerst das Konzept, dann: Regel → Warum? (amtlicher Text) → Merksatz → Beispiel → neue
+  Variante → Wiederholung.
+* Stufen 1–6 (`levels.py`): direkte Regel, Umformulierung, Distraktor, Ausnahme, Kombination, Bild/Situation.
+* Mastery wächst mit neuen Formulierungen, Kontexten und Ausnahmen sowie verzögerten Wiederholungen. „Gemeistert“
+  (≥ 80) braucht 3 Stufen **und** eine Wiederholung nach mindestens einem Tag.
+
+**Ergebnisse** (Schwellen unverändert):
+
+| Satz | n | overall accuracy | coverage | accuracy_when_answered | UNCERTAIN | false-confident |
+|---|---|---|---|---|---|---|
+| Synthetisch | 5 240 | 77,5 % | 77,5 % | 100 % | 22,5 % | 0 % |
+| Validation (9 Varianten) | 2 049 | 72,4 % | 72,4 % | 100 % | 27,6 % | 0 % |
+| ↳ ohne „konkurrierende Regel“ | 1 797 | ≈ 81 % | | 100 % | | 0 % |
+| Development Golden v1+v2 | 160 | 44,4 % | 44,4 % | 100 % | 55,6 % | 0 % |
+| Golden extern | 0 | – (leer) | | | | |
+
+**Latenz** nach dem Aufwärmen (synthetisch, p50 / p95):
+* Regelsuche: 7 / 13 ms
+* Prüfung: 3 / 8 ms
+* gesamt: 11 / 20 ms
+
+Der Kaltstart (Index aufbauen) dauert etwa 2 s. Die App wärmt deshalb im Hintergrund vor, sobald der Crosscheck
+an ist.
+
+**Ziel verfehlt:** 60 % auf dem internen Golden-Set wurden nicht erreicht (44,4 %).
+* Die größte Restursache sind **fehlende Aussagen** in der Wissensbasis: 59 Optionen ohne passenden Claim, die
+  Hälfte davon ohne eindeutige Norm.
+* Dazu kommen Falsch-Optionen ohne verifizierten Gegenbeweis.
+* Weder Schwellen noch Golden-Fragen wurden angefasst.
+
 ## Tägliche Wissensprüfung (`.github/workflows/knowledge-watch.yml`, 04:17 UTC)
 1. **Erkennen:** RIS-API, nur gültige Fassungen.
 2. **Vergleichen:** Rohtexte gegen die geprüften Texte.

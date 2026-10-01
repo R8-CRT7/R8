@@ -52,6 +52,18 @@ def crosscheck(question: str, answers: list[str], number_input: bool, ocr_confid
     return CrossCheck("agree" if same else "disagree", r.selected, r.number_answer, r.confidence)
 
 
+def prewarm() -> None:
+    """Load the knowledge base and build the retrieval index once (about 1-2 s) so the first real question is
+    not slow. Safe to call from a background thread; failures are only logged."""
+    try:
+        from smart360.theory.kb import get_kb
+        from smart360.theory.retrieval import warm_up
+
+        warm_up(get_kb())
+    except Exception as e:  # never break the app for a cache
+        log.warning("theory prewarm failed: %s", e)
+
+
 def _num(x: str | None) -> float | None:
     try:
         return round(float(str(x).replace(",", ".")), 2)

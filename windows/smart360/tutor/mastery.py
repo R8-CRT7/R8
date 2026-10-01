@@ -6,6 +6,12 @@ mastery = 100 x (recency-weighted Bayesian accuracy) x (evidence from distinct v
   * only one attempt -> at most 50
   * correct answers given while unsure count 0.6, slow answers (> 60 s) 0.9, difficult items 1.3
 
+Generalisation (mastery requires understanding, not recognition): a correct answer counts
+  * 0.3 when the very same question was answered before, 0.6 for a known wording (variant) of the concept,
+    1.0 for a new wording, 1.3 for a new level (exception / combination / situation),
+  * x1.5 when it is a delayed retest (>= 1 day after the last correct answer of the concept).
+Mastery >= 80 needs at least three difficulty levels and at least one delayed retest.
+
 Retention R = exp(-days_since_last / S) with stability S (days): starts at 1, grows x(1.8 + 0.3 x difficulty)
 after a correct answer that came after a real gap, shrinks to 40 % after a mistake. The next review is due
 when R would fall to 0.8; weak and exam-critical subtopics come back sooner."""
@@ -47,15 +53,32 @@ def compute(subtopic: str, attempts: list[Attempt], now: float | None = None, ex
     att = sorted((a for a in attempts if a.subtopic == subtopic), key=lambda a: a.ts)
     if not att:
         return MasteryState(subtopic, 0.0, 0, 0.0, 0, 1.0, 0.0, None, None, 0)
+    from smart360.tutor.levels import level_of_attempt
+
     alpha, beta = 1.0, 1.0
     stability = 1.0
     last_ts: float | None = None
+    last_correct: float | None = None
     mistakes: dict[str, int] = {}
+    seen_items: set[str] = set()
+    seen_variants: set[str] = set()
+    seen_levels: set[int] = set()
+    delayed = False
     for a in att:
         age_days = (now - a.ts) / DAY
         w = 0.5 ** (age_days / 30)  # old evidence fades (half-life 30 days)
         if a.correct:
-            q = 0.6 if a.unsure else 1.0
+            lv = level_of_attempt(a)
+            novelty = (0.3 if a.item_id in seen_items else 0.6 if a.variant in seen_variants
+                       else 1.3 if lv >= 4 and lv not in seen_levels else 1.0)
+            if last_correct is not None and (a.ts - last_correct) >= DAY:
+                novelty *= 1.5
+                delayed = True
+            seen_items.add(a.item_id)
+            seen_variants.add(a.variant)
+            seen_levels.add(lv)
+            last_correct = a.ts
+            q = (0.6 if a.unsure else 1.0) * novelty
             q *= 0.9 if a.response_ms > 60_000 else 1.0
             q *= {1: 0.85, 2: 1.0, 3: 1.3}.get(a.difficulty, 1.0)
             alpha += w * q
@@ -76,6 +99,8 @@ def compute(subtopic: str, attempts: list[Attempt], now: float | None = None, ex
     score = 100 * acc * evidence * (0.5 + 0.5 * retention)
     if distinct < 3:
         score = min(score, 70.0)
+    if len(seen_levels) < 3 or not delayed:
+        score = min(score, 79.0)  # 'mastered' needs different levels AND a delayed retest
     if len(att) == 1:
         score = min(score, 50.0)
     recent = sum(1 for a in att[-5:] if not a.correct)

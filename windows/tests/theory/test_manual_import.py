@@ -32,7 +32,7 @@ def test_official_xml_is_imported_and_verifies_evidence(tmp_path):
     assert msi.main([str(f), "--law", "fev_2010", "--knowledge", str(k)]) == 0
     snap = json.loads((k / "sources" / "snapshots" / "fev_2010.json").read_text(encoding="utf-8"))
     assert snap["origin"] == "manual" and len(snap["sha256"]) == 64 and "jurabk:FeV" in snap["official_markers"]
-    cited, verified, errors = msi.evidence_report(k, "fev_2010")
+    _cited, verified, errors = msi.evidence_report(k, "fev_2010")
     assert verified == ["T_RULE"] and not errors
 
 

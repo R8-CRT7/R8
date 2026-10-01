@@ -15,6 +15,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from smart360.tutor.learn import ExamSession, LearnSession
+from smart360.tutor.levels import LEVEL_NAMES
 from smart360.tutor.store import LearnerStore
 
 
@@ -64,16 +65,22 @@ def main(argv: list[str] | None = None) -> int:
         chosen, number, ms = _ask(item)
         fb = session.submit(item, chosen, number, ms)
         print("RICHTIG" if fb.correct else "FALSCH")
+        if not fb.correct:
+            # first the concept behind the mistake - the answer itself comes last
+            if fb.diagnosis:
+                print(f"  Fehlerursache: {fb.diagnosis.cause.value} - {fb.diagnosis.detail}")
+            for k, v in fb.steps:
+                print(f"  {k}: {v}")
         for i, o in enumerate(fb.options, start=1):
             mark = "✔" if o.correct else "✘"
             print(f"  {mark} [{i}] {o.text}\n      {o.why}")
         if fb.number_expected:
             print(f"  Lösung: {fb.number_expected}")
-        if fb.diagnosis:
-            print(f"  Fehlerursache: {fb.diagnosis.cause.value} - {fb.diagnosis.detail}")
-        print(f"  Regel: {fb.rule}\n  Quelle: {fb.source}")
-        if fb.mnemonic:
-            print(f"  Merkhilfe: {fb.mnemonic}")
+        if fb.correct:
+            print(f"  Regel: {fb.rule}\n  Quelle: {fb.source}")
+            if fb.mnemonic:
+                print(f"  Merkhilfe: {fb.mnemonic}")
+            print(f"  Nächste Stufe: {fb.next_level} ({LEVEL_NAMES.get(fb.next_level, '')})")
         for w in fb.warnings:
             print(f"  ! {w}")
         print(f"  Mastery {fb.mastery_before:.0f} -> {fb.mastery_after:.0f}")

@@ -13,13 +13,13 @@ Nicht verfügbar (nicht im RIS-Testbestand, Netzwerkrichtlinie blockiert gesetze
 | 02_human_risk Risikofaktor Mensch | 5 (4 / 1 / 0) | 2 | 62 | 0 | 55% | 45% | 2026-10-01 |
 | 03_legal Rechtliche Rahmenbedingungen | 3 (1 / 2 / 0) | 2 | 9 | 0 | 0% | 100% | 2026-10-01 |
 | 04_road_system Straßenverkehrssystem und Bahnübergänge | 3 (3 / 0 / 0) | 4 | 73 | 0 | 82% | 18% | 2026-10-01 |
-| 05_priority Grundregel, Vorfahrt und Verkehrsregelungen | 16 (16 / 0 / 0) | 0 | 1660 | 408 | 84% | 16% | 2026-10-01 |
+| 05_priority Grundregel, Vorfahrt und Verkehrsregelungen | 16 (16 / 0 / 0) | 0 | 1660 | 408 | 85% | 15% | 2026-10-01 |
 | 06_signs Verkehrszeichen und Verkehrseinrichtungen | 11 (11 / 0 / 0) | 3 | 581 | 0 | 78% | 22% | 2026-10-01 |
 | 07_road_users Teilnehmer am Straßenverkehr - Besonderheiten und Verhalten | 10 (10 / 0 / 0) | 7 | 437 | 0 | 58% | 42% | 2026-10-01 |
 | 08_speed_distance Geschwindigkeit, Abstand und umweltschonende Fahrweise | 9 (9 / 0 / 0) | 9 | 916 | 0 | 92% | 8% | 2026-10-01 |
 | 09_manoeuvres Verkehrsbeobachtung und Verkehrsverhalten bei Fahrmanövern | 9 (9 / 0 / 0) | 3 | 518 | 0 | 75% | 25% | 2026-10-01 |
 | 10_parking Ruhender Verkehr | 4 (4 / 0 / 0) | 12 | 259 | 0 | 81% | 19% | 2026-10-01 |
-| 11_special Verhalten in besonderen Situationen und Folgen von Verkehrsverstößen | 9 (9 / 0 / 0) | 1 | 313 | 0 | 63% | 37% | 2026-10-01 |
+| 11_special Verhalten in besonderen Situationen und Folgen von Verkehrsverstößen | 9 (9 / 0 / 0) | 1 | 313 | 0 | 65% | 35% | 2026-10-01 |
 | 12_learning Lebenslanges Lernen | 2 (0 / 1 / 1) | 2 | 0 | 0 | - | - | - |
 | 13_vehicle_technology Technische Bedingungen, Personen-/Güterbeförderung und umweltbewusster Umgang | 7 (7 / 0 / 0) | 18 | 336 | 0 | 50% | 50% | 2026-10-01 |
 | 14_trailers Fahren mit Solokraftfahrzeugen und Zügen | 3 (2 / 1 / 0) | 6 | 52 | 0 | 48% | 52% | 2026-10-01 |
