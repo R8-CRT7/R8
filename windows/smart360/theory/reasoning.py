@@ -35,6 +35,7 @@ from smart360.theory.semantics import (
     separable_verbs,
     situation_conflict,
     split_compound,
+    vocab_alias,
 )
 from smart360.theory.text import (
     NUMBER_TOKEN,
@@ -208,6 +209,7 @@ def _core_cached(text: str) -> frozenset[str]:
     for w in base:
         extra.update(split_compound(w))
         extra.update(participle_base(w))
+        extra.update(vocab_alias(w))
     for v in separable_verbs(text):
         extra |= content(v)
     return frozenset(base | (extra - _POLARITY_WORDS))

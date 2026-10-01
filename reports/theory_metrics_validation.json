@@ -1,19 +1,19 @@
 {
  "overall": {
-  "n": 1476,
-  "accuracy": 0.8042,
-  "coverage": 0.8042,
+  "n": 1512,
+  "accuracy": 0.8069,
+  "coverage": 0.8069,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.1958,
+  "uncertain_rate": 0.1931,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
  "multiselect_exact_match": {
   "n": 81,
-  "accuracy": 0.7531,
-  "coverage": 0.7531,
+  "accuracy": 0.7778,
+  "coverage": 0.7778,
   "accuracy_when_answered": 1.0,
-  "uncertain_rate": 0.2469,
+  "uncertain_rate": 0.2222,
   "false_confident_rate": 0.0,
   "precision_when_answered": 1.0
  },
@@ -28,20 +28,20 @@
  },
  "by_category": {
   "claims": {
-   "n": 1230,
-   "accuracy": 0.8041,
-   "coverage": 0.8041,
+   "n": 1260,
+   "accuracy": 0.8056,
+   "coverage": 0.8056,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1959,
+   "uncertain_rate": 0.1944,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "negation": {
-   "n": 246,
-   "accuracy": 0.8049,
-   "coverage": 0.8049,
+   "n": 252,
+   "accuracy": 0.8135,
+   "coverage": 0.8135,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1951,
+   "uncertain_rate": 0.1865,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -93,29 +93,29 @@
    "precision_when_answered": 1.0
   },
   "06_signs": {
-   "n": 168,
-   "accuracy": 0.7798,
-   "coverage": 0.7798,
+   "n": 186,
+   "accuracy": 0.7688,
+   "coverage": 0.7688,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2202,
+   "uncertain_rate": 0.2312,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "07_road_users": {
    "n": 168,
-   "accuracy": 0.8214,
-   "coverage": 0.8214,
+   "accuracy": 0.8274,
+   "coverage": 0.8274,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1786,
+   "uncertain_rate": 0.1726,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "08_speed_distance": {
    "n": 108,
-   "accuracy": 0.9167,
-   "coverage": 0.9167,
+   "accuracy": 0.8981,
+   "coverage": 0.8981,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.0833,
+   "uncertain_rate": 0.1019,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -130,28 +130,28 @@
   },
   "10_parking": {
    "n": 90,
-   "accuracy": 0.9333,
-   "coverage": 0.9333,
+   "accuracy": 0.9444,
+   "coverage": 0.9444,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.0667,
+   "uncertain_rate": 0.0556,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "11_special": {
-   "n": 102,
-   "accuracy": 0.7157,
-   "coverage": 0.7157,
+   "n": 120,
+   "accuracy": 0.775,
+   "coverage": 0.775,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2843,
+   "uncertain_rate": 0.225,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "13_vehicle_technology": {
    "n": 132,
-   "accuracy": 0.6136,
-   "coverage": 0.6136,
+   "accuracy": 0.6212,
+   "coverage": 0.6212,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.3864,
+   "uncertain_rate": 0.3788,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
@@ -167,56 +167,56 @@
  },
  "by_variant": {
   "val_actor": {
-   "n": 246,
-   "accuracy": 0.7927,
-   "coverage": 0.7927,
+   "n": 252,
+   "accuracy": 0.7897,
+   "coverage": 0.7897,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2073,
+   "uncertain_rate": 0.2103,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "val_negq": {
-   "n": 246,
-   "accuracy": 0.8049,
-   "coverage": 0.8049,
+   "n": 252,
+   "accuracy": 0.8135,
+   "coverage": 0.8135,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1951,
+   "uncertain_rate": 0.1865,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "val_noise": {
-   "n": 246,
-   "accuracy": 0.7927,
-   "coverage": 0.7927,
+   "n": 252,
+   "accuracy": 0.7897,
+   "coverage": 0.7897,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.2073,
+   "uncertain_rate": 0.2103,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "val_reorder": {
-   "n": 246,
-   "accuracy": 0.8049,
-   "coverage": 0.8049,
+   "n": 252,
+   "accuracy": 0.8135,
+   "coverage": 0.8135,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1951,
+   "uncertain_rate": 0.1865,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "val_short": {
-   "n": 246,
-   "accuracy": 0.8211,
-   "coverage": 0.8211,
+   "n": 252,
+   "accuracy": 0.8214,
+   "coverage": 0.8214,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1789,
+   "uncertain_rate": 0.1786,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   },
   "val_stem": {
-   "n": 246,
-   "accuracy": 0.8089,
-   "coverage": 0.8089,
+   "n": 252,
+   "accuracy": 0.8135,
+   "coverage": 0.8135,
    "accuracy_when_answered": 1.0,
-   "uncertain_rate": 0.1911,
+   "uncertain_rate": 0.1865,
    "false_confident_rate": 0.0,
    "precision_when_answered": 1.0
   }
@@ -226,7 +226,7 @@
  "uncertain_reasons": [
   [
    "answers without sufficient evidence",
-   271
+   274
   ],
   [
    "no answer selected - an exam question has at least one correct answer",
@@ -237,6 +237,6 @@
    18
   ]
  ],
- "seconds": 22.4,
+ "seconds": 22.9,
  "set": "validation"
 }

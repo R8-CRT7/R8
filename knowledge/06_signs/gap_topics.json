@@ -1,0 +1,219 @@
+{
+ "items": [
+  {
+   "id": "SGN_ADDITIONAL",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 39",
+     "para": "Abs. 3",
+     "evidence": "Auch Zusatzzeichen sind Verkehrszeichen.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 39",
+     "para": "Abs. 3",
+     "evidence": "Sie sind unmittelbar, in der Regel unter dem Verkehrszeichen, auf das sie sich beziehen, angebracht.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 39",
+     "para": "Abs. 2",
+     "evidence": "Regelungen durch Verkehrszeichen gehen den allgemeinen Verkehrsregeln vor.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "zusatzzeichen",
+   "title": "Zusatzzeichen",
+   "rule": "Zusatzzeichen sind Verkehrszeichen; sie stehen unmittelbar, in der Regel unter dem Zeichen, auf das sie sich beziehen, und ergänzen oder beschränken es.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "zusatzzeichen",
+    "verkehrszeichen"
+   ],
+   "keywords": [
+    "Zusatzzeichen",
+    "weißes Schild unter dem Zeichen",
+    "Verkehrszeichen"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zusatzzeichen"
+     ],
+     "statement": "Ein Zusatzzeichen gilt für das Verkehrszeichen, unter dem es angebracht ist",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Zusatzzeichen"
+     ],
+     "statement": "Zusatzzeichen sind bloße Hinweise ohne Verbindlichkeit",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Verkehrszeichen",
+      "allgemeine Regeln"
+     ],
+     "statement": "Verkehrszeichen gehen den allgemeinen Verkehrsregeln vor",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SGN_ENV_ZONE",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 44",
+     "para": null,
+     "evidence": "Die Teilnahme am Verkehr mit einem Kraftfahrzeug innerhalb einer so gekennzeichneten Zone ist verboten.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 44",
+     "para": null,
+     "evidence": "Die Ausnahmen können im Einzelfall oder allgemein durch Zusatzzeichen oder Allgemeinverfügung zugelassen sein.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "umweltzone",
+   "title": "Umweltzone (Zeichen 270.1)",
+   "rule": "In einer Umweltzone ist die Verkehrsteilnahme mit Kraftfahrzeugen verboten, soweit keine Ausnahme gilt (z. B. durch Zusatzzeichen, Plakettenregelung).",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "umwelt",
+    "verbot"
+   ],
+   "keywords": [
+    "Umweltzone",
+    "Zeichen 270.1",
+    "Plakette",
+    "Luftverunreinigung"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Umweltzone",
+      "Zusatzzeichen"
+     ],
+     "statement": "In einer Umweltzone dürfen Kraftfahrzeuge nur fahren, wenn eine Ausnahme gilt, z. B. durch Zusatzzeichen",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Umweltzone"
+     ],
+     "statement": "Eine Umweltzone gilt nur für Lkw",
+     "truth": false,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SGN_HAZMAT",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 35",
+     "para": null,
+     "evidence": "Verbot für kennzeichnungspflichtige Kraftfahrzeuge mit gefährlichen Gütern",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 2 Nr. 43",
+     "para": null,
+     "evidence": "Wer ein Fahrzeug führt, darf die Straße mit mehr als 20 l wassergefährdender Ladung nicht benutzen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "06_signs",
+   "subtopic": "gefahrgut",
+   "title": "Gefahrgut und wassergefährdende Ladung (Zeichen 261, 269)",
+   "rule": "Zeichen 261 verbietet kennzeichnungspflichtige Kraftfahrzeuge mit gefährlichen Gütern. Zeichen 269: mit mehr als 20 l wassergefährdender Ladung darf die Straße nicht benutzt werden.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "gefahrgut",
+    "ladung"
+   ],
+   "keywords": [
+    "Gefahrgut",
+    "gefährliche Güter",
+    "wassergefährdende Ladung",
+    "Zeichen 261",
+    "Zeichen 269"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Zeichen 269",
+      "wassergefährdend",
+      "Ladung"
+     ],
+     "statement": "Mit mehr als 20 l wassergefährdender Ladung darf ich diese Straße nicht benutzen",
+     "truth": true,
+     "numbers": [
+      "20 l"
+     ]
+    },
+    {
+     "context": [
+      "Zeichen 261",
+      "gefährliche Güter"
+     ],
+     "statement": "Kennzeichnungspflichtige Kraftfahrzeuge mit gefährlichen Gütern dürfen hier nicht fahren",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}

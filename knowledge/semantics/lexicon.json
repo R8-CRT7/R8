@@ -787,7 +787,8 @@
     "zurück(zu)?setzen",
     "setze (ich )?zurück",
     "rückwärts(zu)?fahren",
-    "fahre (ich )?rückwärts"
+    "fahre (ich )?rückwärts",
+    "rückwärts\\w*"
    ]
   },
   {

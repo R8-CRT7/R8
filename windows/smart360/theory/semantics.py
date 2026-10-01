@@ -268,6 +268,26 @@ def split_compound(stem_word: str) -> tuple[str, ...]:
     return ()
 
 
+@lru_cache(maxsize=1)
+def _vocab_prefix_index() -> dict[str, tuple[str, ...]]:
+    idx: dict[str, list[str]] = {}
+    for w in _vocab():
+        if len(w) >= 6 and w.isalpha():
+            idx.setdefault(w[:6], []).append(w)
+    return {k: tuple(v) for k, v in idx.items()}
+
+
+@lru_cache(maxsize=50_000)
+def vocab_alias(stem_word: str) -> tuple[str, ...]:
+    """Inflection the stemmer treats differently ('medikam' / 'medikament'): the single KB stem that extends
+    (or is extended by) this one by at most three letters. Ambiguous -> nothing."""
+    if len(stem_word) < 6 or not stem_word.isalpha() or stem_word in _vocab():
+        return ()
+    cands = [w for w in _vocab_prefix_index().get(stem_word[:6], ())
+             if (w.startswith(stem_word) or stem_word.startswith(w)) and abs(len(w) - len(stem_word)) <= 3]
+    return (cands[0],) if len(cands) == 1 else ()
+
+
 @lru_cache(maxsize=50_000)
 def participle_base(stem_word: str) -> tuple[str, ...]:
     """Past participle -> verb stem when the KB knows it: 'abgeschlepp' -> 'abschlepp', 'gefahr' -> 'fahr'."""

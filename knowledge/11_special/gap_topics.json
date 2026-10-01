@@ -1,0 +1,157 @@
+{
+ "items": [
+  {
+   "id": "SPC_TUNNEL",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 14",
+     "para": null,
+     "evidence": "Wer ein Fahrzeug führt, muss beim Durchfahren des Tunnels Abblendlicht benutzen und darf im Tunnel nicht wenden.",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 3 Nr. 14",
+     "para": null,
+     "evidence": "Im Falle eines Notfalls oder einer Panne sollen nur vorhandene Nothalte- und Pannenbuchten genutzt werden.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "11_special",
+   "subtopic": "tunnel",
+   "title": "Tunnel (Zeichen 327)",
+   "rule": "Im Tunnel Abblendlicht benutzen, nicht wenden. Bei Notfall oder Panne nur Nothalte- und Pannenbuchten nutzen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "tunnel",
+    "licht"
+   ],
+   "keywords": [
+    "Tunnel",
+    "Zeichen 327",
+    "Abblendlicht",
+    "wenden",
+    "Pannenbucht",
+    "Nothaltebucht"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Tunnel",
+      "Licht"
+     ],
+     "statement": "Im Tunnel muss ich mit Abblendlicht fahren",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Tunnel",
+      "Licht"
+     ],
+     "statement": "Bei guter Tunnelbeleuchtung genügt das Standlicht",
+     "truth": false,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Tunnel",
+      "wenden"
+     ],
+     "statement": "Im Tunnel ist Wenden verboten",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Tunnel",
+      "Panne"
+     ],
+     "statement": "Bei einer Panne im Tunnel nutze ich möglichst eine Pannenbucht oder Nothaltebucht",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  },
+  {
+   "id": "SPC_WILDLIFE",
+   "version": 1,
+   "valid_from": null,
+   "valid_until": null,
+   "last_verified": "2026-10-01",
+   "sources": [
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "Anlage 1 Nr. 19",
+     "para": null,
+     "evidence": "Zeichen 142 Wildwechsel",
+     "ref": null
+    },
+    {
+     "type": "law",
+     "law": "stvo_2013",
+     "norm": "§ 3",
+     "para": "Abs. 1",
+     "evidence": "Die Geschwindigkeit ist insbesondere den Straßen-, Verkehrs-, Sicht- und Wetterverhältnissen sowie den persönlichen Fähigkeiten und den Eigenschaften von Fahrzeug und Ladung anzupassen.",
+     "ref": null
+    }
+   ],
+   "confidence": 1.0,
+   "topic": "11_special",
+   "subtopic": "wildwechsel",
+   "title": "Wildwechsel (Zeichen 142)",
+   "rule": "Zeichen 142 ist ein Gefahrzeichen und warnt vor Wildwechsel. Die Geschwindigkeit ist den Verhältnissen anzupassen.",
+   "conditions": [],
+   "exceptions": [],
+   "numeric_refs": [],
+   "concepts": [
+    "wild",
+    "gefahr"
+   ],
+   "keywords": [
+    "Wildwechsel",
+    "Zeichen 142",
+    "Wild",
+    "Reh",
+    "Gefahrzeichen"
+   ],
+   "claims": [
+    {
+     "context": [
+      "Wildwechsel",
+      "Zeichen 142"
+     ],
+     "statement": "Zeichen 142 warnt vor Wildwechsel",
+     "truth": true,
+     "numbers": []
+    },
+    {
+     "context": [
+      "Wildwechsel",
+      "Geschwindigkeit"
+     ],
+     "statement": "Bei Wildwechsel passe ich meine Geschwindigkeit an",
+     "truth": true,
+     "numbers": []
+    }
+   ],
+   "mnemonic": "",
+   "exam_relevance": 3,
+   "difficulty": 2
+  }
+ ]
+}
