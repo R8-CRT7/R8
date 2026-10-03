@@ -174,7 +174,11 @@
     "prerequisites": [
       "C-VERTRAUEN"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M03-01",
+      "LO-M03-02",
+      "LO-M03-06"
+    ]
   },
   {
     "id": "C-EFFEKTE",
@@ -185,7 +189,12 @@
     "prerequisites": [
       "C-ENTSCHEIDUNG"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M03-03",
+      "LO-M03-04",
+      "LO-M03-05",
+      "LO-M03-08"
+    ]
   },
   {
     "id": "C-MANIPULATION",
@@ -197,7 +206,11 @@
       "C-EFFEKTE",
       "C-GRENZEN"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M03-04",
+      "LO-M03-05",
+      "LO-M03-07"
+    ]
   },
   {
     "id": "C-ICP",

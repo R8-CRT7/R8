@@ -212,8 +212,232 @@
       "M03",
       "M04"
     ],
-    "available": false,
-    "days": [],
+    "available": true,
+    "days": [
+      {
+        "day": 8,
+        "title": "Wie Menschen entscheiden – Motive, Bedürfnisse, Kontext · Unsicherheit, Risikoempfinden und Vertrauen",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M03-L01"
+          },
+          {
+            "type": "lesson",
+            "ref": "M03-L02"
+          }
+        ]
+      },
+      {
+        "day": 9,
+        "title": "Verlustaversion – was die Forschung wirklich zeigt · Framing – gleiche Fakten, andere Wirkung",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M03-L03"
+          },
+          {
+            "type": "lesson",
+            "ref": "M03-L04"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 10,
+        "title": "Reziprozität und Social Proof – echt statt gefälscht · Commitment, Konsistenz und Autonomie",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M03-L05"
+          },
+          {
+            "type": "lesson",
+            "ref": "M03-L06"
+          }
+        ]
+      },
+      {
+        "day": 11,
+        "title": "Entscheidungsüberlastung – wann weniger mehr ist · Seriös oder manipulativ? Recht, Ethik und Evidenzqualität",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M03-L07"
+          },
+          {
+            "type": "lesson",
+            "ref": "M03-L08"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 12,
+        "title": "Modulquiz 3: Sales Psychology",
+        "items": [
+          {
+            "type": "quiz",
+            "ref": "M03"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-005"
+          },
+          {
+            "type": "review"
+          },
+          {
+            "type": "transfer",
+            "ref": "M03",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "day": 13,
+        "title": "Lead-Typen: Wer meldet sich – und wie warm ist der Kontakt? · Ideal Customer Profile und Buyer Persona",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M04-L01"
+          },
+          {
+            "type": "lesson",
+            "ref": "M04-L02"
+          }
+        ]
+      },
+      {
+        "day": 14,
+        "title": "Bedarfsermittlung: vom Anlass zum eigentlichen Problem · Budget, Entscheidung, Zeitrahmen und Kaufbereitschaft",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M04-L03"
+          },
+          {
+            "type": "lesson",
+            "ref": "M04-L04"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 15,
+        "title": "BANT und SPIN – was die Frameworks können und was nicht · MEDDICC und das Buying Center (fortgeschritten, B2B)",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M04-L05"
+          },
+          {
+            "type": "lesson",
+            "ref": "M04-L06"
+          }
+        ]
+      },
+      {
+        "day": 16,
+        "title": "MQL, SQL und Lead Scoring · Disqualifizieren – ehrlich, respektvoll, dokumentiert",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M04-L07"
+          },
+          {
+            "type": "lesson",
+            "ref": "M04-L08"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 17,
+        "title": "Modulquiz 4: Lead Qualification",
+        "items": [
+          {
+            "type": "quiz",
+            "ref": "M04"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-006"
+          },
+          {
+            "type": "review"
+          },
+          {
+            "type": "transfer",
+            "ref": "M04",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "day": 18,
+        "title": "Gemischte Wiederholung und Praxis",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-005",
+            "fresh": true
+          }
+        ]
+      },
+      {
+        "day": 19,
+        "title": "Gemischte Wiederholung und Praxis",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-006",
+            "fresh": true
+          }
+        ]
+      },
+      {
+        "day": 20,
+        "title": "Gemischte Wiederholung und Praxis",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-005",
+            "fresh": true
+          }
+        ]
+      },
+      {
+        "day": 21,
+        "title": "Stufen-Check 2",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "quiz",
+            "ref": "ST2"
+          }
+        ]
+      }
+    ],
     "plannedTopics": [
       "Entscheidungsverhalten, Verlustaversion und Framing kritisch",
       "Reziprozität, Social Proof, Commitment – nur wahrheitsgemäß",
@@ -225,10 +449,38 @@
     ],
     "check": {
       "id": "ST2",
-      "title": "Stufen-Check 2",
-      "questionIds": [],
+      "title": "Stufen-Check 2: Psychologie & Qualifizierung",
+      "questionIds": [
+        "Q-M03-001",
+        "Q-M03-003",
+        "Q-M03-004",
+        "Q-M03-010",
+        "Q-M03-013",
+        "Q-M03-017",
+        "Q-M03-019",
+        "Q-M03-021",
+        "Q-M03-025",
+        "Q-M03-026",
+        "Q-M03-032",
+        "Q-M03-033",
+        "Q-M04-001",
+        "Q-M04-002",
+        "Q-M04-004",
+        "Q-M04-008",
+        "Q-M04-011",
+        "Q-M04-013",
+        "Q-M04-017",
+        "Q-M04-019",
+        "Q-M04-022",
+        "Q-M04-027",
+        "Q-M04-031",
+        "Q-M04-035"
+      ],
       "passThreshold": 0.8,
-      "requiredSimulations": []
+      "requiredSimulations": [
+        "SIM-005",
+        "SIM-006"
+      ]
     }
   },
   {

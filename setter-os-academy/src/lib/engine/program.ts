@@ -34,7 +34,9 @@ export function itemDone(s: AcademyState, item: ProgramItem, anchor: number | nu
       return item.fresh ? anchor !== null && attempts.some((a) => a.at >= anchor) : attempts.length > 0;
     }
     case "simulation":
-      return s.simulations.some((x) => x.scenarioId === item.ref) || s.aiSimulations.some((x) => x.scenarioId === item.ref);
+      if (item.fresh && anchor === null) return false;
+      const since = item.fresh ? anchor! : -Infinity;
+      return s.simulations.some((x) => x.scenarioId === item.ref && x.at >= since) || s.aiSimulations.some((x) => x.scenarioId === item.ref && x.at >= since);
     case "transfer":
       return !!s.transferSubmissions[item.ref];
     case "review": {

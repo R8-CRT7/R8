@@ -455,7 +455,7 @@ export interface SimulationEvaluation {
 export type ProgramItem =
   | { type: "lesson"; ref: string }
   | { type: "quiz"; ref: string; fresh?: boolean } // module id or stage-check id; fresh = new attempt on that day
-  | { type: "simulation"; ref: string }
+  | { type: "simulation"; ref: string; fresh?: boolean } // fresh = new run on that day
   | { type: "review" }
   | { type: "transfer"; ref: string; optional?: boolean };
 

@@ -49,7 +49,7 @@ for st in prog:
     quiz_cycle = ALL[:]  # stage 7 re-checks one module per day
     k = 0
     while len(plan) < n - 1:
-        items = [{"type": "review"}, {"type": "simulation", "ref": pool[k % len(pool)]}]
+        items = [{"type": "review"}, {"type": "simulation", "ref": pool[k % len(pool)], "fresh": True}]
         title = "Gemischte Wiederholung und Praxis"
         if st["id"] == "ST7":
             mid = quiz_cycle[k % len(quiz_cycle)]
