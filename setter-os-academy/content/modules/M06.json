@@ -1,0 +1,850 @@
+{
+  "id": "M06",
+  "number": 6,
+  "title": "Objection Handling",
+  "subtitle": "Einwände verstehen – und Grenzen respektieren.",
+  "status": "verfuegbar",
+  "prerequisites": [
+    "M02",
+    "M03",
+    "M04"
+  ],
+  "version": "1.0.0",
+  "passThreshold": 0.8,
+  "sourceIds": [
+    "SRC-019",
+    "SRC-025",
+    "SRC-038",
+    "SRC-050",
+    "SRC-052",
+    "SRC-053",
+    "SRC-055",
+    "SRC-056",
+    "SRC-059",
+    "SRC-060",
+    "SRC-201",
+    "SRC-202",
+    "SRC-203",
+    "SRC-204",
+    "SRC-205",
+    "SRC-206",
+    "SRC-207",
+    "SRC-208",
+    "SRC-209",
+    "SRC-210",
+    "SRC-211",
+    "SRC-212"
+  ],
+  "objectives": [
+    {
+      "id": "LO-M06-01",
+      "moduleId": "M06",
+      "text": "Fragen, Einwände, Rücksprachebedarf und Ablehnungen sicher unterscheiden.",
+      "bloom": "analysieren"
+    },
+    {
+      "id": "LO-M06-02",
+      "moduleId": "M06",
+      "text": "Das eigentliche Anliegen hinter einem Einwand mit Klärungsfragen herausfinden, bevor du antwortest.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M06-03",
+      "moduleId": "M06",
+      "text": "Preis-, Förder-, Technik- und Vertragsfragen rollenklar an den Fachberater übergeben.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M06-04",
+      "moduleId": "M06",
+      "text": "Mit Zeitmangel, Unsicherheit und fehlender Kaufbereitschaft respektvoll und ohne künstliche Dringlichkeit umgehen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M06-05",
+      "moduleId": "M06",
+      "text": "Konkurrenzvergleiche und fehlendes Vertrauen fair, transparent und ohne Herabsetzung von Mitbewerbern behandeln.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M06-06",
+      "moduleId": "M06",
+      "text": "Rücksprache mit Partnern respektieren und gemeinsame Termine oder verbindliche Folgevereinbarungen anbieten.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M06-07",
+      "moduleId": "M06",
+      "text": "Ein Nein erkennen und respektieren sowie aggressive Praktiken (UWG § 4a) und Druckmuster erkennen und vermeiden.",
+      "bloom": "bewerten"
+    },
+    {
+      "id": "LO-M06-08",
+      "moduleId": "M06",
+      "text": "Unpassende Angebote erkennen, ehrlich absagen und korrekt dokumentieren.",
+      "bloom": "bewerten"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M06-L01",
+      "title": "Einwand, Frage oder Nein? Erst einordnen",
+      "objectiveIds": [
+        "LO-M06-01"
+      ],
+      "sourceIds": [
+        "SRC-206",
+        "SRC-212",
+        "SRC-050",
+        "SRC-019"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "In vielen Verkaufsratgebern heißt das Kapitel „Einwandbehandlung“ eigentlich „Einwände wegdrücken“. In diesem Modul lernst du das Gegenteil: Einwände verstehen – und Grenzen respektieren. Der erste Schritt ist, sauber zu erkennen, was der Kunde dir gerade eigentlich sagt."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 6.1",
+          "title": "Vier Dinge, die wie ein Einwand klingen",
+          "paragraphs": [
+            "Wenn ein Kunde zögert, landet im Kopf vieler Setter alles in derselben Schublade: „Einwand – jetzt muss ich kontern.“ Das ist der häufigste Denkfehler in diesem Themenfeld. Hinter zögernden Sätzen stecken mindestens vier verschiedene Dinge, und jedes verlangt eine andere Reaktion.",
+            "Erstens die Frage. „Was kostet so etwas ungefähr?“ oder „Wie lange dauert der Termin?“ sind Informationswünsche, keine Widerstände. Wer darauf mit einer Einwandtechnik antwortet, wirkt ausweichend. Fragen werden ehrlich beantwortet – oder, wenn sie außerhalb deiner Rolle liegen, transparent an den Fachberater übergeben.",
+            "Zweitens der echte Einwand: ein Bedenken, das den Kunden gerade an einem nächsten Schritt hindert. „Ich weiß nicht, ob sich das für uns lohnt“, „Ich habe schlechte Erfahrungen mit Vertretern gemacht“. Ein Einwand ist ein Hinweis auf eine offene Frage im Kopf des Kunden. Er sagt nicht „nein“, sondern „so noch nicht“.",
+            "Drittens der Rücksprachebedarf: „Das entscheide ich nicht allein.“ Das ist kein Hindernis, das du überwinden musst, sondern eine Information über den Entscheidungsprozess – genau die Information, die du für eine saubere Qualifizierung ohnehin brauchst. Viertens die Ablehnung: „Nein danke, ich möchte keinen Termin.“ oder „Bitte schreiben Sie mir nicht mehr.“ Eine Ablehnung ist eine Entscheidung. Sie wird respektiert, nicht behandelt.",
+            "Warum ist diese Unterscheidung so wichtig? Die Konsumentenforschung beschreibt, dass Menschen über die Jahre ein eigenes Wissen über Verkaufstaktiken aufbauen (Persuasion Knowledge Model). Erkennen sie eine Taktik, ändert sich ihre Haltung gegenüber dem Anbieter – oft zu dessen Nachteil. Wer eine einfache Frage mit einem Gesprächstrick beantwortet oder ein Nein mit einer „Einwandformel“ kontert, wird genau so erkannt. Die Forschung zu Widerstand gegen Beeinflussung zeigt außerdem, dass Widerstand viele Gesichter hat – Skepsis, Misstrauen, Trägheit, das Gefühl, bedrängt zu werden – und dass Druck ihn meist verstärkt statt löst.",
+            "Ein letzter, wichtiger Punkt: Wenn du unsicher bist, in welche Schublade ein Satz gehört, frag nach. „Darf ich kurz nachfragen: Heißt das, Sie möchten gerade gar keinen Termin – oder eher, dass noch etwas offen ist?“ Diese eine Frage verhindert zwei typische Fehler: ein Nein zu überhören und ein Bedenken voreilig als Absage zu werten."
+          ],
+          "sourceIds": [
+            "SRC-206",
+            "SRC-212",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Einwand-Triage",
+          "category": "prozess",
+          "what": "Jede zögernde Kundenaussage zuerst einordnen: Frage, Einwand, Rücksprachebedarf oder Ablehnung – erst dann reagieren.",
+          "how": [
+            "Wörtlich lesen: Was genau sagt der Kunde – nicht, was du befürchtest?",
+            "Einordnen: Will er eine Information (Frage), hat er ein Bedenken (Einwand), braucht er jemanden (Rücksprache) oder hat er entschieden (Nein)?",
+            "Bei Unklarheit neutral nachfragen, ohne zu drängen.",
+            "Reaktion wählen: beantworten bzw. übergeben, klären, Mitentscheider einbeziehen oder respektvoll abschließen."
+          ],
+          "why": "Die passende Reaktion hängt von der Art der Aussage ab. Wer alles als Einwand behandelt, überhört Fragen und Absagen.",
+          "evidence": "Praxisheuristik dieses Kurses (Annahme). Theoretischer Hintergrund: Persuasion Knowledge Model (Friestad & Wright, 1994) und Forschung zu Widerstandsformen (Knowles & Linn, 2004) – kein direkt für Setting evaluiertes Verfahren.",
+          "example": "Kunde: „Ich muss das erst mit meiner Frau besprechen.“ → Einordnung: Rücksprachebedarf, kein Hindernis. → „Das ist sinnvoll. Was wäre Ihrer Frau wichtig zu wissen?“",
+          "boundary": "Unterstelle niemandem einen „Vorwand“. Auch wenn du eine Ausrede vermutest: Du reagierst auf das, was gesagt wurde – ein Nein bleibt ein Nein.",
+          "sourceIds": [
+            "SRC-050",
+            "SRC-206",
+            "SRC-212"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Dieselbe Situation, vier Bedeutungen",
+          "body": "„Puh, keine Ahnung …“ kann heißen: „Ich verstehe nicht, worum es geht“ (Frage), „Ich habe Bedenken“ (Einwand), „Das muss mein Partner mitentscheiden“ (Rücksprache) oder „Ich will eigentlich nicht“ (leises Nein). Gute Reaktion: „Ist noch etwas unklar, oder möchten Sie gerade lieber keinen Termin? Beides ist völlig in Ordnung.“"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-001"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-002"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-003"
+        }
+      ],
+      "summary": [
+        "Nicht jedes Zögern ist ein Einwand: Frage, Einwand, Rücksprache und Ablehnung unterscheiden.",
+        "Fragen beantworten oder übergeben, Einwände klären, Mitentscheider einbeziehen, ein Nein respektieren.",
+        "Kunden erkennen Taktiken – Tricks beschädigen Vertrauen.",
+        "Bei Unklarheit neutral nachfragen statt zu interpretieren."
+      ],
+      "moduleId": "M06",
+      "minutes": 8
+    },
+    {
+      "id": "M06-L02",
+      "title": "Erst verstehen, dann antworten: das Klärungsmodell",
+      "objectiveIds": [
+        "LO-M06-02"
+      ],
+      "sourceIds": [
+        "SRC-211",
+        "SRC-209",
+        "SRC-210",
+        "SRC-055",
+        "SRC-207"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Der Reflex bei einem Einwand ist das Gegenargument. In dieser Lektion lernst du ein Fünf-Schritte-Modell, das diesen Reflex ersetzt: Hören, Anerkennen, Klären, Antworten oder Übergeben, Prüfen."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 6.2",
+          "title": "Die Position und das Anliegen dahinter",
+          "paragraphs": [
+            "„Das ist zu teuer“ ist eine Position. Dahinter kann sehr Verschiedenes stecken: Der Kunde hat keine Vorstellung, was das Projekt kostet. Er fürchtet versteckte Kosten. Er hat ein günstigeres Angebot gesehen und weiß nicht, ob es vergleichbar ist. Er kann sich die monatliche Belastung nicht vorstellen. Oder er hat tatsächlich kein Budget. Fünf Anliegen, fünf völlig verschiedene sinnvolle Reaktionen.",
+            "Das Harvard-Konzept aus der Verhandlungslehre beschreibt diesen Unterschied als „Positionen versus Interessen“. Wer nur auf die Position reagiert, streitet über die Oberfläche. Wer das Interesse versteht, kann gezielt helfen – oder ehrlich feststellen, dass es nicht passt. Für dich als Setter heißt das: Deine erste Aufgabe ist nicht, den Einwand zu entkräften, sondern ihn zu verstehen.",
+            "Das Klärungsmodell hat fünf Schritte. Hören: ausreden lassen, nicht unterbrechen, im Chat nicht sofort tippen. Anerkennen: zeigen, dass das Bedenken berechtigt sein darf („Danke, dass Sie das offen sagen“). Klären: eine offene Frage nach dem Anliegen („Was genau macht Ihnen am Preis Sorgen?“). Antworten oder Übergeben: auf das geklärte Anliegen eingehen – im Rahmen deiner Rolle; alles Fachliche gehört zum Berater. Prüfen: nachfragen, ob die Antwort geholfen hat („Beantwortet das Ihre Frage, oder ist noch etwas offen?“).",
+            "Warum nicht einfach argumentieren? Die Reaktanzforschung beschreibt, dass Menschen auf wahrgenommene Einschränkungen ihrer Entscheidungsfreiheit mit Ärger und Gegenargumenten reagieren können – eine Meta-Analyse fasst Reaktanz als Mischung aus beidem. Eine schnelle Widerlegung („Teuer ist relativ!“) signalisiert: Dein Bedenken zählt nicht. Aus der Beratungspraxis des Motivational Interviewing stammt dafür der Begriff „Righting Reflex“ – der Drang, das Gegenüber zu korrigieren. Dort wird stattdessen gespiegelt und nachgefragt. Die Wirksamkeit von MI ist für Gesundheitsberatung meta-analytisch untersucht (kleine Effekte); für Vertrieb gibt es keine vergleichbare Evidenz, die Haltung lässt sich aber gut übertragen.",
+            "Ein Hinweis zur Dosierung: Klären heißt nicht verhören. Eine, höchstens zwei Klärungsfragen reichen meistens. Wenn der Kunde nach der Frage ausweicht oder kürzer wird, ist das ein Signal: Vielleicht ist es kein Einwand, sondern ein leises Nein – dann bietest du den Ausstieg aktiv an."
+          ],
+          "sourceIds": [
+            "SRC-211",
+            "SRC-207",
+            "SRC-209",
+            "SRC-210",
+            "SRC-055"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Hören – Anerkennen – Klären – Antworten/Übergeben – Prüfen",
+          "category": "gespraech",
+          "what": "Ein Fünf-Schritte-Ablauf, der das Anliegen hinter einem Einwand sichtbar macht, bevor du reagierst.",
+          "how": [
+            "Hören: ausreden lassen, nicht sofort widersprechen.",
+            "Anerkennen: „Danke, dass Sie das offen ansprechen.“ – ohne zuzustimmen oder abzuwerten.",
+            "Klären: eine offene Frage nach dem eigentlichen Anliegen.",
+            "Antworten oder übergeben: nur, was in deiner Rolle liegt; Fachliches an den Berater.",
+            "Prüfen: „Hilft Ihnen das weiter, oder ist noch etwas offen?“"
+          ],
+          "why": "Du antwortest auf das echte Anliegen statt auf die Oberfläche – und der Kunde erlebt, dass sein Bedenken ernst genommen wird.",
+          "evidence": "Interessen statt Positionen: Fisher, Ury & Patton (Praxisliteratur). Reflexion statt Gegenargument: Miller & Rollnick (Beratungsansatz); MI-Meta-Analyse Lundahl et al. (2010) mit kleinen Effekten im Gesundheitskontext. Übertragung auf Setting = Expertenmeinung.",
+          "example": "Kunde: „Ich weiß nicht, ob sich das lohnt.“ → „Gut, dass Sie das ansprechen. Woran würden Sie für sich festmachen, ob es sich lohnt?“ → Kunde: „Ob die Heizkosten wirklich sinken.“ → „Das kann der Energieberater im Termin anhand Ihrer Verbräuche durchrechnen. Wäre das hilfreich?“",
+          "boundary": "Klärungsfragen dienen dem Verstehen, nicht dem Einkreisen. Keine Fangfragen („Wenn ich Ihnen zeige, dass … – unterschreiben Sie dann?“) und keine Kettenfragen, die nur ein Ja zulassen.",
+          "sourceIds": [
+            "SRC-211",
+            "SRC-210",
+            "SRC-209"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Auf jeden Einwand gibt es die perfekte Gegenformel – man muss nur die richtigen Einwandkiller auswendig lernen.“",
+          "reality": "Formeln reagieren auf die Oberfläche eines Satzes, nicht auf das Anliegen dahinter. Kunden erkennen Standardtaktiken (Persuasion Knowledge), und Druck auf die Entscheidungsfreiheit kann Reaktanz auslösen. Ein Satzbaukasten ist als Formulierungshilfe nützlich – als Ersatz für Verstehen schadet er.",
+          "sourceIds": [
+            "SRC-206",
+            "SRC-207",
+            "SRC-208"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-005"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-006"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-008"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Denk an eine Situation, in der dir jemand etwas „ausreden“ wollte. Was hat dich mehr überzeugt: das Gegenargument oder eine Frage, was dir eigentlich wichtig ist?"
+        }
+      ],
+      "summary": [
+        "Einwand = Position; dahinter steckt ein Anliegen.",
+        "Fünf Schritte: Hören, Anerkennen, Klären, Antworten/Übergeben, Prüfen.",
+        "Gegenargumente lösen leicht Reaktanz aus.",
+        "Ein bis zwei Klärungsfragen – kein Verhör."
+      ],
+      "moduleId": "M06",
+      "minutes": 10
+    },
+    {
+      "id": "M06-L03",
+      "title": "Preisfragen: klären statt kontern, übergeben statt schätzen",
+      "objectiveIds": [
+        "LO-M06-03",
+        "LO-M06-02"
+      ],
+      "sourceIds": [
+        "SRC-050",
+        "SRC-211",
+        "SRC-059"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "„Was kostet das?“ ist die häufigste Frage im Setting – und die gefährlichste, wenn du sie falsch beantwortest. Du lernst, Preisfragen von Preiseinwänden zu unterscheiden, das Anliegen zu klären und transparent an den Fachberater zu übergeben."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 6.3",
+          "title": "Warum der Setter keinen Preis nennt – und trotzdem ehrlich bleibt",
+          "paragraphs": [
+            "In fast allen Branchen, in denen Setter arbeiten – Photovoltaik, Wärmepumpen, Sanierung, B2B-Software, Weiterbildung –, hängt der Preis von der individuellen Situation ab: Gebäude, Verbrauch, Teamgröße, Förderfähigkeit, Vertragslaufzeit. Diese Prüfung ist Aufgabe des Fachberaters. Eine Zahl vom Setter wird beim Kunden zum Anker, auch wenn du „unverbindlich“ dazusagst. Liegt das spätere Angebot höher, fühlt sich der Kunde getäuscht – und der Berater startet mit einem Vertrauensproblem.",
+            "Das heißt nicht, dass du ausweichst. Ausweichen wäre: „Das erzähle ich Ihnen im Termin.“ Damit wird der Preis zum Köder, und das spürt der Kunde. Ehrlich ist: erklären, warum du keine seriöse Zahl nennen kannst, und anbieten, wer sie wie liefert. Viele Unternehmen haben freigegebene, schriftliche Informationen (etwa Preisspannen auf der Website oder eine Preisliste für Standardprodukte). Was offiziell freigegeben ist, darfst du weitergeben – alles andere übergibst du.",
+            "Wichtig ist die Unterscheidung zwischen Preisfrage und Preiseinwand. „Was kostet das?“ ist eine Frage. „Das ist uns zu teuer“ ist ein Einwand – und den klärst du, bevor du irgendetwas sagst: Geht es um die Gesamtsumme, um die monatliche Belastung, um die Angst vor versteckten Kosten, um einen Vergleich oder um fehlendes Budget? Erst wenn das Anliegen klar ist, weißt du, ob ein Beratungstermin hilft.",
+            "Ein Sonderfall ist das echte Budgetproblem. Wenn sich in der Klärung zeigt, dass der Kunde das Projekt grundsätzlich nicht finanzieren kann oder will, ist das kein Einwand, sondern eine fehlende Passung (Modul 4: Budget als Qualifizierungskriterium). Dann buchst du keinen Termin „auf Hoffnung“, sondern sagst ehrlich, dass es aktuell nicht passt – mehr dazu in Lektion 7.",
+            "Tabu sind drei Dinge: eigene Preisschätzungen, Aussagen zur Förderhöhe im Einzelfall und Rabattzusagen. Alle drei überschreiten deine Rolle, und Förder- oder Ersparnisversprechen können außerdem irreführend sein. Der Satz, den du sicher beherrschen solltest: „Das kann ich Ihnen nicht seriös sagen – der Berater rechnet das mit Ihnen anhand Ihrer Situation durch.“"
+          ],
+          "sourceIds": [
+            "SRC-050",
+            "SRC-211",
+            "SRC-059"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Preisfrage rollenklar übergeben",
+          "category": "prozess",
+          "what": "Preis- und Förderfragen ehrlich anerkennen, das Anliegen klären und transparent an den Fachberater übergeben – ohne eigene Zahlen.",
+          "how": [
+            "Frage wertschätzen: „Gute und wichtige Frage.“",
+            "Grund nennen: Preis hängt von der Situation ab, die der Berater prüft.",
+            "Anliegen klären: „Geht es Ihnen eher um die Gesamtsumme, die monatliche Belastung oder die Förderung?“",
+            "Übergabe mit Nutzen: „Im Termin bekommen Sie eine nachvollziehbare Aufstellung.“",
+            "Geklärtes Anliegen in der Übergabenotiz dokumentieren."
+          ],
+          "why": "Der Kunde bekommt eine ehrliche Antwort statt eines Köders, und der Berater weiß, worauf er im Termin eingehen muss.",
+          "evidence": "Rollenabgrenzung als Kursregel (Annahme, vgl. Modul 1). Vertrauen über Kompetenz, Wohlwollen und Integrität: Mayer, Davis & Schoorman (1995) – theoretisches Modell, nicht für Preisgespräche getestet.",
+          "example": "„Das kann ich Ihnen ehrlich gesagt nicht seriös beziffern – das hängt von Ihrem Haus und der Förderfähigkeit ab. Darf ich fragen, worum es Ihnen beim Preis vor allem geht? Dann weiß unser Berater, worauf er achten soll.“",
+          "boundary": "Keine Schätzungen, keine Förderzusagen, keine Rabatte. Und kein Verschweigen als Taktik: Freigegebene Preisinformationen gibst du offen weiter.",
+          "sourceIds": [
+            "SRC-050",
+            "SRC-059"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Vom Preiseinwand zur Übergabe",
+          "steps": [
+            "Kunde: „Das ist doch bestimmt viel zu teuer für uns.“ – Einordnung: Einwand (Bedenken), noch keine Absage.",
+            "Anerkennen: „Danke, dass Sie das gleich ansprechen – das ist ja eine große Entscheidung.“",
+            "Klären: „Was genau macht Ihnen Sorgen: die Gesamtsumme oder eher, wie sich das monatlich anfühlt?“",
+            "Kunde: „Ob wir das monatlich stemmen können, neben dem Kredit fürs Haus.“ – Anliegen: Tragbarkeit.",
+            "Übergeben: „Das ist genau die Frage, die unser Berater mit Ihnen durchrechnen kann – inklusive möglicher Förderung und Finanzierungsoptionen. Ich kann dazu keine Zahl nennen.“",
+            "Prüfen: „Wäre so ein Gespräch für Sie hilfreich, oder möchten Sie lieber erst schriftliche Infos?“",
+            "Übergabenotiz: „Preissorge: monatliche Tragbarkeit neben Hauskredit – bitte im Termin transparent aufschlüsseln.“"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-010"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-011"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-012"
+        }
+      ],
+      "summary": [
+        "Preisfrage ≠ Preiseinwand: Fragen ehrlich behandeln, Einwände erst klären.",
+        "Keine eigenen Zahlen, Förderzusagen oder Rabatte – das ist Beraterrolle.",
+        "Preis nicht als Köder zurückhalten: freigegebene Infos offen weitergeben.",
+        "Geklärtes Preisanliegen in die Übergabe schreiben."
+      ],
+      "moduleId": "M06",
+      "minutes": 10
+    },
+    {
+      "id": "M06-L04",
+      "title": "Zeitmangel, Unsicherheit, fehlende Kaufbereitschaft",
+      "objectiveIds": [
+        "LO-M06-04"
+      ],
+      "sourceIds": [
+        "SRC-052",
+        "SRC-053",
+        "SRC-202",
+        "SRC-019",
+        "SRC-038"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "„Gerade keine Zeit“, „Ich bin mir unsicher“ und „Wir wollen erst nächstes Jahr“ sind drei der häufigsten Einwände. Alle drei haben gemeinsam: Die falsche Reaktion ist Druck. Die richtige ist ein passender Zeitpunkt, Klarheit – oder ein respektvolles Später."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 6.4",
+          "title": "Den Zeitpunkt respektieren statt den Kunden überreden",
+          "paragraphs": [
+            "„Ich habe gerade keine Zeit“ heißt meistens genau das: jetzt nicht. Am Telefon und im Chat erreichst du Menschen zwischen zwei Terminen, beim Kochen, im Auto. Die professionelle Reaktion ist kurz: Verständnis zeigen, einen besseren Zeitpunkt oder Kanal anbieten und die Entscheidung dem Kunden lassen („Soll ich mich morgen nach 17 Uhr melden, oder melden Sie sich lieber selbst?“). „Es dauert nur zwei Minuten!“ ist dagegen ein Klassiker, der fast immer gelogen ist und Vertrauen kostet.",
+            "Achte bei Folgekontakten auf die Rechtslage aus Modul 1: Ein neuer Anruf oder eine Werbenachricht braucht in der Regel eine Einwilligung (UWG § 7). Wenn der Kunde selbst sagt „Melden Sie sich morgen“, ist das eine klare Grundlage – dokumentiere sie. „Ich melde mich dann irgendwann wieder“ ohne Zustimmung ist es nicht.",
+            "Unsicherheit ist ein anderes Signal. „Ich weiß nicht, ob das was für uns ist“ bedeutet: Es fehlt Information, Orientierung oder Sicherheit. Hier hilft Klären („Was ist für Sie noch unklar?“), Transparenz über den nächsten Schritt („Im Termin gibt es nichts zu unterschreiben“) und das ausdrückliche Betonen der Entscheidungsfreiheit. Zur Formulierung „Sie entscheiden natürlich selbst“ gibt es Meta-Analysen: Die ursprüngliche Auswertung fand einen Effekt auf Zustimmung, eine spätere Re-Analyse relativiert ihn deutlich. Nutze den Satz deshalb nicht als Technik, sondern weil er stimmt.",
+            "Fehlende Kaufbereitschaft – „Wir planen das erst für nächstes Jahr“ – ist kein Problem, das du lösen musst. Es ist eine Information über den Zeitrahmen. Passt ein späterer Kontakt, vereinbarst du ihn mit Einwilligung (Nurturing). Was du nicht tust: künstliche Dringlichkeit erzeugen. „Das Angebot gilt nur bis Freitag“ oder „Die Förderung ist bald weg“ sind, wenn sie nicht stimmen, nicht nur unfair – die unwahre Angabe, ein Angebot sei nur sehr kurz verfügbar, um eine sofortige Entscheidung zu erzwingen, steht im UWG auf der sogenannten Schwarzen Liste (Anhang Nr. 7).",
+            "Und wenn eine Frist wirklich existiert, etwa ein offizielles Förderende? Dann darfst du sachlich darauf hinweisen – mit Quelle, ohne Dramatisierung und ohne sie als Hebel gegen ein Zögern einzusetzen. Knappheit wirkt, das beschreibt schon die klassische Einflussforschung. Gerade deshalb ist sie nur mit wahren Fakten zulässig."
+          ],
+          "sourceIds": [
+            "SRC-019",
+            "SRC-052",
+            "SRC-053",
+            "SRC-202",
+            "SRC-038"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Zeitpunkt statt Überreden",
+          "category": "gespraech",
+          "what": "Bei Zeitmangel oder fehlender Kaufbereitschaft einen passenden Zeitpunkt anbieten – mit Zustimmung und Wahlfreiheit, ohne Druck.",
+          "how": [
+            "Verständnis zeigen und das Gespräch nicht in die Länge ziehen.",
+            "Zwei Optionen anbieten: konkreter späterer Zeitpunkt oder der Kunde meldet sich selbst.",
+            "Einverständnis und Kanal für den Folgekontakt ausdrücklich klären.",
+            "Vereinbarung kurz bestätigen und im CRM dokumentieren."
+          ],
+          "why": "Der Kunde behält die Kontrolle; du bekommst einen besseren Moment und eine saubere Einwilligung für den Folgekontakt.",
+          "evidence": "Autonomie betonen: Meta-Analyse Carpenter (2013) und kritische Re-Analyse Fillon et al. (Effekt kleiner als angenommen). Einwilligungspflicht: UWG § 7.",
+          "example": "„Verstehe, dann halte ich Sie nicht auf. Passt es Ihnen, wenn ich mich morgen nach 17 Uhr per WhatsApp melde – oder melden Sie sich lieber selbst, wenn es zeitlich passt?“",
+          "boundary": "Keine Kontaktaufnahme ohne Einverständnis, keine erfundenen Fristen, kein „nur zwei Minuten“, wenn es zehn sind.",
+          "sourceIds": [
+            "SRC-019",
+            "SRC-052",
+            "SRC-053"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Unentschlossene brauchen einen kleinen Schubs – eine Deadline hilft ihnen, sich endlich zu entscheiden.“",
+          "reality": "Eine erfundene Frist ist gegenüber Verbrauchern unzulässig (UWG, Anhang Nr. 7), und auch eine echte Frist als Druckmittel erzeugt eher Reaktanz und spätere Absagen als tragfähige Termine. Unentschlossene brauchen Klarheit, keinen Schubs.",
+          "sourceIds": [
+            "SRC-202",
+            "SRC-207"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-014"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-015"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-017"
+        }
+      ],
+      "summary": [
+        "Zeitmangel: kurz bleiben, Zeitpunkt anbieten, Einverständnis klären.",
+        "Unsicherheit: klären, transparent machen, Entscheidungsfreiheit betonen.",
+        "Fehlende Kaufbereitschaft = Zeitrahmen-Info → Nurturing mit Einwilligung.",
+        "Keine erfundenen Fristen (UWG Anhang Nr. 7)."
+      ],
+      "moduleId": "M06",
+      "minutes": 8
+    },
+    {
+      "id": "M06-L05",
+      "title": "Konkurrenzvergleich und fehlendes Vertrauen",
+      "objectiveIds": [
+        "LO-M06-05"
+      ],
+      "sourceIds": [
+        "SRC-205",
+        "SRC-204",
+        "SRC-059",
+        "SRC-206",
+        "SRC-060"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "„Ich habe schon ein günstigeres Angebot“ und „Ich traue Vertretern nicht“ testen dein Selbstverständnis. Du lernst, Vergleiche fair zu behandeln, Mitbewerber nicht herabzusetzen und Vertrauen durch Transparenz statt durch Beteuerungen aufzubauen."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 6.5",
+          "title": "Fair bleiben, wenn verglichen wird",
+          "paragraphs": [
+            "Dass Kunden vergleichen, ist vernünftig – bei größeren Anschaffungen wird es oft sogar empfohlen. Wenn ein Kunde ein anderes Angebot erwähnt, ist das also kein Angriff, sondern ein Zeichen, dass er sich ernsthaft mit dem Thema beschäftigt. Deine Aufgabe ist nicht, das andere Angebot schlechtzumachen, sondern herauszufinden, worauf es dem Kunden beim Vergleich ankommt.",
+            "Zwei Grenzen sind dabei wichtig. Erstens die Rollengrenze: Du kennst das andere Angebot nicht im Detail und bist kein Fachberater. Du bewertest es also nicht – weder „Das ist viel zu teuer“ noch „Das kann nicht funktionieren“. Zweitens die rechtliche und ethische Grenze: Das UWG schützt Mitbewerber vor Herabsetzung und vor der Verbreitung nicht erweislich wahrer, geschäftsschädigender Behauptungen (§ 4 Nr. 1 und 2); vergleichende Werbung ist nur unter engen Bedingungen zulässig (§ 6). Ein Satz wie „Die pfuschen doch ständig“ ist unfair – und kann unlauter sein. Im Zweifel gilt: über andere gar nicht urteilen.",
+            "Was du stattdessen tust: anerkennen („Gut, dass Sie vergleichen“), klären („Was ist Ihnen beim Vergleich am wichtigsten – Preis, Leistung, Service vor Ort?“) und anbieten, dass der Berater das eigene Angebot transparent erklärt, damit der Kunde selbst vergleichen kann. Manchmal ist das Ergebnis, dass das andere Angebot besser passt. Das ist in Ordnung.",
+            "Fehlendes Vertrauen hat oft eine Geschichte: schlechte Erfahrungen mit Vertretern, aggressive Anrufe, nicht eingehaltene Zusagen. Das Vertrauensmodell von Mayer, Davis und Schoorman beschreibt drei Grundlagen: Fähigkeit (weiß die Person, wovon sie spricht?), Wohlwollen (will sie mein Bestes?) und Integrität (hält sie sich an Regeln, die ich teile?). Beteuerungen wie „Bei uns passiert so etwas garantiert nie“ bedienen keine dieser drei – sie wirken eher wie die nächste Verkaufstaktik.",
+            "Vertrauen entsteht im Setting durch kleine, überprüfbare Dinge: offen sagen, wer du bist und was du nicht beantworten kannst; erklären, was im Termin passiert und was nicht; zusagen, was du halten kannst, und es dann halten (die Rückmeldung kommt wirklich um 17 Uhr). Wenn der Kunde von einer schlechten Erfahrung erzählt, darf er sie erzählen: kurz benennen, was du hörst, statt sie wegzureden."
+          ],
+          "sourceIds": [
+            "SRC-205",
+            "SRC-204",
+            "SRC-059",
+            "SRC-206",
+            "SRC-060"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Fair vergleichen lassen",
+          "category": "gespraech",
+          "what": "Auf Konkurrenzangebote mit Interesse statt Abwehr reagieren: Vergleichskriterien klären, eigenes Angebot transparent erklären lassen, Mitbewerber nicht bewerten.",
+          "how": [
+            "Anerkennen: „Gut, dass Sie vergleichen.“",
+            "Kriterien klären: „Worauf kommt es Ihnen beim Vergleich am meisten an?“",
+            "Rolle benennen: „Das andere Angebot kann ich nicht bewerten.“",
+            "Anbieten: Der Berater erklärt das eigene Angebot so, dass der Kunde selbst vergleichen kann.",
+            "Kriterien in der Übergabenotiz festhalten."
+          ],
+          "why": "Der Kunde erlebt dich als fair statt als Verkäufer im Abwehrmodus – und der Berater weiß, welche Kriterien zählen.",
+          "evidence": "Rechtlicher Rahmen: UWG § 4 Nr. 1/2 und § 6 (Primärtexte in dieser Session nicht geprüft). Vertrauen: Mayer et al. (1995), theoretisches Modell. Gesprächsvorgehen: Praxisheuristik (Expertenmeinung).",
+          "example": "„Gut, dass Sie sich mehrere Angebote anschauen. Was ist Ihnen beim Vergleich am wichtigsten? Dann kann unser Berater genau darauf eingehen – das andere Angebot bewerte ich bewusst nicht.“",
+          "boundary": "Keine Herabsetzung, keine Gerüchte, keine Andeutungen („Bei so günstigen Angeboten wäre ich vorsichtig …“) und keine unbelegten Überlegenheitsbehauptungen.",
+          "sourceIds": [
+            "SRC-205",
+            "SRC-204",
+            "SRC-059"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Zwei Antworten auf schlechte Erfahrungen",
+          "situation": "Kunde Herr Polat (erfunden) schreibt: „Ehrlich gesagt hatte ich schon mal so einen Vertreter im Haus, der zwei Stunden nicht gegangen ist. Da habe ich wenig Lust drauf.“ Setter A: „Bei uns passiert so etwas garantiert nie, wir sind ganz anders! Über 90 % unserer Kunden sind begeistert.“ Setter B: „Das klingt wirklich unangenehm – verständlich, dass Sie vorsichtig sind. Damit Sie wissen, woran Sie sind: Das Gespräch dauert 45 Minuten, es gibt nichts zu unterschreiben, und Sie können es jederzeit beenden. Wäre ein Videotermin für Sie angenehmer als ein Besuch?“",
+          "analysis": "Setter A beteuert, statt zu zeigen. Die Garantie ist unbelegt, die Zufriedenheitszahl ungeprüft – genau die Art Aussage, die misstrauische Kunden als Taktik erkennen. Setter B benennt die Erfahrung, macht den nächsten Schritt transparent (Dauer, keine Unterschrift, Abbruch jederzeit) und gibt dem Kunden Kontrolle über das Format. Das adressiert Integrität und Wohlwollen konkret. Ob Herr Polat danach einen Termin möchte, bleibt seine Entscheidung.",
+          "simulationNote": "Alle Personen, Firmen und Zahlen in dieser Fallstudie sind erfunden (Simulation)."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-018"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-019"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-020"
+        }
+      ],
+      "summary": [
+        "Vergleichen ist vernünftig – Kriterien klären statt abwehren.",
+        "Mitbewerber nicht bewerten oder herabsetzen (UWG § 4, § 6).",
+        "Vertrauen durch Transparenz und gehaltene Zusagen, nicht durch Beteuerungen.",
+        "Schlechte Erfahrungen benennen statt wegreden."
+      ],
+      "moduleId": "M06",
+      "minutes": 13
+    },
+    {
+      "id": "M06-L06",
+      "title": "Rücksprache mit Partnern und verbindliche Folgevereinbarungen",
+      "objectiveIds": [
+        "LO-M06-06"
+      ],
+      "sourceIds": [
+        "SRC-056",
+        "SRC-019",
+        "SRC-050",
+        "SRC-052"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "„Das muss ich erst mit meiner Frau / meinem Chef besprechen“ gilt in vielen Trainings als Vorwand, den man knacken muss. Hier lernst du die professionelle Sicht: Es ist eine wertvolle Information über den Entscheidungsprozess – und der beste Termin ist oft der gemeinsame."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 6.6",
+          "title": "Mitentscheider einbeziehen, nicht übergehen",
+          "paragraphs": [
+            "Bei privaten Investitionen wie Heizung, Dach oder Photovoltaik entscheiden Paare und Familien meist gemeinsam; in Unternehmen sind oft mehrere Personen am Kauf beteiligt. Der Satz „Ich muss das erst besprechen“ ist deshalb meistens schlicht wahr. Die Qualifizierung aus Modul 4 fragt ohnehin nach Entscheidern – hier liefert der Kunde die Antwort freiwillig.",
+            "Die schlechteste Reaktion ist, den Mitentscheider zu übergehen: „Machen Sie den Termin doch erstmal allein“ oder, noch schlimmer, „Als Eigentümer können Sie das doch selbst entscheiden.“ Das Erste produziert Termine, nach denen nichts entschieden werden kann, und oft Absagen, sobald der Partner davon hört. Das Zweite setzt den Kunden unter Druck und wertet seine Beziehung ab. Beides beschädigt Vertrauen.",
+            "Die professionelle Reaktion hat drei Teile. Anerkennen: „Das ist sinnvoll, das ist ja eine gemeinsame Entscheidung.“ Verstehen: „Was wäre Ihrer Frau wichtig zu wissen?“ – so erfährst du, welche Fragen im Termin geklärt werden müssen. Anbieten: ein gemeinsamer Termin zu einer Zeit, in der beide können, oder – wenn der Kunde erst allein sprechen möchte – eine konkrete Folgevereinbarung.",
+            "Eine gute Folgevereinbarung ist konkret: wer, wann, über welchen Kanal, mit welchem Ziel. „Ich melde mich mal wieder“ ist keine Vereinbarung. „Sie sprechen bis Mittwoch mit Ihrer Frau, und ich schreibe Ihnen Donnerstag um 18 Uhr kurz per WhatsApp – ist das für Sie in Ordnung?“ schon. Die Forschung zu Durchführungsintentionen („Wenn-dann-Plänen“) zeigt in einer Meta-Analyse, dass konkret geplante Handlungen häufiger umgesetzt werden als vage Vorsätze – ein Befund aus der Zielforschung, der sich gut auf Rückmeldevereinbarungen übertragen lässt.",
+            "Zwei Grenzen: Du kontaktierst den Partner nicht eigenmächtig – Kontaktdaten Dritter hast du nicht und brauchst eine eigene Grundlage. Und die Folgevereinbarung ist ein Angebot, keine Pflicht. Sagt der Kunde „Ich melde mich selbst“, ist das ebenso in Ordnung. Dokumentiere dann ehrlich: kein vereinbarter Folgekontakt."
+          ],
+          "sourceIds": [
+            "SRC-050",
+            "SRC-056",
+            "SRC-019"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Gemeinsamer Termin & Wenn-dann-Folgevereinbarung",
+          "category": "prozess",
+          "what": "Bei Rücksprachebedarf den Mitentscheider einbeziehen und entweder einen gemeinsamen Termin oder eine konkrete, einvernehmliche Folgevereinbarung treffen.",
+          "how": [
+            "Rücksprache anerkennen, nicht als Vorwand behandeln.",
+            "Fragen, was der Mitentscheider wissen müsste.",
+            "Gemeinsamen Termin anbieten (Zeit, zu der beide können).",
+            "Alternativ: konkrete Rückmeldung vereinbaren – Datum, Uhrzeit, Kanal, Zweck – mit ausdrücklichem Einverständnis.",
+            "Zusammenfassen und im CRM dokumentieren (Mitentscheider, Vereinbarung, Einwilligung)."
+          ],
+          "why": "Gemeinsame Termine führen eher zu echten Entscheidungen, und konkrete Vereinbarungen werden eher eingehalten als vage Vorsätze.",
+          "evidence": "Durchführungsintentionen: Meta-Analyse Gollwitzer & Sheeran (2006), Zielforschung außerhalb des Vertriebs. Mitentscheider einbeziehen: Qualifizierungslogik dieses Kurses (Annahme).",
+          "example": "„Das ist absolut sinnvoll. Wäre es für Sie beide angenehmer, wenn der Berater einen Abendtermin anbietet, bei dem Ihre Frau dabei ist? Oder möchten Sie erst in Ruhe sprechen – dann könnte ich mich Donnerstag um 18 Uhr kurz melden, wenn Ihnen das recht ist.“",
+          "boundary": "Mitentscheider nie übergehen oder abwerten, nie eigenmächtig Dritte kontaktieren, keine Folgekontakte ohne Einverständnis.",
+          "sourceIds": [
+            "SRC-056",
+            "SRC-050",
+            "SRC-019"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„‚Ich muss das mit meinem Partner besprechen‘ ist fast immer nur ein Vorwand.“",
+          "reality": "Dafür gibt es keinen Beleg – bei gemeinsamen Haushalts- und Unternehmensentscheidungen ist der Satz meist schlicht wahr. Wer ihn als Vorwand behandelt, übergeht einen echten Entscheider und produziert Termine ohne Entscheidung. Und falls es doch ein höfliches Nein ist, bekommt der Kunde mit einer respektvollen Folgevereinbarung den Raum, es auszusprechen.",
+          "sourceIds": [
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-022"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-023"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-024"
+        }
+      ],
+      "summary": [
+        "Rücksprache = Info über den Entscheidungsprozess, kein Vorwand.",
+        "Mitentscheider einbeziehen: gemeinsamer Termin ist oft der beste.",
+        "Folgevereinbarung konkret: wer, wann, Kanal, Zweck – mit Einverständnis.",
+        "Partner nie übergehen, nie eigenmächtig Dritte kontaktieren."
+      ],
+      "moduleId": "M06",
+      "minutes": 8
+    },
+    {
+      "id": "M06-L07",
+      "title": "Unpassende Angebote: ehrlich absagen",
+      "objectiveIds": [
+        "LO-M06-08"
+      ],
+      "sourceIds": [
+        "SRC-050",
+        "SRC-019",
+        "SRC-059"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Manchmal ist der Einwand des Kunden schlicht richtig: Das Angebot passt nicht. Du lernst, eine fehlende Passung von einem Einwand zu unterscheiden, ehrlich abzusagen und sauber zu dokumentieren."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 6.7",
+          "title": "Wenn der Kunde recht hat",
+          "paragraphs": [
+            "Einwandbehandlung hat einen blinden Fleck: Sie unterstellt, dass jedes Hindernis überwunden werden sollte. Das stimmt nicht. Wenn ein Pflichtkriterium objektiv nicht erfüllt ist – der Interessent wohnt zur Miete und der Vermieter will nicht, die Firma hat drei Mitarbeiter und das Produkt ist für Konzerne gebaut, es gibt schlicht keinen Bedarf –, dann ist das kein Einwand, sondern fehlende Passung. Daran ändert keine Formulierung etwas.",
+            "Der Test ist einfach: Würde eine bessere Erklärung die Lage ändern? Bei Unsicherheit, Preisbedenken oder Zeitmangel oft ja. Bei fehlender Entscheidungsbefugnis, fehlendem Bedarf oder einem technischen Ausschlusskriterium nein. Im zweiten Fall ist ein Termin ein schlechter Termin: Er kostet den Berater Zeit, den Kunden Hoffnung und das Unternehmen Glaubwürdigkeit. In der Simulation wird ein solcher Termin deshalb als Gate-Verstoß gewertet.",
+            "Eine ehrliche Absage hat vier Elemente: Dank für das Interesse, eine verständliche Begründung („Für eine Wärmepumpe bräuchte es die Zustimmung des Eigentümers“), wenn möglich ein neutraler Hinweis, wo der Kunde sonst Hilfe findet (ohne Provision oder Empfehlung eines konkreten Wettbewerbers), und ein freundlicher Abschluss. Das wirkt im Moment wie ein verlorener Lead – für das Vertrauen in das Unternehmen ist es oft das Gegenteil: Menschen erzählen weiter, wer ehrlich war.",
+            "Dokumentation: Im CRM setzt du den Status „Disqualifiziert“ und nennst den Grund (z. B. „keine Entscheidungsbefugnis – Mieterin“). Das hilft dem Marketing, besser zu zielen, und verhindert, dass der Kontakt später erneut angerufen wird. Achte auf die Einwilligung: Wenn der Kunde keinen Newsletter möchte oder keine Einwilligung vorliegt, landet er nicht „zur Sicherheit“ im Werbeverteiler (UWG § 7).",
+            "Sonderfall „vielleicht später passend“: Wenn sich die Lage absehbar ändert (Kauf eines Hauses geplant, neues Budget im nächsten Geschäftsjahr), kannst du einen späteren Kontakt anbieten – als Frage, mit Einwilligung und ohne Versprechen. Ansonsten gilt: Eine saubere Absage ist ein gutes Gesprächsergebnis."
+          ],
+          "sourceIds": [
+            "SRC-050",
+            "SRC-019",
+            "SRC-059"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Ehrliche Absage",
+          "category": "gespraech",
+          "what": "Bei objektiv fehlender Passung freundlich, verständlich und ohne Termin absagen – und korrekt dokumentieren.",
+          "how": [
+            "Passungstest: Würde eine bessere Erklärung etwas ändern? Wenn nein → keine Passung.",
+            "Danken und die Gründe in einfachen Worten nennen.",
+            "Optional: neutral auf andere Anlaufstellen hinweisen, ohne Bewertung.",
+            "Freundlich abschließen, keinen Termin „auf Hoffnung“ buchen.",
+            "CRM: „Disqualifiziert“ + Grund; Werbekontakt nur mit Einwilligung."
+          ],
+          "why": "Ehrlichkeit schützt Kunde, Berater und Ruf – und liefert dem Unternehmen saubere Daten.",
+          "evidence": "Qualifizierungslogik dieses Kurses (Annahme, vgl. Modul 4); Integrität als Vertrauensgrundlage: Mayer et al. (1995).",
+          "example": "„Danke für Ihre offene Antwort, Frau Kraus. Ohne Zustimmung Ihres Vermieters können wir Ihnen leider keine Wärmepumpe anbieten – ein Beratungstermin würde Ihnen deshalb gerade nicht weiterhelfen. Zu Heizkosten in Mietwohnungen beraten auch unabhängige Stellen. Alles Gute für Sie!“",
+          "boundary": "Keine Ausreden erfinden, keine falschen Hoffnungen wecken, keine Termine, die nur die Quote füllen.",
+          "sourceIds": [
+            "SRC-050",
+            "SRC-059"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Der Termin, der keiner sein durfte",
+          "situation": "Simulation: Ein Setter bucht für einen B2B-Softwareanbieter einen Termin mit einem Zwei-Personen-Betrieb, obwohl das Produkt laut Leitfaden erst ab 50 Nutzern sinnvoll ist. Der Kunde hatte gesagt: „Klingt eigentlich zu groß für uns.“ Der Setter antwortete: „Das sagen viele – im Termin sehen Sie, dass es passt.“ Im Termin stellt der Berater nach zehn Minuten fest, dass es nicht passt. Der Kunde ist verärgert, weil er sich eine Stunde freigenommen hat.",
+          "analysis": "Der Kunde hatte recht – „zu groß für uns“ war kein Einwand, sondern ein zutreffender Hinweis auf fehlende Passung. Der Setter hat ihn mit einer Floskel (unbelegter Social Proof: „Das sagen viele“) weggedrückt. Ergebnis: verlorene Zeit für beide Seiten und ein Vertrauensverlust. Besser: Passungstest („Wie viele Personen würden das Tool nutzen?“), ehrliche Absage und Dokumentation „Disqualifiziert – unter Mindestgröße“.",
+          "simulationNote": "Alle Personen, Firmen und Zahlen in dieser Fallstudie sind erfunden (Simulation)."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-031"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-032"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-033"
+        }
+      ],
+      "summary": [
+        "Fehlende Passung ist kein Einwand – keine Formulierung ändert sie.",
+        "Passungstest: Würde eine bessere Erklärung etwas ändern?",
+        "Ehrliche Absage: danken, begründen, ggf. neutral verweisen, freundlich abschließen.",
+        "CRM: Disqualifiziert + Grund; Werbung nur mit Einwilligung."
+      ],
+      "moduleId": "M06",
+      "minutes": 12
+    },
+    {
+      "id": "M06-L08",
+      "title": "Ein Nein ist ein Nein – Grenzen der Einwandbehandlung",
+      "objectiveIds": [
+        "LO-M06-07"
+      ],
+      "sourceIds": [
+        "SRC-201",
+        "SRC-203",
+        "SRC-202",
+        "SRC-019",
+        "SRC-025",
+        "SRC-207"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Das wichtigste Kapitel dieses Moduls: Wo Einwandbehandlung aufhört. Du lernst, ein Nein zu erkennen, es respektvoll anzunehmen, und du lernst, welche Muster rechtlich als aggressive geschäftliche Handlungen gelten können."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 6.8",
+          "title": "Wo Überzeugen endet",
+          "paragraphs": [
+            "In manchen Verkaufskulturen gilt der Satz „Das Verkaufen beginnt erst beim Nein“. In diesem Kurs gilt das Gegenteil: Ein klares Nein beendet das Werben. Ein Nein ist eine Entscheidung, keine Verhandlungsposition. Wer danach weiterargumentiert, nachbohrt („Darf ich fragen, was genau Sie abschreckt? Vielleicht kann ich das ausräumen“) oder einen Folgekontakt ankündigt, den der Kunde nicht will, behandelt die Entscheidung des Kunden als Hindernis.",
+            "Woran erkennst du ein Nein? An klaren Worten: „Nein danke“, „kein Interesse“, „Bitte melden Sie sich nicht mehr“, „Ich möchte keinen Termin“. Schwieriger sind leise Formen: wiederholtes Ausweichen, immer kürzere Antworten, „Ich melde mich, wenn ich etwas brauche“. Bei leisen Signalen bietest du den Ausstieg aktiv an („Ist es für Sie in Ordnung, wenn wir das hier erst mal abschließen?“). Bei klaren Worten fragst du nicht mehr nach, sondern bestätigst.",
+            "Die rechtliche Grenze zieht § 4a UWG. Unlauter ist eine aggressive geschäftliche Handlung, die geeignet ist, Verbraucher oder sonstige Marktteilnehmer zu einer Entscheidung zu veranlassen, die sie sonst nicht getroffen hätten. Aggressiv ist eine Handlung, wenn sie die Entscheidungsfreiheit erheblich beeinträchtigt – durch Belästigung, Nötigung (einschließlich körperlicher Gewalt) oder unzulässige Beeinflussung, also das Ausnutzen einer Machtposition zur Druckausübung. Das Gesetz nennt Kriterien wie Zeitpunkt, Ort, Art und Dauer der Handlung, drohende oder beleidigende Formulierungen und das Ausnutzen von Notlagen. Die Vorschrift setzt die EU-Richtlinie über unlautere Geschäftspraktiken um. Ob ein konkretes Verhalten darunter fällt, ist eine Einzelfallfrage – du musst das nicht juristisch prüfen, sondern Muster vermeiden.",
+            "Typische Muster, die du nie einsetzt: wiederholtes Anschreiben oder Anrufen nach einem Nein; Drohungen („Sonst verlieren Sie die Förderung“, wenn das nicht stimmt oder als Hebel dient); Beschämen („Als Familienvater sollten Sie doch an die Zukunft denken“); das Ausnutzen einer Notlage (kaputte Heizung im Winter als Druckmittel); erfundene Fristen (Schwarze Liste, Anhang Nr. 7). Dazu kommt § 7 UWG: Wer erkennbar keine Werbung will, wird nicht weiter beworben. Und nach der DSGVO können Betroffene der Verarbeitung ihrer Daten für Direktwerbung widersprechen – dann ist Schluss mit Werbung an diese Person.",
+            "Das respektvolle Nein ist kurz: Bestätigen („Verstanden, danke für die klare Rückmeldung“), Konsequenz nennen („Ich notiere, dass wir Sie nicht mehr kontaktieren“), freundlich abschließen. Dann dokumentierst du im CRM – Status, Kontaktsperre, Datum. Das ist kein verlorenes Gespräch. Es ist ein professionell abgeschlossenes Gespräch, und in der Simulation ein vollwertiges Ergebnis („Nein respektiert“)."
+          ],
+          "sourceIds": [
+            "SRC-201",
+            "SRC-203",
+            "SRC-202",
+            "SRC-019",
+            "SRC-025"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Das respektvolle Nein-Protokoll",
+          "category": "prozess",
+          "what": "Ein klares Nein bestätigen, die Konsequenz nennen, freundlich abschließen und die Kontaktsperre dokumentieren.",
+          "how": [
+            "Erkennen: klare Worte = Nein; leise Signale → Ausstieg aktiv anbieten.",
+            "Bestätigen ohne Rückfrage: „Verstanden, danke für Ihre klare Rückmeldung.“",
+            "Konsequenz nennen: „Wir melden uns nicht mehr bei Ihnen.“",
+            "Freundlich abschließen, keine Gegenargumente, kein „aber“.",
+            "CRM: Status, Kontaktsperre/Werbewiderspruch, Datum dokumentieren."
+          ],
+          "why": "Der Kunde erlebt Respekt, das Unternehmen bleibt rechtlich auf der sicheren Seite, und ein späterer eigener Kontakt des Kunden bleibt möglich.",
+          "evidence": "Rechtlicher Rahmen: UWG § 4a (Wortlaut über Gesetzesportale geprüft), UWG § 7, DSGVO (Widerspruch gegen Direktwerbung). Reaktanzforschung (Rains, 2013): Druck auf Entscheidungsfreiheit erzeugt Ärger und Gegenargumente.",
+          "example": "Kunde: „Nein, ich möchte das nicht. Bitte schreiben Sie mir nicht mehr.“ → „Verstanden, Herr Beck – danke für die klare Rückmeldung. Ich trage ein, dass wir Sie nicht mehr kontaktieren. Alles Gute für Sie!“",
+          "boundary": "Nach einem klaren Nein: keine Nachfrage zum Umstimmen, kein „nur noch eine Sache“, keine angekündigten Folgekontakte. Kein Rechtsrat: Bei Unsicherheit über Einwilligungen fragst du intern nach.",
+          "sourceIds": [
+            "SRC-201",
+            "SRC-019",
+            "SRC-025"
+          ]
+        },
+        {
+          "kind": "callout",
+          "tone": "legal",
+          "title": "Rechtlicher Hinweis",
+          "body": "Dieses Modul vermittelt Grundlagen, keine Rechtsberatung. § 4a UWG verlangt eine Einzelfallbewertung aller Umstände. Für dich als Setter gilt eine einfache Regel, die weit vor jeder rechtlichen Grenze liegt: Ein Nein beendet das Werben."
+        },
+        {
+          "kind": "myth",
+          "claim": "„Das Verkaufen beginnt erst beim Nein – gute Verkäufer lassen ein Nein nicht gelten.“",
+          "reality": "Ein klares Nein ist eine Entscheidung. Wer sie übergeht, riskiert Belästigung im Sinne von UWG § 4a/§ 7, beschädigt das Vertrauen in das Unternehmen und erzeugt – wenn überhaupt – Termine, die abgesagt werden. Professionell ist, ein Nein zu erkennen und sauber abzuschließen.",
+          "sourceIds": [
+            "SRC-201",
+            "SRC-019",
+            "SRC-207"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-026"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-027"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M06-029"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Wann hast du selbst zuletzt Nein gesagt und es wurde nicht akzeptiert? Wie hat sich das angefühlt – und was hat es mit deinem Bild von diesem Anbieter gemacht?"
+        }
+      ],
+      "summary": [
+        "Ein klares Nein beendet das Werben – keine Gegenargumente, kein Nachbohren.",
+        "Leise Signale: Ausstieg aktiv anbieten.",
+        "§ 4a UWG: Belästigung, Nötigung, unzulässige Beeinflussung sind aggressiv.",
+        "Bestätigen, Konsequenz nennen, freundlich abschließen, Kontaktsperre dokumentieren."
+      ],
+      "moduleId": "M06",
+      "minutes": 11
+    }
+  ],
+  "transferTask": {
+    "title": "Transferaufgabe: Dein Einwand-Logbuch",
+    "instructions": "Schreibe für fünf Situationen eine Antwort im Chat-Stil (Sie-Form, erfundene Personen): (1) „Was kostet das?“, (2) „Ich habe gerade keine Zeit.“, (3) „Ich habe ein günstigeres Angebot von einer anderen Firma.“, (4) „Das muss ich erst mit meinem Mann besprechen.“, (5) „Nein danke, bitte melden Sie sich nicht mehr.“ Ordne vor jeder Antwort ein, ob es eine Frage, ein Einwand, ein Rücksprachebedarf oder eine Ablehnung ist. Notiere bei (1) bis (4) deine Klärungsfrage und bei (4) eine konkrete Folgevereinbarung. Lies die Antworten danach laut und prüfe jede gegen die Druckmuster aus Lektion 8.",
+    "criteria": [
+      "Jede Aussage ist korrekt eingeordnet (Frage, Einwand, Rücksprache, Ablehnung)",
+      "Bei (1)–(4) steht eine offene Klärungsfrage vor jeder inhaltlichen Antwort",
+      "Keine eigene Preisschätzung, Förderzusage oder Rabattzusage",
+      "Kein Mitbewerber wird bewertet oder herabgesetzt",
+      "Bei (4) wird der Partner einbezogen (gemeinsamer Termin oder konkrete Folgevereinbarung mit Einverständnis)",
+      "Bei (5) wird das Nein ohne Nachfrage bestätigt und der Kontakt-Stopp genannt",
+      "Keine erfundenen Fristen, keine Drohungen, kein Druck",
+      "Alle Personen sind erfunden"
+    ]
+  },
+  "examQuestionIds": [
+    "Q-M06-001",
+    "Q-M06-002",
+    "Q-M06-004",
+    "Q-M06-005",
+    "Q-M06-006",
+    "Q-M06-008",
+    "Q-M06-010",
+    "Q-M06-011",
+    "Q-M06-014",
+    "Q-M06-016",
+    "Q-M06-018",
+    "Q-M06-020",
+    "Q-M06-022",
+    "Q-M06-023",
+    "Q-M06-025",
+    "Q-M06-026",
+    "Q-M06-027",
+    "Q-M06-029",
+    "Q-M06-031",
+    "Q-M06-033"
+  ]
+}
