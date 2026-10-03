@@ -1,4 +1,6 @@
-# DESIGN_SYSTEM – „Deep Focus“
+# DESIGN_SYSTEM – „Midnight Editorial“ (V2)
+
+> V1 „Deep Focus“ (Glas, Verläufe) wurde mit 0.3.0 nach einem Audit abgelöst; die Konzeptwahl in §1 ist historisch.
 
 Stand 03.10.2026 · Implementierung: `src/app/globals.css` (Tokens), `src/components/ui.tsx` (Komponenten), `src/components/AppShell.tsx` (Layout). Referenz-Screenshots: `docs/screenshots/*.jpg` (Desktop 1440 px und iPhone-13-Viewport).
 
@@ -15,34 +17,43 @@ Stand 03.10.2026 · Implementierung: `src/app/globals.css` (Tokens), `src/compon
 
 **Entscheidung:** A, mit optionalem Light Mode, der die Lesbarkeit von C übernimmt.
 
-## 2. Tokens
+## 2. Tokens (V2 „Midnight Editorial“, seit 0.3.0)
 
-### Farben (dunkel / hell) – Kontrast gegen `--bg`
+Ergebnis des Design-Audits (docs/DESIGN_AUDIT.md): weniger Glas und Verlauf, mehr Ruhe und Lesbarkeit. Navy-Mitternacht und Anthrazit als Flächen, warmes Off-White als Text, zurückhaltendes Kobalt als einziger Akzent, Violett nur für das Kursbuch.
+
+### Farben (dunkel / hell) – Kontrast gegen `--bg`, gerechnet nach WCAG 2.2
 
 | Token | Dunkel | Kontrast | Hell | Kontrast | Verwendung |
 |---|---|---|---|---|---|
-| `--bg` | #0a0f1e | – | #f6f7fb | – | Seite |
-| `--bg-elev` | #111829 | – | #ffffff | – | Eingaben, Chatblasen |
-| `--text` | #eef1f7 | ≈ 16:1 | #0f172a | ≈ 17:1 | Fließtext |
-| `--text-muted` | #a3adc2 | ≈ 8:1 | #475569 | ≈ 7,5:1 | Sekundärtext |
-| `--text-faint` | #7d879c | ≈ 5:1 | #5b6779 | ≈ 5,6:1 | Meta (≥ 4,5:1) |
-| `--accent` | #7c9cff | ≈ 7:1 | #3554d1 | ≈ 6,3:1 | Links, Fokus, Primär |
-| `--accent-2` | #a78bfa | ≈ 6,4:1 | #6d4bd8 | ≈ 5,9:1 | Violett-Akzent |
-| `--success` / `--warning` / `--danger` | #4ade80 / #fbbf24 / #f87171 | ≥ 7:1 | #15803d / #a16207 / #b91c1c | ≥ 4,5:1 | Status |
+| `--bg` | #0a0e1a | – | #f5f4ef | – | Seite |
+| `--bg-elev` / `--surface` / `--surface-strong` | #131826 / #151a28 / #1b2232 | – | #ffffff / #ffffff / #eceae3 | – | Eingaben, Karten, Hervorhebung |
+| `--text` | #ecebe6 | ≈ 16:1 | #141824 | ≈ 16:1 | Fließtext |
+| `--text-muted` | #a7acb8 | ≈ 8,5:1 | #4a5160 | ≈ 7,2:1 | Sekundärtext |
+| `--text-faint` | #868c99 | ≈ 5,7:1 | #5e6574 | ≈ 5,3:1 | Meta (≥ 4,5:1) |
+| `--accent` | #8ea4ff | ≈ 8,2:1 | #2f4fc4 | ≈ 6,3:1 | Links, Fokus |
+| `--accent-solid` + `--accent-ink` | #3b5bdb + #fff | ≈ 5,7:1 (Text auf Fläche) | #3451c7 + #fff | ≈ 6,7:1 | Primärbutton, eigene Chatblasen |
+| `--accent-2` | #b3a3f5 | ≈ 8,7:1 | #5d43c4 | ≈ 6,2:1 | Kursbuch-Eyebrows, Hinweise |
+| `--success` / `--warning` / `--danger` | #5fd38d / #e8b54a / #f08a8a | ≥ 8:1 | #17793f / #8a5a00 / #b42323 | ≥ 5,0:1 | Status, immer mit Text/Symbol |
 
-Kontrastwerte sind gerechnete Näherungen; automatisiert bestätigt durch axe (E2E-Test E11, dunkel + hell, keine serious/critical-Verstöße). Text auf Glas/Verläufen wird von axe teils nur als „incomplete“ gemeldet → manuelle Prüfung offen (TEST_PLAN).
+Alle Paare gegen `--bg` ≥ 5,0:1; `--text-faint` auf `--surface-strong` ist mit 4,7:1 (dunkel) bzw. 4,9:1 (hell) knapp über der Grenze von 4,5:1. Bestätigt durch axe in E2E-Test E11 (dunkel und hell, keine serious/critical-Verstöße auf Kernseiten).
 
-### Typografie (Basis 16 px, Faktor ≈ 1,2)
+### Typografie
 
-`xs 12 · sm 14 · base 16 · lg 18 · xl 21,6 · 2xl 26 · 3xl 31 · 4xl 40 · Hero 60 (Desktop)`. Systemschrift-Stack (Inter, falls installiert; sonst SF Pro / Segoe UI / system-ui) – **keine externen Font-Requests** (Datenschutz, Offline-Fähigkeit). Tabellarische Ziffern (`tnum`) für Kennzahlen. Überschriften `tracking-tight`, Eyebrows `uppercase tracking-[0.14em]`.
+- **Plus Jakarta Sans** (variabel) für Oberfläche und Überschriften, **Newsreader** (variabel, Serife) für Kursbuch-Texte (`.reader-text`: 18 px, Zeilenhöhe 1,75, max. 66 Zeichen).
+- Beide Schriften liegen als WOFF2 im Projekt (`src/fonts/`, SIL Open Font License) und werden **lokal** ausgeliefert – keine Anfragen an Google (vgl. LG München I, 3 O 17493/20, SRC-197).
+- Skala (Basis 16 px): `xs 12 · sm 14 · base 16 · lg 18 · xl 20 · 2xl 24 · 3xl 30 · 4xl 36`. Überschriften mit `text-wrap: balance`, Ziffern tabellarisch.
 
 ### Abstände & Radien
 
-4-px-Raster (Tailwind-Skala). Karten-Padding 20 px, Seitenrand mobil 16 px, Desktop 40 px. Radien: `--radius-sm 10` (Buttons, Eingaben), `--radius 16` (Karten), `--radius-lg 22` (Chat, Hero-Flächen).
+4-px-Raster. Karten-Padding 20 px, Seitenrand mobil 16 px, Desktop 40 px. Radien: `--radius-sm 10`, `--radius 16`, `--radius-lg 22`.
 
-### Tiefe & Glas
+### Flächen statt Glas
 
-`.glass`: zweistufiger Flächenverlauf, 1 px Rand, innerer Lichtrand, `backdrop-filter: blur(14px) saturate(140%)`. Hintergrund: zwei sehr dezente radiale Akzentverläufe. Primärbutton mit Gradient und weichem Glow – das einzige „leuchtende“ Element.
+`.glass` ist seit V2 eine **opake** Fläche mit 1-px-Rand und sehr leichtem Schatten. Nur Kopfzeile und Tab-Leiste (`.glass-nav`) behalten eine leichte Unschärfe, damit Inhalte beim Scrollen erkennbar bleiben. Keine Leuchteffekte mehr.
+
+### Tastatur auf dem iPhone
+
+Der KI-Chat liegt mobil als feste Fläche über dem *sichtbaren* Viewport (`visualViewport.height` und `offsetTop` → CSS-Variablen `--chat-h`, `--chat-top`). Öffnet sich die Tastatur, schrumpft die Fläche mit; Eingabefeld, Senden und Zurück bleiben sichtbar (E2E-Test E20).
 
 ### Bewegung
 

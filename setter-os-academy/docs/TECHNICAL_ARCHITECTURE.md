@@ -27,10 +27,17 @@ Stand 03.10.2026.
 ```
 content/                 Lerninhalte (JSON) – Quelle der Wahrheit, versioniert
   sources.json knowledge.json curriculum.json modules/ questions/ scenarios/
+  program.json (Tag 1–90) longterm.json (Tag 91–180, 18 Spezialisierungen)
+  concepts.json (Konzeptgraph) glossary.json
 src/lib/
+  ai/                    KI-Schicht: Anbieter, Router, KI-Kunde, KI-Coach, Messwerte
+  engine/competency.ts   Kompetenzbaum (Konzeptstufe = schwächstes Lernziel)
+  engine/errorMemory.ts  Fehlergedächtnis (Klassen, Trend, Übungsempfehlung)
+  engine/challenges.ts   Wochen-Challenges, Missionen, Kompetenz-Abzeichen
+  engine/recommend.ts    Empfehlungen aus Fehlern, fälligen Wiederholungen, schwachen Zielen
   types.ts               Domänentypen (Inhalte, Antworten, Simulation, Bewertung)
   content/               Laden + Validieren der Inhalte (CI-Gate)
-  engine/quiz.ts         Quiz-Engine (11 Typen, deterministisch)
+  engine/quiz.ts         Quiz-Engine (12 Typen inkl. Fallanalyse, deterministisch)
   engine/review.ts       Wiederholungs- & Kompetenzalgorithmus
   engine/customer.ts     Customer Simulator (kennt Fakten, nie Bewertung)
   engine/coach.ts        Sales Coach / Bewertungs-Engine (kennt Rubrik, nie Antworten des Kunden)
@@ -42,6 +49,7 @@ src/lib/
 src/components/          Designsystem + QuestionRenderer + AppShell
 src/app/                 Ansichten (Landing, Start, Login, (app)/…)
 db/schema.sql            Ziel-Datenbankschema (getestet mit PGlite)
+server/ai-proxy/         Optionaler KI-Proxy (nicht bereitgestellt, eigenes package.json)
 tests/ e2e/              Unit-/Regressions-/Schema-Tests, E2E inkl. iPhone & a11y
 ```
 
@@ -55,11 +63,13 @@ Trennung laut Brief: Frontend (`src/app`, `src/components`) · Backend (noch kei
 - Externe Links mit `rel="noreferrer noopener"`.
 - Adminbereich im Prototyp ohne Rollenprüfung (lokal, nur eigene Daten). **Vor Cloud-Betrieb Pflicht:** Supabase RLS-Policies je Rolle, serverseitige Bewertung von Prüfungen (Client-Bewertung ist manipulierbar → für Zertifikate unzulässig).
 
-## 5. KI-Integration (vorbereitet, nicht aktiv)
+## 5. KI-Integration (aktiv seit 0.3.0)
 
-- Ohne API läuft der deterministische Simulator vollständig.
-- Geplant: `AI_PROVIDER=disabled|anthropic` (serverseitige Route, Key nur in Server-Env). Customer- und Coach-Prompts getrennt; der Coach bekommt die Rubrik und das Transkript, **die finale Punktzahl bleibt regelbasiert** (KI liefert nur begründete Hinweise), Gates bleiben deterministisch. Konsistenztests: gleiche Eingabe × 20 → Streuung messen; Fairness: Namensvarianten (wie Test C19).
-- Kennzeichnung nach Art. 50 KI-VO, Datenminimierung (`simulation_messages` mit Aufbewahrungsfrist).
+- Vollständige Beschreibung: **docs/AI_ARCHITECTURE.md**.
+- Standard: Claude über die `sample`-Fähigkeit des claude.ai-Viewers (Konto der Person, kein Schlüssel, keine Zusatzrechnung). Der veröffentlichte Artifact deklariert dafür `capabilities: {sample: {}}`.
+- Optional: eigener Proxy `server/ai-proxy` (Cloudflare-Worker-Vorlage, `@anthropic-ai/sdk`, Modell `claude-opus-5-5` mit serverseitigem Fallback). **Nicht bereitgestellt**; kostenpflichtig nur nach ausdrücklicher Freigabe und mit Budget.
+- Ohne KI läuft der deterministische Simulator vollständig (Offline-Modus mit Antwortauswahl).
+- Kunde und Coach getrennt; Bestehen nur über deterministische Gates; Coach-Belege werden gegen das Transkript geprüft. Kennzeichnung als KI im Chat (Art. 50 KI-VO).
 
 ## 6. Internationalisierung
 

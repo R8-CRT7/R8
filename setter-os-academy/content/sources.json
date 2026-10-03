@@ -794,5 +794,93 @@
     "accessNote": "Aus Fachwissen eingetragen; in dieser Session NICHT online geprüft. Einfachheit, Gliederung, Kürze, anregende Zusätze.",
     "lastCheckedAt": "2026-10-03",
     "reviewIntervalDays": 1825
+  },
+  {
+    "id": "SRC-190",
+    "title": "Gemini API – Rate limits und kostenlose Stufe",
+    "authorOrPublisher": "Google LLC (Google AI for Developers)",
+    "url": "https://ai.google.dev/gemini-api/docs/rate-limits",
+    "evidence": "hersteller",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026 (Snippets/Dokumentationsseiten über Suche); Werte ändern sich häufig – vor jeder Entscheidung erneut prüfen. Kostenlose Stufe mit Tageslimits je Modell (Flash-Modelle grob 500–1.500 Anfragen/Tag, Pro deutlich weniger).",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 30
+  },
+  {
+    "id": "SRC-191",
+    "title": "Gemini API – Zusätzliche Nutzungsbedingungen (Datennutzung in der kostenlosen Stufe)",
+    "authorOrPublisher": "Google LLC",
+    "url": "https://ai.google.dev/gemini-api/terms",
+    "evidence": "hersteller",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026 (Snippets/Dokumentationsseiten über Suche); Werte ändern sich häufig – vor jeder Entscheidung erneut prüfen. In der unbezahlten Stufe können Ein- und Ausgaben zur Produktverbesserung genutzt und von Menschen geprüft werden – für personenbezogene Daten ungeeignet.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 30
+  },
+  {
+    "id": "SRC-192",
+    "title": "GroqCloud – Rate Limits",
+    "authorOrPublisher": "Groq, Inc.",
+    "url": "https://console.groq.com/docs/rate-limits",
+    "evidence": "hersteller",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026 (Snippets/Dokumentationsseiten über Suche); Werte ändern sich häufig – vor jeder Entscheidung erneut prüfen. Kostenlose Stufe u. a. ca. 30 Anfragen/Minute und je nach Modell ca. 1.000–14.400 Anfragen/Tag.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 30
+  },
+  {
+    "id": "SRC-193",
+    "title": "Mistral AI – La Plateforme, Tarifstufen (Experiment)",
+    "authorOrPublisher": "Mistral AI SAS",
+    "url": "https://docs.mistral.ai/",
+    "evidence": "hersteller",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026 (Snippets/Dokumentationsseiten über Suche); Werte ändern sich häufig – vor jeder Entscheidung erneut prüfen. Kostenlose Experimentierstufe mit Telefonverifizierung; Daten können zum Training genutzt werden, sofern nicht widersprochen.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 30
+  },
+  {
+    "id": "SRC-194",
+    "title": "Cloudflare Workers AI – Pricing (kostenloses Tageskontingent)",
+    "authorOrPublisher": "Cloudflare, Inc.",
+    "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+    "evidence": "hersteller",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026 (Snippets/Dokumentationsseiten über Suche); Werte ändern sich häufig – vor jeder Entscheidung erneut prüfen. 10.000 Neurons pro Tag kostenlos, danach nutzungsbasiert.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 30
+  },
+  {
+    "id": "SRC-195",
+    "title": "OpenRouter – API Limits (kostenlose Modelle)",
+    "authorOrPublisher": "OpenRouter, Inc.",
+    "url": "https://openrouter.ai/docs/api-reference/limits",
+    "evidence": "hersteller",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026 (Snippets/Dokumentationsseiten über Suche); Werte ändern sich häufig – vor jeder Entscheidung erneut prüfen. Kostenlose Modelle: ca. 50 Anfragen/Tag, ca. 1.000/Tag nach einmaligem Guthabenkauf von 10 US-$.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 30
+  },
+  {
+    "id": "SRC-196",
+    "title": "Anthropic – Modellpreise der Claude API",
+    "authorOrPublisher": "Anthropic PBC",
+    "url": "https://docs.claude.com/en/docs/about-claude/pricing",
+    "evidence": "hersteller",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Preisliste aus der Claude-API-Dokumentation (Stand im Entwicklungswerkzeug 25.09.2026): Opus 5.5 4 $/20 $, Sonnet 5.5 2 $/10 $, Haiku 4.5 1 $/5 $ je Mio. Ein-/Ausgabe-Token. Werte ändern sich – vor Freigabe prüfen.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 30
+  },
+  {
+    "id": "SRC-197",
+    "title": "LG München I, Urteil vom 20.01.2022 – 3 O 17493/20 (dynamische Einbindung von Google Fonts)",
+    "authorOrPublisher": "Landgericht München I",
+    "url": "https://www.justiz.bayern.de/gerichte-und-behoerden/landgericht/muenchen-1/",
+    "evidence": "rechtsprechung",
+    "verification": "unverifiziert",
+    "accessNote": "Aus Fachwissen eingetragen; Volltext in dieser Session nicht geprüft (Link führt zur Gerichtsseite, Az. 3 O 17493/20). Kernaussage: Weitergabe der IP-Adresse an Google beim dynamischen Laden von Webfonts ohne Einwilligung rechtswidrig. Konsequenz: Schriften werden lokal ausgeliefert.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 365
   }
 ]

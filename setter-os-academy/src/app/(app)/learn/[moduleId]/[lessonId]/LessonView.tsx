@@ -118,10 +118,11 @@ function Block({ block: b, onAnswered }: { block: LessonBlock; onAnswered: (qid:
         <article className="rounded-[var(--radius)] border border-line bg-elev px-5 py-6 sm:px-8">
           <p className="mb-1 text-xs font-semibold uppercase tracking-[0.14em] text-accent-2">Kursbuch · {b.chapter}</p>
           <h2 className="mb-4 font-[family-name:var(--font-display)] text-xl font-semibold tracking-tight sm:text-2xl">{b.title}</h2>
-          <div className="grid max-w-[68ch] gap-4 text-[16px] leading-[1.75] text-fg/90">
-            {b.paragraphs.map((p, i) => <p key={i} className={i === 0 ? "first-letter:float-left first-letter:mr-2 first-letter:text-4xl first-letter:font-semibold first-letter:leading-none first-letter:text-accent" : ""}>{p}</p>)}
+          <div className="reader-text grid gap-4 text-fg/90">
+            {b.paragraphs.map((p, i) => <p key={i}>{p}</p>)}
           </div>
           {b.sourceIds && <p className="mt-5 text-xs text-faint">Quellen: {b.sourceIds.map((id) => sourceById(id)?.title ?? id).join(" · ")}</p>}
+          <Link href="/book/" className="mt-3 inline-block text-xs text-accent underline-offset-4 hover:underline">Im Kursbuch öffnen – mit Notizen, Lesezeichen und Markierungen</Link>
         </article>
       );
     case "skill":
