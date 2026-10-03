@@ -833,7 +833,7 @@
     "difficulty": 3,
     "version": 1,
     "type": "crm",
-    "prompt": "Simulierter CRM-Eintrag: Setze Status und nächste Aktion korrekt.",
+    "prompt": "Simulierter CRM-Eintrag: Hoher Lead Score, Gespräch geführt – setze Status, nächste Aktion und Einwilligung korrekt.",
     "record": [
       {
         "label": "Kontakt",

@@ -1,0 +1,679 @@
+{
+  "id": "SIM-006",
+  "version": 1,
+  "title": "Schichtplanung B2B: Die harte IT-Vorgabe",
+  "archetype": "Gut passender B2B-Lead mit verstecktem Ausschlusskriterium im Entscheidungsprozess",
+  "industry": "Software (SaaS) für Produktionsbetriebe",
+  "channel": "email",
+  "market": "B2B",
+  "direction": "inbound",
+  "difficulty": 4,
+  "briefing": "Simulation – alle Personen und Firmen sind erfunden. Du bist Setterin bzw. Setter bei TaktWerk, einem Anbieter von Schichtplanungssoftware, die ausschließlich als Cloud-Lösung angeboten wird. ICP: Produktionsbetriebe mit 100–1.000 Mitarbeitenden im Mehrschichtbetrieb. Katrin Wendler, Teamleiterin Produktion bei der Hollmann Kunststofftechnik GmbH, hat über das Kontaktformular eine Anfrage gestellt und um Antwort per E-Mail gebeten. Du antwortest auf ihre Anfrage; weitere werbliche E-Mails nach dem Gespräch nur mit ihrer ausdrücklichen Einwilligung (UWG § 7). Pflicht vor einem Demo-Termin: Bedarf, Passung, Zeitrahmen, Entscheidungsweg, Budgetrahmen und harte Entscheidungskriterien. Preise und technische Zusagen macht nur der Fachberater. Ein Termin, der an einer bekannten Anforderung scheitern muss, ist kein Erfolg.",
+  "persona": {
+    "name": "Katrin Wendler",
+    "role": "Teamleiterin Produktion, Hollmann Kunststofftechnik GmbH (erfunden)",
+    "avatarHue": 205
+  },
+  "facts": [
+    {
+      "key": "need",
+      "label": "Bedarf",
+      "value": "Schichtplanung in Excel, ca. 6 Std./Woche Aufwand, Ausfälle nachts kaum abzudecken",
+      "requiredForQualification": true,
+      "distractors": [
+        "Zeiterfassung per Stempeluhr ersetzen",
+        "Lohnabrechnung auslagern"
+      ]
+    },
+    {
+      "key": "fit",
+      "label": "Passung (ICP)",
+      "value": "Kunststoffverarbeiter, ca. 240 Mitarbeitende, 3 Schichten",
+      "requiredForQualification": true,
+      "distractors": [
+        "Handwerksbetrieb, 12 Mitarbeitende, 1 Schicht",
+        "Konzern, 8.000 Mitarbeitende, 5 Werke"
+      ]
+    },
+    {
+      "key": "timeline",
+      "label": "Zeitrahmen",
+      "value": "Bis April (Excel-Verantwortlicher geht in Rente)",
+      "requiredForQualification": true,
+      "distractors": [
+        "Sofort, noch diesen Monat",
+        "Kein Zeitdruck, frühestens in zwei Jahren"
+      ]
+    },
+    {
+      "key": "authority",
+      "label": "Entscheidungsweg",
+      "value": "Werkleiter Dorn entscheidet und gibt Budget frei; IT-Leitung prüft, Betriebsrat wird beteiligt",
+      "requiredForQualification": true,
+      "distractors": [
+        "Frau Wendler entscheidet allein",
+        "Konzerneinkauf entscheidet ohne Werk"
+      ]
+    },
+    {
+      "key": "criteria",
+      "label": "Harte Kriterien",
+      "value": "Personaldaten nur auf eigenen Servern – Cloud ausgeschlossen",
+      "requiredForQualification": true,
+      "distractors": [
+        "Muss eine Smartphone-App haben",
+        "Keine besonderen Vorgaben"
+      ]
+    },
+    {
+      "key": "budget",
+      "label": "Budgetrahmen",
+      "value": "Ca. 10.000–15.000 € pro Jahr geplant, noch nicht freigegeben",
+      "requiredForQualification": true,
+      "distractors": [
+        "Budget von 50.000 € freigegeben",
+        "Kein Budget, nur kostenlose Lösungen"
+      ]
+    }
+  ],
+  "idealOutcome": "disqualify",
+  "acceptableOutcomes": [
+    "disqualify",
+    "nurture"
+  ],
+  "openingMessage": "Guten Tag, ich habe gerade Ihr Kontaktformular ausgefüllt. Wir suchen eine bessere Lösung für unsere Schichtplanung, das kostet uns aktuell sehr viel Zeit. Eine Antwort per E-Mail wäre mir am liebsten. Viele Grüße, Katrin Wendler",
+  "startRapport": 5,
+  "maxTurns": 12,
+  "moves": [
+    {
+      "id": "open-good",
+      "intent": "open",
+      "quality": "good",
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "setsFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "need"
+      ],
+      "rapport": 1,
+      "text": "Guten Tag Frau Wendler, vielen Dank für Ihre Anfrage über unser Kontaktformular – hier schreibt Sie Ihnen Nele Hartmann von TaktWerk. Sie erwähnten, dass die Schichtplanung bei Ihnen viel Zeit kostet. Was macht sie gerade so aufwendig?",
+      "effects": {
+        "eroeffnung": 3,
+        "bedarfsermittlung": 2,
+        "zuhoeren": 1
+      },
+      "coachNote": "Vorstellung, Bezug zur Anfrage und eine offene Frage nach dem Problem – sachlich, im Sie-Ton der E-Mail.",
+      "reply": [
+        {
+          "text": "Guten Tag Frau Hartmann, danke für die schnelle Rückmeldung. Wir planen alles in einer großen Excel-Datei. Das kostet mich locker sechs Stunden pro Woche, und wenn nachts jemand ausfällt, telefonieren wir stundenlang herum."
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "fit"
+      ],
+      "text": "Danke, das ist sehr anschaulich. Damit ich einschätzen kann, ob unsere Lösung zu Ihrem Betrieb passt: Für wie viele Mitarbeitende und wie viele Schichten planen Sie?",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 2
+      },
+      "coachNote": "ICP-Merkmale mit Begründung erfragt – eine Frage, ein Thema.",
+      "reply": [
+        {
+          "text": "Rund 240 Mitarbeitende in der Produktion, drei Schichten an fünf Tagen. Wir sind ein Kunststoffverarbeiter."
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "timeline"
+      ],
+      "text": "Gibt es einen Zeitpunkt, bis zu dem eine neue Lösung laufen sollte – und was steckt dahinter?",
+      "effects": {
+        "qualifizierung": 2,
+        "bedarfsermittlung": 1,
+        "fragetechnik": 1
+      },
+      "coachNote": "Zeitrahmen plus Grund dahinter – macht die Angabe aussagekräftiger als ein bloßes Datum.",
+      "reply": [
+        {
+          "text": "Bis April. Unser Kollege, der die Excel-Datei gebaut hat und als Einziger wirklich versteht, geht dann in Rente."
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "authority"
+      ],
+      "text": "Wie läuft eine solche Entscheidung bei Ihnen typischerweise ab – wer ist außer Ihnen beteiligt?",
+      "effects": {
+        "qualifizierung": 3,
+        "fragetechnik": 2
+      },
+      "coachNote": "Fragt nach dem Ablauf statt nach dem Titel – liefert Entscheider und Beteiligte, ohne etwas zu unterstellen.",
+      "reply": [
+        {
+          "text": "Ich bereite das vor. Entscheiden und das Budget freigeben muss unser Werkleiter, Herr Dorn. Die IT-Leitung prüft jede neue Software, und der Betriebsrat wird beteiligt.",
+          "setsFlags": [
+            "it-mentioned"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "criteria",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "it-mentioned"
+      ],
+      "hiddenByFlags": [
+        "criteria-known"
+      ],
+      "setsFlags": [
+        "criteria-known"
+      ],
+      "reveals": [
+        "criteria"
+      ],
+      "text": "Sie erwähnten die IT-Leitung: Gibt es Vorgaben, die eine Lösung auf jeden Fall erfüllen muss – etwa zu Datenschutz oder Betrieb?",
+      "effects": {
+        "qualifizierung": 3,
+        "zuhoeren": 2,
+        "bedarfsermittlung": 1
+      },
+      "coachNote": "Greift die Erwähnung der IT auf und erfragt harte Entscheidungskriterien (MEDDICC: Decision Criteria).",
+      "reply": [
+        {
+          "text": "Ja, das ist eine feste Vorgabe: Personaldaten dürfen bei uns nur auf eigenen Servern liegen. Cloud-Lösungen sind ausgeschlossen."
+        }
+      ]
+    },
+    {
+      "id": "budget",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "budget"
+      ],
+      "text": "Damit ich den Rahmen realistisch einschätzen kann: Gibt es für das Projekt schon eine Budgetvorstellung oder einen Planungsrahmen?",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1,
+        "klarheit": 1
+      },
+      "coachNote": "Budget offen, begründet und als Rahmen erfragt.",
+      "reply": [
+        {
+          "text": "Für nächstes Jahr sind etwa 10.000 bis 15.000 Euro pro Jahr angedacht. Freigegeben ist das aber noch nicht."
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "intent": "summarize",
+      "quality": "good",
+      "requires": [
+        "need",
+        "criteria"
+      ],
+      "hiddenByFlags": [
+        "summarized"
+      ],
+      "setsFlags": [
+        "summarized"
+      ],
+      "text": "Darf ich kurz zusammenfassen, ob ich alles richtig verstanden habe: Die Planung für drei Schichten läuft in Excel, sie hängt an einem Kollegen, der im April in Rente geht, Herr Dorn entscheidet, und eine feste IT-Vorgabe lautet: Personaldaten nur auf eigenen Servern. Stimmt das so?",
+      "effects": {
+        "zuhoeren": 2,
+        "klarheit": 2
+      },
+      "coachNote": "Zusammenfassung als Frage, nur mit Gesagtem – schafft eine saubere Grundlage für die ehrliche Einordnung.",
+      "reply": [
+        {
+          "text": "Ja, genau so ist es."
+        }
+      ]
+    },
+    {
+      "id": "disqualify",
+      "intent": "disqualify",
+      "quality": "good",
+      "requires": [
+        "criteria"
+      ],
+      "text": "Danke für Ihre Offenheit, Frau Wendler. Dann möchte ich ehrlich sein: TaktWerk gibt es nur als Cloud-Lösung, eine Installation auf Ihren eigenen Servern bieten wir nicht an. Damit erfüllen wir eine Ihrer Grundvoraussetzungen nicht, und ich möchte weder Ihnen noch Herrn Dorn Zeit für einen Termin nehmen, der daran nichts ändert. Wenn es Ihnen hilft, schicke ich Ihnen gern unsere neutrale Checkliste mit Fragen für die Auswahl einer Schichtplanungssoftware.",
+      "effects": {
+        "kundenorientierung": 4,
+        "klarheit": 3,
+        "qualifizierung": 2
+      },
+      "coachNote": "Ehrliche Disqualifizierung: Dank, konkreter Grund, Konsequenz aus Kundensicht und ein echter Mehrwert – ohne falsche Zusage.",
+      "reply": [
+        {
+          "text": "Das ist sehr fair, danke. Lieber jetzt als nach drei Terminen. Die Checkliste nehme ich gern.",
+          "ends": "disqualify"
+        }
+      ]
+    },
+    {
+      "id": "open-pitch",
+      "intent": "open",
+      "quality": "weak",
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "setsFlags": [
+        "opened"
+      ],
+      "betterMoveId": "open-good",
+      "rapport": -1,
+      "text": "Guten Tag! TaktWerk ist die führende Cloud-Software für Schichtplanung mit über 40 Funktionen. Hier ist mein Kalenderlink für eine 60-minütige Demo.",
+      "effects": {
+        "eroeffnung": -1,
+        "kundenorientierung": -2
+      },
+      "coachNote": "Produktpitch und Kalenderlink, bevor der Bedarf bekannt ist; „führend“ ist eine unbelegte Werbebehauptung.",
+      "reply": [
+        {
+          "text": "Hm, 60 Minuten sind viel. Ich wollte eigentlich erst einmal wissen, ob Sie überhaupt zu uns passen."
+        }
+      ]
+    },
+    {
+      "id": "ask-many",
+      "intent": "ask",
+      "quality": "weak",
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "many-asked"
+      ],
+      "setsFlags": [
+        "many-asked"
+      ],
+      "reveals": [
+        "fit"
+      ],
+      "betterMoveId": "context",
+      "text": "Wie viele Mitarbeitende haben Sie, wer entscheidet, bis wann soll es laufen und wie hoch ist Ihr Budget?",
+      "effects": {
+        "fragetechnik": -1
+      },
+      "coachNote": "Vier Fragen in einer Nachricht – die Kundin beantwortet nur die einfachste.",
+      "reply": [
+        {
+          "text": "Wir sind rund 240 Leute in drei Schichten. Den Rest müsste ich erst sortieren."
+        }
+      ]
+    },
+    {
+      "id": "need-impact",
+      "intent": "ask",
+      "quality": "good",
+      "requires": [
+        "need"
+      ],
+      "text": "Sie schrieben, dass Sie bei Ausfällen in der Nachtschicht herumtelefonieren. Was bedeutet das konkret für Sie und das Team?",
+      "effects": {
+        "bedarfsermittlung": 2,
+        "zuhoeren": 2
+      },
+      "coachNote": "Behutsame Implikationsfrage, die an ihre Worte anknüpft – ohne Dramatisierung.",
+      "reply": [
+        {
+          "text": "Überstunden, schlechte Stimmung, und ich komme kaum zu meinen eigentlichen Aufgaben."
+        }
+      ]
+    },
+    {
+      "id": "need-fear",
+      "intent": "pressure",
+      "quality": "bad",
+      "requires": [
+        "need"
+      ],
+      "hiddenByFlags": [
+        "fear-used"
+      ],
+      "setsFlags": [
+        "fear-used"
+      ],
+      "rapport": -2,
+      "violation": "Angstappell mit unbelegter Behauptung über Bußgelder.",
+      "betterMoveId": "need-impact",
+      "text": "Ohne neue Software riskieren Sie Produktionsausfälle und Bußgelder wegen Arbeitszeitverstößen – wollen Sie das wirklich?",
+      "effects": {
+        "kundenorientierung": -3,
+        "fragetechnik": -1
+      },
+      "coachNote": "Angstappell mit unbelegter Behauptung (Bußgelder) – Druck statt Klarheit.",
+      "reply": [
+        {
+          "text": "Das ist mir jetzt etwas zu dramatisch. Bußgelder hatten wir noch nie."
+        }
+      ]
+    },
+    {
+      "id": "authority-assume",
+      "intent": "ask",
+      "quality": "weak",
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "assumed"
+      ],
+      "setsFlags": [
+        "assumed"
+      ],
+      "betterMoveId": "process",
+      "text": "Sie entscheiden das dann ja sicher selbst, oder?",
+      "effects": {
+        "fragetechnik": -1
+      },
+      "coachNote": "Suggestive Entscheiderfrage – unterstellt Befugnis. Besser nach dem Ablauf fragen.",
+      "reply": [
+        {
+          "text": "Nein, das entscheidet unser Werkleiter, Herr Dorn. Ich bereite nur vor.",
+          "reveals": [
+            "authority"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "budget-leading",
+      "intent": "ask",
+      "quality": "bad",
+      "requires": [
+        "need"
+      ],
+      "hiddenByFlags": [
+        "budget-leading-used"
+      ],
+      "setsFlags": [
+        "budget-leading-used"
+      ],
+      "rapport": -1,
+      "betterMoveId": "budget",
+      "text": "Bei sechs Stunden Aufwand pro Woche spielt der Preis ja keine große Rolle, oder?",
+      "effects": {
+        "fragetechnik": -2,
+        "kundenorientierung": -2
+      },
+      "coachNote": "Suggestive Budgetfrage, die Druck aufbaut.",
+      "reply": [
+        {
+          "text": "Doch, der Preis spielt durchaus eine Rolle. Das entscheidet am Ende ohnehin Herr Dorn."
+        }
+      ]
+    },
+    {
+      "id": "propose-early",
+      "intent": "propose_booking",
+      "quality": "weak",
+      "requires": [
+        "need"
+      ],
+      "hiddenByFlags": [
+        "early-proposed",
+        "criteria-known"
+      ],
+      "setsFlags": [
+        "early-proposed"
+      ],
+      "betterMoveId": "process",
+      "text": "Klingt, als könnten wir Ihnen gut helfen! Wollen wir direkt eine Demo vereinbaren? Ich hätte Dienstag 14 Uhr oder Mittwoch 10 Uhr.",
+      "effects": {
+        "qualifizierung": -2,
+        "terminvereinbarung": -1
+      },
+      "coachNote": "Terminvorschlag, bevor Entscheidungsweg und Kriterien geklärt sind – hier nennt die Kundin den Ausschlussgrund zum Glück selbst.",
+      "reply": [
+        {
+          "text": "Grundsätzlich gern, aber vorher eine Frage: Lässt sich Ihre Software auf unseren eigenen Servern installieren? Das ist bei uns eine feste IT-Vorgabe, Cloud ist ausgeschlossen.",
+          "reveals": [
+            "criteria"
+          ],
+          "setsFlags": [
+            "criteria-known",
+            "it-mentioned"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "propose-demo",
+      "intent": "propose_booking",
+      "quality": "weak",
+      "requires": [
+        "need",
+        "authority"
+      ],
+      "hiddenByFlags": [
+        "criteria-known"
+      ],
+      "betterMoveId": "criteria",
+      "text": "Dann schlage ich eine Demo mit Ihnen und Herrn Dorn vor – passt Donnerstag um 10 Uhr?",
+      "effects": {
+        "qualifizierung": -1
+      },
+      "coachNote": "Entscheider einbezogen, aber die Entscheidungskriterien der IT wurden nie erfragt – genau dort liegt hier der Ausschlussgrund.",
+      "reply": [
+        {
+          "text": "Donnerstag 10 Uhr passt, ich frage Herrn Dorn. Bis dann.",
+          "ends": "book"
+        }
+      ]
+    },
+    {
+      "id": "dodge-criteria",
+      "intent": "propose_booking",
+      "quality": "bad",
+      "requires": [
+        "criteria"
+      ],
+      "violation": "Bekanntes Ausschlusskriterium verschwiegen bzw. kleingeredet (irreführend).",
+      "betterMoveId": "disqualify",
+      "text": "Das mit der Cloud klären wir am besten im Termin – die meisten Kunden sind überzeugt, sobald sie die Demo sehen. Donnerstag 10 Uhr mit Herrn Dorn?",
+      "effects": {
+        "kundenorientierung": -3,
+        "qualifizierung": -2
+      },
+      "coachNote": "Bekannter Ausschlussgrund wird kleingeredet; der Termin ist absehbar Zeitverschwendung für alle.",
+      "reply": [
+        {
+          "text": "Na gut … wenn Sie meinen. Donnerstag 10 Uhr.",
+          "ends": "book"
+        }
+      ]
+    },
+    {
+      "id": "false-onprem",
+      "intent": "inform",
+      "quality": "bad",
+      "requires": [
+        "criteria"
+      ],
+      "violation": "Falsche Produktzusage (On-Premise) außerhalb der Setter-Rolle.",
+      "betterMoveId": "disqualify",
+      "text": "Kein Problem, eine Version für Ihre eigenen Server lässt sich sicher einrichten. Wollen wir einen Termin machen?",
+      "effects": {
+        "kundenorientierung": -3,
+        "klarheit": -2
+      },
+      "coachNote": "Falsche Produktzusage: Laut Briefing ist TaktWerk ausschließlich Cloud-Software – und Produktfragen gehören nicht in die Setter-Rolle.",
+      "reply": [
+        {
+          "text": "Oh, prima – dann gern. Donnerstag 10 Uhr mit Herrn Dorn?",
+          "ends": "book"
+        }
+      ]
+    },
+    {
+      "id": "nurture",
+      "intent": "nurture",
+      "quality": "ok",
+      "requires": [
+        "criteria"
+      ],
+      "text": "Aktuell passt unser Cloud-Modell leider nicht zu Ihrer IT-Vorgabe. Darf ich mich per E-Mail bei Ihnen melden, falls wir einmal eine Version für eigene Server anbieten?",
+      "effects": {
+        "kundenorientierung": 2,
+        "klarheit": 1
+      },
+      "coachNote": "Ehrlich und mit ausdrücklicher Einwilligung für spätere E-Mails – aber ohne konkreten Mehrwert und mit einem vagen Versprechen.",
+      "reply": [
+        {
+          "text": "Ja, das dürfen Sie gern.",
+          "ends": "nurture"
+        }
+      ]
+    },
+    {
+      "id": "dm-werkleiter",
+      "intent": "inform",
+      "quality": "bad",
+      "requires": [
+        "authority"
+      ],
+      "hiddenByFlags": [
+        "dm-used"
+      ],
+      "setsFlags": [
+        "dm-used"
+      ],
+      "rapport": -2,
+      "violation": "Werbliche Direktnachricht an den Werkleiter ohne Einwilligung (UWG § 7 Abs. 2; vgl. AG Düsseldorf 2025).",
+      "betterMoveId": "summary",
+      "text": "Ich schreibe Herrn Dorn am besten gleich direkt über LinkedIn an und schicke ihm unser Angebot.",
+      "effects": {
+        "kundenorientierung": -2
+      },
+      "coachNote": "Übergeht die Ansprechpartnerin (möglicher Champion) und wäre eine Werbenachricht ohne Einwilligung.",
+      "reply": [
+        {
+          "text": "Bitte nicht. Ich bespreche das lieber selbst mit ihm – sonst wirkt es, als würde ich übergangen."
+        }
+      ]
+    }
+  ],
+  "handoverFields": [
+    "need",
+    "fit",
+    "timeline",
+    "authority",
+    "criteria",
+    "budget"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 3,
+    "bedarfsermittlung": 4,
+    "fragetechnik": 7,
+    "zuhoeren": 4,
+    "klarheit": 5,
+    "qualifizierung": 14,
+    "kundenorientierung": 4
+  },
+  "reviewQuestionIds": [
+    "Q-M04-025",
+    "Q-M04-031",
+    "Q-M04-033",
+    "Q-M04-035"
+  ],
+  "sourceIds": [
+    "SRC-050",
+    "SRC-019",
+    "SRC-027",
+    "SRC-047",
+    "SRC-132",
+    "SRC-133"
+  ],
+  "ai": {
+    "personality": "sachlich, freundlich, gut organisiert, unter Zeitdruck; schätzt Ehrlichkeit und reagiert allergisch auf Verkaufsfloskeln",
+    "speakingStyle": "E-Mail-Stil mit Sie-Form, vollständige Sätze, eher kurze Absätze, keine Emojis",
+    "situation": "Hat über das Kontaktformular eine Anfrage zur Schichtplanung gestellt und um Antwort per E-Mail gebeten.",
+    "concern": "Die Schichtplanung hängt an einer Excel-Datei und einem Kollegen, der im April in Rente geht; Ausfälle in der Nachtschicht kosten viel Zeit.",
+    "background": "Teamleiterin Produktion bei einem Kunststoffverarbeiter mit ca. 240 Mitarbeitenden in drei Schichten. Werkleiter Dorn entscheidet und gibt das Budget frei, die IT-Leitung prüft jede Software, der Betriebsrat wird beteiligt. Feste IT-Vorgabe: Personaldaten nur auf eigenen Servern, keine Cloud. Für nächstes Jahr sind ca. 10.000–15.000 € pro Jahr geplant, nicht freigegeben. TaktWerk ist ausschließlich Cloud-Software – das weiß sie noch nicht.",
+    "needs": [
+      "eine verlässliche Planung, die nicht an einer Person hängt",
+      "schnelle, ehrliche Auskunft, ob der Anbieter überhaupt in Frage kommt",
+      "Unterstützung bei der internen Vorbereitung für Herrn Dorn und die IT"
+    ],
+    "objections": [
+      {
+        "trigger": "der Setter mit Produktpitch, Superlativen oder Kalenderlink beginnt",
+        "reaction": "distanziert: „Ich wollte erst einmal wissen, ob Sie überhaupt zu uns passen.“"
+      },
+      {
+        "trigger": "der Setter unterstellt, dass sie allein entscheidet",
+        "reaction": "stellt klar, dass Werkleiter Dorn entscheidet"
+      },
+      {
+        "trigger": "Angstmache mit Ausfällen oder Bußgeldern",
+        "reaction": "empfindet es als dramatisch und wird zurückhaltender"
+      },
+      {
+        "trigger": "der Setter Herrn Dorn direkt kontaktieren will",
+        "reaction": "bittet ausdrücklich darum, das nicht zu tun"
+      },
+      {
+        "trigger": "der Setter die Cloud-Frage kleinredet oder eine On-Premise-Version verspricht",
+        "reaction": "stimmt einem Termin zu, verlässt sich aber auf die Aussage"
+      }
+    ],
+    "customerGoals": [
+      "herausfinden, ob TaktWerk ihre IT-Vorgabe erfüllt",
+      "bis April eine Lösung finden",
+      "Zeit sparen – keine unnötigen Termine"
+    ],
+    "revealRules": {
+      "need": "der Setter offen nach dem Problem oder danach fragt, was die Planung aufwendig macht",
+      "fit": "der Setter nach Betriebsgröße, Mitarbeitenden, Schichten oder Branche fragt",
+      "timeline": "der Setter fragt, bis wann eine Lösung laufen soll oder was hinter dem Zeitpunkt steckt",
+      "authority": "der Setter nach dem Entscheidungsablauf oder weiteren Beteiligten fragt (eine suggestive Entscheiderfrage korrigiert sie)",
+      "criteria": "der Setter nach Vorgaben, Anforderungen oder Kriterien fragt (z. B. von der IT) – oder sobald ein Termin vorgeschlagen wird, fragt sie selbst nach der Installation auf eigenen Servern",
+      "budget": "der Setter offen und begründet nach einem Budget- oder Planungsrahmen fragt"
+    },
+    "adviceBoundaries": [
+      "Was kostet die Software genau für uns?",
+      "Ist das mit unserem Betriebsrat abgestimmt bzw. mitbestimmungsfrei?",
+      "Können Sie garantieren, dass das DSGVO-konform ist?",
+      "Gibt es eine Schnittstelle zu unserer Zeiterfassung?"
+    ],
+    "outcomeGuidance": "Weil TaktWerk nur als Cloud-Lösung angeboten wird und die IT-Vorgabe Cloud ausschließt, ist eine ehrliche Disqualifizierung mit Grund und kleinem Mehrwert das beste Ergebnis; eine Nurturing-Vereinbarung mit ausdrücklicher Einwilligung ist vertretbar. Bucht der Setter einen Termin, ohne nach Kriterien zu fragen, sagt sie zu – der Termin scheitert absehbar. Verspricht er eine On-Premise-Version, glaubt sie ihm zunächst.",
+    "lessonLinks": [
+      "M04-L03",
+      "M04-L04",
+      "M04-L06",
+      "M04-L08"
+    ]
+  }
+}

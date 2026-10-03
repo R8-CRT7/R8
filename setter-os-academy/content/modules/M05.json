@@ -1,0 +1,1043 @@
+{
+  "id": "M05",
+  "number": 5,
+  "title": "Chat Setting",
+  "subtitle": "Struktur, Tempo, Kanäle, Übergabe – mit 30 Übungssituationen",
+  "status": "verfuegbar",
+  "prerequisites": [
+    "M02",
+    "M04"
+  ],
+  "version": "1.0.0",
+  "passThreshold": 0.8,
+  "sourceIds": [
+    "SRC-005",
+    "SRC-006",
+    "SRC-007",
+    "SRC-019",
+    "SRC-024",
+    "SRC-025",
+    "SRC-027",
+    "SRC-028",
+    "SRC-043",
+    "SRC-047",
+    "SRC-050",
+    "SRC-052",
+    "SRC-054",
+    "SRC-055",
+    "SRC-058",
+    "SRC-066",
+    "SRC-161",
+    "SRC-162",
+    "SRC-163",
+    "SRC-164",
+    "SRC-165",
+    "SRC-166",
+    "SRC-167",
+    "SRC-168",
+    "SRC-169",
+    "SRC-170",
+    "SRC-171",
+    "SRC-172",
+    "SRC-173",
+    "SRC-174",
+    "SRC-175",
+    "SRC-176",
+    "SRC-177",
+    "SRC-178"
+  ],
+  "objectives": [
+    {
+      "id": "LO-M05-01",
+      "moduleId": "M05",
+      "text": "Ein Chat-Gespräch in einer klaren Struktur führen – vom Einstieg bis zum nächsten Schritt.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M05-02",
+      "moduleId": "M05",
+      "text": "Natürlich klingende, kanalgerechte Nachrichten schreiben und Missverständnisse im Ton vorbeugen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M05-03",
+      "moduleId": "M05",
+      "text": "Befunde zur Antwortgeschwindigkeit korrekt einordnen (inkl. Grenzen) und in eine realistische Reaktionsroutine übersetzen.",
+      "bloom": "bewerten"
+    },
+    {
+      "id": "LO-M05-04",
+      "moduleId": "M05",
+      "text": "Passende Gesprächseinstiege und Nachfragen formulieren – auch bei Funkstille.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M05-05",
+      "moduleId": "M05",
+      "text": "Übergänge gestalten und im Chat schrittweise und respektvoll qualifizieren.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M05-06",
+      "moduleId": "M05",
+      "text": "Die Zulässigkeit eines Kanals prüfen: Einwilligung nach UWG und DSGVO sowie WhatsApp- und Meta-Regeln.",
+      "bloom": "analysieren"
+    },
+    {
+      "id": "LO-M05-07",
+      "moduleId": "M05",
+      "text": "Leads vollständig, sachlich und „warm“ an Berater oder Closer übergeben.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M05-08",
+      "moduleId": "M05",
+      "text": "Typische Chat-Situationen analysieren und eine bessere Antwort begründet formulieren.",
+      "bloom": "analysieren"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M05-L01",
+      "moduleId": "M05",
+      "title": "Der Chat-Bogen – Struktur für asynchrone Gespräche",
+      "minutes": 9,
+      "objectiveIds": [
+        "LO-M05-01"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ein Chat ist kein Telefonat in Textform. Antworten kommen nach Sekunden, Stunden oder gar nicht, und der Kunde liest nebenbei. In dieser Lektion lernst du eine Struktur, die dir trotzdem Orientierung gibt: den Chat-Bogen."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 5.1",
+          "title": "Warum Chats eine eigene Struktur brauchen",
+          "paragraphs": [
+            "Am Telefon gibt es einen klaren Anfang und ein klares Ende. Im Chat verschwimmt beides. Ein Gespräch kann morgens beginnen, mittags ruhen und abends weiterlaufen. Der Kunde schreibt vielleicht zwischen zwei Meetings, du antwortest zwischen zwei anderen Chats. Ohne Struktur passieren dann drei typische Dinge: Fragen gehen verloren, das Gespräch dreht sich im Kreis, und am Ende weiß niemand, was der nächste Schritt ist.",
+            "Der Chat-Bogen ist eine einfache Landkarte mit sechs Etappen. Erstens: Einstieg mit Bezug (Wer bist du, warum meldest du dich, worauf antwortest du?). Zweitens: Anlass und Ziel des Kunden verstehen. Drittens: Qualifizieren – die Pflichtkriterien des Auftraggebers klären, eine Frage nach der anderen. Viertens: Zusammenfassen und bestätigen lassen. Fünftens: einen passenden nächsten Schritt vorschlagen – Termin, Information oder ein ehrliches „passt gerade nicht“. Sechstens: abschließen und dokumentieren, bei einem Termin inklusive Übergabe.",
+            "Der Bogen ist keine Checkliste, die du stur abarbeitest. Er hilft dir, jederzeit zu wissen, wo du gerade stehst. Wenn ein Kunde nach zwei Tagen zurückkommt, liest du den Verlauf und fragst dich: In welcher Etappe sind wir stehen geblieben? Dann knüpfst du genau dort an, statt von vorn zu beginnen. Viele Vertriebsmethoden folgen einer ähnlichen Logik, etwa die Inbound-Methodik mit den Phasen Identify, Connect, Explore und Advise. Belegt ist dabei vor allem die Plausibilität, nicht eine bestimmte Reihenfolge als „beste“.",
+            "Asynchronität hat auch Vorteile. Du hast Zeit zum Nachdenken, kannst eine Nachricht vor dem Absenden prüfen und den Verlauf jederzeit nachlesen. Nutze das: Lies vor jeder Antwort die letzten drei Nachrichten des Kunden noch einmal. Oft steckt darin eine Information oder Frage, die du sonst übersehen hättest. Und beantworte offene Kundenfragen, bevor du selbst die nächste Frage stellst.",
+            "Eine letzte Regel: Pro Nachricht ein Gedanke und höchstens eine Frage – das kennst du aus Modul 2. Im Chat-Bogen bedeutet das, dass jede Etappe aus mehreren kurzen Nachrichten bestehen kann. Das ist kein Zeichen von Ineffizienz, sondern von Respekt: Der Kunde kann jede Frage in Ruhe beantworten, und du bekommst vollständige Antworten statt halber."
+          ],
+          "sourceIds": [
+            "SRC-050",
+            "SRC-043",
+            "SRC-066"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Der Chat-Bogen in sechs Etappen",
+          "category": "prozess",
+          "what": "Eine Landkarte, mit der du in jedem Chat weißt, wo du stehst und was als Nächstes kommt.",
+          "how": [
+            "Einstieg: Name, Bezug zur Anfrage, Erlaubnis für ein paar Fragen.",
+            "Anlass/Ziel: eine offene Frage nach dem Warum.",
+            "Qualifizierung: Pflichtkriterien einzeln klären.",
+            "Zusammenfassung: Kern in eigenen Worten, als Frage.",
+            "Nächster Schritt: konkreter Vorschlag oder ehrliche Alternative.",
+            "Abschluss: bestätigen, dokumentieren, übergeben."
+          ],
+          "why": "Struktur verhindert verlorene Fragen und Gespräche ohne Ergebnis – besonders, wenn zwischen zwei Nachrichten Stunden liegen.",
+          "evidence": "Praxisheuristik (Expertenmeinung), angelehnt an etablierte Phasenmodelle wie die Inbound-Methodik. Keine Studie belegt, dass genau diese sechs Etappen besser wirken als andere Strukturen.",
+          "example": "Kunde meldet sich nach zwei Tagen: „Sorry, war viel los.“ → Du siehst: Etappe 3, Zeitrahmen fehlt noch. „Kein Problem! Wir waren beim Thema Start stehen geblieben – ab wann würdest du gern loslegen?“",
+          "boundary": "Der Bogen dient dem Kunden, nicht der Quote. Wenn der Kunde nach Etappe 2 klar sagt, dass er nichts möchte, springst du respektvoll zum Abschluss.",
+          "sourceIds": [
+            "SRC-050",
+            "SRC-043"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Ein gutes Chat-Skript muss Wort für Wort befolgt werden – dann kann nichts schiefgehen.“",
+          "reality": "Für die Überlegenheit wortgetreuer Skripte gibt es keinen belastbaren Beleg. Starre Skripte ignorieren, was der Kunde gerade geschrieben hat, und klingen schnell nach Textbaustein. Sinnvoller sind eine klare Struktur (Etappen, Pflichtkriterien) und geprüfte Formulierungsbeispiele, die du an die Situation anpasst.",
+          "sourceIds": [
+            "SRC-050",
+            "SRC-047"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Bogen im Kurzformat",
+          "body": "Einstieg: „Hi Jana, hier ist Tim von Laufwerk – danke für deine Nachricht zur Anzeige! Darf ich dir zwei, drei kurze Fragen stellen?“\nZiel: „Was möchtest du mit dem Lauftraining erreichen?“\nQualifizierung: „Wie viel Zeit hast du pro Woche ungefähr?“\nZusammenfassung: „Also: Halbmarathon im Frühjahr, dreimal pro Woche Zeit – stimmt das?“\nNächster Schritt: „Dann wäre ein 20-minütiges Gespräch mit unserem Coach sinnvoll. Magst du?“\nAbschluss: „Eingetragen für Mittwoch, 18 Uhr. Den Link bekommst du gleich hier.“"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-001"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-004"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Denk an einen Chat (privat oder beruflich), der ohne Ergebnis versandet ist. In welcher Etappe des Bogens ist er stecken geblieben – und welche eine Nachricht hätte ihn wieder in Bewegung gebracht?"
+        }
+      ],
+      "summary": [
+        "Chats sind asynchron – Struktur gibt Orientierung.",
+        "Sechs Etappen: Einstieg, Ziel, Qualifizierung, Zusammenfassung, nächster Schritt, Abschluss.",
+        "Vor jeder Antwort die letzten Kundennachrichten lesen, offene Fragen zuerst beantworten.",
+        "Struktur ja, starres Skript nein."
+      ],
+      "sourceIds": [
+        "SRC-050",
+        "SRC-043",
+        "SRC-066",
+        "SRC-047"
+      ]
+    },
+    {
+      "id": "M05-L02",
+      "moduleId": "M05",
+      "title": "Nachrichten, die nach Mensch klingen",
+      "minutes": 7,
+      "objectiveIds": [
+        "LO-M05-02"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Kunden merken sehr schnell, ob ihnen ein Mensch schreibt oder ein Textbaustein. In dieser Lektion lernst du, warum Ton im Chat so leicht missverstanden wird – und wie du natürlich schreibst, ohne unprofessionell zu werden."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 5.2",
+          "title": "Der Ton, den nur du hörst",
+          "paragraphs": [
+            "Wenn du eine Nachricht schreibst, hörst du deine eigene Stimme im Kopf: freundlich, vielleicht ein bisschen ironisch. Der Empfänger hört diese Stimme nicht. Er liest nur Buchstaben. Kruger, Epley und Kollegen zeigten 2005 in fünf Experimenten, dass Menschen deutlich überschätzen, wie gut ihr Ton per E-Mail ankommt – etwa ob eine Aussage ironisch oder ernst gemeint ist. Den Grund nennen sie Egozentrismus: Es fällt uns schwer, die eigene Perspektive beim Schreiben auszublenden.",
+            "Für Setter heißt das: Ironie, Andeutungen und knappe Ein-Wort-Antworten sind riskant. „Na super.“ kann begeistert oder genervt gemeint sein. Auch Kleinigkeiten wirken: In einer Studie von Gunraj und Kollegen (2016) wurden kurze Antworten in Textnachrichten mit Schlusspunkt („Okay.“) als etwas weniger aufrichtig wahrgenommen als ohne – bei handschriftlichen Notizen gab es diesen Unterschied nicht. Die Studie lief mit US-Studierenden; übertrage sie nicht als feste Regel, sondern als Hinweis darauf, wie fein Leser auf Signale achten.",
+            "Und Emojis? Hier ist die Forschung uneinheitlich. Glikson, Cheshin und van Kleef fanden 2018, dass Smileys in formellen Arbeits-E-Mails an Unbekannte die wahrgenommene Kompetenz senkten, ohne die Wärme zu erhöhen. Eine spätere Replikation konnte das nicht bestätigen. Die ehrliche Schlussfolgerung: Es kommt auf Kanal und Kontext an. Auf Instagram mit Du-Kultur ist ein Emoji normal, in einer förmlichen B2B-Anfrage eher nicht. Spiegeln, aber nicht übertreiben.",
+            "Natürlich klingen heißt nicht, Fehler einzubauen oder Umgangssprache zu imitieren. Es heißt: konkret auf das eingehen, was der Kunde geschrieben hat, eigene Worte verwenden statt Marketingformeln, und so schreiben, wie du es einer freundlichen Bekannten erklären würdest. „Wir sind Ihr kompetenter Partner für ganzheitliche Lösungen“ klingt nach Prospekt. „Das klingt, als wäre der Rücken gerade das größte Thema – stimmt das?“ klingt nach jemandem, der zuhört.",
+            "Vorlagen sind trotzdem erlaubt und sinnvoll – als Ausgangspunkt. Eine gute Vorlage hat Platzhalter für den Bezug zum Kunden und wird vor dem Absenden angepasst. Wenn ein Chatbot oder ein KI-System Nachrichten schreibt, gilt außerdem: Der Kunde darf nicht getäuscht werden. Die KI-Verordnung der EU sieht Transparenzpflichten für KI-Systeme vor, die direkt mit Menschen interagieren. Fragt ein Kunde „Bist du ein Bot?“, antwortest du immer wahrheitsgemäß."
+          ],
+          "sourceIds": [
+            "SRC-164",
+            "SRC-165",
+            "SRC-166",
+            "SRC-024"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Vorlese- und Ton-Check",
+          "category": "schreiben",
+          "what": "Vor dem Absenden prüfen, wie die Nachricht ohne deine innere Stimme wirkt.",
+          "how": [
+            "Nachricht einmal neutral, einmal genervt „vorlesen“ – kippt die Bedeutung?",
+            "Ironie, Andeutungen und Ein-Wort-Antworten ersetzen durch klare Sätze.",
+            "Marketingformeln streichen, ein konkretes Wort des Kunden aufgreifen.",
+            "Emojis nur, wenn Kanal und Kunde sie nahelegen."
+          ],
+          "why": "Weil der Empfänger deinen Ton nicht hört, entstehen Missverständnisse genau dort, wo du sie am wenigsten erwartest.",
+          "evidence": "Kruger et al. (2005): Überschätzung der eigenen Ton-Vermittlung per E-Mail (Experimente). Gunraj et al. (2016) und Glikson et al. (2018) zeigen, dass kleine Signale wirken können – Effekte klein und kontextabhängig, Smiley-Befund nicht repliziert.",
+          "example": "Statt „Na, schon entschieden? 😉“ → „Hast du schon Zeit gefunden, dir das in Ruhe anzuschauen? Wenn noch Fragen offen sind, beantworte ich sie gern.“",
+          "boundary": "Natürlich heißt nicht anbiedernd: kein künstlicher Slang, keine vorgetäuschte Freundschaft und keine Täuschung darüber, ob ein Mensch oder eine KI schreibt.",
+          "sourceIds": [
+            "SRC-164",
+            "SRC-165",
+            "SRC-166"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Emojis machen jede Nachricht sympathischer.“",
+          "reality": "Belegt ist das nicht. In einer Studie senkten Smileys in formellen Arbeits-E-Mails an Unbekannte die wahrgenommene Kompetenz, ohne die Wärme zu steigern – eine Replikation scheiterte allerdings. Sicher ist nur: Emojis wirken je nach Kanal, Beziehung und Kultur unterschiedlich. Spiegle den Kunden, statt eine feste Regel anzuwenden.",
+          "sourceIds": [
+            "SRC-166"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Textbaustein vs. menschlich",
+          "body": "Textbaustein: „Vielen Dank für Ihr Interesse an unserem Premium-Coachingprogramm! Gerne stehen wir Ihnen für alle Fragen jederzeit zur Verfügung. Buchen Sie jetzt Ihr kostenloses Erstgespräch!“\n\nMenschlich: „Hi Murat, danke für deine Nachricht! Du hattest geschrieben, dass du nach der Arbeit oft zu platt fürs Training bist – kenne ich von vielen. Was wäre für dich ein realistisches Ziel für die nächsten Wochen?“"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-005"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-008"
+        }
+      ],
+      "summary": [
+        "Der Empfänger hört deinen Ton nicht – Absender überschätzen ihre Klarheit.",
+        "Ironie und Ein-Wort-Antworten vermeiden; klare, konkrete Sätze schreiben.",
+        "Emojis: kontextabhängig, Befunde uneinheitlich.",
+        "Vorlagen anpassen; bei KI-Einsatz nie über die Identität täuschen."
+      ],
+      "sourceIds": [
+        "SRC-164",
+        "SRC-165",
+        "SRC-166",
+        "SRC-066",
+        "SRC-024"
+      ]
+    },
+    {
+      "id": "M05-L03",
+      "moduleId": "M05",
+      "title": "Antwortgeschwindigkeit – was „Speed to Lead“ wirklich belegt",
+      "minutes": 7,
+      "objectiveIds": [
+        "LO-M05-03"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "„Wer in fünf Minuten antwortet, gewinnt 21-mal öfter“ – diesen Satz hörst du in fast jedem Setter-Kurs. In dieser Lektion schauen wir uns an, woher die Zahl stammt, was sie aussagt, was nicht, und wie du daraus eine vernünftige Routine machst."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 5.3",
+          "title": "Schnell sein, ohne falsch zu zitieren",
+          "paragraphs": [
+            "Die berühmte „21-mal“-Zahl stammt aus der Lead Response Management Study, die James Oldroyd 2007 gemeinsam mit dem Softwareanbieter InsideSales.com vorgestellt hat. Untersucht wurden telefonische Kontaktversuche auf Online-Anfragen. Das Ergebnis laut Präsentation: Wer innerhalb von 5 statt 30 Minuten anrief, hatte eine etwa 100-mal höhere Chance, den Interessenten zu erreichen, und eine etwa 21-mal höhere Chance, ihn zu qualifizieren. Die Studie wurde auf einer Praxiskonferenz präsentiert, nicht in einer begutachteten Fachzeitschrift – und der Mitautor verkaufte Software für schnelle Lead-Reaktion.",
+            "2011 veröffentlichten Oldroyd, McElheran und Elkington in der Harvard Business Review den Artikel „The Short Life of Online Sales Leads“. Er wird oft als Quelle der 21-mal-Zahl genannt – das ist ungenau. Der Artikel berichtet auf Basis von rund 1,25 Millionen Leads aus 42 US-Unternehmen: Unternehmen, die innerhalb einer Stunde reagierten, qualifizierten Leads fast siebenmal häufiger als solche, die eine Stunde später reagierten, und über 60-mal häufiger als solche, die 24 Stunden oder länger warteten. Auch das ist ein Praxisartikel, keine begutachtete Studie.",
+            "Was belegen diese Zahlen? Sie zeigen einen starken Zusammenhang zwischen schneller Reaktion und Erfolg. Sie zeigen nicht, dass die Geschwindigkeit allein die Ursache ist. Unternehmen, die schnell reagieren, sind vielleicht insgesamt besser organisiert, haben bessere Leads oder bessere Verkäufer. Hinzu kommt: Die Daten sind US-amerikanisch, 15 bis 20 Jahre alt, beziehen sich vor allem auf Telefonkontakte und auf die Definition von „qualifiziert“ der jeweiligen Firmen. Ob sie für eine Instagram-Nachricht an eine Kundin in Deutschland im Jahr 2026 genauso gelten, weiß niemand genau.",
+            "Trotzdem ist die Grundidee plausibel und deckt sich mit Kommunikationsforschung: Wer eine Anfrage stellt, hat in diesem Moment Aufmerksamkeit und Interesse. Kalman und Rafaeli zeigten 2011, dass Antwortverzögerungen in schriftlicher Kommunikation als Signal gelesen werden – wie stark, hängt davon ab, wie attraktiv der Absender ohnehin wirkt. Für mündliche Gespräche fanden Templeton und Kollegen 2022, dass schnelle Antworten mit stärkerer empfundener Verbundenheit einhergehen. Beides ist nicht 1:1 auf Vertriebschats übertragbar, stützt aber die Faustregel: zeitnah antworten lohnt sich.",
+            "Die praktische Konsequenz ist eine Routine, kein Wettrennen. Lege mit deinem Team fest, in welcher Zeit eine erste, echte Reaktion kommt (zum Beispiel innerhalb der Geschäftszeiten in 15 Minuten), und was außerhalb der Geschäftszeiten passiert. Eine Abwesenheitsnachricht ist in Ordnung, wenn sie ehrlich informiert („Wir melden uns morgen ab 9 Uhr“) – Werbung hat darin nichts zu suchen: Der BGH hat Werbung in automatischen Antwort-E-Mails gegenüber einer Person, die widersprochen hatte, als unzulässig bewertet. Und: Schnell heißt nicht hektisch. Eine durchdachte Antwort nach zehn Minuten ist besser als ein unpassender Textbaustein nach zehn Sekunden."
+          ],
+          "sourceIds": [
+            "SRC-161",
+            "SRC-005",
+            "SRC-162",
+            "SRC-163",
+            "SRC-174"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Die Harvard-Studie beweist: Wer in 5 Minuten antwortet, verkauft 21-mal mehr.“",
+          "reality": "Gleich drei Fehler: Die 21-mal-Zahl stammt aus einer Praxisstudie von 2007 (mit einem Softwareanbieter), nicht aus dem HBR-Artikel von 2011. Sie bezieht sich auf die Qualifizierung, nicht auf Verkäufe. Und sie ist korrelativ – sie beweist keine Ursache. Der HBR-Artikel nennt „fast 7-mal“ (innerhalb einer Stunde vs. eine Stunde später) und „über 60-mal“ (vs. 24 Stunden). Zitiere Zahlen immer mit Quelle, Jahr und Grenze.",
+          "sourceIds": [
+            "SRC-161",
+            "SRC-005"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Reaktionsroutine mit ehrlichem Zeitfenster",
+          "category": "prozess",
+          "what": "Eine verlässliche Erstreaktion in festgelegter Zeit – inhaltlich passend, ohne Hektik und ohne Werbung im Autoresponder.",
+          "how": [
+            "Mit dem Team ein Zeitziel für die erste echte Antwort festlegen (z. B. 15 Minuten in Geschäftszeiten).",
+            "Außerhalb der Zeiten: ehrliche Abwesenheitsnachricht ohne Werbung, mit Zeitpunkt der Antwort.",
+            "Erste Antwort: Bezug zur Anfrage + eine Frage – nicht sofort Termin-Link.",
+            "Reaktionszeiten im Team messen (Median), nicht einzelne Rekorde feiern."
+          ],
+          "why": "Interesse ist kurz nach der Anfrage am höchsten; Verlässlichkeit schafft Vertrauen.",
+          "evidence": "Zusammenhang schneller Reaktion mit Qualifizierung in US-Praxisdaten (Oldroyd et al. 2007/2011; korrelativ, nicht peer-reviewed). Antwortlatenz als Signal: Kalman & Rafaeli (2011). Konkrete Zeitziele sind Teamentscheidungen (Annahme).",
+          "example": "Anfrage um 21:47 Uhr. Autoresponder: „Danke für deine Nachricht! Unser Team antwortet dir morgen ab 9 Uhr persönlich.“ Um 9:05 Uhr: „Guten Morgen Sara, hier ist Lena von FitWerk. Du hattest gestern nach dem Rückenkurs gefragt – was ist dir dabei am wichtigsten?“",
+          "boundary": "Schnelligkeit rechtfertigt keine Kontaktaufnahme ohne Erlaubnis, keine Nachrichten mitten in der Nacht und keinen Druck. Wer nicht antwortet, wird nicht im Minutentakt angeschrieben.",
+          "sourceIds": [
+            "SRC-161",
+            "SRC-005",
+            "SRC-162",
+            "SRC-174"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-009"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-012"
+        }
+      ],
+      "summary": [
+        "Die „21-mal“-Zahl: Praxisstudie 2007, Telefon, 5 vs. 30 Minuten, Qualifizierung – nicht HBR 2011.",
+        "HBR 2011: fast 7-mal (1 h) bzw. über 60-mal (24 h); korrelativ, US-Daten.",
+        "Faustregel zeitnah antworten ist plausibel, aber kein Beweis für Kausalität.",
+        "Routine mit Zeitziel, ehrlichem Autoresponder ohne Werbung und Qualität vor Tempo."
+      ],
+      "sourceIds": [
+        "SRC-161",
+        "SRC-005",
+        "SRC-162",
+        "SRC-163",
+        "SRC-174",
+        "SRC-050"
+      ]
+    },
+    {
+      "id": "M05-L04",
+      "moduleId": "M05",
+      "title": "Gesprächseinstiege und Nachfragen",
+      "minutes": 12,
+      "objectiveIds": [
+        "LO-M05-04"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Der Einstieg entscheidet, ob aus einer Anfrage ein Gespräch wird. Und die Nachfrage entscheidet, ob du verstehst, was der Kunde wirklich meint. In dieser Lektion lernst du beides – und wie du mit Funkstille umgehst."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 5.4",
+          "title": "Am Auslöser anknüpfen",
+          "paragraphs": [
+            "Jede Inbound-Anfrage hat einen Auslöser: eine Anzeige mit „Nachricht senden“-Knopf, ein ausgefülltes Formular, eine Antwort auf eine Story, ein Download. Der beste Einstieg knüpft genau daran an. „Du hattest auf unsere Anzeige zum Rückentraining geantwortet“ ist konkreter und glaubwürdiger als „Danke für dein Interesse“. Der Kunde muss nicht raten, warum du schreibst – und er merkt, dass du seine Nachricht wirklich gelesen hast.",
+            "Wenn der Kunde schon eine Frage gestellt hat, beantworte sie zuerst, so gut es in deiner Rolle geht. Wer fragt „Wie läuft das Coaching ab?“ und als Antwort „Was ist dein Ziel?“ bekommt, fühlt sich übergangen. Besser: kurz beantworten, dann begründet fragen. „Kurz gesagt: drei Trainingseinheiten pro Woche mit Plan und wöchentlichem Check-in. Damit ich dir sagen kann, ob das zu dir passt – was möchtest du erreichen?“",
+            "Nachfragen sind das Herz des Chat Settings. Eine Studie von Huang und Kollegen zeigte, dass Menschen, die mehr Fragen – vor allem Folgefragen – stellen, als sympathischer wahrgenommen werden. Im Chat heißt das: Greif ein konkretes Wort des Kunden auf. Schreibt jemand „Ich komme einfach nicht rein“, fragst du: „Was meinst du mit ‚nicht reinkommen‘ – fehlt eher die Zeit oder eher der Plan?“ So wird aus einer vagen Aussage eine konkrete Information.",
+            "Und wenn der Kunde nicht mehr antwortet? Funkstille ist im Chat normal und selten persönlich gemeint. Kalman und Rafaeli zeigen, dass Antwortpausen gedeutet werden – auch du solltest sie nicht überinterpretieren. Eine freundliche Nachfass-Nachricht nach einem angemessenen Abstand ist in Ordnung, wenn der Kontakt zulässig ist. Beachte dabei auch technische Grenzen: Auf Instagram und im Messenger gilt für Unternehmen über die offizielle Schnittstelle ein Standardfenster von 24 Stunden nach der letzten Nachricht des Kunden.",
+            "Eine gute Nachfass-Nachricht macht es dem Kunden leicht: Sie erinnert kurz an den Stand, stellt eine einfache Frage und lässt ausdrücklich die Möglichkeit offen, Nein zu sagen. Was du vermeidest: Schuldgefühle („Schade, dass du dich nicht meldest“), Druck („Letzte Chance!“) und eine Serie von Nachrichten ohne Antwort. Lege mit deinem Auftraggeber fest, wie oft und in welchem Abstand nachgefasst wird – und wann ein Kontakt ruht."
+          ],
+          "sourceIds": [
+            "SRC-054",
+            "SRC-162",
+            "SRC-169",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Auslöser-Einstieg",
+          "category": "schreiben",
+          "what": "Die erste Nachricht knüpft sichtbar an den konkreten Auslöser der Anfrage an.",
+          "how": [
+            "Auslöser benennen (Anzeige, Formular, Story, Download).",
+            "Gestellte Kundenfrage zuerst kurz beantworten.",
+            "Mit einem Grund überleiten („Damit ich dir sagen kann, ob …“).",
+            "Eine offene Frage zum Ziel oder Anlass stellen."
+          ],
+          "why": "Ein konkreter Bezug zeigt, dass du kein Massenversender bist, und gibt dem Gespräch sofort Richtung.",
+          "evidence": "Praxisheuristik (Expertenmeinung); stützt sich auf Befunde zu Begründungen und Fragen (Huang et al. 2017) aus Modul 2.",
+          "example": "„Hi Lea, hier ist Sam von FormWerk 👋 Du hattest auf unsere Anzeige zum Coaching für Berufstätige geantwortet. Kurz zum Ablauf: Trainingsplan, drei Einheiten pro Woche, wöchentlicher Check-in. Was möchtest du für dich erreichen?“",
+          "boundary": "Ein Einstieg ist nur so gut wie die Erlaubnis dahinter. Ohne Anfrage oder Einwilligung kein Einstieg – egal, wie gut formuliert.",
+          "sourceIds": [
+            "SRC-054",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Nachfassen in zwei Stufen",
+          "category": "gespraech",
+          "what": "Bei Funkstille höchstens zweimal freundlich nachfassen – mit leichter Antwortmöglichkeit und offenem Ausstieg.",
+          "how": [
+            "Stufe 1 (z. B. nach 1 Tag): kurzer Stand + einfache Frage.",
+            "Stufe 2 (z. B. nach einigen Tagen): Wahl lassen – „weiter oder lieber nicht?“",
+            "Danach: Kontakt ruhen lassen und dokumentieren.",
+            "Abstände und Häufigkeit mit dem Auftraggeber und den Kanalregeln abstimmen."
+          ],
+          "why": "Viele Kunden sind einfach beschäftigt; eine freundliche Erinnerung hilft. Ein klarer Ausstieg nimmt Druck aus dem Gespräch.",
+          "evidence": "Kombination aus Autonomie-Betonung (Carpenter 2013; Effekte klein) und Praxiswissen. Die Zahl „zwei“ ist eine Teamentscheidung (Annahme), keine empirische Grenze.",
+          "example": "Stufe 1: „Hi Jonas, kurze Erinnerung: Du wolltest mir noch sagen, ab wann du starten möchtest. Reicht auch eine grobe Richtung 🙂“ Stufe 2: „Ich will dich nicht zuspammen: Sollen wir das Thema weiterverfolgen, oder passt es gerade nicht? Beides ist völlig okay.“",
+          "boundary": "Ein klares Nein oder „bitte keine Nachrichten mehr“ beendet das Nachfassen sofort. Nachfassen nur in zulässigen Kanälen und innerhalb der Plattformregeln.",
+          "sourceIds": [
+            "SRC-052",
+            "SRC-169",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Die Story-Antwort",
+          "situation": "Kundin Mia antwortet auf eine Instagram-Story eines Fitnessstudios mit „🔥 will ich auch“. Setter A schreibt sofort: „Super! Hier ist der Link zur Buchung, das Angebot gilt nur heute.“ Mia antwortet nicht mehr. Setterin B schreibt: „Hi Mia, danke für deine Reaktion auf die Story zum Kraftkurs! Was hat dich daran angesprochen?“ Mia: „Ich will stärker werden, hab aber null Erfahrung.“",
+          "analysis": "Setter A überspringt Einstieg und Ziel und arbeitet mit einer unbelegten Frist – das wirkt wie Massenwerbung. Setterin B knüpft am Auslöser an und stellt eine offene Frage. Mias Antwort liefert Ziel und Ausgangslage, an die sie mit einer Folgefrage anknüpfen kann („null Erfahrung“ – was wäre dir für den Einstieg wichtig?).",
+          "simulationNote": "In SIM-007 übst du einen Einstieg nach einer Antwort auf eine Instagram-Anzeige."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-013"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-016"
+        }
+      ],
+      "summary": [
+        "Am Auslöser der Anfrage anknüpfen.",
+        "Kundenfragen zuerst beantworten, dann begründet fragen.",
+        "Folgefragen greifen ein konkretes Wort auf.",
+        "Nachfassen: kurz, freundlich, mit Ausstieg – und nur in zulässigen Kanälen und Fenstern."
+      ],
+      "sourceIds": [
+        "SRC-054",
+        "SRC-055",
+        "SRC-162",
+        "SRC-169",
+        "SRC-050",
+        "SRC-052"
+      ]
+    },
+    {
+      "id": "M05-L05",
+      "moduleId": "M05",
+      "title": "Übergänge und Qualifizierung im Chat",
+      "minutes": 10,
+      "objectiveIds": [
+        "LO-M05-05"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Zwischen „Was ist dein Ziel?“ und „Wann hast du Zeit?“ liegt ein Übergang. Ist er holprig, fühlt sich der Kunde ausgefragt. In dieser Lektion lernst du Brückensätze und eine Qualifizierung, die sich wie ein Gespräch anfühlt."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 5.5",
+          "title": "Vom Gespräch zur Qualifizierung – ohne Verhör",
+          "paragraphs": [
+            "Qualifizieren heißt herauszufinden, ob ein Termin für beide Seiten sinnvoll ist. Dafür brauchst du bestimmte Informationen – die Pflichtkriterien deines Auftraggebers. Frameworks wie BANT (Budget, Authority, Need, Timeline) helfen beim Erinnern, sind aber Heuristiken aus der Praxis. Es gibt keinen empirischen Beleg, dass eine bestimmte Reihenfolge oder ein bestimmtes Framework überlegen ist. Wichtiger ist, dass die Kriterien zum Angebot passen: Für ein Fitness-Coaching ist die verfügbare Trainingszeit oft wichtiger als die Frage, wer entscheidet.",
+            "Im Chat ist die größte Gefahr das Verhör: fünf Fragen hintereinander, ohne auf die Antworten einzugehen. Der Kunde fühlt sich wie in einem Formular und antwortet immer knapper. Die Lösung ist der Wechsel zwischen Aufnehmen und Fragen. Nach jeder Antwort zeigst du kurz, dass du sie verstanden hast – ein Satz reicht –, und stellst dann die nächste Frage. „Drei Abende pro Woche, das ist eine gute Basis. Ab wann möchtest du starten?“",
+            "Übergänge machen Themenwechsel nachvollziehbar. Ein Brückensatz hat zwei Teile: Er schließt das bisherige Thema ab und begründet das nächste. „Danke, jetzt verstehe ich dein Ziel gut. Damit ich einschätzen kann, welches Format passt, hätte ich noch zwei kurze praktische Fragen.“ Ankündigen, wie viele Fragen kommen, nimmt Unsicherheit – und es verpflichtet dich, dich daran zu halten.",
+            "Heikle Kriterien wie Budget fragst du offen und mit Begründung, nicht als Test. „Damit der Coach dir passende Optionen zeigen kann: Hast du schon einen Rahmen im Kopf?“ Wer keine Zahl nennen möchte, muss das nicht. Notiere dann „nicht genannt“ statt einer Vermutung. Und denk daran: Qualifizieren ist kein Aussieben von Menschen, sondern ehrliches Prüfen, ob das Angebot passt.",
+            "Am Ende der Qualifizierung steht die Zusammenfassung. Sie ist zugleich der Übergang zum nächsten Schritt: „Also: feste Routine als Ziel, drei Abende pro Woche, Start in den nächsten Wochen – stimmt das? Dann würde ich dir als nächsten Schritt ein Gespräch mit einem Coach vorschlagen.“ Passt das Angebot nicht, sagst du das genauso klar und freundlich – und bietest, wenn möglich, eine sinnvolle Alternative an."
+          ],
+          "sourceIds": [
+            "SRC-047",
+            "SRC-055",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Der Brückensatz",
+          "category": "gespraech",
+          "what": "Ein Satz, der das bisherige Thema abschließt und das nächste begründet.",
+          "how": [
+            "Abschluss: „Danke, jetzt verstehe ich … gut.“",
+            "Begründung: „Damit ich einschätzen kann, ob …“",
+            "Ankündigung: „… hätte ich noch zwei kurze Fragen.“",
+            "Erste Frage einzeln stellen – und bei zwei bleiben."
+          ],
+          "why": "Der Kunde versteht, warum du fragst und wie lange es dauert. Das senkt das Gefühl, ausgefragt zu werden.",
+          "evidence": "Begründungen erhöhen die Zustimmung zu kleinen Bitten (Langer et al. 1978, ältere Laborstudie). Übertragung auf Chat-Übergänge ist Praxiswissen (Expertenmeinung).",
+          "example": "„Danke, dass du so offen schreibst – jetzt verstehe ich, worum es dir geht. Damit ich dir den passenden nächsten Schritt vorschlagen kann, hätte ich noch zwei kurze praktische Fragen. Wie viel Zeit hast du pro Woche ungefähr?“",
+          "boundary": "Die angekündigte Zahl an Fragen muss stimmen. Ein Brückensatz ist kein Trick, um mehr Informationen herauszuholen, als nötig sind (Datenminimierung).",
+          "sourceIds": [
+            "SRC-058",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Qualifizierung in Häppchen",
+          "category": "prozess",
+          "what": "Pflichtkriterien einzeln, im Wechsel mit kurzer Bestätigung klären – nie als Fragenblock.",
+          "how": [
+            "Vorab klären: Welche Kriterien sind für diesen Auftraggeber Pflicht?",
+            "Pro Nachricht ein Kriterium; Antwort kurz aufnehmen.",
+            "Unklare Antworten mit einer Klärungsfrage präzisieren.",
+            "Nicht genannte Punkte als „nicht genannt“ dokumentieren, nie raten."
+          ],
+          "why": "Kurze Fragen werden vollständiger beantwortet; die Bestätigung zeigt Zuhören.",
+          "evidence": "Aktives Zuhören erhöht das Gefühl, verstanden zu werden (Weger et al. 2014). Kriterien-Frameworks (BANT u. a.) sind unvalidierte Heuristiken.",
+          "example": "„Abends dreimal pro Woche – das ist realistisch geplant. Ab wann möchtest du starten?“",
+          "boundary": "Frag nur, was für die Entscheidung über den nächsten Schritt nötig ist. Gesundheitsdaten nur aufnehmen, wenn der Kunde sie von sich aus nennt und der Auftraggeber dafür einen Prozess hat.",
+          "sourceIds": [
+            "SRC-055",
+            "SRC-047"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Vom Ziel zur Zusammenfassung in sechs Nachrichten",
+          "steps": [
+            "Ziel (offen): „Was möchtest du mit dem Coaching erreichen?“ – „Wieder fit werden, seit dem Umzug mache ich gar nichts mehr.“",
+            "Folgefrage: „Was hast du vor dem Umzug gemacht?“ – „Zweimal die Woche Fußball.“",
+            "Brückensatz: „Danke, das hilft mir. Damit ich das passende Format vorschlagen kann, noch zwei kurze praktische Fragen: Wie viel Zeit hast du pro Woche?“",
+            "Aufnehmen + Frage: „Zweimal eine Stunde ist eine gute Basis. Ab wann möchtest du starten?“",
+            "Klärung: „‚Bald‘ heißt eher diesen Monat oder eher nach dem Urlaub?“",
+            "Zusammenfassung: „Also: wieder fit werden, zweimal eine Stunde pro Woche, Start nach dem Urlaub Anfang Mai – stimmt das?“"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-018"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-035"
+        }
+      ],
+      "summary": [
+        "Kriterien müssen zum Angebot passen; Frameworks sind Merkhilfen.",
+        "Kein Verhör: Aufnehmen und Fragen wechseln sich ab.",
+        "Brückensatz: abschließen, begründen, ankündigen.",
+        "Nicht Genanntes als „nicht genannt“ dokumentieren; Zusammenfassung leitet zum nächsten Schritt über."
+      ],
+      "sourceIds": [
+        "SRC-047",
+        "SRC-055",
+        "SRC-050",
+        "SRC-058"
+      ]
+    },
+    {
+      "id": "M05-L06",
+      "moduleId": "M05",
+      "title": "Instagram, WhatsApp und zulässige Kanäle",
+      "minutes": 14,
+      "objectiveIds": [
+        "LO-M05-06"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Die beste Nachricht nützt nichts, wenn du sie gar nicht schicken darfst. In dieser Lektion lernst du, vor der ersten Nachricht zu prüfen: Darf ich diese Person auf diesem Kanal zu diesem Zweck anschreiben?"
+        },
+        {
+          "kind": "callout",
+          "tone": "legal",
+          "title": "Keine Rechtsberatung",
+          "body": "Diese Lektion vermittelt Grundlagen für den Arbeitsalltag eines Setters in Deutschland. Sie ersetzt keine Rechtsberatung. Grenzfälle klärt dein Auftraggeber – im Zweifel mit einer Fachanwältin oder dem Datenschutzbeauftragten."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 5.6",
+          "title": "Drei Ebenen: Wettbewerbsrecht, Datenschutz, Plattformregeln",
+          "paragraphs": [
+            "Ob eine Nachricht zulässig ist, prüfst du auf drei Ebenen, die unabhängig voneinander gelten. Erstens das Wettbewerbsrecht: Nach § 7 Abs. 2 Nr. 2 UWG ist Werbung mit elektronischer Post ohne vorherige ausdrückliche Einwilligung des Empfängers eine unzumutbare Belästigung. Der Begriff „elektronische Post“ stammt aus der ePrivacy-Richtlinie und ist weit gefasst: Er umfasst nach verbreiteter Auffassung nicht nur E-Mails, sondern auch SMS und Direktnachrichten in Messengern und sozialen Netzwerken. Das Amtsgericht Düsseldorf hat 2025 entschieden, dass eine Vernetzung auf LinkedIn keine Einwilligung in Werbenachrichten ist. Die Ausnahme in § 7 Abs. 3 UWG für Bestandskunden ist eng und an mehrere Bedingungen geknüpft.",
+            "Zweitens der Datenschutz. Jede Verarbeitung personenbezogener Daten braucht eine Rechtsgrundlage nach Art. 6 DSGVO. Antwortest du auf eine Anfrage, die der Kunde selbst gestellt hat, kann das als vorvertragliche Maßnahme auf seine Anfrage (Art. 6 Abs. 1 lit. b) gedeckt sein. Für Werbung über den Anlass hinaus ist meist eine Einwilligung nötig. Art. 7 DSGVO verlangt, dass der Verantwortliche die Einwilligung nachweisen kann und dass sie jederzeit so einfach widerrufen werden kann, wie sie erteilt wurde. Widerspricht jemand der Direktwerbung (Art. 21), ist damit Schluss. Wichtig: Eine DSGVO-Rechtsgrundlage ersetzt keine UWG-Einwilligung und umgekehrt.",
+            "Drittens die Plattformregeln. Die WhatsApp Business Messaging Policy erlaubt Kontakt nur, wenn die Person ihre Nummer gegeben und ein Opt-in erteilt hat, das dein Unternehmen benennt; Abmeldewünsche – auch außerhalb von WhatsApp geäußert – sind zu respektieren. Technisch öffnet eine Nachricht des Kunden auf der WhatsApp-Business-Plattform ein 24-Stunden-Fenster für freie Nachrichten; danach sind nur freigegebene Vorlagen möglich. Für Instagram- und Messenger-Nachrichten über Metas Schnittstelle gilt ebenfalls ein 24-Stunden-Standardfenster; ein Human-Agent-Tag erlaubt menschliche Antworten bis zu 7 Tage. Instagrams Gemeinschaftsrichtlinien und Metas Spam-Standard untersagen unerwünschte kommerzielle Nachrichten und Massenversand.",
+            "Was bedeutet das praktisch? Inbound ist dein sicheres Terrain: Wenn die Kundin auf eine Anzeige mit „Nachricht senden“ antwortet oder dir selbst schreibt, darfst du auf genau diese Anfrage antworten. Grenzfälle entstehen beim Ausweiten: Aus einer Instagram-Anfrage wird nicht automatisch eine Erlaubnis für WhatsApp, und aus einer Frage zum Kurs nicht die Erlaubnis für monatliche Angebote. Willst du den Kanal wechseln oder später werblich nachfassen, holst du die Zustimmung ausdrücklich ein und dokumentierst sie. Auch eine „harmlose“ Bitte um Bewertung kann Werbung sein – der BGH hat das für eine Kundenzufriedenheitsbefragung per E-Mail so entschieden.",
+            "Was du nie tust: Followern, Likern oder Kommentierenden einer fremden Seite ungefragt werbliche Direktnachrichten schicken, Nummern aus Gruppen oder Listen für WhatsApp-Werbung verwenden oder Massen-DMs mit Automatisierungstools verschicken. Das verstößt gegen Recht und Plattformregeln, kann zur Sperrung des Kontos führen – und zerstört Vertrauen. Dokumentiere bei jedem Lead, woher der Kontakt stammt und welcher Kanal mit welchem Zweck erlaubt ist. Dann kann jede Kollegin und jeder Closer sofort sehen, was zulässig ist."
+          ],
+          "sourceIds": [
+            "SRC-019",
+            "SRC-173",
+            "SRC-027",
+            "SRC-178",
+            "SRC-172",
+            "SRC-167",
+            "SRC-168",
+            "SRC-169",
+            "SRC-170",
+            "SRC-171",
+            "SRC-175"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die Kanal-Ampel",
+          "category": "prozess",
+          "what": "Vor jeder ersten Nachricht und jedem Kanalwechsel prüfen: Grün, Gelb oder Rot?",
+          "how": [
+            "Grün: Kunde hat auf diesem Kanal selbst angefragt bzw. dokumentiert eingewilligt; du antwortest zum Anlass.",
+            "Gelb: Kanalwechsel, späteres werbliches Nachfassen, unklare Herkunft – erst Zustimmung einholen bzw. Auftraggeber fragen.",
+            "Rot: keine Anfrage, keine Einwilligung, gekaufte/gesammelte Kontakte, Massen-DM, Widerspruch erklärt – keine Nachricht.",
+            "Ergebnis und Herkunft des Kontakts im CRM dokumentieren."
+          ],
+          "why": "Die Ampel bündelt drei Rechtsebenen in eine schnelle Entscheidung und verhindert typische Fehler beim Kanalwechsel.",
+          "evidence": "Rechtsgrundlagen: § 7 UWG, Art. 6/7/21 DSGVO, Plattformregeln von WhatsApp und Meta. Die Ampel selbst ist eine didaktische Vereinfachung (Annahme) und ersetzt keine Einzelfallprüfung.",
+          "example": "Kundin schreibt per Instagram-DM: „Kann ich die Erinnerung auch per WhatsApp bekommen? Meine Nummer ist …“ → Gelb wird Grün: ausdrücklicher Wunsch, Zweck „Terminerinnerung“. Dokumentieren – und nur dafür nutzen.",
+          "boundary": "Im Zweifel Gelb behandeln. Die Ampel prüft Zulässigkeit, nicht Angemessenheit: Auch eine erlaubte Nachricht um 23 Uhr oder in Dauerschleife kann unangemessen sein.",
+          "sourceIds": [
+            "SRC-019",
+            "SRC-178",
+            "SRC-167",
+            "SRC-169"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Wer mir auf Instagram folgt oder meinen Beitrag liked, darf eine Direktnachricht mit meinem Angebot bekommen.“",
+          "reality": "Ein Follow oder Like ist keine Einwilligung in Werbung. Für Werbung per elektronischer Post – nach verbreiteter Auffassung auch per DM – verlangt § 7 UWG eine vorherige ausdrückliche Einwilligung; das AG Düsseldorf hat dies 2025 für eine LinkedIn-Vernetzung bestätigt. Zusätzlich verbieten Instagrams Richtlinien unerwünschte kommerzielle Nachrichten.",
+          "sourceIds": [
+            "SRC-019",
+            "SRC-027",
+            "SRC-170"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: „INFO“ unter dem Beitrag",
+          "situation": "Ein Coaching-Anbieter postet: „Kommentiere INFO, und ich schicke dir die Details per DM.“ Anna kommentiert „INFO“. Setter Ben schickt ihr die Details per DM. Eine Woche später schickt er ihr ungefragt ein Rabattangebot für ein anderes Programm und fragt nach ihrer WhatsApp-Nummer „für exklusive Angebote“.",
+          "analysis": "Die erste DM antwortet auf Annas ausdrückliche Bitte – das ist grundsätzlich Grün (Plattformfenster beachten). Das spätere Rabattangebot geht über den Anlass hinaus: Werbung ohne ausdrückliche Einwilligung, also Rot bzw. mindestens Gelb mit vorheriger Zustimmung. Die WhatsApp-Frage „für exklusive Angebote“ ist eine Einwilligungsabfrage – zulässig nur, wenn sie klar, freiwillig und dokumentiert erfolgt; ein „Ja“ gilt nur für den genannten Zweck und ist jederzeit widerruflich.",
+          "simulationNote": "In SIM-007 entscheidest du selbst, wie du einen Kanalwechsel zu WhatsApp sauber anfragst."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-021"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-025"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-036"
+        }
+      ],
+      "summary": [
+        "Drei Ebenen: UWG (Einwilligung), DSGVO (Rechtsgrundlage, Nachweis, Widerruf, Widerspruch), Plattformregeln.",
+        "Inbound-Antwort zum Anlass: grün. Kanalwechsel und späteres werbliches Nachfassen: Zustimmung holen.",
+        "WhatsApp und Instagram: Opt-in bzw. Anfrage, 24-Stunden-Fenster, kein Spam, keine Massen-DMs.",
+        "Herkunft und erlaubte Kanäle immer dokumentieren."
+      ],
+      "sourceIds": [
+        "SRC-019",
+        "SRC-173",
+        "SRC-178",
+        "SRC-172",
+        "SRC-167",
+        "SRC-168",
+        "SRC-169",
+        "SRC-170",
+        "SRC-171",
+        "SRC-027",
+        "SRC-028",
+        "SRC-175"
+      ]
+    },
+    {
+      "id": "M05-L07",
+      "moduleId": "M05",
+      "title": "Übergabe an Berater und Closer",
+      "minutes": 14,
+      "objectiveIds": [
+        "LO-M05-07"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ein Termin ist erst dann gut, wenn der Berater oder Closer ihn gut vorbereitet führen kann. In dieser Lektion lernst du, wie eine Übergabe aussieht, bei der niemand etwas doppelt erzählen muss."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 5.7",
+          "title": "Die Übergabe als Versprechen",
+          "paragraphs": [
+            "Mit der Übergabe gibst du zwei Versprechen ab: dem Kunden, dass er sich nicht wiederholen muss, und dem Berater, dass er sich auf deine Notiz verlassen kann. Wird eines davon gebrochen, leidet das Vertrauen. Ein Kunde, der im Beratungsgespräch zum dritten Mal sein Ziel erklären muss, fragt sich zu Recht, ob ihm überhaupt jemand zugehört hat.",
+            "Aus der Medizin wissen wir, wie viel an Übergaben hängen kann. Dort wurden strukturierte Übergabeformate wie SBAR (Situation, Background, Assessment, Recommendation) entwickelt. In einer großen Interventionsstudie an neun Kinderkliniken sanken nach Einführung des strukturierten Übergabeprogramms I-PASS die medizinischen Fehler um 23 Prozent und die vermeidbaren unerwünschten Ereignisse um 30 Prozent – ohne dass Übergaben länger dauerten. Vertrieb ist keine Medizin, und die Zahlen sind nicht übertragbar. Das Prinzip aber schon: Eine feste Struktur sorgt dafür, dass Wichtiges nicht vergessen wird.",
+            "Für Setter eignet sich eine einfache Variante: Lage (Wer ist der Kunde, was ist der Termin?), Hintergrund (Ziel, Anlass, Kriterien – möglichst in den Worten des Kunden), Einschätzung (Was ist geklärt, was offen, welche Bedenken?), Empfehlung (Worauf sollte der Berater eingehen?). Dazu kommen zwei Pflichtangaben: die offenen Fachfragen, die du bewusst nicht beantwortet hast, und der Kanal- und Einwilligungsstatus.",
+            "Trenne Fakten von Eindrücken. „Kundin sagt: max. 180 € im Monat“ ist ein Fakt. „Wirkt zahlungskräftig“ ist eine Vermutung und gehört höchstens gekennzeichnet in die Notiz – besser gar nicht. Abwertende oder private Bemerkungen haben in einer Notiz nichts zu suchen; der Kunde kann nach Art. 15 DSGVO Auskunft über seine Daten verlangen. Und schreib nur auf, was für das Gespräch nötig ist. Gesundheitsangaben zum Beispiel gehören nur dann hinein, wenn der Kunde sie selbst genannt hat und der Auftraggeber einen Prozess dafür hat.",
+            "Die Übergabe hat auch eine Seite, die der Kunde sieht: die warme Übergabe. Sag ihm, wer als Nächstes mit ihm spricht, was in dem Gespräch passiert und dass du die wichtigsten Punkte weitergibst. „Im Gespräch am Donnerstag spricht Coach Mira mit dir. Ich gebe ihr dein Ziel, deine Zeiten und deine Frage zum Knie weiter, damit du nichts doppelt erzählen musst.“ So weiß der Kunde, was ihn erwartet – und dass sein Anliegen ernst genommen wird."
+          ],
+          "sourceIds": [
+            "SRC-176",
+            "SRC-177",
+            "SRC-025",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Übergabenotiz nach dem LHEE-Schema",
+          "category": "prozess",
+          "what": "Eine Notiz in vier Teilen: Lage, Hintergrund, Einschätzung, Empfehlung – plus offene Fachfragen und Kanalstatus.",
+          "how": [
+            "Lage: Name, Termin (Datum, Uhrzeit, Format), Quelle des Leads.",
+            "Hintergrund: Ziel und Kriterien, möglichst mit Kundenzitat.",
+            "Einschätzung: geklärt / offen / nicht genannt; Bedenken des Kunden.",
+            "Empfehlung: worauf der Berater eingehen sollte; offene Fachfragen; erlaubter Kanal und Zweck."
+          ],
+          "why": "Der Berater kann sich in zwei Minuten vorbereiten, der Kunde muss sich nicht wiederholen.",
+          "evidence": "Adaption des klinischen SBAR-Formats (Haig et al. 2006). Strukturierte Übergaben senkten in der Medizin Fehler deutlich (Starmer et al. 2014) – die Übertragung auf Vertrieb ist eine begründete Annahme, nicht getestet.",
+          "example": "L: Lea Brandt, Do 18:30, Video, 30 Min., Coach Mira; Quelle: Instagram-Anzeige. H: „Will wieder feste Routine“, 3× 45 Min. abends, Start in 4 Wochen, Rahmen 150–180 €/Monat. E: Entscheidet allein; Knie rechts, nicht ärztlich abgeklärt. Em: Knie-Frage aufgreifen, keine Erfolgsprognosen; WhatsApp nur für Erinnerung erlaubt.",
+          "boundary": "Nur Fakten und gekennzeichnete Einschätzungen; keine Diagnosen, keine abwertenden Bemerkungen, nur nötige Daten.",
+          "sourceIds": [
+            "SRC-176",
+            "SRC-177",
+            "SRC-025"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Warme Übergabe im Chat",
+          "category": "gespraech",
+          "what": "Dem Kunden sagen, wer als Nächstes kommt, was passiert und was du weitergibst.",
+          "how": [
+            "Name und Rolle der nächsten Person nennen.",
+            "Ablauf und Dauer des Gesprächs kurz beschreiben.",
+            "Sagen, welche Punkte du weitergibst.",
+            "Raum für eine letzte Frage lassen."
+          ],
+          "why": "Klarheit über den nächsten Schritt senkt Unsicherheit und zeigt, dass das Anliegen ernst genommen wird.",
+          "evidence": "Praxiswissen (Expertenmeinung); plausibel über Vertrauensmodelle (Verlässlichkeit), nicht spezifisch untersucht.",
+          "example": "„Am Donnerstag um 18:30 spricht Coach Mira 30 Minuten per Video mit dir. Sie kennt dann schon dein Ziel und deine Zeiten. Gibt es noch etwas, das sie vorher wissen sollte?“",
+          "boundary": "Versprich nichts, was der Berater nicht halten kann (z. B. Ergebnisse, Rabatte, Diagnosen).",
+          "sourceIds": [
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Die Übergabe, die keine war",
+          "situation": "Setter Kai bucht einen Termin und schreibt ins CRM: „Interessiert, Termin Do. Netter Typ, will abnehmen, Geld wohl kein Problem.“ Im Gespräch fragt der Closer alles neu ab. Der Kunde erwähnt, dass er Kai schon von seiner Herz-OP und seinem Wunsch nach einem ärztlich abgestimmten Plan erzählt habe – und dass er nur per E-Mail kontaktiert werden möchte. Der Closer wusste von beidem nichts und hatte ihm bereits eine WhatsApp-Nachricht geschickt.",
+          "analysis": "Die Notiz enthält Vermutungen („Geld wohl kein Problem“), private Wertungen („netter Typ“) und lässt die zwei wichtigsten Punkte weg: eine sensible Fachfrage, die nicht in die Setter-Rolle gehört, und den Kanalwunsch. Folge: Vertrauensverlust und ein Kontakt auf einem nicht erlaubten Kanal. Eine LHEE-Notiz mit Abschnitt „offene Fachfragen“ und „Kanalstatus“ hätte beides verhindert."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-027"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-029"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Wann musstest du zuletzt etwas doppelt erklären – beim Arzt, bei einer Hotline, bei einer Behörde? Was hätte die erste Person aufschreiben oder weitergeben müssen?"
+        }
+      ],
+      "summary": [
+        "Übergabe = Versprechen an Kunde und Berater.",
+        "LHEE: Lage, Hintergrund, Einschätzung, Empfehlung – plus offene Fachfragen und Kanalstatus.",
+        "Fakten von Eindrücken trennen; keine Wertungen; nur nötige Daten.",
+        "Warme Übergabe: Wer, was, was wird weitergegeben."
+      ],
+      "sourceIds": [
+        "SRC-176",
+        "SRC-177",
+        "SRC-025",
+        "SRC-050"
+      ]
+    },
+    {
+      "id": "M05-L08",
+      "moduleId": "M05",
+      "title": "30 Übungssituationen aus dem Chat-Alltag",
+      "minutes": 19,
+      "objectiveIds": [
+        "LO-M05-08"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Wissen wird erst durch Übung zur Fähigkeit. In dieser Lektion findest du 30 kurze Situationen aus dem Chat-Alltag. Lies jeweils zuerst nur die Situation und überlege, was du schreiben würdest – erst dann vergleichst du mit der schwachen und der besseren Antwort."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 5.8",
+          "title": "Wie du mit den Übungssituationen arbeitest",
+          "paragraphs": [
+            "Die Situationen sind bewusst kurz. Sie trainieren das, was im Alltag zählt: in wenigen Sekunden erkennen, was gerade los ist, und eine Antwort wählen, die zum Kunden, zum Kanal und zu deiner Rolle passt. Jede Situation zeigt eine schwache Antwort, eine bessere Antwort und die Begründung. „Besser“ heißt nicht „einzig richtig“ – es gibt fast immer mehrere gute Formulierungen.",
+            "Am meisten lernst du, wenn du aktiv vorgehst: Situation lesen, eigene Antwort aufschreiben, dann vergleichen. Dieses Abrufen ist anstrengender als Lesen – und genau deshalb wirksamer. Wiederhole die Situationen nach einigen Tagen in anderer Reihenfolge; gemischtes Üben hilft, die richtige Strategie zu erkennen, statt sie nur wiederzuerkennen.",
+            "Achte beim Vergleichen auf vier Fragen: Ist die Antwort ehrlich? Bleibt sie in der Setter-Rolle (keine Gesundheits-, Ergebnis-, Einkommens- oder Vertragszusagen)? Ist der Kanal erlaubt? Und bringt sie das Gespräch eine Etappe im Chat-Bogen weiter – oder respektvoll zum Abschluss? Wenn eine dieser Fragen mit Nein beantwortet wird, ist die Antwort nicht gut, egal wie freundlich sie klingt.",
+            "Personen, Firmen und Nummern in den Situationen sind erfunden. Preis-, Kanal- und Ablaufregeln sind Beispiele – in deinem echten Projekt gelten die Vorgaben deines Auftraggebers."
+          ],
+          "sourceIds": [
+            "SRC-006",
+            "SRC-007",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Übung 1: Antwort auf eine Anzeige",
+          "body": "Situation: Nach einem Klick auf „Nachricht senden“ schreibt Paul: „Hi, was kostet das Coaching?“\nSchwach: „Hier der Link zur Buchung: …“\nBesser: „Hi Paul, danke für deine Nachricht! Die Pakete liegen je nach Umfang unterschiedlich – das zeigt dir der Coach transparent im Gespräch. Damit ich dir sagen kann, welches überhaupt passt: Was möchtest du erreichen?“\nWarum: Die Frage wird ernst genommen und ehrlich eingeordnet statt übergangen; die Gegenfrage ist begründet. (Wenn dein Auftraggeber Preise im Chat freigibt, nennst du sie.)"
+        },
+        {
+          "kind": "example",
+          "title": "Übung 2: Ein-Wort-Antworten",
+          "body": "Situation: Die Kundin antwortet auf jede Frage nur mit „ok“ oder „ja“.\nSchwach: „Hallo?? Bist du noch da?“\nBesser: „Ich merke, ich frage dich gerade ziemlich viel 🙂 Magst du mir in einem Satz sagen, was dich an der Anzeige angesprochen hat?“\nWarum: Benennt die Lage ohne Vorwurf und lädt mit einer offenen, leichten Frage zu mehr als einem Wort ein."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 3: Sprachnachricht erhalten",
+          "body": "Situation: Der Kunde schickt eine zweiminütige Sprachnachricht mit Ziel, Zeiten und einer Preisfrage.\nSchwach: „Kannst du das bitte schreiben? Ich höre keine Sprachnachrichten.“\nBesser: „Danke für die ausführliche Nachricht! Ich fasse kurz zusammen: Ziel Halbmarathon, zweimal pro Woche Zeit, Frage zum Preis. Habe ich das richtig verstanden?“\nWarum: Hört zu, verschriftlicht den Kern für beide und lässt korrigieren. Sprachnachrichten nur abhören, wenn der Auftraggeber das erlaubt und es datenschutzkonform geregelt ist."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 4: „Schick mir einfach Infos“",
+          "body": "Situation: „Schick mir einfach mal Infos, ich schau's mir an.“\nSchwach: „Infos bringen dir nichts – lass uns lieber direkt telefonieren.“\nBesser: „Mach ich gern! Damit ich dir nicht das Falsche schicke: Geht es dir eher um Abnehmen, Kraft oder Beweglichkeit?“\nWarum: Respektiert den Wunsch und macht die Info durch eine einzige Frage passend – ohne Druck in Richtung Termin."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 5: „Bist du ein Bot?“",
+          "body": "Situation: „Mal ehrlich, bist du ein Bot?“\nSchwach: „Haha, was denkst du denn? 😉“\nBesser: „Nein, ich bin Sam, ein Mensch aus dem FormWerk-Team. Unsere Begrüßungsnachricht ist automatisch, ab jetzt schreibe ich dir persönlich.“\nWarum: Ehrliche, konkrete Auskunft über Mensch und Automatisierung. Ausweichen untergräbt Vertrauen; Täuschung über KI widerspricht der Transparenzpflicht."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 6: Nachricht um 23:10 Uhr",
+          "body": "Situation: Eine Interessentin schreibt spätabends: „Wie läuft so ein Erstgespräch ab?“ Dein Dienst ist vorbei.\nSchwach: Sofort eine lange Antwort mit drei Terminvorschlägen, obwohl du müde bist und Fehler machst.\nBesser: Am nächsten Morgen: „Guten Morgen Hanna! Danke für deine Frage von gestern Abend. Das Erstgespräch dauert 30 Minuten per Video …“ (Abends hat der ehrliche Autoresponder schon die Antwortzeit genannt.)\nWarum: Verlässliches Zeitfenster schlägt Hektik. Qualität und Erholung zählen; der Autoresponder informiert ohne Werbung."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 7: Lange Lebensgeschichte",
+          "body": "Situation: Der Kunde schreibt fünf Absätze über Jobstress, Trennung und Schlafprobleme.\nSchwach: „Okay. Wann hast du Zeit für einen Call?“\nBesser: „Danke, dass du so offen schreibst – das klingt nach einer anstrengenden Zeit. Was wäre für dich im Moment ein erster Schritt, der sich gut anfühlen würde?“\nWarum: Zeigt Zuhören und benennt die Lage vorsichtig. Keine Therapie, keine Diagnose – bei ernsten Belastungen auf passende Hilfe hinweisen statt verkaufen."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 8: „Zu teuer“ ohne Preis",
+          "body": "Situation: „Das ist bestimmt eh zu teuer für mich.“\nSchwach: „Nein, wir sind super günstig!“\nBesser: „Verstehe, dass dir der Preis wichtig ist. Hast du schon einen Rahmen im Kopf? Dann kann der Coach dir zeigen, ob es eine passende Option gibt – oder dir ehrlich sagen, wenn nicht.“\nWarum: Nimmt die Sorge auf, fragt nach dem Rahmen und verspricht nichts, was der Setter nicht weiß."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 9: Gesundheitsfrage",
+          "body": "Situation: „Ich hab Bandscheibenprobleme. Ist das Training für mich sicher?“\nSchwach: „Klar, Training ist immer gut für den Rücken!“\nBesser: „Danke, dass du das ansprichst. Ob das Training für dich sicher ist, kann ich nicht beurteilen. Bitte kläre das ärztlich ab. Ich notiere es für den Coach, damit er es im Gespräch berücksichtigt.“\nWarum: Keine Gesundheitsaussagen in der Setter-Rolle; klarer Hinweis auf ärztliche Abklärung und saubere Übergabe."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 10: Frage nach Ergebnissen",
+          "body": "Situation: „Wie viel nehme ich in 12 Wochen ab?“\nSchwach: „Bei uns sind 10 Kilo in 12 Wochen normal!“\nBesser: „Das kann seriös niemand versprechen – es hängt von vielen Faktoren ab. Der Coach kann dir im Gespräch sagen, was bei deinem Alltag realistisch ist. Woran würdest du merken, dass es dir besser geht?“\nWarum: Keine Erfolgsversprechen; Erwartung realistisch und Ziel des Kunden konkret machen."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-031"
+        },
+        {
+          "kind": "example",
+          "title": "Übung 11: Verdienstfrage im Business-Coaching",
+          "body": "Situation: Bei einem Business-Coaching fragt ein Kunde: „Wie viel verdiene ich danach im Monat?“\nSchwach: „Unsere Teilnehmer machen locker 10k im Monat.“\nBesser: „Dazu kann und darf ich dir keine Zahl versprechen – Einkommen hängt von dir, deinem Markt und vielen Faktoren ab. Der Berater erklärt dir im Gespräch, was das Programm konkret beinhaltet.“\nWarum: Einkommensversprechen sind irreführend und rechtlich riskant; ehrliche Einordnung und Übergabe der Fachfrage."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 12: Mitentscheiderin",
+          "body": "Situation: „Das muss ich erst mit meiner Frau besprechen.“\nSchwach: „Das kannst du doch allein entscheiden, oder?“\nBesser: „Klar, das ist eine gemeinsame Entscheidung. Wäre es sinnvoll, wenn deine Frau beim Gespräch dabei ist? Dann suchen wir einen Termin, der für euch beide passt.“\nWarum: Respektiert die Entscheidungsstruktur und bezieht die Mitentscheiderin ein, statt sie auszuspielen."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 13: Ghosting nach dem Link",
+          "body": "Situation: Du hast einen Kalenderlink geschickt, seit zwei Tagen kommt nichts.\nSchwach: „???“\nBesser: „Hi Clara, kurze Erinnerung an den Link von Dienstag. Hat kein Termin gepasst, oder ist das Thema gerade nicht dran? Beides ist völlig okay.“\nWarum: Freundlicher Nachfass mit leichter Antwort und offenem Ausstieg; Kanal- und Zeitfensterregeln beachten."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 14: „Bitte keine Nachrichten mehr“",
+          "body": "Situation: „Bitte schreibt mir nicht mehr.“\nSchwach: „Schade! Darf ich dir noch ein letztes Angebot schicken?“\nBesser: „Alles klar, ich trage dich aus, du bekommst von uns keine weiteren Nachrichten. Danke für deine Rückmeldung!“\nWarum: Widerspruch sofort respektieren und dokumentieren (Art. 21 DSGVO, Plattformregeln). Jede weitere Werbung wäre unzulässig."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 15: Kanalwechsel gewünscht",
+          "body": "Situation: Auf Instagram schreibt die Kundin: „Können wir lieber auf WhatsApp weiterschreiben?“\nSchwach: „Klar!“ – und ab sofort auch Angebote per WhatsApp senden.\nBesser: „Gern! Schick mir deine Nummer, dann schreibe ich dir dort zu unserem Termin. Weitere Angebote bekommst du nur, wenn du das ausdrücklich möchtest.“\nWarum: Kanalwechsel auf Wunsch ist in Ordnung – aber Zweck klar begrenzen und dokumentieren; Werbung braucht eigene Einwilligung."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 16: Teamidee: Massen-DMs",
+          "body": "Situation: Ein Kollege schlägt vor, allen Followern eines Konkurrenten per Tool eine DM mit Rabattcode zu schicken.\nSchwach: „Gute Idee, ich bereite die Liste vor.“\nBesser: „Das dürfen wir nicht: keine Einwilligung, das ist unerlaubte Werbung und verstößt gegen Instagrams Spam-Regeln. Lass uns lieber an unserem Inhalt arbeiten, damit Leute uns von sich aus schreiben.“\nWarum: Ethisch und rechtlich klar Nein – und eine konstruktive Alternative anbieten."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 17: „Woher habt ihr meine Nummer?“",
+          "body": "Situation: „Woher habt ihr eigentlich meine Nummer?“\nSchwach: „Das ist bei uns im System.“\nBesser: „Gute Frage! Du hast am 3. März unser Formular zum Laufkurs ausgefüllt und dort WhatsApp als Kontaktweg angegeben. Wenn du lieber nicht hier kontaktiert werden möchtest, sag Bescheid – dann trage ich dich aus.“\nWarum: Transparente Herkunft (Informations- und Auskunftsrechte) und eine einfache Widerspruchsmöglichkeit schaffen Vertrauen."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 18: Herz-Emoji auf die Story",
+          "body": "Situation: Ein Nutzer reagiert mit ❤️ auf eine Story über den neuen Kurs.\nSchwach: Sofort: „Danke! Hier sind unsere Preise und der Buchungslink.“\nBesser: „Danke für das ❤️! Freut mich, dass dir der Kurs gefällt. Interessiert dich das Thema für dich selbst?“\nWarum: Kurze, offene Reaktion statt Verkaufspaket. Ob du überhaupt antwortest, folgt den Regeln deines Auftraggebers; eine Reaktion ist keine Einwilligung in Werbeserien."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 19: Rückmeldung nach drei Wochen",
+          "body": "Situation: „Sorry, war krank. Ist das Angebot noch aktuell?“\nSchwach: „Leider abgelaufen, du hättest dich früher melden müssen.“\nBesser: „Schön, von dir zu hören – gute Besserung nachträglich! Ja, du kannst jederzeit einsteigen. Wir waren beim Starttermin stehen geblieben: Passt dir eher Anfang oder Mitte nächsten Monats?“\nWarum: Kein Vorwurf, klarer Anschluss an die Etappe im Chat-Bogen."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 20: Konkurrenzvergleich",
+          "body": "Situation: „Bei FitNow kostet das nur die Hälfte.“\nSchwach: „FitNow ist unseriös, da würde ich aufpassen.“\nBesser: „Gut, dass du vergleichst. Was ist dir bei der Entscheidung neben dem Preis noch wichtig? Dann kann der Coach dir ehrlich zeigen, wo die Unterschiede liegen.“\nWarum: Kein Schlechtreden von Mitbewerbern; Kriterien des Kunden erfragen."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 21: Sofort anrufen",
+          "body": "Situation: „Kannst du mich jetzt gleich anrufen?“\nSchwach: „Leider nur per Chat möglich.“ (obwohl Telefon erlaubt ist)\nBesser: „Klar! Ich rufe dich in fünf Minuten unter der Nummer aus deiner Anfrage an – passt die 0170 … noch?“\nWarum: Ausdrücklicher Wunsch = Erlaubnis für diesen Anruf; Nummer bestätigen und zeitnah handeln."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 22: Siezen oder duzen?",
+          "body": "Situation: Ein Interessent schreibt über die Website: „Sehr geehrte Damen und Herren, ich interessiere mich für Ihr Coaching.“\nSchwach: „Hey du! Mega, dass du dabei sein willst 🔥“\nBesser: „Guten Tag Herr Albers, vielen Dank für Ihre Nachricht! Was möchten Sie mit dem Coaching vor allem erreichen?“\nWarum: Anrede spiegeln, nie nach unten: Wer siezt und förmlich schreibt, wird gesiezt."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 23: Minderjährigkeit erkennbar",
+          "body": "Situation: Eine Nutzerin schreibt: „Ich bin 15, darf ich auch mitmachen?“\nSchwach: „Klar, buch einfach hier!“\nBesser: „Danke für deine Nachricht! Für Teilnehmende unter 18 gelten besondere Regeln, und dafür bin ich nicht die richtige Ansprechperson. Ich gebe deine Frage an unser Team weiter – bitte sprich auch mit deinen Eltern darüber.“\nWarum: Kein Verkaufsgespräch mit Minderjährigen ohne geregelten Prozess; an die Verantwortlichen übergeben (Regeln des Auftraggebers)."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 24: Frage nach Garantie",
+          "body": "Situation: „Gibt es eine Geld-zurück-Garantie?“\nSchwach: „Ja, klar, bei uns geht alles!“ (ohne es zu wissen)\nBesser: „Gute Frage – die genauen Vertragsbedingungen erklärt dir der Berater im Gespräch, und du bekommst sie schriftlich, bevor du etwas entscheidest. Ich notiere die Frage für ihn.“\nWarum: Keine Zusagen zu Vertragsinhalten ohne Wissen; Übergabe und Transparenz."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 25: Übernahme eines Kollegen-Chats",
+          "body": "Situation: Du übernimmst einen Chat von einer Kollegin, die im Urlaub ist.\nSchwach: „Hi, ich bin neu hier. Was war nochmal dein Anliegen?“\nBesser: „Hi Felix, hier ist Sam – meine Kollegin Ines ist im Urlaub, ich übernehme. Ich habe gelesen, dass du ab Mai dreimal pro Woche trainieren möchtest. Sollen wir dafür einen Termin mit dem Coach finden?“\nWarum: Verlauf lesen, Wechsel transparent machen und am letzten Stand anknüpfen – der Kunde muss nichts wiederholen."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 26: Druck vom Closer",
+          "body": "Situation: Der Closer bittet dich: „Schreib ihr, dass nur noch zwei Plätze frei sind, dann bucht sie schneller.“ Tatsächlich gibt es genug Plätze.\nSchwach: Die Nachricht so verschicken.\nBesser: Du lehnst ab: „Das stimmt nicht, das schreibe ich nicht. Ich kann ihr aber ehrlich die nächsten freien Termine nennen.“\nWarum: Erfundene Verknappung ist eine Täuschung (irreführende geschäftliche Handlung). Ehrlichkeit ist nicht verhandelbar – auch nicht auf Anweisung."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 27: Screenshot eines Konkurrenzangebots",
+          "body": "Situation: Ein Kunde schickt einen Screenshot: „Könnt ihr das unterbieten?“\nSchwach: „Ja, wir machen 20 % weniger!“ (ohne Freigabe)\nBesser: „Danke für den Screenshot. Preise und mögliche Konditionen bespricht der Berater mit dir – ich gebe ihm deine Frage weiter. Was ist dir außer dem Preis noch wichtig?“\nWarum: Keine unautorisierten Rabattzusagen; Frage übergeben und weitere Kriterien klären."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 28: Fremdsprache",
+          "body": "Situation: Ein Kunde schreibt auf Englisch: „Hi, do you also offer coaching in English?“\nSchwach: Auf Deutsch antworten: „Bitte schreiben Sie auf Deutsch.“\nBesser: „Hi Daniel, thanks for your message! Let me check with the team whether a coach can do the sessions in English – I'll get back to you by tomorrow noon.“\nWarum: In der Sprache des Kunden antworten, nichts versprechen, was nicht geklärt ist, und eine konkrete Rückmeldezeit nennen."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 29: „STOP“ in WhatsApp",
+          "body": "Situation: Ein Kunde antwortet auf die Terminerinnerung mit „STOP“.\nSchwach: „Meinst du den Termin oder die Nachrichten?“ und weiter Erinnerungen senden.\nBesser: „Verstanden – du bekommst ab jetzt keine WhatsApp-Nachrichten mehr von uns. Soll der Termin am Donnerstag trotzdem bestehen bleiben? Du kannst mir auch per E-Mail antworten.“\nWarum: Opt-out sofort umsetzen (WhatsApp-Policy, Art. 21 DSGVO); offene Terminfrage einmalig klären, ohne den Kanal weiter zu nutzen."
+        },
+        {
+          "kind": "example",
+          "title": "Übung 30: Kunde ist nicht qualifiziert",
+          "body": "Situation: Die Kundin sucht Präsenztraining in Hamburg; ihr bietet nur Online-Coaching an.\nSchwach: Den Termin trotzdem buchen, „der Closer kriegt das schon hin“.\nBesser: „Danke dir für die Infos! Ehrlich gesagt bieten wir nur Online-Coaching an – Präsenztraining in Hamburg können wir nicht leisten. Wenn du online doch mal ausprobieren möchtest, melde dich gern jederzeit.“\nWarum: Ehrliche Disqualifikation spart allen Zeit und erhält Vertrauen; unpassende Termine schaden Show-Rate und Ruf."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M05-033"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Welche drei der 30 Situationen fielen dir am schwersten? Schreibe für jede eine eigene, noch bessere Antwort und notiere, welches Prinzip aus dem Modul sie umsetzt."
+        }
+      ],
+      "summary": [
+        "Erst selbst antworten, dann vergleichen – Abrufen schlägt Lesen.",
+        "Vier Prüffragen: ehrlich, rollenklar, Kanal erlaubt, Gespräch kommt weiter.",
+        "Keine Gesundheits-, Ergebnis-, Einkommens- oder Rabattzusagen.",
+        "Widerspruch und Opt-out sofort umsetzen."
+      ],
+      "sourceIds": [
+        "SRC-050",
+        "SRC-006",
+        "SRC-007",
+        "SRC-019",
+        "SRC-178",
+        "SRC-167",
+        "SRC-170",
+        "SRC-024"
+      ]
+    }
+  ],
+  "transferTask": {
+    "title": "Transferaufgabe: Dein Chat-Leitfaden",
+    "instructions": "Erstelle für ein erfundenes Angebot (z. B. Fitness-, Lauf- oder Sprachcoaching) einen einseitigen Chat-Leitfaden: (1) einen Auslöser-Einstieg für eine Instagram-Anzeige und einen für ein Formular, (2) einen Brückensatz und drei Qualifizierungsfragen in sinnvoller Reihenfolge, (3) eine Nachfass-Nachricht in zwei Stufen, (4) eine Kanal-Ampel mit je einem Beispiel für Grün, Gelb und Rot, (5) eine LHEE-Übergabenotiz für einen erfundenen Lead. Schreibe zusätzlich drei eigene Übungssituationen nach dem Muster aus Lektion 8 (Situation – schwach – besser – warum).",
+    "criteria": [
+      "Einstiege benennen den konkreten Auslöser und enthalten genau eine Frage",
+      "Brückensatz schließt ab, begründet und kündigt die Zahl der Fragen an",
+      "Qualifizierungsfragen einzeln, passend zum Angebot",
+      "Nachfassen mit offenem Ausstieg, ohne Druck oder Schuldgefühle",
+      "Ampel-Beispiele rechtlich plausibel (Einwilligung, Zweck, Plattformregeln)",
+      "Übergabenotiz trennt Fakten von Eindrücken und enthält offene Fachfragen und Kanalstatus",
+      "Keine Erfolgs-, Gesundheits- oder Einkommensversprechen",
+      "Nur erfundene Namen und Daten"
+    ]
+  },
+  "examQuestionIds": [
+    "Q-M05-002",
+    "Q-M05-006",
+    "Q-M05-010",
+    "Q-M05-011",
+    "Q-M05-015",
+    "Q-M05-017",
+    "Q-M05-019",
+    "Q-M05-022",
+    "Q-M05-023",
+    "Q-M05-024",
+    "Q-M05-032",
+    "Q-M05-034",
+    "Q-M05-035",
+    "Q-M05-036",
+    "Q-M05-003"
+  ]
+}

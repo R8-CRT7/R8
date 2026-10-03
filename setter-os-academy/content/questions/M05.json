@@ -1,0 +1,1640 @@
+[
+  {
+    "id": "Q-M05-001",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Etappen des Chat-Bogens in die richtige Reihenfolge.",
+    "items": [
+      {
+        "id": "sum",
+        "text": "Zusammenfassen und bestätigen lassen"
+      },
+      {
+        "id": "open",
+        "text": "Einstieg mit Bezug und Erlaubnis"
+      },
+      {
+        "id": "next",
+        "text": "Nächsten Schritt vorschlagen"
+      },
+      {
+        "id": "qual",
+        "text": "Pflichtkriterien einzeln klären"
+      },
+      {
+        "id": "close",
+        "text": "Abschließen, dokumentieren, übergeben"
+      },
+      {
+        "id": "goal",
+        "text": "Anlass und Ziel verstehen"
+      }
+    ],
+    "correctOrder": [
+      "open",
+      "goal",
+      "qual",
+      "sum",
+      "next",
+      "close"
+    ],
+    "explanation": "Der Bogen geht vom Bezug über Ziel und Kriterien zur Zusammenfassung; erst dann folgt der Vorschlag und am Ende Bestätigung und Übergabe.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-043"
+    ]
+  },
+  {
+    "id": "Q-M05-002",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Kunde meldet sich nach drei Tagen wieder: „Sorry, war viel los!“ Im Verlauf siehst du: Ziel geklärt, Zeitrahmen fehlt noch. Was schreibst du?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Kein Problem! Wir waren beim Starttermin stehen geblieben – ab wann würdest du gern loslegen?“"
+      },
+      {
+        "id": "b",
+        "text": "„Kein Problem! Erzähl doch noch mal von vorn: Was ist dein Ziel?“",
+        "misconception": "Bereits Geklärtes neu abfragen zeigt, dass der Verlauf nicht gelesen wurde.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Hier ist der Kalenderlink, such dir was aus.“",
+        "misconception": "Überspringt die fehlende Qualifizierung.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Schade, dass du dich so lange nicht gemeldet hast.“",
+        "misconception": "Vorwurf statt Anschluss.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Verlauf lesen, Etappe erkennen und genau dort anknüpfen – der Kunde muss nichts wiederholen.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-003",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Im Chat solltest du offene Fragen des Kunden zuerst beantworten, bevor du selbst die nächste Frage stellst.",
+    "correct": true,
+    "explanation": "Wer seine Frage übergangen sieht, fühlt sich nicht ernst genommen. Erst kurz beantworten (im Rahmen der Rolle), dann begründet weiterfragen.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-004",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die Nachrichten des Setters, die gegen die Struktur des Chat-Bogens verstoßen.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Setter: „Hi Nora, hier ist Tim von Laufwerk – danke für deine Nachricht zur Anzeige! Darf ich dir kurz zwei Fragen stellen?“",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Kundin: „Klar. Wie teuer ist das eigentlich?“",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Setter: „Was ist dein Ziel, wie oft hast du Zeit, wann willst du starten und wer entscheidet mit?“",
+        "faulty": true,
+        "why": "Vier Fragen auf einmal und die Preisfrage der Kundin wird übergangen."
+      },
+      {
+        "id": "l4",
+        "text": "Kundin: „Äh … Halbmarathon im Frühjahr.“",
+        "faulty": false
+      },
+      {
+        "id": "l5",
+        "text": "Setter: „Super, hier ist der Buchungslink!“",
+        "faulty": true,
+        "why": "Springt ohne Qualifizierung und Zusammenfassung zum Termin."
+      }
+    ],
+    "explanation": "Eine Frage pro Nachricht, Kundenfragen zuerst beantworten und vor dem Vorschlag qualifizieren und zusammenfassen.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-066"
+    ]
+  },
+  {
+    "id": "Q-M05-005",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche erste Antwort klingt am ehesten nach einem Menschen, der zugehört hat? Die Kundin hatte geschrieben: „Nach der Arbeit bin ich immer zu platt fürs Training.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Klingt, als wäre abends kaum noch Energie übrig. Wann am Tag fühlst du dich am fittesten?“"
+      },
+      {
+        "id": "b",
+        "text": "„Vielen Dank für Ihr Interesse an unserem ganzheitlichen Premium-Programm!“",
+        "misconception": "Marketingformel ohne Bezug zur Aussage.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Das ist eine Ausrede, die wir oft hören 😉“",
+        "misconception": "Ironie/Wertung wird leicht als Vorwurf gelesen.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Ok.“",
+        "misconception": "Ein-Wort-Antwort ohne Zuhören, wirkt desinteressiert.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein konkretes Wort aufgreifen, Lage vorsichtig benennen und offen fragen – das klingt nach Zuhören, nicht nach Textbaustein.",
+    "sourceIds": [
+      "SRC-055",
+      "SRC-164"
+    ]
+  },
+  {
+    "id": "Q-M05-006",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Die Forschung zeigt eindeutig, dass Emojis Geschäftsnachrichten immer sympathischer machen.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Glikson et al. (2018) fanden in formellen Arbeits-E-Mails sogar geringere wahrgenommene Kompetenz ohne mehr Wärme; eine Replikation scheiterte. Die Wirkung hängt von Kanal und Kontext ab.",
+    "sourceIds": [
+      "SRC-166"
+    ]
+  },
+  {
+    "id": "Q-M05-007",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die Zeilen, die im Chat leicht falsch verstanden werden oder unehrlich sind.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "„Hi Jonas, danke für deine Rückmeldung!“",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "„Na super, dann warten wir halt noch ein Jahr. 🙄“",
+        "faulty": true,
+        "why": "Ironie und Augenroll-Emoji wirken schnell vorwurfsvoll – der Ton kommt anders an als gemeint."
+      },
+      {
+        "id": "l3",
+        "text": "„Kunde fragt: Bist du ein Bot? – Antwort: Nein, ich bin ganz echt!“ (obwohl ein KI-System antwortet)",
+        "faulty": true,
+        "why": "Täuschung über KI-Einsatz; widerspricht Transparenzpflichten und zerstört Vertrauen."
+      },
+      {
+        "id": "l4",
+        "text": "„Wann würde dir ein kurzes Gespräch am besten passen – eher abends oder am Wochenende?“",
+        "faulty": false
+      }
+    ],
+    "explanation": "Ironie geht im Text leicht verloren (Egozentrismus beim Schreiben), und über KI-Einsatz wird nie getäuscht.",
+    "sourceIds": [
+      "SRC-164",
+      "SRC-024"
+    ]
+  },
+  {
+    "id": "Q-M05-008",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Schreibe diese Nachricht so um, dass sie natürlich klingt und an das Gesagte anknüpft (max. 35 Wörter, eine Frage). Kundin Elif schrieb: „Ich will wieder mit Yoga anfangen, hab aber Angst, dass ich zu steif bin.“ Vorlage: „Vielen Dank für Ihr Interesse an unserem innovativen Yoga-Programm! Buchen Sie jetzt Ihr kostenloses Erstgespräch!“",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Spricht Elif mit Namen an",
+        "points": 1,
+        "anyOf": [
+          [
+            "elif"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Greift die Sorge „steif“ bzw. den Wiedereinstieg auf",
+        "points": 1,
+        "anyOf": [
+          [
+            "steif",
+            "beweglich",
+            "wieder",
+            "anfang",
+            "einstieg"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Enthält eine offene Frage",
+        "points": 1,
+        "anyOf": [
+          [
+            "was ",
+            "wie ",
+            "welche",
+            "woran"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Keine Werbefloskeln oder Druck",
+        "points": 1,
+        "forbidden": [
+          "innovativ",
+          "jetzt buchen",
+          "buchen sie jetzt",
+          "nur heute",
+          "premium"
+        ]
+      }
+    ],
+    "sampleAnswer": "Hi Elif, danke für deine Nachricht! Viele starten genau mit diesem Gefühl wieder – Steifheit ist eher Ausgangspunkt als Hindernis. Was wäre für dich ein guter erster Schritt?",
+    "requiresManualReview": true,
+    "explanation": "Natürlich klingt eine Nachricht, wenn sie konkret auf das Gesagte eingeht, ohne Formeln auskommt und eine einfache Frage stellt. Wortzahl selbst prüfen.",
+    "sourceIds": [
+      "SRC-066",
+      "SRC-164"
+    ]
+  },
+  {
+    "id": "Q-M05-009",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken zur Herkunft der „21-mal“-Zahl.",
+    "text": "Die Zahl stammt aus der Lead Response Management Study von {{g1}} (Oldroyd mit InsideSales.com). Verglichen wurden telefonische Kontaktversuche nach {{g2}} statt 30 Minuten; die Chance auf {{g3}} war etwa 21-mal höher.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "2007"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "5",
+          "fünf",
+          "5 Minuten",
+          "fünf Minuten"
+        ]
+      },
+      {
+        "id": "g3",
+        "accepted": [
+          "Qualifizierung",
+          "Qualifikation",
+          "qualifizieren"
+        ]
+      }
+    ],
+    "explanation": "2007, 5 vs. 30 Minuten, Qualifizierung (nicht Verkauf). Der HBR-Artikel 2011 berichtet andere Zahlen (fast 7-mal bzw. über 60-mal).",
+    "sourceIds": [
+      "SRC-161",
+      "SRC-005"
+    ]
+  },
+  {
+    "id": "Q-M05-010",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Aussagen beschreiben Grenzen der bekannten Speed-to-Lead-Befunde korrekt? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Daten sind korrelativ – schnelle Firmen können auch in anderen Punkten besser sein."
+      },
+      {
+        "id": "b",
+        "text": "Die 2007er-Studie wurde gemeinsam mit einem Anbieter von Lead-Response-Software erstellt und nicht in einer begutachteten Fachzeitschrift veröffentlicht."
+      },
+      {
+        "id": "c",
+        "text": "Die Daten stammen aus den USA und beziehen sich vor allem auf Telefonkontakte."
+      },
+      {
+        "id": "d",
+        "text": "Die Studien beweisen, dass jede Antwort unter 5 Minuten den Umsatz verdoppelt.",
+        "misconception": "Weder Verdopplung noch Umsatz noch Kausalität sind belegt.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "e",
+        "text": "Die Befunde gelten nachweislich unverändert für Instagram-DMs in Deutschland.",
+        "misconception": "Übertragbarkeit auf andere Kanäle und Märkte ist ungeprüft.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Zusammenhang ja, Kausalität und Übertragbarkeit nein: korrelativ, Praxisstudien, US-Telefondaten von 2007/2011.",
+    "sourceIds": [
+      "SRC-161",
+      "SRC-005"
+    ]
+  },
+  {
+    "id": "Q-M05-011",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "calculation",
+    "prompt": "Simulierte Daten: Welcher Anteil der Anfragen wurde innerhalb von 15 Minuten persönlich beantwortet (in %)?",
+    "given": [
+      {
+        "label": "Anfragen im Monat",
+        "value": 80
+      },
+      {
+        "label": "Persönliche Antwort ≤ 15 Min.",
+        "value": 52
+      },
+      {
+        "label": "Persönliche Antwort > 15 Min.",
+        "value": 24
+      },
+      {
+        "label": "Nicht beantwortet",
+        "value": 4
+      }
+    ],
+    "correctValue": 65,
+    "unit": "%",
+    "tolerance": 0.5,
+    "formula": "52 ÷ 80 × 100 = 65 %",
+    "simulatedData": true,
+    "explanation": "Bezugsgröße sind alle 80 Anfragen. 52/80 = 65 %. Eine automatische Abwesenheitsnachricht zählt nicht als persönliche Antwort.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-012",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Was ist die beste Lösung?",
+    "situation": "Dein Team möchte auf Instagram-Anfragen außerhalb der Geschäftszeiten sofort reagieren. Vorschlag einer Kollegin: ein Autoresponder mit „Nur heute 20 % Rabatt – jetzt buchen!“",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ehrlicher Autoresponder ohne Werbung: „Danke für deine Nachricht! Wir antworten dir morgen ab 9 Uhr persönlich.“ Und morgens zeitnah eine echte Antwort.",
+        "quality": "best",
+        "feedback": "Informiert verlässlich, ohne Werbung in der automatischen Antwort, und sichert eine persönliche Reaktion."
+      },
+      {
+        "id": "b",
+        "text": "Den Rabatt-Autoresponder nutzen – Geschwindigkeit ist alles.",
+        "quality": "unacceptable",
+        "feedback": "Werbung im Autoresponder ist riskant (BGH zu Werbung in automatischen Antworten), die Frist ist unbelegter Druck.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Gar keine Antwort bis zum nächsten Morgen.",
+        "quality": "acceptable",
+        "feedback": "Nicht falsch, aber der Kunde weiß nicht, wann er eine Antwort bekommt."
+      },
+      {
+        "id": "d",
+        "text": "Nachts privat vom Handy antworten, damit es schneller geht.",
+        "quality": "poor",
+        "feedback": "Erschöpfung, Fehler und Datenschutzrisiken; ein verlässliches Zeitfenster ist besser.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "explanation": "Tempo ist sinnvoll, aber nicht um jeden Preis: Ehrliche Information schlägt Werbe-Autoresponder und Nachtarbeit.",
+    "sourceIds": [
+      "SRC-174",
+      "SRC-161",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-013",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie steigst du ein?",
+    "situation": "Lea hat auf eine Instagram-Anzeige eines Fitness-Coachings mit „Nachricht senden“ geantwortet: „Hi, wie läuft das Coaching ab?“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Hi Lea, hier ist Sam von FormWerk – danke für deine Nachricht! Kurz: Trainingsplan, drei Einheiten pro Woche, wöchentlicher Check-in. Damit ich sagen kann, ob das zu dir passt: Was möchtest du erreichen?“",
+        "quality": "best",
+        "feedback": "Bezug, kurze Antwort auf ihre Frage, begründete offene Frage."
+      },
+      {
+        "id": "b",
+        "text": "„Hi! Was ist dein Ziel?“",
+        "quality": "acceptable",
+        "feedback": "Freundlich, übergeht aber ihre Frage.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Hier ist unser 12-seitiges PDF und der Buchungslink.“",
+        "quality": "poor",
+        "feedback": "Informationsflut statt Gespräch.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Mit uns erreichst du garantiert deine Traumfigur in 12 Wochen!“",
+        "quality": "unacceptable",
+        "feedback": "Erfolgsgarantie – irreführend und außerhalb der Rolle.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Am Auslöser anknüpfen, Kundenfrage kurz beantworten, dann begründet fragen.",
+    "sourceIds": [
+      "SRC-054",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-014",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jedem Auslöser den passendsten Einstieg zu.",
+    "left": [
+      {
+        "id": "ad",
+        "text": "Antwort auf Anzeige mit „Nachricht senden“"
+      },
+      {
+        "id": "form",
+        "text": "Formular mit Kontaktwunsch per WhatsApp"
+      },
+      {
+        "id": "story",
+        "text": "Reaktion auf eine Story"
+      },
+      {
+        "id": "dl",
+        "text": "Download eines Ratgebers mit Einwilligung in Rückfragen"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "„Du hattest auf unsere Anzeige zum Coaching geantwortet …“"
+      },
+      {
+        "id": "r2",
+        "text": "„Sie hatten im Formular WhatsApp als Kontaktweg angegeben …“"
+      },
+      {
+        "id": "r3",
+        "text": "„Danke für deine Reaktion auf die Story zum Kraftkurs! Was hat dich angesprochen?“"
+      },
+      {
+        "id": "r4",
+        "text": "„Sie hatten unseren Ratgeber heruntergeladen – war etwas Hilfreiches dabei?“"
+      }
+    ],
+    "pairs": {
+      "ad": "r1",
+      "form": "r2",
+      "story": "r3",
+      "dl": "r4"
+    },
+    "explanation": "Jeder Einstieg benennt den konkreten Auslöser – das zeigt, dass kein Massenversand vorliegt.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-015",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Kunde antwortet seit zwei Tagen nicht. Der Kontakt ist zulässig. Welche Nachfass-Nachricht ist am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Hi Jonas, kurze Erinnerung: Du wolltest mir noch sagen, ab wann du starten möchtest. Wenn es gerade nicht passt, ist das völlig okay.“"
+      },
+      {
+        "id": "b",
+        "text": "„Schade, dass du dich nicht meldest. Ich hatte mir extra Zeit genommen.“",
+        "misconception": "Schuldgefühle erzeugen Druck.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Letzte Chance! Morgen sind alle Plätze weg.“",
+        "misconception": "Unbelegte Verknappung.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "Täglich dieselbe Nachricht schicken, bis er antwortet.",
+        "misconception": "Dauerbeschallung wirkt belästigend und verstößt gegen Plattformregeln.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Kurzer Stand, leichte Frage, offener Ausstieg – ohne Druck oder Schuldgefühle.",
+    "sourceIds": [
+      "SRC-052",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-016",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Die Kundin schreibt: „Ich komme einfach nicht rein ins Training.“ Welche Nachfragen greifen ihre Aussage gut auf? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Was meinst du mit ‚nicht reinkommen‘ – fehlt eher die Zeit oder eher der Plan?“"
+      },
+      {
+        "id": "b",
+        "text": "„Wann hat es zuletzt mal gut geklappt mit dem Training?“"
+      },
+      {
+        "id": "c",
+        "text": "„Okay. Wie ist deine Adresse?“",
+        "misconception": "Themenwechsel und unnötige Daten.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Du willst doch sicher auch endlich fit sein, oder?“",
+        "misconception": "Suggestivfrage.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Folgefragen knüpfen an ein konkretes Wort oder Erlebnis an und vertiefen es.",
+    "sourceIds": [
+      "SRC-054"
+    ]
+  },
+  {
+    "id": "Q-M05-017",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welcher Satz ist ein guter Brückensatz vom Ziel zu den praktischen Kriterien?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Danke, jetzt verstehe ich dein Ziel gut. Damit ich das passende Format vorschlagen kann, hätte ich noch zwei kurze praktische Fragen.“"
+      },
+      {
+        "id": "b",
+        "text": "„Gut. Nächste Frage.“",
+        "misconception": "Kein Abschluss, keine Begründung – wirkt wie ein Formular.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Jetzt muss ich dich leider noch ein bisschen ausquetschen 😅“",
+        "misconception": "Kündigt ein Verhör an statt zu begründen.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Damit ich dich besser kennenlerne: Erzähl mir alles über dein Leben.“",
+        "misconception": "Unklarer Zweck, verletzt Datenminimierung.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Brückensatz: abschließen, begründen, Anzahl ankündigen – und daran halten.",
+    "sourceIds": [
+      "SRC-058",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-018",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die Setter-Nachrichten, die die Qualifizierung zum Verhör machen oder falsch dokumentieren.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Setter: „Wie viel Zeit hast du pro Woche ungefähr?“",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Kunde: „Zweimal eine Stunde.“",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Setter: „Budget? Startdatum? Entscheidest du allein?“",
+        "faulty": true,
+        "why": "Fragenblock ohne Aufnahme der vorherigen Antwort – Verhör."
+      },
+      {
+        "id": "l4",
+        "text": "Kunde: „Zum Budget sag ich erst mal nichts.“",
+        "faulty": false
+      },
+      {
+        "id": "l5",
+        "text": "Setter-Notiz im CRM: „Budget ca. 200 €“",
+        "faulty": true,
+        "why": "Vermutung statt „nicht genannt“ dokumentiert."
+      }
+    ],
+    "explanation": "Kriterien einzeln, mit kurzer Bestätigung; Nicht-Genanntes als „nicht genannt“ notieren.",
+    "sourceIds": [
+      "SRC-055",
+      "SRC-047"
+    ]
+  },
+  {
+    "id": "Q-M05-019",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Was antwortest du?",
+    "situation": "Während der Qualifizierung stellt sich heraus: Die Kundin sucht Präsenztraining in Leipzig, dein Auftraggeber bietet nur Online-Coaching an.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Danke für deine Offenheit! Ehrlich gesagt bieten wir nur Online-Coaching an – Präsenz in Leipzig können wir nicht leisten. Wenn du online mal ausprobieren möchtest, melde dich gern.“",
+        "quality": "best",
+        "feedback": "Ehrliche, freundliche Disqualifikation mit offener Tür."
+      },
+      {
+        "id": "b",
+        "text": "Trotzdem einen Termin buchen – der Closer überzeugt sie schon.",
+        "quality": "unacceptable",
+        "feedback": "Bewusst unpassender Termin verschwendet Zeit und Vertrauen.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Online ist sowieso viel besser als Präsenz.“",
+        "quality": "poor",
+        "feedback": "Übergeht ihr Bedürfnis und behauptet etwas Unbelegtes.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Nicht mehr antworten.",
+        "quality": "poor",
+        "feedback": "Unhöflich; die Kundin bleibt ratlos.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "explanation": "Qualifizieren heißt ehrlich prüfen, ob das Angebot passt – auch mit dem Ergebnis „nein“.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-020",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken.",
+    "text": "Ein Brückensatz schließt das bisherige Thema ab, nennt einen {{g1}} für die nächste Frage und kündigt an, wie viele Fragen kommen. Nennt ein Kunde sein Budget nicht, dokumentierst du „{{g2}}“ statt einer Vermutung.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "Grund",
+          "Zweck",
+          "Begründung"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "nicht genannt",
+          "nicht erfragt",
+          "nicht angegeben"
+        ]
+      }
+    ],
+    "explanation": "Begründung macht Fragen nachvollziehbar; Dokumentation bleibt faktentreu.",
+    "sourceIds": [
+      "SRC-058",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-021",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jeder Situation die passende Ampelfarbe zu.",
+    "left": [
+      {
+        "id": "s1",
+        "text": "Kundin antwortet auf eine Anzeige per DM – du antwortest auf ihre Frage."
+      },
+      {
+        "id": "s2",
+        "text": "Du möchtest einer Instagram-Anfragerin künftig Angebote per WhatsApp schicken."
+      },
+      {
+        "id": "s3",
+        "text": "Du schreibst Followern eines Konkurrenten per Tool eine Rabatt-DM."
+      }
+    ],
+    "right": [
+      {
+        "id": "g",
+        "text": "Grün"
+      },
+      {
+        "id": "y",
+        "text": "Gelb – erst ausdrückliche Zustimmung einholen"
+      },
+      {
+        "id": "r",
+        "text": "Rot – keine Nachricht"
+      }
+    ],
+    "pairs": {
+      "s1": "g",
+      "s2": "y",
+      "s3": "r"
+    },
+    "explanation": "Antwort auf eine Anfrage: grün. Kanalwechsel und Werbung: Zustimmung nötig. Ungefragte Massen-DMs: unzulässig.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-167",
+      "SRC-170"
+    ]
+  },
+  {
+    "id": "Q-M05-022",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Anforderungen an eine Einwilligung ergeben sich aus der DSGVO? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Verantwortliche muss die Einwilligung nachweisen können."
+      },
+      {
+        "id": "b",
+        "text": "Die Einwilligung muss jederzeit widerrufen werden können, so einfach wie sie erteilt wurde."
+      },
+      {
+        "id": "c",
+        "text": "Sie muss freiwillig, für einen bestimmten Fall und informiert erteilt werden."
+      },
+      {
+        "id": "d",
+        "text": "Eine einmal erteilte Einwilligung gilt für alle Kanäle und Zwecke des Unternehmens.",
+        "misconception": "Einwilligungen sind zweckgebunden.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "e",
+        "text": "Schweigen auf eine Nachricht gilt als Einwilligung.",
+        "misconception": "Einwilligung braucht eine unmissverständliche Handlung.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Art. 7 DSGVO: Nachweis und einfacher Widerruf; Art. 4 Nr. 11 und EDPB-Leitlinien: freiwillig, bestimmt, informiert, unmissverständlich.",
+    "sourceIds": [
+      "SRC-178",
+      "SRC-172"
+    ]
+  },
+  {
+    "id": "Q-M05-023",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-06",
+    "difficulty": 1,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Wer einem Unternehmen auf Instagram folgt, hat damit in Werbung per Direktnachricht eingewilligt.",
+    "correct": false,
+    "errorCategory": "rechtsfehler",
+    "explanation": "Ein Follow ist keine ausdrückliche Einwilligung in Werbung (§ 7 UWG; vgl. AG Düsseldorf 2025 zur LinkedIn-Vernetzung). Instagrams Richtlinien verbieten zudem unerwünschte kommerzielle Nachrichten.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-027",
+      "SRC-170"
+    ]
+  },
+  {
+    "id": "Q-M05-024",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Kunde hat dir vor drei Tagen über die WhatsApp-Business-Plattform geschrieben; seitdem kam nichts. Was gilt technisch?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Das 24-Stunden-Kundenservicefenster ist abgelaufen; du kannst nur noch freigegebene Vorlagen senden – und auch die nur im Rahmen von Opt-in und Recht."
+      },
+      {
+        "id": "b",
+        "text": "Du kannst unbegrenzt freie Nachrichten schicken, weil er dir einmal geschrieben hat.",
+        "misconception": "Das Fenster beträgt 24 Stunden ab der letzten Kundennachricht.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "WhatsApp verbietet jede weitere Nachricht für immer.",
+        "misconception": "Vorlagen bleiben möglich, wenn Opt-in besteht.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Das Fenster beträgt 30 Tage.",
+        "misconception": "Falsche Fristangabe.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Eine Kundennachricht öffnet ein 24-Stunden-Fenster für freie Nachrichten; danach nur Templates. Plattformregeln ersetzen keine rechtliche Einwilligung.",
+    "sourceIds": [
+      "SRC-168",
+      "SRC-167"
+    ]
+  },
+  {
+    "id": "Q-M05-025",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie gehst du vor?",
+    "situation": "Unter einem Beitrag „Kommentiere INFO, und ich schicke dir die Details per DM“ kommentiert Tom „INFO“. Du hast ihm die Details geschickt. Eine Woche später möchte dein Teamleiter, dass du Tom ein Rabattangebot für ein anderes Programm schickst.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Das Rabattangebot nicht ungefragt schicken. Stattdessen nur, falls er weiter Interesse zeigt, fragen, ob er Angebote erhalten möchte – und das dokumentieren.",
+        "quality": "best",
+        "feedback": "Die erste DM deckte nur seine Bitte; weitere Werbung braucht ausdrückliche Zustimmung."
+      },
+      {
+        "id": "b",
+        "text": "Schicken – er hat ja „INFO“ geschrieben.",
+        "quality": "unacceptable",
+        "feedback": "„INFO“ bezog sich auf die Details zu diesem Beitrag, nicht auf künftige Werbung.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Schicken, aber mit „Antworte STOP, wenn du nichts mehr willst“.",
+        "quality": "poor",
+        "feedback": "Opt-out ersetzt keine vorherige ausdrückliche Einwilligung.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Ihm über WhatsApp schreiben, weil Instagram streng ist.",
+        "quality": "unacceptable",
+        "feedback": "Kanalwechsel ohne Einwilligung verschärft das Problem.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "explanation": "Eine Anfrage erlaubt die Antwort zum Anlass – nicht beliebige spätere Werbung. Zweckbindung und Einwilligung prüfen.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-178",
+      "SRC-169"
+    ]
+  },
+  {
+    "id": "Q-M05-026",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "negation": true,
+    "prompt": "Welche Aussage über die Prüfung eines Kanals ist NICHT richtig?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Wenn die Plattformregeln eine Nachricht technisch erlauben, ist sie auch rechtlich immer zulässig."
+      },
+      {
+        "id": "b",
+        "text": "UWG, DSGVO und Plattformregeln gelten unabhängig voneinander.",
+        "misconception": "Diese Aussage ist richtig – alle drei Ebenen sind zu prüfen.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Eine Bitte um Bewertung per E-Mail kann Werbung sein.",
+        "misconception": "Diese Aussage ist richtig (BGH VI ZR 225/17).",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Ein Widerspruch gegen Direktwerbung beendet die werbliche Ansprache.",
+        "misconception": "Diese Aussage ist richtig (Art. 21 DSGVO).",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein offenes 24-Stunden-Fenster ist eine technische Regel – es ersetzt keine Einwilligung nach UWG und keine Rechtsgrundlage nach DSGVO.",
+    "sourceIds": [
+      "SRC-169",
+      "SRC-019",
+      "SRC-175",
+      "SRC-178"
+    ]
+  },
+  {
+    "id": "Q-M05-027",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Simulierter CRM-Eintrag nach einem Instagram-Chat: Setze die Felder korrekt.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Lea Brandt (erfunden)"
+      },
+      {
+        "label": "Quelle",
+        "value": "Instagram-Anzeige, Kundin hat per DM angefragt"
+      },
+      {
+        "label": "Chat-Notiz",
+        "value": "Ziel: wieder feste Trainingsroutine. 3× 45 Min. abends. Start in den nächsten 4 Wochen. Fragt, ob Kniebeugen trotz Kniebeschwerden gehen – nicht beantwortet, an Coach übergeben. Wünscht Terminerinnerung per WhatsApp, „bitte keine Werbung“. Termin Do 18:30 mit Coach Mira bestätigt."
+      }
+    ],
+    "fields": [
+      {
+        "id": "status",
+        "label": "Lead-Status",
+        "options": [
+          "Neu",
+          "In Kontakt",
+          "Qualifiziert",
+          "Termin gebucht",
+          "Nurturing",
+          "Disqualifiziert"
+        ],
+        "correct": "Termin gebucht"
+      },
+      {
+        "id": "wa",
+        "label": "WhatsApp erlaubt für",
+        "options": [
+          "Nicht erlaubt",
+          "Nur Terminerinnerung",
+          "Terminerinnerung und Angebote",
+          "Alle Zwecke"
+        ],
+        "correct": "Nur Terminerinnerung"
+      },
+      {
+        "id": "open",
+        "label": "Offene Fachfrage für den Coach",
+        "options": [
+          "Keine",
+          "Kniebeugen trotz Kniebeschwerden",
+          "Rabatt bei Sofortbuchung",
+          "Ernährungsplan"
+        ],
+        "correct": "Kniebeugen trotz Kniebeschwerden"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Termin bestätigt → „Termin gebucht“. Der WhatsApp-Zweck ist ausdrücklich auf die Erinnerung begrenzt. Die Gesundheitsfrage wird als offene Fachfrage übergeben.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-167",
+      "SRC-176"
+    ]
+  },
+  {
+    "id": "Q-M05-028",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Schreibe eine kurze Übergabenotiz (LHEE) für den Coach. Fakten: Kunde Jonas Peters (erfunden), Termin Mi 19:00 Video 30 Min., Quelle Website-Formular; Ziel „Halbmarathon im April“; 3× pro Woche Zeit; Budget nicht genannt; fragt nach Laufen mit Asthma (nicht beantwortet); Kontakt nur per E-Mail gewünscht.",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Lage: Termin mit Datum/Uhrzeit oder Format",
+        "points": 1,
+        "anyOf": [
+          [
+            "mi",
+            "mittwoch",
+            "19"
+          ],
+          [
+            "video",
+            "termin"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Hintergrund: Ziel Halbmarathon",
+        "points": 1,
+        "anyOf": [
+          [
+            "halbmarathon"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Budget als nicht genannt dokumentiert",
+        "points": 1,
+        "anyOf": [
+          [
+            "nicht genannt",
+            "nicht erfragt",
+            "keine angabe",
+            "nicht angegeben"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Offene Fachfrage Asthma übergeben",
+        "points": 1,
+        "anyOf": [
+          [
+            "asthma"
+          ]
+        ]
+      },
+      {
+        "id": "c5",
+        "description": "Kanalstatus E-Mail",
+        "points": 1,
+        "anyOf": [
+          [
+            "e-mail",
+            "email",
+            "mail"
+          ]
+        ]
+      },
+      {
+        "id": "c6",
+        "description": "Keine Wertungen oder Vermutungen",
+        "points": 1,
+        "forbidden": [
+          "netter",
+          "wirkt reich",
+          "zahlungskräftig",
+          "geld kein problem",
+          "bestimmt"
+        ]
+      }
+    ],
+    "sampleAnswer": "L: Jonas Peters, Mi 19:00, Video 30 Min.; Quelle Website-Formular. H: Ziel „Halbmarathon im April“, 3× pro Woche Zeit. E: Budget nicht genannt. Em: Offene Fachfrage: Laufen mit Asthma – nicht beantwortet, bitte aufgreifen. Kontakt nur per E-Mail.",
+    "requiresManualReview": true,
+    "explanation": "Eine gute Übergabe enthält Lage, Hintergrund, Einschätzung, Empfehlung, offene Fachfragen und Kanalstatus – ohne Wertungen.",
+    "sourceIds": [
+      "SRC-176",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-029",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Schritte einer warmen Übergabe im Chat in eine sinnvolle Reihenfolge.",
+    "items": [
+      {
+        "id": "q",
+        "text": "Raum für eine letzte Frage lassen"
+      },
+      {
+        "id": "who",
+        "text": "Name und Rolle der nächsten Person nennen"
+      },
+      {
+        "id": "note",
+        "text": "LHEE-Notiz im CRM schreiben"
+      },
+      {
+        "id": "what",
+        "text": "Ablauf und Dauer des Gesprächs beschreiben"
+      },
+      {
+        "id": "pass",
+        "text": "Sagen, welche Punkte du weitergibst"
+      }
+    ],
+    "correctOrder": [
+      "who",
+      "what",
+      "pass",
+      "q",
+      "note"
+    ],
+    "explanation": "Dem Kunden erst Person, Ablauf und Weitergabe erklären, dann nach offenen Fragen fragen – und anschließend die Notiz vollständig dokumentieren.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-176"
+    ]
+  },
+  {
+    "id": "Q-M05-030",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welcher Eintrag gehört so NICHT in eine Übergabenotiz?",
+    "negation": true,
+    "options": [
+      {
+        "id": "a",
+        "text": "„Wirkt naiv, wird schon zahlen.“"
+      },
+      {
+        "id": "b",
+        "text": "„Kundin sagt: max. 180 € im Monat.“",
+        "misconception": "Faktische Kundenaussage gehört hinein.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Offene Fachfrage: Training trotz Kniebeschwerden?“",
+        "misconception": "Offene Fachfragen sind Pflichtangabe.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "d",
+        "text": "„WhatsApp nur für Terminerinnerung erlaubt.“",
+        "misconception": "Kanalstatus ist Pflichtangabe.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Abwertende Vermutungen sind unprofessionell, unfair und können vom Kunden per Auskunftsrecht eingesehen werden. Fakten, offene Fragen und Kanalstatus gehören hinein.",
+    "sourceIds": [
+      "SRC-025",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-031",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Was antwortest du?",
+    "situation": "Ein Interessent eines Fitness-Coachings fragt: „Wie viel nehme ich in 12 Wochen ab?“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Das kann seriös niemand versprechen. Der Coach kann dir sagen, was bei deinem Alltag realistisch ist. Woran würdest du merken, dass es dir besser geht?“",
+        "quality": "best",
+        "feedback": "Keine Ergebnisversprechen, realistische Erwartung, Ziel des Kunden konkret machen."
+      },
+      {
+        "id": "b",
+        "text": "„Bei uns sind 10 Kilo normal.“",
+        "quality": "unacceptable",
+        "feedback": "Unbelegtes Ergebnisversprechen.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Das sagt dir der Coach.“",
+        "quality": "acceptable",
+        "feedback": "Rollenklar, aber etwas abweisend."
+      },
+      {
+        "id": "d",
+        "text": "„Kommt drauf an, wie sehr du es willst.“",
+        "quality": "poor",
+        "feedback": "Verschiebt Verantwortung, beantwortet nichts.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "explanation": "Gesundheits- und Ergebnisfragen gehören nicht in die Setter-Rolle; ehrlich einordnen und übergeben.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-032",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Ein Kunde antwortet auf eine WhatsApp-Terminerinnerung mit „STOP“.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Verstanden – du bekommst ab jetzt keine WhatsApp-Nachrichten mehr von uns. Soll der Termin am Donnerstag trotzdem bestehen bleiben? Du kannst auch per E-Mail antworten.“",
+        "quality": "best",
+        "feedback": "Opt-out sofort umgesetzt, offene Terminfrage einmalig geklärt."
+      },
+      {
+        "id": "b",
+        "text": "Weiter Erinnerungen senden – der Termin steht ja.",
+        "quality": "unacceptable",
+        "feedback": "Opt-out ignoriert (WhatsApp-Policy, DSGVO).",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Nichts tun und ihn im System lassen.",
+        "quality": "poor",
+        "feedback": "Opt-out muss dokumentiert werden, sonst kommen weitere Nachrichten.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Schade! Darf ich dir noch unser neues Angebot zeigen?“",
+        "quality": "unacceptable",
+        "feedback": "Werbung nach Widerspruch.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "explanation": "Abmeldewünsche sind sofort zu respektieren und zu dokumentieren.",
+    "sourceIds": [
+      "SRC-167",
+      "SRC-178"
+    ]
+  },
+  {
+    "id": "Q-M05-033",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Ein Setter hat diese Antworten verschickt. Markiere die problematischen.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Auf „Woher habt ihr meine Nummer?“: „Du hast am 3. März unser Formular ausgefüllt und WhatsApp als Kontaktweg angegeben. Wenn du das nicht mehr möchtest, sag Bescheid.“",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Auf Anweisung des Closers: „Nur noch zwei Plätze frei!“ (obwohl genug frei sind)",
+        "faulty": true,
+        "why": "Erfundene Verknappung ist eine Täuschung."
+      },
+      {
+        "id": "l3",
+        "text": "Auf „Kann ich mit Bandscheibenproblemen trainieren?“: „Klar, das stärkt den Rücken!“",
+        "faulty": true,
+        "why": "Gesundheitsaussage außerhalb der Rolle; richtig wäre Hinweis auf ärztliche Abklärung und Übergabe."
+      },
+      {
+        "id": "l4",
+        "text": "Auf „Das muss ich mit meiner Frau besprechen“: „Wäre es sinnvoll, wenn sie beim Gespräch dabei ist?“",
+        "faulty": false
+      }
+    ],
+    "explanation": "Ehrlichkeit und Rollenklarheit gelten in jeder Situation – auch auf Anweisung.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-034",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Du übernimmst den Chat einer Kollegin, die im Urlaub ist. Was ist die beste erste Nachricht?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Hi Felix, hier ist Sam – Ines ist im Urlaub, ich übernehme. Ich habe gelesen, dass du ab Mai dreimal pro Woche trainieren möchtest. Sollen wir dafür einen Termin mit dem Coach finden?“"
+      },
+      {
+        "id": "b",
+        "text": "„Hi, ich bin neu hier. Was war nochmal dein Anliegen?“",
+        "misconception": "Verlauf nicht gelesen – Kunde muss sich wiederholen.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "c",
+        "text": "Einfach weiterschreiben, als wäre man Ines.",
+        "misconception": "Täuschung über die Person.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "Den Chat liegen lassen, bis Ines zurück ist.",
+        "misconception": "Kunde bleibt ohne Antwort.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Wechsel transparent machen, Verlauf nutzen, am letzten Stand anknüpfen.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M05-035",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "gespraechsanalyse",
+    "simulatedData": true,
+    "prompt": "Analysiere das Instagram-Chat-Transkript (Simulation, erfundene Personen) und beantworte die drei Teilfragen.",
+    "material": {
+      "kind": "transcript",
+      "lines": [
+        {
+          "speaker": "kunde",
+          "text": "Hi, ich hab auf eure Anzeige geklickt. Wie läuft das Coaching ab?"
+        },
+        {
+          "speaker": "setter",
+          "text": "Hi Nele, hier ist Sam von FormWerk – danke für deine Nachricht! Kurz: Trainingsplan, drei Einheiten pro Woche, wöchentlicher Check-in. Damit ich sagen kann, ob das zu dir passt: Was möchtest du erreichen?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Ich will nach der Babypause wieder Kraft aufbauen."
+        },
+        {
+          "speaker": "setter",
+          "text": "Wie viel Zeit hast du? Wann willst du starten? Was darfst du ausgeben? Entscheidest du allein?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Puh. Abends vielleicht zweimal die Woche."
+        },
+        {
+          "speaker": "setter",
+          "text": "Super, dann buch dir hier direkt einen Termin: [Link]"
+        }
+      ]
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Wie ist Zeile 2 zu bewerten?",
+        "correct": "a",
+        "explanation": "Bezug zur Anzeige, kurze Antwort auf ihre Frage und eine begründete offene Frage – ein gelungener Auslöser-Einstieg.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gelungen: Bezug, kurze Antwort auf ihre Frage und begründete offene Frage."
+          },
+          {
+            "id": "b",
+            "text": "Zu lang – der Setter hätte nur „Was ist dein Ziel?“ schreiben sollen.",
+            "misconception": "Die Kundenfrage zu übergehen wirkt abweisend.",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Fehlerhaft, weil der Ablauf erst im Termin erklärt werden darf.",
+            "misconception": "Eine kurze sachliche Ablaufbeschreibung liegt in der Setter-Rolle.",
+            "errorCategory": "rollenverwechslung"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Was ist das Hauptproblem in Zeile 4?",
+        "correct": "b",
+        "explanation": "Vier Fragen ohne Aufnahme der Antwort – das Gespräch kippt ins Verhör; ein Brückensatz und eine Frage pro Nachricht fehlen.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Die Frage nach dem Budget ist verboten.",
+            "misconception": "Ein Budgetrahmen darf offen und begründet erfragt werden.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Fragenblock ohne Brückensatz und ohne Aufnahme ihrer Antwort – Verhör statt Gespräch."
+          },
+          {
+            "id": "c",
+            "text": "Kein Problem – so geht Qualifizierung schneller.",
+            "misconception": "Tempo für den Setter ist nicht Verständlichkeit für die Kundin.",
+            "errorCategory": "kommunikationsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Wie ist Zeile 6 zu bewerten?",
+        "correct": "c",
+        "explanation": "Startzeitpunkt und weitere Kriterien sind offen, es gibt keine Zusammenfassung und keinen begründeten Vorschlag – der Link kommt zu früh.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gut: Ein Link spart der Kundin Zeit.",
+            "misconception": "Ohne Qualifizierung und Zusammenfassung entsteht ein unklarer Termin.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Unproblematisch, der Coach klärt den Rest.",
+            "misconception": "Unvollständige Qualifizierung verschiebt Arbeit und senkt die Terminqualität.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Zu früh: Kriterien offen, keine Zusammenfassung, kein begründeter Vorschlag."
+          }
+        ]
+      }
+    ],
+    "explanation": "Der Einstieg gelingt, danach fehlen Übergang, Qualifizierung in Häppchen und Zusammenfassung vor dem nächsten Schritt.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-055"
+    ],
+    "tags": [
+      "gespraechsanalyse"
+    ]
+  },
+  {
+    "id": "Q-M05-036",
+    "moduleId": "M05",
+    "objectiveId": "LO-M05-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "fallstudie",
+    "simulatedData": true,
+    "prompt": "Lies die Fallstudie (Simulation) und beantworte beide Teilfragen.",
+    "material": {
+      "kind": "text",
+      "body": "Ein Online-Fitnesscoaching hat über ein Gewinnspiel 900 Instagram-Profile und 300 Handynummern gesammelt. Im Gewinnspiel stand nur: „Teilnahme durch Kommentar“. Der Teamleiter möchte allen eine DM bzw. WhatsApp-Nachricht mit einem Rabattcode schicken – per Automatisierungstool.\n\nZur selben Zeit schreibt Kundin Jana, die über eine Anzeige angefragt und einen Termin gebucht hat: „Könnt ihr mich auch per WhatsApp an den Termin erinnern? Aber bitte keine Werbung.“"
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Wie bewertest du den Plan mit den Gewinnspiel-Kontakten?",
+        "correct": "a",
+        "explanation": "Eine Gewinnspielteilnahme per Kommentar ist keine ausdrückliche Einwilligung in Werbung (§ 7 UWG); Massen-DMs verstoßen zudem gegen Metas Spam-Regeln, WhatsApp verlangt ein Opt-in, das das Unternehmen benennt.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Unzulässig: keine ausdrückliche Einwilligung in Werbung, dazu Verstoß gegen Spam- und WhatsApp-Regeln."
+          },
+          {
+            "id": "b",
+            "text": "Zulässig, weil die Personen freiwillig teilgenommen haben.",
+            "misconception": "Teilnahme ist keine Einwilligung in Werbung.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Zulässig, wenn jede Nachricht einen Abmeldehinweis enthält.",
+            "misconception": "Ein Opt-out ersetzt keine vorherige Einwilligung.",
+            "errorCategory": "rechtsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Wie gehst du mit Janas Wunsch um?",
+        "correct": "b",
+        "explanation": "Ihr ausdrücklicher Wunsch erlaubt WhatsApp für den genannten Zweck; dieser Zweck wird dokumentiert und eingehalten.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ablehnen – WhatsApp ist für Unternehmen grundsätzlich verboten.",
+            "misconception": "WhatsApp ist mit Opt-in und im Rahmen des Rechts nutzbar.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Nummer erfragen, Zweck „nur Terminerinnerung“ dokumentieren und nur dafür nutzen."
+          },
+          {
+            "id": "c",
+            "text": "Nummer erfragen und sie in den allgemeinen Angebotsverteiler aufnehmen.",
+            "misconception": "Verstößt gegen die Zweckbegrenzung und ihren ausdrücklichen Wunsch.",
+            "errorCategory": "rechtsfehler"
+          }
+        ]
+      }
+    ],
+    "explanation": "Einwilligungen sind ausdrücklich und zweckgebunden. Gesammelte Kontakte ohne Einwilligung bleiben tabu; ein klarer Kundenwunsch erlaubt den Kanal nur für den genannten Zweck.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-167",
+      "SRC-171",
+      "SRC-178"
+    ],
+    "tags": [
+      "fallstudie",
+      "recht"
+    ]
+  }
+]

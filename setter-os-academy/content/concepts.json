@@ -208,7 +208,10 @@
     "prerequisites": [
       "C-STATUS"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M04-01",
+      "LO-M04-02"
+    ]
   },
   {
     "id": "C-FRAMEWORKS",
@@ -220,7 +223,12 @@
       "C-ICP",
       "C-FRAGEN"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M04-03",
+      "LO-M04-04",
+      "LO-M04-05",
+      "LO-M04-08"
+    ]
   },
   {
     "id": "C-SCORING",
@@ -231,7 +239,9 @@
     "prerequisites": [
       "C-FRAMEWORKS"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M04-06"
+    ]
   },
   {
     "id": "C-DISQUALI",
@@ -243,7 +253,9 @@
       "C-FRAMEWORKS",
       "C-GRENZEN"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M04-07"
+    ]
   },
   {
     "id": "C-CHATFLOW",

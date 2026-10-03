@@ -1,0 +1,963 @@
+{
+  "id": "SIM-007",
+  "version": 1,
+  "title": "Fitness-Coaching: Anfrage per Instagram-Anzeige",
+  "archetype": "Interessierte Kundin mit Gesundheitsfrage und Kanalwunsch",
+  "industry": "Online-Fitness-Coaching (B2C)",
+  "channel": "instagram_dm",
+  "market": "B2C",
+  "direction": "inbound",
+  "difficulty": 3,
+  "briefing": "Simulation – alle Personen, Firmen und Nummern sind erfunden. Du bist Setter bei „FormWerk Coaching“, einem Online-Fitness-Coaching für Berufstätige. Lea Brandt hat auf eine Instagram-Anzeige mit „Nachricht senden“ geantwortet und dir selbst geschrieben – die Antwort auf ihre Anfrage per DM ist also zulässig. Für andere Kanäle (z. B. WhatsApp) brauchst du ihre ausdrückliche Zustimmung. Ziel: Gespräch strukturieren, qualifizieren und entweder ein qualifiziertes Kennenlerngespräch (30 Min., Video) mit einer Coach buchen oder sauber übergeben. Pflichtkriterien: Ziel, verfügbare Trainingszeit, Startzeitraum. Vorgaben des Auftraggebers: Preise nennt die Coach im Gespräch; Gesundheits- und Ergebnisfragen beantwortest du nicht selbst. Keine Erfolgs- oder Gesundheitsversprechen.",
+  "persona": {
+    "name": "Lea Brandt",
+    "role": "Projektmanagerin, 34, möchte wieder regelmäßig trainieren",
+    "avatarHue": 330
+  },
+  "facts": [
+    {
+      "key": "need",
+      "label": "Ziel",
+      "value": "Wieder feste Krafttrainings-Routine nach Jobwechsel",
+      "requiredForQualification": true,
+      "distractors": [
+        "Wettkampfvorbereitung Marathon",
+        "Nur Ernährungsplan gewünscht"
+      ]
+    },
+    {
+      "key": "capacity",
+      "label": "Verfügbare Zeit",
+      "value": "Abends 3× pro Woche je ca. 45 Minuten",
+      "requiredForQualification": true,
+      "distractors": [
+        "Täglich 2 Stunden morgens",
+        "Nur am Wochenende"
+      ]
+    },
+    {
+      "key": "timeline",
+      "label": "Startzeitraum",
+      "value": "In den nächsten 4 Wochen",
+      "requiredForQualification": true,
+      "distractors": [
+        "Erst im nächsten Jahr",
+        "Sofort, ab morgen"
+      ]
+    },
+    {
+      "key": "budget",
+      "label": "Budgetrahmen",
+      "value": "Ca. 150–180 € pro Monat (selbst genannt)",
+      "requiredForQualification": false,
+      "distractors": [
+        "Unter 30 € pro Monat",
+        "Budget spielt keine Rolle"
+      ]
+    },
+    {
+      "key": "authority",
+      "label": "Entscheidung",
+      "value": "Entscheidet allein",
+      "requiredForQualification": false,
+      "distractors": [
+        "Partner entscheidet mit",
+        "Arbeitgeber zahlt und entscheidet"
+      ]
+    },
+    {
+      "key": "health",
+      "label": "Gesundheitshinweis (selbst genannt)",
+      "value": "Beschwerden rechtes Knie, Frage zu Kniebeugen – nicht ärztlich abgeklärt; an Coach übergeben",
+      "requiredForQualification": false,
+      "distractors": [
+        "Keine gesundheitlichen Themen",
+        "Rückenprobleme, ärztlich freigegeben"
+      ]
+    },
+    {
+      "key": "channel",
+      "label": "Kanal/Einwilligung",
+      "value": "WhatsApp nur für Terminerinnerung erlaubt, keine Werbung",
+      "requiredForQualification": false,
+      "distractors": [
+        "WhatsApp für alle Angebote erlaubt",
+        "Nur E-Mail gewünscht"
+      ]
+    }
+  ],
+  "idealOutcome": "book",
+  "acceptableOutcomes": [
+    "book",
+    "handoff",
+    "nurture"
+  ],
+  "openingMessage": "Hi! Ich hab eure Anzeige gesehen. Wie läuft das Coaching denn ab?",
+  "startRapport": 4,
+  "maxTurns": 16,
+  "moves": [
+    {
+      "id": "open-good",
+      "intent": "open",
+      "quality": "good",
+      "text": "Hey Lea, hier ist Sam vom FormWerk-Team 👋 Danke für deine Nachricht zur Anzeige! Kurz zum Ablauf: persönlicher Trainingsplan, drei Einheiten pro Woche, wöchentlicher Check-in mit deinem Coach. Damit ich dir sagen kann, ob das zu dir passt – darf ich dir ein paar kurze Fragen stellen?",
+      "effects": {
+        "eroeffnung": 3,
+        "klarheit": 1
+      },
+      "coachNote": "Bezug zur Anzeige, kurze Antwort auf ihre Frage, Erlaubnis für Fragen – ein vollständiger Auslöser-Einstieg.",
+      "reply": [
+        {
+          "text": "Klar, schieß los 🙂"
+        }
+      ],
+      "rapport": 1,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ]
+    },
+    {
+      "id": "open-pitch",
+      "intent": "open",
+      "quality": "weak",
+      "text": "Hi! FormWerk ist das führende Online-Coaching für Berufstätige mit über 20 Coaches, individuellen Plänen, Ernährungs-Guides, Community, App und wöchentlichen Live-Calls. Hier kannst du direkt dein Erstgespräch buchen: [Link]",
+      "effects": {
+        "eroeffnung": -1,
+        "klarheit": -2
+      },
+      "coachNote": "Werbetext und Link statt Antwort auf ihre Frage – wirkt wie Massenversand.",
+      "reply": [
+        {
+          "text": "Okay … das ist ziemlich viel Text. Ich wollte eigentlich nur wissen, ob das für mich überhaupt passt."
+        }
+      ],
+      "rapport": -1,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "betterMoveId": "open-good"
+    },
+    {
+      "id": "goal-open",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Was möchtest du mit dem Coaching für dich erreichen?",
+      "effects": {
+        "bedarfsermittlung": 3,
+        "fragetechnik": 2
+      },
+      "coachNote": "Offene Frage nach dem Ziel – liefert Bedarf und Motivation.",
+      "reply": [
+        {
+          "text": "Ich hab früher regelmäßig Krafttraining gemacht, aber seit meinem Jobwechsel vor einem Jahr komme ich einfach nicht mehr rein. Ich will wieder eine feste Routine."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "need"
+      ],
+      "rapport": 1,
+      "setsFlags": [
+        "goal-asked"
+      ],
+      "hiddenByFlags": [
+        "goal-asked"
+      ]
+    },
+    {
+      "id": "multi-question",
+      "intent": "ask",
+      "quality": "weak",
+      "text": "Was ist dein Ziel, wie viel Zeit hast du, wann willst du starten und was darf es kosten?",
+      "effects": {
+        "fragetechnik": -2,
+        "klarheit": -1,
+        "bedarfsermittlung": 1
+      },
+      "coachNote": "Vier Fragen auf einmal – die Kundin beantwortet nur eine.",
+      "reply": [
+        {
+          "text": "Puh. Wieder regelmäßig trainieren, denke ich. Den Rest müsste ich mir überlegen."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "need"
+      ],
+      "setsFlags": [
+        "goal-asked"
+      ],
+      "hiddenByFlags": [
+        "goal-asked"
+      ],
+      "betterMoveId": "goal-open"
+    },
+    {
+      "id": "goal-follow",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Du schreibst, du kommst „nicht mehr rein“ – woran scheitert es im Moment am meisten?",
+      "effects": {
+        "zuhoeren": 3,
+        "bedarfsermittlung": 2
+      },
+      "coachNote": "Folgefrage mit ihrem eigenen Wort – vertieft den Bedarf und bringt Zeit und Bedenken ans Licht.",
+      "reply": [
+        {
+          "text": "Ehrlich: an der Zeit und daran, dass ich allein keinen Plan habe. Abends ginge dreimal pro Woche je 45 Minuten, mehr nicht. Ach, und ich hab seit ein paar Monaten Probleme mit dem rechten Knie. Kann ich da überhaupt Kniebeugen machen?",
+          "setsFlags": [
+            "asked-knee"
+          ],
+          "reveals": [
+            "capacity",
+            "health"
+          ]
+        }
+      ],
+      "requires": [
+        "need"
+      ],
+      "hiddenByFlags": [
+        "follow-asked"
+      ],
+      "setsFlags": [
+        "follow-asked"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "capacity",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Wie viel Zeit könntest du realistisch pro Woche fürs Training einplanen?",
+      "effects": {
+        "qualifizierung": 2
+      },
+      "coachNote": "Pflichtkriterium kurz und konkret erfragt.",
+      "reply": [
+        {
+          "text": "Hab ich ja quasi schon geschrieben: dreimal 45 Minuten abends.",
+          "when": {
+            "factsRevealed": [
+              "capacity"
+            ]
+          }
+        },
+        {
+          "text": "Abends dreimal die Woche, je etwa 45 Minuten. Übrigens: Mein rechtes Knie zickt seit ein paar Monaten. Gehen Kniebeugen da überhaupt?",
+          "setsFlags": [
+            "asked-knee"
+          ],
+          "reveals": [
+            "capacity",
+            "health"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "capacity-asked"
+      ],
+      "setsFlags": [
+        "capacity-asked"
+      ]
+    },
+    {
+      "id": "knee-handoff",
+      "intent": "handoff",
+      "quality": "good",
+      "text": "Danke, dass du das ansprichst – das ist wichtig. Ob und wie Kniebeugen für dich passen, kann und darf ich nicht beurteilen. Wenn die Beschwerden noch nicht ärztlich abgeklärt sind, wäre das ein guter erster Schritt. Ich notiere es für den Coach, damit er es im Gespräch direkt berücksichtigt – okay?",
+      "effects": {
+        "kundenorientierung": 3,
+        "recht_ethik": 2
+      },
+      "coachNote": "Rollenklar und fürsorglich: keine Gesundheitsaussage, Hinweis auf ärztliche Abklärung, Übergabe an den Coach.",
+      "reply": [
+        {
+          "text": "Okay, fair. Beim Arzt war ich damit noch nicht, mach ich aber."
+        }
+      ],
+      "requiresFlags": [
+        "asked-knee"
+      ],
+      "hiddenByFlags": [
+        "knee-handled"
+      ],
+      "setsFlags": [
+        "knee-handled"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "knee-advice",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Klar, Kniebeugen sind sogar gut fürs Knie! Mach einfach etwas weniger Gewicht 💪",
+      "effects": {
+        "recht_ethik": -3,
+        "kundenorientierung": -1
+      },
+      "coachNote": "Gesundheitsaussage ohne Fachkompetenz und ohne Kenntnis der Beschwerden – potenziell gefährlich.",
+      "reply": [
+        {
+          "text": "Oh, okay. Dann probier ich das einfach mal aus."
+        }
+      ],
+      "requiresFlags": [
+        "asked-knee"
+      ],
+      "hiddenByFlags": [
+        "knee-handled"
+      ],
+      "setsFlags": [
+        "knee-handled"
+      ],
+      "violation": "Gesundheitsberatung außerhalb der Setter-Rolle.",
+      "betterMoveId": "knee-handoff"
+    },
+    {
+      "id": "knee-dodge",
+      "intent": "inform",
+      "quality": "weak",
+      "text": "Das klären wir im Call.",
+      "effects": {
+        "kundenorientierung": -1
+      },
+      "coachNote": "Rollenklar, aber abweisend – ohne Begründung fühlt sich die Kundin abgewimmelt.",
+      "reply": [
+        {
+          "text": "Hm, okay."
+        }
+      ],
+      "requiresFlags": [
+        "asked-knee"
+      ],
+      "hiddenByFlags": [
+        "knee-handled"
+      ],
+      "setsFlags": [
+        "knee-handled"
+      ],
+      "rapport": -1,
+      "betterMoveId": "knee-handoff"
+    },
+    {
+      "id": "timeline",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Ab wann würdest du am liebsten loslegen?",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "coachNote": "Zeitrahmen mit einer einfachen offenen Frage.",
+      "reply": [
+        {
+          "text": "In den nächsten vier Wochen, bevor der Winter kommt und ich wieder auf dem Sofa lande 😄 Wie schnell sieht man da eigentlich Ergebnisse?",
+          "setsFlags": [
+            "asked-results"
+          ]
+        }
+      ],
+      "requires": [
+        "need"
+      ],
+      "reveals": [
+        "timeline"
+      ],
+      "hiddenByFlags": [
+        "timeline-asked"
+      ],
+      "setsFlags": [
+        "timeline-asked"
+      ]
+    },
+    {
+      "id": "results-honest",
+      "intent": "inform",
+      "quality": "good",
+      "text": "Ehrlich: Das ist sehr individuell, und seriös versprechen kann das niemand. Der Coach kann dir im Gespräch sagen, was bei deiner Zeit realistisch ist. Woran würdest du denn merken, dass es für dich funktioniert?",
+      "effects": {
+        "kundenorientierung": 2,
+        "recht_ethik": 2,
+        "zuhoeren": 1
+      },
+      "coachNote": "Keine Ergebnisversprechen, Erwartung realistisch eingeordnet, Ziel konkretisiert.",
+      "reply": [
+        {
+          "text": "Wenn ich nach zwei Monaten noch dabei bin und mich fitter fühle, wär ich happy."
+        }
+      ],
+      "requiresFlags": [
+        "asked-results"
+      ],
+      "hiddenByFlags": [
+        "results-handled"
+      ],
+      "setsFlags": [
+        "results-handled"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "results-promise",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Nach vier Wochen siehst du garantiert Ergebnisse, nach zwölf Wochen bist du ein neuer Mensch!",
+      "effects": {
+        "kundenorientierung": -2,
+        "recht_ethik": -3
+      },
+      "coachNote": "Erfolgsgarantie ohne Grundlage – irreführend und weckt Erwartungen, die der Coach enttäuschen muss.",
+      "reply": [
+        {
+          "text": "Garantiert? Klingt ehrlich gesagt eher nach Werbung."
+        }
+      ],
+      "requiresFlags": [
+        "asked-results"
+      ],
+      "hiddenByFlags": [
+        "results-handled"
+      ],
+      "setsFlags": [
+        "results-handled"
+      ],
+      "rapport": -1,
+      "violation": "Unbelegtes Ergebnisversprechen.",
+      "betterMoveId": "results-honest"
+    },
+    {
+      "id": "budget",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Damit der Coach dir passende Optionen zeigen kann: Hast du schon einen Rahmen im Kopf, was du monatlich für ein Coaching ausgeben möchtest? Wenn nicht, ist das auch okay.",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "coachNote": "Heikles Kriterium offen, begründet und ohne Druck erfragt.",
+      "reply": [
+        {
+          "text": "So 150 bis 180 Euro im Monat wären okay. Was kostet es denn bei euch?",
+          "setsFlags": [
+            "asked-price"
+          ]
+        }
+      ],
+      "requires": [
+        "need"
+      ],
+      "reveals": [
+        "budget"
+      ],
+      "hiddenByFlags": [
+        "budget-asked"
+      ],
+      "setsFlags": [
+        "budget-asked"
+      ]
+    },
+    {
+      "id": "price-handoff",
+      "intent": "inform",
+      "quality": "good",
+      "text": "Das hängt vom Paket ab, das zu deinem Ziel und deiner Zeit passt. Der Coach zeigt dir im Gespräch alle Optionen mit Preisen – transparent und ohne Verpflichtung. Deinen Rahmen gebe ich ihm weiter.",
+      "effects": {
+        "klarheit": 1,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Ehrliche Einordnung nach der Vorgabe des Auftraggebers (Preise nennt der Coach); der Rahmen wird übergeben.",
+      "reply": [
+        {
+          "text": "Okay, passt."
+        }
+      ],
+      "requiresFlags": [
+        "asked-price"
+      ],
+      "hiddenByFlags": [
+        "price-handled"
+      ],
+      "setsFlags": [
+        "price-handled"
+      ]
+    },
+    {
+      "id": "price-discount",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Wenn du heute noch buchst, bekommst du 30 % Rabatt – das gilt aber wirklich nur heute!",
+      "effects": {
+        "kundenorientierung": -2,
+        "recht_ethik": -2
+      },
+      "coachNote": "Unautorisierte Rabattzusage mit künstlicher Frist – Druck statt Beratung.",
+      "reply": [
+        {
+          "text": "Ich lass mich ungern hetzen. Ich glaub, ich überleg mir das lieber in Ruhe.",
+          "setsFlags": [
+            "hesitant"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "asked-price"
+      ],
+      "hiddenByFlags": [
+        "price-handled"
+      ],
+      "setsFlags": [
+        "price-handled"
+      ],
+      "rapport": -2,
+      "violation": "Unbelegte Verknappung und nicht freigegebene Rabattzusage.",
+      "betterMoveId": "price-handoff"
+    },
+    {
+      "id": "authority",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Entscheidest du das für dich allein, oder möchtest du noch jemanden einbeziehen?",
+      "effects": {
+        "qualifizierung": 1
+      },
+      "coachNote": "Kurz geklärt, ob jemand mitentscheidet.",
+      "reply": [
+        {
+          "text": "Das entscheide ich allein."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "authority"
+      ],
+      "hiddenByFlags": [
+        "authority-asked"
+      ],
+      "setsFlags": [
+        "authority-asked"
+      ]
+    },
+    {
+      "id": "summary",
+      "intent": "summarize",
+      "quality": "good",
+      "text": "Kurz zusammengefasst: Du möchtest wieder eine feste Trainingsroutine aufbauen, hast abends dreimal 45 Minuten pro Woche und möchtest in den nächsten vier Wochen starten. Stimmt das so?",
+      "effects": {
+        "zuhoeren": 2,
+        "klarheit": 2
+      },
+      "coachNote": "Zusammenfassung als Frage – sichert das Verständnis und leitet zum nächsten Schritt über.",
+      "reply": [
+        {
+          "text": "Ja, genau so."
+        }
+      ],
+      "requires": [
+        "need",
+        "timeline",
+        "capacity"
+      ],
+      "hiddenByFlags": [
+        "summarized"
+      ],
+      "setsFlags": [
+        "summarized"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "propose",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Der sinnvolle nächste Schritt wäre ein kostenloses 30-minütiges Kennenlerngespräch per Video mit einer unserer Coaches. Sie schaut sich dein Ziel und deine Zeit an und sagt dir ehrlich, ob das Coaching zu dir passt – auch wenn die Antwort „nein“ ist. Magst du?",
+      "effects": {
+        "terminvereinbarung": 2
+      },
+      "coachNote": "Klarer Vorschlag mit Dauer, Format und ehrlicher Ergebnisoffenheit – ob er passt, hängt von der Qualifizierung ab.",
+      "reply": [
+        {
+          "text": "Ja, gern. Am besten abends.",
+          "when": {
+            "factsRevealed": [
+              "need",
+              "timeline",
+              "capacity"
+            ],
+            "minRapport": 4
+          },
+          "setsFlags": [
+            "accepted"
+          ]
+        },
+        {
+          "text": "Hm, ich weiß noch nicht, ob das für mich überhaupt passt.",
+          "setsFlags": [
+            "hesitant"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "proposed"
+      ],
+      "setsFlags": [
+        "proposed"
+      ]
+    },
+    {
+      "id": "hesitation",
+      "intent": "handle_objection",
+      "quality": "good",
+      "text": "Verstehe. Was müsstest du noch wissen, um das für dich einschätzen zu können?",
+      "effects": {
+        "einwaende": 3,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Bedenken erst verstehen, statt zu überreden.",
+      "reply": [
+        {
+          "text": "Na ja, du weißt ja noch kaum was über mich. Frag ruhig noch was."
+        }
+      ],
+      "requiresFlags": [
+        "hesitant"
+      ],
+      "hiddenByFlags": [
+        "hesitation-asked"
+      ],
+      "setsFlags": [
+        "hesitation-asked"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "propose-again",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Danke für deine Antworten! Mit diesen Infos kann die Coach dir konkret sagen, was bei deinem Alltag möglich ist. Sollen wir dafür ein kurzes Gespräch vereinbaren?",
+      "effects": {
+        "terminvereinbarung": 1,
+        "klarheit": 1
+      },
+      "coachNote": "Neuer Vorschlag erst nach zusätzlicher Qualifizierung.",
+      "reply": [
+        {
+          "text": "Okay, ja – abends wäre gut.",
+          "when": {
+            "factsRevealed": [
+              "need",
+              "timeline",
+              "capacity"
+            ],
+            "minRapport": 4
+          },
+          "setsFlags": [
+            "accepted"
+          ]
+        },
+        {
+          "text": "Ich glaub, ich schau mich erst noch ein bisschen um.",
+          "setsFlags": [
+            "declined-soft"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "hesitation-asked"
+      ],
+      "hiddenByFlags": [
+        "accepted",
+        "proposed-again"
+      ],
+      "setsFlags": [
+        "proposed-again"
+      ]
+    },
+    {
+      "id": "slots",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Super! Passt dir Dienstag um 19:00 oder Donnerstag um 18:30?",
+      "effects": {
+        "terminvereinbarung": 3
+      },
+      "coachNote": "Zwei konkrete Abendtermine nach erteilter Zustimmung – passend zu ihren Zeiten.",
+      "reply": [
+        {
+          "text": "Donnerstag 18:30 passt."
+        }
+      ],
+      "requiresFlags": [
+        "accepted"
+      ],
+      "hiddenByFlags": [
+        "slot"
+      ],
+      "setsFlags": [
+        "slot"
+      ]
+    },
+    {
+      "id": "channel-consent",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Perfekt! Den Video-Link schicke ich dir gleich hier auf Instagram. Möchtest du zusätzlich eine Erinnerung am Vortag per WhatsApp? Das ist freiwillig – dann bräuchte ich deine Nummer und nutze sie nur dafür.",
+      "effects": {
+        "recht_ethik": 2,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Kanalwechsel als freiwillige Option mit klar begrenztem Zweck – Zustimmung wird eingeholt, nicht vorausgesetzt.",
+      "reply": [
+        {
+          "text": "Ja, gern per WhatsApp: 0151 0000000 (simuliert). Aber bitte nur die Erinnerung, keine Werbung.",
+          "reveals": [
+            "channel"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "slot"
+      ],
+      "hiddenByFlags": [
+        "channel-handled"
+      ],
+      "setsFlags": [
+        "channel-handled"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "channel-assume",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Gib mir mal deine Nummer, dann schreib ich dir ab jetzt über WhatsApp – da schicken wir auch immer unsere Angebote.",
+      "effects": {
+        "recht_ethik": -3
+      },
+      "coachNote": "Kanalwechsel ohne echte Wahl und Werbung ohne Einwilligung.",
+      "reply": [
+        {
+          "text": "Nee, lass mal. Instagram reicht mir völlig."
+        }
+      ],
+      "requiresFlags": [
+        "slot"
+      ],
+      "hiddenByFlags": [
+        "channel-handled"
+      ],
+      "setsFlags": [
+        "channel-handled"
+      ],
+      "rapport": -2,
+      "violation": "Kanalwechsel und Werbung per WhatsApp ohne ausdrückliche Einwilligung.",
+      "betterMoveId": "channel-consent"
+    },
+    {
+      "id": "confirm",
+      "intent": "confirm_booking",
+      "quality": "good",
+      "text": "Eingetragen: Donnerstag, 18:30 Uhr, 30 Minuten per Video mit Coach Mira. Den Link bekommst du gleich hier, die Erinnerung am Vortag über den Weg, den du gewählt hast. Ich gebe Mira deine Angaben weiter, damit du nichts doppelt erzählen musst. Gibt es noch etwas, das sie vorher wissen sollte?",
+      "effects": {
+        "terminvereinbarung": 3,
+        "klarheit": 1
+      },
+      "coachNote": "Vollständige Bestätigung mit Datum, Uhrzeit, Format, Erinnerung und warmer Übergabe.",
+      "reply": [
+        {
+          "text": "Nein, passt alles. Danke dir, bis Donnerstag!",
+          "ends": "book"
+        }
+      ],
+      "requiresFlags": [
+        "slot"
+      ]
+    },
+    {
+      "id": "handoff-coach",
+      "intent": "handoff",
+      "quality": "ok",
+      "text": "Weil deine Frage zum Knie wichtig ist, gebe ich dich direkt an Coach Mira weiter. Sie meldet sich heute noch hier im Chat bei dir, und ich übergebe ihr alles, was du mir geschrieben hast. Okay?",
+      "effects": {
+        "kundenorientierung": 1,
+        "recht_ethik": 1
+      },
+      "coachNote": "Vertretbare Übergabe – rollenklar. Hier wäre aber auch ein qualifizierter Termin möglich gewesen, in dem der Coach die Frage aufgreift.",
+      "reply": [
+        {
+          "text": "Okay, dann warte ich auf ihre Nachricht.",
+          "ends": "handoff"
+        }
+      ],
+      "requiresFlags": [
+        "knee-handled",
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ]
+    },
+    {
+      "id": "pressure-scarcity",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Ich hab diesen Monat nur noch zwei Plätze – wenn du jetzt nicht buchst, sind die weg.",
+      "effects": {
+        "kundenorientierung": -3,
+        "terminvereinbarung": -2,
+        "recht_ethik": -2
+      },
+      "coachNote": "Erfundene Verknappung ist Täuschung – und zerstört Vertrauen.",
+      "reply": [
+        {
+          "text": "Ich lass mich nicht hetzen. Danke, ich überleg's mir.",
+          "ends": "lost"
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ],
+      "rapport": -3,
+      "violation": "Unbelegte Verknappung / Druck.",
+      "betterMoveId": "propose"
+    },
+    {
+      "id": "nurture",
+      "intent": "nurture",
+      "quality": "ok",
+      "text": "Wenn du dir erst in Ruhe einen Überblick verschaffen möchtest, schicke ich dir gern unseren kostenlosen Einsteiger-Guide hier in den Chat. Weitere Nachrichten bekommst du nur, wenn du das möchtest.",
+      "effects": {
+        "kundenorientierung": 1
+      },
+      "coachNote": "Respektvolle Alternative mit klarer Kanalgrenze – hier aber vermutlich zu früh, denn Lea hat einen konkreten Bedarf.",
+      "reply": [
+        {
+          "text": "Ja, schick mir den gern.",
+          "ends": "nurture"
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ],
+      "betterMoveId": "propose"
+    }
+  ],
+  "handoverFields": [
+    "need",
+    "capacity",
+    "timeline",
+    "budget",
+    "authority",
+    "health",
+    "channel"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 3,
+    "bedarfsermittlung": 5,
+    "fragetechnik": 4,
+    "zuhoeren": 5,
+    "klarheit": 4,
+    "qualifizierung": 5,
+    "kundenorientierung": 7,
+    "terminvereinbarung": 8,
+    "recht_ethik": 5
+  },
+  "reviewQuestionIds": [
+    "Q-M05-013",
+    "Q-M05-021",
+    "Q-M05-027",
+    "Q-M05-031",
+    "Q-M05-035"
+  ],
+  "sourceIds": [
+    "SRC-050",
+    "SRC-019",
+    "SRC-167",
+    "SRC-169",
+    "SRC-170",
+    "SRC-176"
+  ],
+  "ai": {
+    "personality": "offen, pragmatisch, etwas skeptisch gegenüber Fitness-Werbung, reagiert allergisch auf Druck und Versprechen",
+    "speakingStyle": "Du-Form, kurze lockere Sätze, gelegentlich ein Emoji, schreibt wie auf Instagram üblich",
+    "situation": "Hat auf eine Instagram-Anzeige von FormWerk Coaching mit „Nachricht senden“ geantwortet und selbst eine Frage zum Ablauf gestellt.",
+    "concern": "Will wissen, ob ein Coaching in ihren vollen Arbeitsalltag passt und ob sie mit ihrem Knie trainieren kann.",
+    "background": "34 Jahre, Projektmanagerin, hat vor dem Jobwechsel regelmäßig Krafttraining gemacht; seit einem Jahr kaum Sport. Seit einigen Monaten Beschwerden im rechten Knie, noch nicht beim Arzt gewesen. Entscheidet allein, Budgetrahmen etwa 150–180 € im Monat.",
+    "needs": [
+      "eine realistische Routine für abends",
+      "ehrliche Auskunft statt Werbeversprechen",
+      "Klarheit, ob das Knie ein Problem ist"
+    ],
+    "objections": [
+      {
+        "trigger": "der Setter mit Werbetext oder Link einsteigt, statt ihre Frage zu beantworten",
+        "reaction": "irritiert, fragt nach, ob das überhaupt zu ihr passt"
+      },
+      {
+        "trigger": "Rabatte mit Frist, Verknappung oder Druck",
+        "reaction": "zieht sich zurück und will es sich in Ruhe überlegen"
+      },
+      {
+        "trigger": "Erfolgs- oder Gesundheitsversprechen",
+        "reaction": "wird skeptisch („klingt nach Werbung“)"
+      },
+      {
+        "trigger": "Kanalwechsel zu WhatsApp ohne echte Wahl oder mit Werbung",
+        "reaction": "lehnt ab, bleibt lieber bei Instagram"
+      }
+    ],
+    "customerGoals": [
+      "herausfinden, ob das Coaching in ihren Alltag passt",
+      "eine ehrliche Antwort zu Ergebnissen und zum Knie bekommen",
+      "eine Terminerinnerung per WhatsApp, aber keine Werbung"
+    ],
+    "revealRules": {
+      "need": "der Setter offen nach ihrem Ziel oder dem Anlass fragt",
+      "capacity": "der Setter nach ihrer verfügbaren Zeit fragt oder nachfragt, woran es bisher scheitert",
+      "timeline": "der Setter fragt, ab wann sie starten möchte",
+      "budget": "der Setter offen und begründet nach einem Budgetrahmen fragt, ohne Druck",
+      "authority": "der Setter fragt, ob sie allein entscheidet oder jemanden einbezieht",
+      "health": "der Setter nach Hindernissen, Bedenken oder ihrer Ausgangslage fragt – sie erwähnt dann von sich aus das Knie",
+      "channel": "der Setter ihr freiwillig eine WhatsApp-Erinnerung anbietet und den Zweck klar begrenzt"
+    },
+    "adviceBoundaries": [
+      "Kann ich mit meinem Knie Kniebeugen machen?",
+      "Wie schnell sieht man Ergebnisse / wie viel nehme ich ab?",
+      "Was kostet das genau, gibt es Rabatt?",
+      "Brauche ich zusätzlich einen Ernährungsplan?"
+    ],
+    "outcomeGuidance": "Ein Termin ist sinnvoll, wenn Ziel, Zeit und Startzeitraum geklärt sind und der Setter ihre Fragen zu Knie und Ergebnissen ehrlich einordnet und an die Coach übergibt. Bietet der Setter WhatsApp freiwillig und nur für die Erinnerung an, stimmt sie zu. Bei Druck, Rabattfristen oder Versprechen zieht sie sich zurück oder bricht ab. Eine direkte Übergabe an die Coach wegen der Knie-Frage akzeptiert sie (handoff); bietet der Setter nur Infos an, nimmt sie einen Guide (nurture).",
+    "lessonLinks": [
+      "M05-L01",
+      "M05-L03",
+      "M05-L04",
+      "M05-L05",
+      "M05-L06",
+      "M05-L07"
+    ]
+  }
+}
