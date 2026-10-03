@@ -35,3 +35,22 @@ Gefunden (Websuche, ohne Preise): deutschsprachige „Chat-Setting Masterclass�
 
 ## 4. Verkaufsversprechen – Regeln
 Nur nachweisbare Aussagen (z. B. „30 Übungsfragen, 3 Simulationen“). Keine Einkommens-, Job- oder Erfolgsversprechen, keine erfundenen Testimonials, kein „zertifiziert“ ohne Anerkennung, keine Countdown-Rabatte.
+
+## 5. Investitionsschätzung bis zur Verkaufsreife (03.10.2026)
+
+Belegt: DPMA-Markenanmeldung elektronisch 290 € (bis 3 Klassen, dpma.de); ZFU-Gebühr mind. 1.050 € (FIM); Rechtstexte-Abo Beispiel 54,90 €/Monat (IT-Recht Kanzlei, Unlimited). Alles andere ist **Schätzung** und durch Angebote zu ersetzen.
+
+| Posten | Einmalig | Monatlich |
+|---|---|---|
+| Gewerbeanmeldung (je nach Stadt) | ca. 20–65 € (Schätzung) | – |
+| Markenanmeldung DPMA | 290 € | – |
+| Anwaltliche Prüfung FernUSG + Rechtsinhalte + AGB | ca. 500–2.000 € (Schätzung) | – |
+| Steuerliche Erstberatung | ca. 200–600 € (Schätzung) | – |
+| ZFU-Zulassung (nur Option O4) | ≥ 1.050 € | – |
+| Rechtstexte-Abo (AGB, Widerruf, Datenschutz, Impressum) | – | ca. 10–55 € |
+| Hosting + Datenbank kommerziell | – | ca. 0–50 € |
+| Domain | ca. 10–20 €/Jahr | – |
+| Zahlungsanbieter | – | prozentual je Verkauf |
+| KI-Simulation (optional) | – | variabel, kann 0 bleiben |
+
+Summe grob: **ca. 1.000–3.000 € einmalig** (ohne ZFU), **ca. 2.000–4.000 €** mit ZFU, plus **ca. 50–100 €/Monat**. Entwicklung und Inhalte entstehen in weiteren Arbeitssitzungen ohne zusätzliche Entwicklerkosten; der Engpass ist Zeit (Pilot ca. 6 Wochen, externe Tests).

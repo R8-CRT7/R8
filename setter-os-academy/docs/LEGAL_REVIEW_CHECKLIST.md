@@ -72,3 +72,18 @@ Solange **nicht alle** Punkte der Kategorie A mit „freigegeben“ und Datum/Na
 2. Paket für Anwalt/Steuerberatung: dieses Dokument, RESEARCH_REPORT §5, Produktbeschreibung, Entwürfe.
 3. Entscheidung A1 (ZFU ja/nein/Abwarten) dokumentieren in `CHANGELOG.md` und `OPEN_QUESTIONS.md`.
 4. Erst danach: Zahlungsanbieter auswählen (**ausdrückliche Zustimmung des Gründers erforderlich**).
+
+## F. Zulässige Gestaltungsoptionen zum FernUSG (Stand 03.10.2026, von Fachperson zu prüfen)
+
+Ziel ist eine **ehrliche** Gestaltung, kein Etikettenschwindel: Der BGH stellt auf den tatsächlichen Vertragsinhalt ab, die Bezeichnung („Coaching“, „Software“) ist unerheblich. Eine Scheingestaltung führt zu Nichtigkeit, Rückzahlungspflicht und möglichen Abmahnungen (LG Berlin: fehlende Zulassung als Wettbewerbsverstoß, laut IT-Recht Kanzlei).
+
+| Option | Warum das FernUSG ggf. nicht greift | Nachteil / Risiko | Bewertung |
+|---|---|---|---|
+| O1 Unentgeltlich anbieten | § 1 verlangt Entgelt | keine Einnahmen aus dem Kurs | sicher, sofort umsetzbar |
+| O2 Einnahmen über den eigenen Setting-Service statt über den Kurs | Dienstleistung für Unternehmen ist kein Fernunterricht | Kurs selbst bringt kein Geld | sicher, passt zum Plan des Gründers |
+| O3 Reform abwarten (Aufhebung §§ 1–26 geplant zum 01.07.2027) | Gesetz entfällt | nur Entwurf, kann sich ändern | realistisch, weil Beta + Pilot ohnehin Monate dauern |
+| O4 ZFU-Zulassung beantragen | Zulassung liegt vor | Gebühr i. d. R. 150 % des Kurspreises, mind. 1.050 €; ca. 3 Monate | sicherste Option für Verkauf vor der Reform |
+| O5 Überwiegend synchroner Live-Unterricht, Plattform nur ergänzend | BGH III ZR 137/25: Live mit direkter Interaktion ≈ Präsenz | Gründer muss selbst live unterrichten; Aufzeichnungen zählen als asynchron | möglich, aber aufwendig |
+| O6 Bezahlter Selbstlernkurs ohne jede Lernerfolgskontrolle (kein Fragerecht, keine Bewertung) | Ohne Überwachung kein Fernunterricht (Instanzgerichte bei reinen Videokursen) | entfernt den Kern des Produkts (Quiz-Feedback, Coach, Prüfung); ob automatisierte Selbsttests ausreichen, ist offen | **nicht empfohlen** ohne Gutachten |
+
+Empfehlung des Projekts: O1 + O2 jetzt, Entscheidung zwischen O3 und O4 im Frühjahr 2027 mit anwaltlicher Beratung.
