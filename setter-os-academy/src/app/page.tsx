@@ -24,7 +24,7 @@ export default function Landing() {
       <main id="main" className="mx-auto max-w-6xl px-4 sm:px-6">
         <section className="py-14 sm:py-24">
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs text-muted">
-            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Vertical Slice · Modul 1 verfügbar
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" /> Deine persönliche Ausbildung · kostenlos · Modul 1 verfügbar
           </p>
           <h1 className="max-w-3xl font-[family-name:var(--font-display)] text-4xl font-semibold leading-[1.08] tracking-tight sm:text-6xl">
             <span className="gradient-text">Learn the skill.</span>

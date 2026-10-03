@@ -5,6 +5,9 @@ import { Button, Card, PageHeader } from "@/components/ui";
 import type { Settings } from "@/lib/store/state";
 import { exportJson, importJson, resetAll, update, useAcademy } from "@/lib/store/storage";
 
+// In the claude.ai artifact viewer file downloads are blocked → offer clipboard backup instead.
+const IS_ARTIFACT = process.env.NEXT_PUBLIC_ARTIFACT === "1";
+
 export default function SettingsPage() {
   const s = useAcademy();
   const router = useRouter();
@@ -54,7 +57,11 @@ export default function SettingsPage() {
           <h2 className="mb-1 font-semibold">Deine Daten</h2>
           <p className="text-sm text-muted">Alles liegt nur in diesem Browser (localStorage). Es gibt keine Übertragung an Server, keine Cookies, kein Tracking.</p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <Button variant="secondary" onClick={download}>Daten exportieren (JSON)</Button>
+            {!IS_ARTIFACT && <Button variant="secondary" onClick={download}>Daten exportieren (JSON)</Button>}
+            <Button variant="secondary" onClick={async () => {
+              try { await navigator.clipboard.writeText(exportJson()); setMsg("Sicherung in die Zwischenablage kopiert – z. B. in Notizen einfügen."); }
+              catch { setMsg("Kopieren nicht möglich. Nutze den Export-Button."); }
+            }}>Sicherung kopieren</Button>
             <Button variant="secondary" onClick={() => file.current?.click()}>Sicherung importieren</Button>
             <input ref={file} type="file" accept="application/json" className="hidden" onChange={async (e) => {
               const f = e.target.files?.[0];

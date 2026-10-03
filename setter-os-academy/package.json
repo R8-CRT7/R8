@@ -15,7 +15,8 @@
     "check": "npm run typecheck && npm run test && npm run build",
     "gen:sources": "node scripts/gen-source-register.mjs",
     "screenshots": "node e2e/screenshots.mjs",
-    "test:all": "npm run typecheck && npm test && npm run build && npm run test:e2e"
+    "test:all": "npm run typecheck && npm test && npm run build && npm run test:e2e",
+    "build:artifact": "node scripts/build-artifact.mjs"
   },
   "engines": {
     "node": ">=20"

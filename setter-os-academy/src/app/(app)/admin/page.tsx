@@ -133,7 +133,11 @@ function QuestionEditor() {
         {issues.length > 0 && <ul className="mt-2 grid gap-1 text-sm text-danger">{issues.map((i, k) => <li key={k}>• {i.message}</li>)}</ul>}
         {draft !== JSON.stringify(original, null, 2) && <p className="mt-2 text-xs text-warning">Ungespeicherte Änderungen gegenüber v{original.version}.</p>}
         <div className="mt-4 flex flex-wrap gap-2">
-          <Button disabled={!parsed.q || issues.length > 0} onClick={exportDraft}>Als Entwurf exportieren (v{original.version + 1})</Button>
+          {process.env.NEXT_PUBLIC_ARTIFACT === "1" ? (
+            <Button disabled={!parsed.q || issues.length > 0} onClick={async () => { try { await navigator.clipboard.writeText(draft); setStatus("Entwurf kopiert – nicht veröffentlicht."); } catch { setStatus("Kopieren nicht möglich."); } }}>Entwurf kopieren</Button>
+          ) : (
+            <Button disabled={!parsed.q || issues.length > 0} onClick={exportDraft}>Als Entwurf exportieren (v{original.version + 1})</Button>
+          )}
           <Button variant="ghost" onClick={() => setDraft(JSON.stringify(original, null, 2))}>Zurücksetzen</Button>
         </div>
         {status && <p role="status" className="mt-2 text-sm text-success">{status}</p>}

@@ -82,7 +82,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
         <div className="min-w-0 flex-1">
           {/* Mobile top bar */}
-          <header className="sticky top-0 z-20 flex items-center justify-between border-b border-line bg-[color-mix(in_srgb,var(--bg)_82%,transparent)] px-4 py-3 backdrop-blur-xl lg:hidden">
+          <header className="sticky top-[env(safe-area-inset-top,0px)] z-20 flex items-center justify-between border-b border-line bg-[color-mix(in_srgb,var(--bg)_82%,transparent)] px-4 py-3 backdrop-blur-xl lg:hidden">
             <Link href="/dashboard/" className="flex items-center gap-2">
               <Logo />
               <span className="text-xs font-semibold tracking-[0.18em]">SETTER OS</span>
