@@ -102,3 +102,15 @@ describe("SIM-004 Unsichere Kundin", () => {
     expect(r.evaluation.gates.find((g) => g.id === "G1")!.triggered).toBe(true);
   });
 });
+
+describe("Festigungstage (fresh quiz)", () => {
+  it("P-F1 alter Versuch zählt nicht, neuer Versuch nach Freischaltung schon", async () => {
+    const { itemDone } = await import("@/lib/engine/program");
+    const { initialState } = await import("@/lib/store/state");
+    const base = initialState();
+    const s = { ...base, quizAttempts: [{ id: "x", moduleId: "M01", kind: "module-exam", at: 1000, percent: 50, passed: false, courseVersion: "t", questionVersions: {}, scores: {}, pendingManualReview: 0 }] } as typeof base;
+    expect(itemDone(s, { type: "quiz", ref: "M01", fresh: true }, 2000, 3000)).toBe(false);
+    expect(itemDone(s, { type: "quiz", ref: "M01", fresh: true }, 500, 3000)).toBe(true);
+    expect(itemDone(s, { type: "quiz", ref: "M01" }, 2000, 3000)).toBe(true);
+  });
+});

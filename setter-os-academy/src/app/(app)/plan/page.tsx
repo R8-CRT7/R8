@@ -59,7 +59,7 @@ export default function PlanPage() {
           <ul className="mt-5 grid gap-1 text-sm text-muted">
             <li>• Ein neuer Tag öffnet sich am nächsten Kalendertag – Abstand hilft beim Behalten. Du kannst früher weitermachen, wenn du möchtest.</li>
             <li>• Pausen sind erlaubt. Es geht nichts verloren, und es gibt keine Strafpunkte.</li>
-            <li>• Stufe 1 ist fertig. Die weiteren Stufen werden ausgearbeitet, bevor du sie erreichst.</li>
+            <li>• Ausgearbeitet: Stufe {program.filter((p) => p.available).map((p) => p.number).join(", ")}. Weitere Stufen bleiben gesperrt, bis ihre Inhalte fertig sind.</li>
           </ul>
           <Button className="mt-5 min-h-12 w-full sm:w-auto" onClick={() => update((st) => startProgram(st, Date.now()))}>Plan starten – Tag 1</Button>
         </Card>

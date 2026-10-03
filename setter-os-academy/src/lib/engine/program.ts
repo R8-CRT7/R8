@@ -29,7 +29,9 @@ export function itemDone(s: AcademyState, item: ProgramItem, anchor: number | nu
     case "quiz": {
       const attempts = s.quizAttempts.filter((a) => a.moduleId === item.ref);
       // stage checks must be passed, module quizzes only attempted (the stage check is the gate)
-      return item.ref.startsWith("ST") ? attempts.some((a) => a.passed) : attempts.length > 0;
+      if (item.ref.startsWith("ST")) return attempts.some((a) => a.passed);
+      // consolidation days ask for a NEW attempt – an old attempt must not tick the day off
+      return item.fresh ? anchor !== null && attempts.some((a) => a.at >= anchor) : attempts.length > 0;
     }
     case "simulation":
       return s.simulations.some((x) => x.scenarioId === item.ref) || s.aiSimulations.some((x) => x.scenarioId === item.ref);
