@@ -3,14 +3,7 @@ import type { Concept, KnowledgeEntry, LongTermPlan, KnowledgeSource, ModuleCont
 import sourcesJson from "@content/sources.json";
 import knowledgeJson from "@content/knowledge.json";
 import curriculumJson from "@content/curriculum.json";
-import m01 from "@content/modules/M01.json";
-import m02 from "@content/modules/M02.json";
-import qM01 from "@content/questions/M01.json";
-import qM02 from "@content/questions/M02.json";
-import sim001 from "@content/scenarios/SIM-001.json";
-import sim002 from "@content/scenarios/SIM-002.json";
-import sim003 from "@content/scenarios/SIM-003.json";
-import sim004 from "@content/scenarios/SIM-004.json";
+import { moduleFiles, questionFiles, scenarioFiles } from "./registry";
 import programJson from "@content/program.json";
 import glossaryJson from "@content/glossary.json";
 import conceptsJson from "@content/concepts.json";
@@ -31,9 +24,9 @@ export const COURSE_VERSION = "0.2.0-stufe1";
 export const sources = sourcesJson as KnowledgeSource[];
 export const knowledge = knowledgeJson as KnowledgeEntry[];
 export const curriculum = curriculumJson as CurriculumEntry[];
-export const modules = [m01, m02] as unknown as ModuleContent[];
-export const questions = [...qM01, ...qM02] as unknown as Question[];
-export const scenarios = [sim001, sim002, sim003, sim004] as unknown as Scenario[];
+export const modules = moduleFiles as ModuleContent[];
+export const questions = questionFiles.flat() as Question[];
+export const scenarios = scenarioFiles as Scenario[];
 export const program = programJson as unknown as ProgramStage[];
 
 export const questionById = (id: string) => questions.find((q) => q.id === id);
