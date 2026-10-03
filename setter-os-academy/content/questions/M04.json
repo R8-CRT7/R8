@@ -1,0 +1,1601 @@
+[
+  {
+    "id": "Q-M04-001",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
+    "prompt": "Was unterscheidet einen Sales Qualified Lead (SQL) von einem Marketing Qualified Lead (MQL)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der SQL wurde vom Vertrieb – meist nach einem Gespräch – als echte Verkaufschance bestätigt, der MQL nur vom Marketing nach Regeln als reif eingestuft."
+      },
+      {
+        "id": "b",
+        "text": "Ein SQL hat immer schon einen unterschriebenen Vertrag.",
+        "misconception": "Ein SQL ist eine Verkaufschance, noch kein Kunde.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Ein MQL kommt immer aus Outbound, ein SQL immer aus Inbound.",
+        "misconception": "MQL/SQL beschreiben die Qualifizierungsstufe, nicht die Herkunft.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Es gibt keinen Unterschied, beide Begriffe sind genormt und gleichbedeutend.",
+        "misconception": "Die Begriffe sind nicht genormt und meinen verschiedene Stufen.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "MQL = Einschätzung des Marketings (Regeln, Verhalten, Score); SQL = vom Vertrieb bestätigte Chance. Die genauen Definitionen legt jede Firma bzw. jedes CRM selbst fest.",
+    "sourceIds": [
+      "SRC-153"
+    ]
+  },
+  {
+    "id": "Q-M04-002",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jeden Lead der passenden Einordnung zu.",
+    "left": [
+      {
+        "id": "l1",
+        "text": "Firma aus einer Branchenrecherche, noch nie Kontakt"
+      },
+      {
+        "id": "l2",
+        "text": "Hat vor sechs Wochen ein E-Book geladen, kein Gesprächswunsch"
+      },
+      {
+        "id": "l3",
+        "text": "Hat gestern über das Formular ausdrücklich um einen Rückruf gebeten"
+      },
+      {
+        "id": "l4",
+        "text": "Hat im Gespräch Bedarf, Zeitrahmen und Entscheidungsweg bestätigt; Vertrieb übernimmt"
+      }
+    ],
+    "right": [
+      {
+        "id": "cold",
+        "text": "Kalter Lead"
+      },
+      {
+        "id": "warm",
+        "text": "Warmer Lead"
+      },
+      {
+        "id": "hot",
+        "text": "Heißer Lead (Hand-Raiser)"
+      },
+      {
+        "id": "sql",
+        "text": "Sales Qualified Lead"
+      }
+    ],
+    "pairs": {
+      "l1": "cold",
+      "l2": "warm",
+      "l3": "hot",
+      "l4": "sql"
+    },
+    "explanation": "Temperatur beschreibt die Nähe zu einer Entscheidung (kein Bezug – Interesse – ausdrücklicher Kontaktwunsch); SQL ist die im Gespräch bestätigte Qualifizierungsstufe.",
+    "sourceIds": [
+      "SRC-153",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M04-003",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Wer ein Whitepaper heruntergeladen hat, ist damit ein qualifizierter Lead, und der Setter muss nur noch einen Termin eintragen.",
+    "correct": false,
+    "errorCategory": "qualifizierungsfehler",
+    "explanation": "Ein Download ist ein Verhaltenssignal (warmer Lead, ggf. MQL), kein Beleg für Bedarf, Zeitrahmen oder Entscheider. Qualifiziert ist ein Lead erst nach dem Gespräch.",
+    "sourceIds": [
+      "SRC-153",
+      "SRC-141"
+    ]
+  },
+  {
+    "id": "Q-M04-004",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Aussage beschreibt den Unterschied zwischen Ideal Customer Profile (ICP) und Buyer Persona am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Das ICP beschreibt die passende Organisation mit prüfbaren Merkmalen, die Persona einen typischen Menschen darin mit Zielen, Sorgen und Kriterien."
+      },
+      {
+        "id": "b",
+        "text": "ICP und Persona sind zwei Namen für dasselbe Werkzeug.",
+        "misconception": "Organisation und Person sind verschiedene Ebenen.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Die Persona ist eine echte, namentlich bekannte Kundin, das ICP eine Liste aller Leads.",
+        "misconception": "Eine Persona ist eine verdichtete Hypothese, kein realer Kontakt.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Das ICP gilt nur im B2C, die Persona nur im B2B.",
+        "misconception": "Beide Konzepte werden in B2B und B2C genutzt.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "ICP = Passung der Organisation (z. B. Branche, Größe, Voraussetzungen); Persona = Hypothese über die Menschen, mit denen du sprichst.",
+    "sourceIds": [
+      "SRC-152",
+      "SRC-136"
+    ]
+  },
+  {
+    "id": "Q-M04-005",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie gehst du weiter vor?",
+    "situation": "Das ICP deines Auftraggebers (Schichtplanungssoftware): Produktionsbetriebe mit 100–1.000 Mitarbeitenden im Mehrschichtbetrieb. Ein begeisterter Inhaber einer Bäckerei mit 9 Mitarbeitenden und einer Schicht schreibt: „Genau so etwas suchen wir, wann können wir sprechen?“",
+    "options": [
+      {
+        "id": "a",
+        "text": "Freundlich bedanken, ehrlich sagen, dass die Software für deutlich größere Mehrschichtbetriebe gebaut ist, und nachfragen, ob das Problem trotzdem ähnlich ist – im Zweifel nach Vorgabe des Auftraggebers ehrlich absagen oder weiterverweisen",
+        "quality": "best",
+        "feedback": "Begeisterung ernst nehmen, aber die Passung ehrlich prüfen und benennen."
+      },
+      {
+        "id": "b",
+        "text": "Sofort einen Demo-Termin eintragen – Begeisterung ist das wichtigste Kriterium",
+        "quality": "poor",
+        "feedback": "Begeisterung ersetzt keine Passung; der Termin würde beide enttäuschen.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Sie sind leider zu klein für uns.“ und das Gespräch beenden",
+        "quality": "poor",
+        "feedback": "Inhaltlich vielleicht richtig, aber abwertend und ohne Erklärung.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Erst einmal fragen, wie er die Planung heute löst, und die Passung dann einordnen",
+        "quality": "acceptable",
+        "feedback": "Sinnvoll, solange du die ICP-Abweichung danach offen ansprichst."
+      }
+    ],
+    "explanation": "Das ICP ist das „P“ aus B-P-Z-E. Eine deutliche Abweichung sprichst du früh, freundlich und konkret an.",
+    "sourceIds": [
+      "SRC-152",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M04-006",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Buyer Personas sind empirisch validierte Abbilder realer Kunden, deshalb kann ein Setter aus der Persona sicher ableiten, wie ein Gesprächspartner denkt.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Personas sind Hypothesen. Chapman & Milham (2006) kritisieren, dass sich kaum prüfen lässt, wie viele reale Menschen eine Persona repräsentiert. Im Gespräch zählt die echte Person.",
+    "sourceIds": [
+      "SRC-138",
+      "SRC-139"
+    ]
+  },
+  {
+    "id": "Q-M04-007",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Fragen in die Reihenfolge des roten Fadens der Bedarfsermittlung.",
+    "items": [
+      {
+        "id": "impact",
+        "text": "„Was bedeutet das konkret für Sie und Ihr Team?“"
+      },
+      {
+        "id": "goal",
+        "text": "„Woran würden Sie merken, dass es besser geworden ist?“"
+      },
+      {
+        "id": "trigger",
+        "text": "„Was hat Sie dazu gebracht, sich gerade jetzt zu melden?“"
+      },
+      {
+        "id": "problem",
+        "text": "„Was funktioniert daran am wenigsten gut?“"
+      },
+      {
+        "id": "situation",
+        "text": "„Wie lösen Sie das heute?“"
+      }
+    ],
+    "correctOrder": [
+      "trigger",
+      "situation",
+      "problem",
+      "impact",
+      "goal"
+    ],
+    "explanation": "Anlass – Situation – Problem – Auswirkung – gewünschtes Ergebnis. Der rote Faden verhindert Sprünge, ist aber kein starrer Fragebogen.",
+    "sourceIds": [
+      "SRC-013",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M04-008",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Welche Budgetfrage stellst du?",
+    "situation": "B2B-Inbound-Lead, Bedarf und Passung sind geklärt. Dein Auftraggeber möchte, dass du den Budgetrahmen erfragst.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Damit ich einschätzen kann, ob wir für Sie in Frage kommen: Gibt es für das Projekt schon einen Planungsrahmen?“",
+        "quality": "best",
+        "feedback": "Offen, begründet, als Rahmen formuliert."
+      },
+      {
+        "id": "b",
+        "text": "„Wie viel Geld wollen Sie maximal ausgeben?“",
+        "quality": "poor",
+        "feedback": "Klingt nach Feilschen und nach einer festen Zahl.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Bei so einem Problem spielt der Preis ja keine Rolle, oder?“",
+        "quality": "unacceptable",
+        "feedback": "Suggestivfrage, die Druck aufbaut.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Haben Sie schon über Budget nachgedacht?“",
+        "quality": "acceptable",
+        "feedback": "Nicht falsch, aber ohne Begründung und als Ja/Nein-Frage wenig ergiebig."
+      }
+    ],
+    "explanation": "Budget offen, begründet und als Rahmen erfragen; Status notieren: vorhanden, geplant oder offen.",
+    "sourceIds": [
+      "SRC-047",
+      "SRC-058"
+    ]
+  },
+  {
+    "id": "Q-M04-009",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die problematischen Zeilen dieser Setter-Nachrichten in einem B2B-Chat.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Danke für Ihre Anfrage, Herr Demir! Was hat Sie dazu gebracht, sich gerade jetzt zu melden?",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Sie entscheiden das dann ja sicher selbst, oder?",
+        "faulty": true,
+        "why": "Unterstellt Entscheidungsbefugnis (Suggestivfrage) – besser nach dem Ablauf und weiteren Beteiligten fragen."
+      },
+      {
+        "id": "l3",
+        "text": "Das kostet Sie doch bestimmt jede Woche viele Stunden, richtig?",
+        "faulty": true,
+        "why": "Suggestivfrage: legt dem Kunden eine Auswirkung in den Mund (Bestätigungsfehler)."
+      },
+      {
+        "id": "l4",
+        "text": "Damit ich einschätzen kann, ob wir passen: Wie viele Mitarbeitende planen Sie ungefähr?",
+        "faulty": false
+      },
+      {
+        "id": "l5",
+        "text": "Notiz im CRM: „Kunde hat großen Bedarf, kauft sicher bis Ende Q1.“",
+        "faulty": true,
+        "why": "Eigene Schlüsse als Fakten dokumentiert; Zeitangaben sind Selbsteinschätzungen und gehören in Kundenworten notiert."
+      }
+    ],
+    "explanation": "Offene, begründete Fragen sind gut; Unterstellungen, Suggestivfragen und als Fakten notierte Vermutungen verzerren die Qualifizierung.",
+    "sourceIds": [
+      "SRC-151",
+      "SRC-133",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M04-010",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken zum Qualifizierungsschema aus Modul 1.",
+    "text": "Das Schema B-P-Z-E steht für Bedarf, {{g1}}, Zeitrahmen und {{g2}}. Das „P“ prüfst du mit dem {{g3}} deines Auftraggebers.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "Passung"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "Entscheider",
+          "Entscheidung",
+          "Entscheidungsbefugnis"
+        ]
+      },
+      {
+        "id": "g3",
+        "accepted": [
+          "ICP",
+          "Ideal Customer Profile",
+          "Idealkundenprofil"
+        ]
+      }
+    ],
+    "explanation": "B-P-Z-E: Bedarf, Passung, Zeitrahmen, Entscheider. Die Passung ergibt sich aus dem ICP; Budget wird je nach Auftraggeber zusätzlich geklärt.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-152"
+    ]
+  },
+  {
+    "id": "Q-M04-011",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Signale sprechen am ehesten für echte Kaufbereitschaft? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Es gibt einen konkreten Anlass mit Termin, z. B. „Unser Planer geht im April in Rente“"
+      },
+      {
+        "id": "b",
+        "text": "Die Entscheiderin soll beim nächsten Gespräch dabei sein"
+      },
+      {
+        "id": "c",
+        "text": "Der Kunde schreibt drei Ausrufezeichen und „Super spannend!“",
+        "misconception": "Begeisterung allein sagt wenig über Bereitschaft.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Ein Budgetrahmen ist für das Projekt eingeplant"
+      },
+      {
+        "id": "e",
+        "text": "Der Lead hat fünf Blogartikel gelesen",
+        "misconception": "Inhaltskonsum ist ein schwaches Stellvertretersignal.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation": "Bereitschaft zeigt sich in Fakten: Anlass mit Grund, eingebundene Entscheider, eingeplanter Rahmen. Geäußerte Begeisterung und Klicks sagen späteres Verhalten nur unvollkommen voraus.",
+    "sourceIds": [
+      "SRC-148",
+      "SRC-147"
+    ]
+  },
+  {
+    "id": "Q-M04-012",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Aussage zur Evidenzlage von BANT ist zutreffend?",
+    "options": [
+      {
+        "id": "a",
+        "text": "BANT ist ein verbreitetes Praxisraster; seine Herkunft ist nur zugeschrieben, und eine Überlegenheit gegenüber anderen Rastern ist nicht systematisch belegt."
+      },
+      {
+        "id": "b",
+        "text": "BANT wurde in kontrollierten Experimenten als bestes Qualifizierungsraster bewiesen.",
+        "misconception": "Solche Experimente sind nicht bekannt.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "c",
+        "text": "BANT ist gesetzlich für B2B-Vertrieb vorgeschrieben.",
+        "misconception": "Kein Gesetz schreibt ein Qualifizierungsraster vor.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "BANT ist widerlegt und darf nicht mehr verwendet werden.",
+        "misconception": "Fehlende Validierung heißt nicht, dass es nutzlos ist – es ist eine brauchbare Checkliste.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": "a",
+    "explanation": "BANT ist Erfahrungswissen: nützliche Checkliste, kein bewiesener Standard.",
+    "sourceIds": [
+      "SRC-047"
+    ]
+  },
+  {
+    "id": "Q-M04-013",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne die MEDDICC-Elemente ihrer Bedeutung zu.",
+    "left": [
+      {
+        "id": "m",
+        "text": "Metrics"
+      },
+      {
+        "id": "eb",
+        "text": "Economic Buyer"
+      },
+      {
+        "id": "dc",
+        "text": "Decision Criteria"
+      },
+      {
+        "id": "dp",
+        "text": "Decision Process"
+      },
+      {
+        "id": "ch",
+        "text": "Champion"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Messbare Ziele, die der Kunde erreichen will"
+      },
+      {
+        "id": "r2",
+        "text": "Person mit Budgetverantwortung, die freigibt"
+      },
+      {
+        "id": "r3",
+        "text": "Kriterien, nach denen Lösungen verglichen werden"
+      },
+      {
+        "id": "r4",
+        "text": "Ablauf und Schritte bis zur Entscheidung"
+      },
+      {
+        "id": "r5",
+        "text": "Person im Unternehmen, die sich aktiv für die Lösung einsetzt"
+      }
+    ],
+    "pairs": {
+      "m": "r1",
+      "eb": "r2",
+      "dc": "r3",
+      "dp": "r4",
+      "ch": "r5"
+    },
+    "explanation": "Dazu kommen Identify Pain (das eigentliche Problem) und Competition (Alternativen, auch „weiter wie bisher“). MEDDICC ist ein nicht validiertes Praxisraster.",
+    "sourceIds": [
+      "SRC-132",
+      "SRC-047"
+    ]
+  },
+  {
+    "id": "Q-M04-014",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Die SPIN-Methode beruht auf Beobachtungen von Verkaufsgesprächen durch Neil Rackham und Huthwaite; diese Daten wurden nicht in begutachteten Fachzeitschriften veröffentlicht und sind kaum unabhängig repliziert.",
+    "correct": true,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "SPIN hat eine breitere Datengrundlage als viele Raster, bleibt aber korrelative Beobachtung eines Trainingsanbieters – mit Gültigkeit vor allem für größere Verkäufe.",
+    "sourceIds": [
+      "SRC-013",
+      "SRC-131"
+    ]
+  },
+  {
+    "id": "Q-M04-015",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Was berichtete Rackham nach seinen eigenen Daten über klassische Abschlusstechniken in großen, komplexen Verkäufen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie hingen eher mit geringerem Erfolg zusammen."
+      },
+      {
+        "id": "b",
+        "text": "Sie waren der wichtigste Erfolgsfaktor.",
+        "misconception": "Das widerspricht dem bekanntesten SPIN-Befund.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "c",
+        "text": "Sie wirkten nur am Telefon.",
+        "misconception": "Rackham unterschied nach Verkaufsgröße, nicht nach Kanal.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Sie waren gesetzlich verboten.",
+        "misconception": "Abschlusstechniken sind kein Rechtsthema dieser Studie.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Nach Rackhams (nicht unabhängig replizierten) Daten hingen Abschlusstechniken bei großen Verkäufen eher mit geringerem Erfolg zusammen; erfolgreiche Verkäufer stellten mehr Problem-, Implikations- und Nutzenfragen.",
+    "sourceIds": [
+      "SRC-013"
+    ]
+  },
+  {
+    "id": "Q-M04-016",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jede Frage dem SPIN-Fragetyp zu.",
+    "left": [
+      {
+        "id": "q1",
+        "text": "„Wie planen Sie die Schichten heute?“"
+      },
+      {
+        "id": "q2",
+        "text": "„Wo hakt es dabei am meisten?“"
+      },
+      {
+        "id": "q3",
+        "text": "„Was bedeutet das für Sie, wenn nachts jemand ausfällt?“"
+      },
+      {
+        "id": "q4",
+        "text": "„Was würde es Ihnen bringen, wenn Lücken automatisch sichtbar wären?“"
+      }
+    ],
+    "right": [
+      {
+        "id": "s",
+        "text": "Situationsfrage"
+      },
+      {
+        "id": "p",
+        "text": "Problemfrage"
+      },
+      {
+        "id": "i",
+        "text": "Implikationsfrage"
+      },
+      {
+        "id": "n",
+        "text": "Nutzenfrage (Need-Payoff)"
+      }
+    ],
+    "pairs": {
+      "q1": "s",
+      "q2": "p",
+      "q3": "i",
+      "q4": "n"
+    },
+    "explanation": "Situation klärt die Lage, Problem die Schwierigkeit, Implikation die Folgen, Nutzen lässt den Kunden den Wert selbst formulieren.",
+    "sourceIds": [
+      "SRC-013"
+    ]
+  },
+  {
+    "id": "Q-M04-017",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Welche Implikationsfrage passt am besten in einen Erstkontakt als Setter?",
+    "situation": "Eine Teamleiterin schreibt, dass kurzfristige Krankmeldungen in der Nachtschicht schwer abzudecken sind.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Was bedeutet das für Sie und das Team, wenn so eine Lücke entsteht?“",
+        "quality": "best",
+        "feedback": "Offen, behutsam, lässt die Kundin die Auswirkung selbst benennen."
+      },
+      {
+        "id": "b",
+        "text": "„Was, wenn deswegen ein Großauftrag platzt und Jobs wegfallen?“",
+        "quality": "unacceptable",
+        "feedback": "Dramatisiert und erzeugt Angst – Druck statt Klarheit.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Das ist ja eine Katastrophe – wie lange wollen Sie sich das noch antun?“",
+        "quality": "poor",
+        "feedback": "Wertend und vorwurfsvoll.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Wie oft kommt das ungefähr vor?“",
+        "quality": "acceptable",
+        "feedback": "Gute Klärungsfrage, aber eher Situation als Implikation."
+      }
+    ],
+    "explanation": "Im Erstkontakt Implikationsfragen sparsam und behutsam einsetzen; sie sollen verstehen helfen, nicht Ängste schüren.",
+    "sourceIds": [
+      "SRC-013",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M04-018",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Ein Kunde schreibt: „Unsere Angebote erstellen wir noch per Hand in Word, das dauert ewig.“ Formuliere eine Problemfrage und eine Nutzenfrage (Need-Payoff), jeweils offen und ohne Druck.",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Enthält eine offene Frage zum Problem",
+        "points": 1,
+        "anyOf": [
+          [
+            "was ",
+            "wie ",
+            "wo ",
+            "welche"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Greift die Situation des Kunden auf (Angebote, Word, Dauer)",
+        "points": 1,
+        "anyOf": [
+          [
+            "angebot",
+            "word",
+            "dauer",
+            "zeit",
+            "ewig"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Enthält eine Nutzenfrage, die den Kunden den Wert selbst formulieren lässt",
+        "points": 1,
+        "anyOf": [
+          [
+            "würde",
+            "wäre",
+            "bringen",
+            "ändern",
+            "helfen"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Kein Druck, keine Suggestion, keine Angstmache",
+        "points": 1,
+        "forbidden": [
+          "oder etwa nicht",
+          "doch sicher",
+          "katastrophe",
+          "verlieren sie",
+          "konkurrenz"
+        ]
+      }
+    ],
+    "sampleAnswer": "Problemfrage: „Was kostet Sie an der Angebotserstellung in Word gerade am meisten Zeit?“ Nutzenfrage: „Was würde sich für Sie ändern, wenn ein Angebot in wenigen Minuten fertig wäre?“",
+    "requiresManualReview": true,
+    "explanation": "Problemfragen öffnen die Schwierigkeit, Nutzenfragen lassen den Kunden den Wert selbst benennen. Die Rubrik prüft nur Muster – bewerte selbst, ob die Fragen natürlich klingen.",
+    "sourceIds": [
+      "SRC-013"
+    ]
+  },
+  {
+    "id": "Q-M04-019",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "calculation",
+    "prompt": "Simulierte Daten: Berechne den Lead Score nach den Regeln des Auftraggebers.",
+    "given": [
+      {
+        "label": "Firmengröße im ICP",
+        "value": 20,
+        "unit": "Punkte"
+      },
+      {
+        "label": "Branche im ICP",
+        "value": 15,
+        "unit": "Punkte"
+      },
+      {
+        "label": "Rolle Geschäftsführung (Entscheider)",
+        "value": 15,
+        "unit": "Punkte"
+      },
+      {
+        "label": "Demo-Anfrage",
+        "value": 25,
+        "unit": "Punkte"
+      },
+      {
+        "label": "Abmeldung vom Newsletter",
+        "value": -10,
+        "unit": "Punkte"
+      }
+    ],
+    "correctValue": 65,
+    "unit": "Punkte",
+    "tolerance": 0,
+    "formula": "20 + 15 + 15 + 25 − 10 = 65",
+    "simulatedData": true,
+    "explanation": "Passung 50 Punkte, Verhalten 25 Punkte, Abzug 10 Punkte – Summe 65. Der Score priorisiert; ob der Lead qualifiziert ist, klärt erst das Gespräch.",
+    "sourceIds": [
+      "SRC-142",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M04-020",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "calculation",
+    "prompt": "Simulierte Daten: Wie hoch ist die MQL-zu-SQL-Quote in Prozent?",
+    "given": [
+      {
+        "label": "Neue Leads im Quartal",
+        "value": 2000
+      },
+      {
+        "label": "Davon MQL",
+        "value": 400
+      },
+      {
+        "label": "Davon nach Gespräch SQL",
+        "value": 120
+      }
+    ],
+    "correctValue": 30,
+    "unit": "%",
+    "tolerance": 0.5,
+    "formula": "120 ÷ 400 × 100 = 30 %",
+    "simulatedData": true,
+    "explanation": "Die Quote bezieht sich auf die MQL, nicht auf alle Leads. 120/2000 wäre die Lead-zu-SQL-Quote (6 %).",
+    "sourceIds": [
+      "SRC-153",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M04-021",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Simulierter CRM-Eintrag: Setze Status und nächste Aktion korrekt.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Jonas Feld (erfunden), Leiter Instandhaltung"
+      },
+      {
+        "label": "Lead Score",
+        "value": "72 (Schwelle MQL: 50)"
+      },
+      {
+        "label": "Gesprächsnotiz",
+        "value": "Bedarf bestätigt (Wartungsplanung in Papierlisten, laut Kunde ca. 4 Std./Woche). Passung: 350 MA, im ICP. Entscheidung: Werkleiterin, Kunde bereitet vor. Zeitrahmen: „frühestens nächstes Jahr, Budget wird erst im Frühjahr geplant“. Einverstanden, dass wir uns im Februar per E-Mail melden."
+      }
+    ],
+    "fields": [
+      {
+        "id": "status",
+        "label": "Lead-Status",
+        "options": [
+          "MQL",
+          "SQL – Termin gebucht",
+          "Nurturing",
+          "Disqualifiziert"
+        ],
+        "correct": "Nurturing"
+      },
+      {
+        "id": "next",
+        "label": "Nächste Aktion",
+        "options": [
+          "Sofort Demo-Termin vorschlagen",
+          "E-Mail im Februar laut Einwilligung",
+          "Werkleiterin direkt auf LinkedIn anschreiben",
+          "Lead löschen"
+        ],
+        "correct": "E-Mail im Februar laut Einwilligung"
+      },
+      {
+        "id": "consent",
+        "label": "Einwilligung für spätere E-Mail",
+        "options": [
+          "Ja, dokumentiert",
+          "Nein",
+          "Nicht erfragt"
+        ],
+        "correct": "Ja, dokumentiert"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Hoher Score und echter Bedarf, aber Zeitrahmen und Budget liegen in der Zukunft → Nurturing. Die spätere E-Mail ist durch die ausdrückliche Zustimmung gedeckt; die Werkleiterin ungefragt anzuschreiben wäre übergriffig und ohne Einwilligung unzulässig.",
+    "sourceIds": [
+      "SRC-153",
+      "SRC-019",
+      "SRC-027"
+    ]
+  },
+  {
+    "id": "Q-M04-022",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Warum lohnt sich ein einfaches, regelbasiertes Scoring, obwohl es unvollkommen ist?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Weil formale Regeln in vielen Bereichen im Mittel etwas genauer und konsistenter sind als freie Bauchurteile – vorausgesetzt, die Kriterien werden regelmäßig an echten Ergebnissen überprüft."
+      },
+      {
+        "id": "b",
+        "text": "Weil ein Score beweist, welcher Kunde kaufen wird.",
+        "misconception": "Ein Score ist eine Schätzung für Gruppen, kein Beweis.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "c",
+        "text": "Weil man dann im Gespräch nicht mehr qualifizieren muss.",
+        "misconception": "Scores messen Stellvertreter, nicht Bedarf oder Entscheidung.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Weil komplexe KI-Modelle grundsätzlich verboten sind.",
+        "misconception": "Prädiktive Modelle sind erlaubt, unterliegen aber dem Datenschutz.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Befunde zu mechanischer vs. klinischer Vorhersage (Dawes 1979; Grove et al. 2000) stammen aus anderen Bereichen – sie sprechen für Kriterien statt Gefühl, aber nicht für blindes Vertrauen in Punktwerte.",
+    "sourceIds": [
+      "SRC-145",
+      "SRC-146",
+      "SRC-142"
+    ]
+  },
+  {
+    "id": "Q-M04-023",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Ein Lead mit sehr hohem Score kann ohne Qualifizierungsgespräch direkt als Sales Qualified Lead übergeben werden.",
+    "correct": false,
+    "errorCategory": "qualifizierungsfehler",
+    "explanation": "Der Score bestimmt die Reihenfolge, nicht das Ergebnis. Bedarf, Zeitrahmen, Entscheidungsweg und harte Kriterien zeigt erst das Gespräch.",
+    "sourceIds": [
+      "SRC-142",
+      "SRC-141"
+    ]
+  },
+  {
+    "id": "Q-M04-024",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Kriterien sind für ein B2B-Lead-Scoring sachlich angemessen? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Firmengröße im Bereich des ICP"
+      },
+      {
+        "id": "b",
+        "text": "Branche des Unternehmens"
+      },
+      {
+        "id": "c",
+        "text": "Alter der Kontaktperson laut Profilfoto",
+        "misconception": "Persönliche Merkmale sind diskriminierend und für die Passung irrelevant.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "Demo-Anfrage über die Website"
+      },
+      {
+        "id": "e",
+        "text": "Vermutete Herkunft aufgrund des Nachnamens",
+        "misconception": "Diskriminierendes, unzulässiges Kriterium.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation": "Passungs- und Verhaltensmerkmale mit Bezug zum Angebot sind sachlich; persönliche Merkmale wie Alter oder Herkunft sind diskriminierend und datenschutzrechtlich problematisch.",
+    "sourceIds": [
+      "SRC-142",
+      "SRC-025"
+    ]
+  },
+  {
+    "id": "Q-M04-025",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Was antwortest du?",
+    "situation": "B2B-Lead per E-Mail: Bedarf und Budget passen. Auf deine Frage nach Vorgaben schreibt der IT-Leiter: „Wir brauchen zwingend eine Installation auf eigenen Servern.“ Dein Auftraggeber bietet die Software ausschließlich als Cloud-Lösung an.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Danken, ehrlich erklären, dass es die Lösung nur in der Cloud gibt und damit eine Grundvoraussetzung nicht erfüllt ist, und keinen Termin anbieten, der daran nichts ändert",
+        "quality": "best",
+        "feedback": "Ehrliche, begründete Disqualifizierung schützt beide Seiten."
+      },
+      {
+        "id": "b",
+        "text": "„Das klärt unser Berater im Termin – wann passt es Ihnen?“",
+        "quality": "unacceptable",
+        "feedback": "Ein bekannter Ausschlussgrund wird verschwiegen; der Termin ist absehbar Zeitverschwendung.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Eine On-Premise-Version lässt sich sicher einrichten.“",
+        "quality": "unacceptable",
+        "feedback": "Falsche Produktzusage außerhalb der Setter-Rolle.",
+        "errorCategory": "rollenverwechslung"
+      },
+      {
+        "id": "d",
+        "text": "Nachfragen, ob die Vorgabe für alle Systeme gilt, und bei Bestätigung ehrlich absagen",
+        "quality": "acceptable",
+        "feedback": "Eine Klärungsfrage ist legitim, solange sie nicht dazu dient, die Vorgabe kleinzureden."
+      }
+    ],
+    "explanation": "Ein hartes Kriterium, das das Angebot nicht erfüllt, ist ein klarer Disqualifizierungsgrund. Verschweigen wäre Täuschung.",
+    "sourceIds": [
+      "SRC-059",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M04-026",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Teile einer ehrlichen Absage in eine sinnvolle Reihenfolge.",
+    "items": [
+      {
+        "id": "value",
+        "text": "Echten Mehrwert anbieten (z. B. neutrale Checkliste) – nur wenn er stimmt"
+      },
+      {
+        "id": "reason",
+        "text": "Grund konkret nennen: was das Angebot nicht leistet"
+      },
+      {
+        "id": "thanks",
+        "text": "Für Zeit und Offenheit danken"
+      },
+      {
+        "id": "consequence",
+        "text": "Konsequenz aus Kundensicht: kein Termin, der daran nichts ändert"
+      }
+    ],
+    "correctOrder": [
+      "thanks",
+      "reason",
+      "consequence",
+      "value"
+    ],
+    "explanation": "Dank – Grund – Konsequenz – Mehrwert. So versteht der Kunde die Absage und fühlt sich respektiert.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M04-027",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die problematischen Zeilen dieser Absage-E-Mail.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Vielen Dank für das offene Gespräch, Frau Kaya.",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Ehrlich gesagt sind Sie mit 12 Mitarbeitenden einfach zu klein für uns.",
+        "faulty": true,
+        "why": "Abwertend formuliert; besser sachlich erklären, für welche Betriebsgröße die Lösung gebaut ist."
+      },
+      {
+        "id": "l3",
+        "text": "Unsere Software ist für Betriebe ab etwa 100 Mitarbeitenden ausgelegt, deshalb würde ein Termin Ihnen wenig bringen.",
+        "faulty": false
+      },
+      {
+        "id": "l4",
+        "text": "Ich setze Sie trotzdem auf unseren Newsletter, dann bleiben Sie informiert.",
+        "faulty": true,
+        "why": "Werbe-E-Mails ohne ausdrückliche Einwilligung sind unzulässig (UWG § 7)."
+      },
+      {
+        "id": "l5",
+        "text": "Nehmen Sie doch den Anbieter X, der ist sowieso billiger.",
+        "faulty": true,
+        "why": "Ungeprüfte Empfehlung und Preisaussage über einen Wettbewerber außerhalb der eigenen Rolle."
+      }
+    ],
+    "explanation": "Eine gute Absage ist sachlich, respektvoll und rechtlich sauber – ohne Herabsetzung, ohne ungefragte Werbung und ohne ungeprüfte Empfehlungen.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-059",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M04-028",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Schreibe eine kurze, ehrliche Absage an Herrn Brenner (erfunden): Er möchte eine Agenturbetreuung für 500 € im Monat, die Agentur beginnt bei 2.500 € im Monat.",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Dankt oder würdigt das Gespräch",
+        "points": 1,
+        "anyOf": [
+          [
+            "danke",
+            "vielen dank",
+            "herzlichen dank"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Nennt den Grund konkret (Budget/Mindestvolumen)",
+        "points": 1,
+        "anyOf": [
+          [
+            "2.500",
+            "2500",
+            "budget",
+            "rahmen",
+            "mindest"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Formuliert die Konsequenz (kein Termin, der nichts ändert)",
+        "points": 1,
+        "anyOf": [
+          [
+            "termin",
+            "gespräch",
+            "nicht sinnvoll",
+            "nicht passt",
+            "passt aktuell nicht",
+            "lohnt"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Keine Herabsetzung, kein Druck, keine falsche Zusage",
+        "points": 1,
+        "forbidden": [
+          "zu klein",
+          "rabatt",
+          "sonderpreis",
+          "nur heute",
+          "finden bestimmt eine lösung"
+        ]
+      }
+    ],
+    "sampleAnswer": "Danke für Ihre Offenheit, Herr Brenner. Unsere Betreuung beginnt bei 2.500 € im Monat – das passt aktuell nicht zu Ihrem Rahmen, und ich möchte Ihnen keinen Termin anbieten, der daran nichts ändert. Wenn Sie möchten, schicke ich Ihnen gern unseren kostenlosen Leitfaden zu lokalem Marketing.",
+    "requiresManualReview": true,
+    "explanation": "Dank, konkreter Grund, Konsequenz und – wenn echt – ein Mehrwert. Die Rubrik prüft nur Muster; Ton und Ehrlichkeit bewertest du selbst.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M04-029",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Eine Setterin hat schon 30 Minuten mit einem Lead verbracht, der klar nicht ins ICP passt, und denkt: „Jetzt buche ich trotzdem, sonst war alles umsonst.“ Welcher Denkfehler wirkt hier?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sunk-Cost-Effekt: Bereits investierte Zeit soll sich „lohnen“, obwohl sie für die Entscheidung keine Rolle spielen sollte."
+      },
+      {
+        "id": "b",
+        "text": "Barnum-Effekt",
+        "misconception": "Der Barnum-Effekt betrifft allgemeine Beschreibungen, die auf jeden zu passen scheinen.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Verlustaversion des Kunden",
+        "misconception": "Hier geht es um die Entscheidung der Setterin, nicht des Kunden.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Kein Denkfehler – Zeitinvestition ist ein gutes Buchungskriterium",
+        "misconception": "Investierte Zeit ändert nichts an der Passung.",
+        "errorCategory": "qualifizierungsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Arkes & Blumer (1985): Menschen setzen Vorhaben fort, weil sie bereits investiert haben. Für die Qualifizierung zählt nur, ob Angebot und Kunde jetzt zusammenpassen.",
+    "sourceIds": [
+      "SRC-150"
+    ]
+  },
+  {
+    "id": "Q-M04-030",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Im Buying Center eines Maschinenbauers prüft die IT-Leitung, ob neue Software die Sicherheitsvorgaben erfüllt, entscheidet aber nicht über den Kauf. Welche Rolle hat sie nach Webster & Wind am ehesten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Beeinflusser (Influencer)"
+      },
+      {
+        "id": "b",
+        "text": "Entscheider (Decider)",
+        "misconception": "Die IT gibt nicht final frei, sie beeinflusst über Kriterien.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Nutzer (User)",
+        "misconception": "Nutzer arbeiten später mit der Lösung – hier prüft die IT nur Vorgaben.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Sie spielt für die Qualifizierung keine Rolle",
+        "misconception": "Gerade Beeinflusser setzen oft harte Kriterien.",
+        "errorCategory": "qualifizierungsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Beeinflusser prägen die Entscheidung über Kriterien und Bewertungen. Eine Person kann mehrere Rollen haben – im Gespräch fragst du nach dem Ablauf statt nach Titeln.",
+    "sourceIds": [
+      "SRC-133"
+    ]
+  },
+  {
+    "id": "Q-M04-031",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie gehst du vor?",
+    "situation": "Deine Gesprächspartnerin, eine Teamleiterin, will die neue Lösung unbedingt (möglicher Champion). Entscheiden wird der Werkleiter, die IT muss zustimmen. Du hast keinen Kontakt zu beiden.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Fragen, was Werkleiter und IT für eine Entscheidung wissen müssten, und mit ihr abstimmen, ob beide beim nächsten Gespräch dabei sein können",
+        "quality": "best",
+        "feedback": "Unterstützt den Champion und klärt den Entscheidungsweg."
+      },
+      {
+        "id": "b",
+        "text": "Den Werkleiter über LinkedIn direkt mit einem Angebot anschreiben",
+        "quality": "unacceptable",
+        "feedback": "Übergeht die Ansprechpartnerin; Werbenachricht ohne Einwilligung ist rechtlich problematisch.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Termin nur mit der Teamleiterin buchen und hoffen, dass sie intern überzeugt",
+        "quality": "poor",
+        "feedback": "Entscheider fehlt – der Termin endet wahrscheinlich ohne Ergebnis.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Ihr Informationsmaterial für das interne Gespräch anbieten und mit Erlaubnis später nachfragen",
+        "quality": "acceptable",
+        "feedback": "Respektvoll, aber passiver als nötig, wenn ein gemeinsamer Termin möglich wäre."
+      }
+    ],
+    "explanation": "Im B2B den Champion stärken, nicht übergehen: Entscheidungsweg erfragen und Beteiligte gemeinsam einbinden.",
+    "sourceIds": [
+      "SRC-133",
+      "SRC-132",
+      "SRC-027"
+    ]
+  },
+  {
+    "id": "Q-M04-032",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Simulierter CRM-Eintrag: Dokumentiere den Entscheidungsweg korrekt.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Mara Lindt (erfunden), Leiterin Personal, Logistikunternehmen mit 600 MA"
+      },
+      {
+        "label": "Gesprächsnotiz",
+        "value": "„Ich stelle das Thema zusammen, die Geschäftsführerin entscheidet und gibt das Budget frei. Der Betriebsrat muss beteiligt werden. Datenschutz prüft unser externer Datenschutzbeauftragter.“"
+      }
+    ],
+    "fields": [
+      {
+        "id": "eb",
+        "label": "Economic Buyer",
+        "options": [
+          "Mara Lindt",
+          "Geschäftsführerin",
+          "Betriebsrat",
+          "Nicht erfragt"
+        ],
+        "correct": "Geschäftsführerin"
+      },
+      {
+        "id": "role",
+        "label": "Rolle von Frau Lindt",
+        "options": [
+          "Entscheiderin",
+          "Vorbereiterin/Beeinflusserin",
+          "Gatekeeper ohne Einfluss",
+          "Nicht erfragt"
+        ],
+        "correct": "Vorbereiterin/Beeinflusserin"
+      },
+      {
+        "id": "criteria",
+        "label": "Bekannte Entscheidungskriterien",
+        "options": [
+          "Keine",
+          "Beteiligung Betriebsrat und Datenschutzprüfung",
+          "Preis unter 5.000 €",
+          "Nicht erfragt"
+        ],
+        "correct": "Beteiligung Betriebsrat und Datenschutzprüfung"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Dokumentiere nur, was gesagt wurde: Die Geschäftsführerin gibt frei (Economic Buyer), Frau Lindt bereitet vor, Betriebsrat und Datenschutz sind Teil des Prozesses. Ein Preislimit wurde nicht genannt.",
+    "sourceIds": [
+      "SRC-132",
+      "SRC-133"
+    ]
+  },
+  {
+    "id": "Q-M04-033",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Bei komplexen B2B-Käufen entscheidet in der Regel eine einzelne Person allein, deshalb reicht die Frage „Sind Sie der Entscheider?“.",
+    "correct": false,
+    "errorCategory": "qualifizierungsfehler",
+    "explanation": "Organisationale Käufe laufen über ein Buying Center mit mehreren Rollen; Gartner nennt für komplexe Lösungen typischerweise 6–10 Beteiligte. Frag nach dem Ablauf und den Beteiligten.",
+    "sourceIds": [
+      "SRC-133",
+      "SRC-134"
+    ]
+  },
+  {
+    "id": "Q-M04-034",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Zeitangaben von Interessenten sind Selbsteinschätzungen, die oft zu optimistisch ausfallen. Deshalb fragst du nach dem Grund hinter dem Zeitpunkt und dokumentierst die Angabe als Aussage des Kunden.",
+    "correct": true,
+    "errorCategory": "qualifizierungsfehler",
+    "explanation": "Menschen unterschätzen die Dauer eigener Vorhaben (Planungsfehlschluss). Ein Termin mit Anlass („weil …“) ist aussagekräftiger als ein bloßes Datum.",
+    "sourceIds": [
+      "SRC-149",
+      "SRC-148"
+    ]
+  },
+  {
+    "id": "Q-M04-035",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "gespraechsanalyse",
+    "simulatedData": true,
+    "prompt": "Analysiere den E-Mail-/Chatverlauf (Simulation, erfundene Personen und Firmen) und beantworte die drei Teilfragen.",
+    "material": {
+      "kind": "transcript",
+      "lines": [
+        {
+          "speaker": "kunde",
+          "text": "Guten Tag, ich habe Ihr Formular ausgefüllt. Wir suchen eine Lösung für unsere Schichtplanung – 240 Leute, drei Schichten."
+        },
+        {
+          "speaker": "setter",
+          "text": "Guten Tag Frau Wendler, danke für Ihre Anfrage! Was macht die Schichtplanung bei Ihnen gerade so aufwendig?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Alles läuft in Excel, und bei Ausfällen in der Nachtschicht telefonieren wir stundenlang herum."
+        },
+        {
+          "speaker": "setter",
+          "text": "Verstehe. Sie entscheiden so etwas dann ja sicher selbst, oder?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Na ja, ich bereite es vor. Unterschreiben muss der Werkleiter, und die IT schaut auch drauf."
+        },
+        {
+          "speaker": "setter",
+          "text": "Super, dann buche ich Ihnen gleich eine Demo für Donnerstag. Der Werkleiter kann ja später dazukommen."
+        }
+      ]
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Wie ist die Frage in Zeile 4 zu bewerten?",
+        "correct": "c",
+        "explanation": "Die Frage unterstellt Entscheidungsbefugnis. Besser: „Wie läuft so eine Entscheidung bei Ihnen ab – wer ist außer Ihnen beteiligt?“",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gut – sie spart Zeit, weil sie mit Ja oder Nein beantwortet werden kann.",
+            "misconception": "Effizienz für den Setter ersetzt keine ergiebige Frage.",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Unzulässig – nach Entscheidern darf man im B2B nicht fragen.",
+            "misconception": "Den Entscheidungsweg zu klären gehört zur Qualifizierung.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Schwach – sie ist suggestiv und unterstellt, dass die Kundin allein entscheidet."
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Was fehlt vor einem Terminvorschlag am deutlichsten?",
+        "correct": "a",
+        "explanation": "Die IT wurde als Beteiligte genannt, ihre Vorgaben (Entscheidungskriterien) sind aber unbekannt – hier verstecken sich oft harte Ausschlusskriterien. Auch Zeitrahmen und Budget sind offen.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Die Vorgaben der IT (Entscheidungskriterien) sowie Zeitrahmen und Budgetrahmen"
+          },
+          {
+            "id": "b",
+            "text": "Die private Handynummer des Werkleiters",
+            "misconception": "Private Kontaktdaten sind für die Qualifizierung nicht nötig (Datenminimierung).",
+            "errorCategory": "ethikfehler"
+          },
+          {
+            "id": "c",
+            "text": "Nichts – Bedarf und Firmengröße reichen für eine Demo",
+            "misconception": "Ohne Kriterien, Zeit und Entscheider droht ein ergebnisloser Termin.",
+            "errorCategory": "qualifizierungsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Wie ist Zeile 6 zu bewerten?",
+        "correct": "b",
+        "explanation": "Der Termin wird ohne Zustimmung der Kundin gesetzt, der Entscheider fehlt, und offene Kriterien werden übergangen.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gut – Tempo zeigt Engagement.",
+            "misconception": "Tempo ersetzt keine Zustimmung und keine Qualifizierung.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Fehler: Termin ohne Zustimmung, ohne Entscheider und ohne geklärte Kriterien."
+          },
+          {
+            "id": "c",
+            "text": "Unproblematisch, weil der Werkleiter später immer noch zustimmen kann.",
+            "misconception": "Ein späterer Einstieg des Entscheiders verschiebt das Problem nur.",
+            "errorCategory": "qualifizierungsfehler"
+          }
+        ]
+      }
+    ],
+    "explanation": "Eröffnung und Bedarfsfrage gelingen. Danach kippt das Gespräch: suggestive Entscheiderfrage, ungeklärte IT-Vorgaben, Zeitrahmen und Budget – und ein Termin ohne Zustimmung.",
+    "sourceIds": [
+      "SRC-133",
+      "SRC-132",
+      "SRC-151"
+    ],
+    "tags": [
+      "gespraechsanalyse"
+    ]
+  },
+  {
+    "id": "Q-M04-036",
+    "moduleId": "M04",
+    "objectiveId": "LO-M04-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "fallstudie",
+    "simulatedData": true,
+    "prompt": "Lies die Fallstudie (Simulation) und beantworte beide Teilfragen.",
+    "material": {
+      "kind": "text",
+      "body": "Ein Setter einer Performance-Marketing-Agentur (erfunden, Mindestbudget 3.000 € pro Monat) spricht per E-Mail mit der Gründerin eines Start-ups, die über das Kontaktformular angefragt hat. Bedarf: mehr qualifizierte Anfragen. Sie entscheidet allein. Ihr Budget: 800 € pro Monat für die nächsten sechs Monate. Der Setter hat bereits 25 Minuten investiert. Sein Teamleiter schreibt: „Buch sie trotzdem ein, der Berater findet schon was.“"
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Was ist der beste nächste Schritt?",
+        "correct": "b",
+        "explanation": "Das Mindestbudget ist eine klare Vorgabe; ein Termin würde absehbar am Preis scheitern. Ehrlich absagen, Grund nennen, Mehrwert anbieten.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Termin buchen – die investierten 25 Minuten sollen sich lohnen.",
+            "misconception": "Sunk-Cost-Effekt: frühere Mühe ist kein Buchungsgrund.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Ehrlich absagen: Dank, Grund (Betreuung ab 3.000 €/Monat), Konsequenz und – wenn vorhanden – ein echter Mehrwert."
+          },
+          {
+            "id": "c",
+            "text": "Ihr einen Rabatt auf 800 € in Aussicht stellen, damit sie den Termin annimmt.",
+            "misconception": "Preiszusagen liegen außerhalb der Setter-Rolle.",
+            "errorCategory": "rollenverwechslung"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Wie dokumentierst du den Fall im CRM?",
+        "correct": "a",
+        "explanation": "Status nach Vorgabe, Grund aus fester Liste, Kundenaussage im Wortlaut. Spätere E-Mails nur mit ausdrücklicher Einwilligung (UWG § 7).",
+        "options": [
+          {
+            "id": "a",
+            "text": "Status „Disqualifiziert“ (oder „Nurturing“ laut Vorgabe), Grund „Budget unter Mindestvolumen“, Kundenaussage und eine eventuelle Einwilligung zur späteren Kontaktaufnahme mit Datum."
+          },
+          {
+            "id": "b",
+            "text": "Status „SQL“, damit die Quote stimmt.",
+            "misconception": "Eine falsche Einordnung verfälscht Auswertungen und täuscht den Vertrieb.",
+            "errorCategory": "ethikfehler"
+          },
+          {
+            "id": "c",
+            "text": "Lead ohne Notiz löschen und in drei Monaten unaufgefordert ein Angebot mailen.",
+            "misconception": "Ohne Einwilligung ist Werbung per E-Mail unzulässig; Lernwissen geht verloren.",
+            "errorCategory": "rechtsfehler"
+          }
+        ]
+      }
+    ],
+    "explanation": "Auch unter Druck aus dem Team gilt: ehrlich disqualifizieren, sauber dokumentieren, keine Zusagen außerhalb der Rolle und keine Werbe-E-Mails ohne Einwilligung.",
+    "sourceIds": [
+      "SRC-150",
+      "SRC-019",
+      "SRC-059"
+    ],
+    "tags": [
+      "fallstudie",
+      "disqualifizierung"
+    ]
+  }
+]

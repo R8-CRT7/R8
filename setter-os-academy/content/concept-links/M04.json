@@ -1,0 +1,18 @@
+{
+  "C-ICP": [
+    "LO-M04-01",
+    "LO-M04-02"
+  ],
+  "C-FRAMEWORKS": [
+    "LO-M04-03",
+    "LO-M04-04",
+    "LO-M04-05",
+    "LO-M04-08"
+  ],
+  "C-SCORING": [
+    "LO-M04-06"
+  ],
+  "C-DISQUALI": [
+    "LO-M04-07"
+  ]
+}

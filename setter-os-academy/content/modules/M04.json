@@ -1,0 +1,908 @@
+{
+  "id": "M04",
+  "number": 4,
+  "title": "Lead Qualification",
+  "subtitle": "ICP, Persona, BANT, SPIN, MEDDICC, Scoring – und das ehrliche Nein.",
+  "status": "verfuegbar",
+  "prerequisites": [
+    "M01"
+  ],
+  "version": "1.0.0",
+  "passThreshold": 0.8,
+  "sourceIds": [
+    "SRC-005",
+    "SRC-013",
+    "SRC-019",
+    "SRC-025",
+    "SRC-027",
+    "SRC-047",
+    "SRC-050",
+    "SRC-058",
+    "SRC-059",
+    "SRC-131",
+    "SRC-132",
+    "SRC-133",
+    "SRC-134",
+    "SRC-135",
+    "SRC-136",
+    "SRC-137",
+    "SRC-138",
+    "SRC-139",
+    "SRC-140",
+    "SRC-141",
+    "SRC-142",
+    "SRC-143",
+    "SRC-144",
+    "SRC-145",
+    "SRC-146",
+    "SRC-147",
+    "SRC-148",
+    "SRC-149",
+    "SRC-150",
+    "SRC-151",
+    "SRC-152",
+    "SRC-153",
+    "SRC-154"
+  ],
+  "objectives": [
+    {
+      "id": "LO-M04-01",
+      "moduleId": "M04",
+      "text": "Lead-Typen (kalt, warm, heiß; Inbound, Outbound; MQL, SQL) unterscheiden und einem Lead den passenden Status zuordnen.",
+      "bloom": "verstehen"
+    },
+    {
+      "id": "LO-M04-02",
+      "moduleId": "M04",
+      "text": "Ideal Customer Profile und Buyer Persona unterscheiden und die Passung eines Leads damit prüfen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M04-03",
+      "moduleId": "M04",
+      "text": "Bedarf, Budget, Entscheidungsbefugnis, Zeitrahmen und Kaufbereitschaft respektvoll erfragen und ehrlich einschätzen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M04-04",
+      "moduleId": "M04",
+      "text": "BANT, SPIN und MEDDICC nach Herkunft, Einsatzbereich und Evidenzlage einordnen.",
+      "bloom": "bewerten"
+    },
+    {
+      "id": "LO-M04-05",
+      "moduleId": "M04",
+      "text": "SPIN-Fragen formulieren und ihre Grenzen im Erstkontakt beachten.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M04-06",
+      "moduleId": "M04",
+      "text": "Die Übergabe von MQL zu SQL nachvollziehen, ein einfaches Lead Scoring berechnen und kritisch prüfen.",
+      "bloom": "analysieren"
+    },
+    {
+      "id": "LO-M04-07",
+      "moduleId": "M04",
+      "text": "Leads ehrlich und respektvoll disqualifizieren und das Ergebnis korrekt dokumentieren.",
+      "bloom": "bewerten"
+    },
+    {
+      "id": "LO-M04-08",
+      "moduleId": "M04",
+      "text": "B2B-Entscheidungsprozesse mit Buying Center und MEDDICC analysieren.",
+      "bloom": "analysieren"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M04-L01",
+      "moduleId": "M04",
+      "title": "Lead-Typen: Wer meldet sich – und wie warm ist der Kontakt?",
+      "minutes": 9,
+      "objectiveIds": [
+        "LO-M04-01"
+      ],
+      "sourceIds": [
+        "SRC-153",
+        "SRC-140",
+        "SRC-005",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "In Modul 1 hast du gelernt, was ein Lead ist und welche Status ein Lead im CRM haben kann. Jetzt gehen wir einen Schritt weiter: Nicht jeder Lead ist gleich. Ein Mensch, der ausdrücklich einen Rückruf anfordert, steht an einer ganz anderen Stelle als jemand, der vor drei Monaten einen Ratgeber heruntergeladen hat. In dieser Lektion lernst du, Leads nach Herkunft, Temperatur und Qualifizierungsstufe zu unterscheiden – und warum genau diese Unterscheidung über deinen ersten Satz entscheidet."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 4.1",
+          "title": "Nicht jeder Kontakt ist ein Kaufinteresse",
+          "paragraphs": [
+            "Das Wort „Lead“ wird im Vertrieb erstaunlich unscharf benutzt. Mal ist damit jede Adresse in einer Liste gemeint, mal nur ein Kontakt, der bereits einen Beratungstermin möchte. Für deine Arbeit als Setter ist diese Unschärfe gefährlich: Wer einen neugierigen Leser wie einen Kaufentschlossenen behandelt, wirkt aufdringlich. Wer einen Kaufentschlossenen wie einen neugierigen Leser behandelt, lässt ihn warten – und verliert ihn womöglich an einen schnelleren Anbieter. Deshalb ordnest du jeden Lead zuerst nach drei Fragen ein: Woher kommt er? Wie warm ist er? Und wie weit ist er qualifiziert?",
+            "Die Herkunft kennst du aus Modul 1: Inbound-Leads haben sich selbst gemeldet, zum Beispiel über ein Formular, eine Anfrage im Chat oder eine Antwort auf einen Beitrag. Outbound-Leads werden aktiv vom Unternehmen angesprochen. Für Inbound gilt: Der Kunde hat einen Anlass, und dein Job ist es, diesen Anlass zu verstehen. Für Outbound gilt: Du musst erst prüfen, ob die Ansprache rechtlich überhaupt zulässig ist (UWG § 7) und ob es einen nachvollziehbaren Grund gibt, warum gerade diese Person von deinem Angebot profitieren könnte.",
+            "Die Temperatur beschreibt, wie nah ein Kontakt an einer Entscheidung ist. Ein kalter Lead hat noch keinen Bezug zu euch – etwa ein Unternehmen aus einer Recherche. Ein warmer Lead hat Interesse gezeigt, zum Beispiel durch einen Download, einen Newsletter oder einen Webinar-Besuch, aber noch keinen Gesprächswunsch. Ein heißer Lead hat ausdrücklich um Kontakt, ein Angebot oder einen Termin gebeten. In vielen Teams heißt diese Gruppe auch „Hand-Raiser“: Menschen, die selbst die Hand heben. Die Temperatur ist eine Momentaufnahme, kein Etikett für immer.",
+            "Die dritte Frage betrifft die Qualifizierungsstufe. Viele Unternehmen unterscheiden Marketing Qualified Leads (MQL) und Sales Qualified Leads (SQL). Ein MQL ist ein Kontakt, den das Marketing nach eigenen Regeln – Zielgruppe, Verhalten, Punktwert – als reif für den Vertrieb einstuft. Ein SQL ist ein Kontakt, den der Vertrieb nach einem Gespräch selbst als echte Verkaufschance bestätigt hat. Genau zwischen diesen beiden Stufen arbeitest du als Setter: Du machst aus einer Vermutung des Marketings eine geprüfte Aussage. Die genauen Definitionen unterscheiden sich von Firma zu Firma und von CRM zu CRM – frag deinen Auftraggeber immer, wie er sie verwendet.",
+            "Warum ist diese Übergabe so wichtig? Weil Marketing und Vertrieb in vielen Unternehmen unterschiedliche Vorstellungen davon haben, was ein „guter Lead“ ist. Das Marketing wird oft an der Menge gemessen, der Vertrieb an Abschlüssen. Kotler, Rackham und Krishnaswamy beschrieben diese Spannung schon 2006 und empfahlen unter anderem gemeinsame, klar definierte Begriffe. Für dich heißt das praktisch: Je sauberer du dokumentierst, warum ein Lead qualifiziert ist oder nicht, desto weniger Streit gibt es später – und desto mehr Vertrauen hat der Berater in deine Termine."
+          ],
+          "sourceIds": [
+            "SRC-153",
+            "SRC-140",
+            "SRC-019",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die Drei-Fragen-Einordnung",
+          "category": "prozess",
+          "what": "Jeden neuen Lead vor dem ersten Kontakt nach Herkunft, Temperatur und Stufe einordnen.",
+          "how": [
+            "Herkunft prüfen: Inbound oder Outbound? Bei Outbound: Ist der Kontakt rechtlich zulässig?",
+            "Temperatur einschätzen: kalt (kein Bezug), warm (Interesse gezeigt), heiß (ausdrücklicher Kontaktwunsch).",
+            "Stufe ablesen: Ist der Lead als MQL markiert? Ist er schon im Gespräch bestätigt (SQL)?",
+            "Ersten Satz danach ausrichten: Anlass aufgreifen (heiß), Interesse aufgreifen und Erlaubnis holen (warm), Bezug und Grund erklären (kalt, nur wenn zulässig)."
+          ],
+          "why": "Wer die Ausgangslage kennt, trifft den richtigen Ton und das richtige Tempo. Ein heißer Lead will schnelle Hilfe, ein warmer Lead will erst einmal verstehen, ob sich ein Gespräch lohnt.",
+          "evidence": "Praxisheuristik (Expertenmeinung). Die Bedeutung schneller Reaktion auf Anfragen stützt sich auf korrelative Daten (Oldroyd et al. 2011, US-Daten); die Begriffe MQL/SQL sind Herstellerdefinitionen (z. B. HubSpot) und nicht normiert.",
+          "example": "Lead A hat gestern das Formular „Rückruf gewünscht“ ausgefüllt → heiß, Inbound: „Guten Tag Herr Kaya, Sie hatten gestern um Rückruf gebeten – worum geht es Ihnen vor allem?“ Lead B hat vor acht Wochen ein E-Book geladen → warm: erst Interesse aufgreifen und fragen, ob ein Austausch überhaupt gewünscht ist.",
+          "boundary": "Die Temperatur ist eine Einschätzung, keine Wahrheit über einen Menschen. Ein „heißer“ Lead darf trotzdem Nein sagen, und ein „kalter“ Kontakt wird nicht dadurch zulässig, dass er gut ins Raster passt.",
+          "sourceIds": [
+            "SRC-153",
+            "SRC-005",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Drei Leads, drei Eröffnungen",
+          "body": "Heiß (Demo-Anfrage über die Website): „Guten Tag Frau Roth, danke für Ihre Demo-Anfrage. Damit die Vorführung zu Ihnen passt: Welches Problem soll die Software vor allem lösen?“\n\nWarm (Webinar-Teilnahme, kein Gesprächswunsch, E-Mail-Einwilligung liegt vor): „Hallo Herr Lenz, danke, dass Sie beim Webinar zur Schichtplanung dabei waren. Ist das Thema bei Ihnen gerade aktuell oder eher etwas für später?“\n\nKalt (Firma aus einer Recherche, keine Einwilligung): Keine Werbe-E-Mail. Im B2B ist ein Anruf höchstens bei mutmaßlicher Einwilligung denkbar – das prüft der Auftraggeber vorher, nicht du spontan."
+        },
+        {
+          "kind": "myth",
+          "claim": "„Ein MQL ist ein qualifizierter Lead – der Setter muss nur noch den Termin eintragen.“",
+          "reality": "Ein MQL ist eine Vermutung des Marketings auf Basis von Regeln und Verhalten, zum Beispiel Downloads oder Seitenbesuche. Ob ein konkreter Bedarf, ein Zeitrahmen und ein Entscheider existieren, weiß zu diesem Zeitpunkt niemand. Erst das Gespräch macht aus einem MQL einen SQL – oder eben nicht. Sabnis und Kollegen zeigten in einer Studie, dass Vertriebler Marketing-Leads eher verfolgen, wenn diese gut vorqualifiziert sind. Genau das ist dein Beitrag.",
+          "sourceIds": [
+            "SRC-153",
+            "SRC-141"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-001"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-003"
+        }
+      ],
+      "summary": [
+        "Jeden Lead nach Herkunft, Temperatur und Qualifizierungsstufe einordnen.",
+        "Kalt, warm und heiß sind Momentaufnahmen, keine Etiketten.",
+        "MQL = Einschätzung des Marketings, SQL = vom Vertrieb im Gespräch bestätigt.",
+        "Definitionen unterscheiden sich je Firma – beim Auftraggeber nachfragen.",
+        "Outbound nur, wenn die Ansprache rechtlich zulässig ist."
+      ]
+    },
+    {
+      "id": "M04-L02",
+      "moduleId": "M04",
+      "title": "Ideal Customer Profile und Buyer Persona",
+      "minutes": 8,
+      "objectiveIds": [
+        "LO-M04-02"
+      ],
+      "sourceIds": [
+        "SRC-152",
+        "SRC-136",
+        "SRC-137",
+        "SRC-138",
+        "SRC-139"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Bevor du einen einzelnen Menschen qualifizierst, musst du wissen, wen dein Auftraggeber überhaupt sucht. Dafür gibt es zwei Werkzeuge, die oft verwechselt werden: das Ideal Customer Profile (ICP) beschreibt die passende Organisation, die Buyer Persona beschreibt die Person, mit der du sprichst. In dieser Lektion lernst du beide kennen – und wo ihre Grenzen liegen."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 4.2",
+          "title": "Wer passt zu uns – und mit wem spreche ich?",
+          "paragraphs": [
+            "Das Ideal Customer Profile beantwortet die Frage: Welche Kunden profitieren am meisten von unserem Angebot, und mit welchen arbeiten wir am erfolgreichsten? Im B2B besteht ein ICP meist aus wenigen, überprüfbaren Merkmalen einer Organisation: Branche, Größe (Mitarbeitende oder Umsatz), Region, technische Voraussetzungen, typische Ausgangslage. Im B2C übernimmt dieselbe Rolle oft ein Satz von Passungskriterien, etwa „Eigentümer eines Einfamilienhauses mit Gasheizung“. Ross und Tyler beschreiben in ihrem Praxisbuch, wie wichtig ein klares ICP ist, damit sich Vertriebsteams auf die Kontakte konzentrieren, die wirklich passen.",
+            "Ein gutes ICP ist erstaunlich nüchtern. „Mittelständische Unternehmen mit Wachstumsambitionen“ ist kein ICP, weil fast jede Firma sich so beschreiben würde. „Produktionsbetriebe mit 100 bis 1.000 Mitarbeitenden im Mehrschichtbetrieb, die ihre Schichtplanung noch manuell erstellen“ ist eines: Du kannst jedes Merkmal mit einer einfachen Frage prüfen. Genau darin liegt sein Nutzen für dich. Das ICP entspricht dem „P“ aus deinem B-P-Z-E-Schema aus Modul 1: Passung. Wenn die Passung fehlt, helfen auch der größte Bedarf und die schönste Begeisterung nichts.",
+            "Die Buyer Persona beschreibt dagegen einen typischen Menschen innerhalb dieser Organisationen: seine Aufgaben, seine Ziele, seine Sorgen, seine Kriterien bei der Auswahl und die Wege, auf denen er sich informiert. Die Persona-Methode stammt ursprünglich aus dem Software-Design; Alan Cooper machte sie Ende der 1990er-Jahre bekannt. Im Marketing hat Adele Revella sie weiterentwickelt und betont, dass gute Personas auf echten Interviews mit Käufern beruhen – nicht auf Vermutungen im Besprechungsraum. Sie fragt zum Beispiel: Was löst den Kauf aus? Woran messen Käufer Erfolg? Was hält sie zurück? Nach welchen Kriterien vergleichen sie?",
+            "Personas haben aber deutliche Grenzen, und die solltest du kennen. Chapman und Milham kritisierten schon 2006, dass sich kaum überprüfen lässt, wie viele echte Menschen eine Persona eigentlich repräsentiert – eine erfundene Figur kann weder bestätigt noch widerlegt werden. Neuere Ansätze versuchen deshalb, Personas aus Daten abzuleiten; ein Literaturüberblick von Salminen und Kollegen zeigt, dass dieses Feld noch jung ist. Für dich folgt daraus eine einfache Regel: Die Persona ist eine Hypothese, mit der du dich vorbereitest. Der Mensch im Chat ist die Realität, auf die du reagierst.",
+            "Wie nutzt du beides im Alltag? Das ICP prüfst du – oft schon vor dem Gespräch anhand der Formulardaten, sonst mit ein, zwei Fragen. Die Persona hilft dir, gute Fragen vorzubereiten und Fachbegriffe richtig einzuordnen: Eine Produktionsleiterin interessiert sich für Ausfälle und Planbarkeit, ein Geschäftsführer eher für Kosten und Risiko. Aber du unterstellst niemandem etwas, nur weil er in eine Persona fällt. Wenn die echte Person anders tickt als die Persona, gewinnt immer die echte Person."
+          ],
+          "sourceIds": [
+            "SRC-152",
+            "SRC-136",
+            "SRC-137",
+            "SRC-138",
+            "SRC-139"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Der ICP-Check in drei Fragen",
+          "category": "prozess",
+          "what": "Die Passung einer Organisation mit wenigen, prüfbaren Kriterien klären – ohne Verhör.",
+          "how": [
+            "Vor dem Gespräch: Welche ICP-Merkmale sind schon aus Formular oder CRM bekannt? Diese nicht noch einmal abfragen.",
+            "Fehlende Merkmale mit Begründung erfragen: „Damit ich einschätzen kann, ob wir überhaupt passen …“",
+            "Höchstens ein Merkmal pro Nachricht erfragen und die Antwort kurz bestätigen.",
+            "Bei einem harten Ausschlusskriterium (z. B. Mieter statt Eigentümer, Firmengröße weit außerhalb) früh und ehrlich benennen."
+          ],
+          "why": "Ein ICP schützt beide Seiten vor Terminen, die nicht passen können. Eine kurze Begründung macht aus der Abfrage einen nachvollziehbaren Schritt.",
+          "evidence": "Praxisheuristik (Expertenmeinung; vgl. Ross & Tyler 2011). Dass Begründungen die Zustimmung zu kleinen Bitten erhöhen können, zeigt die Kopierer-Studie (Langer et al. 1978) – der Effekt ist in strengen Studien kleiner als oft behauptet.",
+          "example": "„Damit ich einschätzen kann, ob unsere Lösung zu Ihrem Betrieb passt: Wie viele Mitarbeitende planen Sie ungefähr, und in wie vielen Schichten?“ – „Rund 240, drei Schichten.“ – „Danke, das liegt genau in dem Bereich, für den unsere Software gebaut ist.“",
+          "boundary": "Nur fragen, was für die Passung wirklich nötig ist (Datenminimierung, DSGVO Art. 5). Keine Fragen nach persönlichen Merkmalen wie Alter, Herkunft oder Gesundheit.",
+          "sourceIds": [
+            "SRC-152",
+            "SRC-058",
+            "SRC-025"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "ICP und Persona nebeneinander",
+          "body": "ICP (Organisation): Produktionsbetrieb, 100–1.000 Mitarbeitende, Mehrschichtbetrieb, Schichtplanung bisher in Tabellen, bereit für Cloud-Software.\n\nPersona (Mensch, Hypothese aus Kundeninterviews): „Planerin Petra“, Teamleiterin Produktion. Auslöser: wiederholte Lücken in der Nachtschicht. Erfolg: Plan steht freitags, weniger Überstunden. Barriere: Angst vor Einführungsaufwand neben dem Tagesgeschäft. Kriterien: einfache Bedienung, Zustimmung von IT und Betriebsrat. Entscheidung: liegt meist beim Werkleiter.\n\nIm Gespräch prüfst du das ICP. Die Persona hilft dir nur, gute Fragen vorzubereiten."
+        },
+        {
+          "kind": "myth",
+          "claim": "„Eine gute Buyer Persona sagt dir genau, wie dein Gegenüber denkt.“",
+          "reality": "Eine Persona ist eine verdichtete Annahme über eine Gruppe – im besten Fall gestützt auf Interviews oder Daten, im schlechtesten Fall erfunden. Sie lässt sich kaum überprüfen und beschreibt nie einen einzelnen Menschen vollständig. Nutze sie zur Vorbereitung, nicht als Drehbuch.",
+          "sourceIds": [
+            "SRC-138",
+            "SRC-139",
+            "SRC-136"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-004"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-005"
+        }
+      ],
+      "summary": [
+        "ICP = passende Organisation; Persona = typischer Mensch darin.",
+        "Ein gutes ICP besteht aus wenigen, prüfbaren Merkmalen.",
+        "Das ICP entspricht dem „P“ (Passung) aus B-P-Z-E.",
+        "Personas sind Hypothesen – die echte Person geht immer vor.",
+        "Nur nach Merkmalen fragen, die für die Passung nötig sind."
+      ]
+    },
+    {
+      "id": "M04-L03",
+      "moduleId": "M04",
+      "title": "Bedarfsermittlung: vom Anlass zum eigentlichen Problem",
+      "minutes": 10,
+      "objectiveIds": [
+        "LO-M04-03"
+      ],
+      "sourceIds": [
+        "SRC-013",
+        "SRC-136",
+        "SRC-151",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Der Bedarf ist das „B“ in B-P-Z-E und das Fundament jeder Qualifizierung. Ohne echten Bedarf ist jeder Termin eine Produktvorführung für jemanden, der nichts braucht. In dieser Lektion lernst du, den Weg vom ersten Anlass über das eigentliche Problem bis zur Auswirkung behutsam nachzuzeichnen – und warum du dabei deinen eigenen Erwartungen misstrauen solltest."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 4.3",
+          "title": "Der Anlass ist selten das Problem",
+          "paragraphs": [
+            "Wenn sich jemand meldet, nennt er fast immer einen Anlass: „Ich interessiere mich für Ihre Software“, „Wir überlegen, eine Wärmepumpe einzubauen“, „Könnt ihr uns helfen?“. Der Anlass ist der Türöffner, aber noch nicht der Bedarf. Der Bedarf liegt eine Ebene tiefer: Welches Problem soll gelöst oder welches Ziel erreicht werden? Und noch eine Ebene tiefer liegt die Auswirkung: Was kostet das Problem heute – an Zeit, Geld, Nerven oder Risiko? Erst wenn du diese drei Ebenen kennst, kannst du ehrlich sagen, ob ein Gespräch mit dem Berater sinnvoll ist.",
+            "Eine einfache Reihenfolge hilft dir, nicht zu springen: Anlass, Situation, Problem, Auswirkung, gewünschtes Ergebnis. Zum Anlass fragst du: „Was hat Sie dazu gebracht, sich gerade jetzt zu melden?“ Zur Situation: „Wie lösen Sie das heute?“ Zum Problem: „Was funktioniert daran nicht gut?“ Zur Auswirkung: „Was bedeutet das konkret für Sie oder Ihr Team?“ Und zum Ergebnis: „Woran würden Sie merken, dass es besser geworden ist?“ Das ist kein Fragebogen, sondern ein roter Faden. Oft beantwortet der Kunde zwei Ebenen in einer Nachricht, dann überspringst du die nächste Frage.",
+            "Du erkennst darin die Logik von SPIN aus Modul 2 wieder: Situationsfragen, Problemfragen, Implikationsfragen, Nutzenfragen. Rackham beobachtete, dass erfolgreiche Verkäufer in größeren Verkäufen weniger Situationsfragen und mehr Problem- und Implikationsfragen stellten. Für dich als Setter ist eine Einschränkung wichtig: Du ermittelst den Bedarf so weit, dass klar ist, ob ein Gespräch lohnt. Die tiefe Analyse und das Bewerten von Lösungen gehören zum Berater. Wer im Erstkontakt jede Auswirkung dramatisiert, erzeugt Druck statt Klarheit.",
+            "Eine unterschätzte Gefahr bei der Bedarfsermittlung bist du selbst. Wer einen Termin buchen möchte, hört gern das, was zur Buchung passt. Die Psychologie nennt das Bestätigungsfehler: Wir suchen und deuten Informationen bevorzugt so, dass sie unsere Erwartung bestätigen. Im Gespräch zeigt sich das in Suggestivfragen („Das kostet Sie doch sicher viel Zeit, oder?“) und in Zusammenfassungen, die mehr enthalten, als der Kunde gesagt hat. Das Gegenmittel ist schlicht: offen fragen, wörtlich notieren, Zusammenfassungen als Frage formulieren und Widerspruch ausdrücklich erlauben.",
+            "Woran erkennst du, dass ein Bedarf ausreichend geklärt ist? Du kannst ihn in einem Satz mit den Worten des Kunden aufschreiben, er enthält ein konkretes Problem, und du weißt, was das Problem für den Kunden bedeutet. Zum Beispiel: „Schichtplanung für drei Schichten läuft in Excel, kostet die Teamleiterin rund sechs Stunden pro Woche, kurzfristige Ausfälle in der Nachtschicht sind kaum abzudecken.“ Ein Satz wie „Interessiert sich für Software“ ist dagegen kein Bedarf, sondern nur der Anlass – und reicht für keinen Termin."
+          ],
+          "sourceIds": [
+            "SRC-013",
+            "SRC-151",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Vom Anlass zum Bedarf in fünf Nachrichten (B2B-Chat, erfunden)",
+          "steps": [
+            "Anlass – Setter: „Danke für Ihre Anfrage, Frau Wendler! Was hat Sie dazu gebracht, sich gerade jetzt mit Schichtplanung zu beschäftigen?“ Kundin: „Unser Planer geht nächstes Jahr in Rente, und nur er versteht die Excel-Datei.“",
+            "Situation – Setter: „Verstehe. Wie läuft die Planung heute ab?“ Kundin: „Drei Schichten, rund 240 Leute, alles in einer großen Tabelle.“",
+            "Problem – Setter: „Was funktioniert daran am wenigsten gut?“ Kundin: „Kurzfristige Ausfälle. Wenn nachts jemand krank wird, telefonieren wir herum.“",
+            "Auswirkung – Setter: „Was bedeutet das für Sie und das Team?“ Kundin: „Ich verbringe locker sechs Stunden pro Woche damit, und es gibt oft Überstunden.“",
+            "Zusammenfassung als Frage – Setter: „Habe ich richtig verstanden: Die Planung hängt an einer Person, Ausfälle kosten viel Zeit, und es soll eine Lösung her, bevor der Kollege in Rente geht?“ Kundin: „Genau.“ → Bedarf ist geklärt, in ihren Worten dokumentierbar."
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Bedarf in einem Satz",
+          "category": "schreiben",
+          "what": "Den Bedarf nach dem Gespräch in einem Satz mit den Worten des Kunden festhalten: Situation – Problem – Auswirkung.",
+          "how": [
+            "Situation notieren (wie wird es heute gemacht?).",
+            "Problem in den Worten des Kunden notieren, nicht in deinen.",
+            "Auswirkung ergänzen, wenn der Kunde sie genannt hat (Zeit, Geld, Risiko).",
+            "Prüfen: Steht etwas im Satz, das der Kunde nicht gesagt hat? Dann streichen."
+          ],
+          "why": "Ein präziser Bedarfssatz zeigt dir, ob genug geklärt ist, und gibt dem Berater einen klaren Startpunkt.",
+          "evidence": "Praxisheuristik (Expertenmeinung). Das Risiko, Aussagen im Sinne eigener Erwartungen zu deuten, ist als Bestätigungsfehler gut belegt (Nickerson 1998).",
+          "example": "Schwach: „Kunde hat großes Interesse an unserer Lösung.“ Stark: „Planung für 3 Schichten in Excel; Ausfälle nachts kaum abzudecken; laut Kundin ca. 6 Std./Woche Aufwand.“",
+          "boundary": "Keine Zahlen oder Probleme ergänzen, die der Kunde nicht genannt hat – auch nicht, wenn sie „wahrscheinlich“ stimmen.",
+          "sourceIds": [
+            "SRC-151",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-007"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-035"
+        }
+      ],
+      "summary": [
+        "Anlass, Problem und Auswirkung sind drei verschiedene Ebenen.",
+        "Roter Faden: Anlass – Situation – Problem – Auswirkung – Ergebnis.",
+        "Tiefe Analyse und Lösungsbewertung gehören zum Berater.",
+        "Bestätigungsfehler: offen fragen, wörtlich notieren, Widerspruch erlauben.",
+        "Bedarf ist geklärt, wenn er sich in einem Satz in Kundenworten aufschreiben lässt."
+      ]
+    },
+    {
+      "id": "M04-L04",
+      "moduleId": "M04",
+      "title": "Budget, Entscheidung, Zeitrahmen und Kaufbereitschaft",
+      "minutes": 13,
+      "objectiveIds": [
+        "LO-M04-03"
+      ],
+      "sourceIds": [
+        "SRC-047",
+        "SRC-147",
+        "SRC-148",
+        "SRC-149",
+        "SRC-133",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Neben dem Bedarf und der Passung gibt es drei weitere Fragen, an denen viele Termine scheitern: Ist ein finanzieller Rahmen da? Wer entscheidet? Und wann soll etwas passieren? Dazu kommt die schwierigste Einschätzung von allen: Wie bereit ist der Mensch wirklich, etwas zu verändern? In dieser Lektion lernst du, diese Punkte respektvoll zu erfragen und Antworten realistisch zu lesen."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 4.4",
+          "title": "Geld, Macht, Zeit – und was Absichten wirklich verraten",
+          "paragraphs": [
+            "Budget ist für viele Einsteiger die unangenehmste Frage. Dabei ist sie im B2B völlig normal, wenn du sie richtig stellst: offen, begründet und als Rahmen statt als Zahl. „Damit ich einschätzen kann, ob wir überhaupt in Frage kommen: Gibt es schon eine Budgetvorstellung oder einen Planungsrahmen?“ ist respektvoll. „Wie viel wollen Sie ausgeben?“ klingt nach Feilschen. Wichtig sind zwei Unterscheidungen: Ein Budget kann vorhanden, geplant oder noch gar nicht besprochen sein. Und ein fehlendes Budget ist nicht automatisch ein Ausschluss – manchmal ist es genau die Aufgabe des Beratungsgesprächs, einen Rahmen zu entwickeln. Wie dein Auftraggeber damit umgeht, klärst du vor Projektbeginn, wie in Modul 1 besprochen.",
+            "Entscheidungsbefugnis ist das „E“ aus B-P-Z-E. Im B2C entscheidet oft ein Paar oder eine Familie gemeinsam. Im B2B ist es fast nie eine Person allein: Webster und Wind beschrieben schon 1972 das „Buying Center“, in dem Nutzer, Beeinflusser, Einkäufer, Entscheider und Gatekeeper zusammenwirken. Deine Frage sollte deshalb nie unterstellen, dass dein Gegenüber allein entscheidet – oder dass es nichts zu sagen hat. „Wie läuft so eine Entscheidung bei Ihnen typischerweise ab, und wer ist außer Ihnen beteiligt?“ funktioniert in beiden Fällen und liefert gleich den Entscheidungsprozess mit.",
+            "Der Zeitrahmen ist das „Z“. Hier lohnt sich eine Nachfrage nach dem Grund hinter dem Datum. „Bis April“ ist eine Absicht; „bis April, weil dann unser Planer in Rente geht“ ist ein Anlass mit Gewicht. Menschen unterschätzen außerdem regelmäßig, wie lange eigene Vorhaben dauern – die Forschung nennt das Planungsfehlschluss. Das heißt nicht, dass du Kunden misstrauen sollst. Es heißt, dass du Zeitangaben als Selbsteinschätzung dokumentierst („laut Kundin: Start bis April geplant“) und nicht als Zusage.",
+            "Am schwierigsten ist die Kaufbereitschaft. Sie ist kein eigener Buchstabe in B-P-Z-E, sondern ergibt sich aus dem Zusammenspiel: Gibt es einen konkreten Anlass, ein spürbares Problem, einen Zeitpunkt mit Grund und eingebundene Entscheider? Begeisterung allein sagt wenig. Studien zeigen, dass geäußerte Absichten das spätere Verhalten nur teilweise vorhersagen: In einer großen Übersicht von Sheeran erklärten Absichten im Mittel rund ein Viertel der Unterschiede im späteren Verhalten, und auch Kaufabsichten sagen tatsächliche Käufe nur unvollkommen voraus. Diese Befunde stammen überwiegend aus Konsum- und Gesundheitsverhalten – die Übertragung auf den Vertrieb ist eine Analogie, aber eine plausible.",
+            "Was folgt daraus für deine Arbeit? Erstens: Frage nach Fakten, die Bereitschaft zeigen, statt nach Bekenntnissen. „Wie sicher sind Sie, dass Sie kaufen?“ ist weniger aussagekräftig als „Was müsste passieren, damit das Projekt startet?“. Zweitens: Dokumentiere getrennt, was der Kunde gesagt hat und was du daraus schließt. Drittens: Ein Lead mit hohem Bedarf, aber ohne Zeitrahmen und ohne Entscheider ist kein schlechter Lead – er ist ein Nurturing-Lead. Ehrliche Einordnung ist mehr wert als ein voller Kalender."
+          ],
+          "sourceIds": [
+            "SRC-133",
+            "SRC-149",
+            "SRC-148",
+            "SRC-147",
+            "SRC-047",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Budget als Rahmen erfragen",
+          "category": "gespraech",
+          "what": "Den finanziellen Rahmen offen, begründet und ohne Feilschen klären.",
+          "how": [
+            "Vorher klären: Darf ich nach Budget fragen, und gibt es ein Mindestvolumen des Auftraggebers?",
+            "Mit Begründung fragen: „Damit ich einschätzen kann, ob wir in Frage kommen …“",
+            "Nach Rahmen oder Planungsstand fragen, nicht nach einer exakten Zahl.",
+            "Antwort neutral bestätigen und den Status notieren: vorhanden, geplant oder offen."
+          ],
+          "why": "Ein früh geklärter Rahmen verhindert Termine, die am Preis scheitern müssen, und zeigt Respekt vor der Zeit des Kunden.",
+          "evidence": "Praxisheuristik aus BANT (Expertenmeinung, nicht empirisch validiert). Begründete Bitten werden eher beantwortet (Langer et al. 1978; Effekt klein).",
+          "example": "„Damit ich einschätzen kann, ob wir für Sie in Frage kommen: Gibt es für das Projekt schon einen Planungsrahmen?“ – „Für nächstes Jahr sind etwa 10.000 bis 15.000 Euro angedacht, aber noch nicht freigegeben.“ → Notiz: „Budget geplant (10–15 Tsd. €/Jahr), nicht freigegeben.“",
+          "boundary": "Keine Preiszusagen, Rabatte oder Finanzierungsversprechen – das ist Sache des Beraters. Im B2C keine Fragen nach Einkommen oder Vermögen.",
+          "sourceIds": [
+            "SRC-047",
+            "SRC-058",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die Entscheiderfrage ohne Unterstellung",
+          "category": "gespraech",
+          "what": "Den Entscheidungsweg erfragen, ohne dem Gegenüber Macht zu- oder abzusprechen.",
+          "how": [
+            "Nach dem Ablauf fragen, nicht nach dem Rang: „Wie läuft so eine Entscheidung bei Ihnen ab?“",
+            "Nach weiteren Beteiligten fragen: „Wer ist außer Ihnen noch beteiligt?“",
+            "Nachfragen, wer am Ende zustimmt – und ob diese Person beim Termin dabei sein kann.",
+            "Rolle des Gegenübers würdigen: „Dann sind Sie diejenige, die den Bedarf am besten kennt.“"
+          ],
+          "why": "Wer nach dem Prozess fragt, erfährt mehr als mit „Sind Sie der Entscheider?“ – und beschämt niemanden.",
+          "evidence": "Konzeptionell gestützt durch das Buying-Center-Modell (Webster & Wind 1972). Die Formulierung selbst ist Praxiswissen.",
+          "example": "„Wie läuft so eine Entscheidung bei Ihnen typischerweise ab – wer ist außer Ihnen beteiligt?“ – „Ich bereite vor, unser Werkleiter entscheidet, und die IT muss zustimmen.“",
+          "boundary": "Nicht versuchen, das Gegenüber zu übergehen, etwa indem du den Chef ungefragt direkt anschreibst. Das ist respektlos und ohne Einwilligung meist auch unzulässige Werbung.",
+          "sourceIds": [
+            "SRC-133",
+            "SRC-019",
+            "SRC-027"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Wer sagt, dass er dieses Quartal kaufen will, kauft dieses Quartal.“",
+          "reality": "Absichtsangaben sind ehrlich gemeint, sagen aber das tatsächliche Verhalten nur teilweise voraus (Intention-Behavior-Gap), und Zeitpläne für eigene Vorhaben sind oft zu optimistisch (Planungsfehlschluss). Frag deshalb nach dem Grund hinter dem Termin und dokumentiere ihn als Selbsteinschätzung.",
+          "sourceIds": [
+            "SRC-148",
+            "SRC-147",
+            "SRC-149"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Die begeisterte Assistenz",
+          "situation": "Herr Okafor, Assistent der Geschäftsführung einer Spedition mit 80 Mitarbeitenden, schreibt über das Kontaktformular: „Wir brauchen das unbedingt, bitte schnell einen Termin!“ Auf Nachfrage erfährst du: Die Geschäftsführerin hat ihn gebeten, „sich mal umzuschauen“. Ein Budget gibt es nicht, ein Zeitpunkt ist nicht festgelegt.",
+          "analysis": "Der Bedarf ist plausibel, die Passung gegeben, aber Zeitrahmen, Budget und Entscheiderin sind offen. Ein sofortiger Beratungstermin mit Herrn Okafor allein würde vermutlich in einem „Ich muss das erst intern besprechen“ enden. Besser: seine Rolle würdigen, fragen, was die Geschäftsführerin für eine Entscheidung wissen müsste, und vorschlagen, dass sie beim Termin dabei ist – oder, wenn das noch zu früh ist, Informationsmaterial für das interne Gespräch anbieten und mit Erlaubnis später nachfragen. Status je nach Vorgabe: Nurturing oder Termin mit Entscheiderin.",
+          "simulationNote": "Alle Personen, Firmen und Zahlen in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-008"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-034"
+        }
+      ],
+      "summary": [
+        "Budget offen, begründet und als Rahmen erfragen; Status: vorhanden, geplant, offen.",
+        "Im B2B entscheidet fast nie eine Person allein – nach dem Ablauf fragen.",
+        "Zeitangaben sind Selbsteinschätzungen; nach dem Grund dahinter fragen.",
+        "Kaufbereitschaft zeigt sich in Fakten, nicht in Begeisterung.",
+        "Gesagtes und eigene Schlüsse getrennt dokumentieren."
+      ]
+    },
+    {
+      "id": "M04-L05",
+      "moduleId": "M04",
+      "title": "BANT und SPIN – was die Frameworks können und was nicht",
+      "minutes": 8,
+      "objectiveIds": [
+        "LO-M04-04",
+        "LO-M04-05"
+      ],
+      "sourceIds": [
+        "SRC-047",
+        "SRC-013",
+        "SRC-131",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "In fast jedem Vertriebstraining begegnen dir Abkürzungen: BANT, SPIN, MEDDICC, CHAMP, GPCTBA und viele mehr. In dieser Lektion schauen wir uns die zwei bekanntesten genauer an – und vor allem, auf welcher Grundlage sie stehen. Du lernst, sie als Werkzeuge zu nutzen, ohne ihnen mehr zuzutrauen, als sie halten können."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 4.5",
+          "title": "Zwei Raster, zwei Ursprünge, zwei Evidenzlagen",
+          "paragraphs": [
+            "BANT steht für Budget, Authority, Need und Timing – also Budget, Entscheidungsbefugnis, Bedarf und Zeitrahmen. Das Raster wird meist IBM zugeschrieben; eine belastbare Primärquelle für Herkunft und Jahr gibt es allerdings nicht. Seine Stärke ist die Einfachheit: Vier Punkte, die sich in fast jedem Gespräch prüfen lassen. Sein B-P-Z-E-Verwandter aus Modul 1 tauscht das Budget gegen die Passung aus und lässt Budget je nach Auftraggeber zu – weil Budget nicht in jeder Branche ein Thema des Setters ist und weil Passung ohne Budget oft wichtiger ist.",
+            "Wie gut ist BANT belegt? Ehrlich gesagt: kaum. Es gibt keine uns bekannte kontrollierte Studie, die zeigt, dass Teams mit BANT erfolgreicher qualifizieren als Teams mit einem anderen, ähnlich sinnvollen Raster. BANT ist Erfahrungswissen – nützlich als Checkliste, aber kein Naturgesetz. Häufige Kritik aus der Praxis: Die starre Reihenfolge, mit der viele BANT abfragen, beginnt mit dem Geld und wirkt dadurch schnell wie ein Verhör. Und wer BANT als Ausschlussliste benutzt, verliert Kunden, bei denen Budget oder Zeitrahmen gerade erst entstehen.",
+            "SPIN hat eine andere Grundlage. Neil Rackham und das Beratungsunternehmen Huthwaite beobachteten in den 1970er- und 1980er-Jahren Verkaufsgespräche – nach eigenen Angaben über 35.000 – und werteten aus, welche Verhaltensweisen mit erfolgreichen größeren Verkäufen zusammenhingen. Das Ergebnis, 1988 als „SPIN Selling“ veröffentlicht, sortiert Fragen in vier Typen: Situationsfragen klären die Ausgangslage, Problemfragen decken Schwierigkeiten auf, Implikationsfragen machen Folgen des Problems bewusst, und Nutzenfragen (Need-Payoff) lassen den Kunden selbst den Wert einer Lösung formulieren. Nach Rackhams Daten stellten erfolgreiche Verkäufer in großen Verkäufen vergleichsweise wenige Situationsfragen und deutlich mehr Implikations- und Nutzenfragen.",
+            "Die Grenzen von SPIN solltest du ebenso kennen. Die Studien stammen von einem Unternehmen, das Trainings zu genau dieser Methode verkauft, sie wurden nicht in einer Fachzeitschrift mit Begutachtung veröffentlicht und sind unseres Wissens kaum unabhängig repliziert. Es handelt sich um Beobachtungen, also Zusammenhänge, nicht um Experimente mit Ursache und Wirkung. Rackham selbst betonte außerdem, dass seine Befunde für größere, komplexe Verkäufe gelten; für kleine, schnelle Käufe gelten andere Regeln. Bemerkenswert ist ein Befund, der vielen Verkaufsmythen widerspricht: Klassische Abschlusstechniken hingen in seinen Daten bei großen Verkäufen eher mit geringerem Erfolg zusammen.",
+            "Was heißt das für dich als Setter? Beide Raster sind gute Denkhilfen, wenn du sie richtig einsetzt. BANT bzw. B-P-Z-E ist deine Checkliste: Was muss ich wissen, bevor ich einen Termin vorschlage? SPIN ist deine Fragehilfe: Wie komme ich vom Anlass zum Problem? Im Erstkontakt nutzt du vor allem Situations- und Problemfragen, Implikationsfragen sparsam und behutsam, und Nutzenfragen eher, um den Bedarf zu bestätigen. Kein Raster ersetzt Zuhören – und keines rechtfertigt Druck."
+          ],
+          "sourceIds": [
+            "SRC-047",
+            "SRC-013",
+            "SRC-131",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "SPIN light für den Erstkontakt",
+          "category": "gespraech",
+          "what": "SPIN-Fragetypen in einer Form nutzen, die zur Rolle des Setters passt: klären statt überzeugen.",
+          "how": [
+            "Situation: höchstens ein bis zwei Fragen, und nur nach dem, was du nicht schon weißt.",
+            "Problem: offen nach Schwierigkeiten fragen („Was funktioniert daran am wenigsten gut?“).",
+            "Implikation: einmal und behutsam nach der Auswirkung fragen – ohne Dramatisierung.",
+            "Nutzen: den Kunden selbst formulieren lassen, was besser wäre („Was würde sich für Sie ändern, wenn …?“)."
+          ],
+          "why": "So erfährst du Bedarf und Dringlichkeit in den Worten des Kunden, ohne Ängste zu verstärken oder ins Beraten zu rutschen.",
+          "evidence": "Rackham (1988): Beobachtungsdaten von Huthwaite zu größeren Verkäufen, nicht peer-reviewt und kaum unabhängig repliziert. Die Anpassung an den Erstkontakt ist eine didaktische Entscheidung dieses Kurses.",
+          "example": "S: „Wie planen Sie die Schichten heute?“ P: „Wo hakt es dabei am meisten?“ I: „Was bedeutet das für Sie, wenn nachts jemand ausfällt?“ N: „Was würde es Ihnen bringen, wenn Lücken automatisch sichtbar wären?“",
+          "boundary": "Keine Implikationsfragen, die Angst machen sollen („Was, wenn deswegen ein Großauftrag platzt?“), und keine Nutzenfragen als Falle für ein späteres „Sie haben doch selbst gesagt …“.",
+          "sourceIds": [
+            "SRC-013",
+            "SRC-131",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„BANT ist der wissenschaftlich bewiesene Standard der Lead-Qualifizierung.“",
+          "reality": "BANT ist ein verbreitetes Praxisraster, dessen Herkunft nur zugeschrieben ist und dessen Überlegenheit nie systematisch untersucht wurde. Es ist eine nützliche Checkliste, aber kein bewiesener Standard. Dasselbe gilt für MEDDICC und andere Abkürzungen.",
+          "sourceIds": [
+            "SRC-047"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "BANT und B-P-Z-E im Vergleich",
+          "body": "BANT: Budget – Authority – Need – Timing.\nB-P-Z-E (Modul 1): Bedarf – Passung – Zeitrahmen – Entscheider; Budget je nach Auftraggeber.\n\nGemeinsam: Bedarf, Entscheidung, Zeit.\nUnterschied: B-P-Z-E prüft ausdrücklich die Passung zum ICP und behandelt Budget als optionales Kriterium. Wann welches Raster gilt, legt dein Auftraggeber fest – wichtig ist, dass alle im Team dieselben Kriterien meinen."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-012"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-016"
+        }
+      ],
+      "summary": [
+        "BANT = Budget, Authority, Need, Timing – Praxisraster, Herkunft nur zugeschrieben.",
+        "SPIN = Situation, Problem, Implikation, Nutzen – aus Huthwaite-Beobachtungen.",
+        "Beide sind nicht unabhängig als überlegen belegt.",
+        "SPIN gilt laut Rackham vor allem für größere Verkäufe.",
+        "Im Erstkontakt: vor allem Situation und Problem, Implikation behutsam."
+      ]
+    },
+    {
+      "id": "M04-L06",
+      "moduleId": "M04",
+      "title": "MEDDICC und das Buying Center (fortgeschritten, B2B)",
+      "minutes": 12,
+      "objectiveIds": [
+        "LO-M04-08",
+        "LO-M04-04"
+      ],
+      "sourceIds": [
+        "SRC-132",
+        "SRC-047",
+        "SRC-133",
+        "SRC-134",
+        "SRC-135"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Im B2B-Vertrieb mit größeren Projekten reicht „Wer entscheidet?“ oft nicht aus. Hier kommen Raster wie MEDDICC ins Spiel, die den ganzen Entscheidungsweg einer Organisation abbilden. Als Setter wirst du MEDDICC selten vollständig klären – aber du solltest es verstehen, weil gute Übergaben im B2B genau diese Fragen vorbereiten."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 4.6",
+          "title": "Wenn viele Menschen eine Entscheidung treffen",
+          "paragraphs": [
+            "MEDDIC entstand Mitte der 1990er-Jahre beim Softwarehersteller PTC; meist wird Dick Dunkel als Urheber genannt. Später kam ein zweites C hinzu, heute ist MEDDICC verbreitet, in manchen Teams auch MEDDPICC. Die Buchstaben stehen für: Metrics (messbare Ziele des Kunden), Economic Buyer (die Person mit Budgetverantwortung), Decision Criteria (die Kriterien, nach denen entschieden wird), Decision Process (der Ablauf bis zur Entscheidung), Identify Pain (das eigentliche Problem), Champion (eine Person im Unternehmen, die sich aktiv für die Lösung einsetzt) und Competition (Alternativen, inklusive „wir machen weiter wie bisher“). Das P in MEDDPICC steht für Paper Process, also Einkauf, Verträge und Freigaben.",
+            "Wie gut ist MEDDICC belegt? Es gilt dasselbe wie für BANT: MEDDICC ist ein Praxisraster, das von Beratern und Vertriebsorganisationen verbreitet wird. Das bekannteste Buch dazu stammt von einem Anbieter entsprechender Trainings. Es gibt keine uns bekannte unabhängige Studie, die seine Überlegenheit gegenüber anderen strukturierten Vorgehensweisen zeigt. Sein Wert liegt woanders: MEDDICC zwingt dazu, bei großen Projekten nicht nur über das Produkt zu reden, sondern über die Organisation, die kaufen soll.",
+            "Fachlich gut begründet ist dagegen die Grundidee dahinter: Organisationen kaufen anders als Einzelpersonen. Webster und Wind beschrieben 1972 das Buying Center mit verschiedenen Rollen – Nutzer, die später mit der Lösung arbeiten; Beeinflusser, etwa Fachabteilungen oder IT; Einkäufer, die Konditionen verhandeln; Entscheider, die am Ende zustimmen; und Gatekeeper, die Informationen filtern. Eine Person kann mehrere Rollen haben. Das Analystenhaus Gartner gibt an, dass an komplexen B2B-Käufen typischerweise sechs bis zehn Personen beteiligt sind. Die Methodik dieser Zahl ist nicht offengelegt, die Richtung deckt sich aber mit der Forschung: Im B2B entscheidet selten jemand allein.",
+            "Für dich als Setter sind drei MEDDICC-Elemente besonders relevant. Erstens Identify Pain – das ist dein Bedarf aus B-P-Z-E. Zweitens Decision Process und Economic Buyer – das ist dein „E“, nur genauer: Wer ist beteiligt, in welcher Reihenfolge, und wer gibt das Budget frei? Drittens Decision Criteria, denn hier verstecken sich häufig harte Ausschlusskriterien: „Die Daten müssen auf unseren eigenen Servern liegen“, „Wir brauchen eine Schnittstelle zu unserem ERP“, „Der Betriebsrat muss zustimmen“. Wer diese Kriterien nicht erfragt, bucht Termine, die an einer einzigen Anforderung scheitern.",
+            "Und der Champion? Häufig ist dein Gesprächspartner nicht der Entscheider, sondern jemand, der das Problem täglich erlebt und intern etwas bewegen möchte – ein möglicher Champion. Diese Person ist wertvoll, und du behandelst sie entsprechend: Du hilfst ihr, die Entscheidung intern vorzubereiten, statt sie zu übergehen. Konkret fragst du, wer beteiligt werden sollte, was diese Personen für eine Entscheidung wissen müssten und ob sie beim nächsten Gespräch dabei sein können. Was du nicht tust: Kontakte im Unternehmen ungefragt direkt anschreiben. Das beschädigt das Vertrauen deines Champions – und eine Werbenachricht ohne Einwilligung ist auch auf LinkedIn rechtlich problematisch."
+          ],
+          "sourceIds": [
+            "SRC-132",
+            "SRC-047",
+            "SRC-133",
+            "SRC-134",
+            "SRC-135",
+            "SRC-027"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Den Entscheidungsweg kartieren",
+          "category": "prozess",
+          "what": "Im B2B-Gespräch Beteiligte, Ablauf und harte Kriterien so weit klären, dass der Berater gezielt vorbereiten kann.",
+          "how": [
+            "Ablauf erfragen: „Wie läuft so eine Entscheidung bei Ihnen typischerweise ab?“",
+            "Beteiligte und Rollen notieren: Wer nutzt, wer prüft, wer gibt frei?",
+            "Harte Kriterien erfragen: „Gibt es Vorgaben, die eine Lösung auf jeden Fall erfüllen muss?“",
+            "Nächsten Schritt mit dem Gegenüber abstimmen: Wer sollte beim Termin dabei sein?"
+          ],
+          "why": "Viele B2B-Termine scheitern nicht am Bedarf, sondern an einer übersehenen Person oder Anforderung. Eine einfache Karte des Entscheidungswegs macht das sichtbar.",
+          "evidence": "Konzeptionell gestützt durch das Buying-Center-Modell (Webster & Wind 1972); MEDDICC selbst ist ein nicht validiertes Praxisraster (Whyte 2020). Gartner-Angaben zur Größe von Kaufgruppen sind Analystenangaben.",
+          "example": "Notiz: „Teamleiterin Wendler (Nutzerin, Champion?) bereitet vor; Werkleiter Dorn entscheidet und gibt Budget frei; IT-Leitung prüft Datenschutz und Betrieb; Betriebsrat wird beteiligt. Hartes Kriterium: Daten nur auf eigenen Servern.“",
+          "boundary": "Du kartierst, um zu verstehen – nicht, um Druck auf einzelne Personen aufzubauen oder deinen Kontakt zu übergehen. Keine Ansprache weiterer Personen ohne Abstimmung und ohne zulässigen Kanal.",
+          "sourceIds": [
+            "SRC-133",
+            "SRC-132",
+            "SRC-134",
+            "SRC-019"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Der übersehene Gatekeeper",
+          "situation": "Ein Setter bucht für einen Softwareanbieter einen Termin mit dem Produktionsleiter eines Maschinenbauers (erfunden). Bedarf, Zeitrahmen und Budget sind geklärt, der Produktionsleiter ist begeistert. Im Termin stellt sich heraus: Die IT-Abteilung lässt nur Software zu, die auf eigenen Servern läuft. Der Anbieter bietet nur eine Cloud-Lösung an. Der Termin endet nach zehn Minuten.",
+          "analysis": "Bedarf und Begeisterung waren echt – aber ein Entscheidungskriterium und ein Beeinflusser (IT) wurden nie erfragt. Eine einzige Frage hätte gereicht: „Gibt es Vorgaben, etwa von der IT, die eine Lösung auf jeden Fall erfüllen muss?“ Dann wäre klar gewesen, dass der Anbieter nicht passt, und eine ehrliche Absage hätte allen Beteiligten Zeit gespart. Lernpunkt: Im B2B gehören Entscheidungskriterien und Beteiligte zur Qualifizierung, nicht erst zum Beratungsgespräch.",
+          "simulationNote": "Alle Personen, Firmen und Zahlen in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-013"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-031"
+        }
+      ],
+      "summary": [
+        "MEDDICC: Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion, Competition.",
+        "MEDDICC ist ein Praxisraster ohne unabhängige Validierung.",
+        "Gut belegt: Im B2B entscheiden mehrere Rollen (Buying Center).",
+        "Für Setter zentral: Problem, Entscheidungsweg, harte Kriterien.",
+        "Den Champion unterstützen, nicht übergehen."
+      ]
+    },
+    {
+      "id": "M04-L07",
+      "moduleId": "M04",
+      "title": "MQL, SQL und Lead Scoring",
+      "minutes": 13,
+      "objectiveIds": [
+        "LO-M04-06"
+      ],
+      "sourceIds": [
+        "SRC-142",
+        "SRC-143",
+        "SRC-144",
+        "SRC-145",
+        "SRC-146",
+        "SRC-154",
+        "SRC-141",
+        "SRC-025"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Viele Unternehmen vergeben Punkte für Leads: für die Firmengröße, für die Branche, für Website-Besuche oder Downloads. Ab einem bestimmten Wert wird ein Lead zum MQL und landet bei dir. In dieser Lektion lernst du, wie ein solches Lead Scoring funktioniert, wie du einen Punktwert nachrechnest – und warum du einer Zahl nie blind vertrauen solltest."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 4.7",
+          "title": "Punkte sind Hinweise, keine Urteile",
+          "paragraphs": [
+            "Lead Scoring ist der Versuch, die Frage „Welchen Lead sollten wir zuerst ansprechen?“ systematisch zu beantworten. Ein Wirtschaftsinformatik-Review von Wu, Andreev und Benyoucef unterscheidet zwei Grundformen. Traditionelle Modelle beruhen auf Regeln, die Marketing und Vertrieb aus Erfahrung festlegen: zum Beispiel plus 20 Punkte, wenn die Firmengröße passt, plus 25 Punkte für eine Demo-Anfrage. Prädiktive Modelle werden aus historischen Daten berechnet, etwa mit Entscheidungsbäumen oder logistischer Regression, und schätzen, welche Merkmale früher mit Abschlüssen zusammenhingen. In der Praxis begegnet dir als Setter meist eine Mischung aus beidem in einem CRM oder einem Marketing-Automation-System.",
+            "Die meisten Scores setzen sich aus zwei Arten von Merkmalen zusammen. Passungsmerkmale (Fit) beschreiben, wie gut ein Lead zum ICP passt: Branche, Größe, Rolle. Verhaltensmerkmale (Engagement) beschreiben, was der Lead getan hat: Seiten besucht, Inhalte heruntergeladen, eine Anfrage gestellt. Dazu kommen oft Minuspunkte, etwa für Wettbewerber, Studierende oder lange Inaktivität. Monat entwickelte für das Industriegeschäft ein Modell, das 16 beobachtbare Lead-Merkmale als Stellvertreter für die eigentlichen Kaufgründe nutzt. Das Wort „Stellvertreter“ ist wichtig: Ein Download ist kein Bedarf, er deutet nur darauf hin.",
+            "Warum lohnt sich ein Score überhaupt, wenn er so unvollkommen ist? Weil menschliche Bauchurteile ebenfalls unvollkommen sind – und dazu noch schwanken. In anderen Bereichen, vor allem in Psychologie und Medizin, ist gut belegt, dass formale, regelbasierte Vorhersagen im Mittel etwas genauer sind als freie Expertenurteile; eine Meta-Analyse von Grove und Kollegen fand einen Vorteil von etwa zehn Prozent. Dawes zeigte schon 1979, dass sogar sehr einfache Modelle mit gleichen Gewichten erstaunlich robust sind. Kahneman, Sibony und Sunstein beschreiben, wie stark Urteile verschiedener Personen zum selben Fall streuen. Ob sich das eins zu eins auf Leads übertragen lässt, ist nicht direkt untersucht – aber es spricht dafür, Kriterien zu nutzen, statt nur nach Gefühl zu priorisieren.",
+            "Gleichzeitig hat jedes Scoring typische Schwächen. Es misst, was leicht messbar ist, nicht unbedingt, was wichtig ist: Ein Lead, der fünf Blogartikel liest, bekommt viele Punkte, auch wenn er Student ist. Ein Geschäftsführer, der nur einmal kurz anfragt, bekommt wenige Punkte, obwohl er sofort entscheiden könnte. Regelbasierte Scores werden zudem selten überprüft: Ob die Punkte tatsächlich mit Abschlüssen zusammenhängen, weiß oft niemand. Und prädiktive Modelle lernen aus der Vergangenheit – wenn früher bestimmte Gruppen gar nicht angesprochen wurden, kann das Modell diese Verzerrung fortschreiben. Sabnis und Kollegen zeigten, dass Vertriebler Marketing-Leads eher verfolgen, wenn die Vorqualifizierung gut ist – ein schlechter Score untergräbt also das Vertrauen in alle Leads.",
+            "Für deinen Alltag folgen daraus vier Regeln. Erstens: Der Score entscheidet über die Reihenfolge, nicht über das Ergebnis – qualifiziert ist ein Lead erst nach dem Gespräch. Zweitens: Lies, woraus der Score besteht, bevor du dich auf ihn verlässt. Drittens: Melde zurück, wenn hoch bewertete Leads regelmäßig nicht passen oder niedrig bewertete sehr gut – genau so werden Modelle besser. Viertens: Lead Scoring ist Profiling im Sinne der DSGVO, wenn es personenbezogene Daten auswertet. Das darfst du nicht eigenmächtig erweitern, etwa durch zusätzliche Recherche über Privatpersonen. Welche Daten genutzt werden und wie Betroffene widersprechen können, legt dein Auftraggeber mit seinem Datenschutzverantwortlichen fest."
+          ],
+          "sourceIds": [
+            "SRC-142",
+            "SRC-143",
+            "SRC-144",
+            "SRC-145",
+            "SRC-146",
+            "SRC-154",
+            "SRC-141",
+            "SRC-025"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Einen Lead Schritt für Schritt bewerten (simulierte Daten)",
+          "steps": [
+            "Scoring-Regeln des (erfundenen) Auftraggebers: Firmengröße im ICP +20 · Branche im ICP +15 · Rolle Entscheider +15, Rolle Beeinflusser +10 · Demo-Anfrage +25 · Preisseite besucht +10 · Whitepaper geladen +5 · Wettbewerber oder privat −50 · keine Aktivität seit 90 Tagen −10. Schwelle: ab 50 Punkten MQL.",
+            "Lead: Katrin Wendler, Teamleiterin Produktion, Kunststoffverarbeiter mit 240 Mitarbeitenden. Hat ein Whitepaper geladen und die Preisseite besucht, letzte Aktivität vor 3 Tagen.",
+            "Passung: Firmengröße im ICP → +20. Branche Produktion im ICP → +15. Rolle Teamleiterin = Beeinflusserin → +10. Zwischensumme Passung: 45.",
+            "Verhalten: Whitepaper → +5. Preisseite → +10. Keine Demo-Anfrage → 0. Aktivität vor 3 Tagen → kein Abzug. Zwischensumme Verhalten: 15.",
+            "Gesamt: 45 + 15 = 60 Punkte → über der Schwelle von 50 → Status MQL, Lead geht an den Setter.",
+            "Einordnung: Der Score sagt, dass sich ein Gespräch lohnen könnte. Er sagt nichts über Bedarf, Zeitrahmen, Entscheidungsweg oder harte Kriterien. Diese klärst du im Gespräch – erst danach wird der Lead zum SQL, zum Nurturing-Lead oder disqualifiziert."
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Einen Score kritisch lesen",
+          "category": "prozess",
+          "what": "Vor dem Erstkontakt verstehen, woraus ein Punktwert besteht und was er nicht weiß.",
+          "how": [
+            "Score aufschlüsseln: Wie viele Punkte kommen aus Passung, wie viele aus Verhalten?",
+            "Prüfen, ob harte Kriterien des ICP überhaupt im Score stecken.",
+            "Lücken notieren, die nur das Gespräch schließen kann (Bedarf, Zeit, Entscheider, Kriterien).",
+            "Auffällige Fehlbewertungen an Marketing oder Teamleitung zurückmelden."
+          ],
+          "why": "Ein verstandener Score hilft dir zu priorisieren und gezielt zu fragen. Ein blind geglaubter Score führt zu falschen Terminen und falschen Absagen.",
+          "evidence": "Regelbasierte Modelle sind oft robuster als freie Bauchurteile (Dawes 1979; Grove et al. 2000 – Befunde aus anderen Bereichen). Lead-Scoring-Forschung ist überwiegend modellbezogen; Belege für den Praxisnutzen einzelner Punktsysteme fehlen meist (Wu et al. 2024).",
+          "example": "„Der Lead hat 60 Punkte, davon 45 aus Passung und 15 aus zwei Downloads. Bedarf und Entscheider sind völlig offen – ich starte mit einer offenen Frage zum Anlass.“",
+          "boundary": "Keine eigenen Kriterien wie Alter, Geschlecht, Herkunft oder Wohngegend in die Bewertung einfließen lassen – das ist diskriminierend und datenschutzrechtlich problematisch. Der Score ändert nichts daran, dass jeder Kontakt respektvoll behandelt wird.",
+          "sourceIds": [
+            "SRC-145",
+            "SRC-146",
+            "SRC-142",
+            "SRC-025"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Ein KI-Score weiß besser als jeder Mensch, wer kaufen wird.“",
+          "reality": "Prädiktive Modelle können Muster in großen Datenmengen finden und schneiden in Studien oft gut ab. Aber sie lernen aus vergangenen Daten, übernehmen deren Verzerrungen und kennen nichts, was nur im Gespräch sichtbar wird – etwa eine IT-Vorgabe oder einen Zeitdruck durch eine Rente. Ein Score ist eine Wahrscheinlichkeitsschätzung für Gruppen, kein Urteil über einen Menschen.",
+          "sourceIds": [
+            "SRC-142",
+            "SRC-144"
+          ]
+        },
+        {
+          "kind": "callout",
+          "tone": "legal",
+          "title": "Datenschutz beim Lead Scoring",
+          "body": "Wertet ein Scoring personenbezogene Daten aus, um Verhalten oder Interessen einer Person zu bewerten, handelt es sich um Profiling im Sinne der DSGVO. Es braucht eine Rechtsgrundlage, muss transparent sein, und bei Direktwerbung haben Betroffene ein Widerspruchsrecht. Für dich heißt das: nur die Daten nutzen, die dein Auftraggeber freigegeben hat, und keine zusätzlichen Informationen über Personen sammeln. Rechtliche Fragen klärt der Auftraggeber – das ist keine Setter-Entscheidung."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-019"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-021"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-024"
+        }
+      ],
+      "summary": [
+        "Lead Scoring priorisiert, es qualifiziert nicht.",
+        "Score = Passung (Fit) + Verhalten (Engagement) ± Abzüge.",
+        "Regelbasierte Kriterien sind oft besser als Bauchgefühl – aber nur, wenn sie überprüft werden.",
+        "Scores messen Stellvertreter, nicht Bedarf oder Entscheidung.",
+        "Scoring mit Personendaten ist Profiling: nur freigegebene Daten, keine diskriminierenden Kriterien."
+      ]
+    },
+    {
+      "id": "M04-L08",
+      "moduleId": "M04",
+      "title": "Disqualifizieren – ehrlich, respektvoll, dokumentiert",
+      "minutes": 15,
+      "objectiveIds": [
+        "LO-M04-07"
+      ],
+      "sourceIds": [
+        "SRC-150",
+        "SRC-151",
+        "SRC-059",
+        "SRC-019",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Qualifizieren heißt aussortieren dürfen – das hast du in Modul 1 gelernt. In dieser letzten Lektion geht es darum, wie du ein Nein so aussprichst, dass der Mensch sich respektiert fühlt, die Tür für später offen bleibt und das CRM die Wahrheit zeigt. Eine gute Disqualifizierung ist kein Misserfolg, sondern professionelle Arbeit."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kursbuch · Kapitel 4.8",
+          "title": "Das ehrliche Nein als Dienstleistung",
+          "paragraphs": [
+            "Warum fällt es so schwer, einen Lead zu disqualifizieren? Ein Grund ist der Druck der Terminquote. Ein anderer ist psychologisch: Wer schon zwanzig Minuten in ein Gespräch investiert hat, möchte, dass sich die Mühe „lohnt“. Die Forschung nennt das Sunk-Cost-Effekt – die Neigung, ein Vorhaben fortzusetzen, weil bereits Zeit, Geld oder Aufwand hineingeflossen sind. Dazu kommt der Bestätigungsfehler aus Lektion 4.3: Wer einen Termin will, überhört gern das eine Kriterium, das dagegen spricht. Beides führt zu Terminen, die für niemanden gut sind.",
+            "Disqualifizieren bedeutet nicht, jemanden abzuweisen, weil er „nicht gut genug“ ist. Es bedeutet festzustellen, dass das Angebot und dieser Kunde jetzt nicht zusammenpassen. Typische Gründe sind: fehlende Passung zum ICP, ein hartes Kriterium, das das Angebot nicht erfüllt, ein Budget weit unter dem Mindestvolumen, ein Bedarf, den ein anderes Produkt besser löst – oder schlicht ein ausdrückliches Nein. Davon zu unterscheiden ist „noch nicht“: Wenn Bedarf und Passung da sind, aber Zeitpunkt oder Entscheidung fehlen, ist Nurturing meist die bessere Einordnung.",
+            "Eine gute Absage hat vier Teile. Erstens Dank: für die Zeit und die Offenheit. Zweitens der ehrliche Grund, konkret und ohne Fachjargon: „Unsere Software gibt es nur als Cloud-Lösung, eine Installation auf Ihren eigenen Servern bieten wir nicht an.“ Drittens die Konsequenz aus Kundensicht: „Damit erfüllen wir eine Ihrer Grundvoraussetzungen nicht, und ich möchte Ihnen keinen Termin anbieten, der daran nichts ändert.“ Viertens, wenn möglich, ein echter Mehrwert: ein Hinweis, eine Checkliste, ein Tipp – aber nur, wenn er stimmt und dein Auftraggeber das erlaubt. Empfiehl keine Wettbewerber, wenn das nicht abgestimmt ist.",
+            "Ehrlichkeit an dieser Stelle zahlt auf alle drei Säulen des Vertrauens aus Modul 2 ein: Du zeigst Kompetenz, weil du die Anforderung verstanden hast, Wohlwollen, weil du die Zeit des Kunden schützt, und Integrität, weil du nichts versprichst, was nicht stimmt. Die Versuchung, einen harten Ausschlussgrund kleinzureden („Das klärt der Berater im Termin“), ist groß. Wenn du aber weißt, dass das Angebot eine Anforderung nicht erfüllt, ist das Verschweigen keine Taktik, sondern eine Täuschung. Und eine falsche Produktzusage („Das geht bestimmt auch auf Ihren Servern“) liegt zudem außerhalb deiner Rolle.",
+            "Zum Schluss die Dokumentation. Ein disqualifizierter Lead bekommt im CRM den passenden Status und einen klaren Grund aus einer festen Liste, ergänzt um eine kurze Notiz in den Worten des Kunden. Daraus lernen Marketing und Vertrieb: Häufen sich Absagen wegen derselben Anforderung, ist das ein Signal für das ICP, das Scoring oder sogar das Produkt. Wenn der Kunde einer späteren Kontaktaufnahme zugestimmt hat, notierst du die Einwilligung mit Datum und Kanal. Hat er nicht zugestimmt oder ausdrücklich abgelehnt, gibt es keine weitere werbliche Ansprache – per E-Mail ohne Einwilligung wäre sie nach UWG § 7 ohnehin unzulässig."
+          ],
+          "sourceIds": [
+            "SRC-150",
+            "SRC-151",
+            "SRC-059",
+            "SRC-019",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die ehrliche Absage in vier Sätzen",
+          "category": "schreiben",
+          "what": "Einen Lead so disqualifizieren, dass der Kunde den Grund versteht und sich respektiert fühlt.",
+          "how": [
+            "Danken: „Danke für Ihre Offenheit.“",
+            "Grund konkret nennen: was das Angebot nicht leistet oder was nicht passt.",
+            "Konsequenz aus Kundensicht: „Ich möchte Ihnen keinen Termin anbieten, der daran nichts ändert.“",
+            "Mehrwert oder offene Tür anbieten – nur wenn er echt ist, und spätere Kontakte nur mit Einwilligung."
+          ],
+          "why": "Ein klares, begründetes Nein erspart beiden Seiten Zeit und hinterlässt einen guten Eindruck – Menschen empfehlen auch Anbieter weiter, die ehrlich abgesagt haben.",
+          "evidence": "Praxisheuristik (Expertenmeinung). Konzeptionell gestützt durch das Vertrauensmodell von Mayer, Davis & Schoorman (1995). Dass ehrliche Absagen langfristig Empfehlungen fördern, ist plausibel, aber nicht systematisch belegt.",
+          "example": "„Danke für Ihre Offenheit, Frau Wendler. Unsere Software gibt es nur als Cloud-Lösung – eine Installation auf Ihren eigenen Servern bieten wir nicht an. Damit erfüllen wir eine Ihrer Grundvoraussetzungen nicht, und ich möchte Ihnen und Herrn Dorn keinen Termin anbieten, der daran nichts ändert. Wenn es hilft, schicke ich Ihnen gern unsere neutrale Checkliste mit Fragen für die Anbieterauswahl.“",
+          "boundary": "Keine erfundenen Gründe, keine Herabsetzung des Kunden („Sie sind zu klein für uns“) und keine Empfehlungen, die du nicht beurteilen kannst. Ein Nein des Kunden wird nie in ein „Vielleicht“ umgedeutet.",
+          "sourceIds": [
+            "SRC-059",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Die Agentur und das Start-up",
+          "situation": "Ein Setter einer Performance-Marketing-Agentur (erfunden, Mindestbudget 3.000 € pro Monat) spricht mit der Gründerin eines Start-ups. Der Bedarf ist groß, sie ist sympathisch und entscheidet allein. Ihr Budget: 800 € pro Monat für die nächsten sechs Monate. Der Setter hat schon 25 Minuten investiert und denkt: „Vielleicht findet der Berater ja eine Lösung.“",
+          "analysis": "Hier wirken Sunk-Cost-Effekt und Wunschdenken. Das Mindestbudget ist eine klare Vorgabe des Auftraggebers; ein Termin würde absehbar am Preis scheitern und die Gründerin enttäuschen. Richtig ist eine ehrliche Absage mit Grund („Unsere Betreuung beginnt bei 3.000 € im Monat – das passt aktuell nicht zu Ihrem Rahmen“), ein echter Mehrwert, wenn vorhanden, und – nur mit Einwilligung – eine spätere Nachfrage, etwa nach einer Finanzierungsrunde. CRM: Status „Disqualifiziert“ oder „Nurturing“ laut Vorgabe, Grund „Budget unter Mindestvolumen“, Einwilligung zur späteren Kontaktaufnahme dokumentiert oder nicht.",
+          "simulationNote": "Alle Personen, Firmen und Zahlen in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "myth",
+          "claim": "„Jeder Lead ist zu retten – man muss nur hartnäckig genug sein.“",
+          "reality": "Hartnäckigkeit hilft, wenn jemand Interesse hat, aber gerade keine Zeit. Sie schadet, wenn das Angebot objektiv nicht passt oder der Kunde Nein gesagt hat. Dann ist „Dranbleiben“ Zeitverschwendung, oft Druck und bei weiteren Werbe-E-Mails ohne Einwilligung auch rechtswidrig. Der Wunsch, frühere Mühe nicht „umsonst“ investiert zu haben, ist ein bekannter Denkfehler (Sunk-Cost-Effekt).",
+          "sourceIds": [
+            "SRC-150",
+            "SRC-019"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-025"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M04-036"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Wann hast du zuletzt etwas fortgesetzt – ein Projekt, ein Abo, ein Gespräch –, nur weil du schon viel hineingesteckt hattest? Wie würdest du die Situation heute mit dem Blick eines Setters bewerten?"
+        }
+      ],
+      "summary": [
+        "Disqualifizieren heißt: Angebot und Kunde passen jetzt nicht zusammen.",
+        "„Noch nicht“ (Nurturing) ist etwas anderes als „passt nicht“.",
+        "Absage in vier Teilen: Dank, Grund, Konsequenz, echter Mehrwert.",
+        "Bekannte Ausschlussgründe nicht verschweigen, keine falschen Zusagen.",
+        "Status, Grund und Einwilligung sauber im CRM dokumentieren."
+      ]
+    }
+  ],
+  "transferTask": {
+    "title": "Transferaufgabe: Dein Qualifizierungsleitfaden",
+    "instructions": "Wähle ein reales oder ausgedachtes B2B-Angebot (ohne echte Kundendaten). Erstelle dafür einen einseitigen Qualifizierungsleitfaden: (1) ein ICP mit höchstens fünf prüfbaren Merkmalen, (2) eine kurze Persona-Skizze und die Angabe, worauf sie beruht (Interview, Daten oder Annahme), (3) sechs Qualifizierungsfragen für Bedarf, Passung, Zeitrahmen, Entscheidungsweg, Budgetrahmen und harte Kriterien – jeweils mit Begründungssatz, (4) ein einfaches Scoring mit fünf Kriterien, Punkten und Schwellenwert inklusive einer Beispielrechnung, (5) eine ehrliche Absage-Nachricht für einen Lead, der an einem harten Kriterium scheitert.",
+    "criteria": [
+      "ICP-Merkmale sind konkret und mit einer Frage prüfbar",
+      "Persona ist als Hypothese gekennzeichnet und ihre Grundlage benannt",
+      "Jede Qualifizierungsfrage ist offen und enthält eine Begründung",
+      "Die Entscheiderfrage unterstellt nichts und fragt nach dem Ablauf",
+      "Scoring trennt Passung und Verhalten und enthält keine diskriminierenden Kriterien",
+      "Beispielrechnung ist korrekt und als simuliert gekennzeichnet",
+      "Absage enthält Dank, konkreten Grund, Konsequenz und keine falschen Zusagen",
+      "Keine echten Personen- oder Firmendaten"
+    ]
+  },
+  "examQuestionIds": [
+    "Q-M04-001",
+    "Q-M04-002",
+    "Q-M04-004",
+    "Q-M04-005",
+    "Q-M04-008",
+    "Q-M04-011",
+    "Q-M04-013",
+    "Q-M04-014",
+    "Q-M04-017",
+    "Q-M04-019",
+    "Q-M04-022",
+    "Q-M04-024",
+    "Q-M04-027",
+    "Q-M04-031",
+    "Q-M04-035",
+    "Q-M04-036"
+  ]
+}
