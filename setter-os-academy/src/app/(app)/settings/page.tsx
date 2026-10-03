@@ -5,7 +5,8 @@ import { Button, Card, PageHeader } from "@/components/ui";
 import { deleteAiTranscripts, type Settings } from "@/lib/store/state";
 import { monthSpend, PRICE_TABLE } from "@/lib/ai/router";
 import { useAiRouter } from "@/components/ai/useAi";
-import { exportJson, importJson, resetAll, update, useAcademy } from "@/lib/store/storage";
+import { exportJson, hasSafetyCopy, importJson, resetAll, restoreSafetyCopy, update, useAcademy } from "@/lib/store/storage";
+import { checkBackup, type BackupCheck } from "@/lib/store/state";
 
 // In the claude.ai artifact viewer file downloads are blocked → offer clipboard backup instead.
 const IS_ARTIFACT = process.env.NEXT_PUBLIC_ARTIFACT === "1";
@@ -13,7 +14,6 @@ const IS_ARTIFACT = process.env.NEXT_PUBLIC_ARTIFACT === "1";
 export default function SettingsPage() {
   const s = useAcademy();
   const router = useRouter();
-  const file = useRef<HTMLInputElement>(null);
   const [confirm, setConfirm] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   const set = (patch: Partial<Settings>) => update((st) => ({ ...st, settings: { ...st.settings, ...patch } }));
@@ -59,19 +59,7 @@ export default function SettingsPage() {
         <Card>
           <h2 className="mb-1 font-semibold">Deine Daten</h2>
           <p className="text-sm text-muted">Alles liegt nur in diesem Browser (localStorage). Es gibt keine Übertragung an Server, keine Cookies, kein Tracking.</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {!IS_ARTIFACT && <Button variant="secondary" onClick={download}>Daten exportieren (JSON)</Button>}
-            <Button variant="secondary" onClick={async () => {
-              try { await navigator.clipboard.writeText(exportJson()); setMsg("Sicherung in die Zwischenablage kopiert – z. B. in Notizen einfügen."); }
-              catch { setMsg("Kopieren nicht möglich. Nutze den Export-Button."); }
-            }}>Sicherung kopieren</Button>
-            <Button variant="secondary" onClick={() => file.current?.click()}>Sicherung importieren</Button>
-            <input ref={file} type="file" accept="application/json" className="hidden" onChange={async (e) => {
-              const f = e.target.files?.[0];
-              if (!f) return;
-              try { importJson(await f.text()); setMsg("Sicherung importiert."); } catch { setMsg("Import fehlgeschlagen – Datei ungültig."); }
-            }} />
-          </div>
+          <BackupPanel onMsg={setMsg} onDownload={download} />
           {msg && <p role="status" className="mt-2 text-sm">{msg}</p>}
           <div className="mt-6 rounded-[var(--radius-sm)] border border-danger/40 p-4">
             <h3 className="text-sm font-semibold text-danger">Alle Daten löschen</h3>
@@ -122,5 +110,70 @@ function AiSettings() {
         <Button variant="danger" className="min-h-10" disabled={!s.aiSimulations.length} onClick={() => update(deleteAiTranscripts)}>KI-Gespräche löschen</Button>
       </div>
     </Card>
+  );
+}
+
+function BackupPanel({ onMsg, onDownload }: { onMsg: (m: string) => void; onDownload: () => void }) {
+  const file = useRef<HTMLInputElement>(null);
+  const [showExport, setShowExport] = useState(false);
+  const [text, setText] = useState("");
+  const [check, setCheck] = useState<BackupCheck | null>(null);
+  const [undo, setUndo] = useState(() => hasSafetyCopy());
+  const prepare = (t: string) => {
+    setText(t);
+    setCheck(t.trim() ? checkBackup(t) : null);
+  };
+  return (
+    <div className="mt-4 grid gap-4">
+      <div>
+        <p className="mb-2 text-sm font-medium">Sichern</p>
+        <div className="flex flex-wrap gap-2">
+          {!IS_ARTIFACT && <Button variant="secondary" onClick={onDownload}>Als Datei exportieren</Button>}
+          <Button variant="secondary" onClick={async () => {
+            try { await navigator.clipboard.writeText(exportJson()); onMsg("Sicherung in die Zwischenablage kopiert – z. B. in Notizen einfügen."); }
+            catch { setShowExport(true); onMsg("Kopieren war nicht möglich. Markiere den Text unten und kopiere ihn von Hand."); }
+          }}>Sicherung kopieren</Button>
+          <Button variant="ghost" onClick={() => setShowExport((x) => !x)}>{showExport ? "Text ausblenden" : "Als Text anzeigen"}</Button>
+        </div>
+        {showExport && (
+          <textarea readOnly aria-label="Sicherung als Text" value={exportJson()} onFocus={(e) => e.currentTarget.select()} rows={6} className="mt-2 w-full rounded-[var(--radius-sm)] border border-line bg-elev p-3 font-mono text-xs" />
+        )}
+      </div>
+      <div>
+        <p className="mb-2 text-sm font-medium">Wiederherstellen</p>
+        <p className="mb-2 text-xs text-faint">Die Sicherung wird zuerst geprüft. Dein aktueller Stand wird erst ersetzt, wenn du bestätigst – und vorher als Sicherheitskopie aufbewahrt.</p>
+        <div className="flex flex-wrap gap-2">
+          <Button variant="secondary" onClick={() => file.current?.click()}>Datei wählen</Button>
+          <input ref={file} type="file" accept="application/json,.json,.txt" className="hidden" onChange={async (e) => {
+            const f = e.target.files?.[0];
+            if (f) prepare(await f.text());
+            e.target.value = "";
+          }} />
+        </div>
+        <textarea aria-label="Sicherung einfügen" value={text} onChange={(e) => prepare(e.target.value)} rows={4} placeholder="… oder Sicherungstext hier einfügen" className="mt-2 w-full rounded-[var(--radius-sm)] border border-line bg-elev p-3 font-mono text-xs" />
+        {check && (
+          <div role="status" className={`mt-2 rounded-[var(--radius-sm)] border p-3 text-sm ${check.ok ? "border-success/40" : "border-danger/40"}`}>
+            {check.ok ? (
+              <>
+                <p className="font-medium text-success">Sicherung gültig</p>
+                <p className="text-muted">Profil „{check.summary.name}“ · {check.summary.lessons} Lektionen · {check.summary.answers} Antworten · {check.summary.simulations} Gespräche · Version {check.summary.schemaVersion}</p>
+                <Button className="mt-2" onClick={() => {
+                  try { importJson(text); onMsg("Sicherung importiert. Dein vorheriger Stand liegt als Sicherheitskopie bereit."); setText(""); setCheck(null); setUndo(true); }
+                  catch (err) { onMsg(`Import abgebrochen – nichts wurde verändert. ${(err as Error).message}`); }
+                }}>Diesen Stand übernehmen</Button>
+              </>
+            ) : (
+              <>
+                <p className="font-medium text-danger">Nicht importierbar – dein Stand bleibt unverändert</p>
+                <ul className="text-muted">{check.problems.map((p) => <li key={p}>• {p}</li>)}</ul>
+              </>
+            )}
+          </div>
+        )}
+        {undo && (
+          <Button variant="ghost" className="mt-2" onClick={() => onMsg(restoreSafetyCopy() ? "Sicherheitskopie wiederhergestellt (der ersetzte Stand ist nun die neue Sicherheitskopie)." : "Keine gültige Sicherheitskopie vorhanden.")}>Letzten Import rückgängig machen</Button>
+        )}
+      </div>
+    </div>
   );
 }

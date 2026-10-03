@@ -161,8 +161,59 @@ export function migrate(raw: unknown): AcademyState {
     cur = { ...cur, aiSimulations: cur.aiSimulations ?? [], ai: cur.ai ?? b.ai, reader: cur.reader ?? b.reader };
     v = 4;
   }
-  const base = initialState();
-  return { ...base, ...(cur as Partial<AcademyState>), schemaVersion: SCHEMA_VERSION };
+  return sanitize(cur);
+}
+
+const kind = (x: unknown) => (Array.isArray(x) ? "array" : x === null ? "null" : typeof x);
+
+/** Keeps only known top-level keys with the expected JSON kind; anything else falls back to the default. */
+function sanitize(cur: Record<string, unknown>): AcademyState {
+  const base = initialState() as unknown as Record<string, unknown>;
+  const out: Record<string, unknown> = { ...base };
+  for (const k of Object.keys(base)) {
+    if (!(k in cur)) continue;
+    const want = kind(base[k]);
+    const got = kind(cur[k]);
+    if (k === "profile") out[k] = got === "object" && typeof (cur[k] as Profile).displayName === "string" ? cur[k] : null;
+    else if (want === "object" && got === "object") out[k] = { ...(base[k] as object), ...(cur[k] as object) };
+    else if (want === got) out[k] = cur[k];
+  }
+  // arrays must contain objects with a timestamp where the engines expect one
+  for (const k of ["attempts", "quizAttempts", "simulations", "aiSimulations", "xpLog"] as const)
+    out[k] = (out[k] as unknown[]).filter((x) => x && typeof x === "object" && typeof (x as { at?: unknown }).at === "number");
+  out.schemaVersion = SCHEMA_VERSION;
+  return out as unknown as AcademyState;
+}
+
+export interface BackupCheck {
+  ok: boolean;
+  problems: string[];
+  summary: { name: string | null; lessons: number; answers: number; simulations: number; schemaVersion: number | null };
+}
+
+/** Strict check BEFORE an import replaces anything. Rejects empty, foreign or newer-than-app files. */
+export function checkBackup(text: string): BackupCheck {
+  const problems: string[] = [];
+  let raw: unknown;
+  try {
+    raw = JSON.parse(text);
+  } catch {
+    return { ok: false, problems: ["Kein gültiges JSON – die Datei ist beschädigt oder unvollständig."], summary: { name: null, lessons: 0, answers: 0, simulations: 0, schemaVersion: null } };
+  }
+  const o = (raw && typeof raw === "object" && !Array.isArray(raw) ? raw : {}) as Record<string, unknown>;
+  const v = typeof o.schemaVersion === "number" ? o.schemaVersion : null;
+  if (kind(raw) !== "object") problems.push("Die Datei enthält kein Sicherungsobjekt.");
+  else if (v === null) problems.push("Keine Versionsangabe – das ist keine Sicherung dieser Akademie.");
+  else if (v > SCHEMA_VERSION) problems.push(`Die Sicherung stammt aus einer neueren App-Version (${v}). Bitte zuerst die App aktualisieren.`);
+  if (v !== null && v >= 1 && !(o.profile && typeof o.profile === "object")) problems.push("Kein Lernprofil enthalten.");
+  const lessons = o.lessonsCompleted && typeof o.lessonsCompleted === "object" ? Object.keys(o.lessonsCompleted).length : 0;
+  const answers = Array.isArray(o.attempts) ? o.attempts.length : 0;
+  const sims = (Array.isArray(o.simulations) ? o.simulations.length : 0) + (Array.isArray(o.aiSimulations) ? o.aiSimulations.length : 0);
+  return {
+    ok: problems.length === 0,
+    problems,
+    summary: { name: (o.profile as Profile | undefined)?.displayName ?? null, lessons, answers, simulations: sims, schemaVersion: v },
+  };
 }
 
 export function newProfile(displayName: string, now: number): Profile {

@@ -69,9 +69,18 @@ describe("90-Tage-Plan", () => {
     expect(r.evaluation.passed).toBe(true);
     expect(stageCheckPassed(r.state, program[0]!)).toBe(true);
   });
-  it("P7 Stufe 2+ ist ehrlich als in Vorbereitung gesperrt", () => {
-    const d = dayState(startProgram(initialState(), T0), program, 30, T0);
+  it("P7 Stufen ohne fertige Inhalte sind ehrlich als in Vorbereitung gesperrt", () => {
+    const open = program.find((p) => !p.available);
+    if (!open) return; // all stages written
+    expect(open.days).toHaveLength(0);
+    const d = dayState(startProgram(initialState(), T0), program, open.dayFrom, T0);
     expect(d.status === "locked" && d.reason).toContain("ausgearbeitet");
+  });
+  it("P7b Freigeschaltete Stufen haben für jeden Tag Inhalte und einen Stufen-Check", () => {
+    for (const st of program.filter((p) => p.available)) {
+      expect(st.days).toHaveLength(st.dayTo - st.dayFrom + 1);
+      expect(st.days.at(-1)!.items.some((i) => i.type === "quiz" && i.ref === st.id)).toBe(true);
+    }
   });
   it("P8 Aktueller Tag ist der erste nicht abgeschlossene", () => {
     let s = startProgram(initialState(), T0);

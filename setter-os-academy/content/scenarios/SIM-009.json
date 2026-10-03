@@ -1,0 +1,758 @@
+{
+  "id": "SIM-009",
+  "version": 1,
+  "title": "Wärmepumpe: Termin verpasst – freundlich nachfassen",
+  "archetype": "Lead, der einen vereinbarten Termin verpasst hat (No-Show)",
+  "industry": "Heizungstechnik – Wärmepumpen-Beratung",
+  "channel": "whatsapp",
+  "market": "B2C",
+  "direction": "inbound",
+  "difficulty": 3,
+  "briefing": "Simulation – alle Personen und Firmen sind erfunden. Du bist Setter bei „ThermoTal“. Herr Oberle hatte am Dienstag um 18:00 Uhr eine 30-minütige Videoberatung mit Energieberaterin Lena Sommer gebucht und WhatsApp als Kontaktweg für Terminnachrichten gewählt (dokumentiert). Aus dem Erstgespräch bekannt: Eigentümer eines Reihenhauses, Gasheizung 19 Jahre alt. Er ist nicht erschienen; deine kurze Nachricht um 18:10 Uhr blieb unbeantwortet. Heute (Mittwoch) Vormittag meldet er sich. Ziel: ohne Vorwurf nachfassen, verstehen, was los war und ob das Thema noch aktuell ist – und dann entweder einen neuen Termin vereinbaren oder ein Nein bzw. ein „später“ respektieren. Pflichtkriterien für einen neuen Termin: Thema noch aktuell, Mitentscheider geklärt, passendes Zeitfenster, Erinnerungswunsch. Preis-, Technik- und Förderfragen beantwortet nur die Beraterin. Am Ende schreibst du die Übergabenotiz.",
+  "persona": {
+    "name": "Markus Oberle",
+    "role": "Eigentümer eines Reihenhauses, arbeitet im Schichtdienst",
+    "avatarHue": 30
+  },
+  "facts": [
+    {
+      "key": "reason",
+      "label": "Grund für das Nichterscheinen",
+      "value": "Kurzfristig Spätschicht übernommen und den Termin vergessen",
+      "requiredForQualification": false,
+      "distractors": [
+        "Hat kein Interesse mehr",
+        "Hat bei einem anderen Anbieter unterschrieben"
+      ]
+    },
+    {
+      "key": "interest",
+      "label": "Thema noch aktuell",
+      "value": "Weiterhin aktuell – Gasheizung soll vor dem nächsten Winter ersetzt werden",
+      "requiredForQualification": true,
+      "distractors": [
+        "Thema hat sich erledigt",
+        "Will erst in fünf Jahren entscheiden"
+      ]
+    },
+    {
+      "key": "authority",
+      "label": "Mitentscheider",
+      "value": "Ehefrau möchte beim neuen Termin dabei sein (Fragen zu Kosten)",
+      "requiredForQualification": true,
+      "distractors": [
+        "Entscheidet allein",
+        "Vermieter entscheidet"
+      ]
+    },
+    {
+      "key": "slot",
+      "label": "Passende Zeitfenster",
+      "value": "Abends ab 19:30 Uhr oder Samstagvormittag (wechselnde Schichten)",
+      "requiredForQualification": true,
+      "distractors": [
+        "Nur werktags 9–12 Uhr",
+        "Jederzeit spontan"
+      ]
+    },
+    {
+      "key": "reminder",
+      "label": "Erinnerungswunsch",
+      "value": "Per WhatsApp am Vortag und eine Stunde vorher",
+      "requiredForQualification": true,
+      "distractors": [
+        "Keine Erinnerung gewünscht",
+        "Erinnerung per Anruf"
+      ]
+    },
+    {
+      "key": "worry",
+      "label": "Hauptsorge",
+      "value": "Das Versäumnis ist ihm unangenehm; befürchtet Druck",
+      "requiredForQualification": false,
+      "distractors": [
+        "Hält die Beraterin für inkompetent",
+        "Ärgert sich über zu viele Nachrichten"
+      ]
+    }
+  ],
+  "idealOutcome": "book",
+  "acceptableOutcomes": [
+    "book",
+    "nurture",
+    "respect_no"
+  ],
+  "openingMessage": "Hallo, ich hab Ihre Nachricht von gestern gesehen. Sorry, das mit dem Termin war echt blöd 😬",
+  "startRapport": 4,
+  "maxTurns": 13,
+  "handoverFields": [
+    "reason",
+    "interest",
+    "authority",
+    "slot",
+    "reminder",
+    "worry"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 2,
+    "bedarfsermittlung": 2,
+    "fragetechnik": 2,
+    "zuhoeren": 3,
+    "klarheit": 3,
+    "qualifizierung": 5,
+    "einwaende": 2,
+    "kundenorientierung": 9,
+    "terminvereinbarung": 8
+  },
+  "reviewQuestionIds": [
+    "Q-M07-026",
+    "Q-M07-027",
+    "Q-M07-028",
+    "Q-M07-020",
+    "Q-M07-031"
+  ],
+  "sourceIds": [
+    "SRC-052",
+    "SRC-234",
+    "SRC-019",
+    "SRC-025",
+    "SRC-056",
+    "SRC-050"
+  ],
+  "moves": [
+    {
+      "id": "open-checkin",
+      "intent": "acknowledge",
+      "quality": "good",
+      "text": "Hallo Herr Oberle, danke für Ihre Rückmeldung – das ist überhaupt kein Problem, so etwas passiert. Ich hoffe, bei Ihnen ist alles in Ordnung?",
+      "effects": {
+        "eroeffnung": 2,
+        "kundenorientierung": 3,
+        "zuhoeren": 1
+      },
+      "coachNote": "Entlastet, ohne Vorwurf, mit echtem Interesse am Menschen – so fällt es ihm leicht, offen zu antworten.",
+      "reply": [
+        {
+          "text": "Ja, alles gut. Ich musste kurzfristig eine Spätschicht übernehmen und hab den Termin in dem Trubel total vergessen.",
+          "reveals": [
+            "reason"
+          ],
+          "setsFlags": [
+            "reason-known"
+          ]
+        }
+      ],
+      "rapport": 2,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ]
+    },
+    {
+      "id": "open-guilt",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Hallo Herr Oberle, Frau Sommer hat gestern 30 Minuten umsonst auf Sie gewartet. Das ist für uns schon ärgerlich.",
+      "effects": {
+        "kundenorientierung": -3,
+        "zuhoeren": -1
+      },
+      "coachNote": "Schuld-Appell nach einem No-Show: beschämt, statt zu verstehen – die wahrscheinlichste Reaktion ist Rückzug.",
+      "reply": [
+        {
+          "text": "Ja, ich hab mich ja schon entschuldigt. Ich glaube, ich lasse das Thema dann erst mal.",
+          "ends": "lost"
+        }
+      ],
+      "rapport": -3,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "betterMoveId": "open-checkin",
+      "violation": "Schuldgefühl als Druckmittel nach einem No-Show."
+    },
+    {
+      "id": "open-rebook",
+      "intent": "propose_booking",
+      "quality": "weak",
+      "text": "Kein Problem! Passt Ihnen Donnerstag um 18 Uhr für den neuen Termin?",
+      "effects": {
+        "terminvereinbarung": -1,
+        "zuhoeren": -1
+      },
+      "coachNote": "Springt sofort zum neuen Termin, ohne zu klären, was passiert ist und ob das Thema noch aktuell ist – das gleiche Problem kann sich wiederholen.",
+      "reply": [
+        {
+          "text": "Donnerstag hab ich wieder Spätschicht … ehrlich gesagt weiß ich gerade gar nicht, wann es passt."
+        }
+      ],
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "betterMoveId": "open-checkin"
+    },
+    {
+      "id": "ask-reason",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Darf ich fragen, was gestern dazwischengekommen ist? Nur damit wir einen neuen Termin besser legen können – Sie müssen sich nicht rechtfertigen.",
+      "effects": {
+        "bedarfsermittlung": 1,
+        "fragetechnik": 1,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Behutsam, begründet und freiwillig – so erfährst du den Grund, ohne ein Verhör zu führen.",
+      "reply": [
+        {
+          "text": "Ich hab kurzfristig eine Spätschicht übernommen, und dann war der Termin einfach weg aus dem Kopf.",
+          "reveals": [
+            "reason"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "reason-known"
+      ],
+      "setsFlags": [
+        "reason-known"
+      ]
+    },
+    {
+      "id": "why-accuse",
+      "intent": "ask",
+      "quality": "bad",
+      "text": "Warum haben Sie denn nicht wenigstens kurz abgesagt?",
+      "effects": {
+        "kundenorientierung": -3,
+        "zuhoeren": -1
+      },
+      "coachNote": "Vorwurfsvolle Warum-Frage – er hat sich schon entschuldigt. Das erzeugt Rechtfertigung statt Offenheit.",
+      "reply": [
+        {
+          "text": "Ich hab doch schon gesagt, dass es mir leidtut. Das war keine Absicht."
+        }
+      ],
+      "rapport": -2,
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accused"
+      ],
+      "setsFlags": [
+        "accused"
+      ],
+      "betterMoveId": "ask-reason"
+    },
+    {
+      "id": "ask-relevance",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Ist das Thema Wärmepumpe für Sie noch aktuell, oder hat sich seit unserem letzten Gespräch etwas geändert? Beides ist völlig in Ordnung.",
+      "effects": {
+        "bedarfsermittlung": 2,
+        "kundenorientierung": 2,
+        "fragetechnik": 1
+      },
+      "coachNote": "Zwei gleichwertige Ausgänge: Er kann ehrlich Ja oder Nein sagen, ohne sich rechtfertigen zu müssen.",
+      "reply": [
+        {
+          "when": {
+            "minRapport": 5
+          },
+          "text": "Doch, auf jeden Fall noch aktuell – die Gasheizung soll vor dem nächsten Winter raus. Mir war das gestern nur ziemlich unangenehm, und ich hatte schon Sorge, dass jetzt ein Anruf mit Druck kommt.",
+          "reveals": [
+            "interest",
+            "worry"
+          ]
+        },
+        {
+          "text": "Schon noch aktuell, die alte Heizung muss vor dem nächsten Winter raus.",
+          "reveals": [
+            "interest"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "relevance-asked"
+      ],
+      "setsFlags": [
+        "relevance-asked"
+      ]
+    },
+    {
+      "id": "reassure",
+      "intent": "acknowledge",
+      "quality": "good",
+      "text": "Das verstehe ich gut. Es kommt kein Druck: Sie entscheiden in Ruhe, ob und wann ein neuer Termin passt. Frau Sommer beantwortet im Gespräch nur Ihre Fragen – unterschreiben müssen Sie dort nichts.",
+      "effects": {
+        "kundenorientierung": 2,
+        "einwaende": 2,
+        "zuhoeren": 2
+      },
+      "coachNote": "Benennt die Sorge, schafft Transparenz und betont seine Entscheidungsfreiheit.",
+      "reply": [
+        {
+          "text": "Gut zu hören. Dann können wir das gern noch mal angehen."
+        }
+      ],
+      "rapport": 1,
+      "requires": [
+        "worry"
+      ],
+      "hiddenByFlags": [
+        "reassured"
+      ],
+      "setsFlags": [
+        "reassured"
+      ]
+    },
+    {
+      "id": "ask-partner",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Soll beim neuen Termin noch jemand dabei sein, der mitentscheidet?",
+      "effects": {
+        "qualifizierung": 3
+      },
+      "coachNote": "Mitentscheider neu geklärt – Situationen ändern sich, auch nach einem Erstgespräch.",
+      "reply": [
+        {
+          "text": "Ja, eigentlich wäre es gut, wenn meine Frau dabei ist. Sie hat noch Fragen zu den Kosten."
+        }
+      ],
+      "requires": [
+        "interest"
+      ],
+      "reveals": [
+        "authority"
+      ],
+      "hiddenByFlags": [
+        "partner-asked"
+      ],
+      "setsFlags": [
+        "partner-asked"
+      ]
+    },
+    {
+      "id": "ask-slot",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Ihre Schichten wechseln ja – welche Zeiten passen Ihnen beiden grundsätzlich am besten?",
+      "effects": {
+        "terminvereinbarung": 1,
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "coachNote": "Greift den Grund für den No-Show auf und klärt die Zeitfenster, bevor du Optionen anbietest.",
+      "reply": [
+        {
+          "text": "Abends ab halb acht oder Samstagvormittag. Unter der Woche kenne ich meine Schichten immer nur zwei Wochen im Voraus."
+        }
+      ],
+      "requires": [
+        "interest"
+      ],
+      "reveals": [
+        "slot"
+      ],
+      "hiddenByFlags": [
+        "slot-asked"
+      ],
+      "setsFlags": [
+        "slot-asked"
+      ]
+    },
+    {
+      "id": "cost-answer",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Die Kosten liegen bei den meisten Häusern nach Förderung bei rund 15.000 €.",
+      "effects": {
+        "kundenorientierung": -2,
+        "klarheit": -1
+      },
+      "coachNote": "Ungeprüfte Preis- und Förderaussage außerhalb deiner Rolle – sie kann falsche Erwartungen wecken.",
+      "reply": [
+        {
+          "text": "Oh, okay … meine Frau hatte irgendwo was ganz anderes gelesen. Jetzt bin ich verwirrt."
+        }
+      ],
+      "rapport": -1,
+      "requires": [
+        "authority"
+      ],
+      "hiddenByFlags": [
+        "cost-done"
+      ],
+      "setsFlags": [
+        "cost-done"
+      ],
+      "betterMoveId": "cost-handoff",
+      "violation": "Ungeprüfte Preis-/Förderaussage außerhalb der Setter-Rolle."
+    },
+    {
+      "id": "cost-handoff",
+      "intent": "handoff",
+      "quality": "good",
+      "text": "Die Kostenfragen Ihrer Frau nehme ich für Frau Sommer auf – sie kann das anhand Ihres Hauses seriös einordnen. Gibt es eine Frage, die Ihrer Frau besonders wichtig ist?",
+      "effects": {
+        "kundenorientierung": 2,
+        "klarheit": 1
+      },
+      "coachNote": "Rollenklar: Fragen aufnehmen und an die Fachberatung übergeben, statt selbst Zahlen zu nennen.",
+      "reply": [
+        {
+          "text": "Vor allem, was nach der Förderung wirklich übrig bleibt."
+        }
+      ],
+      "requires": [
+        "authority"
+      ],
+      "hiddenByFlags": [
+        "cost-done"
+      ],
+      "setsFlags": [
+        "cost-done"
+      ]
+    },
+    {
+      "id": "propose",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Möchten Sie einen neuen Termin mit Frau Sommer vereinbaren – diesmal so, dass Ihre Frau dabei sein kann?",
+      "effects": {
+        "terminvereinbarung": 2
+      },
+      "coachNote": "Klarer Vorschlag als Frage, der die neue Situation berücksichtigt.",
+      "reply": [
+        {
+          "when": {
+            "factsRevealed": [
+              "interest",
+              "authority",
+              "slot"
+            ],
+            "minRapport": 5
+          },
+          "text": "Ja, gern.",
+          "setsFlags": [
+            "accepted"
+          ]
+        },
+        {
+          "text": "Grundsätzlich ja – aber ich weiß gerade nicht, wann es bei uns passt. Fragen Sie ruhig, was Sie wissen müssen."
+        }
+      ],
+      "requires": [
+        "interest"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ]
+    },
+    {
+      "id": "auto-book",
+      "intent": "propose_booking",
+      "quality": "bad",
+      "text": "Ich habe Sie einfach für Donnerstag, 18 Uhr, neu eingetragen – die Einladung kommt gleich.",
+      "effects": {
+        "terminvereinbarung": -2,
+        "kundenorientierung": -2
+      },
+      "coachNote": "Termin ohne Zustimmung und ohne Klärung der Zeitfenster – genau der Fehler, der zum nächsten No-Show führt.",
+      "reply": [
+        {
+          "text": "Moment, das hab ich so nicht gesagt. Donnerstag hab ich Spätschicht."
+        }
+      ],
+      "rapport": -2,
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted",
+        "auto-booked"
+      ],
+      "setsFlags": [
+        "auto-booked"
+      ],
+      "betterMoveId": "propose",
+      "violation": "Termin ohne Zustimmung des Kunden eingetragen."
+    },
+    {
+      "id": "slots",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Prima! Ich hätte Samstag, 24.10., um 10:00 Uhr oder Donnerstag, 29.10., um 19:30 Uhr – jeweils 45 Minuten per Video, damit genug Zeit für die Fragen Ihrer Frau bleibt. Was passt besser?",
+      "effects": {
+        "terminvereinbarung": 2,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Zwei Optionen in seinen Zeitfenstern, Dauer an die neue Situation angepasst.",
+      "reply": [
+        {
+          "text": "Samstag 10 Uhr passt uns gut."
+        }
+      ],
+      "requiresFlags": [
+        "accepted"
+      ],
+      "hiddenByFlags": [
+        "slot-chosen"
+      ],
+      "setsFlags": [
+        "slot-chosen"
+      ]
+    },
+    {
+      "id": "ask-reminder",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Wie möchten Sie an den Termin erinnert werden – wieder per WhatsApp? Und wann wäre es für Sie hilfreich?",
+      "effects": {
+        "terminvereinbarung": 2,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Erinnerung auf seinen Alltag zugeschnitten und Kanal ausdrücklich abgestimmt – der wichtigste Hebel nach einem Vergessen.",
+      "reply": [
+        {
+          "text": "WhatsApp passt. Am besten am Vortag und dann noch mal eine Stunde vorher – bei den Schichten verliere ich sonst den Überblick."
+        }
+      ],
+      "requiresFlags": [
+        "slot-chosen"
+      ],
+      "reveals": [
+        "reminder"
+      ],
+      "hiddenByFlags": [
+        "reminder-asked"
+      ],
+      "setsFlags": [
+        "reminder-asked"
+      ]
+    },
+    {
+      "id": "confirm",
+      "intent": "confirm_booking",
+      "quality": "good",
+      "text": "Perfekt: Samstag, 24.10., 10:00 Uhr, 45 Minuten per Video mit Frau Sommer – Sie und Ihre Frau. Die Einladung mit Link schicke ich gleich. Ich erinnere Sie am Freitag und am Samstag um 9 Uhr kurz per WhatsApp. Mögen Sie sich den Termin direkt eintragen? Und falls doch eine Schicht dazwischenkommt: einfach kurz schreiben, dann finden wir eine andere Zeit.",
+      "effects": {
+        "terminvereinbarung": 3,
+        "klarheit": 2
+      },
+      "coachNote": "Vollständige Bestätigung: Eckdaten, Teilnehmende, abgestimmte Erinnerung, ein Planungsimpuls und ein leichter Weg zum Verschieben.",
+      "reply": [
+        {
+          "text": "Trag ich gleich ein. Danke, dass Sie das so entspannt nehmen!",
+          "ends": "book"
+        }
+      ],
+      "requiresFlags": [
+        "slot-chosen",
+        "reminder-asked"
+      ]
+    },
+    {
+      "id": "confirm-quick",
+      "intent": "confirm_booking",
+      "quality": "weak",
+      "text": "Super, dann Samstag 10 Uhr. Bis dann!",
+      "effects": {
+        "terminvereinbarung": -1
+      },
+      "coachNote": "Keine Eckdaten, keine abgestimmte Erinnerung, kein Weg zum Verschieben – nach einem Vergessen besonders riskant.",
+      "reply": [
+        {
+          "text": "Okay, bis dann.",
+          "ends": "book"
+        }
+      ],
+      "requiresFlags": [
+        "slot-chosen"
+      ],
+      "hiddenByFlags": [
+        "reminder-asked"
+      ],
+      "betterMoveId": "ask-reminder"
+    },
+    {
+      "id": "scarcity",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Ich kann Ihnen nur noch heute einen Termin anbieten, danach sind wir bis Januar ausgebucht.",
+      "effects": {
+        "kundenorientierung": -3
+      },
+      "coachNote": "Erfundene Knappheit als Druck – genau das, was er befürchtet hat.",
+      "reply": [
+        {
+          "text": "Dann lassen wir es lieber. So was mag ich gar nicht.",
+          "ends": "lost"
+        }
+      ],
+      "rapport": -3,
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ],
+      "betterMoveId": "propose",
+      "violation": "Erfundene Verknappung als Druckmittel."
+    },
+    {
+      "id": "discount",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Wenn Sie heute neu buchen, bekommen Sie 5 % Rabatt – nur für Sie.",
+      "effects": {
+        "kundenorientierung": -2,
+        "klarheit": -1
+      },
+      "coachNote": "Rabattköder mit Frist: künstliche Dringlichkeit und eine Zusage, die du als Setter nicht machen darfst.",
+      "reply": [
+        {
+          "text": "Ich will keinen Rabatt, ich will einfach in Ruhe beraten werden."
+        }
+      ],
+      "rapport": -2,
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted",
+        "discounted"
+      ],
+      "setsFlags": [
+        "discounted"
+      ],
+      "betterMoveId": "reassure",
+      "violation": "Rabattversprechen außerhalb der Rolle als Druckmittel."
+    },
+    {
+      "id": "nurture",
+      "intent": "nurture",
+      "quality": "ok",
+      "text": "Wenn es mit den Schichten gerade schwierig ist, können wir den Termin auch erst einmal offenlassen. Darf ich mich in zwei Wochen kurz per WhatsApp melden, wenn Sie Ihren neuen Schichtplan haben?",
+      "effects": {
+        "kundenorientierung": 2
+      },
+      "coachNote": "Respektvolle Alternative mit Zustimmung zum späteren Kontakt – bei klarem Interesse aber nicht das Optimum.",
+      "reply": [
+        {
+          "text": "Ja, das ist gut, dann weiß ich mehr.",
+          "ends": "nurture"
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ]
+    },
+    {
+      "id": "close-respectful",
+      "intent": "close_respectfully",
+      "quality": "ok",
+      "text": "Falls das Thema für Sie gerade nicht passt, ist das völlig in Ordnung – dann melde ich mich nicht mehr, und Sie können jederzeit selbst auf uns zukommen.",
+      "effects": {
+        "kundenorientierung": 1
+      },
+      "coachNote": "Respektvoll und ohne Druck. Wenn er das Thema aber noch aktuell findet, verschenkst du einen sinnvollen nächsten Schritt.",
+      "reply": [
+        {
+          "when": {
+            "factsRevealed": [
+              "interest"
+            ]
+          },
+          "text": "Na gut … eigentlich wollte ich das schon. Aber dann melde ich mich, wenn es passt.",
+          "ends": "respect_no"
+        },
+        {
+          "text": "Okay, danke. Ich melde mich, wenn es bei mir passt.",
+          "ends": "respect_no"
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ]
+    }
+  ],
+  "ai": {
+    "personality": "freundlich, etwas verlegen wegen des verpassten Termins, pragmatisch; öffnet sich, wenn er merkt, dass ihm niemand Vorwürfe macht",
+    "speakingStyle": "Sie-Form, kurze bis mittellange WhatsApp-Nachrichten, umgangssprachlich, gelegentlich ein Emoji wie 😬 oder 👍",
+    "situation": "Hat am Dienstag um 18 Uhr eine Videoberatung zu einer Wärmepumpe verpasst und meldet sich am Mittwochvormittag auf die Nachricht des Setters von 18:10 Uhr.",
+    "concern": "Das Versäumnis ist ihm unangenehm; er befürchtet, jetzt unter Druck gesetzt zu werden.",
+    "background": "Eigentümer eines Reihenhauses, Gasheizung 19 Jahre alt, soll vor dem nächsten Winter ersetzt werden. Arbeitet im Schichtdienst und kennt seine Schichten nur zwei Wochen im Voraus. Hat am Dienstag kurzfristig eine Spätschicht übernommen und den Termin vergessen. Seine Frau möchte beim neuen Termin dabei sein und hat Fragen zu den Kosten nach Förderung. Passend sind abends ab 19:30 Uhr oder Samstagvormittag. Möchte per WhatsApp am Vortag und eine Stunde vorher erinnert werden.",
+    "needs": [
+      "keine Vorwürfe",
+      "Termine, die zu seinen wechselnden Schichten passen",
+      "eine verlässliche Erinnerung",
+      "seine Frau soll dabei sein"
+    ],
+    "objections": [
+      {
+        "trigger": "der Setter macht Vorwürfe oder erwähnt, dass die Beraterin umsonst gewartet hat",
+        "reaction": "zieht sich zurück und will das Thema erst einmal lassen"
+      },
+      {
+        "trigger": "der Setter schlägt sofort einen Termin vor, ohne nach seiner Situation zu fragen",
+        "reaction": "wird unsicher: „Ich weiß gerade gar nicht, wann es passt.“"
+      },
+      {
+        "trigger": "Knappheit, Fristen oder Rabatte",
+        "reaction": "lehnt ab: „Ich will einfach in Ruhe beraten werden.“"
+      },
+      {
+        "trigger": "der Setter trägt einen Termin ohne seine Zustimmung ein",
+        "reaction": "widerspricht deutlich"
+      }
+    ],
+    "customerGoals": [
+      "einen neuen Termin finden, der wirklich klappt",
+      "dass seine Frau ihre Kostenfragen stellen kann",
+      "nicht erneut vergessen"
+    ],
+    "revealRules": {
+      "reason": "der Setter freundlich und ohne Vorwurf fragt, ob alles in Ordnung ist oder was dazwischengekommen ist",
+      "interest": "der Setter fragt, ob das Thema noch aktuell ist oder sich etwas geändert hat",
+      "authority": "der Setter fragt, ob beim neuen Termin noch jemand dabei sein oder mitentscheiden soll",
+      "slot": "der Setter nach grundsätzlich passenden Zeiten fragt oder seine Schichten anspricht",
+      "reminder": "der Setter fragt, wie oder wann er erinnert werden möchte",
+      "worry": "der Setter entlastend reagiert und nachfragt, wie es ihm mit der Situation geht oder ob das Thema noch aktuell ist – nur wenn er sich nicht unter Druck gesetzt fühlt"
+    },
+    "adviceBoundaries": [
+      "Was kostet eine Wärmepumpe bei uns nach Förderung?",
+      "Funktioniert eine Wärmepumpe mit unseren alten Heizkörpern?",
+      "Welche Förderung bekommen wir genau?"
+    ],
+    "outcomeGuidance": "Ideal ist ein neuer Termin, wenn der Setter ohne Vorwurf nachgefasst hat und geklärt sind: Thema noch aktuell, Ehefrau nimmt teil, passende Zeitfenster und Erinnerungswunsch; Bestätigung mit Eckdaten und Verschiebeweg. Ein späterer Kontakt mit Zustimmung (nurture) oder ein respektierter Abschluss sind vertretbar. Bei Schuld-Appellen, Knappheit, Rabatten oder Eintragen ohne Zustimmung zieht er sich zurück.",
+    "lessonLinks": [
+      "M07-L04",
+      "M07-L05",
+      "M07-L07",
+      "M07-L08"
+    ]
+  }
+}

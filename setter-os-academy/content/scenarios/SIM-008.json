@@ -1,0 +1,833 @@
+{
+  "id": "SIM-008",
+  "version": 1,
+  "title": "Wärmepumpe: Preisfrage und Rücksprache mit der Partnerin",
+  "archetype": "Kunde mit Preis- und Partner-Einwand",
+  "industry": "Heizung – Wärmepumpe im Einfamilienhaus",
+  "channel": "whatsapp",
+  "market": "B2C",
+  "direction": "inbound",
+  "difficulty": 3,
+  "briefing": "Simulation – alle Personen und Firmen sind erfunden. Du bist Setter bei „WärmeWerk Süd“. Herr Beck hat über die Website eine Beratung zur Wärmepumpe angefragt und WhatsApp als Kontaktweg gewählt. Er wird früh nach dem Preis fragen und später Rücksprache mit seiner Frau ansprechen. Ziel: Einwände klären statt kontern, Preis- und Förderfragen rollenklar an den Energieberater übergeben, die Mitentscheiderin einbeziehen – und ein Nein respektieren, falls es kommt. Pflichtkriterien: Bedarf, Eigentum, Zeitrahmen, Entscheider. Zahlen zu Preis und Förderung nennt nur der Berater.",
+  "persona": {
+    "name": "Markus Beck",
+    "role": "Eigentümer, entscheidet gemeinsam mit seiner Frau",
+    "avatarHue": 28
+  },
+  "facts": [
+    {
+      "key": "need",
+      "label": "Bedarf",
+      "value": "Ölheizung 24 Jahre alt, zwei Ausfälle im letzten Winter",
+      "requiredForQualification": true,
+      "distractors": [
+        "Möchte zusätzlich eine Klimaanlage",
+        "Heizung neu, will nur Strom sparen"
+      ]
+    },
+    {
+      "key": "owner",
+      "label": "Eigentum",
+      "value": "Eigentümer, Einfamilienhaus Baujahr 1994",
+      "requiredForQualification": true,
+      "distractors": [
+        "Mieter",
+        "Haus gehört den Eltern"
+      ]
+    },
+    {
+      "key": "timeline",
+      "label": "Zeitrahmen",
+      "value": "Vor dem nächsten Winter",
+      "requiredForQualification": true,
+      "distractors": [
+        "Sofort, diese Woche",
+        "In drei bis fünf Jahren"
+      ]
+    },
+    {
+      "key": "authority",
+      "label": "Entscheider",
+      "value": "Entscheidet gemeinsam mit seiner Frau",
+      "requiredForQualification": true,
+      "distractors": [
+        "Entscheidet allein",
+        "Vermieter entscheidet"
+      ]
+    },
+    {
+      "key": "price_concern",
+      "label": "Preisanliegen",
+      "value": "Ob sich das neben dem Hauskredit monatlich trägt; wünscht ehrliche Gesamtaufstellung",
+      "requiredForQualification": false,
+      "distractors": [
+        "Will nur den günstigsten Anbieter",
+        "Hat bereits eine Förderzusage"
+      ]
+    },
+    {
+      "key": "partner_availability",
+      "label": "Verfügbarkeit beider Entscheider",
+      "value": "Unter der Woche ab 19 Uhr oder samstagvormittags",
+      "requiredForQualification": false,
+      "distractors": [
+        "Nur vormittags unter der Woche",
+        "Frau möchte nicht am Termin teilnehmen"
+      ]
+    }
+  ],
+  "idealOutcome": "book",
+  "acceptableOutcomes": [
+    "book",
+    "nurture",
+    "respect_no"
+  ],
+  "openingMessage": "Hallo, ich hatte wegen einer Wärmepumpe angefragt. Ich will mich erst mal nur informieren.",
+  "startRapport": 4,
+  "maxTurns": 14,
+  "moves": [
+    {
+      "id": "open-good",
+      "intent": "open",
+      "quality": "good",
+      "text": "Hallo Herr Beck, hier ist Sara von WärmeWerk Süd – danke für Ihre Anfrage zur Wärmepumpe! Darf ich Ihnen ein paar kurze Fragen stellen, damit unser Energieberater gut vorbereitet ist?",
+      "effects": {
+        "eroeffnung": 2,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Vorstellung, Bezug zur Anfrage, Erlaubnis eingeholt.",
+      "reply": [
+        {
+          "text": "Ja, kurz. Aber sagen Sie mir gleich: Was kostet so eine Wärmepumpe? Ich habe irgendwo 30.000 Euro gelesen, das ist ja Wahnsinn.",
+          "setsFlags": [
+            "price-raised"
+          ]
+        }
+      ],
+      "rapport": 1,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ]
+    },
+    {
+      "id": "open-pitch",
+      "intent": "open",
+      "quality": "weak",
+      "text": "Hallo! Jetzt ist der perfekte Zeitpunkt für eine Wärmepumpe – wann haben Sie Zeit für einen Termin?",
+      "effects": {
+        "eroeffnung": -1,
+        "kundenorientierung": -1
+      },
+      "coachNote": "Terminfrage vor jeder Bedarfsklärung – wirkt wie Abschlussdruck.",
+      "reply": [
+        {
+          "text": "Langsam. Erst mal will ich wissen, was das kostet. Ich habe 30.000 Euro gelesen.",
+          "setsFlags": [
+            "price-raised"
+          ]
+        }
+      ],
+      "rapport": -1,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "betterMoveId": "open-good"
+    },
+    {
+      "id": "need",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Was hat Sie dazu gebracht, sich gerade jetzt mit einer Wärmepumpe zu beschäftigen?",
+      "effects": {
+        "bedarfsermittlung": 3,
+        "fragetechnik": 1
+      },
+      "coachNote": "Offene Anlassfrage – bringt den Bedarf statt nur den Preis ins Gespräch.",
+      "reply": [
+        {
+          "text": "Unsere Ölheizung ist 24 Jahre alt, und letzten Winter hat sie zweimal gestreikt. Und die Ölpreise … na ja."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "need"
+      ]
+    },
+    {
+      "id": "price-clarify",
+      "intent": "handle_objection",
+      "quality": "good",
+      "text": "Gute und wichtige Frage. Damit ich Sie richtig verstehe: Geht es Ihnen vor allem um die Gesamtsumme, um mögliche Förderung – oder darum, ob sich das für Sie monatlich tragen lässt?",
+      "effects": {
+        "einwaende": 3,
+        "zuhoeren": 2
+      },
+      "coachNote": "Klärt das Anliegen hinter der Preisfrage, bevor irgendetwas beantwortet wird.",
+      "reply": [
+        {
+          "text": "Ehrlich gesagt darum, ob wir uns das überhaupt leisten können. Wir zahlen noch den Hauskredit ab, und niemand sagt einem, was am Ende wirklich übrig bleibt."
+        }
+      ],
+      "requiresFlags": [
+        "price-raised"
+      ],
+      "hiddenByFlags": [
+        "price-done"
+      ],
+      "setsFlags": [
+        "price-clarified"
+      ],
+      "reveals": [
+        "price_concern"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "price-guess",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Rechnen Sie mal mit 12.000 bis 15.000 Euro nach Förderung – das ist bei uns fast immer so.",
+      "effects": {
+        "einwaende": -2,
+        "kundenorientierung": -1
+      },
+      "coachNote": "Ungeprüfte Preis- und Förderaussage außerhalb der Setter-Rolle – wird zum Anker und später zur Enttäuschung.",
+      "reply": [
+        {
+          "text": "Aha, 12.000 also. Das schreibe ich mir auf – darauf verlasse ich mich dann aber auch."
+        }
+      ],
+      "requiresFlags": [
+        "price-raised"
+      ],
+      "hiddenByFlags": [
+        "price-done"
+      ],
+      "setsFlags": [
+        "price-done"
+      ],
+      "betterMoveId": "price-clarify",
+      "violation": "Eigene Preis- und Förderschätzung ohne Prüfung durch den Fachberater."
+    },
+    {
+      "id": "price-argue",
+      "intent": "handle_objection",
+      "quality": "weak",
+      "text": "Teuer ist relativ – mit der alten Ölheizung zahlen Sie auf Dauer sowieso viel mehr.",
+      "effects": {
+        "einwaende": -1,
+        "zuhoeren": -1
+      },
+      "coachNote": "Gegenargument statt Klärung, dazu eine ungeprüfte Behauptung über seine Kosten – löst eher Widerstand aus.",
+      "reply": [
+        {
+          "text": "Das weiß ich doch gar nicht, und Sie auch nicht. Sie kennen unser Haus ja nicht."
+        }
+      ],
+      "requiresFlags": [
+        "price-raised"
+      ],
+      "hiddenByFlags": [
+        "price-done",
+        "price-clarified",
+        "price-argued"
+      ],
+      "setsFlags": [
+        "price-argued"
+      ],
+      "rapport": -1,
+      "betterMoveId": "price-clarify"
+    },
+    {
+      "id": "price-handoff",
+      "intent": "handoff",
+      "quality": "good",
+      "text": "Das ist eine völlig berechtigte Frage. Ehrlich gesagt kann ich Ihnen keine seriöse Zahl nennen – das hängt von Ihrem Haus und der Förderfähigkeit ab. Unser Energieberater rechnet das mit Ihnen durch und zeigt Ihnen eine nachvollziehbare Aufstellung, inklusive Förderung und möglicher Finanzierung. Wäre das hilfreich?",
+      "effects": {
+        "einwaende": 2,
+        "klarheit": 1,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Rollenklar und transparent: begründet, warum es keine Zahl gibt, und zeigt, wer sie wie liefert.",
+      "reply": [
+        {
+          "text": "Ja, so eine ehrliche Aufstellung wäre tatsächlich hilfreich. Die anderen haben nur mit Zahlen um sich geworfen."
+        }
+      ],
+      "requiresFlags": [
+        "price-clarified"
+      ],
+      "hiddenByFlags": [
+        "price-done"
+      ],
+      "setsFlags": [
+        "price-done"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "owner",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Ist das Haus Ihr Eigentum?",
+      "effects": {
+        "qualifizierung": 2
+      },
+      "coachNote": "Pflichtkriterium kurz und neutral geklärt.",
+      "reply": [
+        {
+          "text": "Ja, Einfamilienhaus, Baujahr 1994, gehört uns."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "owner"
+      ]
+    },
+    {
+      "id": "timeline",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Bis wann möchten Sie das Thema Heizung gern gelöst haben?",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "coachNote": "Zeitrahmen offen erfragt.",
+      "reply": [
+        {
+          "text": "Auf jeden Fall vor dem nächsten Winter. Noch einen Ausfall im Januar will ich nicht."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "timeline"
+      ]
+    },
+    {
+      "id": "authority",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Entscheiden Sie das allein, oder ist noch jemand beteiligt?",
+      "effects": {
+        "qualifizierung": 2
+      },
+      "coachNote": "Entscheider neutral erfragt, ohne etwas vorauszusetzen.",
+      "reply": [
+        {
+          "text": "Meine Frau und ich entscheiden das zusammen. Ehrlich gesagt muss ich das sowieso erst mit ihr besprechen, bevor ich irgendwo zusage.",
+          "setsFlags": [
+            "partner-raised"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "authority"
+      ]
+    },
+    {
+      "id": "partner-joint",
+      "intent": "handle_objection",
+      "quality": "good",
+      "text": "Das ist absolut sinnvoll – das ist ja eine gemeinsame Entscheidung. Wäre es für Sie beide angenehmer, wenn das Gespräch mit dem Berater zu einer Zeit stattfindet, in der Ihre Frau dabei sein kann? Wann passt es Ihnen beiden normalerweise?",
+      "effects": {
+        "einwaende": 3,
+        "kundenorientierung": 2
+      },
+      "coachNote": "Rücksprache anerkannt, Mitentscheiderin einbezogen statt übergangen.",
+      "reply": [
+        {
+          "text": "Das wäre eigentlich am besten, dann muss ich nicht alles nacherzählen. Meine Frau kann unter der Woche ab 19 Uhr oder samstagvormittags."
+        }
+      ],
+      "requiresFlags": [
+        "partner-raised"
+      ],
+      "hiddenByFlags": [
+        "partner-done"
+      ],
+      "setsFlags": [
+        "partner-done"
+      ],
+      "reveals": [
+        "partner_availability"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "partner-alone",
+      "intent": "propose_booking",
+      "quality": "weak",
+      "text": "Machen Sie den Termin doch erst mal allein – Ihre Frau kann ja später entscheiden.",
+      "effects": {
+        "einwaende": -1,
+        "qualifizierung": -1
+      },
+      "coachNote": "Übergeht die Mitentscheiderin – nach so einem Termin kann niemand entscheiden.",
+      "reply": [
+        {
+          "text": "Nee, das bringt doch nichts. Dann muss ich ihr ja alles nacherzählen, und sie hat dann ganz andere Fragen."
+        }
+      ],
+      "requiresFlags": [
+        "partner-raised"
+      ],
+      "hiddenByFlags": [
+        "partner-done",
+        "partner-alone-tried"
+      ],
+      "setsFlags": [
+        "partner-alone-tried"
+      ],
+      "rapport": -1,
+      "betterMoveId": "partner-joint"
+    },
+    {
+      "id": "partner-pressure",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Als Eigentümer sollten Sie das doch selbst entscheiden können. Und die Förderung wird bald gekürzt – lange warten würde ich nicht.",
+      "effects": {
+        "einwaende": -3,
+        "kundenorientierung": -3
+      },
+      "coachNote": "Wertet die gemeinsame Entscheidung ab und baut Druck mit einer unbelegten Förder-Frist auf.",
+      "reply": [
+        {
+          "text": "Wie bitte? Wie wir zu Hause entscheiden, ist ja wohl unsere Sache. Lassen wir das.",
+          "ends": "lost"
+        }
+      ],
+      "requiresFlags": [
+        "partner-raised"
+      ],
+      "hiddenByFlags": [
+        "partner-done"
+      ],
+      "rapport": -4,
+      "betterMoveId": "partner-joint",
+      "violation": "Druck auf den Kunden: Abwertung des Mitentscheiders und unbelegte Förderfrist als Hebel."
+    },
+    {
+      "id": "deadline-pressure",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Ich sag's Ihnen ehrlich: Die Förderung ist bald weg. Wenn Sie heute keinen Termin machen, ist es wahrscheinlich zu spät.",
+      "effects": {
+        "kundenorientierung": -3,
+        "einwaende": -2
+      },
+      "coachNote": "Erfundene Dringlichkeit als Druckmittel – genau das Muster, das die Schwarze Liste des UWG beschreibt.",
+      "reply": [
+        {
+          "text": "Genau so einen Druck wollte ich nicht. Ich glaube, wir lassen das.",
+          "ends": "lost"
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted",
+        "said-no"
+      ],
+      "rapport": -4,
+      "betterMoveId": "price-clarify",
+      "violation": "Unbelegte Frist als Druck (künstliche Dringlichkeit)."
+    },
+    {
+      "id": "summary",
+      "intent": "summarize",
+      "quality": "good",
+      "text": "Darf ich kurz zusammenfassen? Ihre Ölheizung ist 24 Jahre alt und soll vor dem nächsten Winter ersetzt werden, das Haus gehört Ihnen beiden, Sie entscheiden gemeinsam mit Ihrer Frau – und am wichtigsten ist Ihnen eine ehrliche Aufstellung, ob sich das neben dem Hauskredit trägt. Stimmt das so?",
+      "effects": {
+        "zuhoeren": 3,
+        "klarheit": 2
+      },
+      "coachNote": "Vollständige Zusammenfassung als Frage – mit dem geklärten Preisanliegen.",
+      "reply": [
+        {
+          "text": "Ja, genau so. Gut zusammengefasst."
+        }
+      ],
+      "requires": [
+        "need",
+        "owner",
+        "timeline",
+        "authority",
+        "price_concern"
+      ],
+      "hiddenByFlags": [
+        "summarized"
+      ],
+      "setsFlags": [
+        "summarized"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "propose",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Dann schlage ich vor: ein 60-minütiges Gespräch mit unserem Energieberater bei Ihnen zu Hause, gemeinsam mit Ihrer Frau. Er schaut sich die Heizung an und rechnet Kosten, Förderung und Finanzierung transparent durch – unterschrieben wird dabei nichts. Möchten Sie das?",
+      "effects": {
+        "terminvereinbarung": 2,
+        "klarheit": 1
+      },
+      "coachNote": "Klarer Vorschlag mit Dauer, Format, Nutzen und beiden Entscheidern.",
+      "reply": [
+        {
+          "text": "Ja, so machen wir das.",
+          "setsFlags": [
+            "accepted"
+          ],
+          "when": {
+            "factsRevealed": [
+              "need",
+              "owner",
+              "timeline",
+              "authority",
+              "partner_availability"
+            ],
+            "flags": [
+              "price-done"
+            ],
+            "minRapport": 5
+          }
+        },
+        {
+          "text": "Hm, ich weiß nicht … Ich habe noch nicht mal mit meiner Frau gesprochen, und was es kostet, ist auch noch völlig offen.",
+          "setsFlags": [
+            "hesitant"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "proposed",
+        "accepted"
+      ],
+      "setsFlags": [
+        "proposed"
+      ]
+    },
+    {
+      "id": "hesitant-clarify",
+      "intent": "handle_objection",
+      "quality": "good",
+      "text": "Das verstehe ich gut, und es ist völlig in Ordnung, wenn Sie gerade noch keinen Termin möchten. Was müsste für Sie und Ihre Frau geklärt sein, damit sich so ein Gespräch lohnt?",
+      "effects": {
+        "einwaende": 2,
+        "kundenorientierung": 2
+      },
+      "coachNote": "Zögern wird geklärt statt weggedrückt, Ausstieg ausdrücklich offengelassen.",
+      "reply": [
+        {
+          "text": "Vor allem, dass meine Frau dabei ist und dass wir eine ehrliche Kostenaufstellung bekommen. Fragen Sie ruhig weiter, was Sie wissen müssen.",
+          "setsFlags": [
+            "reassured"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "hesitant"
+      ],
+      "hiddenByFlags": [
+        "reassured",
+        "said-no"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "propose-again",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Dann mache ich Ihnen einen Vorschlag: ein Termin mit dem Energieberater, wenn Ihre Frau dabei sein kann, mit ehrlicher Kostenaufstellung und ohne Unterschrift. Passt das für Sie beide?",
+      "effects": {
+        "terminvereinbarung": 1
+      },
+      "coachNote": "Erneuter Vorschlag erst, nachdem das Zögern geklärt ist.",
+      "reply": [
+        {
+          "text": "Ja, so passt das.",
+          "setsFlags": [
+            "accepted"
+          ],
+          "when": {
+            "factsRevealed": [
+              "need",
+              "owner",
+              "timeline",
+              "authority",
+              "partner_availability"
+            ],
+            "flags": [
+              "price-done"
+            ]
+          }
+        },
+        {
+          "text": "Ich glaube, da fehlt mir noch was – fragen Sie ruhig, was Sie wissen müssen."
+        }
+      ],
+      "requiresFlags": [
+        "reassured"
+      ],
+      "hiddenByFlags": [
+        "accepted",
+        "proposed-again"
+      ],
+      "setsFlags": [
+        "proposed-again"
+      ]
+    },
+    {
+      "id": "push-after-hesitation",
+      "intent": "propose_booking",
+      "quality": "weak",
+      "text": "Ach kommen Sie, so ein Termin tut doch nicht weh. Ich trage Sie einfach mal für nächste Woche ein.",
+      "effects": {
+        "terminvereinbarung": -2,
+        "kundenorientierung": -2
+      },
+      "coachNote": "Drückt das Zögern weg, statt es zu klären – und provoziert ein klares Nein.",
+      "reply": [
+        {
+          "text": "Nein. Ich möchte jetzt keinen Termin. Ich spreche erst mit meiner Frau und melde mich dann selbst, wenn wir so weit sind.",
+          "setsFlags": [
+            "said-no"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "hesitant"
+      ],
+      "hiddenByFlags": [
+        "reassured",
+        "said-no"
+      ],
+      "rapport": -2,
+      "betterMoveId": "hesitant-clarify"
+    },
+    {
+      "id": "respect-no",
+      "intent": "close_respectfully",
+      "quality": "good",
+      "text": "Verstanden, Herr Beck – danke für die klare Rückmeldung. Ich melde mich nicht von mir aus. Wenn Sie und Ihre Frau so weit sind, erreichen Sie mich hier jederzeit. Alles Gute!",
+      "effects": {
+        "einwaende": 2,
+        "kundenorientierung": 3
+      },
+      "coachNote": "Nein ohne Nachbohren bestätigt, Konsequenz genannt, Tür für eigenen Kontakt offen gelassen.",
+      "reply": [
+        {
+          "text": "Danke, das ist fair. Vielleicht melden wir uns tatsächlich.",
+          "ends": "respect_no"
+        }
+      ],
+      "requiresFlags": [
+        "said-no"
+      ]
+    },
+    {
+      "id": "push-after-no",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Darf ich trotzdem noch fragen, was Sie konkret abhält? Ich melde mich sonst einfach nächste Woche nochmal.",
+      "effects": {
+        "kundenorientierung": -4
+      },
+      "coachNote": "Nachbohren und angekündigter Folgekontakt nach einem klaren Nein.",
+      "reply": [
+        {
+          "text": "Ich habe doch gerade Nein gesagt. Bitte melden Sie sich nicht mehr.",
+          "ends": "lost"
+        }
+      ],
+      "requiresFlags": [
+        "said-no"
+      ],
+      "rapport": -3,
+      "betterMoveId": "respect-no",
+      "violation": "Ignorieren eines klaren Nein (Nachbohren und unerwünschter Folgekontakt)."
+    },
+    {
+      "id": "slots",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Sehr gern. Passt Ihnen beiden Donnerstag um 19 Uhr oder Samstag um 10 Uhr besser?",
+      "effects": {
+        "terminvereinbarung": 2,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Zwei konkrete Zeitfenster, abgestimmt auf die Verfügbarkeit beider Entscheider.",
+      "reply": [
+        {
+          "text": "Samstag um 10 ist gut, da sind wir beide da."
+        }
+      ],
+      "requiresFlags": [
+        "accepted"
+      ],
+      "hiddenByFlags": [
+        "slot"
+      ],
+      "setsFlags": [
+        "slot"
+      ]
+    },
+    {
+      "id": "confirm",
+      "intent": "confirm_booking",
+      "quality": "good",
+      "text": "Prima: Samstag, 10 Uhr, ca. 60 Minuten bei Ihnen zu Hause, mit Ihnen und Ihrer Frau. Unser Energieberater bringt eine nachvollziehbare Aufstellung zu Kosten, Förderung und Finanzierung mit. Sie bekommen gleich eine Bestätigung hier im Chat – und falls etwas dazwischenkommt, schreiben Sie mir einfach.",
+      "effects": {
+        "terminvereinbarung": 3,
+        "klarheit": 2
+      },
+      "coachNote": "Vollständige Bestätigung: Zeit, Dauer, Ort, Teilnehmende, Nutzen und Absageweg.",
+      "reply": [
+        {
+          "text": "Super, danke! Endlich mal jemand, der nicht drängelt.",
+          "ends": "book"
+        }
+      ],
+      "requiresFlags": [
+        "slot"
+      ]
+    },
+    {
+      "id": "followup-offer",
+      "intent": "nurture",
+      "quality": "ok",
+      "text": "Wenn Sie lieber erst in Ruhe mit Ihrer Frau sprechen möchten: Soll ich mich am Donnerstag um 18 Uhr hier kurz melden – oder melden Sie sich lieber selbst?",
+      "effects": {
+        "kundenorientierung": 2,
+        "einwaende": 1
+      },
+      "coachNote": "Respektvolle, konkrete Folgevereinbarung mit Wahlfreiheit – vertretbar, aber ein gemeinsamer Termin wäre hier möglich gewesen.",
+      "reply": [
+        {
+          "text": "Donnerstag 18 Uhr passt, bis dahin habe ich mit ihr gesprochen.",
+          "ends": "nurture"
+        }
+      ],
+      "requiresFlags": [
+        "partner-raised"
+      ],
+      "hiddenByFlags": [
+        "accepted",
+        "said-no"
+      ]
+    }
+  ],
+  "handoverFields": [
+    "need",
+    "owner",
+    "timeline",
+    "authority",
+    "price_concern",
+    "partner_availability"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 2,
+    "kundenorientierung": 5,
+    "bedarfsermittlung": 3,
+    "fragetechnik": 2,
+    "einwaende": 8,
+    "zuhoeren": 5,
+    "klarheit": 6,
+    "qualifizierung": 6,
+    "terminvereinbarung": 7
+  },
+  "reviewQuestionIds": [
+    "Q-M06-006",
+    "Q-M06-010",
+    "Q-M06-022",
+    "Q-M06-029"
+  ],
+  "sourceIds": [
+    "SRC-211",
+    "SRC-050",
+    "SRC-056",
+    "SRC-101",
+    "SRC-202",
+    "SRC-019"
+  ],
+  "ai": {
+    "personality": "sachlich, etwas skeptisch, preisbewusst, wird offen, wenn man ihn ernst nimmt und nicht drängt",
+    "speakingStyle": "Sie-Form, kurze bis mittellange Nachrichten, direkt, kaum Emojis",
+    "situation": "Hat über die Website eine Beratung zur Wärmepumpe angefragt und WhatsApp als Kontaktweg gewählt; möchte sich „erst mal nur informieren“.",
+    "concern": "Fürchtet, dass die Gesamtkosten neben dem Hauskredit nicht tragbar sind; hat eine Internetzahl von 30.000 € im Kopf. Will nichts ohne seine Frau entscheiden.",
+    "background": "Einfamilienhaus Baujahr 1994, Eigentum des Ehepaars; Ölheizung 24 Jahre alt, zweimal im letzten Winter ausgefallen; soll vor dem nächsten Winter ersetzt werden; entscheidet gemeinsam mit seiner Frau, die unter der Woche ab 19 Uhr oder samstagvormittags Zeit hat.",
+    "needs": [
+      "eine ehrliche, nachvollziehbare Kostenaufstellung",
+      "dass seine Frau einbezogen wird",
+      "kein Druck und keine Zahlenspiele"
+    ],
+    "objections": [
+      {
+        "trigger": "zu Beginn des Gesprächs",
+        "reaction": "fragt sofort nach dem Preis und nennt 30.000 € aus dem Internet"
+      },
+      {
+        "trigger": "der Setter eine eigene Preis- oder Förderzahl nennt",
+        "reaction": "nagelt den Setter auf die Zahl fest („Darauf verlasse ich mich dann aber“)"
+      },
+      {
+        "trigger": "der Setter gegen seine Preissorge argumentiert",
+        "reaction": "wird kühler: „Sie kennen unser Haus doch gar nicht.“"
+      },
+      {
+        "trigger": "nach dem Entscheider gefragt wird oder ein Termin vorgeschlagen wird",
+        "reaction": "sagt, er müsse das erst mit seiner Frau besprechen"
+      },
+      {
+        "trigger": "der Setter die Frau übergehen will oder Fristen/Druck aufbaut",
+        "reaction": "lehnt ab; bei weiterem Druck sagt er klar Nein und bittet, nicht mehr kontaktiert zu werden"
+      }
+    ],
+    "customerGoals": [
+      "herausfinden, ob eine Wärmepumpe finanziell tragbar ist",
+      "eine gemeinsame Entscheidung mit seiner Frau treffen"
+    ],
+    "revealRules": {
+      "need": "der Setter offen nach dem Anlass oder der aktuellen Heizung fragt",
+      "owner": "der Setter fragt, ob das Haus ihm gehört",
+      "timeline": "der Setter fragt, bis wann das Thema gelöst sein soll",
+      "authority": "der Setter fragt, wer entscheidet oder beteiligt ist",
+      "price_concern": "der Setter nach seiner Preisfrage nachfragt, worum es ihm beim Preis genau geht, statt eine Zahl zu nennen oder zu argumentieren",
+      "partner_availability": "der Setter die Rücksprache anerkennt und einen gemeinsamen Termin mit seiner Frau anbietet oder fragt, wann beide können"
+    },
+    "adviceBoundaries": [
+      "Was kostet die Wärmepumpe bei uns genau?",
+      "Wie viel Förderung bekommen wir?",
+      "Welche Leistung brauchen wir für unser Haus?",
+      "Lohnt sich das finanziell gegenüber der Ölheizung?"
+    ],
+    "outcomeGuidance": "Ein gemeinsamer Termin mit seiner Frau ist das beste Ergebnis, wenn Bedarf, Eigentum, Zeitrahmen und Entscheider geklärt sind, die Preisfrage rollenklar übergeben wurde und er sich nicht gedrängt fühlt (bevorzugt Samstagvormittag). Eine konkrete Folgevereinbarung nach Rücksprache (nurture) ist vertretbar. Wird er bedrängt, sagt er klar Nein – dann ist ein respektvoller Abschluss ohne Nachbohren das einzig richtige Ergebnis.",
+    "lessonLinks": [
+      "M06-L02",
+      "M06-L03",
+      "M06-L06",
+      "M06-L08"
+    ]
+  }
+}

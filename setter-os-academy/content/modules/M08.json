@@ -1,0 +1,895 @@
+{
+  "id": "M08",
+  "number": 8,
+  "title": "CRM & Sales Operations",
+  "subtitle": "Simuliertes CRM, Datenqualität, Datenschutz",
+  "status": "verfuegbar",
+  "prerequisites": [
+    "M04",
+    "M07"
+  ],
+  "version": "1.0.0",
+  "passThreshold": 0.8,
+  "sourceIds": [
+    "SRC-005",
+    "SRC-019",
+    "SRC-020",
+    "SRC-024",
+    "SRC-043",
+    "SRC-050",
+    "SRC-056",
+    "SRC-261",
+    "SRC-262",
+    "SRC-263",
+    "SRC-264",
+    "SRC-265",
+    "SRC-266",
+    "SRC-267",
+    "SRC-268",
+    "SRC-269",
+    "SRC-270",
+    "SRC-271",
+    "SRC-272",
+    "SRC-273",
+    "SRC-274",
+    "SRC-275",
+    "SRC-276",
+    "SRC-277",
+    "SRC-278",
+    "SRC-279"
+  ],
+  "objectives": [
+    {
+      "id": "LO-M08-01",
+      "moduleId": "M08",
+      "text": "CRM-Grundbegriffe (Kontakt, Unternehmen, Deal, Aktivität, Aufgabe, Pipeline) unterscheiden und den Zweck eines CRM erklären.",
+      "bloom": "verstehen"
+    },
+    {
+      "id": "LO-M08-02",
+      "moduleId": "M08",
+      "text": "Pipeline-Phasen mit prüfbaren Ein- und Austrittskriterien anwenden und Statuswechsel korrekt setzen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M08-03",
+      "moduleId": "M08",
+      "text": "Kontakte und Gesprächsnotizen faktentreu, vollständig und datensparsam dokumentieren.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M08-04",
+      "moduleId": "M08",
+      "text": "Datenqualität prüfen und verbessern (Dubletten, Pflichtfelder, Aktualität, einheitliche Werte).",
+      "bloom": "analysieren"
+    },
+    {
+      "id": "LO-M08-05",
+      "moduleId": "M08",
+      "text": "Ein Follow-up-System aus Aufgaben, Fälligkeiten und Abbruchregeln aufbauen und pflegen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M08-06",
+      "moduleId": "M08",
+      "text": "Automatisierungen nach Nutzen, Stoppbedingungen und Grenzen bewerten (Mensch prüft).",
+      "bloom": "bewerten"
+    },
+    {
+      "id": "LO-M08-07",
+      "moduleId": "M08",
+      "text": "Datenschutzgrundsätze und Rechtsgrundlagen der DSGVO (Art. 5, 6, 13, 28) auf die CRM-Arbeit anwenden.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M08-08",
+      "moduleId": "M08",
+      "text": "Auskunfts- und Löschanfragen (Art. 15, 17) erkennen, korrekt aufnehmen, weiterleiten und dokumentieren; Löschkonzepte verstehen.",
+      "bloom": "anwenden"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M08-L01",
+      "moduleId": "M08",
+      "title": "Das CRM als Gedächtnis des Teams",
+      "minutes": 10,
+      "objectiveIds": [
+        "LO-M08-01"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ein CRM (Customer Relationship Management) ist kein Formularfriedhof, sondern das gemeinsame Gedächtnis eines Vertriebsteams. In dieser Lektion lernst du die Grundobjekte kennen, die fast jedes CRM hat – egal ob HubSpot, Salesforce oder eine einfache Tabelle im Übungs-CRM dieses Kurses."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 8.1",
+          "title": "Wer, was, was war, was kommt",
+          "paragraphs": [
+            "Stell dir vor, du bist eine Woche krank. Deine Kollegin übernimmt deine zwanzig offenen Leads. Was braucht sie? Sie muss wissen, wer die Menschen sind, worüber ihr gesprochen habt, was vereinbart wurde und was als Nächstes zu tun ist. Genau diese vier Fragen beantwortet ein CRM – und genau deshalb ist es für Setter wichtiger als für fast jede andere Rolle: Du erzeugst den Großteil der Informationen, mit denen Berater und Closer später arbeiten.",
+            "Fast alle CRM-Systeme bauen auf denselben Grundobjekten auf, auch wenn die Namen variieren. Der Kontakt steht für eine Person: Name, Kontaktwege, Herkunft, Einwilligungen. Das Unternehmen bildet eine Organisation ab und ist vor allem im B2B wichtig. Der Deal – bei Salesforce „Opportunity“ – ist eine konkrete Verkaufschance, die Phasen durchläuft. Eine Person kann keinen, einen oder mehrere Deals haben: Frau Weber fragt vielleicht heute nach einer PV-Anlage und in zwei Jahren nach einem Speicher.",
+            "Dazu kommen zwei Objekte, die Einsteiger oft verwechseln. Aktivitäten dokumentieren, was bereits passiert ist: ein Anruf, ein Chat, eine E-Mail, ein Termin. Aufgaben planen, was passieren soll: „Rückruf Mittwoch 17 Uhr“, mit Fälligkeit und verantwortlicher Person. Wer nur Aktivitäten protokolliert, hat ein Tagebuch. Wer Aufgaben plant, hat ein System.",
+            "Die Pipeline schließlich ist die festgelegte Abfolge von Phasen, die ein Deal durchläuft. HubSpot beschreibt Pipelines als Visualisierung eines Prozesses über Phasen; Salesforce verknüpft jede Opportunity-Phase mit einer Standardwahrscheinlichkeit. Für dich als Setter ist der wichtigste Gedanke: Die Phase eines Deals ist eine Aussage über Fakten – nicht über deine Hoffnung.",
+            "In diesem Modul arbeitest du ausschließlich mit einem simulierten Übungs-CRM. Alle Namen, Nummern und Adressen sind erfunden. Das ist kein Zufall, sondern Prinzip: Echte Kundendaten gehören nicht in Übungsumgebungen, nicht in Screenshots für Schulungen und nicht in private Notizbücher. Du übst hier den Umgang mit Daten so, wie du ihn später im Job brauchst."
+          ],
+          "sourceIds": [
+            "SRC-273",
+            "SRC-275",
+            "SRC-043",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Der Objekt-Check",
+          "category": "prozess",
+          "what": "Vor jedem Eintrag kurz prüfen, in welches Objekt eine Information gehört.",
+          "how": [
+            "Frage 1: Betrifft es die Person (Kontakt) oder die Organisation (Unternehmen)?",
+            "Frage 2: Betrifft es eine konkrete Verkaufschance (Deal)?",
+            "Frage 3: Ist es bereits passiert (Aktivität/Notiz) oder soll es passieren (Aufgabe)?",
+            "Eintragen und – wenn nötig – Objekte miteinander verknüpfen."
+          ],
+          "why": "Informationen am richtigen Ort sind auffindbar und auswertbar. Eine Terminvereinbarung, die nur im Freitext eines Kontakts steht, taucht in keiner Pipeline und keiner Aufgabenliste auf.",
+          "evidence": "Objektmodell nach Herstellerdokumentation (HubSpot, Salesforce) – als Konzept, nicht als Produktschulung. Die Check-Reihenfolge ist eine Praxisheuristik (Annahme).",
+          "example": "Kunde: „Rufen Sie mich Donnerstag an, meine neue Handynummer ist …“ → Nummer gehört in den Kontakt (alte prüfen/ersetzen), der Rückruf wird als Aufgabe mit Fälligkeit Donnerstag angelegt, das Gespräch als Aktivität protokolliert.",
+          "boundary": "Keine Information doppelt pflegen und nichts eintragen, was für den Zweck nicht erforderlich ist – auch ein gut strukturiertes CRM darf keine Datensammelstelle werden.",
+          "sourceIds": [
+            "SRC-273",
+            "SRC-275",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Ein Lead, fünf Objekte",
+          "body": "Simulation: Kontakt „Nina Albers“ (Person, Mobilnummer, Rückrufwunsch per Formular vom 01.10.). Deal „Wärmepumpe EFH“ (Phase: Qualifiziert). Aktivität „Chat 02.10.: Bedarf und Zeitrahmen geklärt“. Aufgabe „Terminvorschlag per WhatsApp senden – fällig 03.10., 12 Uhr, verantwortlich: Lea“. Pipeline „Beratung B2C“ mit fünf Phasen. Wer den Datensatz öffnet, versteht in zehn Sekunden den Stand."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-001"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-002"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-003"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Denk an einen Prozess aus deinem Alltag (Arzttermin, Reparatur, Bewerbung). Welche Informationen bräuchte eine fremde Person, um ihn nahtlos weiterzuführen? Welche davon sind Kontakt, Aktivität, Aufgabe?"
+        }
+      ],
+      "summary": [
+        "Ein CRM ist das gemeinsame Gedächtnis des Teams.",
+        "Kontakt = Person, Unternehmen = Organisation, Deal = Verkaufschance.",
+        "Aktivität = Vergangenes, Aufgabe = Geplantes mit Fälligkeit.",
+        "Die Pipeline-Phase ist eine Aussage über Fakten.",
+        "Geübt wird nur mit erfundenen Daten."
+      ],
+      "sourceIds": [
+        "SRC-273",
+        "SRC-275",
+        "SRC-043",
+        "SRC-050"
+      ]
+    },
+    {
+      "id": "M08-L02",
+      "moduleId": "M08",
+      "title": "Pipelines und Statuswechsel",
+      "minutes": 10,
+      "objectiveIds": [
+        "LO-M08-02"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Eine Pipeline ist nur so ehrlich wie ihre Phasen. In dieser Lektion lernst du, Phasen mit prüfbaren Kriterien zu definieren und Statuswechsel sauber zu setzen – inklusive des oft vergessenen Status „Verloren“."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 8.2",
+          "title": "Phasen sind Versprechen",
+          "paragraphs": [
+            "Jede Phase in einer Pipeline sagt dem Team etwas: „Termin vereinbart“ verspricht, dass ein konkreter Termin existiert und der Kunde ihn ausdrücklich bestätigt hat. Wenn ein Setter einen Deal in diese Phase schiebt, weil der Kunde „wahrscheinlich“ zusagt, bricht das Versprechen. Der Berater plant Zeit ein, die Teamleitung rechnet mit einem Termin, der nicht existiert. Deshalb braucht jede Phase ein Austrittskriterium – eine beobachtbare Bedingung, die erfüllt sein muss, bevor der Deal weiterrückt.",
+            "Für eine Setter-Pipeline reichen meist fünf bis sieben Phasen: Neu eingegangen, Kontakt aufgenommen, Qualifiziert, Termin vereinbart, Termin wahrgenommen – dazu die Endzustände Nurturing und Verloren. Mehr Phasen klingen präzise, führen aber dazu, dass jeder sie anders interpretiert. Salesforce beschreibt, dass ein Vertriebsprozess aus ausgewählten Phasen zusammengesetzt wird; HubSpot hinterlegt je Deal-Phase eine Abschlusswahrscheinlichkeit. Diese Wahrscheinlichkeiten sind Planungsannahmen, keine Naturgesetze – und sie werden nur dann brauchbar, wenn die Phasen ehrlich gepflegt werden.",
+            "Gute Kriterien sind prüfbar. „Qualifiziert“ heißt zum Beispiel: Bedarf, Zeitrahmen, Entscheider und harte Kriterien sind erfragt und im Datensatz dokumentiert. „Kontakt aufgenommen“ heißt: Es gab eine Antwort der Person, nicht nur eine gesendete Nachricht. Schlechte Kriterien sind Gefühle („wirkt interessiert“) oder Aktivitätsmengen („drei Nachrichten gewechselt“).",
+            "Besonders wichtig ist der Status „Verloren“ mit einem sauberen Verlustgrund. Viele Teams scheuen ihn, weil er nach Misserfolg aussieht. Dabei ist ein ehrlich geschlossener Deal wertvoll: Er zeigt, wo Leads scheitern („kein Eigentum“, „Zeitpunkt passt nicht“, „nicht erreicht“), und er beendet unnötige Kontaktversuche. Verlustgründe gehören in eine Auswahlliste, nicht in Freitext – sonst lässt sich später nichts auswerten.",
+            "Und noch etwas: Ein Statuswechsel ist immer auch ein Datenschutzthema. Wer einen Deal schließt, muss entscheiden, was mit den Daten passiert. Gibt es keinen Zweck mehr, etwa weil das Angebot grundsätzlich nicht passt, ist eine Wiedervorlage in drei Monaten nicht „Fleiß“, sondern unnötige Speicherung. Was mit den Daten geschieht, regelt das Löschkonzept – dazu mehr in Lektion 8."
+          ],
+          "sourceIds": [
+            "SRC-273",
+            "SRC-275",
+            "SRC-276",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Ein- und Austrittskriterien",
+          "category": "prozess",
+          "what": "Für jede Pipeline-Phase festlegen, welche beobachtbare Bedingung den Wechsel in die nächste Phase erlaubt.",
+          "how": [
+            "Phasen des tatsächlichen Ablaufs auflisten (nicht des Wunschablaufs).",
+            "Pro Phase einen Satz formulieren: „Der Deal verlässt diese Phase, wenn …“.",
+            "Prüfen, ob zwei Personen bei demselben Datensatz gleich entscheiden würden.",
+            "Endzustände (Verloren, Nurturing) mit Auswahlliste für Gründe ergänzen."
+          ],
+          "why": "Einheitliche Kriterien machen Pipeline-Zahlen vergleichbar und verhindern, dass Termine oder Qualifizierungen „gefühlt“ gezählt werden.",
+          "evidence": "Phasenlogik nach Herstellerdokumentation (HubSpot, Salesforce). Dass prüfbare Kriterien die Vergleichbarkeit erhöhen, ist eine plausible Praxisannahme, keine spezifische Studie.",
+          "example": "„Termin vereinbart“: Austritt nur, wenn Datum, Uhrzeit, Format und Teilnehmer feststehen und der Kunde ausdrücklich zugestimmt hat.",
+          "boundary": "Phasen nicht vorschieben, um Zahlen zu verbessern, und keine Wiedervorlagen anlegen, nur damit ein Deal „offen“ bleibt.",
+          "sourceIds": [
+            "SRC-273",
+            "SRC-276",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Ein Deal wandert durch die Pipeline",
+          "steps": [
+            "01.10., Formular eingegangen → Phase „Neu eingegangen“, Aufgabe „Erstkontakt innerhalb von 1 h“.",
+            "01.10., Kunde antwortet im Chat → „Kontakt aufgenommen“, Aktivität protokolliert.",
+            "02.10., Bedarf, Zeitrahmen, Entscheider und Eigentum geklärt und notiert → „Qualifiziert“.",
+            "02.10., Kunde bestätigt „Di 18 Uhr per Video“ → „Termin vereinbart“, Aufgabe „Erinnerung Mo 18 Uhr“.",
+            "Termin findet statt, Berater übernimmt → „Termin wahrgenommen“; der Setter trägt nichts zum Angebot ein, das ist Sache des Beraters."
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Eine volle Pipeline ist eine gute Pipeline – Deals schließt man erst, wenn wirklich nichts mehr geht.“",
+          "reality": "Eine Pipeline voller Deals ohne nächste Aufgabe und ohne erfüllte Kriterien verzerrt jede Planung. Die Hersteller koppeln Phasen an Wahrscheinlichkeiten – das funktioniert nur, wenn tote Deals ehrlich geschlossen werden. Zudem verlangt die DSGVO, Daten nicht länger als nötig zu speichern.",
+          "sourceIds": [
+            "SRC-273",
+            "SRC-275",
+            "SRC-261"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-005"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-006"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-004"
+        }
+      ],
+      "summary": [
+        "Jede Phase braucht ein prüfbares Austrittskriterium.",
+        "Fünf bis sieben Phasen plus Endzustände reichen.",
+        "„Verloren“ mit Grund aus Auswahlliste ist wertvoll.",
+        "Statuswechsel sind auch Datenschutzentscheidungen."
+      ],
+      "sourceIds": [
+        "SRC-273",
+        "SRC-275",
+        "SRC-276",
+        "SRC-050"
+      ]
+    },
+    {
+      "id": "M08-L03",
+      "moduleId": "M08",
+      "title": "Kontakte und Gesprächsnotizen",
+      "minutes": 12,
+      "objectiveIds": [
+        "LO-M08-03"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Deine Notiz ist das, was der Berater liest, bevor er den Kunden trifft – und das, was der Kunde lesen könnte, wenn er Auskunft verlangt. In dieser Lektion lernst du, so zu dokumentieren, dass beides kein Problem ist."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 8.3",
+          "title": "Schreib so, als würde der Kunde mitlesen",
+          "paragraphs": [
+            "Eine gute Gesprächsnotiz beantwortet drei Fragen: Was wurde gesagt? Was wurde vereinbart? Was ist offen? Mehr braucht es selten. Wichtige Aussagen des Kunden notierst du möglichst wörtlich als Zitat – „Die Heizung ist 24 Jahre alt, ich will vor dem Winter Klarheit“ ist für den Berater wertvoller als „Kunde will Heizung“. Was nicht besprochen wurde, markierst du als „nicht erfragt“. Diese ehrliche Lücke kennst du aus Modul 1.",
+            "Die Datenschutz-Grundverordnung gibt dir dafür klare Leitplanken. Art. 5 verlangt unter anderem Datenminimierung (nur, was für den Zweck erforderlich ist), Richtigkeit und Zweckbindung. Für die Terminvereinbarung brauchst du die Terminpräferenz, aber nicht den Grund, warum jemand nur vormittags kann. Gesundheitsdaten gehören zu den besonderen Kategorien nach Art. 9 und sind in Vertriebsnotizen praktisch nie erforderlich. Aus „nach OP krankgeschrieben, nur vormittags erreichbar“ wird „bevorzugt Telefontermine vormittags“.",
+            "Ein zweiter, oft unterschätzter Grund für sachliche Notizen: Betroffene haben nach Art. 15 ein Recht auf Auskunft über die zu ihnen gespeicherten Daten. Eine Notiz wie „schwierig, geizig, lieber nicht zu viel Zeit investieren“ kann also bei der Person landen, über die sie geschrieben wurde. Die Faustregel lautet deshalb: Schreib nichts, was du dem Kunden nicht auch ins Gesicht sagen würdest.",
+            "Zum Kontakt gehören neben Name und Kontaktweg vor allem Herkunft und Einwilligungen – jeweils mit Datum und Quelle. „Website-Formular Rückruf Solar, 02.10., Checkbox Telefonkontakt zur Anfrage angehakt“ ist dokumentiert; „hat zugestimmt“ ist es nicht. Für Telefonwerbung verlangt das UWG ausdrücklich eine Dokumentation der Einwilligung (§ 7a), und nach Art. 5 Abs. 2 DSGVO muss der Verantwortliche nachweisen können, dass er die Grundsätze einhält. Eine Anfrage zu einem Rückruf ist übrigens keine Einwilligung in den Newsletter.",
+            "Praktisch heißt das: Lieber kurze, strukturierte Felder als lange Romane. Viele Teams nutzen ein festes Notizschema, etwa „Anlass – Bedarf (Zitat) – Kriterien – Vereinbart – Offen“. Das macht Notizen vergleichbar, schneller zu lesen und weniger anfällig für Bewertungen und Abschweifungen."
+          ],
+          "sourceIds": [
+            "SRC-261",
+            "SRC-262",
+            "SRC-020",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die Faktennotiz",
+          "category": "schreiben",
+          "what": "Gesprächsnotizen nach dem Schema „Gesagt – Vereinbart – Offen“ schreiben, ohne Bewertungen und ohne nicht erforderliche Details.",
+          "how": [
+            "Kopfzeile: Datum, Kanal, Anlass.",
+            "Gesagt: zentrale Kundenaussagen, gern als kurzes Zitat; Unbekanntes als „nicht erfragt“.",
+            "Vereinbart: nächster Schritt mit Datum, Format, Beteiligten.",
+            "Offen: Fragen, die der Berater klären soll.",
+            "Vor dem Speichern: Würde ich das dem Kunden vorlesen? Ist jede Angabe für den Zweck nötig?"
+          ],
+          "why": "Der Berater startet vorbereitet, Missverständnisse werden seltener und die Notiz hält auch einer Auskunftsanfrage stand.",
+          "evidence": "Rechtlicher Rahmen: DSGVO Art. 5 (Datenminimierung, Richtigkeit), Art. 9, Art. 15. Das Schema selbst ist eine Praxisheuristik (Annahme), angelehnt an strukturierte Übergaben aus Modul 1.",
+          "example": "„03.10., WhatsApp, Formular Wärmepumpe 01.10. | Gesagt: „Heizung 24 Jahre alt, vor dem Winter Klarheit“; Budget: nicht erfragt | Vereinbart: Video Do 10.10., 18 Uhr, mit Ehemann | Offen: Förderung – klärt Berater.“",
+          "boundary": "Keine Gesundheits-, Religions- oder Beziehungsdetails, keine Spekulationen über Zahlungsfähigkeit und keine abwertenden Bemerkungen über Personen.",
+          "sourceIds": [
+            "SRC-261",
+            "SRC-262",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Zwei Notizen zum selben Gespräch",
+          "situation": "Ein Kunde erzählt im Chat ausführlich: Er habe gerade eine Scheidung hinter sich, das Haus gehöre jetzt ihm allein, er wolle die alte Ölheizung bis Frühjahr ersetzen, könne nur abends sprechen und frage sich, ob es Förderung gebe. Setterin A notiert: „Frisch geschieden, emotional, will schnell abschließen, Geld wohl knapp, abends.“ Setterin B notiert: „Eigentümer, entscheidet allein. Ölheizung bis Frühjahr ersetzen (Zitat: „Bis März soll die Alte raus“). Termine abends. Offen: Förderung – klärt Berater.“",
+          "analysis": "Notiz A mischt private Details, Bewertungen und eine Vermutung zur Zahlungsfähigkeit – nichts davon ist für den Termin erforderlich, und alles wäre ihm bei einer Auskunft peinlich zu lesen. Notiz B enthält dieselben prozessrelevanten Informationen (Eigentum, Entscheider, Zeitrahmen, Terminpräferenz, offene Frage) ohne Privates. Merke: Wer entscheidet allein, ist relevant; warum, ist es nicht.",
+          "simulationNote": "Alle Personen, Firmen und Daten in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-008"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-009"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-010"
+        }
+      ],
+      "summary": [
+        "Notizschema: Gesagt – Vereinbart – Offen.",
+        "Kundenaussagen gern als Zitat, Unbekanntes als „nicht erfragt“.",
+        "Datenminimierung: keine Gesundheits- oder Privatdetails.",
+        "Herkunft und Einwilligungen mit Datum und Quelle dokumentieren.",
+        "Schreib nichts, was der Kunde nicht lesen dürfte."
+      ],
+      "sourceIds": [
+        "SRC-261",
+        "SRC-262",
+        "SRC-020",
+        "SRC-050"
+      ]
+    },
+    {
+      "id": "M08-L04",
+      "moduleId": "M08",
+      "title": "Datenqualität: Dubletten, Pflichtfelder, Aktualität",
+      "minutes": 9,
+      "objectiveIds": [
+        "LO-M08-04"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Schlechte Daten kosten Zeit, Vertrauen und manchmal Rechtssicherheit. In dieser Lektion lernst du die wichtigsten Dimensionen der Datenqualität und die drei Gewohnheiten, die sie im Alltag sichern."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 8.4",
+          "title": "Wenn das CRM lügt",
+          "paragraphs": [
+            "Ein CRM lügt selten absichtlich – aber es lügt, sobald es mit Ratewerten, Dubletten und veralteten Angaben gefüllt ist. Typische Folgen kennt jeder Vertrieb: Zwei Setter schreiben derselben Person, weil sie einmal als „Wolf“ und einmal als „Wolff“ angelegt ist. Eine Kundin bekommt Werbung, obwohl sie widersprochen hat – der Widerspruch hing am anderen Datensatz. Ein Berater ruft eine Nummer an, die seit Jahren nicht mehr gilt.",
+            "Die Forschung zur Datenqualität beschreibt Qualität nicht als ein Merkmal, sondern als Bündel von Dimensionen. Wang und Strong haben in den 1990er-Jahren aus Befragungen von Datennutzern ein Rahmenmodell abgeleitet, zu dem unter anderem Genauigkeit, Vollständigkeit, Aktualität und Konsistenz gehören. Für den Setting-Alltag reichen vier Fragen: Stimmt es? Ist es vollständig genug für den Zweck? Ist es aktuell? Ist es eindeutig – gibt es die Person nur einmal?",
+            "Der Datenschutz verstärkt diese Anforderungen: Art. 5 Abs. 1 lit. d DSGVO verlangt, dass personenbezogene Daten sachlich richtig und erforderlichenfalls auf dem neuesten Stand sind; unrichtige Daten sind unverzüglich zu löschen oder zu berichtigen. Weist dich ein Kunde auf eine falsche Adresse hin, ist die Korrektur also keine Gefälligkeit, sondern Pflicht (Art. 16 gibt ihm sogar einen Anspruch darauf).",
+            "Drei Gewohnheiten bringen den größten Effekt. Erstens: vor jeder Neuanlage nach Dubletten suchen – über E-Mail, Telefonnummer und Namensvarianten. Gleiche E-Mail und Nummer sind starke Hinweise; ein abweichender Name ist eher ein Tippfehler, den du beim Kunden klärst, statt ihn zu raten. Beim Zusammenführen gehen Widersprüche und Einwilligungsstände nicht verloren: Ein Werbewiderspruch gilt für die Person, nicht für einen Datensatz.",
+            "Zweitens: Auswahllisten statt Freitext für alles, was ausgewertet wird – Status, Verlustgründe, Quelle. Drittens: Pflichtfelder sparsam. Wer zwanzig Pflichtfelder einführt, bekommt „xxx“, „0“ und geschätzte Werte. Pflicht ist nur, was der Prozess wirklich braucht; der Rest bleibt optional oder entfällt. Praktiker wie Thomas Redman betonen, dass schlechte Daten vor allem versteckte Nacharbeit erzeugen – Menschen, die im Alltag Fehler suchen, korrigieren und umgehen, statt ihre eigentliche Arbeit zu tun."
+          ],
+          "sourceIds": [
+            "SRC-277",
+            "SRC-278",
+            "SRC-261",
+            "SRC-263"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Dubletten-Check vor Neuanlage",
+          "category": "prozess",
+          "what": "Vor jedem neuen Kontakt systematisch prüfen, ob die Person schon existiert.",
+          "how": [
+            "Nach E-Mail-Adresse suchen.",
+            "Nach Telefonnummer suchen (ohne Leerzeichen, mit/ohne Ländervorwahl).",
+            "Nach Nachnamen mit Varianten suchen (Wolf/Wolff, ä/ae).",
+            "Treffer prüfen: zwei starke Merkmale gleich → zusammenführen; unklar → beim Kunden freundlich nachfragen.",
+            "Beim Zusammenführen Einwilligungen und Widersprüche übernehmen, nie zurücksetzen."
+          ],
+          "why": "Eine Person, ein Datensatz: So gelten Widersprüche und Einwilligungen zuverlässig, und niemand wird doppelt angeschrieben.",
+          "evidence": "Datenqualitätsdimensionen nach Wang & Strong (1996); Pflicht zur Richtigkeit nach Art. 5 Abs. 1 lit. d DSGVO; Widerspruch nach Art. 21 Abs. 3. Die Suchreihenfolge ist Praxiswissen.",
+          "example": "Formular „Sabine Wolff, s.wolff@example.org“ – Treffer „Sabine Wolf“ mit gleicher E-Mail und Nummer und Werbewiderspruch vom Juni → zusammenführen, Schreibweise klären, Widerspruch bleibt; die neue Anfrage wird beantwortet, aber nicht als Werbe-Erlaubnis gewertet.",
+          "boundary": "Nicht „auf Verdacht“ zusammenführen, wenn nur der Name ähnlich ist – zwei verschiedene Personen in einem Datensatz sind ein Datenschutzproblem.",
+          "sourceIds": [
+            "SRC-277",
+            "SRC-261",
+            "SRC-263"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Lieber ein Feld schätzen als leer lassen – Hauptsache, das CRM ist vollständig.“",
+          "reality": "Ein geschätzter Wert sieht im CRM genauso aus wie ein erfragter. Er verfälscht Auswertungen und führt Berater in die Irre. Vollständigkeit ist immer auf den Zweck bezogen; ehrlich markierte Lücken („nicht erfragt“) sind Qualität, nicht Mangel. Die DSGVO verlangt Richtigkeit, nicht Füllstand.",
+          "sourceIds": [
+            "SRC-277",
+            "SRC-261"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-012"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-013"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-014"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-015"
+        }
+      ],
+      "summary": [
+        "Datenqualität = richtig, ausreichend vollständig, aktuell, eindeutig.",
+        "Vor Neuanlage immer Dubletten suchen.",
+        "Auswahllisten statt Freitext für Auswertbares.",
+        "Pflichtfelder sparsam; nie schätzen.",
+        "Widersprüche gelten für die Person, nicht für den Datensatz."
+      ],
+      "sourceIds": [
+        "SRC-277",
+        "SRC-278",
+        "SRC-261",
+        "SRC-263",
+        "SRC-050"
+      ]
+    },
+    {
+      "id": "M08-L05",
+      "moduleId": "M08",
+      "title": "Follow-up-Systeme und Aufgaben",
+      "minutes": 10,
+      "objectiveIds": [
+        "LO-M08-05"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Die meisten Leads gehen nicht durch ein Nein verloren, sondern durch Vergessen. In dieser Lektion baust du ein Follow-up-System, das ohne Gedächtnisleistung funktioniert – und weiß, wann Schluss ist."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 8.5",
+          "title": "Jede Aktivität endet mit einer Aufgabe",
+          "paragraphs": [
+            "Die wichtigste Regel eines Follow-up-Systems passt in einen Satz: Jeder offene Datensatz hat genau eine nächste Aufgabe mit Fälligkeit und Verantwortlichem – oder er ist bewusst geschlossen. Diese Regel ersetzt Post-its, Erinnerungen im Kopf und „Ich wollte mich da noch melden“. Sie macht Übergaben möglich und zeigt der Teamleitung, wo es hakt.",
+            "Psychologisch steckt dahinter ein gut untersuchtes Prinzip: Konkrete Wenn-dann-Pläne („Wenn es Mittwoch 17 Uhr ist, schreibe ich Frau Demir per WhatsApp“) erhöhen die Wahrscheinlichkeit, dass Absichten umgesetzt werden. Eine Meta-Analyse von Gollwitzer und Sheeran fand dafür einen mittleren bis großen Effekt. Eine CRM-Aufgabe mit Datum, Uhrzeit und Kanal ist nichts anderes als ein ausgelagerter Wenn-dann-Plan.",
+            "Wie schnell und wie oft nachgefasst wird, hängt vom Kontext ab. Für Online-Anfragen gibt es Hinweise, dass schnelle Reaktionen die Kontaktchance deutlich erhöhen – die Daten dazu sind allerdings korrelativ und teils von Anbietern erhoben. Wichtiger als die perfekte Minute ist, dass die Person selbst bestimmen darf: Wenn sie „Mittwoch nach 17 Uhr“ sagt, ist genau das die Fälligkeit.",
+            "Ein gutes System hat außerdem Abbruchregeln. Beispiel: Nach einer Anfrage höchstens zwei freundliche Nachfragen im Abstand von einigen Tagen; bleibt es still, wechselt der Lead in Nurturing – sofern dafür eine Grundlage besteht – oder wird nach Regel geschlossen. Endloses Nachfassen ist kein Fleiß, sondern Belästigung. Ein ausdrückliches Nein oder ein Widerspruch beendet jede Sequenz sofort.",
+            "Pflege das System täglich in wenigen Minuten: überfällige Aufgaben zuerst, dann heutige, dann Datensätze ohne Aufgabe. Steigt die Quote überfälliger Aufgaben, ist das ein Warnsignal – meistens sind die Fälligkeiten unrealistisch oder es fehlen Abbruchregeln, nicht die Disziplin."
+          ],
+          "sourceIds": [
+            "SRC-056",
+            "SRC-005",
+            "SRC-019",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die Nächste-Aufgabe-Regel",
+          "category": "prozess",
+          "what": "Jede Aktivität mit genau einer nächsten Aufgabe abschließen – konkret, datiert, zugeordnet.",
+          "how": [
+            "Gespräch protokollieren (Aktivität).",
+            "Fragen: Was ist der nächste sinnvolle Schritt, und wann hat der Kunde ihn sich gewünscht?",
+            "Aufgabe anlegen: Verb + Inhalt + Kanal („WhatsApp-Nachfrage: Gespräch mit Partner?“), Fälligkeit, Verantwortliche.",
+            "Keine sinnvolle nächste Aufgabe? Dann Status bewusst setzen (Nurturing mit Grundlage, Verloren mit Grund).",
+            "Täglich: überfällig → heute → ohne Aufgabe."
+          ],
+          "why": "Ausgelagerte Wenn-dann-Pläne entlasten das Gedächtnis und machen Follow-ups verlässlich und übergabefähig.",
+          "evidence": "Implementation Intentions: Meta-Analyse Gollwitzer & Sheeran (2006), mittlere bis große Effekte auf Zielerreichung. Übertragung auf CRM-Aufgaben ist eine plausible Annahme, nicht direkt untersucht.",
+          "example": "Chat 03.10.: „Melden Sie sich Mittwoch nach 17 Uhr noch mal.“ → Aufgabe „WhatsApp-Nachfrage: Gespräch mit Partner, Terminwunsch?“, fällig Mi 09.10., 17:00, verantwortlich: du.",
+          "boundary": "Follow-ups nur über zulässige Kanäle und mit Abbruchregel; nach Nein oder Widerspruch keine weitere Aufgabe zur Kontaktaufnahme.",
+          "sourceIds": [
+            "SRC-056",
+            "SRC-019",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Eine Follow-up-Sequenz mit Ende",
+          "steps": [
+            "Tag 0: Infopaket auf Wunsch gesendet → Aufgabe „Nachfrage, ob Fragen offen sind“, fällig Tag 3.",
+            "Tag 3: Freundliche Nachfrage gesendet, keine Antwort → Aufgabe „letzte Nachfrage“, fällig Tag 10.",
+            "Tag 10: „Ich möchte nicht aufdringlich sein – ich melde mich nicht weiter, Sie können jederzeit auf diese Nachricht antworten.“",
+            "Keine Antwort → Status „Verloren: nicht erreicht“ oder Nurturing, wenn eine Einwilligung dafür vorliegt; Daten nach Löschregel behandeln."
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-016"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-017"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-018"
+        }
+      ],
+      "summary": [
+        "Jeder offene Datensatz: genau eine nächste Aufgabe.",
+        "Aufgabe = Verb + Inhalt + Kanal + Fälligkeit + Verantwortliche.",
+        "Der Kunde bestimmt den Zeitpunkt mit.",
+        "Abbruchregeln gehören dazu; Nein beendet alles.",
+        "Überfällige Aufgaben täglich zuerst."
+      ],
+      "sourceIds": [
+        "SRC-056",
+        "SRC-005",
+        "SRC-019",
+        "SRC-050"
+      ]
+    },
+    {
+      "id": "M08-L06",
+      "moduleId": "M08",
+      "title": "Automatisierung mit Augenmaß",
+      "minutes": 8,
+      "objectiveIds": [
+        "LO-M08-06"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Automatisierung spart Zeit – und kann in Sekunden hunderte Fehler gleichzeitig machen. In dieser Lektion lernst du, wann Automatisierung hilft, welche Stoppbedingungen sie braucht und wo der Mensch nicht ersetzt werden darf."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 8.6",
+          "title": "Routine an die Maschine, Urteil beim Menschen",
+          "paragraphs": [
+            "CRM-Systeme können vieles automatisch: Aufgaben anlegen, wenn ein Formular eingeht, Erinnerungen vor Terminen senden, Deals einem Setter zuweisen, Status ändern, wenn ein Termin gebucht wird. Das ist gut, solange die Automation Routine übernimmt – Dinge, die immer gleich ablaufen und bei denen ein Fehler sofort auffällt. Eine Terminerinnerung an Personen, die einem Termin zugestimmt haben, ist ein klassisches Beispiel.",
+            "Jede Automation besteht aus drei Teilen: einem Auslöser (Wann startet sie?), Aktionen (Was passiert?) und Stoppbedingungen (Wann hört sie auf?). Die Stoppbedingungen werden am häufigsten vergessen. Eine Erinnerung muss stoppen, wenn der Termin abgesagt wird. Eine Nachfass-Sequenz muss stoppen, wenn die Person antwortet – und sofort und dauerhaft, wenn sie widerspricht. Nach Art. 21 Abs. 3 DSGVO dürfen Daten nach einem Widerspruch nicht mehr für Direktwerbung verarbeitet werden; das UWG verbietet zudem Werbung, die erkennbar nicht gewünscht ist.",
+            "Auch die Auslöser brauchen Sorgfalt. „Alle, die jemals ein Formular ausgefüllt haben, bekommen den Newsletter“ ist kein Automationsproblem, sondern ein Rechtsproblem: Eine Anfrage ist keine Einwilligung in Werbung. Bevor eine Automation Nachrichten verschickt, muss geklärt sein, auf welcher Grundlage jede einzelne Person sie bekommen darf.",
+            "Zunehmend schlagen CRM-Systeme mit KI Antworten vor, fassen Gespräche zusammen oder bewerten Leads. Das kann helfen, ersetzt aber nicht das Urteil. Antwortvorschläge sind Entwürfe: Du prüfst Inhalt, Ton und Grenzen – keine Preis-, Förder- oder Rechtsaussagen – und verantwortest, was du sendest. Die KI-Verordnung der EU sieht für bestimmte KI-Systeme Transparenzpflichten vor (Art. 50), etwa wenn Menschen mit einem KI-System interagieren. Wie dein Team das umsetzt, legt der Verantwortliche fest; deine Aufgabe ist, nichts ungeprüft als persönliche Nachricht auszugeben.",
+            "Eine gute Faustregel: Automatisiere, was du schon zehnmal genau gleich von Hand gemacht hast und dessen Fehler du sofort bemerken würdest. Alles, was Einfühlung, Abwägung oder rechtliche Prüfung erfordert – Einwände, Beschwerden, Auskunfts- und Löschanfragen – gehört zu einem Menschen. Ein Workflow darf solche Nachrichten erkennen und als Aufgabe weiterleiten, aber nicht selbst beantworten oder „erledigen“."
+          ],
+          "sourceIds": [
+            "SRC-024",
+            "SRC-019",
+            "SRC-263",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Automationsregel mit Stoppbedingung",
+          "category": "prozess",
+          "what": "Jede Automation als Dreiklang aus Auslöser, Aktion und Stoppbedingung entwerfen – plus menschliche Ausnahmebearbeitung.",
+          "how": [
+            "Auslöser präzise festlegen und Rechtsgrundlage für alle Empfänger klären.",
+            "Aktionen auf Routine beschränken (Erinnerung, Aufgabe, Zuweisung).",
+            "Stoppbedingungen definieren: Antwort, Absage, Nein, Widerspruch, Löschanfrage.",
+            "Antworten und Ausnahmen als Aufgabe an einen Menschen leiten.",
+            "Mit drei erfundenen Testdatensätzen durchspielen, bevor es live geht."
+          ],
+          "why": "Automationen ohne Stoppbedingungen skalieren Fehler. Mit klaren Grenzen sparen sie Zeit, ohne Vertrauen oder Rechtssicherheit zu gefährden.",
+          "evidence": "Rechtliche Grenzen: UWG § 7, DSGVO Art. 21 Abs. 3, KI-VO Art. 50 (Transparenz). Der Dreiklang ist eine Praxisheuristik (Annahme), keine Herstellervorgabe.",
+          "example": "„Wenn Deal → Termin vereinbart: Bestätigung senden; 24 h vorher Erinnerung – Stopp bei Absage; jede Antwort des Kunden erzeugt eine Aufgabe für den Setter.“",
+          "boundary": "Keine Automation für Werbung ohne Einwilligung, keine automatischen Antworten auf Beschwerden oder Betroffenenanfragen, keine ungeprüft versendeten KI-Texte.",
+          "sourceIds": [
+            "SRC-019",
+            "SRC-263",
+            "SRC-024",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "callout",
+          "tone": "warn",
+          "title": "Gelöscht ist nicht gleich gelöscht",
+          "body": "Viele CRMs unterscheiden zwischen wiederherstellbarem Löschen (Papierkorb) und dauerhaftem Löschen. HubSpot etwa beschreibt eine dauerhafte Löschung für Datenschutzanfragen, bei der auch der Aktivitätsverlauf entfernt und die E-Mail-Adresse gegen erneuten Import gesperrt wird. Welche Variante wann gilt, entscheidet das Löschkonzept des Verantwortlichen – nicht ein Workflow und nicht du allein."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-020"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-021"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-022"
+        }
+      ],
+      "summary": [
+        "Automation = Auslöser + Aktion + Stoppbedingung.",
+        "Nur Routine automatisieren, Urteil bleibt beim Menschen.",
+        "Widerspruch stoppt jede werbliche Automation sofort.",
+        "KI-Vorschläge sind Entwürfe – prüfen und verantworten.",
+        "Betroffenenanfragen nie automatisch „erledigen“."
+      ],
+      "sourceIds": [
+        "SRC-024",
+        "SRC-019",
+        "SRC-263",
+        "SRC-274",
+        "SRC-050"
+      ]
+    },
+    {
+      "id": "M08-L07",
+      "moduleId": "M08",
+      "title": "Datenschutz im CRM: Grundsätze, Rechtsgrundlagen, AV-Vertrag",
+      "minutes": 10,
+      "objectiveIds": [
+        "LO-M08-07"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Als Setter arbeitest du jeden Tag mit personenbezogenen Daten. In dieser Lektion lernst du die Grundsätze und Rechtsgrundlagen der DSGVO, die für deine Arbeit zählen, und warum Freelancer einen Vertrag zur Auftragsverarbeitung brauchen. Das ist Orientierungswissen, keine Rechtsberatung."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 8.7",
+          "title": "Sechs Grundsätze, sechs Rechtsgrundlagen, ein Vertrag",
+          "paragraphs": [
+            "Die DSGVO beginnt nicht mit Verboten, sondern mit Grundsätzen. Art. 5 nennt sie: Rechtmäßigkeit, Verarbeitung nach Treu und Glauben und Transparenz; Zweckbindung; Datenminimierung; Richtigkeit; Speicherbegrenzung; Integrität und Vertraulichkeit. Dazu kommt die Rechenschaftspflicht: Der Verantwortliche muss die Einhaltung nachweisen können. Jeder dieser Grundsätze hat eine CRM-Seite – vom Feld, das es nicht gibt, über die Löschfrist bis zum Export, der nicht per privater Mail verschickt wird.",
+            "Jede Verarbeitung braucht eine Rechtsgrundlage aus Art. 6 Abs. 1: Einwilligung (a), Vertrag oder vorvertragliche Maßnahmen auf Anfrage der Person (b), rechtliche Verpflichtung (c), lebenswichtige Interessen (d), öffentliche Aufgabe (e) oder berechtigte Interessen (f). Wenn jemand einen Beratungstermin anfragt, stützt sich die Bearbeitung dieser Anfrage typischerweise auf lit. b. Für Werbung darüber hinaus gelten eigene Regeln: Werbeanrufe bei Verbrauchern brauchen nach UWG eine vorherige ausdrückliche Einwilligung, Werbe-E-Mails grundsätzlich ebenfalls. Eine Einwilligung kann nach Art. 7 Abs. 3 jederzeit widerrufen werden – so einfach, wie sie erteilt wurde. Welche Grundlage im Einzelfall gilt, legt der Verantwortliche fest, nicht der Setter.",
+            "Transparenz heißt konkret: Bei der Erhebung von Daten muss der Verantwortliche die Person nach Art. 13 informieren – unter anderem über seine Identität und Kontaktdaten, Zwecke und Rechtsgrundlage, Empfänger, Speicherdauer oder Kriterien dafür und die Rechte der Person, darunter Auskunft, Berichtigung, Löschung, Widerspruch und Beschwerde bei einer Aufsichtsbehörde. Meist passiert das über die Datenschutzhinweise, die im Formular verlinkt sind. Für dich wichtig: Du versprichst im Chat nichts, was diesen Hinweisen widerspricht, etwa „Ihre Daten speichern wir gar nicht“.",
+            "Viele Setter arbeiten freiberuflich im CRM eines Auftraggebers. Wer personenbezogene Daten weisungsgebunden im Auftrag eines anderen verarbeitet, ist typischerweise Auftragsverarbeiter. Art. 28 verlangt dafür einen Vertrag – den AV-Vertrag – mit Mindestinhalten: Gegenstand, Dauer, Art und Zweck der Verarbeitung, Datenarten und Betroffene; Verarbeitung nur auf dokumentierte Weisung; Vertraulichkeit; Sicherheitsmaßnahmen nach Art. 32; Unterauftragnehmer nur mit Genehmigung; Unterstützung bei Betroffenenanfragen; Löschung oder Rückgabe am Ende. Die genaue Einordnung hängt von der Gestaltung ab; der Europäische Datenschutzausschuss hat dazu ausführliche Leitlinien veröffentlicht. Ohne AV-Vertrag solltest du nicht mit Kundendaten arbeiten.",
+            "Daraus folgen Alltagsregeln: keine Schattenlisten in privatem Excel, keine Exporte auf private Geräte, keine Screenshots von Datensätzen in Messenger-Gruppen, Zugangsdaten nicht teilen. Und wenn doch etwas schiefgeht – ein Export an die falsche Adresse, ein verlorenes Gerät –, meldest du es sofort intern. Der Verantwortliche muss Datenschutzverletzungen in der Regel binnen 72 Stunden an die Aufsichtsbehörde melden (Art. 33); jede Stunde Zögern fehlt ihm."
+          ],
+          "sourceIds": [
+            "SRC-261",
+            "SRC-262",
+            "SRC-264",
+            "SRC-271",
+            "SRC-268",
+            "SRC-019"
+          ]
+        },
+        {
+          "kind": "callout",
+          "tone": "legal",
+          "title": "Rollen klar halten",
+          "body": "Verantwortlicher ist das Unternehmen, für das du Leads bearbeitest. Es entscheidet über Zwecke, Rechtsgrundlagen, Löschfristen und beantwortet Betroffenenanfragen. Du setzt diese Vorgaben um, dokumentierst sauber und leitest Anfragen weiter. Bei Unsicherheit fragst du nach – bei der Teamleitung oder der benannten Datenschutzstelle. Diese Lektion ersetzt keine Rechtsberatung."
+        },
+        {
+          "kind": "myth",
+          "claim": "„Datenschutz heißt: Ohne Einwilligung darf man gar nichts speichern.“",
+          "reality": "Die Einwilligung ist nur eine von sechs Rechtsgrundlagen in Art. 6 Abs. 1. Die Bearbeitung einer Anfrage kann etwa auf vorvertragliche Maßnahmen gestützt werden, Aufbewahrungspflichten auf eine rechtliche Verpflichtung. Umgekehrt gilt aber: Für Werbung per Telefon oder E-Mail verlangt das UWG meist eine Einwilligung – „Datenschutz erlaubt es“ heißt nicht automatisch „Wettbewerbsrecht erlaubt es“.",
+          "sourceIds": [
+            "SRC-261",
+            "SRC-019"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Der Datenschutz-Dreisatz vor jedem Feld",
+          "category": "prozess",
+          "what": "Vor dem Erfassen oder Weitergeben von Daten drei Fragen stellen: Wozu? Auf welcher Grundlage? Wie lange?",
+          "how": [
+            "Wozu: Für welchen konkreten Zweck brauche ich diese Angabe?",
+            "Grundlage: Ist geklärt, worauf die Verarbeitung beruht (Anfrage, Einwilligung, Pflicht)? Wenn nicht: nachfragen.",
+            "Wie lange: Gibt es eine Löschregel für diese Datenart?",
+            "Wohin: Bleibt die Angabe im vereinbarten System?"
+          ],
+          "why": "Die drei Fragen übersetzen Zweckbindung, Rechtmäßigkeit und Speicherbegrenzung in eine Handlung, die Sekunden dauert.",
+          "evidence": "Abgeleitet aus Art. 5 und 6 DSGVO; als Merkhilfe eine didaktische Annahme, kein rechtlicher Prüfstandard.",
+          "example": "Kunde nennt seinen Arbeitgeber. Wozu? Für eine B2C-Wärmepumpenberatung nicht nötig → nicht erfassen.",
+          "boundary": "Der Dreisatz ersetzt keine Prüfung durch den Verantwortlichen; im Zweifel gilt: nicht erfassen und nachfragen.",
+          "sourceIds": [
+            "SRC-261",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-023"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-024"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-025"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-026"
+        }
+      ],
+      "summary": [
+        "Art. 5: sechs Grundsätze plus Rechenschaftspflicht.",
+        "Art. 6: sechs Rechtsgrundlagen – Einwilligung ist nur eine.",
+        "Werbung braucht zusätzlich eine UWG-konforme Grundlage.",
+        "Art. 13: Transparenz bei der Erhebung.",
+        "Freelancer im Kunden-CRM: AV-Vertrag nach Art. 28.",
+        "Pannen sofort intern melden (Art. 33: 72 Stunden)."
+      ],
+      "sourceIds": [
+        "SRC-261",
+        "SRC-262",
+        "SRC-264",
+        "SRC-271",
+        "SRC-268",
+        "SRC-019"
+      ]
+    },
+    {
+      "id": "M08-L08",
+      "moduleId": "M08",
+      "title": "Auskunft, Löschung und Löschkonzept – richtig weiterleiten",
+      "minutes": 14,
+      "objectiveIds": [
+        "LO-M08-08"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Früher oder später schreibt dir jemand: „Was haben Sie über mich gespeichert?“ oder „Löschen Sie meine Daten.“ In dieser Lektion lernst du, solche Anfragen zu erkennen, freundlich aufzunehmen und richtig weiterzuleiten – statt sie abzuwimmeln oder eigenmächtig zu erledigen."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 8.8",
+          "title": "Betroffenenrechte sind kein Einwand",
+          "paragraphs": [
+            "Für Setter fühlt sich eine Löschanfrage oft wie ein Einwand an, den man „behandeln“ müsste. Das ist der wichtigste Denkfehler dieses Kapitels. Ein Betroffenenrecht wird nicht verhandelt. Niemand muss begründen, warum er Auskunft oder Löschung möchte; der EuGH hat 2023 etwa entschieden, dass die erste Kopie der Daten auch dann unentgeltlich ist, wenn der Antrag anderen als datenschutzrechtlichen Zielen dient. Deine Aufgabe ist nicht, umzustimmen, sondern dafür zu sorgen, dass die Anfrage schnell und vollständig beim Verantwortlichen ankommt.",
+            "Das Auskunftsrecht (Art. 15) umfasst die Bestätigung, ob Daten verarbeitet werden, eine Kopie der Daten und Informationen unter anderem zu Zwecken, Empfängern, Speicherdauer, Herkunft und den weiteren Rechten. Das Recht auf Löschung (Art. 17) greift unter anderem, wenn die Daten für den Zweck nicht mehr nötig sind, eine Einwilligung widerrufen wurde oder die Person widersprochen hat. Es hat Ausnahmen: Daten, die wegen gesetzlicher Aufbewahrungspflichten – etwa für Handels- und Geschäftsbriefe nach § 257 HGB – noch aufbewahrt werden müssen, werden bis zum Fristende eingeschränkt statt gelöscht; § 35 BDSG ergänzt das für vertragliche und satzungsmäßige Fristen. Wer diese Abwägung trifft, ist der Verantwortliche.",
+            "Die Fristen regelt Art. 12 Abs. 3: Der Verantwortliche reagiert unverzüglich, spätestens innerhalb eines Monats nach Eingang; nur bei komplexen oder zahlreichen Anträgen ist eine Verlängerung um zwei Monate möglich, die innerhalb des ersten Monats begründet mitgeteilt werden muss. Entscheidend: Die Frist beginnt mit dem Eingang – auch wenn die Anfrage im WhatsApp-Chat eines Setters landet. Deshalb leitest du sie am selben Tag weiter und notierst Datum, Uhrzeit, Kanal und Wortlaut.",
+            "Was du sofort tun kannst und solltest: das Anliegen bestätigen, den Umfang klären (Auskunft? Löschung? Berichtigung? Werbestopp?), bei abgelehnter Werbung eine Werbesperre setzen, die Anfrage nach internem Prozess als Ticket weitergeben und der Person sagen, wie es weitergeht. Was du nicht tun solltest: abwimmeln („dafür bin ich nicht zuständig“), eine Begründung verlangen, mit Angeboten umstimmen, im Chat einen Ausweis anfordern (Identitätsprüfung ist Sache des Verantwortlichen und nur bei begründeten Zweifeln vorgesehen, Art. 12 Abs. 6), selbst einen Screenshot als „Auskunft“ schicken oder eigenmächtig löschen. Wer eigenmächtig löscht, macht die Auskunft unmöglich, übersieht Aufbewahrungspflichten und kann die Bearbeitung nicht nachweisen.",
+            "Damit Löschungen nicht vom Zufall abhängen, braucht jedes Team ein Löschkonzept. Die Norm DIN 66398 beschreibt, wie man Datenarten bildet, ihnen Löschfristen und Startzeitpunkte zuordnet und Verantwortlichkeiten festlegt. Für das Übungs-CRM könnte das heißen: Disqualifizierte Leads ohne Einwilligung werden nach einer festgelegten Frist gelöscht; Nurturing-Kontakte, wenn die Einwilligung widerrufen wird; Angebots- und Vertragsunterlagen nach Ablauf der gesetzlichen Fristen. Werbewidersprüche werden in der Praxis häufig in einer minimalen Sperrliste festgehalten, damit sie dauerhaft beachtet werden können – wie genau, entscheidet der Verantwortliche."
+          ],
+          "sourceIds": [
+            "SRC-262",
+            "SRC-263",
+            "SRC-265",
+            "SRC-266",
+            "SRC-267",
+            "SRC-270",
+            "SRC-272",
+            "SRC-279"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Betroffenenanfrage erkennen und weiterleiten",
+          "category": "prozess",
+          "what": "Anfragen zu Auskunft, Löschung, Berichtigung oder Werbestopp in jedem Kanal erkennen und ohne Diskussion korrekt in den Prozess geben.",
+          "how": [
+            "Erkennen: Formulierungen wie „Was haben Sie gespeichert?“, „Löschen Sie mich“, „Woher haben Sie meine Nummer?“, „Keine Werbung mehr“.",
+            "Bestätigen: „Danke, ich habe Ihr Anliegen aufgenommen.“ – keine Begründung verlangen.",
+            "Umfang klären: Auskunft, Löschung, Berichtigung, Werbestopp – und wohin die Antwort gehen soll.",
+            "Sofort: Werbesperre setzen, wenn Werbung abgelehnt wird.",
+            "Ticket am selben Tag: Eingangsdatum, Kanal, Wortlaut, betroffene Datensätze (auch Dubletten).",
+            "Informieren: wer antwortet und in welchem Rahmen (spätestens innerhalb eines Monats)."
+          ],
+          "why": "Die Monatsfrist läuft ab Eingang. Schnelle, vollständige Weiterleitung schützt die Rechte der Person und das Unternehmen – und ein respektvoller Umgang hinterlässt einen guten letzten Eindruck.",
+          "evidence": "DSGVO Art. 12, 15, 17, 21; EDPB-Leitlinien 01/2022 zum Auskunftsrecht; DSK-Kurzpapiere Nr. 6 und 11. Der Ablauf ist eine didaktische Zusammenfassung, kein Ersatz für den internen Prozess des Verantwortlichen.",
+          "example": "„Danke, Frau Vogt – ich habe aufgenommen: Auskunft über Ihre gespeicherten Daten und danach Löschung, ab sofort keine Werbung. Ich gebe das heute an unser Datenschutz-Team; die Auskunft kommt per E-Mail an Ihre Adresse aus der Anfrage, spätestens innerhalb eines Monats.“",
+          "boundary": "Keine Rechtsberatung („Wir müssen gar nichts löschen“), keine Versprechen über Ergebnisse („In 24 Stunden ist alles weg“), keine eigenmächtige Löschung und kein Umstimmungsversuch.",
+          "sourceIds": [
+            "SRC-262",
+            "SRC-263",
+            "SRC-267",
+            "SRC-269",
+            "SRC-270"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Die Löschanfrage im Verkaufschat",
+          "situation": "Simulation: Herr Brehm hatte im Juni ein Angebot für eine PV-Anlage erhalten und im Juli abgesagt. Im Oktober schreibt er per E-Mail: „Bitte löschen Sie alle meine Daten und schicken Sie mir keine Werbung mehr.“ Setter Tim sieht im CRM zwei Datensätze (einmal „Brehm“, einmal „Brem“) und ein Angebots-PDF im Deal. Sein erster Impuls: beide Kontakte sofort dauerhaft löschen.",
+          "analysis": "Tim setzt stattdessen sofort an beiden Datensätzen eine Werbesperre, bestätigt Herrn Brehm den Eingang und erklärt, dass das Datenschutz-Team die Löschung bearbeitet und sich spätestens innerhalb eines Monats meldet. Im Ticket notiert er Eingang (Datum, Uhrzeit, E-Mail), Wortlaut, beide Datensätze und den Hinweis auf das Angebots-PDF. Das Team löscht Notizen und Kontaktdaten, schränkt das Angebot als Geschäftsbrief bis Fristende ein und führt den Werbewiderspruch in der Sperrliste. Hätte Tim selbst gelöscht, wäre der Dublettensatz womöglich übersehen worden und die Aufbewahrungsprüfung entfallen.",
+          "simulationNote": "Alle Personen, Firmen und Daten in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "myth",
+          "claim": "„Wer Auskunft will, muss erst erklären, wofür – und die Kopie kostet eine Gebühr.“",
+          "reality": "Ein Auskunftsantrag braucht keine Begründung. Die erste Kopie ist nach Art. 15 Abs. 3 unentgeltlich; der EuGH hat bestätigt, dass das auch gilt, wenn die Person andere als datenschutzrechtliche Ziele verfolgt. Nur bei offenkundig unbegründeten oder exzessiven Anträgen sieht Art. 12 Abs. 5 Ausnahmen vor – darüber entscheidet der Verantwortliche, nicht der Setter.",
+          "sourceIds": [
+            "SRC-262",
+            "SRC-279",
+            "SRC-269"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-028"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-030"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M08-034"
+        }
+      ],
+      "summary": [
+        "Betroffenenrechte werden nicht verhandelt.",
+        "Auskunft (Art. 15), Löschung (Art. 17) mit Ausnahmen (Aufbewahrung).",
+        "Frist: unverzüglich, spätestens ein Monat ab Eingang.",
+        "Setter: bestätigen, Umfang klären, Werbesperre, Ticket, informieren.",
+        "Nie abwimmeln, umstimmen oder eigenmächtig löschen.",
+        "Ein Löschkonzept regelt Fristen je Datenart."
+      ],
+      "sourceIds": [
+        "SRC-262",
+        "SRC-263",
+        "SRC-265",
+        "SRC-266",
+        "SRC-267",
+        "SRC-269",
+        "SRC-270",
+        "SRC-272",
+        "SRC-279"
+      ]
+    }
+  ],
+  "transferTask": {
+    "title": "Transferaufgabe: Dein Übungs-CRM",
+    "instructions": "Baue in einer Tabelle (z. B. Tabellenkalkulation) ein Übungs-CRM – ausschließlich mit erfundenen Daten. (1) Lege die Spalten für Kontakt, Deal und Aufgabe fest und begründe für jedes Feld in einem Halbsatz, wozu es nötig ist. (2) Definiere eine Pipeline mit höchstens sieben Phasen und je einem prüfbaren Austrittskriterium sowie eine Auswahlliste für Verlustgründe. (3) Lege fünf erfundene Kontakte an, darunter eine bewusst eingebaute Dublette, und dokumentiere je eine Gesprächsnotiz nach dem Schema „Gesagt – Vereinbart – Offen“. (4) Beschreibe eine Automation mit Auslöser, Aktion und mindestens zwei Stoppbedingungen. (5) Schreibe eine Löschregel für disqualifizierte Leads und einen Fünf-Schritte-Ablauf für eingehende Auskunfts- oder Löschanfragen.",
+    "criteria": [
+      "Ausschließlich erfundene Daten, als Simulation gekennzeichnet",
+      "Jedes Feld hat einen benannten Zweck; keine sensiblen Kategorien",
+      "Jede Phase hat ein beobachtbares Austrittskriterium",
+      "Verlustgründe als Auswahlliste",
+      "Dublette wird erkannt und korrekt zusammengeführt (Widerspruch/Einwilligung bleibt erhalten)",
+      "Notizen ohne Bewertungen und Vermutungen; Unbekanntes als „nicht erfragt“",
+      "Automation enthält Stopp bei Antwort und bei Widerspruch",
+      "Ablauf für Betroffenenanfragen: bestätigen, Umfang klären, Werbesperre, Ticket mit Eingangsdatum, informieren – ohne eigenmächtiges Löschen"
+    ]
+  },
+  "examQuestionIds": [
+    "Q-M08-001",
+    "Q-M08-004",
+    "Q-M08-006",
+    "Q-M08-007",
+    "Q-M08-008",
+    "Q-M08-009",
+    "Q-M08-012",
+    "Q-M08-013",
+    "Q-M08-016",
+    "Q-M08-018",
+    "Q-M08-020",
+    "Q-M08-021",
+    "Q-M08-023",
+    "Q-M08-024",
+    "Q-M08-026",
+    "Q-M08-029",
+    "Q-M08-030",
+    "Q-M08-031",
+    "Q-M08-032",
+    "Q-M08-035"
+  ]
+}

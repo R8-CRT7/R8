@@ -22,7 +22,7 @@
     "SRC-056",
     "SRC-059",
     "SRC-060",
-    "SRC-201",
+    "SRC-101",
     "SRC-202",
     "SRC-203",
     "SRC-204",
@@ -714,7 +714,7 @@
         "LO-M06-07"
       ],
       "sourceIds": [
-        "SRC-201",
+        "SRC-101",
         "SRC-203",
         "SRC-202",
         "SRC-019",
@@ -739,7 +739,7 @@
             "Das respektvolle Nein ist kurz: Bestätigen („Verstanden, danke für die klare Rückmeldung“), Konsequenz nennen („Ich notiere, dass wir Sie nicht mehr kontaktieren“), freundlich abschließen. Dann dokumentierst du im CRM – Status, Kontaktsperre, Datum. Das ist kein verlorenes Gespräch. Es ist ein professionell abgeschlossenes Gespräch, und in der Simulation ein vollwertiges Ergebnis („Nein respektiert“)."
           ],
           "sourceIds": [
-            "SRC-201",
+            "SRC-101",
             "SRC-203",
             "SRC-202",
             "SRC-019",
@@ -763,7 +763,7 @@
           "example": "Kunde: „Nein, ich möchte das nicht. Bitte schreiben Sie mir nicht mehr.“ → „Verstanden, Herr Beck – danke für die klare Rückmeldung. Ich trage ein, dass wir Sie nicht mehr kontaktieren. Alles Gute für Sie!“",
           "boundary": "Nach einem klaren Nein: keine Nachfrage zum Umstimmen, kein „nur noch eine Sache“, keine angekündigten Folgekontakte. Kein Rechtsrat: Bei Unsicherheit über Einwilligungen fragst du intern nach.",
           "sourceIds": [
-            "SRC-201",
+            "SRC-101",
             "SRC-019",
             "SRC-025"
           ]
@@ -779,7 +779,7 @@
           "claim": "„Das Verkaufen beginnt erst beim Nein – gute Verkäufer lassen ein Nein nicht gelten.“",
           "reality": "Ein klares Nein ist eine Entscheidung. Wer sie übergeht, riskiert Belästigung im Sinne von UWG § 4a/§ 7, beschädigt das Vertrauen in das Unternehmen und erzeugt – wenn überhaupt – Termine, die abgesagt werden. Professionell ist, ein Nein zu erkennen und sauber abzuschließen.",
           "sourceIds": [
-            "SRC-201",
+            "SRC-101",
             "SRC-019",
             "SRC-207"
           ]

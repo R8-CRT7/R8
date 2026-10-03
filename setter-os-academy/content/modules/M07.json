@@ -1,0 +1,883 @@
+{
+  "id": "M07",
+  "number": 7,
+  "title": "Appointment Management",
+  "subtitle": "Termin, Bestätigung, No-Show-Recovery, Übergabe",
+  "status": "verfuegbar",
+  "prerequisites": [
+    "M01",
+    "M05"
+  ],
+  "version": "1.0.0",
+  "passThreshold": 0.8,
+  "sourceIds": [
+    "SRC-010",
+    "SRC-019",
+    "SRC-025",
+    "SRC-028",
+    "SRC-047",
+    "SRC-050",
+    "SRC-052",
+    "SRC-056",
+    "SRC-057",
+    "SRC-059",
+    "SRC-231",
+    "SRC-232",
+    "SRC-233",
+    "SRC-234",
+    "SRC-235",
+    "SRC-236",
+    "SRC-237",
+    "SRC-238",
+    "SRC-175",
+    "SRC-240",
+    "SRC-241"
+  ],
+  "objectives": [
+    {
+      "id": "LO-M07-01",
+      "moduleId": "M07",
+      "text": "Qualifizierte Termine anhand festgelegter Kriterien von bloß gebuchten Terminen unterscheiden.",
+      "bloom": "analysieren"
+    },
+    {
+      "id": "LO-M07-02",
+      "moduleId": "M07",
+      "text": "Termine kundenorientiert vereinbaren: Vorschlag mit Nutzen, ausdrückliches Ja, dann konkrete Zeitoptionen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M07-03",
+      "moduleId": "M07",
+      "text": "Kalender verlässlich organisieren: Verfügbarkeit, Zeitzone, Puffer und vollständige, datensparsame Einladungen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M07-04",
+      "moduleId": "M07",
+      "text": "Terminbestätigungen mit allen Eckdaten und einem Wenn-dann-Planungsimpuls formulieren und die Evidenz dazu ehrlich einordnen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M07-05",
+      "moduleId": "M07",
+      "text": "Erinnerungen rechtlich und ethisch sauber planen: Kanal, Einwilligung, Widerspruch und Trennung von Service- und Werbeinhalt (UWG § 7, DSGVO).",
+      "bloom": "bewerten"
+    },
+    {
+      "id": "LO-M07-06",
+      "moduleId": "M07",
+      "text": "Verschiebungen und Absagen reibungsarm, respektvoll und sauber dokumentiert handhaben.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M07-07",
+      "moduleId": "M07",
+      "text": "Nach einem No-Show freundlich und ohne Druck nachfassen, den Grund behutsam klären und ein Nein akzeptieren.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M07-08",
+      "moduleId": "M07",
+      "text": "Übergabeprotokolle und Gesprächsnotizen vollständig, wahr und datensparsam schreiben.",
+      "bloom": "erschaffen"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M07-L01",
+      "title": "Der qualifizierte Termin – Kriterien statt Zahlen",
+      "objectiveIds": [
+        "LO-M07-01"
+      ],
+      "sourceIds": [
+        "SRC-050",
+        "SRC-047"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "In Modul 7 geht es um alles, was zwischen dem „Ja, gern“ des Kunden und dem Beratungsgespräch passiert – und um das, was passiert, wenn der Termin platzt. Wir beginnen mit der Grundfrage: Wann ist ein Termin überhaupt ein guter Termin?"
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 7.1",
+          "title": "Termin ist nicht gleich Termin",
+          "paragraphs": [
+            "Im Appointment Setting wird Erfolg gern an der Zahl gebuchter Termine gemessen. Das ist verständlich, denn die Zahl ist leicht zu zählen. Sie ist aber trügerisch. Ein Termin mit jemandem, der nicht mitentscheiden darf, keinen echten Bedarf hat oder gar nicht wusste, worum es gehen soll, kostet die Beraterin eine Stunde, den Kunden Nerven und dein Team Vertrauen. In diesem Kurs zählt deshalb nicht der gebuchte, sondern der qualifizierte Termin.",
+            "Ein qualifizierter Termin erfüllt in diesem Kurs vier Bedingungen. Erstens: Die Pflichtkriterien des Auftraggebers sind geklärt – aus Modul 1 kennst du Bedarf, Passung, Zeitrahmen und Entscheider, je nach Projekt kommt das Budget hinzu. Zweitens: Der Kunde weiß, worum es im Termin geht, wie lange er dauert, in welchem Format er stattfindet und wer teilnimmt. Drittens: Der Kunde hat ausdrücklich zugestimmt – ein „Ich trag Sie mal ein“ ist keine Zustimmung. Viertens: Die Übergabe an die Beraterin ist dokumentiert. Fehlt eine Bedingung, ist es ein Termin, aber kein qualifizierter.",
+            "Woher kommen die Kriterien? Frameworks wie BANT (Budget, Authority, Need, Timeline) sind verbreitete Praxishilfen, aber keine wissenschaftlich geprüften Standards. Welche Kriterien in deinem Projekt gelten, legt der Auftraggeber fest. Liegt das nicht schriftlich vor, frag nach – zum Beispiel: „Ab wann gilt ein Termin bei euch als qualifiziert, und was soll ich tun, wenn ein Punkt offen bleibt?“ Diese eine Frage erspart dir viele Diskussionen später.",
+            "„Nicht qualifiziert“ heißt nicht automatisch „kein Termin“. Manchmal bleibt ein Kriterium offen, etwa weil der Kunde noch nicht weiß, ob die Partnerin mitentscheiden will. Dann gibt es zwei ehrliche Wege: das Kriterium klären, bevor du einen Termin vorschlägst, oder – wenn der Auftraggeber das ausdrücklich erlaubt – den Termin mit einem sichtbar markierten offenen Punkt übergeben („Mitentscheider: nicht erfragt“). Unehrlich wäre, die Lücke mit einer Vermutung zu füllen, damit der Termin in der Statistik besser aussieht.",
+            "Ein letzter Gedanke zu Kennzahlen: Sobald nur noch die Anzahl der Termine zählt, entsteht ein Anreiz, Termine schönzurechnen – Wackelkandidaten werden „qualifiziert“, offene Punkte verschwinden. Gute Teams messen deshalb zusätzlich, wie viele Termine die Kriterien tatsächlich erfüllten und was die Beraterin nach dem Termin zurückmeldet. Diese Kombination aus Zahl und Rückmeldung ist eine Didaktikentscheidung dieses Kurses, keine Studie – aber sie schützt dich davor, dich an der falschen Zahl zu messen."
+          ],
+          "sourceIds": [
+            "SRC-050",
+            "SRC-047"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Termin-Readiness-Check",
+          "category": "prozess",
+          "what": "Vor jedem Terminvorschlag in rund 20 Sekunden prüfen, ob die vier Bedingungen eines qualifizierten Termins erfüllt sind.",
+          "how": [
+            "Pflichtkriterien durchgehen: Ist jedes geklärt, offen oder nicht erfragt?",
+            "Prüfen, ob der Kunde Ziel, Dauer, Format und Teilnehmende des Termins kennt.",
+            "Erst wenn beides passt: Termin vorschlagen und ein ausdrückliches Ja abwarten.",
+            "Offene Punkte nicht füllen, sondern in der Übergabe ehrlich markieren."
+          ],
+          "why": "Die Beraterin kann sich auf deine Angaben verlassen, und der Kunde erlebt keinen Termin, der an ihm vorbeigeht.",
+          "evidence": "Kursdefinition (Annahme), angelehnt an verbreitete Qualifizierungs-Frameworks wie BANT. Diese Frameworks sind Praxiswissen ohne systematische Evaluation.",
+          "example": "Innerer Check vor dem Vorschlag: Bedarf ✓ („alte Ölheizung soll raus“), Eigentum ✓, Zeitrahmen ✓ („vor dem Winter“), Entscheider ✗ (nicht erfragt) → erst fragen: „Entscheiden Sie das allein, oder ist noch jemand beteiligt?“",
+          "boundary": "Kriterien müssen sachlich mit dem Angebot zusammenhängen. Der Check sortiert keine Menschen nach Alter, Herkunft oder vermutetem Einkommen aus.",
+          "sourceIds": [
+            "SRC-050",
+            "SRC-047"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "Je mehr Termine ein Setter bucht, desto besser ist er.",
+          "reality": "Unqualifizierte Termine kosten Beraterzeit, enttäuschen Kunden und verzerren die Planung. Dieser Kurs bewertet deshalb die Quote qualifizierter Termine zusammen mit der Rückmeldung der Beratung. Dafür gibt es keine Studie aus dem Setting-Kontext – es ist eine offen gekennzeichnete Kursentscheidung, die auf einer einfachen Logik beruht: Ein Termin, der nicht hätte stattfinden sollen, ist kein Erfolg.",
+          "sourceIds": [
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Zwei Termine im Vergleich (erfunden)",
+          "body": "Termin A: „Herr Kühn will eine Wärmepumpe, Termin Do 18 Uhr.“ Mehr steht nicht im CRM. Im Termin stellt sich heraus: Herr Kühn wohnt zur Miete.\n\nTermin B: „Frau Arslan, Eigentümerin, Gasheizung 21 Jahre, möchte vor dem Winter umsteigen (Zitat: ‚Ich will nicht noch einen Winter mit dem alten Ding‘). Ehemann nimmt teil. 45 Min. Video, Do 18 Uhr. Offene Frage: Lärm im Garten.“\n\nBeide Termine stehen im Kalender. Nur Termin B ist qualifiziert."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-001"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-002"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-004"
+        }
+      ],
+      "summary": [
+        "Gezählt wird der qualifizierte, nicht der gebuchte Termin.",
+        "Vier Bedingungen: Kriterien geklärt, Kunde informiert, ausdrückliches Ja, Übergabe dokumentiert.",
+        "Kriterien legt der Auftraggeber fest – nachfragen, wenn unklar.",
+        "Offene Punkte ehrlich markieren, nie mit Vermutungen füllen."
+      ],
+      "moduleId": "M07",
+      "minutes": 9
+    },
+    {
+      "id": "M07-L02",
+      "title": "Termine vereinbaren – Vorschlag, Ja, Auswahl",
+      "objectiveIds": [
+        "LO-M07-02"
+      ],
+      "sourceIds": [
+        "SRC-010",
+        "SRC-052",
+        "SRC-234",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ein Termin entsteht in drei Schritten: Du schlägst ihn mit klarem Nutzen vor, der Kunde sagt ausdrücklich Ja, und erst dann einigt ihr euch auf eine Zeit. Wer diese Reihenfolge umdreht, erzeugt Druck – oder Termine, die niemand wirklich wollte."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 7.2",
+          "title": "Vom Vorschlag zum festen Termin",
+          "paragraphs": [
+            "Ein Terminvorschlag kommt nach dem Verstehen, nicht davor. Die Reihenfolge aus Modul 1 bleibt: eröffnen, Bedarf klären, zusammenfassen, dann vorschlagen. Ein guter Vorschlag ist eine Frage und enthält vier Dinge: den Nutzen für den Kunden, die Dauer, das Format und wer teilnimmt. „Ein 30-minütiges Videogespräch mit unserer Energieberaterin – sie schaut sich Ihre Heizungssituation an und beantwortet Ihre Fragen zur Förderung. Möchten Sie das?“ Der Kunde weiß danach genau, wozu er Ja oder Nein sagt.",
+            "Erst nach dem Ja kommen konkrete Zeiten. Bewährt haben sich zwei bis drei Zeitfenster plus die offene Tür: „Oder schlagen Sie gern eine andere Zeit vor.“ Warum nicht zehn Optionen? Die Forschung zur sogenannten Entscheidungsüberlastung ist uneinheitlich: Eine Meta-Analyse fand im Mittel fast keinen Effekt, aber starke Unterschiede je nach Situation. Der Grund für wenige Optionen ist deshalb vor allem praktisch: Der Kunde kann sofort wählen, statt einen Kalender zu durchsuchen. Die offene Frage „Wann passt es Ihnen?“ führt im Chat dagegen oft zu mehreren Nachrichten Hin und Her.",
+            "Hier liegt eine wichtige ethische Grenze. Die Frage „Dienstag oder Donnerstag?“ ist nach einer Zustimmung ein Service. Vor einer Zustimmung ist sie eine Unterstellung: Sie tut so, als wäre der Termin schon beschlossen, und macht ein Nein schwerer. In manchen Verkaufstrainings heißt das „Alternativfrage“ oder „Assumptive Close“. In diesem Kurs ist sie vor dem Ja tabu.",
+            "Auch der Zeitpunkt zählt. In einer systematischen Übersicht zu Terminen im Gesundheitswesen gehörten eine lange Vorlaufzeit bis zum Termin und frühere No-Shows zu den am häufigsten berichteten Einflussgrößen für Nichterscheinen. Ob das für Beratungstermine genauso gilt, ist nicht untersucht; eine plausible Übertragung lautet: den Termin nicht ohne Grund Wochen in die Zukunft legen. Der Wunsch des Kunden geht aber immer vor – wer erst in drei Wochen Zeit hat, bekommt den Termin in drei Wochen.",
+            "Bleibt die Antwort vage – „vielleicht“, „mal schauen“ –, ist das kein Ja. Benenne die Unsicherheit und frage offen: „Klingt, als wären Sie noch nicht sicher. Was müsste klar sein, damit sich ein Termin für Sie lohnt?“ Und wenn die Antwort Nein ist, gilt sie. Ein Kalenderlink zur Selbstbuchung ist eine gute Ergänzung für Kunden, die das bevorzugen – ersetzt aber weder das Ja noch die Bestätigung."
+          ],
+          "sourceIds": [
+            "SRC-010",
+            "SRC-234",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Vorschlag – Ja – zwei Optionen",
+          "category": "gespraech",
+          "what": "Erst einen Termin mit Nutzen vorschlagen, das ausdrückliche Ja abwarten und dann zwei bis drei konkrete Zeiten anbieten.",
+          "how": [
+            "Vorschlag als Frage: Nutzen, Dauer, Format, Teilnehmende nennen.",
+            "Antwort abwarten – nur ein klares Ja zählt als Ja.",
+            "Zwei bis drei Zeitfenster anbieten, die zu dem passen, was du über den Alltag des Kunden weißt.",
+            "Eine Tür offenlassen: „Oder schlagen Sie gern eine andere Zeit vor.“"
+          ],
+          "why": "Der Kunde behält die Entscheidung, und die Terminfindung dauert eine statt fünf Nachrichten.",
+          "evidence": "Scheibehenne et al. (2010): Entscheidungsüberlastung im Mittel nahe null, stark kontextabhängig – zwei bis drei Optionen sind eine Praxisheuristik, kein belegter Wirkmechanismus. Carpenter (2013): Autonomie betonende Formulierungen („Sie entscheiden“) zeigen einen kleinen positiven Effekt; Re-Analysen relativieren ihn.",
+          "example": "„Möchten Sie das?“ – „Ja, gern.“ – „Prima! Passt Ihnen Dienstag um 18 Uhr oder Mittwoch um 12:30 Uhr besser? Oder schlagen Sie gern eine andere Zeit vor.“",
+          "boundary": "Keine Alternativfrage vor dem Ja, keine erfundene Knappheit („nur noch ein Termin frei“), kein Eintragen ohne Zustimmung.",
+          "sourceIds": [
+            "SRC-010",
+            "SRC-052",
+            "SRC-053"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "Mit der Alternativfrage „Dienstag oder Donnerstag?“ bekommt man jeden Kunden zu einem Termin.",
+          "reality": "Für diese Behauptung gibt es keine belastbare Studie. Vor einer Zustimmung ist die Frage eine Unterstellung, die ein Nein erschwert – genau das, was Druck ausmacht. Nach einer Zustimmung ist dieselbe Frage hilfreich, weil sie dem Kunden Arbeit abnimmt. Entscheidend ist also nicht die Formulierung, sondern ob der Kunde schon Ja gesagt hat.",
+          "sourceIds": [
+            "SRC-050",
+            "SRC-010"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Musterlösung: Vom Bedarf zum Termin im Chat",
+          "steps": [
+            "Zusammenfassen: „Wenn ich Sie richtig verstehe, soll die alte Gasheizung vor dem Winter raus, und Sie möchten wissen, ob eine Wärmepumpe in Ihrem Haus funktioniert – stimmt das?“",
+            "Vorschlagen: „Dafür wäre ein 30-minütiges Videogespräch mit unserer Energieberaterin der nächste Schritt. Ihr Mann kann gern dabei sein. Möchten Sie das?“",
+            "Ja abwarten: Kunde: „Ja, das klingt gut.“",
+            "Optionen anbieten: „Prima! Passt Ihnen Dienstag um 19 Uhr oder Samstag um 10 Uhr besser? Oder schlagen Sie gern eine andere Zeit vor.“",
+            "Wahl übernehmen und zur Bestätigung überleiten (Lektion 4)."
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-005"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-007"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-008"
+        }
+      ],
+      "summary": [
+        "Vorschlag als Frage mit Nutzen, Dauer, Format, Teilnehmenden.",
+        "Erst das ausdrückliche Ja, dann zwei bis drei Zeitfenster.",
+        "Alternativfrage vor dem Ja ist Druck – nach dem Ja ist sie Service.",
+        "Vage Antworten klären, ein Nein respektieren."
+      ],
+      "moduleId": "M07",
+      "minutes": 11
+    },
+    {
+      "id": "M07-L03",
+      "title": "Kalenderorganisation – verlässlich und datensparsam",
+      "objectiveIds": [
+        "LO-M07-03"
+      ],
+      "sourceIds": [
+        "SRC-241",
+        "SRC-025",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ein Kalendereintrag ist ein Versprechen an zwei Menschen: an den Kunden und an die Beraterin. In dieser Lektion lernst du, wie du Doppelbuchungen, Zeitzonen-Fehler und überladene Einladungen vermeidest."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 7.3",
+          "title": "Der Kalender als Versprechen",
+          "paragraphs": [
+            "Die Grundregel lautet: Verfügbarkeit steht im System, nicht im Kopf. Buche nur in Zeitfenster, die die Beraterin im gemeinsamen Kalender oder Buchungstool freigegeben hat, und trage den Termin sofort ein, solange der Kunde noch im Chat ist. Der peinlichste Fehler im Appointment Setting ist die Doppelbuchung: Zwei Kunden sitzen gleichzeitig im Videoraum, einer muss vertröstet werden – und das Vertrauen, das du im Gespräch aufgebaut hast, ist beschädigt.",
+            "Zeitzonen und Zeitumstellung sind die zweite Fehlerquelle. Sobald ein Kunde nicht in deiner Zeitzone sitzt – etwa in Portugal oder Großbritannien, wo die Uhr eine Stunde zurück ist –, schreibst du die Zeitzone dazu: „Donnerstag, 22. Oktober, 18:00 Uhr deutscher Zeit (17:00 Uhr bei Ihnen)“. In der EU wird die Uhr am letzten Sonntag im Oktober auf Normalzeit umgestellt; Termine, die man davor vereinbart und danach durchführt, verdienen einen zweiten Blick. Kalendereinladungen im verbreiteten iCalendar-Format führen die Zeitzone technisch mit. Fehler entstehen meist dann, wenn jemand die Uhrzeit von Hand in eine Nachricht abschreibt.",
+            "Eine vollständige Einladung enthält: einen verständlichen Titel („Videoberatung Wärmepumpe – ThermoTal“ statt „Call“), Datum und Uhrzeit mit Zeitzone, Dauer, Ort oder Videolink, die Teilnehmenden, eine kurze Beschreibung, worum es geht und was der Kunde vorbereiten kann, sowie einen Ansprechpartner, falls er verschieben muss. Fehlt der Link oder die Dauer, kommen kurz vor dem Termin Rückfragen – oder der Kunde kommt gar nicht.",
+            "Plane Puffer ein. Zwischen zwei Beratungsterminen braucht die Beraterin Zeit für Notizen und Vorbereitung; viele Teams planen 10 bis 15 Minuten (eine Praxisannahme, kein Standard). Verzichte darauf, Termine bewusst doppelt zu belegen, um No-Shows auszugleichen: Wenn beide Kunden erscheinen, wartet einer – und genau dieser Kunde hat dir vertraut.",
+            "Und schließlich der Datenschutz. Kalender werden oft im Team geteilt, Termintitel sind für viele sichtbar. Deshalb gehören in Titel und Beschreibung nur die Daten, die für den Termin nötig sind – Grundsatz der Datenminimierung nach DSGVO. „Herr Weiß – Schulden, Scheidung“ hat in einem Termintitel nichts verloren. Lade außerdem nie mehrere Kunden in dieselbe Einladung ein: Sie sähen gegenseitig ihre Namen und E-Mail-Adressen."
+          ],
+          "sourceIds": [
+            "SRC-241",
+            "SRC-025",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Vollständige Kalendereinladung",
+          "category": "prozess",
+          "what": "Eine Einladung, die alle Fragen vor dem Termin beantwortet und nur nötige Daten enthält.",
+          "how": [
+            "Titel mit Thema und Firma, ohne private Details.",
+            "Datum, Uhrzeit, Zeitzone und Dauer prüfen – bei Kunden im Ausland beide Ortszeiten nennen.",
+            "Videolink oder Adresse, Teilnehmende und eine Zeile „Worum es geht / was Sie vorbereiten können“.",
+            "Ansprechpartner und Weg zum Verschieben angeben.",
+            "Freigegebenes Zeitfenster der Beraterin nutzen und Puffer einhalten."
+          ],
+          "why": "Der Kunde muss vor dem Termin nichts nachfragen, und die Beraterin findet alles an einem Ort.",
+          "evidence": "Die Felder entsprechen dem iCalendar-Standard (RFC 5545); Datenminimierung folgt aus der DSGVO. Puffergröße und Aufbau sind Praxisannahmen dieses Kurses.",
+          "example": "Titel: „Videoberatung Wärmepumpe – ThermoTal“. Sa, 24.10., 10:00–10:45 Uhr (MESZ). Link: [Videoraum]. Teilnehmende: Markus und Jana Oberle, Energieberaterin Lena Sommer. Beschreibung: „Wir sprechen über Ihre Heizung und Ihre Fragen zu Kosten und Förderung. Falls Sie möchten: Foto vom Typenschild der Heizung bereithalten. Verschieben? Kurz per WhatsApp an Jonas.“",
+          "boundary": "Keine sensiblen Angaben in Titel oder Beschreibung, keine Sammel-Einladungen mehrerer Kunden, keine Buchung außerhalb freigegebener Zeiten.",
+          "sourceIds": [
+            "SRC-241",
+            "SRC-025",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Vorher – nachher",
+          "body": "Vorher: Titel „Call Oberle“, 18:00, kein Link, Beschreibung „Kunde will WP, Frau nervt wegen Kosten“.\n\nNachher: Titel „Videoberatung Wärmepumpe – ThermoTal“, 18:00–18:45 Uhr (MESZ), Link, beide Teilnehmenden, Beschreibung: „Fragen zur Heizung, zu Kosten und Förderung; bei Bedarf Typenschild-Foto bereithalten.“ – Die abwertende Bemerkung gehört nirgendwohin, auch nicht ins CRM."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-009"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-010"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-011"
+        }
+      ],
+      "summary": [
+        "Nur in freigegebene Zeiten buchen und sofort eintragen.",
+        "Zeitzone nennen, Zeitumstellung beachten.",
+        "Einladung: Titel, Zeit, Dauer, Link, Teilnehmende, Zweck, Verschiebeweg.",
+        "Puffer einplanen, keine bewussten Doppelbuchungen.",
+        "Nur nötige Daten, keine Sammel-Einladungen."
+      ],
+      "moduleId": "M07",
+      "minutes": 8
+    },
+    {
+      "id": "M07-L04",
+      "title": "Terminbestätigung mit Wenn-dann-Plan",
+      "objectiveIds": [
+        "LO-M07-04"
+      ],
+      "sourceIds": [
+        "SRC-237",
+        "SRC-056",
+        "SRC-235",
+        "SRC-057",
+        "SRC-236",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ein Ja im Chat ist eine Absicht. Ob daraus ein wahrgenommener Termin wird, hängt auch davon ab, wie konkret der Plan ist. Hier lernst du, was die Forschung zu Wenn-dann-Plänen zeigt – und was sie nicht zeigt."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 7.4",
+          "title": "Von der Absicht zum Plan",
+          "paragraphs": [
+            "Zwischen Absicht und Handlung klafft oft eine Lücke. Übersichtsarbeiten zur sogenannten Intention-Behavior-Gap zeigen: Viele Menschen, die etwas fest vorhaben, setzen es nicht um – weil sie es vergessen, weil die Gelegenheit vorbeigeht oder weil etwas dazwischenkommt. Für Termine heißt das: Ein Kunde, der heute ehrlich Ja sagt, kann nächste Woche trotzdem fehlen, ohne unhöflich zu sein.",
+            "Eine gut untersuchte Gegenstrategie sind Wenn-dann-Pläne, in der Forschung „Implementation Intentions“ genannt: „Wenn Situation X eintritt, dann tue ich Y.“ Eine Meta-Analyse von Gollwitzer und Sheeran (2006) über 94 unabhängige Tests fand einen mittleren bis großen Effekt auf die Zielerreichung (d = 0,65). Wichtig für die Einordnung: In den meisten dieser Studien formulierten die Teilnehmenden ihre Pläne selbst, und die Ziele reichten von Gesundheit bis Lernen. Die Zahl ist ein standardisierter Effekt, keine Prozentangabe.",
+            "Näher an Terminen sind Studien aus dem Gesundheitswesen. Sheeran und Orbell (2000) baten 114 Frauen, aufzuschreiben, wann, wo und wie sie einen Vorsorgetermin vereinbaren würden: 92 % nahmen teil, gegenüber 69 % in der Vergleichsgruppe – eine kleine Stichprobe mit großem Unterschied. Milkman und Kollegen testeten an tausenden Beschäftigten einen einfachen Hinweis, Datum und Uhrzeit aufzuschreiben: Bei Grippeimpfungen und Darmspiegelungen stiegen die Raten nur um etwa 1 bis 4 Prozentpunkte. Große Studien, kleine absolute Effekte.",
+            "Was heißt das ehrlich für dich? Wir haben keine Studie gefunden, die Wenn-dann-Impulse bei Verkaufs- oder Beratungsterminen untersucht. Die Übertragung ist plausibel, bleibt aber eine Annahme. Realistisch ist eine kleine Verbesserung, keine Verdopplung der Show Rate. Und der Mechanismus wirkt, wenn der Kunde den Plan selbst fasst – du lädst dazu ein, du diktierst ihn nicht.",
+            "Praktisch enthält eine gute Bestätigung: Wochentag, Datum und Uhrzeit, Dauer, Format oder Link, Teilnehmende, was der Kunde vorbereiten kann – und genau einen Planungsimpuls. Das kann eine Frage sein („Mögen Sie sich den Termin gleich in Ihren Kalender eintragen?“) oder ein Wenn-dann für das wahrscheinlichste Hindernis („Falls etwas dazwischenkommt, schreiben Sie mir einfach kurz – dann finden wir eine neue Zeit“). Mehr als ein Impuls wirkt schnell wie ein Verhör."
+          ],
+          "sourceIds": [
+            "SRC-237",
+            "SRC-056",
+            "SRC-235",
+            "SRC-057",
+            "SRC-236"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Bestätigung mit Planungsimpuls",
+          "category": "schreiben",
+          "what": "Den vereinbarten Termin mit allen Eckdaten wiederholen und den Kunden einladen, einen eigenen kleinen Plan zu fassen.",
+          "how": [
+            "Eckdaten wiederholen: Wochentag, Datum, Uhrzeit, Dauer, Format/Link, Teilnehmende.",
+            "Optional ein Satz zur Vorbereitung („Falls Sie mögen: Foto vom Typenschild bereithalten“).",
+            "Genau einen Planungsimpuls: Kalendereintrag anbieten oder ein Wenn-dann für Hindernisse nennen.",
+            "Verschieben ausdrücklich leicht machen."
+          ],
+          "why": "Konkrete Details machen aus einem Ja einen Plan, und ein vorab vereinbarter Weg zum Verschieben verwandelt manche No-Shows in Verschiebungen.",
+          "evidence": "Meta-Analyse Gollwitzer & Sheeran (2006): d = 0,65 über 94 Tests, meist selbst formulierte Pläne. Gesundheitsfeldstudien: Sheeran & Orbell (2000) 92 % vs. 69 % (n = 114); Milkman et al. (2011, 2013) ca. +1 bis +4 Prozentpunkte. Keine Studie zu Vertriebsterminen bekannt – Übertragung ist eine Annahme.",
+          "example": "„Perfekt, Herr Oberle: Samstag, 24.10., 10:00 Uhr, 45 Minuten per Video mit Frau Sommer – Sie und Ihre Frau. Den Link schicke ich gleich. Mögen Sie sich den Termin direkt eintragen? Und falls doch eine Schicht dazwischenkommt: einfach kurz schreiben, dann finden wir eine andere Zeit.“",
+          "boundary": "Der Plan ist eine Einladung, kein Versprechen, das du einforderst. Keine Sätze wie „Versprechen Sie mir, dass Sie kommen“, keine Schuldgefühle, keine Hinweise auf Kosten für die Firma.",
+          "sourceIds": [
+            "SRC-056",
+            "SRC-235",
+            "SRC-236",
+            "SRC-057"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "Wenn-dann-Pläne erhöhen die Show Rate um 65 %.",
+          "reality": "Die oft zitierte Zahl 0,65 ist ein standardisierter Effekt (Cohen's d) aus einer Meta-Analyse über sehr verschiedene Ziele, keine Prozentangabe. Feldstudien mit einfachen Planungshinweisen fanden absolute Steigerungen von etwa 1 bis 4 Prozentpunkten; die große Differenz bei Sheeran & Orbell (92 % vs. 69 %) stammt aus einer kleinen Stichprobe mit selbst formulierten Plänen. Für Verkaufstermine gibt es nach unserer Recherche keine direkte Studie.",
+          "sourceIds": [
+            "SRC-056",
+            "SRC-236",
+            "SRC-235"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Musterlösung: Bestätigung in vier Bausteinen",
+          "steps": [
+            "Baustein 1 – Eckdaten: „Perfekt: Mittwoch, 21.10., 12:30 Uhr, 30 Minuten per Video.“",
+            "Baustein 2 – Teilnehmende und Zweck: „Mit Energieberater Herrn Kraus; es geht um Ihre Fragen zum Speicher.“",
+            "Baustein 3 – Vorbereitung (optional): „Wenn Sie mögen, schicken Sie mir die Angebote vorab, dann kann er sich vorbereiten.“",
+            "Baustein 4 – ein Planungsimpuls: „Mögen Sie sich den Termin gleich eintragen? Falls etwas dazwischenkommt, schreiben Sie mir einfach.“",
+            "Kontrolle: Kein zweiter Planungsimpuls, keine Werbung, keine Verpflichtungsformel."
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-013"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-014"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-016"
+        }
+      ],
+      "summary": [
+        "Ein Ja ist eine Absicht – zwischen Absicht und Handlung liegt eine Lücke.",
+        "Wenn-dann-Pläne sind gut belegt, die Effekte in Feldstudien aber oft klein.",
+        "Für Vertriebstermine ist die Übertragung eine Annahme.",
+        "Bestätigung: Eckdaten, Teilnehmende, ein Planungsimpuls, leichtes Verschieben."
+      ],
+      "moduleId": "M07",
+      "minutes": 11
+    },
+    {
+      "id": "M07-L05",
+      "title": "Erinnerungen – Kanal, Einwilligung, reiner Inhalt",
+      "objectiveIds": [
+        "LO-M07-05"
+      ],
+      "sourceIds": [
+        "SRC-231",
+        "SRC-232",
+        "SRC-233",
+        "SRC-019",
+        "SRC-025",
+        "SRC-028",
+        "SRC-238",
+        "SRC-175",
+        "SRC-240"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Erinnerungen gehören zu den am besten untersuchten Mitteln gegen versäumte Termine – zumindest im Gesundheitswesen. Gleichzeitig sind sie ein rechtliches Minenfeld, sobald sie mehr enthalten als die Erinnerung."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 7.5",
+          "title": "Erinnern ohne zu werben",
+          "paragraphs": [
+            "Was weiß man über Erinnerungen? Ein Cochrane-Review (2013) mit acht randomisierten Studien und 6.615 Teilnehmenden kam zu dem Ergebnis, dass SMS-Erinnerungen die Wahrnehmung von Gesundheitsterminen gegenüber keiner Erinnerung erhöhen und ähnlich wirken wie Anrufe; die Evidenzqualität bewerteten die Autoren als niedrig bis moderat. Eine Meta-Analyse von Guy und Kollegen (2012) fand einen deutlichen Effekt und keine signifikanten Unterschiede danach, ob die Nachricht 24, 48 oder mehr Stunden vorher kam. Beides stammt aus dem Gesundheitswesen – die Übertragung auf Beratungstermine ist plausibel, aber nicht geprüft.",
+            "Auch die Formulierung kann zählen. In zwei großen Studien des britischen Gesundheitsdienstes senkte eine Erinnerung, die die konkreten Kosten eines versäumten Termins für das Gesundheitssystem nannte, die Quote versäumter Termine von 11,1 % auf 8,4 %. Übertrage das nicht wörtlich: Dort ging es um ein öffentliches Gut. Einem privaten Interessenten zu schreiben, was sein Fernbleiben die Firma kostet, wäre Schuld-Druck. Übertragbar ist nur der Gedanke, konkret statt allgemein zu schreiben – Datum, Uhrzeit, Link, Weg zum Verschieben.",
+            "Nun zum Recht (keine Rechtsberatung, Stand der Recherche Oktober 2026). Werbung per E-Mail, SMS oder Messenger braucht nach § 7 Abs. 2 UWG grundsätzlich eine vorherige ausdrückliche Einwilligung; § 7 Abs. 3 regelt eine enge Ausnahme für Bestandskunden. Eine reine Erinnerung an einen Termin, den der Kunde selbst vereinbart hat, ist eine Servicenachricht zu seiner Anfrage. Der Bundesgerichtshof legt den Werbebegriff aber weit aus: Werbezusätze in einer automatischen Bestätigungs-E-Mail (2015) und eine Zufriedenheitsumfrage in einer Rechnungs-E-Mail (2018) wurden als Werbung behandelt. Eine eigene höchstrichterliche Entscheidung speziell zu Terminerinnerungen haben wir nicht gefunden. Die sichere Konsequenz: Erinnerungen enthalten nur die Erinnerung.",
+            "Datenschutz: Die Kontaktdaten wurden für die Anfrage und den Termin erhoben. Ob sich die Verarbeitung etwa auf Art. 6 Abs. 1 lit. b DSGVO (Maßnahmen auf Anfrage der Person) stützt, legt der Auftraggeber als Verantwortlicher fest, nicht du. Für dich gilt die Zweckbindung: Die Nummer für die Terminerinnerung ist nicht automatisch eine Nummer für Newsletter oder Angebote. Widerspricht jemand der Werbung, ist das nach Art. 21 DSGVO zu beachten. WhatsApp verlangt zusätzlich ein Opt-in und unterscheidet in seinen Plattformregeln Service-Vorlagen von Marketing-Vorlagen – gemischte Inhalte gelten dort als Marketing. Das ist eine Plattformregel, kein Gesetz, zeigt aber dieselbe Linie.",
+            "In der Praxis heißt das: Frag bei der Bestätigung nach Kanal und Zeitpunkt („Darf ich Sie am Vortag kurz per WhatsApp erinnern?“), nutze nur den vereinbarten Kanal, schreib eine kurze Nachricht mit Absender, Datum, Uhrzeit, Link und Verschiebeweg – und nichts anderes. Keine Rabatte, keine Newsletter-Hinweise, keine Bewertungsbitten. Wer „Bitte keine Erinnerungen“ oder „Bitte nicht mehr per WhatsApp“ schreibt, bekommt keine mehr, und du dokumentierst das sofort."
+          ],
+          "sourceIds": [
+            "SRC-231",
+            "SRC-232",
+            "SRC-233",
+            "SRC-019",
+            "SRC-238",
+            "SRC-175",
+            "SRC-025",
+            "SRC-028",
+            "SRC-240"
+          ]
+        },
+        {
+          "kind": "callout",
+          "tone": "legal",
+          "title": "Keine Rechtsberatung",
+          "body": "Diese Lektion gibt den Stand einer Recherche wieder und ersetzt keine Rechtsberatung. Wie Erinnerungen, Einwilligungen und Widersprüche im konkreten Projekt geregelt sind, klärt der Auftraggeber (bzw. seine Datenschutz- oder Rechtsberatung). Im Zweifel: weniger schreiben, nicht mehr."
+        },
+        {
+          "kind": "skill",
+          "name": "Die reine Erinnerung",
+          "category": "schreiben",
+          "what": "Eine kurze Servicenachricht über den vereinbarten Kanal, die nur an den Termin erinnert.",
+          "how": [
+            "Kanal und Zeitpunkt bei der Bestätigung mit dem Kunden absprechen.",
+            "Absender, Datum, Uhrzeit, Format/Link nennen.",
+            "Einen einfachen Weg zum Verschieben anbieten.",
+            "Alles streichen, was wirbt: Angebote, Rabatte, Produkthinweise, Bewertungsbitten.",
+            "Wunsch nach „keine Erinnerungen“ sofort umsetzen und dokumentieren."
+          ],
+          "why": "Der Kunde wird an seinen Plan erinnert, ohne dass aus einer Servicenachricht Werbung wird.",
+          "evidence": "Gesundheitsstudien: Cochrane-Review (2013) und Guy et al. (2012) – Erinnerungen erhöhen die Teilnahme, Zeitpunkt 24–72 h ohne signifikanten Unterschied. Recht: § 7 UWG; BGH 2015 und 2018 zur weiten Auslegung von Werbung in Servicenachrichten. Übertragung auf Vertriebstermine ist eine Annahme.",
+          "example": "„Guten Morgen Herr Oberle, hier ist Jonas von ThermoTal: kurze Erinnerung an Ihre Videoberatung morgen, Samstag, um 10:00 Uhr mit Frau Sommer. Link: [Videoraum]. Falls es nicht passt, schreiben Sie mir einfach.“",
+          "boundary": "Keine Erinnerung über einen Kanal, dem der Kunde nicht zugestimmt hat; keine Werbung „nebenbei“; keine Erinnerungsserie mit wachsendem Druck.",
+          "sourceIds": [
+            "SRC-231",
+            "SRC-232",
+            "SRC-019",
+            "SRC-238",
+            "SRC-175"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Die Erinnerung mit Zusatz",
+          "situation": "Ein Team verschickt Erinnerungen per WhatsApp. Die Teamleitung schlägt vor, unter jede Erinnerung einen Satz zu setzen: „PS: Nur bis Monatsende 10 % auf Wärmepumpen-Pakete – sprechen Sie Ihre Beraterin darauf an!“ Kunde Herr Brenner hatte bei der Bestätigung gesagt: „Erinnern Sie mich gern, aber bitte keine Werbung.“",
+          "analysis": "Mit dem PS wird aus der Servicenachricht eine Mischnachricht. Nach der Linie des BGH (Werbezusätze in Bestätigungs-E-Mails, Umfragen in Rechnungs-E-Mails) kann die ganze Nachricht als Werbung gelten – bei Herrn Brenner sogar gegen seinen ausdrücklichen Widerspruch. WhatsApp würde eine solche Vorlage außerdem als Marketing einstufen. Hinzu kommt die Frage, ob die Frist überhaupt stimmt. Richtig ist: Erinnerung ohne PS, den Widerspruch im CRM dokumentieren und die Teamleitung sachlich auf das Risiko hinweisen.",
+          "simulationNote": "Alle Personen, Firmen und Zahlen in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-018"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-019"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-020"
+        }
+      ],
+      "summary": [
+        "Erinnerungen erhöhen die Teilnahme – belegt im Gesundheitswesen, übertragen als Annahme.",
+        "Konkret formulieren, aber keine Schuld- oder Kostenappelle an Kunden.",
+        "Reine Erinnerung = Service; Werbezusätze können die ganze Nachricht zur Werbung machen.",
+        "Nur vereinbarter Kanal, Zweckbindung, Widerspruch sofort umsetzen."
+      ],
+      "moduleId": "M07",
+      "minutes": 13
+    },
+    {
+      "id": "M07-L06",
+      "title": "Verschiebungen und Absagen",
+      "objectiveIds": [
+        "LO-M07-06"
+      ],
+      "sourceIds": [
+        "SRC-059",
+        "SRC-052",
+        "SRC-241",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Eine Verschiebung ist kein Scheitern, sondern eine Information – und fast immer besser als ein No-Show. In dieser Lektion lernst du, Verschiebungen leicht zu machen und dabei offen zu bleiben für ein „Eigentlich passt es gerade gar nicht“."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 7.6",
+          "title": "Verschieben ohne Reibung",
+          "paragraphs": [
+            "Wenn ein Kunde absagt oder verschieben möchte, hat er etwas richtig gemacht: Er hat Bescheid gegeben. Deine Reaktion entscheidet, ob er das beim nächsten Mal wieder tut. Ein vorwurfsvolles „Schade, der Termin war extra für Sie reserviert“ lehrt ihn, beim nächsten Mal einfach nicht zu kommen. Ein „Danke, dass Sie Bescheid geben!“ lehrt ihn das Gegenteil.",
+            "Eine gute Antwort hat drei Teile: danken, zwei neue Zeitfenster anbieten und kurz die Tür öffnen, falls sich mehr geändert hat als der Kalender. „Danke, dass Sie Bescheid geben! Passt Ihnen Montag um 18 Uhr oder Mittwoch um 19:30 Uhr? Und falls das Thema gerade generell nicht passt, ist das auch völlig in Ordnung.“ Der letzte Satz ist wichtig: Er erlaubt ein ehrliches Nein, statt dass der Kunde aus Höflichkeit einen Termin annimmt, den er dann wieder absagt.",
+            "Wird ein Termin zum zweiten Mal verschoben, ist das ein Signal – aber keines, das du deuten musst. Frag offen nach: „Ich habe den Eindruck, dass es gerade schwierig ist, einen Termin zu finden. Wäre es Ihnen lieber, wir lassen das Thema erst einmal ruhen?“ Der Kunde entscheidet. Wenn er später wieder kontaktiert werden möchte, muss das zur dokumentierten Einwilligung passen (Lektion 5).",
+            "Manchmal sagt auch eure Seite ab, zum Beispiel weil die Beraterin krank ist. Dann gilt: so früh wie möglich melden, kurz entschuldigen, ohne Kolleginnen schlechtzumachen, und zwei Alternativen anbieten. Vertrauensforschung beschreibt Verlässlichkeit und Integrität als Kern von Vertrauen; eine proaktive, ehrliche Absage zeigt beides, auch wenn der Anlass unangenehm ist.",
+            "Technisch: Aktualisiere die bestehende Kalendereinladung, statt eine neue zu senden – sonst bleibt beim Kunden ein „Geistertermin“ stehen. Im CRM vermerkst du ursprünglichen Termin, wer verschoben hat, den neuen Termin und passt die Erinnerungen an. Einen Grund notierst du nur, wenn der Kunde ihn genannt hat, und dann neutral und knapp."
+          ],
+          "sourceIds": [
+            "SRC-059",
+            "SRC-241",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Verschiebung leicht machen",
+          "category": "gespraech",
+          "what": "Auf eine Absage so reagieren, dass der Kunde sich wohlfühlt, schnell eine neue Zeit findet – oder ehrlich Nein sagen kann.",
+          "how": [
+            "Danken: „Danke, dass Sie Bescheid geben!“",
+            "Zwei neue Zeitfenster anbieten, die zum bekannten Alltag passen.",
+            "Tür öffnen: „Falls das Thema gerade generell nicht passt, ist das auch in Ordnung.“",
+            "Einladung aktualisieren, CRM und Erinnerungen anpassen."
+          ],
+          "why": "Wer für eine Absage nicht bestraft wird, sagt beim nächsten Mal eher wieder ab, statt einfach wegzubleiben.",
+          "evidence": "Erfahrungswissen und Kursannahme; keine Studie zu Verschiebe-Antworten im Vertrieb bekannt. Autonomie betonende Formulierungen zeigen in Meta-Analysen einen kleinen Effekt (Carpenter 2013), Vertrauensmodell nach Mayer et al. (1995).",
+          "example": "Kunde: „Ich schaffe Donnerstag leider nicht.“ → „Danke, dass Sie Bescheid geben! Passt Ihnen Montag 18 Uhr oder Mittwoch 19:30 Uhr? Falls das Thema gerade generell nicht passt, ist das auch völlig okay.“",
+          "boundary": "Keine Vorwürfe, keine Hinweise auf „verlorene“ Beraterzeit, keine Verschiebung in einen Kanal oder Rhythmus, dem der Kunde nicht zugestimmt hat.",
+          "sourceIds": [
+            "SRC-052",
+            "SRC-059",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Musterlösung: Zweite Verschiebung",
+          "steps": [
+            "Kunde: „Sorry, Montag klappt doch nicht, wieder was mit der Arbeit.“",
+            "Danken und entlasten: „Kein Problem, danke für die Nachricht!“",
+            "Offen nachfragen statt deuten: „Ich habe den Eindruck, dass es gerade schwierig ist. Möchten Sie lieber einen neuen Termin, oder sollen wir das Thema erst einmal ruhen lassen?“",
+            "Kunde: „Ehrlich gesagt lieber nach den Herbstferien.“",
+            "Passend handeln: „Gern. Darf ich mich in der Woche nach den Ferien kurz per WhatsApp melden?“ – Zustimmung im CRM dokumentieren, alten Termin absagen, Wiedervorlage setzen."
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-023"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-024"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-025"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Erinnere dich an eine Situation, in der du selbst einen Termin abgesagt hast. Welche Reaktion der anderen Seite hat es dir leicht gemacht – und welche hätte dich dazu gebracht, beim nächsten Mal einfach nicht zu erscheinen?"
+        }
+      ],
+      "summary": [
+        "Absagen sind Information – dafür danken.",
+        "Zwei neue Zeiten plus eine offene Tür für ein Nein.",
+        "Bei Mehrfachverschiebung offen fragen, nicht deuten.",
+        "Eigene Absagen früh, ehrlich, mit Alternativen.",
+        "Einladung aktualisieren, CRM neutral pflegen."
+      ],
+      "moduleId": "M07",
+      "minutes": 12
+    },
+    {
+      "id": "M07-L07",
+      "title": "No-Show-Recovery ohne Druck",
+      "objectiveIds": [
+        "LO-M07-07"
+      ],
+      "sourceIds": [
+        "SRC-234",
+        "SRC-233",
+        "SRC-052",
+        "SRC-019",
+        "SRC-025",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ein Kunde erscheint nicht. Die meisten Setter reagieren dann mit einem von zwei Fehlern: Sie geben auf – oder sie machen Druck. Diese Lektion zeigt den dritten Weg: freundlich nachfragen, verstehen, einen neuen Termin anbieten oder ein Nein akzeptieren."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 7.7",
+          "title": "Neugier statt Vorwurf",
+          "paragraphs": [
+            "No-Shows passieren, auch bei gut qualifizierten Terminen. In der Forschung zu Gesundheitsterminen liegt die mittlere Quote bei rund einem Viertel, wobei Vorlaufzeit und frühere No-Shows häufig mit dem Fernbleiben zusammenhängen. Die Gründe sind meist banal: vergessen, eine Schicht, ein krankes Kind, ein voller Kopf. Manchmal steckt auch Zweifel dahinter. Fast nie ist es eine persönliche Kränkung. Deshalb ist die richtige Haltung Neugier, nicht Vorwurf.",
+            "Der erste Kontakt kommt kurz nach Terminbeginn, etwa nach zehn Minuten, über den vereinbarten Kanal: „Hallo Herr Oberle, Frau Sommer ist im Videoraum – klappt es heute noch? Wenn nicht, ist das kein Problem.“ Kommt keine Antwort, folgt am selben Abend oder nächsten Tag ein freundlicher Check-in mit drei Elementen: Wärme („Ich hoffe, es ist alles in Ordnung“), kein Vorwurf und zwei Ausgänge („Möchten Sie einen neuen Termin, oder hat sich bei Ihnen etwas geändert? Beides ist völlig okay.“).",
+            "Den Grund erfährst du oft von selbst. Wenn nicht, darfst du behutsam fragen – mit Begründung und ohne Rechtfertigungsdruck: „Darf ich fragen, was dazwischengekommen ist? Nur damit wir den nächsten Termin besser legen können.“ Der Grund bestimmt den Weg: vergessen → neuer Termin mit besser abgestimmter Erinnerung; Terminkonflikt → anderes Zeitfenster; neue Situation oder Zweifel → erst klären, vielleicht später; kein Interesse mehr → akzeptieren, dokumentieren, nicht mehr nachfassen.",
+            "Wo liegen die Grenzen? Dieser Kurs setzt eine klare Regel (Annahme, keine Studie): nach einem No-Show höchstens zwei Nachrichten über den vereinbarten Kanal, dann ruht der Kontakt. Keine Anrufserien, keine Schuldgefühle („Frau Sommer hat extra auf Sie gewartet“), keine erfundene Knappheit („Das war der letzte freie Termin bis Januar“), keine Rabatte als Köder. Rechtlich gilt: Nachrichten zum vereinbarten Termin hängen mit der Anfrage zusammen; wer aber trotz Schweigen immer wieder Angebote schickt, betreibt Werbung, die eine Einwilligung braucht und als unzumutbare Belästigung gelten kann (§ 7 Abs. 1 UWG). „Bitte nicht mehr melden“ heißt: sofort Schluss, Widerspruch dokumentieren.",
+            "Dokumentiere neutral: „Termin 20.10. nicht wahrgenommen, 18:10 Nachricht, 21.10. Check-in, Antwort: Spätschicht, neuer Termin 24.10.“ Urteile wie „unzuverlässig“ oder „hat keinen Bock“ gehören nicht ins CRM – sie beeinflussen die Beraterin und sind nicht das, was der Kunde gesagt hat. Gesundheitliche Details („Kind hatte Magen-Darm“) sind sensibel; „privater Grund, neuer Termin gewünscht“ reicht."
+          ],
+          "sourceIds": [
+            "SRC-234",
+            "SRC-019",
+            "SRC-025",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Freundlicher Check-in nach No-Show",
+          "category": "gespraech",
+          "what": "Eine kurze, warme Nachricht nach einem verpassten Termin, die zwei gleichwertige Ausgänge anbietet: neuer Termin oder ehrliches Nein.",
+          "how": [
+            "Kurz nach Terminbeginn eine Nachricht: „Klappt es heute noch? Wenn nicht, kein Problem.“",
+            "Ohne Antwort am selben Abend oder nächsten Tag: Wärme, kein Vorwurf, zwei Ausgänge.",
+            "Grund nur behutsam und begründet erfragen – Antwort ist freiwillig.",
+            "Je nach Grund: neuer Termin mit angepasster Erinnerung, späterer Kontakt mit Zustimmung oder Abschluss.",
+            "Nach höchstens zwei unbeantworteten Nachrichten ruhen lassen und neutral dokumentieren."
+          ],
+          "why": "Wer sich nicht schämen muss, antwortet eher. Zwei gleichwertige Ausgänge machen ein ehrliches Nein leicht – und ein ehrliches Nein ist für alle besser als ein dritter geplatzter Termin.",
+          "evidence": "Autonomie betonende Formulierungen: kleiner Effekt in Meta-Analysen (Carpenter 2013, relativiert durch Fillon et al.). No-Show-Determinanten aus dem Gesundheitswesen (Dantas et al. 2018). Die Zwei-Nachrichten-Regel ist eine Kursannahme.",
+          "example": "„Hallo Herr Oberle, schade, dass es gestern nicht geklappt hat – ich hoffe, bei Ihnen ist alles in Ordnung. Möchten Sie einen neuen Termin mit Frau Sommer, oder hat sich bei Ihnen etwas geändert? Beides ist völlig okay.“",
+          "boundary": "Kein Schuld-Appell, keine Knappheit, keine Rabatte, keine Anrufserien, kein Nachfassen nach einem Nein. Gesundheitliche Gründe nicht im Detail dokumentieren.",
+          "sourceIds": [
+            "SRC-052",
+            "SRC-053",
+            "SRC-234",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "Wer nach einem No-Show Schuldgefühle weckt, sorgt dafür, dass der Kunde beim nächsten Mal sicher kommt.",
+          "reality": "Die Studie, die oft dafür angeführt wird, nannte in Erinnerungen des britischen Gesundheitsdienstes die konkreten Kosten eines versäumten Termins für das öffentliche System – ein sachlicher Hinweis auf ein Gemeingut, vor dem Termin. Ein Vorwurf an einen privaten Interessenten nach dem Termin ist etwas anderes: Er beschämt, schadet dem Vertrauen und macht ein ehrliches Gespräch unwahrscheinlicher. In diesem Kurs ist Schuld-Druck ausgeschlossen.",
+          "sourceIds": [
+            "SRC-233",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Zwei Nachrichten nach demselben No-Show",
+          "situation": "Frau Petersen (erfunden) erscheint nicht zur Videoberatung über einen Stromspeicher. Setterin A schreibt am nächsten Morgen: „Guten Morgen, unser Berater hat gestern 30 Minuten auf Sie gewartet. Ich kann Ihnen noch einen letzten Termin am Freitag anbieten, danach sind wir bis Januar voll.“ Setter B schreibt: „Guten Morgen Frau Petersen, schade, dass es gestern nicht geklappt hat – ich hoffe, es ist alles in Ordnung. Möchten Sie einen neuen Termin, oder hat sich bei Ihnen etwas geändert? Beides ist völlig okay.“",
+          "analysis": "A kombiniert Schuld-Appell und (vermutlich erfundene) Knappheit. Die wahrscheinlichste Reaktion ist Schweigen – oder ein höfliches Nein, hinter dem der eigentliche Grund verborgen bleibt. B entlastet, zeigt Interesse am Menschen und bietet zwei gleichwertige Ausgänge. Frau Petersen antwortet B: „Danke! Ich hatte den Termin echt vergessen, und ehrlich gesagt will mein Mann erst mal den Winter abwarten.“ Jetzt kann B sauber handeln: fragen, ob und wann ein späterer Kontakt erwünscht ist, die Antwort dokumentieren – und dem Berater keine Zeit in einem Termin kosten, der jetzt nicht passt.",
+          "simulationNote": "Alle Personen, Firmen und Zahlen in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-026"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-027"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-028"
+        }
+      ],
+      "summary": [
+        "No-Shows sind meist banal – Haltung: Neugier statt Vorwurf.",
+        "Check-in mit Wärme, ohne Vorwurf, mit zwei gleichwertigen Ausgängen.",
+        "Grund behutsam erfragen; er bestimmt den nächsten Schritt.",
+        "Höchstens zwei Nachrichten, dann ruhen lassen; ein Nein beendet den Kontakt.",
+        "Neutral und datensparsam dokumentieren."
+      ],
+      "moduleId": "M07",
+      "minutes": 14
+    },
+    {
+      "id": "M07-L08",
+      "title": "Übergabeprotokolle und Gesprächsnotizen",
+      "objectiveIds": [
+        "LO-M07-08"
+      ],
+      "sourceIds": [
+        "SRC-025",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Die beste Terminvereinbarung ist wenig wert, wenn die Beraterin im Termin alle Fragen noch einmal stellen muss. Ein gutes Übergabeprotokoll sorgt dafür, dass sich der Kunde wiedererkannt fühlt – und es enthält nur, was wirklich gesagt wurde."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 7.8",
+          "title": "Was die Beraterin wissen muss – und was nicht",
+          "paragraphs": [
+            "Ein Übergabeprotokoll hat ein Ziel: Die Beraterin soll das Gespräch dort beginnen können, wo du aufgehört hast. Für den Kunden fühlt sich das an wie Aufmerksamkeit („Sie hatten ja geschrieben, dass Ihre Frau Fragen zu den Kosten hat …“). Für die Beraterin ist es Vorbereitung. Und für dich ist es der Beleg, dass der Termin qualifiziert war.",
+            "Bewährt hat sich ein Aufbau in fünf Blöcken. Erstens Anlass und Quelle (Formular, Datum, Kanal). Zweitens Termindaten: Datum, Uhrzeit, Format, Teilnehmende. Drittens Pflichtkriterien mit Status – geklärt (knapp, gern mit Zitat), offen oder nicht erfragt. Viertens Ziel und Fragen des Kunden in seinen Worten, besonders die Fragen, die nur die Fachberatung beantworten kann. Fünftens Hinweise zum Ablauf: vereinbarter Erinnerungskanal, Einwilligungs- oder Widerspruchsstatus, Verschiebungen und No-Shows.",
+            "Die wichtigste Unterscheidung ist die zwischen Fakt und Interpretation. „Kunde sagte: ‚Das Budget steht noch nicht fest‘“ ist ein Fakt. „Wirkt knapp bei Kasse“ ist eine Vermutung, die die Beraterin in die Irre führen und den Kunden unfair behandeln kann. Wenn du einen Eindruck festhältst, kennzeichne ihn als solchen – oder lass ihn weg. Was nicht erfragt wurde, heißt im Protokoll „nicht erfragt“. Das ist keine Schwäche, sondern ehrliche Information.",
+            "Datenschutz ist dabei kein Zusatz, sondern Teil der Qualität. Die DSGVO verlangt Datenminimierung: Notiere, was für Termin und Beratung nötig ist, nicht alles, was du erfahren hast. Gesundheitsdaten gehören zu den besonders geschützten Kategorien – „Termin wegen Krankheit des Kindes verschoben“ reicht als „privater Grund“. Und: Betroffene haben ein Auskunftsrecht. Ein Kunde kann verlangen zu erfahren, welche Daten über ihn gespeichert sind. Eine einfache Regel lautet deshalb: Schreib nur, was du dem Kunden auch zeigen könntest.",
+            "Schreib die Notiz direkt nach dem Gespräch, solange du dich genau erinnerst, und nutze dieselben Status und Begriffe wie das CRM deines Teams. Nach dem Termin lohnt sich ein kurzer Rücklauf von der Beraterin: War der Termin passend? Fehlte etwas im Protokoll? So schließt sich der Kreis – und deine Übergaben werden mit jeder Woche besser."
+          ],
+          "sourceIds": [
+            "SRC-025",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Übergabeprotokoll in fünf Blöcken",
+          "category": "prozess",
+          "what": "Eine Übergabe, die der Beraterin den Einstieg erspart und nur Gesagtes enthält.",
+          "how": [
+            "Block 1 – Anlass und Quelle: Formular/Kanal, Datum.",
+            "Block 2 – Termin: Datum, Uhrzeit, Format, Teilnehmende.",
+            "Block 3 – Pflichtkriterien mit Status: geklärt, offen oder nicht erfragt.",
+            "Block 4 – Ziel und offene Fragen des Kunden, möglichst in seinen Worten.",
+            "Block 5 – Ablauf: Erinnerungskanal, Einwilligung/Widerspruch, Verschiebungen, No-Shows – neutral."
+          ],
+          "why": "Die Beraterin muss nichts doppelt fragen, und der Kunde erlebt einen nahtlosen Übergang.",
+          "evidence": "Kursstandard (Annahme) auf Basis von Praxisvorlagen; Datenminimierung, besondere Kategorien und Auskunftsrecht aus der DSGVO.",
+          "example": "„Anlass: Website-Formular Wärmepumpe, 12.10., WhatsApp. Termin: Sa 24.10., 10:00, 45 Min. Video, mit Markus und Jana Oberle. Kriterien: Eigentümer ✓; Thema aktuell ✓ (‚Gasheizung soll vor dem nächsten Winter raus‘); Mitentscheiderin Ehefrau nimmt teil ✓; Budget: nicht erfragt. Fragen: Kosten und Förderung (Ehefrau). Ablauf: Erst-Termin 20.10. nicht wahrgenommen (privater Grund), Erinnerung per WhatsApp Vortag + 1 h vorher gewünscht.“",
+          "boundary": "Keine Vermutungen als Fakten, keine abwertenden Bemerkungen, keine Gesundheits- oder sonstigen sensiblen Details ohne Notwendigkeit.",
+          "sourceIds": [
+            "SRC-025",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Musterlösung: Vom Chat zur Notiz",
+          "steps": [
+            "Chat-Auszug: „Ich hab den Termin wegen der Spätschicht verpennt … meine Frau will diesmal mit dabei sein, die hat Fragen zu den Kosten. Abends ab halb acht oder samstags geht.“",
+            "Fakten herausziehen: Grund (Schicht), Mitentscheiderin nimmt teil, Fragen zu Kosten, Zeitfenster.",
+            "Formulieren ohne Wertung: „Erst-Termin nicht wahrgenommen (Schichtwechsel). Ehefrau nimmt am neuen Termin teil, hat Fragen zu Kosten.“",
+            "Status prüfen: Was ist geklärt, was offen, was nicht erfragt? Budget: nicht erfragt.",
+            "Gegenprobe: Könnte ich diese Notiz Herrn Oberle zeigen? Ja – also speichern."
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-031"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-032"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M07-034"
+        }
+      ],
+      "summary": [
+        "Ziel: Die Beraterin startet dort, wo du aufgehört hast.",
+        "Fünf Blöcke: Anlass, Termin, Kriterien mit Status, Kundenfragen, Ablauf.",
+        "Fakt statt Interpretation; „nicht erfragt“ ist ehrlich.",
+        "Datensparsam: Schreib nur, was du dem Kunden zeigen könntest.",
+        "Notiz sofort schreiben, Rückmeldung der Beratung einholen."
+      ],
+      "moduleId": "M07",
+      "minutes": 10
+    }
+  ],
+  "transferTask": {
+    "title": "Transferaufgabe: Dein Termin-Baukasten",
+    "instructions": "Wähle eine Branche, die dich interessiert, und erfinde einen Interessenten (keine echten Personen). Schreibe dafür fünf Bausteine: (1) einen Terminvorschlag mit Nutzen, Dauer, Format und Teilnehmenden plus die Nachricht mit zwei Zeitfenstern nach dem Ja; (2) eine Terminbestätigung mit genau einem Planungsimpuls; (3) eine reine Erinnerung für den vereinbarten Kanal; (4) zwei Nachrichten nach einem No-Show (kurz nach Beginn und am nächsten Tag); (5) ein Übergabeprotokoll in fünf Blöcken. Markiere zum Schluss jede Stelle, an der du eine Annahme triffst, die du im echten Projekt mit dem Auftraggeber klären müsstest (z. B. Kriterien, Einwilligung, Erinnerungsregeln).",
+    "criteria": [
+      "Terminvorschlag ist eine Frage und nennt Nutzen, Dauer, Format und Teilnehmende",
+      "Zeitfenster erst nach dem Ja, mit offener Tür",
+      "Bestätigung enthält alle Eckdaten und genau einen Planungsimpuls",
+      "Erinnerung enthält keinerlei Werbung und nutzt nur den vereinbarten Kanal",
+      "No-Show-Nachrichten ohne Vorwurf, Knappheit oder Rabatt, mit zwei gleichwertigen Ausgängen",
+      "Übergabe trennt Fakten von Vermutungen und markiert „nicht erfragt“",
+      "Keine sensiblen Details ohne Notwendigkeit",
+      "Klärungsbedarf mit dem Auftraggeber ist benannt"
+    ]
+  },
+  "examQuestionIds": [
+    "Q-M07-001",
+    "Q-M07-002",
+    "Q-M07-003",
+    "Q-M07-005",
+    "Q-M07-006",
+    "Q-M07-008",
+    "Q-M07-010",
+    "Q-M07-011",
+    "Q-M07-013",
+    "Q-M07-014",
+    "Q-M07-016",
+    "Q-M07-018",
+    "Q-M07-019",
+    "Q-M07-021",
+    "Q-M07-023",
+    "Q-M07-026",
+    "Q-M07-028",
+    "Q-M07-029",
+    "Q-M07-031",
+    "Q-M07-032"
+  ]
+}

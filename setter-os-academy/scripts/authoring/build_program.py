@@ -6,8 +6,10 @@
 import json, glob, os
 R = lambda p: json.load(open(p))
 prog = R("content/program.json")
-mods = {os.path.basename(p)[:-5]: R(p) for p in glob.glob("content/modules/M*.json")}
-scen = [R(p) for p in sorted(glob.glob("content/scenarios/SIM-*.json"))]
+# only modules that passed integration (curriculum status "verfuegbar"), never drafts on disk
+ready = {c["id"] for c in R("content/curriculum.json") if c["status"] == "verfuegbar"}
+mods = {m: R(f"content/modules/{m}.json") for m in ready}
+scen = [s for s in (R(p) for p in sorted(glob.glob("content/scenarios/SIM-*.json"))) if not (s.get("ai") or {}).get("lessonLinks") or s["ai"]["lessonLinks"][0].split("-")[0] in ready]
 def scen_module(s):
     links = (s.get("ai") or {}).get("lessonLinks") or []
     return links[0].split("-")[0] if links else None

@@ -494,8 +494,232 @@
       "M05",
       "M06"
     ],
-    "available": false,
-    "days": [],
+    "available": true,
+    "days": [
+      {
+        "day": 22,
+        "title": "Der Chat-Bogen – Struktur für asynchrone Gespräche · Nachrichten, die nach Mensch klingen",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M05-L01"
+          },
+          {
+            "type": "lesson",
+            "ref": "M05-L02"
+          }
+        ]
+      },
+      {
+        "day": 23,
+        "title": "Antwortgeschwindigkeit – was „Speed to Lead“ wirklich belegt · Gesprächseinstiege und Nachfragen",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M05-L03"
+          },
+          {
+            "type": "lesson",
+            "ref": "M05-L04"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 24,
+        "title": "Übergänge und Qualifizierung im Chat · Instagram, WhatsApp und zulässige Kanäle",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M05-L05"
+          },
+          {
+            "type": "lesson",
+            "ref": "M05-L06"
+          }
+        ]
+      },
+      {
+        "day": 25,
+        "title": "Übergabe an Berater und Closer · 30 Übungssituationen aus dem Chat-Alltag",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M05-L07"
+          },
+          {
+            "type": "lesson",
+            "ref": "M05-L08"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 26,
+        "title": "Modulquiz 5: Chat Setting",
+        "items": [
+          {
+            "type": "quiz",
+            "ref": "M05"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-007"
+          },
+          {
+            "type": "review"
+          },
+          {
+            "type": "transfer",
+            "ref": "M05",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "day": 27,
+        "title": "Einwand, Frage oder Nein? Erst einordnen · Erst verstehen, dann antworten: das Klärungsmodell",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M06-L01"
+          },
+          {
+            "type": "lesson",
+            "ref": "M06-L02"
+          }
+        ]
+      },
+      {
+        "day": 28,
+        "title": "Preisfragen: klären statt kontern, übergeben statt schätzen · Zeitmangel, Unsicherheit, fehlende Kaufbereitschaft",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M06-L03"
+          },
+          {
+            "type": "lesson",
+            "ref": "M06-L04"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 29,
+        "title": "Konkurrenzvergleich und fehlendes Vertrauen · Rücksprache mit Partnern und verbindliche Folgevereinbarungen",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M06-L05"
+          },
+          {
+            "type": "lesson",
+            "ref": "M06-L06"
+          }
+        ]
+      },
+      {
+        "day": 30,
+        "title": "Unpassende Angebote: ehrlich absagen · Ein Nein ist ein Nein – Grenzen der Einwandbehandlung",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M06-L07"
+          },
+          {
+            "type": "lesson",
+            "ref": "M06-L08"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 31,
+        "title": "Modulquiz 6: Objection Handling",
+        "items": [
+          {
+            "type": "quiz",
+            "ref": "M06"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-008"
+          },
+          {
+            "type": "review"
+          },
+          {
+            "type": "transfer",
+            "ref": "M06",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "day": 32,
+        "title": "Gemischte Wiederholung und Praxis",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-007",
+            "fresh": true
+          }
+        ]
+      },
+      {
+        "day": 33,
+        "title": "Gemischte Wiederholung und Praxis",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-008",
+            "fresh": true
+          }
+        ]
+      },
+      {
+        "day": 34,
+        "title": "Gemischte Wiederholung und Praxis",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-007",
+            "fresh": true
+          }
+        ]
+      },
+      {
+        "day": 35,
+        "title": "Stufen-Check 3",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "quiz",
+            "ref": "ST3"
+          }
+        ]
+      }
+    ],
     "plannedTopics": [
       "30 Chat-Übungssituationen",
       "Antwortgeschwindigkeit und Übergänge",
@@ -505,10 +729,38 @@
     ],
     "check": {
       "id": "ST3",
-      "title": "Stufen-Check 3",
-      "questionIds": [],
+      "title": "Stufen-Check 3: Chat Setting & Einwände",
+      "questionIds": [
+        "Q-M05-002",
+        "Q-M05-006",
+        "Q-M05-010",
+        "Q-M05-011",
+        "Q-M05-017",
+        "Q-M05-019",
+        "Q-M05-022",
+        "Q-M05-023",
+        "Q-M05-032",
+        "Q-M05-034",
+        "Q-M05-035",
+        "Q-M05-036",
+        "Q-M06-001",
+        "Q-M06-002",
+        "Q-M06-005",
+        "Q-M06-008",
+        "Q-M06-010",
+        "Q-M06-014",
+        "Q-M06-018",
+        "Q-M06-020",
+        "Q-M06-023",
+        "Q-M06-026",
+        "Q-M06-027",
+        "Q-M06-031"
+      ],
       "passThreshold": 0.8,
-      "requiredSimulations": []
+      "requiredSimulations": [
+        "SIM-007",
+        "SIM-008"
+      ]
     }
   },
   {
@@ -522,8 +774,232 @@
       "M07",
       "M08"
     ],
-    "available": false,
-    "days": [],
+    "available": true,
+    "days": [
+      {
+        "day": 36,
+        "title": "Der qualifizierte Termin – Kriterien statt Zahlen · Termine vereinbaren – Vorschlag, Ja, Auswahl",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M07-L01"
+          },
+          {
+            "type": "lesson",
+            "ref": "M07-L02"
+          }
+        ]
+      },
+      {
+        "day": 37,
+        "title": "Kalenderorganisation – verlässlich und datensparsam · Terminbestätigung mit Wenn-dann-Plan",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M07-L03"
+          },
+          {
+            "type": "lesson",
+            "ref": "M07-L04"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 38,
+        "title": "Erinnerungen – Kanal, Einwilligung, reiner Inhalt · Verschiebungen und Absagen",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M07-L05"
+          },
+          {
+            "type": "lesson",
+            "ref": "M07-L06"
+          }
+        ]
+      },
+      {
+        "day": 39,
+        "title": "No-Show-Recovery ohne Druck · Übergabeprotokolle und Gesprächsnotizen",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M07-L07"
+          },
+          {
+            "type": "lesson",
+            "ref": "M07-L08"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 40,
+        "title": "Modulquiz 7: Appointment Management",
+        "items": [
+          {
+            "type": "quiz",
+            "ref": "M07"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-009"
+          },
+          {
+            "type": "review"
+          },
+          {
+            "type": "transfer",
+            "ref": "M07",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "day": 41,
+        "title": "Das CRM als Gedächtnis des Teams · Pipelines und Statuswechsel",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M08-L01"
+          },
+          {
+            "type": "lesson",
+            "ref": "M08-L02"
+          }
+        ]
+      },
+      {
+        "day": 42,
+        "title": "Kontakte und Gesprächsnotizen · Datenqualität: Dubletten, Pflichtfelder, Aktualität",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M08-L03"
+          },
+          {
+            "type": "lesson",
+            "ref": "M08-L04"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 43,
+        "title": "Follow-up-Systeme und Aufgaben · Automatisierung mit Augenmaß",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M08-L05"
+          },
+          {
+            "type": "lesson",
+            "ref": "M08-L06"
+          }
+        ]
+      },
+      {
+        "day": 44,
+        "title": "Datenschutz im CRM: Grundsätze, Rechtsgrundlagen, AV-Vertrag · Auskunft, Löschung und Löschkonzept – richtig weiterleiten",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M08-L07"
+          },
+          {
+            "type": "lesson",
+            "ref": "M08-L08"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 45,
+        "title": "Modulquiz 8: CRM & Sales Operations",
+        "items": [
+          {
+            "type": "quiz",
+            "ref": "M08"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-010"
+          },
+          {
+            "type": "review"
+          },
+          {
+            "type": "transfer",
+            "ref": "M08",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "day": 46,
+        "title": "Gemischte Wiederholung und Praxis",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-009",
+            "fresh": true
+          }
+        ]
+      },
+      {
+        "day": 47,
+        "title": "Gemischte Wiederholung und Praxis",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-010",
+            "fresh": true
+          }
+        ]
+      },
+      {
+        "day": 48,
+        "title": "Gemischte Wiederholung und Praxis",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-009",
+            "fresh": true
+          }
+        ]
+      },
+      {
+        "day": 49,
+        "title": "Stufen-Check 4",
+        "items": [
+          {
+            "type": "review"
+          },
+          {
+            "type": "quiz",
+            "ref": "ST4"
+          }
+        ]
+      }
+    ],
     "plannedTopics": [
       "Bestätigung, Erinnerung, Verschiebung",
       "No-Show-Recovery ohne Druck",
@@ -533,10 +1009,38 @@
     ],
     "check": {
       "id": "ST4",
-      "title": "Stufen-Check 4",
-      "questionIds": [],
+      "title": "Stufen-Check 4: Termine & CRM",
+      "questionIds": [
+        "Q-M07-001",
+        "Q-M07-002",
+        "Q-M07-005",
+        "Q-M07-008",
+        "Q-M07-010",
+        "Q-M07-013",
+        "Q-M07-016",
+        "Q-M07-018",
+        "Q-M07-021",
+        "Q-M07-026",
+        "Q-M07-028",
+        "Q-M07-031",
+        "Q-M08-001",
+        "Q-M08-004",
+        "Q-M08-007",
+        "Q-M08-009",
+        "Q-M08-012",
+        "Q-M08-016",
+        "Q-M08-020",
+        "Q-M08-021",
+        "Q-M08-024",
+        "Q-M08-029",
+        "Q-M08-030",
+        "Q-M08-032"
+      ],
       "passThreshold": 0.8,
-      "requiredSimulations": []
+      "requiredSimulations": [
+        "SIM-009",
+        "SIM-010"
+      ]
     }
   },
   {

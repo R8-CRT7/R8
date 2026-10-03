@@ -1,0 +1,1558 @@
+[
+  {
+    "id": "Q-M06-001",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Kundenaussage ist eine klare Ablehnung – und kein Einwand, den man klären sollte?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Das ist mir wahrscheinlich zu teuer.“",
+        "misconception": "Preisbedenken sind ein Einwand – das Anliegen dahinter ist noch unklar.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "b",
+        "text": "„Ich muss das erst mit meinem Mann besprechen.“",
+        "misconception": "Rücksprache ist eine Info über den Entscheidungsprozess, keine Absage.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Nein danke, ich möchte keinen Termin und bitte keine weiteren Nachrichten.“"
+      },
+      {
+        "id": "d",
+        "text": "„Ich habe gerade keine Zeit.“",
+        "misconception": "„Gerade keine Zeit“ betrifft meist den Zeitpunkt, nicht das Ob.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "c",
+    "explanation": "Eine ausdrückliche Absage mit Bitte um Kontaktende ist eine Entscheidung. Preisbedenken, Rücksprachebedarf und Zeitmangel sind dagegen offen für Klärung.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M06-002",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jede Kundenaussage der passenden Kategorie zu.",
+    "left": [
+      {
+        "id": "s1",
+        "text": "„Wie lange dauert so ein Beratungstermin?“"
+      },
+      {
+        "id": "s2",
+        "text": "„Ich weiß nicht, ob sich das für uns überhaupt lohnt.“"
+      },
+      {
+        "id": "s3",
+        "text": "„Das entscheide ich nicht allein.“"
+      },
+      {
+        "id": "s4",
+        "text": "„Bitte nehmen Sie mich aus Ihrer Liste.“"
+      }
+    ],
+    "right": [
+      {
+        "id": "frage",
+        "text": "Frage (Informationswunsch)"
+      },
+      {
+        "id": "einwand",
+        "text": "Einwand (Bedenken)"
+      },
+      {
+        "id": "rueck",
+        "text": "Rücksprachebedarf"
+      },
+      {
+        "id": "nein",
+        "text": "Ablehnung"
+      }
+    ],
+    "pairs": {
+      "s1": "frage",
+      "s2": "einwand",
+      "s3": "rueck",
+      "s4": "nein"
+    },
+    "explanation": "Fragen wollen Information, Einwände sind Bedenken, Rücksprache betrifft den Entscheidungsprozess, eine Ablehnung ist eine Entscheidung.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M06-003",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Jeder Einwand ist ein verstecktes Ja, das der Setter nur noch überwinden muss.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Falsch. Ein Einwand ist ein Bedenken mit offenem Ausgang: Nach der Klärung kann ein Termin passen – oder eben nicht. Manches „Zögern“ ist auch ein leises Nein, das respektiert werden muss.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-212"
+    ]
+  },
+  {
+    "id": "Q-M06-004",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Chat, nach deinem Terminvorschlag. Kundin: „Hm, ich weiß nicht so recht …“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Das ist völlig in Ordnung. Ist noch etwas unklar – oder möchten Sie gerade lieber keinen Termin? Beides ist okay.“",
+        "quality": "best",
+        "feedback": "Ordnet das Signal ein, ohne zu drängen, und bietet den Ausstieg aktiv an."
+      },
+      {
+        "id": "b",
+        "text": "„Möchten Sie vielleicht erst einmal schriftliche Infos?“",
+        "quality": "acceptable",
+        "feedback": "Respektvoll, überspringt aber die Klärung, was genau sie zögern lässt.",
+        "misconception": "Respektvoll, überspringt aber die Klärung, was genau sie zögern lässt."
+      },
+      {
+        "id": "c",
+        "text": "„Die meisten unserer Kunden waren am Anfang auch unsicher und sind jetzt begeistert.“",
+        "quality": "poor",
+        "feedback": "Unbelegter Social Proof statt Klärung – wirkt wie eine Taktik.",
+        "misconception": "Unbelegter Social Proof statt Klärung – wirkt wie eine Taktik.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Ich trage Sie einfach mal ein – absagen können Sie ja immer.“",
+        "quality": "unacceptable",
+        "feedback": "Termin ohne Zustimmung: übergeht die Entscheidung der Kundin.",
+        "misconception": "Termin ohne Zustimmung: übergeht die Entscheidung der Kundin.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Bei mehrdeutigen Signalen neutral nachfragen und beide Wege – Klärung oder Ausstieg – ausdrücklich offenlassen.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-206"
+    ]
+  },
+  {
+    "id": "Q-M06-005",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Schritte des Klärungsmodells in die richtige Reihenfolge.",
+    "items": [
+      {
+        "id": "klaeren",
+        "text": "Mit einer offenen Frage das eigentliche Anliegen klären"
+      },
+      {
+        "id": "pruefen",
+        "text": "Nachfragen, ob die Antwort geholfen hat"
+      },
+      {
+        "id": "hoeren",
+        "text": "Ausreden lassen und genau hinhören"
+      },
+      {
+        "id": "antworten",
+        "text": "Auf das Anliegen antworten oder an den Berater übergeben"
+      },
+      {
+        "id": "anerkennen",
+        "text": "Das Bedenken anerkennen"
+      }
+    ],
+    "correctOrder": [
+      "hoeren",
+      "anerkennen",
+      "klaeren",
+      "antworten",
+      "pruefen"
+    ],
+    "explanation": "Erst hören und anerkennen, dann das Anliegen klären, darauf antworten oder übergeben und zuletzt prüfen, ob die Antwort geholfen hat.",
+    "sourceIds": [
+      "SRC-211",
+      "SRC-210"
+    ]
+  },
+  {
+    "id": "Q-M06-006",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Kunde: „Das ist zu teuer.“ Welche erste Reaktion folgt dem Klärungsmodell am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Teuer ist relativ – auf Dauer sparen Sie damit sogar Geld.“",
+        "misconception": "Gegenargument statt Klärung; dazu ein unbelegtes Ersparnisversprechen.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "b",
+        "text": "„Danke für die Offenheit. Darf ich fragen, was Ihnen am Preis Sorgen macht – die Gesamtsumme, die monatliche Belastung oder etwas anderes?“"
+      },
+      {
+        "id": "c",
+        "text": "„Da kann ich Ihnen bestimmt 10 % Rabatt geben.“",
+        "misconception": "Rabattzusagen liegen außerhalb der Setter-Rolle.",
+        "errorCategory": "rollenverwechslung"
+      },
+      {
+        "id": "d",
+        "text": "„Dann ist das wohl nichts für Sie.“",
+        "misconception": "Ein Einwand ist noch keine Absage – vorschnell aufgegeben, ohne zu klären.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Anerkennen und eine offene Frage nach dem Anliegen – erst dann weißt du, ob es um Summe, monatliche Belastung, Vergleich oder Budget geht.",
+    "sourceIds": [
+      "SRC-211",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M06-007",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken.",
+    "text": "Bevor du auf einen Einwand antwortest, {{g1}} du das eigentliche Anliegen. Statt sofort zu {{g2}}, stellst du eine offene {{g3}}.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "klärst",
+          "erfragst",
+          "verstehst"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "argumentieren",
+          "widersprechen",
+          "kontern",
+          "diskutieren"
+        ]
+      },
+      {
+        "id": "g3",
+        "accepted": [
+          "Frage",
+          "Klärungsfrage",
+          "Rückfrage"
+        ]
+      }
+    ],
+    "explanation": "Klären vor Antworten: Eine offene Rückfrage macht das Anliegen sichtbar; Gegenargumente lösen leicht Reaktanz aus.",
+    "sourceIds": [
+      "SRC-211",
+      "SRC-207"
+    ]
+  },
+  {
+    "id": "Q-M06-008",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Kunde: „Ehrlich gesagt ist mir das zu teuer.“ Markiere die Zeilen der Setter-Antwort, die gegen das Klärungsmodell verstoßen.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Danke, dass Sie das so offen sagen.",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Aber ehrlich: Teuer ist nur, was sich nicht lohnt – und das hier lohnt sich immer.",
+        "faulty": true,
+        "why": "Gegenargument statt Klärung, dazu ein pauschales, unbelegtes Lohnversprechen."
+      },
+      {
+        "id": "l3",
+        "text": "Was genau meinen Sie mit „zu teuer“?",
+        "faulty": false
+      },
+      {
+        "id": "l4",
+        "text": "Außerdem zahlen Sie mit Ihrer alten Heizung jeden Monat drauf, das wissen Sie ja selbst.",
+        "faulty": true,
+        "why": "Belehrend und unterstellend; ungeprüfte Aussage über die Situation des Kunden."
+      }
+    ],
+    "explanation": "Zeilen 1 und 3 sind gut (anerkennen, klären). Zeilen 2 und 4 argumentieren gegen den Kunden und enthalten unbelegte Behauptungen.",
+    "sourceIds": [
+      "SRC-211",
+      "SRC-207"
+    ]
+  },
+  {
+    "id": "Q-M06-009",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Kundin: „Ich weiß nicht, ob das jetzt der richtige Zeitpunkt ist.“ Schreibe eine kurze Antwort (Sie-Form), die anerkennt, das Anliegen klärt und die Entscheidungsfreiheit betont.",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Erkennt das Bedenken an",
+        "points": 1,
+        "anyOf": [
+          [
+            "verstehe",
+            "nachvollziehbar",
+            "verständlich",
+            "danke",
+            "gut, dass"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Stellt eine offene Klärungsfrage",
+        "points": 1,
+        "anyOf": [
+          [
+            "was ",
+            "woran",
+            "welche",
+            "wie "
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Betont die Entscheidungsfreiheit",
+        "points": 1,
+        "anyOf": [
+          [
+            "sie entscheiden",
+            "in ordnung",
+            "völlig okay",
+            "kein problem",
+            "ganz bei ihnen"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Kein Druck und keine künstliche Frist",
+        "points": 1,
+        "forbidden": [
+          "nur heute",
+          "sofort",
+          "letzte chance",
+          "nur noch bis",
+          "sonst verpassen"
+        ]
+      }
+    ],
+    "sampleAnswer": "Das ist verständlich – und völlig in Ordnung, Sie entscheiden das. Darf ich fragen, was für Sie gerade gegen den Zeitpunkt spricht?",
+    "requiresManualReview": true,
+    "explanation": "Anerkennen, eine offene Klärungsfrage, Entscheidungsfreiheit – und kein Druck. Der Selbstcheck erkennt nur Muster; prüfe den Ton selbst.",
+    "sourceIds": [
+      "SRC-211",
+      "SRC-052"
+    ]
+  },
+  {
+    "id": "Q-M06-010",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "WhatsApp, Wärmepumpen-Anfrage. Kunde: „Was kostet mich das am Ende genau, inklusive Förderung?“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Das kann ich Ihnen nicht seriös sagen – das hängt von Ihrem Haus und der Förderfähigkeit ab. Geht es Ihnen eher um die Gesamtsumme oder um die monatliche Belastung? Dann kann der Energieberater das im Termin gezielt durchrechnen.“",
+        "quality": "best",
+        "feedback": "Ehrlich, rollenklar, klärt das Anliegen und zeigt den nächsten Schritt."
+      },
+      {
+        "id": "b",
+        "text": "„Das kann ich nicht sagen, das macht der Berater.“",
+        "quality": "acceptable",
+        "feedback": "Rollenklar, aber knapp: kein Grund, keine Klärung, kein Nutzen.",
+        "misconception": "Rollenklar, aber knapp: kein Grund, keine Klärung, kein Nutzen."
+      },
+      {
+        "id": "c",
+        "text": "„Das sage ich Ihnen, sobald wir einen Termin haben.“",
+        "quality": "poor",
+        "feedback": "Preis als Köder – intransparent und vertrauensschädlich.",
+        "misconception": "Preis als Köder – intransparent und vertrauensschädlich.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Mit Förderung kostet Sie das so gut wie nichts.“",
+        "quality": "unacceptable",
+        "feedback": "Ungeprüftes Förder- und Kostenversprechen außerhalb der Rolle.",
+        "misconception": "Ungeprüftes Förder- und Kostenversprechen außerhalb der Rolle.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "explanation": "Ehrlich sagen, warum du keine Zahl nennen kannst, das Anliegen klären und den Weg zur seriösen Antwort zeigen.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M06-011",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Fragen übergibst du als Setter an den Fachberater? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Wie hoch die Förderung in diesem konkreten Fall ausfällt"
+      },
+      {
+        "id": "b",
+        "text": "Welche Leistung bzw. Größe technisch nötig ist"
+      },
+      {
+        "id": "c",
+        "text": "Ob der Termin per Video oder vor Ort stattfindet",
+        "misconception": "Organisatorisches zum Termin klärt der Setter selbst.",
+        "errorCategory": "rollenverwechslung"
+      },
+      {
+        "id": "d",
+        "text": "Welche Vertrags- oder Finanzierungskonditionen gelten"
+      },
+      {
+        "id": "e",
+        "text": "Wie lange der Beratungstermin ungefähr dauert",
+        "misconception": "Die Termindauer ist eine Setter-Information.",
+        "errorCategory": "rollenverwechslung"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation": "Förderhöhe im Einzelfall, technische Auslegung und Vertrags-/Finanzierungskonditionen sind Beraterthemen. Format und Dauer des Termins kann der Setter selbst beantworten.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M06-012",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Um den Lead nicht zu verlieren, darf der Setter eine eigene grobe Preisschätzung nennen, solange er dazusagt, dass sie unverbindlich ist.",
+    "correct": false,
+    "errorCategory": "rollenverwechslung",
+    "explanation": "Falsch. Eine Zahl wirkt als Anker, auch mit dem Zusatz „unverbindlich“. Weicht das Angebot ab, fühlt sich der Kunde getäuscht. Weitergeben darfst du nur offiziell freigegebene Preisinformationen.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M06-013",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Warum übergibt der Setter individuelle Preisfragen an den Fachberater?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Weil nur der Berater die individuelle Situation prüfen kann und ungeprüfte Zahlen Erwartungen wecken, die später enttäuscht werden."
+      },
+      {
+        "id": "b",
+        "text": "Weil der Preis bis zum Termin geheim bleiben soll, damit der Kunde auf jeden Fall erscheint.",
+        "misconception": "Preis als Köder zurückhalten ist intransparent.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "Weil Setter rechtlich grundsätzlich nicht über Preise sprechen dürfen.",
+        "misconception": "Freigegebene Preisinfos darf der Setter weitergeben; es gibt kein generelles Verbot.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Weil Kunden nach einer Preisnennung oft nicht mehr antworten – also lenkt man besser ab.",
+        "misconception": "Ablenken als Taktik ist unehrlich und wird erkannt.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Der Preis hängt von einer Prüfung ab, die nur der Berater leisten kann. Ungeprüfte Zahlen erzeugen falsche Erwartungen – das ist der Grund, nicht Geheimhaltung.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M06-014",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-04",
+    "difficulty": 1,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Telefon (Rückruf auf Wunsch des Kunden). Kunde: „Ich habe gerade echt keine Zeit.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Verstehe, dann halte ich Sie nicht auf. Passt es Ihnen, wenn ich mich morgen nach 17 Uhr melde – oder melden Sie sich lieber selbst?“",
+        "quality": "best",
+        "feedback": "Respektiert den Zeitpunkt, bietet Optionen, holt Einverständnis."
+      },
+      {
+        "id": "b",
+        "text": "„Okay, ich melde mich nächste Woche nochmal.“",
+        "quality": "acceptable",
+        "feedback": "Freundlich, aber ohne Einverständnis und ohne konkreten Zeitpunkt.",
+        "misconception": "Freundlich, aber ohne Einverständnis und ohne konkreten Zeitpunkt."
+      },
+      {
+        "id": "c",
+        "text": "„Es dauert nur zwei Minuten, versprochen!“",
+        "quality": "poor",
+        "feedback": "Übergeht den Wunsch und ist meist nicht wahr.",
+        "misconception": "Übergeht den Wunsch und ist meist nicht wahr.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Wer jetzt keine Zeit hat, verpasst die Förderung.“",
+        "quality": "unacceptable",
+        "feedback": "Druck mit (unbelegter) Frist – künstliche Dringlichkeit.",
+        "misconception": "Druck mit (unbelegter) Frist – künstliche Dringlichkeit.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Kurz bleiben, einen konkreten Zeitpunkt anbieten und die Wahl beim Kunden lassen – mit Einverständnis für den Folgekontakt.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-052"
+    ]
+  },
+  {
+    "id": "Q-M06-015",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Kundin: „Ich bin mir einfach unsicher, ob das was für uns ist.“ Welche Antwort ist am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Vertrauen Sie mir, das passt bestimmt.“",
+        "misconception": "Unbegründete Zusicherung ersetzt keine Klärung.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "b",
+        "text": "„Unsere Kunden sind alle total zufrieden.“",
+        "misconception": "Unbelegter Social Proof – adressiert die Unsicherheit nicht.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Das ist verständlich. Was ist für Sie noch unklar? Im Termin gibt es übrigens nichts zu unterschreiben – Sie entscheiden danach ganz in Ruhe.“"
+      },
+      {
+        "id": "d",
+        "text": "„Dann melden Sie sich einfach, wenn Sie sich sicher sind.“",
+        "misconception": "Unsicherheit ist kein Nein – eine Klärungsfrage hätte geholfen.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "c",
+    "explanation": "Unsicherheit verlangt Klärung und Transparenz – keine Beteuerungen, keinen Social Proof und kein vorschnelles Aufgeben.",
+    "sourceIds": [
+      "SRC-052",
+      "SRC-053",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M06-016",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jedem Signal die passende Reaktion zu.",
+    "left": [
+      {
+        "id": "s1",
+        "text": "„Gerade passt es zeitlich überhaupt nicht.“"
+      },
+      {
+        "id": "s2",
+        "text": "„Ich weiß nicht, ob das zu uns passt.“"
+      },
+      {
+        "id": "s3",
+        "text": "„Wir wollen das erst nächstes Jahr angehen.“"
+      },
+      {
+        "id": "s4",
+        "text": "„Kein Interesse, bitte melden Sie sich nicht mehr.“"
+      }
+    ],
+    "right": [
+      {
+        "id": "zeit",
+        "text": "Besseren Zeitpunkt anbieten, Einverständnis klären"
+      },
+      {
+        "id": "klar",
+        "text": "Unklarheit erfragen, transparent informieren"
+      },
+      {
+        "id": "nurt",
+        "text": "Späteren Kontakt mit Einwilligung vereinbaren, keine künstliche Frist"
+      },
+      {
+        "id": "stop",
+        "text": "Nein bestätigen, Kontaktsperre dokumentieren"
+      }
+    ],
+    "pairs": {
+      "s1": "zeit",
+      "s2": "klar",
+      "s3": "nurt",
+      "s4": "stop"
+    },
+    "explanation": "Zeitpunkt, Klarheit, Nurturing mit Einwilligung oder respektvoller Abschluss – je nach Signal.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-202"
+    ]
+  },
+  {
+    "id": "Q-M06-017",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Wenn ein Kunde erst nächstes Jahr entscheiden möchte, ist ein erfundener Hinweis wie „Das Angebot gilt aber nur bis Freitag“ zulässig, solange er den Kunden motiviert.",
+    "correct": false,
+    "errorCategory": "rechtsfehler",
+    "explanation": "Falsch. Die unwahre Angabe, ein Angebot sei nur sehr kurz verfügbar, um eine sofortige Entscheidung zu veranlassen, steht im UWG-Anhang (Schwarze Liste, Nr. 7). Fehlende Kaufbereitschaft ist eine Zeitrahmen-Info → Nurturing mit Einwilligung.",
+    "sourceIds": [
+      "SRC-202",
+      "SRC-101"
+    ]
+  },
+  {
+    "id": "Q-M06-018",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Chat. Kunde: „Firma Nordtherm (erfunden) hat mir schon ein günstigeres Angebot gemacht.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Gut, dass Sie vergleichen. Was ist Ihnen beim Vergleich am wichtigsten? Das andere Angebot kann ich nicht bewerten – unser Berater erklärt Ihnen aber gern unseres so, dass Sie selbst vergleichen können.“",
+        "quality": "best",
+        "feedback": "Fair, rollenklar, klärt Kriterien."
+      },
+      {
+        "id": "b",
+        "text": "„Okay, dann vergleichen Sie gern in Ruhe.“",
+        "quality": "acceptable",
+        "feedback": "Respektvoll, verzichtet aber auf die Klärung der Kriterien.",
+        "misconception": "Respektvoll, verzichtet aber auf die Klärung der Kriterien."
+      },
+      {
+        "id": "c",
+        "text": "„Bei so günstigen Angeboten wäre ich an Ihrer Stelle vorsichtig …“",
+        "quality": "poor",
+        "feedback": "Andeutung, die den Mitbewerber ohne Beleg abwertet.",
+        "misconception": "Andeutung, die den Mitbewerber ohne Beleg abwertet.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Nordtherm hat ständig Beschwerden, die pfuschen.“",
+        "quality": "unacceptable",
+        "feedback": "Herabsetzung und unbelegte, geschäftsschädigende Behauptung (vgl. UWG § 4 Nr. 1/2).",
+        "misconception": "Herabsetzung und unbelegte, geschäftsschädigende Behauptung (vgl. UWG § 4 Nr. 1/2).",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "explanation": "Vergleich anerkennen, Kriterien klären, Rolle benennen, das eigene Angebot transparent erklären lassen – ohne den Mitbewerber zu bewerten.",
+    "sourceIds": [
+      "SRC-205",
+      "SRC-204",
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M06-019",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Kunde: „Ich hatte schon schlechte Erfahrungen mit Vertretern.“ Markiere die problematischen Zeilen der Setter-Antwort.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Das tut mir leid – verständlich, dass Sie vorsichtig sind.",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Darf ich fragen, was damals passiert ist?",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Bei uns passiert so etwas garantiert nie.",
+        "faulty": true,
+        "why": "Unbelegte Garantie – Beteuerung statt überprüfbarer Transparenz."
+      },
+      {
+        "id": "l4",
+        "text": "Damit Sie wissen, woran Sie sind: Im Termin gibt es nichts zu unterschreiben, und Sie können jederzeit absagen.",
+        "faulty": false
+      },
+      {
+        "id": "l5",
+        "text": "Und die Skeptischsten werden bei uns am Ende meistens die größten Fans.",
+        "faulty": true,
+        "why": "Unbelegter, vereinnahmender Social Proof, der die Skepsis des Kunden nicht ernst nimmt."
+      }
+    ],
+    "explanation": "Benennen, nachfragen und Transparenz schaffen Vertrauen. Garantien und vereinnahmender Social Proof wirken dagegen wie die nächste Taktik.",
+    "sourceIds": [
+      "SRC-059",
+      "SRC-206"
+    ]
+  },
+  {
+    "id": "Q-M06-020",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Setter schreibt einem Interessenten: „Anbieter Y ist bekannt dafür, Kunden über den Tisch zu ziehen.“ Was ist das Hauptproblem?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Es setzt einen Mitbewerber herab und verbreitet eine unbelegte, geschäftsschädigende Behauptung – unfair und möglicherweise unlauter."
+      },
+      {
+        "id": "b",
+        "text": "Kein Problem, weil es nur in einem privaten Chat steht.",
+        "misconception": "Auch Chat-Nachrichten eines Setters sind geschäftliche Kommunikation.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Es ist nur dann problematisch, wenn der Kunde später bei Anbieter Y kauft.",
+        "misconception": "Die Herabsetzung ist unabhängig vom Ergebnis problematisch.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Es klingt lediglich etwas unhöflich.",
+        "misconception": "Unvollständig: Es geht um Fairness und Recht, nicht nur um Höflichkeit.",
+        "errorCategory": "unvollstaendig"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Herabsetzung von Mitbewerbern und nicht erweislich wahre, geschäftsschädigende Behauptungen können nach UWG § 4 Nr. 1/2 unlauter sein – und sind unfair. Auch im Chat ist das eine geschäftliche Handlung.",
+    "sourceIds": [
+      "SRC-205",
+      "SRC-204"
+    ]
+  },
+  {
+    "id": "Q-M06-021",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Was baut bei einem skeptischen Kunden glaubwürdig Vertrauen auf? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Offen sagen, wer du bist und was im Termin passiert – und was nicht"
+      },
+      {
+        "id": "b",
+        "text": "Kleine Zusagen einhalten, z. B. die Rückmeldung zur vereinbarten Zeit"
+      },
+      {
+        "id": "c",
+        "text": "Eine Ersparnis-Garantie geben, damit er sich sicher fühlt",
+        "misconception": "Unbelegte Garantien sind ein Versprechen außerhalb der Rolle.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "Klar sagen, was du nicht beantworten kannst und wer es kann"
+      },
+      {
+        "id": "e",
+        "text": "Zeitdruck aufbauen, damit er nicht ins Grübeln kommt",
+        "misconception": "Druck verstärkt Misstrauen und kann aggressiv sein.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation": "Transparenz, gehaltene Zusagen und ehrliche Rollengrenzen adressieren Fähigkeit, Wohlwollen und Integrität. Garantien und Zeitdruck wirken wie Taktik.",
+    "sourceIds": [
+      "SRC-059",
+      "SRC-206"
+    ]
+  },
+  {
+    "id": "Q-M06-022",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "WhatsApp. Kunde: „Das muss ich erst mit meiner Frau besprechen.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Absolut sinnvoll, das ist ja eine gemeinsame Entscheidung. Wäre es für Sie beide angenehmer, wenn der Berater einen Termin anbietet, bei dem Ihre Frau dabei sein kann?“",
+        "quality": "best",
+        "feedback": "Anerkennt die Rücksprache und bezieht die Mitentscheiderin ein."
+      },
+      {
+        "id": "b",
+        "text": "„Klar, besprechen Sie das in Ruhe. Darf ich mich am Donnerstag kurz melden?“",
+        "quality": "acceptable",
+        "feedback": "Respektvoll mit Folgekontakt-Frage, verschenkt aber die Chance auf einen gemeinsamen Termin.",
+        "misconception": "Respektvoll mit Folgekontakt-Frage, verschenkt aber die Chance auf einen gemeinsamen Termin."
+      },
+      {
+        "id": "c",
+        "text": "„Machen Sie den Termin doch erstmal allein, Ihre Frau kann ja später entscheiden.“",
+        "quality": "poor",
+        "feedback": "Übergeht die Mitentscheiderin – Termin ohne Entscheidung droht.",
+        "misconception": "Übergeht die Mitentscheiderin – Termin ohne Entscheidung droht.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Als Hauseigentümer sollten Sie das doch selbst entscheiden können.“",
+        "quality": "unacceptable",
+        "feedback": "Druck und Abwertung der gemeinsamen Entscheidung.",
+        "misconception": "Druck und Abwertung der gemeinsamen Entscheidung.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Rücksprache anerkennen und den Mitentscheider einbeziehen – idealerweise mit einem gemeinsamen Termin.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-056"
+    ]
+  },
+  {
+    "id": "Q-M06-023",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Simulierter CRM-Eintrag: Setze die Felder korrekt.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Jonas Reuter (erfunden)"
+      },
+      {
+        "label": "Quelle",
+        "value": "Website-Formular Wärmepumpe"
+      },
+      {
+        "label": "Gesprächsnotiz",
+        "value": "Eigentümer, Ölheizung 24 Jahre alt. Partnerin entscheidet mit, er möchte erst mit ihr sprechen. Vereinbart: Setter meldet sich Do 18:00 per WhatsApp (Kunde ausdrücklich einverstanden)."
+      }
+    ],
+    "fields": [
+      {
+        "id": "status",
+        "label": "Lead-Status",
+        "options": [
+          "Neu",
+          "In Kontakt",
+          "Termin gebucht",
+          "Nurturing",
+          "Disqualifiziert"
+        ],
+        "correct": "In Kontakt"
+      },
+      {
+        "id": "next",
+        "label": "Nächste Aktion",
+        "options": [
+          "Keine",
+          "Do 18:00 WhatsApp-Rückmeldung wie vereinbart",
+          "Täglich nachfassen, bis ein Termin steht",
+          "Partnerin direkt anschreiben"
+        ],
+        "correct": "Do 18:00 WhatsApp-Rückmeldung wie vereinbart"
+      },
+      {
+        "id": "authority",
+        "label": "Entscheider",
+        "options": [
+          "Kunde allein",
+          "Gemeinsam mit Partnerin",
+          "Nicht erfragt"
+        ],
+        "correct": "Gemeinsam mit Partnerin"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Ohne Termin und mit offener Rücksprache ist der Lead „In Kontakt“. Die nächste Aktion ist genau die vereinbarte Rückmeldung; die Partnerin entscheidet mit.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M06-024",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Schritte einer guten Folgevereinbarung bei Rücksprachebedarf in eine sinnvolle Reihenfolge.",
+    "items": [
+      {
+        "id": "doku",
+        "text": "Vereinbarung zusammenfassen und dokumentieren"
+      },
+      {
+        "id": "angebot",
+        "text": "Gemeinsamen Termin oder konkreten Rückmeldezeitpunkt anbieten"
+      },
+      {
+        "id": "anerk",
+        "text": "Rücksprachebedarf anerkennen"
+      },
+      {
+        "id": "kanal",
+        "text": "Kanal und Einverständnis für die Rückmeldung klären"
+      },
+      {
+        "id": "partner",
+        "text": "Fragen, was der Partner wissen müsste"
+      }
+    ],
+    "correctOrder": [
+      "anerk",
+      "partner",
+      "angebot",
+      "kanal",
+      "doku"
+    ],
+    "explanation": "Anerkennen, verstehen, was der Partner braucht, gemeinsamen Termin oder konkreten Rückmeldezeitpunkt anbieten, Einverständnis und Kanal klären, zusammenfassen und dokumentieren.",
+    "sourceIds": [
+      "SRC-056",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M06-025",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "prompt": "Analysiere das Chat-Transkript (Simulation, erfundene Personen) und beantworte die drei Teilfragen.",
+    "caseKind": "gespraechsanalyse",
+    "simulatedData": true,
+    "material": {
+      "kind": "transcript",
+      "lines": [
+        {
+          "speaker": "kunde",
+          "text": "Was kostet das denn jetzt? Ich habe gelesen, so eine Wärmepumpe kostet 30.000 Euro."
+        },
+        {
+          "speaker": "setter",
+          "text": "Gute Frage. Damit ich Sie richtig verstehe: Geht es Ihnen vor allem um die Gesamtsumme, um mögliche Förderung oder darum, ob es sich monatlich trägt?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Ehrlich gesagt darum, ob wir uns das überhaupt leisten können. Und ich muss das sowieso mit meiner Frau besprechen."
+        },
+        {
+          "speaker": "setter",
+          "text": "Das ist ja eine gemeinsame Entscheidung, klar. Die Kosten inklusive Förderung kann Ihnen nur unser Energieberater seriös aufschlüsseln, wenn er Ihr Haus kennt – eine Zahl kann ich Ihnen nicht nennen."
+        },
+        {
+          "speaker": "kunde",
+          "text": "Hm, okay."
+        },
+        {
+          "speaker": "setter",
+          "text": "Wäre es für Sie beide angenehmer, wenn das Gespräch zu einer Zeit stattfindet, in der Ihre Frau dabei sein kann?"
+        }
+      ]
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Was leistet der Setter in Zeile 2?",
+        "correct": "b",
+        "explanation": "Eine offene Klärungsfrage nach dem Anliegen hinter der Preisfrage – mit konkreten Optionen als Hilfe.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Er lenkt vom Preis ab, um ihn zu verschleiern.",
+            "misconception": "Er erklärt später offen, warum er keine Zahl nennt – das ist Klärung, kein Verschleiern.",
+            "errorCategory": "ueberinterpretation"
+          },
+          {
+            "id": "b",
+            "text": "Er klärt das eigentliche Anliegen hinter der Preisfrage."
+          },
+          {
+            "id": "c",
+            "text": "Er stellt eine geschlossene Ja/Nein-Frage.",
+            "misconception": "Die Frage bietet mehrere Anliegen zur Auswahl und lädt zum Erzählen ein.",
+            "errorCategory": "begriffsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Wie ist Zeile 4 zu bewerten?",
+        "correct": "a",
+        "explanation": "Rücksprache anerkannt, Preisfrage rollenklar und transparent übergeben, keine eigene Zahl.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gelungen: Rücksprache anerkannt und Preisfrage ehrlich und rollenklar übergeben."
+          },
+          {
+            "id": "b",
+            "text": "Fehler: Der Setter hätte die 30.000 € bestätigen oder korrigieren müssen.",
+            "misconception": "Eigene Preisaussagen liegen außerhalb der Setter-Rolle.",
+            "errorCategory": "rollenverwechslung"
+          },
+          {
+            "id": "c",
+            "text": "Fehler: Er hätte die Rücksprache als Vorwand ansprechen sollen.",
+            "misconception": "Rücksprache ist eine Info über den Entscheidungsprozess, kein Vorwand.",
+            "errorCategory": "ethikfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Was ist die Stärke von Zeile 6?",
+        "correct": "c",
+        "explanation": "Die Mitentscheiderin wird einbezogen – ein gemeinsamer Termin führt eher zu einer echten Entscheidung.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Keine – besser wäre, erst allein einen Termin zu buchen.",
+            "misconception": "Ein Termin ohne Mitentscheiderin führt oft zu keiner Entscheidung.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Sie erhöht den Druck, damit der Kunde zusagt.",
+            "misconception": "Die Frage lässt die Wahl offen; sie baut keinen Druck auf.",
+            "errorCategory": "ueberinterpretation"
+          },
+          {
+            "id": "c",
+            "text": "Sie bezieht die Mitentscheiderin ein, statt sie zu übergehen."
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "gespraechsanalyse"
+    ],
+    "explanation": "Der Setter klärt das Preisanliegen, übergibt es rollenklar ohne eigene Zahl und bezieht die Partnerin ein, statt sie zu übergehen – ein Musterverlauf für Preis- und Partner-Einwände.",
+    "sourceIds": [
+      "SRC-211",
+      "SRC-050",
+      "SRC-056"
+    ]
+  },
+  {
+    "id": "Q-M06-026",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Verhaltensweisen verstoßen gegen „Ein Nein ist ein Nein“ oder können aggressive Praktiken sein? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nach einem klaren Nein weiter Nachrichten schicken"
+      },
+      {
+        "id": "b",
+        "text": "Eine erfundene Frist nennen, um eine schnelle Entscheidung zu erzwingen"
+      },
+      {
+        "id": "c",
+        "text": "Nach „Vielleicht später“ fragen, wann ein Kontakt passen würde",
+        "misconception": "Das ist eine legitime Klärung, solange der Kunde zustimmt.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Den Kunden einschüchtern: „Sonst bekommen Sie Ärger mit der Förderung.“"
+      },
+      {
+        "id": "e",
+        "text": "Ein Nein höflich bestätigen und den Kontaktstopp dokumentieren",
+        "misconception": "Genau so wird ein Nein respektiert.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation": "Weiterwerben nach Nein, erfundene Fristen und Einschüchterung beeinträchtigen die Entscheidungsfreiheit. Nach einem „Vielleicht später“ nach dem passenden Zeitpunkt zu fragen und ein Nein zu dokumentieren ist dagegen korrekt.",
+    "sourceIds": [
+      "SRC-101",
+      "SRC-202",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M06-027",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Durch welche drei Mittel kann eine geschäftliche Handlung nach § 4a UWG aggressiv sein?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Irreführung, Unterlassen und Täuschung",
+        "misconception": "Das sind Themen der Irreführung (§§ 5, 5a UWG), nicht des § 4a.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Belästigung, Nötigung (einschließlich körperlicher Gewalt) und unzulässige Beeinflussung"
+      },
+      {
+        "id": "c",
+        "text": "Kaltakquise, Rabatte und Werbung",
+        "misconception": "Das sind keine gesetzlichen Merkmale aggressiver Handlungen.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Ausschließlich körperliche Gewalt",
+        "misconception": "Zu eng – auch Belästigung und unzulässige Beeinflussung zählen.",
+        "errorCategory": "unvollstaendig"
+      }
+    ],
+    "correct": "b",
+    "explanation": "§ 4a UWG nennt Belästigung, Nötigung einschließlich körperlicher Gewalt und unzulässige Beeinflussung (Ausnutzen einer Machtposition zur Druckausübung).",
+    "sourceIds": [
+      "SRC-101",
+      "SRC-203"
+    ]
+  },
+  {
+    "id": "Q-M06-028",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-07",
+    "difficulty": 1,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Nach einem klaren „Nein, kein Interesse“ ist es in Ordnung, noch zwei Gegenargumente zu bringen, solange man freundlich bleibt.",
+    "correct": false,
+    "errorCategory": "ethikfehler",
+    "explanation": "Falsch. Ein klares Nein beendet das Werben – unabhängig vom Ton. Freundliches Weiterargumentieren übergeht die Entscheidung ebenso.",
+    "sourceIds": [
+      "SRC-101",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M06-029",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Chat. Kunde: „Nein, ich will das nicht. Bitte schreiben Sie mir nicht mehr.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Verstanden, danke für die klare Rückmeldung. Ich trage ein, dass wir Sie nicht mehr kontaktieren. Alles Gute!“",
+        "quality": "best",
+        "feedback": "Nein bestätigt, Konsequenz genannt, freundlicher Abschluss."
+      },
+      {
+        "id": "b",
+        "text": "„Alles klar, danke für Ihre Zeit.“",
+        "quality": "acceptable",
+        "feedback": "Respektvoll, bestätigt aber den Kontaktstopp nicht ausdrücklich.",
+        "misconception": "Respektvoll, bestätigt aber den Kontaktstopp nicht ausdrücklich."
+      },
+      {
+        "id": "c",
+        "text": "„Schade! Darf ich fragen, was Sie abschreckt? Vielleicht kann ich das ja ausräumen.“",
+        "quality": "poor",
+        "feedback": "Nachbohren mit dem Ziel umzustimmen – das Nein wird als Einwand behandelt.",
+        "misconception": "Nachbohren mit dem Ziel umzustimmen – das Nein wird als Einwand behandelt.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Ich melde mich in drei Monaten trotzdem nochmal, vielleicht sehen Sie es dann anders.“",
+        "quality": "unacceptable",
+        "feedback": "Kündigt unerwünschten Kontakt trotz ausdrücklichem Widerspruch an.",
+        "misconception": "Kündigt unerwünschten Kontakt trotz ausdrücklichem Widerspruch an.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "explanation": "Bestätigen, Konsequenz nennen, freundlich abschließen – ohne Nachfrage zum Umstimmen.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-101",
+      "SRC-025"
+    ]
+  },
+  {
+    "id": "Q-M06-030",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Ein Interessent schreibt: „Danke, aber ich habe kein Interesse. Bitte keine weiteren Nachrichten.“ Formuliere deine Abschlussnachricht (Sie-Form).",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Akzeptiert die Entscheidung ausdrücklich",
+        "points": 1,
+        "anyOf": [
+          [
+            "verstanden",
+            "in ordnung",
+            "akzeptiere",
+            "respektiere",
+            "alles klar"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Bedankt sich",
+        "points": 1,
+        "anyOf": [
+          [
+            "danke",
+            "vielen dank"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Bestätigt den Kontaktstopp",
+        "points": 1,
+        "anyOf": [
+          [
+            "nicht mehr",
+            "keine weiteren",
+            "nicht weiter"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Kein Umstimmungsversuch",
+        "points": 1,
+        "forbidden": [
+          "trotzdem",
+          "letzte chance",
+          "noch einmal überlegen",
+          "nochmal überlegen",
+          "sicher, dass",
+          "nur noch"
+        ]
+      }
+    ],
+    "sampleAnswer": "Verstanden, danke für Ihre klare Rückmeldung. Wir schreiben Ihnen keine weiteren Nachrichten. Alles Gute!",
+    "requiresManualReview": true,
+    "explanation": "Akzeptieren, danken, Kontaktstopp bestätigen – und keinerlei Versuch, umzustimmen. Der Selbstcheck erkennt nur Muster; prüfe selbst, dass kein „aber“ nachkommt.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-101"
+    ]
+  },
+  {
+    "id": "Q-M06-031",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "prompt": "Lies die Fallstudie (Simulation) und beantworte die drei Teilfragen.",
+    "caseKind": "fallstudie",
+    "simulatedData": true,
+    "material": {
+      "kind": "text",
+      "body": "Lena Kraus (erfunden) meldet sich über das Formular der Firma „SüdWärme“ (erfunden) zur Wärmepumpe. Im Chat stellt sich heraus: Sie wohnt zur Miete in einem Mehrfamilienhaus, ihr Vermieter hat laut ihr „kein Interesse an Umbauten“. Sie fragt, ob man „trotzdem mal einen Termin machen“ könne, weil ihr die Heizkosten Sorgen machen. Der Leitfaden nennt Eigentum oder Entscheidungsbefugnis als Pflichtkriterium. Eine Einwilligung in Werbe-E-Mails liegt nicht vor."
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Was ist der Kern der Situation?",
+        "correct": "c",
+        "explanation": "Das Pflichtkriterium Entscheidungsbefugnis ist objektiv nicht erfüllt – keine bessere Erklärung ändert das.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ein Preiseinwand, den der Berater im Termin auflösen kann.",
+            "misconception": "Es geht nicht um den Preis, sondern um fehlende Entscheidungsbefugnis.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Ein Zeiteinwand – sie braucht nur etwas Bedenkzeit.",
+            "misconception": "Zeit ändert nichts an der fehlenden Zustimmung des Eigentümers.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Fehlende Passung: Sie kann über eine Wärmepumpe nicht entscheiden."
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Welche Reaktion ist am besten?",
+        "correct": "a",
+        "explanation": "Ehrliche, freundliche Absage mit Begründung und neutralem Hinweis – kein Termin auf Hoffnung.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Freundlich erklären, dass ein Termin ohne Zustimmung des Vermieters nicht weiterhilft, neutral auf unabhängige Beratungsstellen hinweisen, keinen Termin buchen."
+          },
+          {
+            "id": "b",
+            "text": "Den Termin trotzdem buchen – vielleicht überzeugt der Berater ja den Vermieter.",
+            "misconception": "Ein Termin ohne Passung verschwendet Zeit und weckt falsche Hoffnung.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Ihr raten, dem Vermieter Druck zu machen, damit er zustimmt.",
+            "misconception": "Druck auf Dritte zu empfehlen ist unseriös und nicht Aufgabe des Setters.",
+            "errorCategory": "ethikfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Wie dokumentierst du korrekt?",
+        "correct": "b",
+        "explanation": "Disqualifiziert mit Grund; ohne Einwilligung keine Werbe-E-Mails (UWG § 7).",
+        "options": [
+          {
+            "id": "a",
+            "text": "Nurturing – monatlich Angebote per E-Mail senden.",
+            "misconception": "Werbe-E-Mails brauchen eine Einwilligung, die hier fehlt.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Disqualifiziert – Grund: keine Entscheidungsbefugnis (Mieterin); kein Werbekontakt ohne Einwilligung."
+          },
+          {
+            "id": "c",
+            "text": "Termin gebucht – der Berater klärt den Rest.",
+            "misconception": "Es wurde kein (sinnvoller) Termin vereinbart.",
+            "errorCategory": "prozessfehler"
+          }
+        ]
+      }
+    ],
+    "tags": [
+      "fallstudie"
+    ],
+    "explanation": "Fehlende Entscheidungsbefugnis ist kein Einwand, sondern fehlende Passung: ehrlich absagen, keinen Termin buchen, korrekt dokumentieren und ohne Einwilligung nicht bewerben.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M06-032",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Woran erkennst du am ehesten ein unpassendes Angebot statt eines Einwands?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Kunde fragt nach dem Preis.",
+        "misconception": "Eine Preisfrage ist eine Frage, kein Ausschlusskriterium.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Ein Pflichtkriterium ist objektiv nicht erfüllt (z. B. keine Entscheidungsbefugnis, kein Bedarf) – egal, wie gut man es erklärt."
+      },
+      {
+        "id": "c",
+        "text": "Der Kunde möchte Rücksprache mit seiner Partnerin halten.",
+        "misconception": "Rücksprache betrifft den Entscheidungsprozess, nicht die Passung.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Der Kunde ist unsicher.",
+        "misconception": "Unsicherheit ist ein klärbarer Einwand.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Bei fehlender Passung ist ein Pflichtkriterium objektiv nicht erfüllt – daran ändert keine Erklärung etwas. Preis, Rücksprache und Unsicherheit sind dagegen klärbar.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M06-033",
+    "moduleId": "M06",
+    "objectiveId": "LO-M06-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Simulierter CRM-Eintrag nach einem Chat: Setze die Felder korrekt.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Mara Lindt (erfunden)"
+      },
+      {
+        "label": "Quelle",
+        "value": "Instagram-Formular Photovoltaik"
+      },
+      {
+        "label": "Gesprächsnotiz",
+        "value": "Wohnt zur Miete, Vermieter plant keine PV. Interessentin bedankt sich für die ehrliche Auskunft. Keine Einwilligung in Newsletter oder Werbe-E-Mails."
+      }
+    ],
+    "fields": [
+      {
+        "id": "status",
+        "label": "Lead-Status",
+        "options": [
+          "In Kontakt",
+          "Termin gebucht",
+          "Nurturing",
+          "Disqualifiziert"
+        ],
+        "correct": "Disqualifiziert"
+      },
+      {
+        "id": "reason",
+        "label": "Grund",
+        "options": [
+          "Kein Bedarf",
+          "Keine Entscheidungsbefugnis (Mieterin)",
+          "Kein Budget"
+        ],
+        "correct": "Keine Entscheidungsbefugnis (Mieterin)"
+      },
+      {
+        "id": "next",
+        "label": "Nächste Aktion",
+        "options": [
+          "Keine weitere Werbung; Absage ist freundlich bestätigt",
+          "Monatlichen Newsletter senden",
+          "Termin trotzdem anbieten",
+          "Vermieter direkt anrufen"
+        ],
+        "correct": "Keine weitere Werbung; Absage ist freundlich bestätigt"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Keine Entscheidungsbefugnis → Disqualifiziert mit Grund. Die Absage wird freundlich bestätigt; ohne Einwilligung kein Werbekontakt.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-019"
+    ]
+  }
+]

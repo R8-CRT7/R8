@@ -136,7 +136,7 @@
       "Ablehnung",
       "Grenzen der Einwandbehandlung: Ein Nein ist ein Nein"
     ],
-    "status": "in_vorbereitung"
+    "status": "verfuegbar"
   },
   {
     "id": "M07",
@@ -159,7 +159,7 @@
       "Übergabeprotokolle",
       "Gesprächsnotizen"
     ],
-    "status": "in_vorbereitung"
+    "status": "verfuegbar"
   },
   {
     "id": "M08",
@@ -184,7 +184,7 @@
       "Datenschutz (DSGVO)",
       "Simuliertes Übungs-CRM ohne echte Daten"
     ],
-    "status": "in_vorbereitung"
+    "status": "verfuegbar"
   },
   {
     "id": "M09",

@@ -329,7 +329,14 @@
       "C-ZUHOEREN",
       "C-EFFEKTE"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M06-01",
+      "LO-M06-02",
+      "LO-M06-03",
+      "LO-M06-04",
+      "LO-M06-05",
+      "LO-M06-06"
+    ]
   },
   {
     "id": "C-NEIN",
@@ -341,7 +348,10 @@
       "C-EINWAND",
       "C-GRENZEN"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M06-07",
+      "LO-M06-08"
+    ]
   },
   {
     "id": "C-TERMIN",
@@ -353,7 +363,14 @@
       "C-UEBERGABE",
       "C-FRAMEWORKS"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M07-01",
+      "LO-M07-02",
+      "LO-M07-03",
+      "LO-M07-04",
+      "LO-M07-05",
+      "LO-M07-08"
+    ]
   },
   {
     "id": "C-NOSHOW",
@@ -365,7 +382,10 @@
       "C-TERMIN",
       "C-NEIN"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M07-06",
+      "LO-M07-07"
+    ]
   },
   {
     "id": "C-CRM",
@@ -377,7 +397,14 @@
       "C-STATUS",
       "C-UEBERGABE"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M08-01",
+      "LO-M08-02",
+      "LO-M08-03",
+      "LO-M08-04",
+      "LO-M08-05",
+      "LO-M08-06"
+    ]
   },
   {
     "id": "C-DSGVO",
@@ -389,7 +416,11 @@
       "C-KANAELE",
       "C-CRM"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M08-03",
+      "LO-M08-07",
+      "LO-M08-08"
+    ]
   },
   {
     "id": "C-KPI",

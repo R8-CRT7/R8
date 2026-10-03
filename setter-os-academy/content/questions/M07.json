@@ -1,0 +1,1597 @@
+[
+  {
+    "id": "Q-M07-001",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
+    "prompt": "Wann gilt ein Termin in diesem Kurs als qualifiziert?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Wenn die Pflichtkriterien geklärt sind, der Kunde Zweck, Dauer, Format und Teilnehmende kennt, ausdrücklich zugestimmt hat und die Übergabe dokumentiert ist"
+      },
+      {
+        "id": "b",
+        "text": "Sobald der Termin im Kalender steht",
+        "misconception": "Ein Kalendereintrag sagt nichts über Passung oder Zustimmung aus.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Wenn der Kunde am Telefon freundlich war",
+        "misconception": "Sympathie ersetzt keine Kriterien.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Wenn der Kunde mindestens zehn Minuten mit dir geschrieben hat",
+        "misconception": "Gesprächsdauer ist kein Qualifizierungskriterium.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Vier Bedingungen: Kriterien geklärt, Kunde informiert, ausdrückliches Ja, dokumentierte Übergabe. Fehlt eine, ist es ein Termin, aber kein qualifizierter.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-047"
+    ]
+  },
+  {
+    "id": "Q-M07-002",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Angaben machen einen Termin zu einem qualifizierten Termin? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die vom Auftraggeber festgelegten Pflichtkriterien sind geklärt"
+      },
+      {
+        "id": "b",
+        "text": "Der Kunde hat dem Termin ausdrücklich zugestimmt"
+      },
+      {
+        "id": "c",
+        "text": "Der Kunde weiß, worum es geht und wer teilnimmt"
+      },
+      {
+        "id": "d",
+        "text": "Der Setter schätzt das Einkommen des Kunden als hoch ein",
+        "misconception": "Eine Schätzung ist eine Vermutung und kein Kriterium – und oft unfair.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "e",
+        "text": "Der Termin liegt möglichst früh, egal ob der Kunde Zeit hat",
+        "misconception": "Der Kundenwunsch geht vor; ein unpassender Zeitpunkt führt eher zu Absagen.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Kriterien, ausdrückliches Ja und ein informierter Kunde gehören dazu; Vermutungen und erzwungene Zeitpunkte nicht.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-047"
+    ]
+  },
+  {
+    "id": "Q-M07-003",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Je mehr Termine ein Setter bucht, desto besser ist seine Arbeit – unabhängig davon, ob die Kriterien erfüllt sind.",
+    "correct": false,
+    "errorCategory": "qualifizierungsfehler",
+    "explanation": "Unqualifizierte Termine kosten Beraterzeit und Kundenvertrauen. Der Kurs bewertet die Quote qualifizierter Termine plus die Rückmeldung der Beratung (Kursentscheidung).",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-004",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "calculation",
+    "prompt": "Simulierte Daten: Wie viel Prozent der gebuchten Termine waren qualifiziert?",
+    "given": [
+      {
+        "label": "Gebuchte Termine",
+        "value": 50
+      },
+      {
+        "label": "Davon alle Pflichtkriterien erfüllt",
+        "value": 35
+      },
+      {
+        "label": "Davon wahrgenommen",
+        "value": 30
+      }
+    ],
+    "correctValue": 70,
+    "unit": "%",
+    "tolerance": 0.5,
+    "formula": "35 ÷ 50 × 100 = 70 %",
+    "simulatedData": true,
+    "explanation": "Bezugsgröße sind die gebuchten Termine. 30/50 = 60 % wäre die Show Rate – eine andere Kennzahl.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-005",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Was schreibst du als Nächstes?",
+    "situation": "Du hast den Termin vorgeschlagen. Kundin: „Ja, das klingt gut, machen wir.“ Du weißt, dass sie werktags bis 17 Uhr arbeitet.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Prima! Passt Ihnen Dienstag um 18 Uhr oder Donnerstag um 19 Uhr besser? Oder schlagen Sie gern eine andere Zeit vor.“",
+        "quality": "best",
+        "feedback": "Zwei passende Zeitfenster nach dem Ja plus offene Tür."
+      },
+      {
+        "id": "b",
+        "text": "„Wann haben Sie denn Zeit?“",
+        "quality": "acceptable",
+        "feedback": "Nicht falsch, führt im Chat aber oft zu mehreren Nachrichten Hin und Her.",
+        "misconception": "Offene Zeitfrage ist kundenfreundlich, aber ineffizient.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Ich schicke Ihnen alle 40 freien Slots der nächsten Wochen.“",
+        "quality": "poor",
+        "feedback": "Zu viele Optionen machen die Wahl mühsam.",
+        "misconception": "Mehr Auswahl ist nicht automatisch Service.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Ich habe Sie für morgen 10 Uhr eingetragen.“",
+        "quality": "unacceptable",
+        "feedback": "Ohne Abstimmung eingetragen – und mitten in ihrer Arbeitszeit.",
+        "misconception": "Zustimmung zum Termin ist keine Zustimmung zu einer Uhrzeit.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Nach dem Ja nimmst du der Kundin Arbeit ab: wenige passende Optionen, eine offene Tür.",
+    "sourceIds": [
+      "SRC-010",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-006",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Schritte der Terminvereinbarung in die richtige Reihenfolge.",
+    "items": [
+      {
+        "id": "slots",
+        "text": "Zwei bis drei Zeitfenster anbieten"
+      },
+      {
+        "id": "summary",
+        "text": "Bedarf zusammenfassen und bestätigen lassen"
+      },
+      {
+        "id": "confirm",
+        "text": "Termin mit allen Eckdaten bestätigen"
+      },
+      {
+        "id": "propose",
+        "text": "Termin mit Nutzen, Dauer und Format vorschlagen"
+      },
+      {
+        "id": "yes",
+        "text": "Ausdrückliches Ja abwarten"
+      }
+    ],
+    "correctOrder": [
+      "summary",
+      "propose",
+      "yes",
+      "slots",
+      "confirm"
+    ],
+    "explanation": "Zusammenfassen → vorschlagen → Ja → Zeitfenster → Bestätigung. Zeiten kommen erst nach dem Ja.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-007",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die problematischen Zeilen in dieser Terminvereinbarung per Chat.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Wenn ich Sie richtig verstehe, möchten Sie vor dem Winter von der Ölheizung weg – stimmt das?",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Passt Ihnen dafür Dienstag oder Donnerstag besser?",
+        "faulty": true,
+        "why": "Alternativfrage vor jeder Zustimmung – unterstellt, dass der Termin schon beschlossen ist."
+      },
+      {
+        "id": "l3",
+        "text": "Ein 30-minütiges Videogespräch mit unserem Energieberater wäre der nächste Schritt – möchten Sie das?",
+        "faulty": false
+      },
+      {
+        "id": "l4",
+        "text": "Beeilen Sie sich, es ist nur noch ein einziger Termin frei!",
+        "faulty": true,
+        "why": "Behauptete Knappheit als Druckmittel (und vermutlich unwahr)."
+      },
+      {
+        "id": "l5",
+        "text": "Oder schlagen Sie gern eine andere Zeit vor.",
+        "faulty": false
+      }
+    ],
+    "explanation": "Zuerst Vorschlag und Ja, dann Optionen – ohne künstliche Knappheit.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-038"
+    ]
+  },
+  {
+    "id": "Q-M07-008",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Wann ist die Frage „Passt Ihnen Dienstag oder Donnerstag besser?“ ethisch unproblematisch?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nachdem der Kunde dem Termin ausdrücklich zugestimmt hat"
+      },
+      {
+        "id": "b",
+        "text": "Immer – es ist nur eine Frage",
+        "misconception": "Vor dem Ja unterstellt die Frage eine Entscheidung und erschwert ein Nein.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "Wenn der Kunde zögert, um ihn zu einer Entscheidung zu bringen",
+        "misconception": "Genau dann wirkt sie als Druck.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "Nie – Zeitoptionen sind grundsätzlich manipulativ",
+        "misconception": "Nach dem Ja sind Optionen hilfreicher Service.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Dieselbe Formulierung ist nach dem Ja Service, vor dem Ja eine Unterstellung.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-009",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Kunde lebt in Lissabon (eine Stunde hinter deutscher Zeit). Wie bestätigst du den Termin am besten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Donnerstag, 22.10., 18:00 Uhr deutscher Zeit – also 17:00 Uhr bei Ihnen in Lissabon.“"
+      },
+      {
+        "id": "b",
+        "text": "„Donnerstag um 18 Uhr.“",
+        "misconception": "Ohne Zeitzone ist unklar, welche 18 Uhr gemeint ist.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Donnerstag um 18 Uhr – rechnen Sie das bitte selbst um.“",
+        "misconception": "Die Umrechnung ist deine Aufgabe, nicht die des Kunden.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Donnerstag um 18 Uhr UTC.“",
+        "misconception": "UTC ist für Kunden schwer verständlich und hier zudem falsch.",
+        "errorCategory": "rechenfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bei Kunden in anderen Zeitzonen beide Ortszeiten nennen – Kalendereinladungen führen die Zeitzone zusätzlich technisch mit.",
+    "sourceIds": [
+      "SRC-241",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-010",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Was gehört in eine vollständige Kalendereinladung an den Kunden? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Verständlicher Titel mit Thema und Firma"
+      },
+      {
+        "id": "b",
+        "text": "Datum, Uhrzeit mit Zeitzone und Dauer"
+      },
+      {
+        "id": "c",
+        "text": "Videolink oder Adresse und Teilnehmende"
+      },
+      {
+        "id": "d",
+        "text": "Weg zum Verschieben bzw. Ansprechpartner"
+      },
+      {
+        "id": "e",
+        "text": "Deine persönliche Einschätzung zur Zahlungsfähigkeit des Kunden",
+        "misconception": "Interne Einschätzungen gehören nicht in eine Einladung – und Vermutungen nirgendwohin.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "f",
+        "text": "Die E-Mail-Adressen anderer Kunden, die zur gleichen Zeit einen Termin haben",
+        "misconception": "Sammel-Einladungen legen fremde Daten offen.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation": "Die Einladung beantwortet alle Fragen vor dem Termin und enthält nur nötige Daten.",
+    "sourceIds": [
+      "SRC-241",
+      "SRC-025"
+    ]
+  },
+  {
+    "id": "Q-M07-011",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jedem Kalenderproblem die passende Lösung zu.",
+    "left": [
+      {
+        "id": "p1",
+        "text": "Zwei Kunden sitzen gleichzeitig im Videoraum"
+      },
+      {
+        "id": "p2",
+        "text": "Kunde erscheint eine Stunde zu früh, weil er im Ausland lebt"
+      },
+      {
+        "id": "p3",
+        "text": "Beraterin hat keine Zeit für Notizen zwischen Terminen"
+      },
+      {
+        "id": "p4",
+        "text": "Termintitel im Teamkalender enthält private Details"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Nur in freigegebene Zeitfenster buchen und sofort eintragen"
+      },
+      {
+        "id": "r2",
+        "text": "Zeitzone nennen bzw. beide Ortszeiten angeben"
+      },
+      {
+        "id": "r3",
+        "text": "Puffer zwischen Terminen einplanen"
+      },
+      {
+        "id": "r4",
+        "text": "Datensparsamen Titel verwenden"
+      }
+    ],
+    "pairs": {
+      "p1": "r1",
+      "p2": "r2",
+      "p3": "r3",
+      "p4": "r4"
+    },
+    "explanation": "Doppelbuchung, Zeitzone, fehlender Puffer und zu viele Daten sind die vier typischen Kalenderfehler.",
+    "sourceIds": [
+      "SRC-241",
+      "SRC-025",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-012",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken.",
+    "text": "Zwischen zwei Beratungsterminen plant man einen {{g1}} ein. In Termintitel und Beschreibung stehen nach dem Grundsatz der {{g2}} nur Daten, die für den Termin nötig sind.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "Puffer",
+          "Zeitpuffer",
+          "Puffer von 10–15 Minuten"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "Datenminimierung",
+          "Datensparsamkeit"
+        ]
+      }
+    ],
+    "explanation": "Puffer schützt die Vorbereitung; Datenminimierung (DSGVO) schützt den Kunden.",
+    "sourceIds": [
+      "SRC-025",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-013",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-04",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
+    "prompt": "Was ist ein Wenn-dann-Plan (Implementation Intention)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ein Plan der Form „Wenn Situation X eintritt, dann tue ich Y“"
+      },
+      {
+        "id": "b",
+        "text": "Ein Versprechen, das der Setter vom Kunden einfordert",
+        "misconception": "Der Plan wird vom Kunden selbst gefasst, nicht eingefordert.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "Eine Rabattzusage für den Fall, dass der Kunde erscheint",
+        "misconception": "Das ist ein Anreiz, kein Plan – und außerhalb der Setter-Rolle.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Eine automatische Erinnerung des CRM",
+        "misconception": "Erinnerungen sind ein eigenes Werkzeug.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Implementation Intentions verknüpfen eine Situation mit einer konkreten Handlung (Gollwitzer & Sheeran 2006).",
+    "sourceIds": [
+      "SRC-056"
+    ]
+  },
+  {
+    "id": "Q-M07-014",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Die Meta-Analyse von Gollwitzer und Sheeran (2006) zeigt, dass Wenn-dann-Pläne die Show Rate von Verkaufsterminen um 65 % erhöhen.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "d = 0,65 ist ein standardisierter Effekt über sehr verschiedene Ziele, keine Prozentangabe, und es ging nicht um Verkaufstermine. Feldstudien mit Planungshinweisen fanden etwa 1–4 Prozentpunkte.",
+    "sourceIds": [
+      "SRC-056",
+      "SRC-236"
+    ]
+  },
+  {
+    "id": "Q-M07-015",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Schreibe eine Terminbestätigung für Frau Kaya (erfunden): Mittwoch, 21.10., 18:00 Uhr, 30 Minuten Videoberatung mit Energieberater Herrn Kraus. Baue genau einen Planungsimpuls ein.",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Nennt Datum oder Wochentag und Uhrzeit",
+        "points": 1,
+        "anyOf": [
+          [
+            "mittwoch",
+            "21.10",
+            "21. oktober"
+          ],
+          [
+            "18"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Nennt Format oder Dauer",
+        "points": 1,
+        "anyOf": [
+          [
+            "video",
+            "30 min",
+            "30-min",
+            "halbe stunde"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Enthält einen Planungsimpuls oder einen Weg zum Verschieben",
+        "points": 1,
+        "anyOf": [
+          [
+            "eintragen",
+            "kalender",
+            "falls",
+            "wenn etwas",
+            "dazwischen",
+            "verschieben"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Kein Druck oder Verpflichtungsformel",
+        "points": 1,
+        "forbidden": [
+          "versprechen sie",
+          "unbedingt",
+          "letzte chance",
+          "nur noch",
+          "kostet uns"
+        ]
+      }
+    ],
+    "sampleAnswer": "Perfekt, Frau Kaya: Mittwoch, 21.10., 18:00 Uhr, 30 Minuten per Video mit Herrn Kraus. Den Link schicke ich Ihnen gleich. Mögen Sie sich den Termin direkt eintragen? Falls etwas dazwischenkommt, schreiben Sie mir einfach.",
+    "requiresManualReview": true,
+    "explanation": "Eckdaten plus ein Impuls – mehr braucht es nicht. Der Selbstcheck erkennt nur Muster; prüfe zusätzlich, ob es wirklich nur ein Impuls ist.",
+    "sourceIds": [
+      "SRC-056",
+      "SRC-235"
+    ]
+  },
+  {
+    "id": "Q-M07-016",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "gespraechsanalyse",
+    "simulatedData": true,
+    "prompt": "Analysiere das Chat-Transkript (Simulation, erfundene Personen) und beantworte die drei Teilfragen.",
+    "material": {
+      "kind": "transcript",
+      "lines": [
+        {
+          "speaker": "setter",
+          "text": "Prima, Herr Albrecht! Passt Ihnen Dienstag um 19 Uhr oder Samstag um 10 Uhr besser?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Samstag 10 Uhr, da ist auch meine Frau da."
+        },
+        {
+          "speaker": "setter",
+          "text": "Super, dann Samstag!"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Ok. Wie lange dauert das denn und wo findet das statt?"
+        },
+        {
+          "speaker": "setter",
+          "text": "Samstag, 24.10., 10:00 Uhr, 45 Minuten per Video mit Frau Sommer – Sie und Ihre Frau. Mögen Sie sich den Termin gleich eintragen? Falls etwas dazwischenkommt, schreiben Sie mir einfach."
+        },
+        {
+          "speaker": "setter",
+          "text": "Und versprechen Sie mir bitte, dass Sie diesmal wirklich kommen – Frau Sommer plant extra Zeit für Sie ein."
+        }
+      ]
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Was fehlt in Zeile 3?",
+        "correct": "b",
+        "explanation": "Ohne Datum, Dauer, Format und Teilnehmende muss der Kunde nachfragen – genau das passiert in Zeile 4.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Nichts – kurze Nachrichten sind im Chat immer besser.",
+            "misconception": "Kurz ja, aber nicht auf Kosten der Eckdaten.",
+            "errorCategory": "unvollstaendig"
+          },
+          {
+            "id": "b",
+            "text": "Die Eckdaten: Datum, Dauer, Format und Teilnehmende."
+          },
+          {
+            "id": "c",
+            "text": "Ein Hinweis auf aktuelle Angebote.",
+            "misconception": "Werbung gehört nicht in die Bestätigung.",
+            "errorCategory": "rechtsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Wie ist Zeile 5 zu bewerten?",
+        "correct": "a",
+        "explanation": "Vollständige Eckdaten, ein Kalenderimpuls und ein Wenn-dann für Hindernisse.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gelungen: alle Eckdaten, ein Planungsimpuls und ein leichter Weg zum Verschieben."
+          },
+          {
+            "id": "b",
+            "text": "Zu lang – die Eckdaten wiederholt man nicht.",
+            "misconception": "Die Wiederholung macht aus einem Ja einen konkreten Plan.",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Problematisch, weil der Kunde eingeladen wird, abzusagen.",
+            "misconception": "Ein vereinbarter Verschiebeweg macht aus manchen No-Shows Verschiebungen.",
+            "errorCategory": "prozessfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Was ist das Problem an Zeile 6?",
+        "correct": "c",
+        "explanation": "Verpflichtungsformel und Schuld-Appell setzen unter Druck; ein Planungsimpuls lädt ein, er fordert nicht.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Kein Problem – Commitment erhöht die Show Rate nachweislich stark.",
+            "misconception": "Für eingeforderte Versprechen bei Vertriebsterminen gibt es keine belastbare Evidenz, und es ist Druck.",
+            "errorCategory": "ueberinterpretation"
+          },
+          {
+            "id": "b",
+            "text": "Nur der Tonfall ist zu förmlich.",
+            "misconception": "Das Problem ist der Inhalt, nicht die Förmlichkeit.",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Es fordert ein Versprechen ein und arbeitet mit Schuldgefühl – das ist Druck."
+          }
+        ]
+      }
+    ],
+    "explanation": "Eine gute Bestätigung ist vollständig und lädt zu einem Plan ein – ohne Versprechen und Schuld-Appelle.",
+    "sourceIds": [
+      "SRC-056",
+      "SRC-235",
+      "SRC-050"
+    ],
+    "tags": [
+      "gespraechsanalyse"
+    ]
+  },
+  {
+    "id": "Q-M07-017",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Milkman et al. (2013) ließen Beschäftigte Termindatum und Arzt für eine Vorsorgeuntersuchung aufschreiben. Wie ist das Ergebnis am ehrlichsten zusammengefasst?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Rate stieg von 6,2 % auf 7,2 % – relativ etwa 15 %, absolut etwa 1 Prozentpunkt; Gesundheitskontext"
+      },
+      {
+        "id": "b",
+        "text": "Die Teilnahme hat sich verdoppelt",
+        "misconception": "Das überzeichnet den Effekt deutlich.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "c",
+        "text": "Kein Effekt – Planungshinweise wirken nie",
+        "misconception": "Ein kleiner, signifikanter Effekt ist nicht „kein Effekt“.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Die Studie belegt den Effekt für Verkaufstermine",
+        "misconception": "Es ging um Vorsorgeuntersuchungen, nicht um Vertrieb.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Große Studie, kleiner absoluter Effekt, anderer Kontext – genau so sollte man Evidenz weitergeben.",
+    "sourceIds": [
+      "SRC-236"
+    ]
+  },
+  {
+    "id": "Q-M07-018",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Eine Kundin hat einem Termin und einer WhatsApp-Erinnerung zugestimmt. Welche Erinnerung ist am saubersten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Hallo Frau Kaya, hier ist Jonas von ThermoTal: kurze Erinnerung an Ihre Videoberatung morgen um 18 Uhr. Link: […]. Falls es nicht passt, schreiben Sie mir einfach.“"
+      },
+      {
+        "id": "b",
+        "text": "Dieselbe Erinnerung plus „PS: Diesen Monat 10 % auf alle Pakete!“",
+        "misconception": "Der Werbezusatz kann die ganze Nachricht zur Werbung machen.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Dieselbe Erinnerung plus „Bewerten Sie uns doch nach dem Termin mit 5 Sternen!“",
+        "misconception": "Auch Bewertungs- und Zufriedenheitsbitten gelten nach BGH als Werbung.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Eine Erinnerung per SMS, weil die öfter gelesen wird",
+        "misconception": "Vereinbart war WhatsApp – der Kanal wird nicht eigenmächtig gewechselt.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Reine Servicenachricht über den vereinbarten Kanal: Absender, Termin, Link, Verschiebeweg – sonst nichts.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-238",
+      "SRC-175",
+      "SRC-028"
+    ]
+  },
+  {
+    "id": "Q-M07-019",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die problematischen Zeilen dieser Erinnerungs-E-Mail.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Betreff: Erinnerung an Ihre Videoberatung morgen, 18:00 Uhr",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Guten Tag Herr Brenner, morgen um 18:00 Uhr sprechen Sie per Video mit Frau Sommer. Link: […]",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Übrigens: Melden Sie sich jetzt zu unserem Newsletter an und sichern Sie sich exklusive Angebote!",
+        "faulty": true,
+        "why": "Werbezusatz in einer Servicenachricht – Herr Brenner hat keiner Werbung zugestimmt."
+      },
+      {
+        "id": "l4",
+        "text": "Falls es nicht passt, antworten Sie einfach auf diese E-Mail.",
+        "faulty": false
+      },
+      {
+        "id": "l5",
+        "text": "Sollten Sie nicht erscheinen, entstehen unserem Team erhebliche Kosten.",
+        "faulty": true,
+        "why": "Kosten-/Schuld-Appell an einen privaten Interessenten – Druck statt Service."
+      }
+    ],
+    "explanation": "Erinnerungen enthalten nur die Erinnerung. Werbezusätze und Schuld-Appelle gehören nicht hinein.",
+    "sourceIds": [
+      "SRC-238",
+      "SRC-175",
+      "SRC-233",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-020",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Ein Kunde antwortet auf die Bestätigung: „Bitte keine WhatsApp-Erinnerungen, ich merk mir das selbst.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Alles klar, dann gibt es keine Erinnerung. Falls Sie doch verschieben müssen, schreiben Sie einfach.“ – und den Wunsch im CRM dokumentieren",
+        "quality": "best",
+        "feedback": "Wunsch sofort umgesetzt und dokumentiert, Weg zum Verschieben bleibt offen."
+      },
+      {
+        "id": "b",
+        "text": "Trotzdem eine kurze Erinnerung schicken – das ist ja im Interesse des Kunden",
+        "quality": "unacceptable",
+        "feedback": "Ignoriert den ausdrücklichen Wunsch.",
+        "misconception": "Gute Absicht rechtfertigt keinen Kontakt gegen den erklärten Willen.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Stattdessen am Vortag anrufen",
+        "quality": "poor",
+        "feedback": "Kanalwechsel gegen den erkennbaren Wunsch, nicht erinnert zu werden.",
+        "misconception": "Der Wunsch betrifft die Erinnerung, nicht nur den Kanal.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Okay“ schreiben, aber im CRM nichts eintragen",
+        "quality": "acceptable",
+        "feedback": "Richtig reagiert, aber ohne Dokumentation schickt das System oder ein Kollege trotzdem eine Erinnerung.",
+        "misconception": "Ein Wunsch, der nicht dokumentiert ist, wird im Team nicht beachtet.",
+        "errorCategory": "unvollstaendig"
+      }
+    ],
+    "explanation": "Kontaktwünsche gelten – und werden dokumentiert, damit Automatisierungen und Kollegen sie beachten.",
+    "sourceIds": [
+      "SRC-025",
+      "SRC-028",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-021",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Weil eine Terminbestätigung eine Servicenachricht ist, darf man darin ohne Einwilligung beliebig für weitere Produkte werben.",
+    "correct": false,
+    "errorCategory": "rechtsfehler",
+    "explanation": "Der BGH behandelte Werbezusätze in automatischen Bestätigungs-E-Mails (2015) und Zufriedenheitsumfragen in Rechnungs-E-Mails (2018) als Werbung. Der Servicecharakter „deckt“ keine Werbung.",
+    "sourceIds": [
+      "SRC-238",
+      "SRC-175",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M07-022",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jede Nachricht ein (Stand der Kursrecherche; im Projekt mit dem Auftraggeber klären).",
+    "left": [
+      {
+        "id": "m1",
+        "text": "„Kurze Erinnerung: Ihre Videoberatung ist morgen um 18 Uhr. Link: […]“"
+      },
+      {
+        "id": "m2",
+        "text": "„Erinnerung an morgen 18 Uhr – PS: Nur diese Woche 10 % Rabatt!“"
+      },
+      {
+        "id": "m3",
+        "text": "„Wie zufrieden waren Sie mit uns? Bitte bewerten Sie uns!“"
+      },
+      {
+        "id": "m4",
+        "text": "„Ihr Termin morgen muss leider verschoben werden – passt Ihnen Montag 18 Uhr?“"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Reine Servicenachricht zum vereinbarten Termin"
+      },
+      {
+        "id": "r2",
+        "text": "Mischnachricht – kann insgesamt als Werbung gelten"
+      },
+      {
+        "id": "r3",
+        "text": "Zufriedenheitsbitte – nach BGH Werbung"
+      },
+      {
+        "id": "r4",
+        "text": "Servicenachricht zur Terminänderung"
+      }
+    ],
+    "pairs": {
+      "m1": "r1",
+      "m2": "r2",
+      "m3": "r3",
+      "m4": "r4"
+    },
+    "explanation": "Service bleibt Service, solange nichts beworben wird. Werbe- und Bewertungszusätze verändern den Charakter der Nachricht.",
+    "sourceIds": [
+      "SRC-238",
+      "SRC-175",
+      "SRC-240"
+    ]
+  },
+  {
+    "id": "Q-M07-023",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie antwortest du?",
+    "situation": "Kundin, zwei Tage vor dem Termin: „Ich schaffe Donnerstag leider nicht, sorry!“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Danke, dass Sie Bescheid geben! Passt Ihnen Montag 18 Uhr oder Mittwoch 19:30 Uhr? Und falls das Thema gerade generell nicht passt, ist das auch völlig okay.“",
+        "quality": "best",
+        "feedback": "Dank, zwei Optionen, offene Tür für ein Nein."
+      },
+      {
+        "id": "b",
+        "text": "„Schade, der Termin war extra für Sie reserviert.“",
+        "quality": "poor",
+        "feedback": "Vorwurf – lehrt die Kundin, beim nächsten Mal nicht abzusagen, sondern wegzubleiben.",
+        "misconception": "Schuldgefühle machen Absagen unattraktiv, nicht Termine verbindlicher.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Kein Problem, melden Sie sich, wenn es passt.“",
+        "quality": "acceptable",
+        "feedback": "Freundlich, aber ohne neuen Vorschlag versandet der Kontakt oft.",
+        "misconception": "Freundlichkeit allein ersetzt keinen nächsten Schritt.",
+        "errorCategory": "unvollstaendig"
+      },
+      {
+        "id": "d",
+        "text": "„Wenn Sie Donnerstag nicht kommen, kann ich Ihnen erst im Januar wieder etwas anbieten.“",
+        "quality": "unacceptable",
+        "feedback": "Künstliche Knappheit als Druck.",
+        "misconception": "Erfundene Knappheit ist Täuschung.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Absagen sind Information. Wer dafür dankt und es leicht macht, bekommt beim nächsten Mal wieder Bescheid.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-052"
+    ]
+  },
+  {
+    "id": "Q-M07-024",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Kunde verschiebt zum zweiten Mal. Was ist der beste nächste Schritt?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Offen fragen, ob er lieber einen neuen Termin möchte oder das Thema erst einmal ruhen soll – und seine Antwort umsetzen"
+      },
+      {
+        "id": "b",
+        "text": "Ihn als „unzuverlässig“ markieren und nicht mehr kontaktieren",
+        "misconception": "Ein Urteil statt einer Frage – und vielleicht ist das Thema für ihn weiter wichtig.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Sofort drei neue Termine in einer Nachricht vorschlagen, damit er nicht entkommt",
+        "misconception": "Mehr Druck beantwortet die eigentliche Frage nicht.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "Den Grund für beide Verschiebungen genau erfragen und im CRM ausführlich festhalten",
+        "misconception": "Der Kunde muss sich nicht rechtfertigen; Datenminimierung gilt.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Mehrfachverschiebung ist ein Signal – die Deutung überlässt du dem Kunden.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-025"
+    ]
+  },
+  {
+    "id": "Q-M07-025",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken.",
+    "text": "Wird ein Termin verschoben, {{g1}} man die bestehende Kalendereinladung, statt eine neue zu senden. Einen Grund für die Verschiebung notiert man nur, wenn der Kunde ihn {{g2}} hat.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "aktualisiert",
+          "ändert",
+          "aktualisieren"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "genannt",
+          "gesagt",
+          "mitgeteilt"
+        ]
+      }
+    ],
+    "explanation": "So bleibt kein „Geistertermin“ beim Kunden stehen, und das CRM enthält keine Vermutungen.",
+    "sourceIds": [
+      "SRC-241",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-026",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Welche Nachricht schickst du am nächsten Morgen?",
+    "situation": "Herr Oberle ist nicht zur Videoberatung erschienen und hat auf deine kurze Nachricht zehn Minuten nach Beginn nicht reagiert.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Hallo Herr Oberle, schade, dass es gestern nicht geklappt hat – ich hoffe, es ist alles in Ordnung. Möchten Sie einen neuen Termin, oder hat sich bei Ihnen etwas geändert? Beides ist völlig okay.“",
+        "quality": "best",
+        "feedback": "Wärme, kein Vorwurf, zwei gleichwertige Ausgänge."
+      },
+      {
+        "id": "b",
+        "text": "„Frau Sommer hat gestern 30 Minuten umsonst gewartet.“",
+        "quality": "unacceptable",
+        "feedback": "Schuld-Appell – beschämt und erschwert ein ehrliches Gespräch.",
+        "misconception": "Schuldgefühle erhöhen nicht die Verbindlichkeit, sondern das Schweigen.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "Gar nicht melden – wer nicht kommt, hat kein Interesse",
+        "quality": "poor",
+        "feedback": "Vorschnelle Deutung: Die meisten No-Shows haben banale Gründe.",
+        "misconception": "Ein No-Show ist kein Nein.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Ich habe Sie für morgen, 18 Uhr, neu eingetragen.“",
+        "quality": "unacceptable",
+        "feedback": "Termin ohne Zustimmung.",
+        "misconception": "Ein früheres Ja gilt nicht für einen neuen Termin.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Neugier statt Vorwurf: Der Check-in macht es leicht, zu antworten – mit einem neuen Termin oder einem Nein.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-052",
+      "SRC-234"
+    ]
+  },
+  {
+    "id": "Q-M07-027",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die problematischen Zeilen in dieser No-Show-Nachfass-Sequenz.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "18:10 Uhr: „Frau Sommer ist im Videoraum – klappt es heute noch? Wenn nicht, kein Problem.“",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Nächster Morgen: „Ich hoffe, es ist alles in Ordnung. Möchten Sie einen neuen Termin, oder hat sich etwas geändert?“",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Mittag: dritter Anruf, nachdem zwei Anrufe unbeantwortet blieben",
+        "faulty": true,
+        "why": "Anrufserie nach Schweigen – Druck und mögliche unzumutbare Belästigung."
+      },
+      {
+        "id": "l4",
+        "text": "Abend: „Letzte Chance! Morgen gibt es 10 % Rabatt, nur für Sie.“",
+        "faulty": true,
+        "why": "Künstliche Dringlichkeit und Rabattköder; außerdem Werbung ohne Einwilligung."
+      },
+      {
+        "id": "l5",
+        "text": "CRM: „Nicht erschienen, 2 Nachrichten ohne Antwort, Kontakt ruht.“",
+        "faulty": false
+      }
+    ],
+    "explanation": "Höchstens zwei freundliche Nachrichten über den vereinbarten Kanal, dann ruht der Kontakt – neutral dokumentiert.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-028",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "fallstudie",
+    "simulatedData": true,
+    "prompt": "Lies die Fallstudie (Simulation) und beantworte die drei Teilfragen.",
+    "material": {
+      "kind": "text",
+      "body": "Frau Petersen (erfunden) hatte eine Videoberatung zu einem Stromspeicher gebucht und einer Erinnerung per WhatsApp zugestimmt. Sie ist nicht erschienen. Auf den freundlichen Check-in am nächsten Morgen antwortet sie: „Danke für die nette Nachricht! Ich hatte den Termin echt vergessen, unser Kleiner hatte Fieber. Ehrlich gesagt will mein Mann jetzt erst den Winter abwarten. Melden Sie sich doch gern im März noch mal.“\n\nDie Teamleitung schlägt vor: „Biete ihr einen Termin diese Woche an, sag, dass die Preise im Frühjahr steigen.“ Ob die Preise steigen, weiß niemand im Team."
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Wie antwortest du Frau Petersen?",
+        "correct": "b",
+        "explanation": "Ihr Wunsch ist klar: später, im März. Den respektierst du und sicherst die Zustimmung zum späteren Kontakt.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mit dem Vorschlag der Teamleitung: Termin diese Woche, Hinweis auf steigende Preise.",
+            "misconception": "Unbelegte Preisprognose als Druck gegen einen klar geäußerten Wunsch.",
+            "errorCategory": "ethikfehler"
+          },
+          {
+            "id": "b",
+            "text": "„Gute Besserung für Ihren Kleinen! Dann melde ich mich gern im März per WhatsApp – passt das so?“"
+          },
+          {
+            "id": "c",
+            "text": "Gar nicht mehr antworten, weil sie jetzt keinen Termin will.",
+            "misconception": "Sie hat ausdrücklich um einen späteren Kontakt gebeten.",
+            "errorCategory": "kommunikationsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Was notierst du im CRM?",
+        "correct": "a",
+        "explanation": "Neutral, datensparsam, mit dem vereinbarten nächsten Schritt; das Fieber des Kindes ist ein Gesundheitsdetail, das nicht nötig ist.",
+        "options": [
+          {
+            "id": "a",
+            "text": "„Termin nicht wahrgenommen (privater Grund). Mitentscheider möchte Winter abwarten. Kontakt per WhatsApp im März gewünscht – Wiedervorlage 01.03.“"
+          },
+          {
+            "id": "b",
+            "text": "„Kind krank (Fieber), Mann blockiert, eher unzuverlässig.“",
+            "misconception": "Gesundheitsdetail plus Wertungen – weder nötig noch fair.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "c",
+            "text": "„Kein Interesse.“",
+            "misconception": "Falsch: Sie hat Interesse, nur später.",
+            "errorCategory": "qualifizierungsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Wie gehst du mit dem Vorschlag der Teamleitung um?",
+        "correct": "c",
+        "explanation": "Grenzen gelten auch unter Teamdruck: keine erfundenen Prognosen, der Kundenwunsch geht vor.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Umsetzen – die Teamleitung trägt die Verantwortung.",
+            "misconception": "Du bist für deine eigenen Aussagen verantwortlich.",
+            "errorCategory": "ethikfehler"
+          },
+          {
+            "id": "b",
+            "text": "Umsetzen, aber vorsichtiger formulieren: „Die Preise könnten steigen.“",
+            "misconception": "Auch als Möglichkeit formuliert bleibt es ein unbelegtes Druckmittel.",
+            "errorCategory": "ethikfehler"
+          },
+          {
+            "id": "c",
+            "text": "Sachlich erklären, dass die Kundin März gewünscht hat und eine unbelegte Preisprognose Druck wäre – und den März-Kontakt einplanen."
+          }
+        ]
+      }
+    ],
+    "explanation": "No-Show-Recovery heißt: verstehen, den Wunsch des Kunden umsetzen, neutral dokumentieren – auch wenn intern jemand Druck machen möchte.",
+    "sourceIds": [
+      "SRC-025",
+      "SRC-019",
+      "SRC-050"
+    ],
+    "tags": [
+      "fallstudie",
+      "no-show"
+    ]
+  },
+  {
+    "id": "Q-M07-029",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Elemente gehören zu einer No-Show-Recovery ohne Druck? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ein warmer Check-in ohne Vorwurf"
+      },
+      {
+        "id": "b",
+        "text": "Zwei gleichwertige Ausgänge: neuer Termin oder ehrliches Nein"
+      },
+      {
+        "id": "c",
+        "text": "Den Grund behutsam und mit Begründung erfragen – Antwort freiwillig"
+      },
+      {
+        "id": "d",
+        "text": "Nach höchstens zwei unbeantworteten Nachrichten den Kontakt ruhen lassen"
+      },
+      {
+        "id": "e",
+        "text": "Ein Rabatt, der nur heute gilt",
+        "misconception": "Rabattköder mit Frist sind künstliche Dringlichkeit – und außerhalb der Rolle.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "f",
+        "text": "Ein Hinweis darauf, wie viel Zeit die Beraterin verloren hat",
+        "misconception": "Schuld-Appell statt Verständnis.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation": "Wärme, Wahlfreiheit, behutsames Verstehen und klare Grenzen – Rabatte und Schuld-Appelle gehören nicht dazu.",
+    "sourceIds": [
+      "SRC-052",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-030",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Schritte nach einem No-Show in eine sinnvolle Reihenfolge.",
+    "items": [
+      {
+        "id": "doc",
+        "text": "Ergebnis neutral im CRM dokumentieren"
+      },
+      {
+        "id": "short",
+        "text": "Kurz nach Terminbeginn: „Klappt es heute noch?“"
+      },
+      {
+        "id": "path",
+        "text": "Je nach Grund: neuen Termin vereinbaren, späteren Kontakt absprechen oder Nein akzeptieren"
+      },
+      {
+        "id": "checkin",
+        "text": "Am nächsten Tag: freundlicher Check-in mit zwei Ausgängen"
+      }
+    ],
+    "correctOrder": [
+      "short",
+      "checkin",
+      "path",
+      "doc"
+    ],
+    "explanation": "Erst kurz nachfragen, dann freundlich einchecken, den passenden Weg gehen und alles neutral dokumentieren.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-031",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Simulierter CRM-Eintrag nach einem No-Show-Check-in: Setze die Felder korrekt.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Markus Oberle (erfunden)"
+      },
+      {
+        "label": "Verlauf",
+        "value": "Videoberatung Di 20.10., 18:00 nicht wahrgenommen; 18:10 Nachricht ohne Antwort."
+      },
+      {
+        "label": "Chat 21.10.",
+        "value": "„Sorry, Spätschicht übernommen und Termin vergessen. Thema ist aber noch aktuell. Meine Frau will diesmal dabei sein. Samstag 10 Uhr passt. Bitte wieder per WhatsApp erinnern.“ Neuer Termin Sa 24.10., 10:00 bestätigt."
+      }
+    ],
+    "fields": [
+      {
+        "id": "status",
+        "label": "Lead-Status",
+        "options": [
+          "No-Show – kein Interesse",
+          "Termin gebucht",
+          "Nurturing",
+          "Disqualifiziert"
+        ],
+        "correct": "Termin gebucht"
+      },
+      {
+        "id": "authority",
+        "label": "Mitentscheiderin nimmt teil",
+        "options": [
+          "Ja",
+          "Nein",
+          "Nicht erfragt"
+        ],
+        "correct": "Ja"
+      },
+      {
+        "id": "reminder",
+        "label": "Erinnerung",
+        "options": [
+          "Keine",
+          "WhatsApp (vereinbart)",
+          "SMS und Anruf",
+          "E-Mail-Newsletter"
+        ],
+        "correct": "WhatsApp (vereinbart)"
+      },
+      {
+        "id": "reason",
+        "label": "Notiz zum Erst-Termin",
+        "options": [
+          "Unzuverlässig",
+          "Nicht wahrgenommen (Schichtwechsel)",
+          "Hat kein Interesse",
+          "Nicht erfragt"
+        ],
+        "correct": "Nicht wahrgenommen (Schichtwechsel)"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Neuer Termin ist bestätigt, die Ehefrau nimmt teil, Erinnerungskanal ist vereinbart; der Grund wird neutral notiert, ohne Wertung.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-025"
+    ]
+  },
+  {
+    "id": "Q-M07-032",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die problematischen Zeilen dieses Übergabeprotokolls.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Anlass: Website-Formular Wärmepumpe, 12.10., Kontaktweg WhatsApp",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Termin: Sa 24.10., 10:00, 45 Min. Video, Teilnehmende: Herr und Frau Oberle",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Budget: Haus sieht teuer aus, wird schon passen",
+        "faulty": true,
+        "why": "Vermutung statt Information – korrekt wäre „nicht erfragt“."
+      },
+      {
+        "id": "l4",
+        "text": "Kundenfrage (Ehefrau): Was kostet das nach Förderung?",
+        "faulty": false
+      },
+      {
+        "id": "l5",
+        "text": "Erst-Termin verpasst, weil Tochter Magen-Darm hatte – Familie wirkt chaotisch",
+        "faulty": true,
+        "why": "Unnötiges Gesundheitsdetail plus abwertende Interpretation; „privater Grund“ reicht."
+      }
+    ],
+    "explanation": "Ins Protokoll gehört nur Gesagtes – datensparsam und ohne Wertung.",
+    "sourceIds": [
+      "SRC-025",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M07-033",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Schreibe eine kurze Übergabenotiz (max. 5 Zeilen) aus diesem Chat-Auszug: „Ich hab den Termin wegen der Spätschicht verpennt … meine Frau will diesmal dabei sein, sie hat Fragen zu den Kosten. Abends ab halb acht oder samstags geht.“ Neuer Termin: Sa 24.10., 10:00, Video.",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Nennt den neuen Termin",
+        "points": 1,
+        "anyOf": [
+          [
+            "24.10",
+            "samstag",
+            "sa "
+          ],
+          [
+            "10"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Nennt die Teilnahme der Ehefrau",
+        "points": 1,
+        "anyOf": [
+          [
+            "frau",
+            "ehefrau",
+            "partnerin",
+            "mitentscheid"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Nennt die offene Kostenfrage für die Beratung",
+        "points": 1,
+        "anyOf": [
+          [
+            "kosten",
+            "preis"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Keine Wertungen über den Kunden",
+        "points": 1,
+        "forbidden": [
+          "unzuverlässig",
+          "verpennt",
+          "chaotisch",
+          "keinen bock",
+          "faul"
+        ]
+      }
+    ],
+    "sampleAnswer": "Erst-Termin 20.10. nicht wahrgenommen (Schichtwechsel). Neuer Termin: Sa 24.10., 10:00, Video. Ehefrau nimmt teil (Mitentscheiderin). Offene Frage: Kosten. Zeitfenster künftig: abends ab 19:30 oder samstags.",
+    "requiresManualReview": true,
+    "explanation": "Fakten, Status und Kundenfragen – ohne Wertung und ohne Umgangssprache aus dem Chat zu übernehmen.",
+    "sourceIds": [
+      "SRC-050",
+      "SRC-025"
+    ]
+  },
+  {
+    "id": "Q-M07-034",
+    "moduleId": "M07",
+    "objectiveId": "LO-M07-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Warum gilt die Regel „Schreib nur, was du dem Kunden auch zeigen könntest“?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Weil Betroffene nach der DSGVO Auskunft über ihre gespeicherten Daten verlangen können und Datenminimierung gilt"
+      },
+      {
+        "id": "b",
+        "text": "Weil CRM-Notizen grundsätzlich öffentlich sind",
+        "misconception": "CRM-Daten sind nicht öffentlich – aber auskunftspflichtig.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Weil Kunden das CRM jederzeit selbst bearbeiten dürfen",
+        "misconception": "Ein Bearbeitungsrecht im System gibt es so nicht; es geht um Auskunft und Berichtigung.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Weil es nur eine Höflichkeitsregel ohne rechtlichen Hintergrund ist",
+        "misconception": "Die Regel hat einen klaren DSGVO-Bezug.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Auskunftsrecht (Art. 15) und Datenminimierung (Art. 5) machen die Regel zu einem guten Prüfstein für jede Notiz.",
+    "sourceIds": [
+      "SRC-025"
+    ]
+  }
+]

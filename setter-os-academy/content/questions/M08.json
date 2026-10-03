@@ -1,0 +1,1819 @@
+[
+  {
+    "id": "Q-M08-001",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
+    "prompt": "Eine Interessentin (erfunden) fragt einen Beratungstermin für eine Wärmepumpe an. Welches CRM-Objekt bildet die konkrete Verkaufschance ab?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Kontakt – die Person ist ja die Verkaufschance.",
+        "misconception": "Person und Verkaufschance werden verwechselt; eine Person kann mehrere oder keine Deals haben.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Der Deal bzw. die Opportunity, verknüpft mit dem Kontakt."
+      },
+      {
+        "id": "c",
+        "text": "Eine Aufgabe „Termin“.",
+        "misconception": "Aufgaben sind geplante Tätigkeiten, keine Verkaufschancen.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Eine Notiz am Unternehmensdatensatz.",
+        "misconception": "Notizen dokumentieren, sie bilden keinen Verkaufsprozess mit Phasen ab.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Kontakt = Person, Unternehmen = Organisation, Deal/Opportunity = konkrete Verkaufschance mit Phase, Aufgabe = geplante Tätigkeit. Eine Person kann mehrere Deals haben.",
+    "sourceIds": [
+      "SRC-273",
+      "SRC-275"
+    ]
+  },
+  {
+    "id": "Q-M08-002",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jeden CRM-Begriff seiner Bedeutung zu.",
+    "left": [
+      {
+        "id": "k",
+        "text": "Kontakt"
+      },
+      {
+        "id": "d",
+        "text": "Deal / Opportunity"
+      },
+      {
+        "id": "a",
+        "text": "Aktivität"
+      },
+      {
+        "id": "t",
+        "text": "Aufgabe"
+      },
+      {
+        "id": "p",
+        "text": "Pipeline"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Eine Person mit ihren Kontaktdaten und Einwilligungen"
+      },
+      {
+        "id": "r2",
+        "text": "Eine konkrete Verkaufschance, die Phasen durchläuft"
+      },
+      {
+        "id": "r3",
+        "text": "Etwas, das bereits passiert ist (Anruf, Chat, E-Mail)"
+      },
+      {
+        "id": "r4",
+        "text": "Etwas, das jemand bis zu einem Termin tun soll"
+      },
+      {
+        "id": "r5",
+        "text": "Die festgelegte Abfolge von Phasen eines Prozesses"
+      }
+    ],
+    "pairs": {
+      "k": "r1",
+      "d": "r2",
+      "a": "r3",
+      "t": "r4",
+      "p": "r5"
+    },
+    "explanation": "Die Objekte trennen Wer (Kontakt, Unternehmen), Was (Deal), Was ist passiert (Aktivität) und Was ist zu tun (Aufgabe).",
+    "sourceIds": [
+      "SRC-273",
+      "SRC-275",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-003",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Eine protokollierte Aktivität (z. B. „Chat geführt am 02.10.“) und eine Aufgabe (z. B. „Rückruf am 06.10.“) sind im CRM dasselbe.",
+    "correct": false,
+    "errorCategory": "begriffsfehler",
+    "explanation": "Aktivitäten dokumentieren Vergangenes, Aufgaben planen Zukünftiges mit Fälligkeit und Verantwortlichem. Wer nur Aktivitäten loggt, hat kein Follow-up-System.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-004",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Übungs-CRM (simuliert): Der Termin ist bestätigt – setze Deal-Phase, nächste Aufgabe und Fälligkeit.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Jonas Petersen (erfunden)"
+      },
+      {
+        "label": "Deal",
+        "value": "Wärmepumpe EFH, Pipeline „Beratung B2C“"
+      },
+      {
+        "label": "Aktuelle Phase",
+        "value": "Qualifiziert"
+      },
+      {
+        "label": "Chat 03.10.",
+        "value": "Bedarf, Eigentum, Zeitrahmen und Entscheider geklärt. Kunde hat „Di 08.10., 18:00 Uhr, Video“ ausdrücklich bestätigt."
+      }
+    ],
+    "fields": [
+      {
+        "id": "stage",
+        "label": "Deal-Phase",
+        "options": [
+          "Neu",
+          "Qualifiziert",
+          "Termin vereinbart",
+          "Angebot versendet",
+          "Gewonnen",
+          "Verloren"
+        ],
+        "correct": "Termin vereinbart"
+      },
+      {
+        "id": "task",
+        "label": "Nächste Aufgabe",
+        "options": [
+          "Keine",
+          "Terminerinnerung senden",
+          "Angebot erstellen",
+          "Deal schließen"
+        ],
+        "correct": "Terminerinnerung senden"
+      },
+      {
+        "id": "due",
+        "label": "Fälligkeit der Aufgabe",
+        "options": [
+          "Sofort",
+          "Mo 07.10., ca. 24 h vor dem Termin",
+          "Nach dem Termin",
+          "In 30 Tagen"
+        ],
+        "correct": "Mo 07.10., ca. 24 h vor dem Termin"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Austrittskriterium „Termin ausdrücklich bestätigt“ erfüllt → Phase „Termin vereinbart“. Angebot ist Sache des Beraters; der Setter plant die Erinnerung rund 24 Stunden vorher.",
+    "sourceIds": [
+      "SRC-273",
+      "SRC-056",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-005",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Phasen einer einfachen Setter-Pipeline in die richtige Reihenfolge.",
+    "items": [
+      {
+        "id": "q",
+        "text": "Qualifiziert"
+      },
+      {
+        "id": "n",
+        "text": "Neu eingegangen"
+      },
+      {
+        "id": "s",
+        "text": "Termin wahrgenommen"
+      },
+      {
+        "id": "t",
+        "text": "Termin vereinbart"
+      },
+      {
+        "id": "k",
+        "text": "Kontakt aufgenommen"
+      }
+    ],
+    "correctOrder": [
+      "n",
+      "k",
+      "q",
+      "t",
+      "s"
+    ],
+    "explanation": "Eine Pipeline bildet den tatsächlichen Ablauf ab: Eingang → Kontakt → Qualifizierung → Termin → Termin wahrgenommen. Abschluss und Angebot liegen beim Closer/Berater.",
+    "sourceIds": [
+      "SRC-273",
+      "SRC-276",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-006",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Definition ist das beste Austrittskriterium für die Phase „Qualifiziert“?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Der Setter hat ein gutes Gefühl beim Lead.",
+        "misconception": "Gefühl ist nicht prüfbar; zwei Personen würden unterschiedlich entscheiden.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Alle Pflichtkriterien (z. B. Bedarf, Zeitrahmen, Entscheider) sind erfragt und im Datensatz dokumentiert."
+      },
+      {
+        "id": "c",
+        "text": "Der Lead hat auf mindestens drei Nachrichten geantwortet.",
+        "misconception": "Antwortmenge sagt nichts über Passung.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Der Lead hat nach dem Preis gefragt.",
+        "misconception": "Eine Preisfrage ist ein Interessesignal, kein erfülltes Kriterium.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Gute Phasenkriterien sind beobachtbar und prüfbar („alle Pflichtkriterien erfragt und notiert“), nicht Gefühl oder Aktivitätsmenge.",
+    "sourceIds": [
+      "SRC-276",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-007",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Übungs-CRM (simuliert): Der Lead hat ein hartes Kriterium nicht erfüllt – setze Phase, Verlustgrund und Folgeaktion.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Melanie Krüger (erfunden)"
+      },
+      {
+        "label": "Deal",
+        "value": "PV-Anlage, Pipeline „Beratung B2C“"
+      },
+      {
+        "label": "Chat 02.10.",
+        "value": "Wohnt zur Miete, Vermieter lehnt Dachnutzung ab. Fragt, ob es Balkonkraftwerke gibt – das Unternehmen bietet keine an. Bedankt sich freundlich."
+      }
+    ],
+    "fields": [
+      {
+        "id": "stage",
+        "label": "Deal-Phase",
+        "options": [
+          "Qualifiziert",
+          "Termin vereinbart",
+          "Nurturing",
+          "Verloren"
+        ],
+        "correct": "Verloren"
+      },
+      {
+        "id": "reason",
+        "label": "Verlustgrund",
+        "options": [
+          "Kein Interesse",
+          "Preis zu hoch",
+          "Hartes Kriterium nicht erfüllt: keine Dachnutzung möglich",
+          "Nicht erreicht"
+        ],
+        "correct": "Hartes Kriterium nicht erfüllt: keine Dachnutzung möglich"
+      },
+      {
+        "id": "next",
+        "label": "Folgeaktion",
+        "options": [
+          "In 3 Monaten erneut anschreiben",
+          "Keine weitere Werbung, Datensatz nach Löschregel behandeln",
+          "Termin trotzdem anbieten",
+          "An anderen Setter übergeben"
+        ],
+        "correct": "Keine weitere Werbung, Datensatz nach Löschregel behandeln"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Der präzise Verlustgrund macht Pipeline-Auswertungen ehrlich; „Kein Interesse“ wäre falsch. Ohne Zweck (kein passendes Angebot) gibt es keinen Grund für Wiedervorlagen – die Daten werden nach Löschregel behandelt (Art. 5 Abs. 1 lit. e).",
+    "sourceIds": [
+      "SRC-261",
+      "SRC-275",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-008",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die problematischen Zeilen dieser CRM-Gesprächsnotiz (simuliert).",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "03.10., WhatsApp: Kundin meldet sich auf Formularanfrage „Wärmepumpe“ vom 01.10.",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Bedarf (Zitat): „Die Gasheizung ist 24 Jahre alt, ich will vor dem Winter Klarheit.“",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Wirkt etwas schwierig und geizig, lieber nicht zu viel Zeit investieren.",
+        "faulty": true,
+        "why": "Abwertende Bewertung der Person statt Fakten – unprofessionell und auskunftspflichtig (Art. 15): Die Kundin könnte diese Notiz lesen."
+      },
+      {
+        "id": "l4",
+        "text": "Ehemann sei an Krebs erkrankt, deshalb wenig Zeit.",
+        "faulty": true,
+        "why": "Gesundheitsdaten sind besonders geschützt (Art. 9 DSGVO) und für die Terminvereinbarung nicht erforderlich – Datenminimierung. Notiert wird höchstens „bevorzugt kurze Abendtermine“."
+      },
+      {
+        "id": "l5",
+        "text": "Vereinbart: Video-Termin Do 10.10., 18:00, Erinnerung am 09.10.",
+        "faulty": false
+      },
+      {
+        "id": "l6",
+        "text": "Budget: bestimmt hoch, großes Haus.",
+        "faulty": true,
+        "why": "Vermutung statt Information – korrekt wäre „nicht erfragt“."
+      }
+    ],
+    "explanation": "Notizen enthalten Gesagtes, Vereinbartes und Offenes – sachlich, ohne Vermutungen, Bewertungen der Person oder unnötige sensible Details.",
+    "sourceIds": [
+      "SRC-261",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-009",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Übungs-CRM (simuliert): Dokumentiere Kanal, Einwilligung und Herkunft des neuen Kontakts korrekt.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Ole Hansen (erfunden)"
+      },
+      {
+        "label": "Eingang",
+        "value": "Website-Formular „Rückruf Solar“, 02.10., 19:14 Uhr"
+      },
+      {
+        "label": "Formular",
+        "value": "Checkbox angehakt: „Ja, ich möchte telefonisch zu meiner Anfrage kontaktiert werden.“ Newsletter-Checkbox nicht angehakt."
+      }
+    ],
+    "fields": [
+      {
+        "id": "source",
+        "label": "Herkunft",
+        "options": [
+          "Unbekannt",
+          "Website-Formular „Rückruf Solar“, 02.10.",
+          "Gekaufte Liste",
+          "Empfehlung"
+        ],
+        "correct": "Website-Formular „Rückruf Solar“, 02.10."
+      },
+      {
+        "id": "phone",
+        "label": "Telefonkontakt zur Anfrage",
+        "options": [
+          "Erlaubt (Rückrufwunsch, Formular 02.10.)",
+          "Nicht erlaubt",
+          "Nicht erfragt"
+        ],
+        "correct": "Erlaubt (Rückrufwunsch, Formular 02.10.)"
+      },
+      {
+        "id": "news",
+        "label": "Newsletter / Werbung per E-Mail",
+        "options": [
+          "Eingewilligt",
+          "Keine Einwilligung",
+          "Automatisch mit Anfrage erteilt"
+        ],
+        "correct": "Keine Einwilligung"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Herkunft und Einwilligungen werden mit Datum und Quelle dokumentiert – nur so ist Rechenschaft möglich (Art. 5 Abs. 2, Art. 7 Abs. 1; für Telefonwerbung § 7a UWG). Eine Anfrage ist keine Newsletter-Einwilligung.",
+    "sourceIds": [
+      "SRC-261",
+      "SRC-020",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M08-010",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Angaben gehören in eine gute Gesprächsnotiz? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Datum und Kanal des Gesprächs"
+      },
+      {
+        "id": "b",
+        "text": "Konkrete Vereinbarung mit Termin"
+      },
+      {
+        "id": "c",
+        "text": "Offene Frage des Kunden, die der Berater klären soll"
+      },
+      {
+        "id": "d",
+        "text": "Deine Einschätzung, ob der Kunde sympathisch ist",
+        "misconception": "Persönliche Bewertungen sind keine Fakten und für den Prozess nicht erforderlich.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "e",
+        "text": "Private Details, die der Kunde nebenbei erzählt hat (Urlaub, Familienstreit)",
+        "misconception": "Datenminimierung: nur Daten, die für den Zweck erforderlich sind.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Fakten mit Datum, Kundenaussagen (gern als Zitat), Vereinbarungen und offene Punkte. Vermutungen und nicht erforderliche Privatdetails gehören nicht hinein.",
+    "sourceIds": [
+      "SRC-261",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-011",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Was notierst du im CRM?",
+    "situation": "Ein Kunde erzählt im Chat, er sei nach einer Operation noch krankgeschrieben und könne deshalb nur vormittags telefonieren.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Krankgeschrieben nach OP, nur vormittags erreichbar.“",
+        "quality": "poor",
+        "feedback": "Die Gesundheitsangabe ist für die Terminplanung nicht erforderlich (Datenminimierung, Art. 9 DSGVO).",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "b",
+        "text": "„Bevorzugt Telefontermine vormittags.“",
+        "quality": "best",
+        "feedback": "Neutral, ausreichend für den Zweck, keine sensiblen Daten."
+      },
+      {
+        "id": "c",
+        "text": "Gar nichts notieren.",
+        "quality": "acceptable",
+        "feedback": "Datensparsam, aber der Berater kennt die Terminpräferenz nicht."
+      },
+      {
+        "id": "d",
+        "text": "„Gesundheitlich angeschlagen – Abschlusschance gering.“",
+        "quality": "unacceptable",
+        "feedback": "Sensible Daten plus Spekulation über die Person.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Nur Erforderliches dokumentieren und Gesundheitsangaben vermeiden; die für den Termin relevante Information lässt sich neutral formulieren.",
+    "sourceIds": [
+      "SRC-261",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-012",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Übungs-CRM (simuliert): Prüfe den möglichen Dubletten-Treffer und entscheide über Neuanlage, Zusammenführung und Kennzeichnung.",
+    "record": [
+      {
+        "label": "Neuer Formulareingang",
+        "value": "Sabine Wolff, s.wolff@example.org, 0151 2345678 (erfunden)"
+      },
+      {
+        "label": "Vorhandener Kontakt",
+        "value": "Sabine Wolf, s.wolff@example.org, 0151 2345678, Deal „Speicher“ von Mai, Werbewiderspruch vom 12.06."
+      }
+    ],
+    "fields": [
+      {
+        "id": "match",
+        "label": "Bewertung",
+        "options": [
+          "Andere Person – neu anlegen",
+          "Sehr wahrscheinlich dieselbe Person (gleiche E-Mail und Nummer)",
+          "Unklar – ignorieren"
+        ],
+        "correct": "Sehr wahrscheinlich dieselbe Person (gleiche E-Mail und Nummer)"
+      },
+      {
+        "id": "action",
+        "label": "Aktion",
+        "options": [
+          "Neuen Kontakt anlegen",
+          "Zusammenführen, korrekte Schreibweise beim Kunden bestätigen",
+          "Alten Kontakt löschen",
+          "Beide behalten"
+        ],
+        "correct": "Zusammenführen, korrekte Schreibweise beim Kunden bestätigen"
+      },
+      {
+        "id": "optout",
+        "label": "Werbewiderspruch nach dem Zusammenführen",
+        "options": [
+          "Bleibt bestehen",
+          "Entfällt durch neue Anfrage",
+          "Wird zurückgesetzt"
+        ],
+        "correct": "Bleibt bestehen"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Gleiche E-Mail und Telefonnummer sind starke Dublettenmerkmale; der Namensunterschied ist ein Tippfehler-Verdacht, den man klärt statt rät. Ein Widerspruch gegen Direktwerbung bleibt wirksam (Art. 21 Abs. 3); die neue Anfrage darf beantwortet, aber nicht als Werbe-Erlaubnis gewertet werden.",
+    "sourceIds": [
+      "SRC-263",
+      "SRC-277",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-013",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Im CRM steht bei 40 % der Kontakte noch die Telefonnummer von vor drei Jahren, viele sind nicht mehr gültig. Welche Datenqualitätsdimension ist vor allem betroffen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Vollständigkeit",
+        "misconception": "Das Feld ist ja gefüllt – das Problem ist sein Alter.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Aktualität (und damit Richtigkeit)"
+      },
+      {
+        "id": "c",
+        "text": "Eindeutigkeit",
+        "misconception": "Eindeutigkeit betrifft Dubletten, nicht veraltete Werte.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Zugriffsschutz",
+        "misconception": "Sicherheit ist wichtig, aber hier nicht das Problem.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Daten können einmal richtig gewesen sein und trotzdem veralten. Aktualität ist eine eigene Dimension; Art. 5 Abs. 1 lit. d verlangt zudem sachlich richtige und erforderlichenfalls aktuelle Daten.",
+    "sourceIds": [
+      "SRC-277",
+      "SRC-261"
+    ]
+  },
+  {
+    "id": "Q-M08-014",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken.",
+    "text": "Bevor du einen Kontakt neu anlegst, suchst du nach {{g1}}. Für Status und Verlustgründe nutzt du {{g2}} statt Freitext. Was der Kunde nicht gesagt hat, trägst du als „{{g3}}“ ein.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "Dubletten",
+          "Dublette",
+          "Duplikaten",
+          "Duplikate"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "Auswahllisten",
+          "Auswahlfelder",
+          "Dropdowns",
+          "Picklisten",
+          "Auswahlliste"
+        ]
+      },
+      {
+        "id": "g3",
+        "accepted": [
+          "nicht erfragt",
+          "unbekannt",
+          "offen"
+        ]
+      }
+    ],
+    "explanation": "Dublettenprüfung vor Neuanlage, Pflichtfelder nur für Prozessnotwendiges und Auswahllisten statt Freitext sind die drei wirksamsten Hebel für Datenqualität.",
+    "sourceIds": [
+      "SRC-277",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-015",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Je mehr Pflichtfelder ein CRM hat, desto besser wird automatisch die Datenqualität.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Zu viele Pflichtfelder führen zu Platzhaltern („xxx“, „0“) und Ratewerten. Pflicht sollte nur sein, was der Prozess wirklich braucht – das entspricht auch der Datenminimierung.",
+    "sourceIds": [
+      "SRC-277",
+      "SRC-261",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-016",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Übungs-CRM (simuliert): Lege nach dem Chat die richtige Wiedervorlage an.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Aylin Demir (erfunden)"
+      },
+      {
+        "label": "Chat 03.10.",
+        "value": "Interesse an Beratung, möchte aber erst mit ihrem Partner sprechen. Sagt: „Melden Sie sich gern Mittwoch nach 17 Uhr noch mal per WhatsApp.“"
+      }
+    ],
+    "fields": [
+      {
+        "id": "task",
+        "label": "Aufgabe",
+        "options": [
+          "Keine – sie meldet sich schon",
+          "WhatsApp-Nachfrage: Gespräch mit Partner, Terminwunsch?",
+          "Anruf heute Abend",
+          "Angebot senden"
+        ],
+        "correct": "WhatsApp-Nachfrage: Gespräch mit Partner, Terminwunsch?"
+      },
+      {
+        "id": "due",
+        "label": "Fällig",
+        "options": [
+          "Heute",
+          "Mi 09.10., ab 17 Uhr",
+          "In 2 Wochen",
+          "Ohne Datum"
+        ],
+        "correct": "Mi 09.10., ab 17 Uhr"
+      },
+      {
+        "id": "stage",
+        "label": "Deal-Phase",
+        "options": [
+          "Verloren",
+          "In Kontakt / Entscheidung offen",
+          "Termin vereinbart",
+          "Gewonnen"
+        ],
+        "correct": "In Kontakt / Entscheidung offen"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Die Kundin hat Kanal und Zeitpunkt selbst genannt – genau das wird zur Aufgabe mit Fälligkeit. Ohne Aufgabe verschwindet der Lead; ein Anruf heute würde ihre Bitte ignorieren.",
+    "sourceIds": [
+      "SRC-056",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-017",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie gehst du vor?",
+    "situation": "Ein Lead hat vor fünf Tagen nach einem Infopaket gefragt, es erhalten und seitdem nicht mehr geantwortet. Im CRM ist keine Aufgabe angelegt.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Täglich nachfassen, bis eine Antwort kommt.",
+        "quality": "unacceptable",
+        "feedback": "Belästigend; ohne klare Grenze wird Nachfassen zu Druck.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "b",
+        "text": "Eine freundliche Nachfrage senden, dann eine Aufgabe für eine letzte Nachfrage in einer Woche anlegen; bleibt es still, Lead auf Nurturing bzw. nach Regel schließen.",
+        "quality": "best",
+        "feedback": "Klare Sequenz mit Abbruchkriterium, dokumentiert im CRM."
+      },
+      {
+        "id": "c",
+        "text": "Nichts tun – wer Interesse hat, meldet sich.",
+        "quality": "poor",
+        "feedback": "Ohne Follow-up gehen interessierte Leads verloren.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "d",
+        "text": "Eine Aufgabe „irgendwann nachfassen“ ohne Datum anlegen.",
+        "quality": "poor",
+        "feedback": "Aufgaben ohne Fälligkeit werden nicht erledigt.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "explanation": "Follow-up mit Erlaubnis, konkretem Zeitpunkt und Abbruchkriterium – kein Endlos-Nachfassen.",
+    "sourceIds": [
+      "SRC-005",
+      "SRC-056",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M08-018",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-05",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Regel macht ein Follow-up-System im CRM am zuverlässigsten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Jeder offene Kontakt hat genau eine nächste Aufgabe mit Datum und Verantwortlichem."
+      },
+      {
+        "id": "b",
+        "text": "Jeder Setter merkt sich seine Rückrufe selbst.",
+        "misconception": "Gedächtnis ist kein System; bei Krankheit oder Übergabe geht alles verloren.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "c",
+        "text": "Follow-ups werden einmal im Monat gesammelt erledigt.",
+        "misconception": "Zu späte Rückmeldungen verlieren Wirkung.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "d",
+        "text": "Möglichst viele Aufgaben pro Kontakt anlegen.",
+        "misconception": "Mehrere parallele Aufgaben verwirren; es braucht eine klare nächste Aktion.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Jeder offene Datensatz braucht genau eine nächste Aufgabe mit Fälligkeit und Verantwortlichem – oder einen bewusst geschlossenen Status.",
+    "sourceIds": [
+      "SRC-056",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-019",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "calculation",
+    "prompt": "Simulierte Daten: Von 120 offenen Follow-up-Aufgaben im Team sind 18 überfällig. Wie hoch ist die Überfälligkeitsquote in Prozent?",
+    "given": [
+      {
+        "label": "Offene Follow-up-Aufgaben",
+        "value": 120
+      },
+      {
+        "label": "Davon überfällig",
+        "value": 18
+      }
+    ],
+    "correctValue": 15,
+    "unit": "%",
+    "tolerance": 0.5,
+    "formula": "überfällige Aufgaben / offene Aufgaben × 100",
+    "simulatedData": true,
+    "explanation": "18 / 120 = 0,15 → 15 %. Eine steigende Quote zeigt, dass das System nicht mehr trägt (zu viele Aufgaben, unrealistische Fälligkeiten oder fehlende Abbruchregeln).",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-020",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Automatisierung ist im Setting sinnvoll und vertretbar?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Automatische Terminerinnerung 24 h vorher an Kunden, die den Termin bestätigt haben – mit Stopp, wenn der Termin abgesagt wird."
+      },
+      {
+        "id": "b",
+        "text": "Automatischer Werbe-Newsletter an alle Kontakte, die jemals ein Formular ausgefüllt haben.",
+        "misconception": "Ein Formular ist keine Werbeeinwilligung (UWG § 7).",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Automatische Nachfass-Sequenz mit 8 Nachrichten, die auch nach „Bitte keine Nachrichten mehr“ weiterläuft.",
+        "misconception": "Widerspruch muss jede Automation stoppen (Art. 21 Abs. 3).",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "KI formuliert Antworten und sendet sie ungeprüft als „persönliche“ Nachricht des Setters.",
+        "misconception": "Ungeprüfte KI-Inhalte und fehlende Transparenz; Mensch muss prüfen (vgl. Art. 50 KI-VO).",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Gute Automatisierung erledigt Routine (Erinnerung, Aufgabe anlegen) und stoppt bei Antwort, Widerspruch oder Terminabsage. Inhaltliche Aussagen und Entscheidungen bleiben beim Menschen.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-263",
+      "SRC-024",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-021",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die fehlerhaften Zeilen dieser Workflow-Beschreibung (simuliert).",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Start: Deal wechselt in Phase „Termin vereinbart“.",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Aktion: Bestätigungs-Mail mit Datum, Uhrzeit, Format und Verschiebe-Link senden.",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Aktion: Kontakt automatisch in alle Werbe-Listen aufnehmen.",
+        "faulty": true,
+        "why": "Ein Termin ist keine Einwilligung in Werbung; Listen nur mit eigener Rechtsgrundlage."
+      },
+      {
+        "id": "l4",
+        "text": "24 h vorher: Erinnerung senden – außer der Termin wurde abgesagt.",
+        "faulty": false
+      },
+      {
+        "id": "l5",
+        "text": "Antwortet der Kunde auf die Erinnerung, ignoriert der Workflow die Antwort.",
+        "faulty": true,
+        "why": "Antworten müssen eine Aufgabe für einen Menschen auslösen – sonst gehen Absagen oder Fragen verloren."
+      },
+      {
+        "id": "l6",
+        "text": "Keine Stoppbedingung bei Widerspruch nötig, da es ja Service-Mails sind.",
+        "faulty": true,
+        "why": "Werbliche Bestandteile und Nachfass-Sequenzen müssen bei Widerspruch sofort stoppen; Stoppbedingungen gehören in jede Automation."
+      }
+    ],
+    "explanation": "Jede Automation braucht saubere Startbedingungen, Stoppbedingungen und eine Person, die Ausnahmen bearbeitet.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-263",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-022",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Wenn eine KI im CRM Antwortvorschläge erstellt, darf der Setter sie ungeprüft versenden, weil die KI auf Unternehmensdaten trainiert ist.",
+    "correct": false,
+    "errorCategory": "prozessfehler",
+    "explanation": "Antwortvorschläge sind Entwürfe. Der Mensch prüft Inhalt, Ton und Grenzen (keine Preis- oder Rechtsaussagen) und verantwortet die Nachricht; bei KI-Interaktion gelten zudem Transparenzpflichten (Art. 50 KI-VO).",
+    "sourceIds": [
+      "SRC-024",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-023",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jedem Grundsatz aus Art. 5 DSGVO das passende CRM-Beispiel zu.",
+    "left": [
+      {
+        "id": "min",
+        "text": "Datenminimierung"
+      },
+      {
+        "id": "zweck",
+        "text": "Zweckbindung"
+      },
+      {
+        "id": "richt",
+        "text": "Richtigkeit"
+      },
+      {
+        "id": "speicher",
+        "text": "Speicherbegrenzung"
+      },
+      {
+        "id": "vertr",
+        "text": "Integrität und Vertraulichkeit"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Kein Pflichtfeld „Familienstand“, weil es für die Beratung nicht gebraucht wird"
+      },
+      {
+        "id": "r2",
+        "text": "Daten aus einer Serviceanfrage nicht ungefragt für Werbung eines anderen Produkts nutzen"
+      },
+      {
+        "id": "r3",
+        "text": "Eine falsch geschriebene E-Mail-Adresse nach Hinweis des Kunden sofort korrigieren"
+      },
+      {
+        "id": "r4",
+        "text": "Disqualifizierte Leads nach festgelegter Frist löschen"
+      },
+      {
+        "id": "r5",
+        "text": "CRM-Export nicht per privater Mail oder USB-Stick weitergeben"
+      }
+    ],
+    "pairs": {
+      "min": "r1",
+      "zweck": "r2",
+      "richt": "r3",
+      "speicher": "r4",
+      "vertr": "r5"
+    },
+    "explanation": "Die Grundsätze sind kein Theorieblock – sie entscheiden ganz praktisch, welche Felder, Notizen und Löschregeln ein CRM hat.",
+    "sourceIds": [
+      "SRC-261"
+    ]
+  },
+  {
+    "id": "Q-M08-024",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Eine Person füllt ein Formular „Beratungstermin anfragen“ aus. Auf welche Rechtsgrundlage stützt sich die Verarbeitung ihrer Daten, um diese Anfrage zu beantworten, typischerweise?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Art. 6 Abs. 1 lit. b – vorvertragliche Maßnahmen auf Anfrage der Person"
+      },
+      {
+        "id": "b",
+        "text": "Keine – Formulardaten sind frei verwendbar.",
+        "misconception": "Jede Verarbeitung braucht eine Rechtsgrundlage (Art. 6).",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Art. 6 Abs. 1 lit. d – lebenswichtige Interessen",
+        "misconception": "Gilt nur für den Schutz von Leben und Gesundheit.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Die Anfrage ist automatisch eine Einwilligung in jede Werbung.",
+        "misconception": "Einwilligungen müssen zweckbezogen und eindeutig sein; eine Anfrage erlaubt keine beliebige Werbung.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Art. 6 Abs. 1 lit. b deckt vorvertragliche Maßnahmen auf Anfrage der betroffenen Person. Für Werbung darüber hinaus braucht es eine eigene Grundlage (Einwilligung bzw. UWG-Regeln). Die konkrete Festlegung trifft der Verantwortliche.",
+    "sourceIds": [
+      "SRC-261",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M08-025",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Informationen muss der Verantwortliche nach Art. 13 DSGVO bei der Erhebung der Daten (z. B. im Formular über einen Link zur Datenschutzerklärung) bereitstellen? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Name und Kontaktdaten des Verantwortlichen"
+      },
+      {
+        "id": "b",
+        "text": "Zwecke und Rechtsgrundlage der Verarbeitung"
+      },
+      {
+        "id": "c",
+        "text": "Dauer der Speicherung oder Kriterien für ihre Festlegung"
+      },
+      {
+        "id": "d",
+        "text": "Hinweis auf die Rechte, u. a. Auskunft, Löschung und Beschwerde bei einer Aufsichtsbehörde"
+      },
+      {
+        "id": "e",
+        "text": "Die interne Abschlussquote des Vertriebsteams",
+        "misconception": "Transparenz betrifft die Datenverarbeitung, nicht Vertriebskennzahlen.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "f",
+        "text": "Den Namen des Setters, der den Lead bearbeiten wird",
+        "misconception": "Art. 13 verlangt den Verantwortlichen (das Unternehmen), nicht einzelne Mitarbeitende.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
+    "explanation": "Art. 13 verlangt u. a. Identität und Kontaktdaten des Verantwortlichen, Zwecke und Rechtsgrundlage, Empfänger, Speicherdauer bzw. Kriterien dafür und die Betroffenenrechte. Interne Kennzahlen gehören nicht dazu.",
+    "sourceIds": [
+      "SRC-262"
+    ]
+  },
+  {
+    "id": "Q-M08-026",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Du arbeitest als freiberuflicher Setter im CRM deines Auftraggebers und bearbeitest dessen Leads nach seinen Vorgaben. Was ist aus Datenschutzsicht typischerweise nötig?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Nichts – Freelancer sind vom Datenschutz ausgenommen.",
+        "misconception": "Die DSGVO gilt unabhängig von der Beschäftigungsform.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Ein Vertrag zur Auftragsverarbeitung (Art. 28) mit Weisungsbindung, Vertraulichkeit und Regeln zu Löschung/Rückgabe"
+      },
+      {
+        "id": "c",
+        "text": "Eine Einwilligung jedes Leads, dass du persönlich ihre Daten sehen darfst.",
+        "misconception": "Die Einbindung eines Auftragsverarbeiters braucht einen Vertrag, keine Einzeleinwilligungen.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Du exportierst die Leads auf deinen Laptop, damit du unabhängig arbeitest.",
+        "misconception": "Eigenmächtige Kopien verletzen Weisungsbindung und Vertraulichkeit.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Wer personenbezogene Daten weisungsgebunden im Auftrag verarbeitet, ist typischerweise Auftragsverarbeiter – dafür braucht es einen Vertrag nach Art. 28 Abs. 3 (AV-Vertrag). Die genaue Einordnung hängt vom Einzelfall ab; im Zweifel klärt das der Auftraggeber mit seiner Datenschutzberatung.",
+    "sourceIds": [
+      "SRC-264",
+      "SRC-271",
+      "SRC-268"
+    ]
+  },
+  {
+    "id": "Q-M08-027",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Die Einwilligung ist die einzige Rechtsgrundlage, auf die ein Unternehmen die Verarbeitung von Kontaktdaten stützen kann.",
+    "correct": false,
+    "errorCategory": "rechtsfehler",
+    "explanation": "Art. 6 Abs. 1 nennt sechs Rechtsgrundlagen, u. a. Vertrag/vorvertragliche Maßnahmen, rechtliche Verpflichtung und berechtigte Interessen. Für Werbeanrufe und Werbe-Mails gelten zusätzlich die strengeren UWG-Regeln.",
+    "sourceIds": [
+      "SRC-261",
+      "SRC-019"
+    ]
+  },
+  {
+    "id": "Q-M08-028",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Mitten im Qualifizierungs-Chat schreibt ein Interessent: „Bevor wir weitermachen: Welche Daten haben Sie eigentlich über mich gespeichert und woher haben Sie meine Nummer?“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Das darf ich Ihnen leider nicht sagen.“",
+        "quality": "unacceptable",
+        "feedback": "Das Auskunftsrecht (Art. 15) besteht; abwimmeln verletzt es und zerstört Vertrauen.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "b",
+        "text": "„Gute Frage – das ist Ihr Recht auf Auskunft. Ich gebe Ihre Anfrage heute an unser Datenschutz-Team weiter, Sie bekommen die vollständige Auskunft schriftlich. Möchten Sie die Antwort an Ihre E-Mail-Adresse aus der Anfrage?“",
+        "quality": "best",
+        "feedback": "Anerkennt das Recht, leitet korrekt weiter, klärt den Antwortweg."
+      },
+      {
+        "id": "c",
+        "text": "Selbst einen Screenshot des CRM-Datensatzes in den Chat schicken.",
+        "quality": "poor",
+        "feedback": "Gut gemeint, aber unvollständig (Zwecke, Empfänger, Speicherdauer fehlen), eventuell mit internen Notizen und über einen ungeprüften Weg – Auskunft erteilt der Verantwortliche nach Prozess.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Wir haben nur Ihren Namen“, um ihn zu beruhigen.",
+        "quality": "unacceptable",
+        "feedback": "Unwahre Auskunft.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Betroffenenanfragen werden über jeden Kanal wirksam gestellt. Der Setter nimmt sie freundlich auf, klärt den Umfang, leitet sie am selben Tag nach internem Prozess weiter und sagt der Person, wie es weitergeht.",
+    "sourceIds": [
+      "SRC-262",
+      "SRC-267",
+      "SRC-269",
+      "SRC-280"
+    ]
+  },
+  {
+    "id": "Q-M08-029",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
+    "prompt": "Übungs-CRM (simuliert): Erfasse die Löschanfrage als internes Ticket für das Datenschutz-Team.",
+    "record": [
+      {
+        "label": "Kontakt",
+        "value": "Thomas Brehm (erfunden), Deal „PV“ verloren im Juli, Angebot aus Juni im Dokumentenordner"
+      },
+      {
+        "label": "E-Mail 03.10., 09:12 Uhr",
+        "value": "„Bitte löschen Sie alle meine Daten und schicken Sie mir keine Werbung mehr.“ Absender = hinterlegte Adresse."
+      }
+    ],
+    "fields": [
+      {
+        "id": "type",
+        "label": "Art der Anfrage",
+        "options": [
+          "Beschwerde",
+          "Löschung (Art. 17) + Widerspruch gegen Werbung (Art. 21)",
+          "Nur Newsletter-Abmeldung",
+          "Auskunft (Art. 15)"
+        ],
+        "correct": "Löschung (Art. 17) + Widerspruch gegen Werbung (Art. 21)"
+      },
+      {
+        "id": "received",
+        "label": "Eingang",
+        "options": [
+          "Heute bei Bearbeitung",
+          "03.10., 09:12 Uhr, E-Mail",
+          "Unbekannt"
+        ],
+        "correct": "03.10., 09:12 Uhr, E-Mail"
+      },
+      {
+        "id": "now",
+        "label": "Sofortmaßnahme des Setters",
+        "options": [
+          "Kontakt sofort selbst dauerhaft löschen",
+          "Werbesperre setzen, Ticket heute an Datenschutz-Team, Eingang bestätigen",
+          "Erst einmal nachfragen, warum",
+          "Nichts bis zur Antwort des Teams"
+        ],
+        "correct": "Werbesperre setzen, Ticket heute an Datenschutz-Team, Eingang bestätigen"
+      },
+      {
+        "id": "hint",
+        "label": "Hinweis fürs Team",
+        "options": [
+          "Keiner",
+          "Angebot aus Juni vorhanden – Aufbewahrungspflicht prüfen",
+          "Kunde wirkte verärgert"
+        ],
+        "correct": "Angebot aus Juni vorhanden – Aufbewahrungspflicht prüfen"
+      }
+    ],
+    "simulatedData": true,
+    "explanation": "Das Eingangsdatum startet die Monatsfrist (Art. 12 Abs. 3). Die Werbesperre gilt sofort (Art. 21 Abs. 3). Ob Geschäftsunterlagen wegen Aufbewahrungspflichten zunächst eingeschränkt statt gelöscht werden (Art. 17 Abs. 3 lit. b, § 35 BDSG, § 257 HGB), entscheidet das Datenschutz-Team – eigenmächtiges Löschen würde die Prüfung unmöglich machen.",
+    "sourceIds": [
+      "SRC-262",
+      "SRC-263",
+      "SRC-265",
+      "SRC-266",
+      "SRC-270"
+    ]
+  },
+  {
+    "id": "Q-M08-030",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Innerhalb welcher Frist muss ein Unternehmen grundsätzlich auf einen Auskunftsantrag nach Art. 15 reagieren?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Innerhalb von 24 Stunden",
+        "misconception": "Zu streng – das Gesetz verlangt „unverzüglich, spätestens innerhalb eines Monats“.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Unverzüglich, spätestens innerhalb eines Monats nach Eingang (in Ausnahmefällen mit Begründung verlängerbar)"
+      },
+      {
+        "id": "c",
+        "text": "Innerhalb von sechs Monaten",
+        "misconception": "Viel zu lang.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Es gibt keine Frist, solange die Auskunft irgendwann kommt.",
+        "misconception": "Die Frist ist ausdrücklich geregelt.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Art. 12 Abs. 3: unverzüglich, spätestens innerhalb eines Monats nach Eingang; Verlängerung um zwei weitere Monate nur bei Komplexität/Anzahl der Anträge und mit Begründung innerhalb des ersten Monats.",
+    "sourceIds": [
+      "SRC-262",
+      "SRC-269"
+    ]
+  },
+  {
+    "id": "Q-M08-031",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-08",
+    "difficulty": 4,
+    "version": 1,
+    "type": "case",
+    "prompt": "Analysiere das Chat-Transkript (Simulation, erfundene Personen) und beantworte die Teilfragen.",
+    "caseKind": "gespraechsanalyse",
+    "simulatedData": true,
+    "material": {
+      "kind": "transcript",
+      "lines": [
+        {
+          "speaker": "kunde",
+          "text": "Hallo, ich habe im Frühjahr abgesagt und bekomme trotzdem Mails. Ich möchte, dass Sie alle meine Daten löschen."
+        },
+        {
+          "speaker": "setter",
+          "text": "Oh, das tut mir leid. Darf ich fragen, warum? Wir haben gerade ein richtig gutes Angebot."
+        },
+        {
+          "speaker": "kunde",
+          "text": "Nein. Ich will einfach gelöscht werden."
+        },
+        {
+          "speaker": "setter",
+          "text": "Kein Problem, ich lösche Sie gleich selbst komplett aus dem System, dann ist Ruhe."
+        },
+        {
+          "speaker": "kunde",
+          "text": "Und woher weiß ich, dass das passiert ist?"
+        },
+        {
+          "speaker": "setter",
+          "text": "Vertrauen Sie mir einfach."
+        }
+      ]
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Was ist das Hauptproblem in Zeile 2?",
+        "correct": "b",
+        "explanation": "Ein Löschwunsch braucht keine Begründung; Werbung nach einer Absage verstärkt den Verstoß (Widerspruch, Art. 21 Abs. 3).",
+        "options": [
+          {
+            "id": "a",
+            "text": "Die Entschuldigung ist überflüssig.",
+            "misconception": "Eine Entschuldigung ist angemessen – nicht das Problem.",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Er verlangt eine Begründung und versucht, mit Werbung umzustimmen – obwohl die Kundin der Werbung widersprochen hat."
+          },
+          {
+            "id": "c",
+            "text": "Er hätte zuerst den Personalausweis verlangen müssen.",
+            "misconception": "Identität prüft der Verantwortliche nur bei begründeten Zweifeln (Art. 12 Abs. 6); im Chat ist das unverhältnismäßig.",
+            "errorCategory": "rechtsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Warum ist Zeile 4 problematisch?",
+        "correct": "a",
+        "explanation": "Eigenmächtiges Sofortlöschen umgeht den Prozess: Aufbewahrungspflichten (Art. 17 Abs. 3), Mitteilungen an Empfänger (Art. 19) und eine Sperre gegen künftige Werbung können nicht mehr geprüft werden, und die Bearbeitung ist nicht nachweisbar.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Er löscht eigenmächtig außerhalb des Prozesses – Aufbewahrungspflichten, Weitergaben und Nachweis bleiben ungeprüft."
+          },
+          {
+            "id": "b",
+            "text": "Gar nicht – schnell löschen ist immer das Beste.",
+            "misconception": "Schnelligkeit ersetzt nicht die Prüfung von Ausnahmen und die Dokumentation.",
+            "errorCategory": "prozessfehler"
+          },
+          {
+            "id": "c",
+            "text": "Löschanfragen darf ein Unternehmen grundsätzlich ablehnen.",
+            "misconception": "Bei Vorliegen eines Löschgrundes besteht ein Anspruch (Art. 17 Abs. 1).",
+            "errorCategory": "rechtsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Welche Antwort wäre in Zeile 6 richtig?",
+        "correct": "c",
+        "explanation": "Transparenz: weiterleiten, Werbesperre sofort, Bestätigung durch den Verantwortlichen innerhalb der Frist.",
+        "options": [
+          {
+            "id": "a",
+            "text": "„Das sehen Sie daran, dass keine Mails mehr kommen.“",
+            "misconception": "Keine überprüfbare Zusage, keine Information über das Verfahren.",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "b",
+            "text": "„Dazu kann ich nichts sagen.“",
+            "misconception": "Abwimmeln statt Transparenz (Art. 12).",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "c",
+            "text": "„Ich leite Ihre Löschanfrage heute an unser Datenschutz-Team weiter und sperre ab sofort jede Werbung. Sie erhalten eine schriftliche Bestätigung, spätestens innerhalb eines Monats.“"
+          }
+        ]
+      }
+    ],
+    "explanation": "Betroffenenrechte werden nicht verhandelt, nicht abgewimmelt und nicht eigenmächtig erledigt: aufnehmen, Umfang klären, Werbung stoppen, weiterleiten, transparent informieren.",
+    "sourceIds": [
+      "SRC-262",
+      "SRC-263",
+      "SRC-267",
+      "SRC-270"
+    ]
+  },
+  {
+    "id": "Q-M08-032",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-08",
+    "difficulty": 4,
+    "version": 1,
+    "type": "case",
+    "prompt": "Lies die Fallstudie (Simulation) und beantworte die Teilfragen.",
+    "caseKind": "fallstudie",
+    "simulatedData": true,
+    "material": {
+      "kind": "text",
+      "body": "Mia arbeitet seit drei Monaten als freiberufliche Setterin für die (erfundene) „Haustechnik Lindner GmbH“. Ein schriftlicher Vertrag zur Datenverarbeitung existiert nicht. Weil ihr das CRM „zu langsam“ ist, führt sie zusätzlich eine eigene Excel-Liste auf ihrem privaten Laptop mit 600 Leads: Name, Telefon, Notizen wie „Scheidung läuft, will schnell entscheiden“ und Spalte „Lohnt sich?“. Disqualifizierte Leads löscht sie nie, „falls die irgendwann doch wollen“.\n\nHeute schreibt ein Lead per WhatsApp: „Ich will wissen, was Sie über mich gespeichert haben.“"
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Was fehlt grundlegend in der Zusammenarbeit von Mia und der GmbH?",
+        "correct": "a",
+        "explanation": "Bei weisungsgebundener Verarbeitung im Auftrag braucht es einen Vertrag nach Art. 28 Abs. 3 – mit Weisungen, Vertraulichkeit, TOMs, Löschung/Rückgabe am Ende.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Ein Vertrag zur Auftragsverarbeitung (Art. 28) mit klaren Weisungen und Regeln zu Löschung und Rückgabe."
+          },
+          {
+            "id": "b",
+            "text": "Ein Arbeitsvertrag – sonst darf sie keine Daten sehen.",
+            "misconception": "Auch Freelancer können datenschutzkonform eingebunden werden; entscheidend ist der AV-Vertrag.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Nichts, solange die GmbH einverstanden ist.",
+            "misconception": "Mündliches Einverständnis ersetzt keinen Vertrag nach Art. 28.",
+            "errorCategory": "rechtsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Welche Maßnahme bringt die Daten am schnellsten in Ordnung?",
+        "correct": "b",
+        "explanation": "Schattenlisten verletzen Vertraulichkeit, Zweckbindung und Speicherbegrenzung; sensible Notizen und Bewertungsspalten sind nicht erforderlich. Ein Löschkonzept (z. B. nach DIN 66398) legt Fristen je Datenart fest.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Die Excel-Liste mit Passwort schützen und weiterführen.",
+            "misconception": "Ein Passwort behebt weder fehlende Rechtsgrundlage noch Zweckbindung oder Speicherbegrenzung.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Nur noch im CRM arbeiten, die private Liste nach Absprache mit der GmbH löschen, sensible Notizen entfernen und Löschfristen für disqualifizierte Leads festlegen."
+          },
+          {
+            "id": "c",
+            "text": "Die Liste an die GmbH mailen, damit alles zentral liegt.",
+            "misconception": "Ungeprüfte Weitergabe per Mail verschiebt das Problem, statt es zu lösen.",
+            "errorCategory": "prozessfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Was tut Mia mit der Auskunftsanfrage?",
+        "correct": "c",
+        "explanation": "Verantwortlich für die Auskunft ist die GmbH. Mia nimmt die Anfrage auf und leitet sie unverzüglich weiter (Unterstützungspflicht des Auftragsverarbeiters, Art. 28 Abs. 3 lit. e). Die Auskunft muss auch die Excel-Daten umfassen.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Sie ignoriert sie – sie ist ja nur Freelancerin.",
+            "misconception": "Anfragen müssen weitergeleitet werden; der Verantwortliche hat eine Frist.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Sie schickt dem Lead ihre Excel-Zeile per WhatsApp.",
+            "misconception": "Unvollständige Auskunft über einen ungeprüften Weg und ohne den Verantwortlichen.",
+            "errorCategory": "prozessfehler"
+          },
+          {
+            "id": "c",
+            "text": "Sie bestätigt freundlich den Eingang, leitet die Anfrage sofort an die GmbH weiter und weist darauf hin, dass auch ihre lokale Liste betroffen ist."
+          }
+        ]
+      }
+    ],
+    "explanation": "Datenschutz im Setting heißt: klare Rollen (AV-Vertrag), Datensparsamkeit, definierte Löschregeln und ein Prozess für Betroffenenanfragen – nicht privates Excel.",
+    "sourceIds": [
+      "SRC-264",
+      "SRC-271",
+      "SRC-272",
+      "SRC-263",
+      "SRC-265"
+    ]
+  },
+  {
+    "id": "Q-M08-033",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Ein Kontakt (erfunden: „Frau Albers“) schreibt im Chat: „Löschen Sie bitte alle meine Daten.“ Schreibe deine Antwort als Setterin/Setter der (erfundenen) Firma „SonnenDach Rhein“.",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Bestätigt den Eingang / bedankt sich",
+        "points": 1,
+        "anyOf": [
+          [
+            "danke",
+            "erhalten",
+            "aufgenommen",
+            "notiert",
+            "bestätige"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Nennt die Weiterleitung an die zuständige Stelle",
+        "points": 1,
+        "anyOf": [
+          [
+            "datenschutz",
+            "zuständig",
+            "weiterleit",
+            "weitergeb"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Sagt zu, dass keine Werbung mehr kommt",
+        "points": 1,
+        "anyOf": [
+          [
+            "keine werbung",
+            "keine weiteren nachrichten",
+            "gesperrt",
+            "sperre",
+            "keine angebote"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Kündigt eine Bestätigung bzw. Frist an",
+        "points": 1,
+        "anyOf": [
+          [
+            "bestätigung",
+            "monat",
+            "rückmeldung",
+            "informiert"
+          ]
+        ]
+      },
+      {
+        "id": "c5",
+        "description": "Kein Umstimmungsversuch, keine Begründung verlangt",
+        "points": 1,
+        "forbidden": [
+          "warum",
+          "angebot",
+          "überlegen sie",
+          "schade",
+          "rabatt"
+        ]
+      }
+    ],
+    "sampleAnswer": "Hallo Frau Albers, danke für Ihre Nachricht – Ihre Löschanfrage habe ich aufgenommen. Ich leite sie heute an unser Datenschutz-Team weiter, und ab sofort erhalten Sie keine Werbung mehr von uns. Sie bekommen eine schriftliche Bestätigung, spätestens innerhalb eines Monats.",
+    "requiresManualReview": true,
+    "explanation": "Die automatische Prüfung erkennt nur Muster und ist ein Selbstcheck. Vergleiche mit der Beispielantwort – bei Prüfungen bewertet eine Person.",
+    "sourceIds": [
+      "SRC-263",
+      "SRC-262",
+      "SRC-270"
+    ]
+  },
+  {
+    "id": "Q-M08-034",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Schritte bei einer Betroffenenanfrage im Chat in die richtige Reihenfolge.",
+    "items": [
+      {
+        "id": "ticket",
+        "text": "Internes Ticket mit Eingangsdatum und Wortlaut an das Datenschutz-Team"
+      },
+      {
+        "id": "inform",
+        "text": "Der Person sagen, wie es weitergeht und von wem sie die Antwort bekommt"
+      },
+      {
+        "id": "ack",
+        "text": "Anliegen freundlich bestätigen, ohne zu diskutieren"
+      },
+      {
+        "id": "stop",
+        "text": "Werbesperre im CRM setzen, falls Werbung abgelehnt wird"
+      },
+      {
+        "id": "scope",
+        "text": "Umfang klären: Auskunft, Löschung, Berichtigung oder Werbestopp?"
+      }
+    ],
+    "correctOrder": [
+      "ack",
+      "scope",
+      "stop",
+      "ticket",
+      "inform"
+    ],
+    "explanation": "Aufnehmen → Umfang klären → Sofortmaßnahme (Werbesperre) → Ticket mit Eingangsdatum → Person informieren. Erledigt und beantwortet wird die Anfrage vom Verantwortlichen.",
+    "sourceIds": [
+      "SRC-262",
+      "SRC-263",
+      "SRC-269",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-035",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-08",
+    "difficulty": 4,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Kunde mit abgeschlossenem Kaufvertrag verlangt die Löschung aller Daten. Rechnung und Vertragskorrespondenz unterliegen gesetzlichen Aufbewahrungsfristen. Was passiert typischerweise?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Alles wird sofort gelöscht, auch die Rechnung.",
+        "misconception": "Gesetzliche Aufbewahrungspflichten gehen vor (Art. 17 Abs. 3 lit. b).",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Nichts wird gelöscht, weil ein Vertrag bestand.",
+        "misconception": "Nicht mehr erforderliche Daten (z. B. Werbeprofile, Chatnotizen) sind zu löschen.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Aufbewahrungspflichtige Unterlagen werden bis Fristende gesperrt, alle übrigen Daten gelöscht – und der Kunde wird darüber informiert."
+      },
+      {
+        "id": "d",
+        "text": "Der Setter entscheidet nach Gefühl, was wichtig ist.",
+        "misconception": "Löschentscheidungen folgen dem Löschkonzept und dem Verantwortlichen, nicht dem Einzelnen.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": "c",
+    "explanation": "Art. 17 Abs. 3 lit. b nimmt Daten aus, deren Verarbeitung zur Erfüllung einer rechtlichen Verpflichtung erforderlich ist. Diese Daten werden bis zum Fristende eingeschränkt (gesperrt) und nur dafür genutzt; alles andere wird gelöscht. Ein Löschkonzept legt das je Datenart fest.",
+    "sourceIds": [
+      "SRC-263",
+      "SRC-265",
+      "SRC-266",
+      "SRC-272"
+    ]
+  },
+  {
+    "id": "Q-M08-036",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Maßnahmen verbessern die Datenqualität im Übungs-CRM nachhaltig? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Auswahllisten für Status und Verlustgründe"
+      },
+      {
+        "id": "b",
+        "text": "Dublettensuche vor jeder Neuanlage"
+      },
+      {
+        "id": "c",
+        "text": "Monatliche Kontrolle: offene Datensätze ohne nächste Aufgabe"
+      },
+      {
+        "id": "d",
+        "text": "Unbekannte Werte schätzen, damit keine Felder leer sind",
+        "misconception": "Geschätzte Werte sehen aus wie Fakten und führen in die Irre.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "e",
+        "text": "Jeder Setter definiert seine eigenen Statuswerte",
+        "misconception": "Uneinheitliche Werte machen Daten unvergleichbar.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Struktur (Auswahllisten), Prüfung vor Neuanlage und regelmäßige Pflege wirken; Massen-Pflichtfelder und Ratewerte verschlechtern die Qualität.",
+    "sourceIds": [
+      "SRC-277",
+      "SRC-278",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M08-037",
+    "moduleId": "M08",
+    "objectiveId": "LO-M08-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Warum arbeiten Teams überhaupt mit einem CRM statt mit Chatverläufen und Notizzetteln?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Damit alle denselben, nachvollziehbaren Stand zu Kontakt, Verlauf und nächstem Schritt sehen."
+      },
+      {
+        "id": "b",
+        "text": "Damit der Chef kontrollieren kann, wie viele Nachrichten jemand schreibt.",
+        "misconception": "Aktivitätsüberwachung ist nicht der Zweck – und Nachrichtenzahl ist keine Qualität.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "c",
+        "text": "Weil man im CRM möglichst viele Daten über Personen sammeln kann.",
+        "misconception": "Widerspricht der Datenminimierung (Art. 5 Abs. 1 lit. c).",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Weil ein CRM automatisch verkauft.",
+        "misconception": "Ein CRM organisiert, es führt keine Gespräche.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein CRM ist das gemeinsame Gedächtnis: Jede Person sieht denselben Stand, Übergaben funktionieren, Follow-ups werden nicht vergessen und Datenschutzpflichten lassen sich zentral erfüllen.",
+    "sourceIds": [
+      "SRC-273",
+      "SRC-043",
+      "SRC-050"
+    ]
+  }
+]

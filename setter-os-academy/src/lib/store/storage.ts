@@ -3,9 +3,11 @@
 // Prototype: browser localStorage only. Nothing leaves the device.
 
 import { useSyncExternalStore } from "react";
-import { initialState, migrate, type AcademyState } from "./state";
+import { checkBackup, initialState, migrate, type AcademyState } from "./state";
 
 export const STORAGE_KEY = "setter-os-academy:v1";
+/** Safety copy: the raw state before an import, or unreadable data before a reset. Never overwritten silently. */
+export const SAFETY_KEY = "setter-os-academy:safety";
 
 let state: AcademyState = initialState();
 let loaded = false;
@@ -18,7 +20,14 @@ function load() {
     const raw = window.localStorage.getItem(STORAGE_KEY);
     state = raw ? migrate(JSON.parse(raw)) : initialState();
   } catch {
-    state = initialState(); // corrupted or blocked storage: start fresh, never crash
+    // corrupted storage: keep the raw text as a safety copy, then start fresh – never crash
+    try {
+      const raw = window.localStorage.getItem(STORAGE_KEY);
+      if (raw) window.localStorage.setItem(SAFETY_KEY, raw);
+    } catch {
+      /* blocked storage */
+    }
+    state = initialState();
   }
 }
 
@@ -56,9 +65,39 @@ export function exportJson(): string {
   return JSON.stringify(getState(), null, 2);
 }
 
+/** Validates first; on any problem the current progress stays untouched and the reasons are thrown. */
 export function importJson(text: string) {
+  const check = checkBackup(text);
+  if (!check.ok) throw new Error(check.problems.join(" "));
   const parsed = migrate(JSON.parse(text));
+  try {
+    window.localStorage.setItem(SAFETY_KEY, JSON.stringify(getState()));
+  } catch {
+    /* ignore */
+  }
   update(() => parsed);
+}
+
+/** Restores the safety copy taken before the last import (undo). */
+export function restoreSafetyCopy(): boolean {
+  try {
+    const raw = window.localStorage.getItem(SAFETY_KEY);
+    if (!raw || !checkBackup(raw).ok) return false;
+    const current = JSON.stringify(getState());
+    update(() => migrate(JSON.parse(raw)));
+    window.localStorage.setItem(SAFETY_KEY, current);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function hasSafetyCopy(): boolean {
+  try {
+    return !!window.localStorage.getItem(SAFETY_KEY);
+  } catch {
+    return false;
+  }
 }
 
 function subscribe(l: () => void) {

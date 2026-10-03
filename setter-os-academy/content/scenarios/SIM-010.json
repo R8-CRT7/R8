@@ -1,0 +1,587 @@
+{
+  "id": "SIM-010",
+  "version": 1,
+  "title": "Datenschutz-Anfrage im Chat: Auskunft und Löschung richtig aufnehmen",
+  "archetype": "Verärgerte Kundin mit Auskunfts- und Löschwunsch",
+  "industry": "Wärmepumpen – Beratung für Einfamilienhäuser",
+  "channel": "whatsapp",
+  "market": "B2C",
+  "direction": "inbound",
+  "difficulty": 3,
+  "briefing": "Simulation – alle Personen, Firmen und Daten sind erfunden. Du bist Setterin bzw. Setter bei „SonnenDach Rhein“. Karin Vogt hatte im Frühjahr eine Wärmepumpen-Beratung angefragt und abgesagt. Jetzt schreibt sie per WhatsApp (sie hatte diesen Kanal damals selbst für Rückfragen angegeben). Ziel: ihr Anliegen freundlich und vollständig aufnehmen, korrekt an das interne Datenschutz-Team weiterleiten und sie transparent informieren. Kein Verkauf, keine Rechtsberatung, kein eigenmächtiges Löschen. Für die Übergabe brauchst du: Art der Anfrage, Werbe-Wunsch und Antwortweg.",
+  "persona": {
+    "name": "Karin Vogt",
+    "role": "Ehemalige Interessentin, Eigentümerin eines Reihenhauses",
+    "avatarHue": 20
+  },
+  "facts": [
+    {
+      "key": "request",
+      "label": "Art der Anfrage",
+      "value": "Auskunft über gespeicherte Daten (Art. 15), danach Löschung (Art. 17)",
+      "requiredForQualification": true,
+      "distractors": [
+        "Nur Abmeldung vom Newsletter",
+        "Beschwerde über den Berater",
+        "Nur Berichtigung der Adresse"
+      ]
+    },
+    {
+      "key": "marketing",
+      "label": "Werbung",
+      "value": "Ab sofort keine Werbung mehr, auf keinem Kanal (Widerspruch)",
+      "requiredForQualification": true,
+      "distractors": [
+        "Nur keine Anrufe mehr, E-Mails okay",
+        "Werbung erst nach der Auskunft stoppen"
+      ]
+    },
+    {
+      "key": "replyChannel",
+      "label": "Antwortweg",
+      "value": "Auskunft per E-Mail an die Adresse aus der ursprünglichen Anfrage",
+      "requiredForQualification": true,
+      "distractors": [
+        "Auskunft hier im WhatsApp-Chat",
+        "Per Post an die alte Adresse"
+      ]
+    },
+    {
+      "key": "duplicate",
+      "label": "Datenbestand",
+      "value": "Mails kommen doppelt, teils an „Frau Voigt“ – vermutlich Dublette",
+      "requiredForQualification": false,
+      "distractors": [
+        "Ein einziger, korrekter Datensatz",
+        "Daten stammen von einem Adresshändler"
+      ]
+    },
+    {
+      "key": "reason",
+      "label": "Anlass",
+      "value": "Hatte im März abgesagt, bekommt seitdem weiter Werbemails",
+      "requiredForQualification": false,
+      "distractors": [
+        "Hat nie angefragt",
+        "Ärger über einen Beratungstermin"
+      ]
+    }
+  ],
+  "idealOutcome": "handoff",
+  "acceptableOutcomes": [
+    "handoff"
+  ],
+  "openingMessage": "Hallo. Ich bekomme ständig Mails von Ihnen, obwohl ich im Frühjahr abgesagt habe. So geht das nicht.",
+  "startRapport": 3,
+  "maxTurns": 10,
+  "handoverFields": [
+    "request",
+    "marketing",
+    "replyChannel",
+    "duplicate",
+    "reason"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 2,
+    "zuhoeren": 5,
+    "fragetechnik": 2,
+    "klarheit": 6,
+    "kundenorientierung": 6,
+    "dokumentation": 10,
+    "recht_ethik": 8
+  },
+  "reviewQuestionIds": [
+    "Q-M08-028",
+    "Q-M08-029",
+    "Q-M08-031",
+    "Q-M08-034",
+    "Q-M08-012"
+  ],
+  "sourceIds": [
+    "SRC-262",
+    "SRC-263",
+    "SRC-267",
+    "SRC-269",
+    "SRC-270",
+    "SRC-050"
+  ],
+  "moves": [
+    {
+      "id": "open-ack",
+      "intent": "open",
+      "quality": "good",
+      "text": "Guten Tag Frau Vogt, hier ist Lena von SonnenDach Rhein. Danke, dass Sie sich direkt melden – ich kümmere mich darum, dass Ihr Anliegen richtig ankommt. Was genau möchten Sie, dass wir tun?",
+      "effects": {
+        "eroeffnung": 2,
+        "kundenorientierung": 2,
+        "recht_ethik": 1
+      },
+      "coachNote": "Vorstellen, danken, Verantwortung übernehmen und offen nach dem Umfang fragen – ohne Rechtfertigung.",
+      "reply": [
+        {
+          "text": "Ich will wissen, was Sie alles über mich gespeichert haben. Und danach soll das gelöscht werden."
+        }
+      ],
+      "reveals": [
+        "request"
+      ],
+      "rapport": 2,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ]
+    },
+    {
+      "id": "open-defend",
+      "intent": "open",
+      "quality": "weak",
+      "text": "Hallo! Das kann eigentlich nicht sein, wir schreiben nur Leuten, die zugestimmt haben.",
+      "effects": {
+        "eroeffnung": -1,
+        "kundenorientierung": -2
+      },
+      "coachNote": "Rechtfertigung statt Zuhören – du weißt noch gar nicht, was passiert ist.",
+      "reply": [
+        {
+          "text": "Ach so, ich lüge also? Ich will wissen, was Sie über mich gespeichert haben, und dann soll das weg."
+        }
+      ],
+      "reveals": [
+        "request"
+      ],
+      "rapport": -2,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "betterMoveId": "open-ack"
+    },
+    {
+      "id": "refuse",
+      "intent": "close_respectfully",
+      "quality": "bad",
+      "text": "Dafür bin ich leider nicht zuständig. Schreiben Sie bitte an info@sonnendach-rhein.example.",
+      "effects": {
+        "recht_ethik": -3,
+        "kundenorientierung": -3
+      },
+      "coachNote": "Abwimmeln: Eine Anfrage ist mit Eingang bei dir beim Unternehmen eingegangen. Du nimmst sie auf und leitest sie weiter (Art. 12: Ausübung der Rechte erleichtern).",
+      "reply": [
+        {
+          "text": "Na toll. Dann wende ich mich eben an die Datenschutzbehörde.",
+          "ends": "lost"
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "routed"
+      ],
+      "betterMoveId": "route",
+      "violation": "Betroffenenanfrage abgewiesen statt aufgenommen und weitergeleitet."
+    },
+    {
+      "id": "empathize",
+      "intent": "acknowledge",
+      "quality": "good",
+      "text": "Das ist ärgerlich, wenn nach einer Absage weiter Mails kommen. Danke, dass Sie es so klar sagen – wann hatten Sie denn abgesagt?",
+      "effects": {
+        "zuhoeren": 3,
+        "kundenorientierung": 2
+      },
+      "coachNote": "Ärger anerkennen und eine Klärungsfrage stellen – du sammelst Fakten fürs Ticket, nicht Rechtfertigungen.",
+      "reply": [
+        {
+          "text": "Im März, per Mail. Und seitdem kommen die Mails sogar doppelt – einmal an Frau Vogt, einmal an „Frau Voigt“. Das ist doch absurd."
+        }
+      ],
+      "reveals": [
+        "reason"
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "rapport": 2,
+      "setsFlags": [
+        "empathized"
+      ],
+      "hiddenByFlags": [
+        "empathized"
+      ]
+    },
+    {
+      "id": "ask-why",
+      "intent": "handle_objection",
+      "quality": "bad",
+      "text": "Oh, schade! Darf ich fragen, warum Sie gelöscht werden möchten? Vielleicht finden wir ja doch noch eine Lösung für Ihre Heizung.",
+      "effects": {
+        "recht_ethik": -3,
+        "kundenorientierung": -2
+      },
+      "coachNote": "Ein Betroffenenrecht ist kein Einwand. Begründung zu verlangen und umzustimmen missachtet die Entscheidung der Kundin.",
+      "reply": [
+        {
+          "text": "Ich muss Ihnen gar nichts begründen. Genau deshalb will ich ja raus aus Ihrem System."
+        }
+      ],
+      "requires": [
+        "request"
+      ],
+      "rapport": -3,
+      "setsFlags": [
+        "pushed"
+      ],
+      "hiddenByFlags": [
+        "pushed"
+      ],
+      "betterMoveId": "clarify",
+      "violation": "Begründung verlangt und Umstimmungsversuch bei einer Lösch-/Auskunftsanfrage."
+    },
+    {
+      "id": "clarify",
+      "intent": "summarize",
+      "quality": "good",
+      "text": "Damit ich das richtig weitergebe: Sie möchten erstens Auskunft, welche Daten wir zu Ihnen gespeichert haben, und zweitens, dass sie danach gelöscht werden. Und bis dahin soll jede Werbung sofort aufhören – auf allen Kanälen?",
+      "effects": {
+        "klarheit": 3,
+        "dokumentation": 2,
+        "recht_ethik": 2
+      },
+      "coachNote": "Umfang geklärt und Werbestopp aktiv angeboten – genau das braucht das Ticket.",
+      "reply": [
+        {
+          "text": "Ja, genau. Keine Werbung mehr, egal wie. Und wie lange dauert das Ganze?",
+          "setsFlags": [
+            "asked-deadline"
+          ]
+        }
+      ],
+      "requires": [
+        "request"
+      ],
+      "reveals": [
+        "marketing"
+      ],
+      "setsFlags": [
+        "clarified"
+      ],
+      "hiddenByFlags": [
+        "clarified"
+      ]
+    },
+    {
+      "id": "ask-duplicate",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Sie schrieben, die Mails kommen doppelt, teils an „Frau Voigt“. Darf ich das als zweiten Datensatz mit vermerken, damit wirklich beide Einträge bearbeitet werden?",
+      "effects": {
+        "dokumentation": 3,
+        "zuhoeren": 2
+      },
+      "coachNote": "Echte Folgefrage mit Datenqualitäts-Blick: Ohne den Dublettenhinweis würde eine Löschung womöglich nur einen Datensatz erfassen.",
+      "reply": [
+        {
+          "text": "Ja, bitte unbedingt. Das bin beide Male ich – Vogt ohne i ist richtig."
+        }
+      ],
+      "requires": [
+        "reason"
+      ],
+      "reveals": [
+        "duplicate"
+      ],
+      "setsFlags": [
+        "dup-asked"
+      ],
+      "hiddenByFlags": [
+        "dup-asked"
+      ]
+    },
+    {
+      "id": "ask-channel",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Wohin dürfen wir Ihnen die Auskunft schicken – an die E-Mail-Adresse, mit der Sie damals angefragt haben?",
+      "effects": {
+        "fragetechnik": 2,
+        "dokumentation": 2,
+        "recht_ethik": 1
+      },
+      "coachNote": "Antwortweg geklärt – die Auskunft geht über den bekannten Kanal statt über einen Messenger-Screenshot.",
+      "reply": [
+        {
+          "text": "Ja, an die. Die stimmt noch."
+        }
+      ],
+      "requires": [
+        "request"
+      ],
+      "reveals": [
+        "replyChannel"
+      ],
+      "setsFlags": [
+        "channel-asked"
+      ],
+      "hiddenByFlags": [
+        "channel-asked"
+      ]
+    },
+    {
+      "id": "ask-id",
+      "intent": "ask",
+      "quality": "bad",
+      "text": "Zur Sicherheit schicken Sie mir bitte ein Foto Ihres Personalausweises hier in den Chat.",
+      "effects": {
+        "recht_ethik": -3,
+        "kundenorientierung": -2
+      },
+      "coachNote": "Unverhältnismäßig und über einen ungeschützten Kanal: Die Identitätsprüfung ist Sache des Verantwortlichen und nur bei begründeten Zweifeln vorgesehen (Art. 12 Abs. 6). Sie schreibt von der hinterlegten Nummer.",
+      "reply": [
+        {
+          "text": "Sicher nicht. Sie haben mich doch auch ohne Ausweis angeschrieben."
+        }
+      ],
+      "requires": [
+        "request"
+      ],
+      "rapport": -2,
+      "setsFlags": [
+        "id-asked"
+      ],
+      "hiddenByFlags": [
+        "id-asked"
+      ],
+      "betterMoveId": "ask-channel",
+      "violation": "Unverhältnismäßige Identitätsprüfung (Ausweisfoto) über ungesicherten Chat."
+    },
+    {
+      "id": "deadline",
+      "intent": "inform",
+      "quality": "good",
+      "text": "Unser Datenschutz-Team bearbeitet das unverzüglich – spätestens innerhalb eines Monats bekommen Sie die Auskunft. Ob einzelne Unterlagen wegen gesetzlicher Aufbewahrungspflichten zunächst gesperrt statt gelöscht werden, prüft das Team und schreibt es Ihnen dazu.",
+      "effects": {
+        "klarheit": 2,
+        "recht_ethik": 2
+      },
+      "coachNote": "Ehrlicher Rahmen ohne Rechtsberatung: Frist nennen, Prüfung von Ausnahmen transparent machen, Entscheidung beim Verantwortlichen lassen.",
+      "reply": [
+        {
+          "text": "Okay, das klingt zumindest ehrlich."
+        }
+      ],
+      "requiresFlags": [
+        "asked-deadline"
+      ],
+      "hiddenByFlags": [
+        "deadline-done"
+      ],
+      "setsFlags": [
+        "deadline-done"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "promise",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Keine Sorge, in 24 Stunden ist alles komplett gelöscht, versprochen!",
+      "effects": {
+        "recht_ethik": -2,
+        "klarheit": -2
+      },
+      "coachNote": "Ein Versprechen, das du nicht halten kannst: Erst Auskunft, dann Löschung – und Aufbewahrungspflichten prüft der Verantwortliche.",
+      "reply": [
+        {
+          "text": "Und die Auskunft? Ich wollte doch erst wissen, was Sie haben. Merken Sie sich überhaupt, was ich schreibe?"
+        }
+      ],
+      "requiresFlags": [
+        "asked-deadline"
+      ],
+      "hiddenByFlags": [
+        "deadline-done"
+      ],
+      "setsFlags": [
+        "deadline-done"
+      ],
+      "rapport": -2,
+      "betterMoveId": "deadline",
+      "violation": "Unhaltbare Zusage zu Löschung und Frist."
+    },
+    {
+      "id": "self-delete",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Kein Problem, ich lösche Sie jetzt sofort selbst komplett aus unserem System, dann ist Ruhe.",
+      "effects": {
+        "recht_ethik": -3,
+        "dokumentation": -3
+      },
+      "coachNote": "Eigenmächtiges Löschen macht die gewünschte Auskunft unmöglich, übersieht die Dublette und Aufbewahrungspflichten und ist nicht nachweisbar.",
+      "reply": [
+        {
+          "text": "Moment – ich wollte doch erst wissen, was gespeichert ist! Und woher weiß ich, dass das wirklich passiert ist?"
+        }
+      ],
+      "requires": [
+        "request"
+      ],
+      "hiddenByFlags": [
+        "routed",
+        "self-deleted"
+      ],
+      "setsFlags": [
+        "self-deleted"
+      ],
+      "rapport": -2,
+      "betterMoveId": "route",
+      "violation": "Eigenmächtige Löschung außerhalb des Prozesses."
+    },
+    {
+      "id": "pitch",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Bevor wir löschen: Wir haben gerade eine Aktion auf Wärmepumpen, nur noch diese Woche. Wollen Sie es sich nicht doch überlegen?",
+      "effects": {
+        "recht_ethik": -4,
+        "kundenorientierung": -3
+      },
+      "coachNote": "Werbung nach ausdrücklichem Widerspruch plus künstliche Verknappung – doppelter Verstoß.",
+      "reply": [
+        {
+          "text": "Unglaublich. Genau deswegen will ich gelöscht werden. Ich melde das.",
+          "ends": "lost"
+        }
+      ],
+      "requires": [
+        "request"
+      ],
+      "rapport": -4,
+      "betterMoveId": "clarify",
+      "violation": "Werbung trotz Widerspruch und künstliche Verknappung."
+    },
+    {
+      "id": "stop-only",
+      "intent": "close_respectfully",
+      "quality": "weak",
+      "text": "Alles klar, ich habe vermerkt, dass Sie keine Werbung mehr bekommen. Alles Gute!",
+      "effects": {
+        "recht_ethik": 1,
+        "dokumentation": -2
+      },
+      "coachNote": "Der Werbestopp ist richtig, aber Auskunft und Löschung bleiben liegen – die Kundin hat mehr verlangt.",
+      "reply": [
+        {
+          "text": "Und meine Auskunft? Und die Löschung? Na gut, ich schreibe dann wohl nochmal …",
+          "ends": "respect_no"
+        }
+      ],
+      "requires": [
+        "marketing"
+      ],
+      "hiddenByFlags": [
+        "routed"
+      ],
+      "betterMoveId": "route"
+    },
+    {
+      "id": "route",
+      "intent": "handoff",
+      "quality": "good",
+      "text": "Ich fasse zusammen, was ich heute an unser Datenschutz-Team weitergebe: Auskunft über Ihre gespeicherten Daten und danach Löschung, ab sofort keine Werbung – das sperre ich jetzt an allen Ihren Einträgen. Die Antwort kommt per E-Mail an Ihre Adresse aus der Anfrage. Ist das so richtig?",
+      "effects": {
+        "dokumentation": 4,
+        "recht_ethik": 3,
+        "klarheit": 2,
+        "kundenorientierung": 2
+      },
+      "coachNote": "Vollständige Übergabe: Umfang, Werbesperre, Antwortweg – und die Kundin bestätigt. Das Eingangsdatum steht im Ticket.",
+      "reply": [
+        {
+          "text": "Ja, genau so. Und dass es mich zweimal gibt, haben Sie ja auch notiert. Danke – das war jetzt erstaunlich unkompliziert.",
+          "when": {
+            "factsRevealed": [
+              "duplicate"
+            ]
+          },
+          "ends": "handoff"
+        },
+        {
+          "text": "Ja, so ist es richtig. Danke. Hoffentlich erwischen Sie dann auch alle Einträge.",
+          "ends": "handoff"
+        }
+      ],
+      "requires": [
+        "request",
+        "marketing",
+        "replyChannel"
+      ],
+      "setsFlags": [
+        "routed"
+      ],
+      "hiddenByFlags": [
+        "routed"
+      ]
+    }
+  ],
+  "ai": {
+    "personality": "verärgert, aber fair; wird schnell ruhiger, wenn sie sich ernst genommen fühlt; reagiert allergisch auf Rechtfertigungen und Verkaufsversuche",
+    "speakingStyle": "Sie-Form, kurze, direkte Sätze, keine Emojis",
+    "situation": "Hatte im Frühjahr eine Wärmepumpen-Beratung angefragt und im März per Mail abgesagt; bekommt seitdem weiter Werbemails, teils doppelt.",
+    "concern": "Will wissen, welche Daten über sie gespeichert sind, und danach gelöscht werden; keine Werbung mehr.",
+    "background": "Schreibt von der im CRM hinterlegten Mobilnummer. Im CRM existieren zwei Datensätze: „Karin Vogt“ (richtig) und „Karin Voigt“ (Tippfehler). Ihre E-Mail-Adresse aus der Anfrage ist weiterhin gültig. Kein Interesse mehr an einer Wärmepumpe.",
+    "needs": [
+      "ernst genommen werden",
+      "klare Aussage, was jetzt passiert und bis wann",
+      "sofortiger Werbestopp",
+      "keine Diskussion über ihre Gründe"
+    ],
+    "objections": [
+      {
+        "trigger": "der Setter rechtfertigt sich oder bestreitet die Mails",
+        "reaction": "wird schärfer und droht mit der Datenschutzbehörde"
+      },
+      {
+        "trigger": "der Setter fragt nach dem Grund oder macht ein Angebot",
+        "reaction": "lehnt ab: „Ich muss Ihnen gar nichts begründen.“"
+      },
+      {
+        "trigger": "der Setter verlangt einen Ausweis im Chat",
+        "reaction": "verweigert und wird misstrauisch"
+      },
+      {
+        "trigger": "der Setter will sofort selbst alles löschen",
+        "reaction": "erinnert daran, dass sie zuerst Auskunft wollte"
+      }
+    ],
+    "customerGoals": [
+      "Auskunft über gespeicherte Daten erhalten",
+      "anschließende Löschung aller Einträge",
+      "sofort keine Werbung mehr"
+    ],
+    "revealRules": {
+      "request": "der Setter offen fragt, was genau sie möchte, oder ihr Anliegen aufnimmt",
+      "marketing": "der Setter nachfragt oder zusammenfasst, ob jede Werbung sofort aufhören soll",
+      "replyChannel": "der Setter fragt, wohin die Auskunft geschickt werden soll",
+      "duplicate": "der Setter auf die doppelten Mails eingeht oder nach dem Namen/den Einträgen fragt",
+      "reason": "der Setter ihren Ärger anerkennt oder fragt, wann bzw. wie sie abgesagt hat"
+    },
+    "adviceBoundaries": [
+      "Müssen Sie wirklich alles löschen, auch die Rechnung oder das Angebot?",
+      "Ist das ein Datenschutzverstoß, kann ich Schadensersatz verlangen?",
+      "Darf ich mich bei der Aufsichtsbehörde beschweren?"
+    ],
+    "outcomeGuidance": "Ideal ist eine vollständige Übergabe (handoff): Umfang (Auskunft + Löschung), sofortiger Werbestopp und Antwortweg sind geklärt, die Kundin bestätigt die Zusammenfassung; der Dublettenhinweis ist ein Plus. Auf Rechtsfragen antwortet der Setter nicht inhaltlich, sondern verweist auf das Datenschutz-Team; den Hinweis, dass sie sich bei einer Aufsichtsbehörde beschweren kann, darf er bestätigen. Abwimmeln, Umstimmen, Werbung oder eigenmächtiges Löschen führen zum Abbruch.",
+    "lessonLinks": [
+      "M08-L08",
+      "M08-L07",
+      "M08-L04",
+      "M08-L03"
+    ]
+  }
+}
