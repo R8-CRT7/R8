@@ -10,6 +10,7 @@ import Landing from "../app/page";
 import StartPage from "../app/start/page";
 import LoginPage from "../app/login/page";
 import Dashboard from "../app/(app)/dashboard/page";
+import PlanPage from "../app/(app)/plan/page";
 import LearningPath from "../app/(app)/learn/page";
 import ModuleOverview from "../app/(app)/learn/[moduleId]/ModuleOverview";
 import LessonView from "../app/(app)/learn/[moduleId]/[lessonId]/LessonView";
@@ -24,7 +25,7 @@ import Sources from "../app/(app)/sources/page";
 import Profile from "../app/(app)/profile/page";
 import SettingsPage from "../app/(app)/settings/page";
 import Admin from "../app/(app)/admin/page";
-import { curriculum, modules, scenarios } from "@/lib/content";
+import { curriculum, modules, quizById, scenarios } from "@/lib/content";
 
 function resolve(path: string): { node: ReactNode; shell: boolean } {
   const p = path.split("?")[0]!;
@@ -35,6 +36,7 @@ function resolve(path: string): { node: ReactNode; shell: boolean } {
   if (a === "login") return { node: <LoginPage />, shell: false };
   const simple: Record<string, () => ReactNode> = {
     dashboard: () => <Dashboard />,
+    plan: () => <PlanPage />,
     simulator: () => <SimulatorList />,
     review: () => <ReviewCenter />,
     stats: () => <Stats />,
@@ -53,7 +55,7 @@ function resolve(path: string): { node: ReactNode; shell: boolean } {
     if (m?.lessons.some((l) => l.id === c)) return { node: <LessonView moduleId={b} lessonId={c} />, shell: true };
     return { node: <ModuleOverview moduleId={b} />, shell: true };
   }
-  if (a === "quiz" && b && modules.some((m) => m.id === b)) return { node: <QuizRunner moduleId={b} />, shell: true };
+  if (a === "quiz" && b && quizById(b)) return { node: <QuizRunner moduleId={b} />, shell: true };
   if (a === "simulator" && b && scenarios.some((s) => s.id === b)) return { node: <ChatSimulator scenarioId={b} />, shell: true };
   return { node: (simple[a] ?? simple.dashboard!)(), shell: true };
 }

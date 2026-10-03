@@ -1,12 +1,12 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { QuestionRenderer } from "@/components/QuestionRenderer";
 import { Badge, Button, ButtonLink, Card, PageHeader, Stat } from "@/components/ui";
 import { questionById } from "@/lib/content";
 import { BOX_INTERVAL_DAYS } from "@/lib/engine/review";
 import { dueReviews } from "@/lib/derived";
-import { recordAnswer } from "@/lib/store/state";
+import { recordAnswer, recordReviewSession } from "@/lib/store/state";
 import { update, useAcademy } from "@/lib/store/storage";
 
 export default function ReviewCenter() {
@@ -18,6 +18,10 @@ export default function ReviewCenter() {
   const [i, setI] = useState(0);
   const [answered, setAnswered] = useState(false);
   const due = useMemo(() => dueReviews(s, Date.now()), [s]);
+  const sessionDone = queue !== null && i >= queue.length;
+  useEffect(() => {
+    if (sessionDone) update((st) => recordReviewSession(st, Date.now()));
+  }, [sessionDone]);
   const boxes = [1, 2, 3, 4, 5].map((b) => Object.values(s.reviews).filter((r) => r.box === b).length);
 
   if (queue === null) {

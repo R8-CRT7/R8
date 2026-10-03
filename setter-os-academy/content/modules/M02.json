@@ -1,0 +1,739 @@
+{
+  "id": "M02",
+  "number": 2,
+  "title": "Professionelle Kommunikation",
+  "subtitle": "Klar schreiben, sichtbar zuhören, gezielt fragen, Vertrauen aufbauen.",
+  "status": "verfuegbar",
+  "prerequisites": [
+    "M01"
+  ],
+  "version": "1.0.1",
+  "passThreshold": 0.8,
+  "sourceIds": [
+    "SRC-013",
+    "SRC-019",
+    "SRC-038",
+    "SRC-050",
+    "SRC-052",
+    "SRC-053",
+    "SRC-054",
+    "SRC-055",
+    "SRC-058",
+    "SRC-059",
+    "SRC-060",
+    "SRC-061",
+    "SRC-063",
+    "SRC-064",
+    "SRC-065",
+    "SRC-066"
+  ],
+  "objectives": [
+    {
+      "id": "LO-M02-01",
+      "moduleId": "M02",
+      "text": "Nachrichten klar, kurz und mobil lesbar formulieren.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M02-02",
+      "moduleId": "M02",
+      "text": "Aktives Zuhören im Chat und am Telefon zeigen (Paraphrase, Benennen, Folgefrage).",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M02-03",
+      "moduleId": "M02",
+      "text": "Fragetypen gezielt einsetzen und in eine sinnvolle Reihenfolge bringen (Trichter).",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M02-04",
+      "moduleId": "M02",
+      "text": "Gespräche respektvoll eröffnen und Erlaubnis einholen – im Chat und am Telefon.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M02-05",
+      "moduleId": "M02",
+      "text": "Tonfall, Anrede und Stil an Kanal und Person anpassen.",
+      "bloom": "analysieren"
+    },
+    {
+      "id": "LO-M02-06",
+      "moduleId": "M02",
+      "text": "Vertrauen durch Kompetenz, Wohlwollen und Verlässlichkeit aufbauen.",
+      "bloom": "verstehen"
+    },
+    {
+      "id": "LO-M02-07",
+      "moduleId": "M02",
+      "text": "Mit unterschiedlichen Kundentypen umgehen, ohne Menschen in Schubladen zu stecken.",
+      "bloom": "bewerten"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M02-L01",
+      "title": "Klar schreiben – ein Gedanke pro Nachricht",
+      "objectiveIds": [
+        "LO-M02-01"
+      ],
+      "sourceIds": [
+        "SRC-066",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Im Chat Setting ist dein Text alles, was der Kunde von dir sieht. Kein Lächeln, keine Stimme, kein Händedruck. In dieser Lektion lernst du, Nachrichten zu schreiben, die auf einem Handy in drei Sekunden verstanden werden."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 2.1",
+          "title": "Das Drei-Sekunden-Prinzip",
+          "paragraphs": [
+            "Die meisten Menschen lesen Nachrichten von Unternehmen nebenbei: an der Bushaltestelle, in der Mittagspause, zwischen zwei anderen Chats. Sie entscheiden in wenigen Sekunden, ob sie antworten. Deine Nachricht muss in dieser Zeit drei Fragen beantworten: Wer schreibt mir? Warum? Was soll ich jetzt tun?",
+            "Daraus ergibt sich die wichtigste Regel des Chat Settings: ein Gedanke pro Nachricht. Wer in einer Nachricht begrüßt, das Unternehmen vorstellt, drei Fragen stellt und einen Link schickt, bekommt selten eine vollständige Antwort. Meist antwortet der Kunde auf den letzten Satz – oder gar nicht, weil die Nachricht nach Arbeit aussieht.",
+            "Das Hamburger Verständlichkeitsmodell aus der Psychologie nennt vier Merkmale verständlicher Texte: Einfachheit, Gliederung, Kürze und ein wenig Anregung. Übersetzt in Chat-Sprache heißt das: kurze, vertraute Wörter; ein klarer Aufbau (Anlass – Frage); keine Füllsätze; und ein persönlicher Bezug, der die Nachricht lebendig macht.",
+            "Konkrete Faustregeln: Sätze möglichst unter 15 Wörtern. Keine Abkürzungen, die nur du kennst. Keine Fachbegriffe ohne Erklärung („Ihre JAZ“ versteht niemand). Zahlen als Ziffern schreiben. Und die Frage ans Ende stellen – dort, wo der Blick des Lesers hängen bleibt.",
+            "Ein guter Test: Lies deine Nachricht vor dem Absenden so, als wärst du der Kunde und hättest gerade wenig Zeit. Würdest du antworten? Wenn du zögerst, kürze. Fast jede erste Fassung wird besser, wenn man ein Drittel streicht."
+          ],
+          "sourceIds": [
+            "SRC-066",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Anlass – Frage",
+          "category": "schreiben",
+          "what": "Jede Nachricht besteht aus einem kurzen Anlass und genau einer Frage am Ende.",
+          "how": [
+            "Satz 1: Anlass oder Bezug („Danke für Ihre Anfrage zum Speicher.“)",
+            "Optional Satz 2: kurzer Grund („Damit wir Sie passend beraten …“)",
+            "Letzter Satz: eine einzige, offene Frage."
+          ],
+          "why": "Der Kunde weiß sofort, worum es geht und was er tun soll. Eine einzige Frage ist leicht zu beantworten.",
+          "evidence": "Verständlichkeitsforschung (Langer, Schulz von Thun & Tausch): Einfachheit, Gliederung, Kürze. Für Chat-Formate als Praxisheuristik übertragen (Expertenmeinung).",
+          "example": "„Danke für Ihre Anfrage zum Stromspeicher, Frau Lenz! Was möchten Sie mit dem Speicher vor allem erreichen?“",
+          "boundary": "Kurz heißt nicht kühl. Eine freundliche Begrüßung und der Name gehören dazu.",
+          "sourceIds": [
+            "SRC-066"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Vorher – nachher",
+          "body": "Vorher (71 Wörter): „Hallo, vielen herzlichen Dank für Ihre Anfrage bezüglich unserer innovativen Speicherlösungen, wir sind ein führender Anbieter im Bereich erneuerbare Energien mit langjähriger Erfahrung. Gerne würde ich Ihnen ein paar Fragen stellen: Wie groß ist Ihre PV-Anlage, wie hoch ist Ihr Verbrauch, haben Sie schon Angebote, und wann hätten Sie Zeit für einen Termin? Hier ist auch unser Kalenderlink …“\n\nNachher (22 Wörter): „Hallo Frau Lenz, hier ist Jonas von SolarNord – danke für Ihre Anfrage! Was möchten Sie mit dem Speicher vor allem erreichen?“"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-001"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-002"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Nimm eine Nachricht, die du kürzlich geschrieben hast (privat oder beruflich). Wie viele Gedanken stecken darin? Wie würde die Version mit einem Gedanken aussehen?"
+        }
+      ],
+      "summary": [
+        "Ein Gedanke und eine Frage pro Nachricht.",
+        "Kurze Sätze, vertraute Wörter, keine unerklärten Fachbegriffe.",
+        "Frage ans Ende stellen.",
+        "Vor dem Absenden ein Drittel streichen."
+      ],
+      "moduleId": "M02",
+      "minutes": 12
+    },
+    {
+      "id": "M02-L02",
+      "title": "Aktiv zuhören, auch im Chat",
+      "objectiveIds": [
+        "LO-M02-02"
+      ],
+      "sourceIds": [
+        "SRC-055",
+        "SRC-054",
+        "SRC-060",
+        "SRC-065"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Zuhören ist die unterschätzteste Verkaufsfähigkeit. In dieser Lektion lernst du drei Werkzeuge, mit denen du Zuhören sichtbar machst: Paraphrasieren, Benennen und die Folgefrage."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 2.2",
+          "title": "Zuhören, das man sehen kann",
+          "paragraphs": [
+            "Viele Menschen glauben, gutes Zuhören bedeute, still zu sein. Im Gespräch mit Kunden reicht das nicht. Der Kunde muss merken, dass du verstanden hast – und im Chat kann er dich nicht nicken sehen. Zuhören muss deshalb in deinen Worten sichtbar werden.",
+            "Das erste Werkzeug ist die Paraphrase: Du gibst das Gesagte in eigenen Worten wieder. „Wenn ich Sie richtig verstehe, geht es Ihnen vor allem darum, unabhängiger vom Strompreis zu werden?“ In einem Experiment mit 115 Teilnehmenden fühlten sich Menschen, deren Aussagen so wiedergegeben wurden, deutlich stärker verstanden als Menschen, die nur ein „Okay“ oder einen gut gemeinten Ratschlag erhielten. Wichtig: Die Paraphrase ist eine Frage, keine Behauptung. Der Kunde darf korrigieren.",
+            "Das zweite Werkzeug ist das Benennen von Gefühlen. Wenn ein Kunde schreibt „Ich habe schon drei Angebote bekommen und blicke gar nicht mehr durch“, steckt darin Frust und Überforderung. Ein Satz wie „Klingt, als wäre das gerade ziemlich unübersichtlich“ zeigt, dass du nicht nur die Fakten, sondern auch die Lage verstanden hast. Laborstudien zeigen, dass das Benennen von Gefühlen emotionale Reaktionen dämpfen kann. In Verhandlungstrainings ist die Technik als „Labeling“ bekannt. Übertreib es nicht: Ein Gefühl zu benennen ist kein Therapiegespräch.",
+            "Das dritte Werkzeug kennst du aus Modul 1: die Folgefrage. Sie knüpft an ein konkretes Wort des Kunden an und vertieft es. Eine Studie mit echten Gesprächen fand, dass Menschen, die mehr Folgefragen stellen, als deutlich sympathischer wahrgenommen werden – weil sie als aufmerksam und zugewandt erlebt werden.",
+            "Und was ist das Gegenteil von Zuhören? Drei typische Fehler: sofort eine Lösung anbieten („Dann brauchen Sie unseren Speicher XL!“), das Thema wechseln („Wann haben Sie Zeit?“) und von sich erzählen („Das kenne ich, bei mir war das auch so …“). Alle drei signalisieren: Mir geht es um mich, nicht um dich."
+          ],
+          "sourceIds": [
+            "SRC-055",
+            "SRC-060",
+            "SRC-054",
+            "SRC-065"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Paraphrase als Frage",
+          "category": "gespraech",
+          "what": "Das Gesagte in eigenen Worten wiedergeben und um Bestätigung bitten.",
+          "how": [
+            "Kern der Aussage herausfiltern (nicht alles wiederholen).",
+            "Mit „Wenn ich Sie richtig verstehe …“ oder „Also …“ einleiten.",
+            "In eigenen Worten formulieren, nicht wörtlich kopieren.",
+            "Mit einer Frage enden: „… stimmt das?“"
+          ],
+          "why": "Der Kunde fühlt sich verstanden und kann Missverständnisse sofort korrigieren.",
+          "evidence": "Weger et al. (2014): Aktives Zuhören erhöhte das Gefühl, verstanden zu werden, gegenüber Ratschlag oder bloßer Bestätigung.",
+          "example": "Kunde: „Unser Dach ist eigentlich zu klein, aber wir wollen trotzdem was für die Umwelt tun.“ → „Also ist Ihnen der Umweltaspekt wichtiger als die maximale Ersparnis – habe ich das richtig verstanden?“",
+          "boundary": "Nicht ständig paraphrasieren – ein- bis zweimal pro Gespräch an wichtigen Stellen reicht.",
+          "sourceIds": [
+            "SRC-055"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Gefühle benennen",
+          "category": "psychologie",
+          "what": "Die erkennbare Lage oder Emotion des Kunden in einem vorsichtigen Satz aussprechen.",
+          "how": [
+            "Signal erkennen (Frust, Unsicherheit, Zeitdruck, Freude).",
+            "Vorsichtig benennen: „Klingt, als …“, „Wirkt, als …“.",
+            "Pause lassen – nicht sofort eine Lösung anhängen.",
+            "Danach eine offene Frage stellen."
+          ],
+          "why": "Wer sich in seiner Lage verstanden fühlt, ist eher bereit, weiterzusprechen und Details zu teilen.",
+          "evidence": "Lieberman et al. (2007): Affekt-Benennung dämpft emotionale Reaktionen (Laborbefund). Voss (2016): Praxistechnik „Labeling“ – Erfahrungswissen, nicht systematisch evaluiert.",
+          "example": "„Klingt, als wären die vielen Angebote gerade eher verwirrend als hilfreich. Was würde Ihnen am meisten helfen, Klarheit zu bekommen?“",
+          "boundary": "Keine Diagnosen („Sie haben Angst vor …“) und kein Ausnutzen von Emotionen, um Druck zu machen.",
+          "sourceIds": [
+            "SRC-060",
+            "SRC-065"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Zwei Antworten auf dieselbe Nachricht",
+          "situation": "Kunde (erfunden): „Wir haben zwei kleine Kinder, und ehrlich gesagt ist das Thema Heizung gerade das Letzte, worauf ich Lust habe. Aber die Kosten …“ Setter A antwortet: „Verstehe! Wann haben Sie Zeit für einen Termin?“ Setter B antwortet: „Klingt, als wäre gerade viel los bei Ihnen – und die Kosten drücken trotzdem. Was wäre für Sie die angenehmste Art, das Thema anzugehen?“",
+          "analysis": "Setter A überspringt das Gesagte vollständig: Der Kunde hat Stress und wenig Zeit signalisiert. Setter B benennt die Lage, greift die Kosten als Motiv auf und gibt dem Kunden die Kontrolle über das Wie. Wahrscheinliches Ergebnis: Bei B erfährt der Setter, dass zum Beispiel ein kurzer Videotermin am Abend ideal wäre – bei A kommt vermutlich keine Antwort. Merke: Die beste Terminfrage ist oft die, die erst nach dem Verstehen kommt.",
+          "simulationNote": "Alle Daten in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-003"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-004"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-005"
+        }
+      ],
+      "summary": [
+        "Zuhören muss im Chat sichtbar werden.",
+        "Paraphrase: Kern in eigenen Worten, als Frage.",
+        "Gefühle vorsichtig benennen, dann offen fragen.",
+        "Nicht sofort Lösungen, Themenwechsel oder eigene Geschichten."
+      ],
+      "moduleId": "M02",
+      "minutes": 12
+    },
+    {
+      "id": "M02-L03",
+      "title": "Fragetechniken vertieft – der Fragetrichter",
+      "objectiveIds": [
+        "LO-M02-03"
+      ],
+      "sourceIds": [
+        "SRC-013",
+        "SRC-054",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Gute Fragen sind das wichtigste Werkzeug eines Setters. In dieser Lektion lernst du fünf Fragetypen und wie du sie im „Trichter“ von breit nach konkret ordnest."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 2.3",
+          "title": "Fragen, die Türen öffnen",
+          "paragraphs": [
+            "Fragen sind nicht neutral. Jede Frage lenkt die Aufmerksamkeit des Gegenübers. „Was stört Sie an Ihrer aktuellen Heizung?“ lenkt auf Probleme. „Was wäre Ihnen bei einer neuen Heizung am wichtigsten?“ lenkt auf Ziele. Beide sind gute Fragen – aber an unterschiedlichen Stellen im Gespräch.",
+            "Für Setter sind fünf Fragetypen besonders nützlich. Offene Fragen (Was? Wie? Welche?) öffnen das Gespräch. Geschlossene Fragen (Ja/Nein) klären Fakten. Skalenfragen („Auf einer Skala von 1 bis 10, wie dringend ist das Thema für Sie?“) machen Unklares messbar. Klärungsfragen („Was meinen Sie genau mit ‚zu teuer‘?“) verhindern Missverständnisse. Und Zusammenfassungsfragen („Habe ich richtig verstanden, dass …?“) sichern das Ergebnis.",
+            "Die Reihenfolge folgt dem Trichter-Prinzip: oben breit, unten eng. Du beginnst mit einer offenen Frage nach Anlass oder Ziel, wirst mit Folgefragen konkreter, klärst dann die Pflichtkriterien mit geschlossenen Fragen und schließt mit einer Zusammenfassung. Wer andersherum beginnt – mit einer Reihe geschlossener Fragen – wirkt wie ein Fragebogen und erfährt nie, was den Kunden eigentlich bewegt.",
+            "Die SPIN-Methode von Neil Rackham sortiert Fragen in Situation, Problem, Implikation und Nutzen. Für Setter sind vor allem Situations- und Problemfragen relevant. Implikationsfragen („Was passiert, wenn die Heizung im Winter ausfällt?“) gehören eher ins Beratungsgespräch – im Erstkontakt wirken sie schnell manipulativ, weil sie Ängste verstärken können.",
+            "Zwei Fragetypen solltest du meiden: Suggestivfragen („Sie wollen doch auch sparen, oder?“) und Warum-Fragen, die wie ein Vorwurf klingen („Warum haben Sie das nicht früher gemacht?“). Wenn du nach Gründen fragen willst, nutze „Was hat dazu geführt …?“ – die Frage ist dieselbe, der Ton ist ein anderer."
+          ],
+          "sourceIds": [
+            "SRC-013",
+            "SRC-054",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Ein Fragetrichter in fünf Nachrichten",
+          "steps": [
+            "Offen (Anlass): „Was hat Sie dazu gebracht, sich gerade jetzt mit einem Speicher zu beschäftigen?“",
+            "Folgefrage: „Sie sagten, der Strompreis macht Ihnen Sorgen – wie hoch ist Ihr Abschlag ungefähr?“",
+            "Skalenfrage: „Wie dringend ist das Thema für Sie, auf einer Skala von 1 bis 10?“",
+            "Geschlossen (Pflichtkriterium): „Haben Sie bereits eine PV-Anlage auf dem Dach?“",
+            "Zusammenfassung: „Also: PV-Anlage vorhanden, Abschlag deutlich gestiegen, Dringlichkeit 8 von 10 – stimmt das so?“"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die Skalenfrage",
+          "category": "gespraech",
+          "what": "Ein unklares Gefühl („irgendwie dringend“) in eine Zahl übersetzen lassen.",
+          "how": [
+            "Frage mit klarer Skala stellen (1–10).",
+            "Zahl annehmen, nicht bewerten.",
+            "Nachfragen: „Was müsste passieren, damit es eine Zahl höher wäre?“ oder „Warum nicht niedriger?“"
+          ],
+          "why": "Zahlen machen Dringlichkeit und Unsicherheit vergleichbar und öffnen eine natürliche Folgefrage.",
+          "evidence": "Verbreitete Technik aus Beratung und lösungsorientierter Gesprächsführung (Expertenmeinung); keine spezifische Studie für Vertrieb.",
+          "example": "„Wie sicher sind Sie sich auf einer Skala von 1 bis 10, dass Sie das Projekt dieses Jahr angehen?“ – „6.“ – „Was fehlt noch zu einer 8?“",
+          "boundary": "Die Antwort ist eine Selbsteinschätzung, kein Versprechen. Nicht als Druckmittel verwenden („Sie sagten doch 8!“).",
+          "sourceIds": [
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Gute Verkäufer stellen nur geschlossene Fragen, damit der Kunde oft ‚Ja‘ sagt (Ja-Straße).“",
+          "reality": "Die sogenannte Ja-Straße ist ein Manipulationsversuch über Konsistenzdruck. Sie liefert keine Information über den Bedarf und wirkt auf viele Menschen durchschaubar. Offene Fragen und Folgefragen erzeugen dagegen nachweislich mehr Sympathie und bessere Informationen.",
+          "sourceIds": [
+            "SRC-054",
+            "SRC-038"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-006"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-007"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-008"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-009"
+        }
+      ],
+      "summary": [
+        "Fünf Fragetypen: offen, geschlossen, Skala, Klärung, Zusammenfassung.",
+        "Trichter: breit beginnen, konkret enden.",
+        "SPIN im Erstkontakt vor allem Situation und Problem.",
+        "Keine Suggestiv- und Vorwurfs-Warum-Fragen."
+      ],
+      "moduleId": "M02",
+      "minutes": 12
+    },
+    {
+      "id": "M02-L04",
+      "title": "Eröffnen und Erlaubnis holen – Chat und Telefon",
+      "objectiveIds": [
+        "LO-M02-04"
+      ],
+      "sourceIds": [
+        "SRC-052",
+        "SRC-053",
+        "SRC-058",
+        "SRC-019"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Die ersten Sekunden entscheiden, ob ein Gespräch überhaupt stattfindet. In dieser Lektion lernst du Eröffnungen für Chat und Telefon, die respektvoll und wirksam sind."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 2.4",
+          "title": "Der erste Eindruck hat drei Teile",
+          "paragraphs": [
+            "Eine gute Eröffnung beantwortet drei Fragen, bevor der Kunde sie stellen muss: Wer bist du? Warum meldest du dich? Darf es jetzt sein? Am Telefon kommt eine vierte hinzu: Wie lange dauert es? Wer diese Fragen beantwortet, nimmt dem Gegenüber die Unsicherheit – und Unsicherheit ist der häufigste Grund, warum Menschen abblocken.",
+            "Im Chat funktioniert die Eröffnung über Bezug und Kürze. Der Bezug („Sie hatten gestern unseren Speicher-Ratgeber angefordert“) zeigt, dass du kein Fremder bist. Die Kürze zeigt Respekt vor seiner Zeit. Am Telefon kommt die Stimme dazu: langsam sprechen, den eigenen Namen deutlich sagen, nach dem ersten Satz eine echte Pause lassen. Viele Einsteiger reden in den ersten zehn Sekunden zu schnell, weil sie nervös sind – und genau dann entsteht der Eindruck eines Callcenters.",
+            "Die Erlaubnisfrage („Passt es gerade für zwei Minuten?“) wirkt auf den ersten Blick riskant: Was, wenn der Kunde Nein sagt? Dann hast du eine wertvolle Information bekommen und vereinbarst einen besseren Zeitpunkt. Ein Gespräch, das jemand gegen seinen Willen führt, bringt dir ohnehin nichts. Wer gefragt wird, fühlt sich respektiert – und respektierte Menschen sind offener.",
+            "Ergänzend kannst du einen Grund nennen („… damit wir Sie passend beraten können“) und Freiheit betonen („Wenn es gerade nicht passt, schreibe ich Ihnen gern später“). Beide Prinzipien sind psychologisch untersucht: Begründungen erhöhen die Zustimmung zu kleinen Bitten, und das Betonen von Entscheidungsfreiheit kann Widerstand senken. Die Effekte sind in strengen Studien kleiner als oft behauptet – aber sie sind ehrlich, und das allein ist schon ein Grund, sie zu nutzen.",
+            "Und rechtlich? Eine Eröffnung ist nur dann sauber, wenn der Kontakt überhaupt zulässig ist. Im Inbound-Fall, wenn der Kunde angefragt und dem Kanal zugestimmt hat, ist das gegeben. Rufst du ohne Einwilligung eine Privatperson zu Werbezwecken an, hilft dir die beste Eröffnung nichts."
+          ],
+          "sourceIds": [
+            "SRC-058",
+            "SRC-052",
+            "SRC-053",
+            "SRC-019"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die 4-Satz-Telefoneröffnung",
+          "category": "gespraech",
+          "what": "Am Telefon in vier kurzen Sätzen Vertrauen und Orientierung schaffen.",
+          "how": [
+            "Name + Unternehmen: „Guten Tag Herr Weber, hier ist Mira von SolarNord.“",
+            "Bezug: „Sie hatten gestern online eine Anfrage zur PV-Anlage gestellt.“",
+            "Zeitrahmen + Erlaubnis: „Ich habe zwei, drei kurze Fragen, das dauert etwa fünf Minuten – passt es gerade?“",
+            "Pause. Wirklich warten."
+          ],
+          "why": "Der Angerufene weiß sofort, wer anruft, warum, wie lange – und dass er entscheiden darf.",
+          "evidence": "Kombination aus Begründung (Langer et al. 1978) und Autonomie (Carpenter 2013; Effekt in strengen Studien klein). Pausen-Empfehlung ist Praxiswissen.",
+          "example": "„Guten Tag Frau Kaya, hier ist Jonas von WärmeWerk Nord. Sie hatten uns wegen einer Wärmepumpe geschrieben. Ich hätte drei kurze Fragen, etwa fünf Minuten – passt es gerade, oder lieber später?“",
+          "boundary": "Nur bei zulässigem Kontakt (Einwilligung bzw. Inbound-Anfrage). Die genannte Dauer muss stimmen.",
+          "sourceIds": [
+            "SRC-058",
+            "SRC-052",
+            "SRC-053",
+            "SRC-019"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Die ersten sieben Sekunden entscheiden alles – und 93 % der Wirkung kommt aus Stimme und Körpersprache.“",
+          "reality": "Die berühmte 7-38-55-Regel stammt aus Experimenten von Albert Mehrabian zu widersprüchlichen Gefühlsbotschaften mit einzelnen Wörtern. Mehrabian selbst betont, dass sie nicht auf Kommunikation allgemein übertragbar ist. Was du sagst, zählt – im Chat sogar fast ausschließlich.",
+          "sourceIds": [
+            "SRC-063"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Telefon-Eröffnung: vorher – nachher",
+          "body": "Vorher: „Jaaa hallo, hier ist SolarNord, wir machen PV, Speicher, Wallboxen, alles aus einer Hand, und ich wollte mal hören, ob Sie da Interesse hätten, weil wir gerade in Ihrer Region viele Projekte machen …“ (kein Name, kein Bezug, keine Erlaubnis, 15 Sekunden Monolog)\n\nNachher: „Guten Tag Herr Weber, hier ist Mira von SolarNord. Sie hatten gestern online eine Anfrage zur PV-Anlage gestellt. Ich hätte drei kurze Fragen, etwa fünf Minuten – passt es gerade?“ (Pause)"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-010"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-011"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-012"
+        }
+      ],
+      "summary": [
+        "Wer, warum, darf es jetzt sein – am Telefon plus: wie lange.",
+        "Langsam sprechen, Pause nach der Eröffnung.",
+        "Erlaubnisfrage ist Respekt und liefert Information.",
+        "Gute Eröffnung ersetzt keine Einwilligung."
+      ],
+      "moduleId": "M02",
+      "minutes": 12
+    },
+    {
+      "id": "M02-L05",
+      "title": "Tonfall, Anrede und Kanal",
+      "objectiveIds": [
+        "LO-M02-05"
+      ],
+      "sourceIds": [
+        "SRC-061",
+        "SRC-063",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Derselbe Inhalt kann freundlich, steif oder aufdringlich wirken – je nach Ton. In dieser Lektion lernst du, deinen Stil an Kanal und Person anzupassen."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 2.5",
+          "title": "Der richtige Ton am richtigen Ort",
+          "paragraphs": [
+            "Instagram ist nicht LinkedIn, und WhatsApp ist nicht E-Mail. Jeder Kanal hat eigene Gewohnheiten. Auf Instagram duzen sich viele, Nachrichten sind kurz, ein Emoji ist normal. In einer E-Mail an einen Geschäftsführer wäre dasselbe unpassend. Deine erste Aufgabe ist deshalb, den Kanal zu lesen – und im Zweifel eine Stufe förmlicher zu beginnen, als du denkst.",
+            "Die Anrede folgt einer einfachen Regel: Spiegel den Kunden, aber nie nach unten. Wenn der Kunde dich duzt und es zum Auftraggeber passt, darfst du zurückduzen. Wenn er siezt, siezt du. Wenn du unsicher bist, siezt du. Für Marken mit Du-Kultur (z. B. viele Agenturen und Start-ups) gibt der Auftraggeber die Linie vor.",
+            "Dezentes Spiegeln funktioniert auch beim Stil. Schreibt der Kunde kurze Nachrichten, antworte kurz. Schreibt er ausführlich, darfst du etwas ausführlicher werden. Nutzt er Emojis, darfst du sparsam ein Emoji verwenden. In einer Verhandlungsstudie führte dezentes Anpassen an das Verhalten des Gegenübers zu besseren Ergebnissen für beide Seiten – auffälliges Kopieren wirkte dagegen negativ. Das Prinzip lautet: anpassen, nicht nachäffen.",
+            "Am Telefon gelten zusätzliche Regeln. Lächeln hört man – zumindest wirkt die Stimme dann freundlicher. Sprich etwas langsamer als im Alltag, besonders bei Namen und Zahlen. Nutze Pausen: Nach einer Frage zu schweigen, fühlt sich anfangs unangenehm an, gibt dem Kunden aber Raum zum Nachdenken. Wer die Stille sofort füllt, beantwortet seine Frage am Ende selbst.",
+            "Und wenn der Kunde unfreundlich wird? Bleib sachlich und freundlich, nimm es nicht persönlich und biete einen Ausweg an. „Ich merke, dass es gerade nicht passt – soll ich mich lieber gar nicht mehr melden?“ ist besser als jede schlagfertige Antwort. Wird jemand beleidigend, darfst du das Gespräch höflich beenden."
+          ],
+          "sourceIds": [
+            "SRC-061",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Dezent spiegeln",
+          "category": "psychologie",
+          "what": "Länge, Tempo und Förmlichkeit der Nachrichten an den Kunden angleichen – ohne zu kopieren.",
+          "how": [
+            "Länge der letzten Kundennachricht wahrnehmen.",
+            "Anrede und Förmlichkeit übernehmen (nie informeller als der Kunde).",
+            "Emojis höchstens sparsam und nur, wenn der Kunde selbst welche nutzt.",
+            "Einzelne Schlüsselwörter des Kunden aufgreifen."
+          ],
+          "why": "Ähnlichkeit im Stil schafft ein Gefühl von Verbundenheit und erleichtert das Gespräch.",
+          "evidence": "Maddux, Mullen & Galinsky (2008): Strategisches, dezentes Spiegeln verbesserte Verhandlungsergebnisse; offensichtliches Kopieren schadete.",
+          "example": "Kunde: „hi, was kostet sowas ca?“ → „Hi! Kommt stark aufs Dach an – magst du mir kurz sagen, wie groß es ungefähr ist?“ (sofern Du-Ansprache zum Auftraggeber passt)",
+          "boundary": "Spiegeln ist kein Mittel, um Nähe vorzutäuschen, die nicht da ist. Fachliche Klarheit und Ehrlichkeit gehen immer vor.",
+          "sourceIds": [
+            "SRC-061"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-013"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-014"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-015"
+        }
+      ],
+      "summary": [
+        "Kanal lesen, im Zweifel förmlicher beginnen.",
+        "Anrede spiegeln, nie informeller als der Kunde.",
+        "Länge und Stil dezent anpassen.",
+        "Telefon: langsam, Pausen aushalten, freundlich bleiben."
+      ],
+      "moduleId": "M02",
+      "minutes": 12
+    },
+    {
+      "id": "M02-L06",
+      "title": "Vertrauen aufbauen",
+      "objectiveIds": [
+        "LO-M02-06"
+      ],
+      "sourceIds": [
+        "SRC-059",
+        "SRC-050",
+        "SRC-038"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ohne Vertrauen gibt niemand ehrliche Antworten oder erscheint zu einem Termin. In dieser Lektion lernst du, woraus Vertrauen besteht und wie du es in wenigen Nachrichten aufbaust."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 2.6",
+          "title": "Die drei Säulen des Vertrauens",
+          "paragraphs": [
+            "Ein bekanntes Modell aus der Organisationsforschung beschreibt Vertrauenswürdigkeit mit drei Säulen: Fähigkeit, Wohlwollen und Integrität. Fähigkeit heißt: Die Person weiß, wovon sie spricht. Wohlwollen heißt: Sie meint es gut mit mir. Integrität heißt: Sie hält sich an Regeln und an ihr Wort. Wer eine Säule verletzt, verliert Vertrauen – selbst wenn die anderen beiden stark sind.",
+            "Fähigkeit zeigst du als Setter nicht, indem du alle Fachfragen beantwortest. Du zeigst sie durch gute Fragen, durch Verständnis des Problems und durch einen klaren Prozess. „Damit unser Berater Ihnen konkret sagen kann, was bei Ihrem Haus möglich ist, brauche ich drei Infos“ klingt kompetenter als jede auswendig gelernte Produktbeschreibung.",
+            "Wohlwollen zeigst du, indem du die Interessen des Kunden über deine Terminquote stellst – und das auch sagst. „Ich möchte Ihnen keinen Termin verkaufen, der für Sie keinen Sinn ergibt“ ist kein Schwächezeichen, sondern einer der stärksten Vertrauenssätze überhaupt. Er wirkt aber nur, wenn er stimmt. Kunden merken sehr schnell, ob jemand ehrlich offen ist oder nur so tut.",
+            "Integrität zeigst du durch kleine eingehaltene Versprechen. Wenn du schreibst „Ich melde mich bis 17 Uhr“, meldest du dich bis 17 Uhr. Wenn du sagst „Das dauert fünf Minuten“, dauert es fünf Minuten. Jedes eingehaltene Mini-Versprechen ist ein Beweis dafür, dass auch die großen Versprechen des Unternehmens stimmen könnten.",
+            "Und Social Proof – also Hinweise auf andere zufriedene Kunden? Sie können Vertrauen stärken, wenn sie echt, konkret und mit Einwilligung genutzt werden („Wir haben in Ihrer Region dieses Jahr mehrere Altbauten mit Wärmepumpen ausgestattet“, sofern das stimmt). Erfundene Referenzen oder übertriebene Zahlen zerstören dagegen alle drei Säulen auf einmal – und sind obendrein wettbewerbswidrig."
+          ],
+          "sourceIds": [
+            "SRC-059",
+            "SRC-038",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Das Mini-Versprechen",
+          "category": "prozess",
+          "what": "Kleine, überprüfbare Zusagen machen – und sie exakt einhalten.",
+          "how": [
+            "Konkrete Zusage formulieren (Zeitpunkt, Inhalt).",
+            "Nur zusagen, was du sicher halten kannst.",
+            "Einhalten – am besten etwas früher.",
+            "Bei Verzögerung vorher Bescheid geben."
+          ],
+          "why": "Eingehaltene kleine Zusagen sind sichtbare Belege für Integrität.",
+          "evidence": "Vertrauensmodell Mayer, Davis & Schoorman (1995): Integrität als eigene Dimension der Vertrauenswürdigkeit. Konkrete Technik ist Praxiswissen.",
+          "example": "„Ich kläre mit unserem Berater, ob er auch samstags Termine anbietet, und melde mich bis heute 16 Uhr.“ – um 15:40 Uhr: „Wie versprochen: Samstag 10 Uhr wäre möglich.“",
+          "boundary": "Keine Zusagen im Namen anderer, die du nicht abgestimmt hast (z. B. Preise, Liefertermine).",
+          "sourceIds": [
+            "SRC-059"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Vertrauen in fünf Nachrichten",
+          "steps": [
+            "Fähigkeit: „Damit unser Berater Ihnen konkret sagen kann, was möglich ist, brauche ich drei kurze Infos.“",
+            "Wohlwollen: „Und wenn sich zeigt, dass es für Sie nicht passt, sage ich Ihnen das ehrlich.“",
+            "Folgefrage zeigt Zuhören: „Sie sagten, die Abschläge sind gestiegen – um wie viel ungefähr?“",
+            "Mini-Versprechen: „Ich kläre, ob auch samstags Termine gehen, und melde mich bis 16 Uhr.“",
+            "Eingehalten: „Wie versprochen: Samstag 10 Uhr wäre möglich.“"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Vertrauen entsteht durch möglichst viele Erfolgsgeschichten und große Versprechen.“",
+          "reality": "Vertrauenswürdigkeit beruht auf Fähigkeit, Wohlwollen und Integrität. Große Versprechen, die später nicht gehalten werden, verletzen genau die Integrität. Kleine, eingehaltene Zusagen und ehrliche Grenzen wirken nachhaltiger.",
+          "sourceIds": [
+            "SRC-059"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-016"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-017"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-018"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Denk an einen Verkäufer oder Kundenberater, dem du vertraut hast. Welche der drei Säulen hat er besonders gut gezeigt?"
+        }
+      ],
+      "summary": [
+        "Vertrauen = Fähigkeit + Wohlwollen + Integrität.",
+        "Kompetenz durch gute Fragen und klaren Prozess zeigen.",
+        "Kundeninteresse ehrlich über die Terminquote stellen.",
+        "Mini-Versprechen halten; nur echten Social Proof nutzen."
+      ],
+      "moduleId": "M02",
+      "minutes": 12
+    },
+    {
+      "id": "M02-L07",
+      "title": "Unterschiedliche Kundentypen – ohne Schubladen",
+      "objectiveIds": [
+        "LO-M02-07"
+      ],
+      "sourceIds": [
+        "SRC-064",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Manche Kunden wollen Fakten, andere Sicherheit, wieder andere Tempo. In dieser Lektion lernst du, dich auf das Verhalten im Gespräch einzustellen – ohne Menschen nach Persönlichkeitstests zu sortieren."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 2.7",
+          "title": "Verhalten lesen statt Typen raten",
+          "paragraphs": [
+            "In vielen Vertriebstrainings werden Kunden in Farben oder Buchstaben eingeteilt: rot, gelb, grün, blau oder dominant, initiativ, stetig, gewissenhaft. Solche Modelle sind eingängig, aber wissenschaftlich schwach. Für bekannte Typentests wie den MBTI zeigen Studien zum Beispiel, dass viele Menschen bei einer Wiederholung nach einigen Wochen einen anderen Typ erhalten. Persönlichkeit ist kein Schubladensystem, sondern eher ein Spektrum – und sie zeigt sich in verschiedenen Situationen unterschiedlich.",
+            "Was du stattdessen tun kannst: das aktuelle Verhalten im Gespräch lesen. Nicht „Der Kunde ist ein Analytiker“, sondern „Der Kunde stellt gerade viele Detailfragen“. Das ist beobachtbar, und du kannst direkt darauf reagieren. Fünf Muster begegnen dir besonders oft.",
+            "Der Detailorientierte stellt viele genaue Fragen und will Zahlen. Gib ihm Struktur, nenne ehrlich, was du weißt und was nicht, und übergib Detailfragen schriftlich an den Berater. Der Eilige antwortet knapp und hat wenig Zeit. Komm auf den Punkt, frage nur das Nötigste und biete einen schnellen nächsten Schritt an. Der Unsichere zögert, schreibt „weiß nicht“ oder „mal schauen“. Gib ihm Sicherheit durch Transparenz: Was passiert im Termin? Was kostet ihn das (nichts)? Was passiert, wenn er danach Nein sagt (nichts)?",
+            "Der Skeptische hat schlechte Erfahrungen gemacht oder misstraut Vertrieb generell. Erkläre offen deine Rolle, mach keine großen Versprechen und lass ihm die Kontrolle. Der Begeisterte will sofort loslegen. Freu dich mit ihm – und qualifiziere trotzdem sauber. Gerade begeisterte Kunden ohne Entscheidungsbefugnis oder Passung führen zu den enttäuschendsten Terminen.",
+            "Wichtig ist der Effekt, den Psychologen „Barnum-Effekt“ nennen: Allgemeine Beschreibungen fühlen sich für fast jeden zutreffend an. Deshalb wirken Typenmodelle so überzeugend, auch wenn sie wenig vorhersagen. Nutze die fünf Muster als Werkzeugkasten für die aktuelle Situation – nicht als Etikett für einen Menschen."
+          ],
+          "sourceIds": [
+            "SRC-064",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Der Skeptiker",
+          "situation": "Herr Brandt (erfunden) schreibt: „Ehrlich gesagt hatte ich schon zwei Vertreter da, die mir das Blaue vom Himmel versprochen haben. Warum sollte das bei Ihnen anders sein?“",
+          "analysis": "Hier hilft keine Werbebotschaft. Erst das Gefühl benennen („Klingt, als hätten Sie keine guten Erfahrungen gemacht“), dann Transparenz über die eigene Rolle („Ich mache keine Angebote, ich kläre nur, ob ein Gespräch mit unserem Berater für Sie Sinn ergibt“) und Kontrolle zurückgeben („Wenn es nicht passt, sagen Sie es mir einfach – das ist völlig in Ordnung“). Keine Versprechen zu Ersparnissen oder Förderungen.",
+          "simulationNote": "Alle Daten in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "skill",
+          "name": "Verhalten spiegeln, nicht Typ etikettieren",
+          "category": "gespraech",
+          "what": "Auf das beobachtbare Verhalten in der letzten Nachricht reagieren.",
+          "how": [
+            "Beobachten: Detailfragen? Kurze Antworten? Zögern? Misstrauen? Begeisterung?",
+            "Passende Reaktion wählen: Struktur, Tempo, Sicherheit, Transparenz oder saubere Qualifizierung.",
+            "Nach zwei, drei Nachrichten neu einschätzen – Menschen wechseln."
+          ],
+          "why": "Situatives Anpassen ist genauer und fairer als ein starres Etikett.",
+          "evidence": "Kritik an Typologien (Pittenger 2005 zum MBTI: geringe Retest-Reliabilität). Situative Anpassung ist Praxisheuristik (Expertenmeinung).",
+          "example": "Kunde schreibt nur „ok“ und „ja“. → Kurze Nachrichten, eine Frage, schneller nächster Schritt: „Passt Ihnen ein 20-Minuten-Gespräch am Donnerstag oder Freitag?“ (nach geklärten Kriterien)",
+          "boundary": "Keine Rückschlüsse auf Alter, Geschlecht, Herkunft oder Gesundheit. Du reagierst auf Verhalten, nicht auf Merkmale einer Person.",
+          "sourceIds": [
+            "SRC-064",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Mit dem richtigen Persönlichkeitstest weißt du sofort, wie du jeden Kunden überzeugst.“",
+          "reality": "Typentests haben oft geringe Zuverlässigkeit, und ihre allgemeinen Beschreibungen passen auf fast jeden (Barnum-Effekt). Verlässlicher ist es, das konkrete Verhalten im Gespräch zu beobachten und darauf einzugehen.",
+          "sourceIds": [
+            "SRC-064"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-019"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-020"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-021"
+        }
+      ],
+      "summary": [
+        "Typenmodelle sind eingängig, aber wissenschaftlich schwach.",
+        "Beobachtbares Verhalten lesen: detailorientiert, eilig, unsicher, skeptisch, begeistert.",
+        "Passend reagieren: Struktur, Tempo, Sicherheit, Transparenz, saubere Qualifizierung.",
+        "Keine Rückschlüsse auf persönliche Merkmale."
+      ],
+      "moduleId": "M02",
+      "minutes": 12
+    }
+  ],
+  "transferTask": {
+    "title": "Transferaufgabe: Dein Gesprächsprotokoll",
+    "instructions": "Führe ein echtes Alltagsgespräch (Familie, Freunde, Kollegen – kein Verkauf) und wende bewusst an: eine Paraphrase, ein benanntes Gefühl, zwei Folgefragen. Schreibe danach auf (ohne Namen oder private Details): Was hast du gesagt? Wie hat die Person reagiert? Was würdest du nächstes Mal anders machen? Schreibe zusätzlich drei Chat-Eröffnungen für drei Kanäle (WhatsApp B2C, Instagram B2B mit Du-Kultur, E-Mail B2B mit Sie).",
+    "criteria": [
+      "Paraphrase ist als Frage formuliert",
+      "Gefühl wurde vorsichtig benannt, nicht diagnostiziert",
+      "Folgefragen greifen konkrete Wörter auf",
+      "Reflexion benennt eine konkrete Verbesserung",
+      "Drei Eröffnungen passen zu Kanal und Anrede",
+      "Jede Eröffnung enthält Bezug und genau eine Frage",
+      "Keine echten Namen oder privaten Details"
+    ]
+  },
+  "examQuestionIds": [
+    "Q-M02-001",
+    "Q-M02-005",
+    "Q-M02-006",
+    "Q-M02-008",
+    "Q-M02-011",
+    "Q-M02-013",
+    "Q-M02-014",
+    "Q-M02-015",
+    "Q-M02-016",
+    "Q-M02-017",
+    "Q-M02-020",
+    "Q-M02-024",
+    "Q-M02-025",
+    "Q-M02-026",
+    "Q-M02-027",
+    "Q-M02-028"
+  ]
+}

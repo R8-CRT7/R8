@@ -1,0 +1,382 @@
+[
+  {
+    "id": "ST1",
+    "number": 1,
+    "title": "Basics",
+    "goal": "Du verstehst die Rolle des Setters, führst ein strukturiertes Erstgespräch, qualifizierst nach B-P-Z-E und kommunizierst klar, zugewandt und rechtssicher.",
+    "dayFrom": 1,
+    "dayTo": 7,
+    "moduleIds": [
+      "M01",
+      "M02"
+    ],
+    "available": true,
+    "days": [
+      {
+        "day": 1,
+        "title": "Der Beruf und die Customer Journey",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M01-L01"
+          },
+          {
+            "type": "lesson",
+            "ref": "M01-L02"
+          },
+          {
+            "type": "lesson",
+            "ref": "M01-L03"
+          }
+        ]
+      },
+      {
+        "day": 2,
+        "title": "Das Erstgespräch und Qualifizierung",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M01-L04"
+          },
+          {
+            "type": "lesson",
+            "ref": "M01-L05"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 3,
+        "title": "Grenzen, Arbeitstag und das erste Nein",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M01-L06"
+          },
+          {
+            "type": "lesson",
+            "ref": "M01-L07"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-003"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 4,
+        "title": "Übergabe und Modulquiz 1",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M01-L08"
+          },
+          {
+            "type": "quiz",
+            "ref": "M01"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-001"
+          },
+          {
+            "type": "transfer",
+            "ref": "M01",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Klar schreiben, zuhören, fragen",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M02-L01"
+          },
+          {
+            "type": "lesson",
+            "ref": "M02-L02"
+          },
+          {
+            "type": "lesson",
+            "ref": "M02-L03"
+          },
+          {
+            "type": "review"
+          }
+        ]
+      },
+      {
+        "day": 6,
+        "title": "Eröffnung, Ton und Vertrauen",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M02-L04"
+          },
+          {
+            "type": "lesson",
+            "ref": "M02-L05"
+          },
+          {
+            "type": "lesson",
+            "ref": "M02-L06"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-004"
+          }
+        ]
+      },
+      {
+        "day": 7,
+        "title": "Kundentypen, Modulquiz 2 und Stufen-Check",
+        "items": [
+          {
+            "type": "lesson",
+            "ref": "M02-L07"
+          },
+          {
+            "type": "quiz",
+            "ref": "M02"
+          },
+          {
+            "type": "simulation",
+            "ref": "SIM-002"
+          },
+          {
+            "type": "review"
+          },
+          {
+            "type": "quiz",
+            "ref": "ST1"
+          },
+          {
+            "type": "transfer",
+            "ref": "M02",
+            "optional": true
+          }
+        ]
+      }
+    ],
+    "check": {
+      "id": "ST1",
+      "title": "Stufen-Check 1: Basics",
+      "questionIds": [
+        "Q-M01-005",
+        "Q-M01-010",
+        "Q-M01-013",
+        "Q-M01-014",
+        "Q-M01-017",
+        "Q-M01-019",
+        "Q-M01-021",
+        "Q-M01-023",
+        "Q-M01-025",
+        "Q-M01-029",
+        "Q-M01-031",
+        "Q-M01-036",
+        "Q-M01-040",
+        "Q-M02-002",
+        "Q-M02-003",
+        "Q-M02-004",
+        "Q-M02-007",
+        "Q-M02-009",
+        "Q-M02-012",
+        "Q-M02-018",
+        "Q-M02-019",
+        "Q-M02-021",
+        "Q-M02-024",
+        "Q-M02-026"
+      ],
+      "passThreshold": 0.8,
+      "requiredSimulations": [
+        "SIM-003",
+        "SIM-004"
+      ]
+    }
+  },
+  {
+    "id": "ST2",
+    "number": 2,
+    "title": "Psychologie & Qualifizierung",
+    "goal": "Du erkennst Entscheidungsmuster, setzt Psychologie ethisch ein und qualifizierst mit BANT, SPIN und Lead Scoring.",
+    "dayFrom": 8,
+    "dayTo": 21,
+    "moduleIds": [
+      "M03",
+      "M04"
+    ],
+    "available": false,
+    "days": [],
+    "plannedTopics": [
+      "Entscheidungsverhalten, Verlustaversion und Framing kritisch",
+      "Reziprozität, Social Proof, Commitment – nur wahrheitsgemäß",
+      "ICP und Buyer Persona",
+      "BANT, SPIN, MEDDICC",
+      "MQL/SQL und Lead Scoring",
+      "Disqualifizieren als Stärke",
+      "4 neue Simulationen (skeptisch, preisorientiert, falsche Erwartungen, B2B-Buying-Center)"
+    ],
+    "check": {
+      "id": "ST2",
+      "title": "Stufen-Check 2",
+      "questionIds": [],
+      "passThreshold": 0.8,
+      "requiredSimulations": []
+    }
+  },
+  {
+    "id": "ST3",
+    "number": 3,
+    "title": "Chat Setting & Einwände",
+    "goal": "Du führst Chats auf Instagram, WhatsApp und Website souverän und behandelst Einwände, ohne ein Nein zu übergehen.",
+    "dayFrom": 22,
+    "dayTo": 35,
+    "moduleIds": [
+      "M05",
+      "M06"
+    ],
+    "available": false,
+    "days": [],
+    "plannedTopics": [
+      "30 Chat-Übungssituationen",
+      "Antwortgeschwindigkeit und Übergänge",
+      "Preis, Zeit, Partner, Konkurrenz, Vertrauen",
+      "Grenzen der Einwandbehandlung",
+      "5 neue Simulationen"
+    ],
+    "check": {
+      "id": "ST3",
+      "title": "Stufen-Check 3",
+      "questionIds": [],
+      "passThreshold": 0.8,
+      "requiredSimulations": []
+    }
+  },
+  {
+    "id": "ST4",
+    "number": 4,
+    "title": "Termine & CRM",
+    "goal": "Du organisierst Termine, reduzierst No-Shows ethisch und pflegst ein CRM fehlerfrei.",
+    "dayFrom": 36,
+    "dayTo": 49,
+    "moduleIds": [
+      "M07",
+      "M08"
+    ],
+    "available": false,
+    "days": [],
+    "plannedTopics": [
+      "Bestätigung, Erinnerung, Verschiebung",
+      "No-Show-Recovery ohne Druck",
+      "Übergabeprotokolle",
+      "Übungs-CRM mit Pipeline",
+      "Datenqualität und DSGVO"
+    ],
+    "check": {
+      "id": "ST4",
+      "title": "Stufen-Check 4",
+      "questionIds": [],
+      "passThreshold": 0.8,
+      "requiredSimulations": []
+    }
+  },
+  {
+    "id": "ST5",
+    "number": 5,
+    "title": "Zahlen & Branchen",
+    "goal": "Du rechnest und deutest Vertriebskennzahlen und kennst die Besonderheiten von sechs Branchen.",
+    "dayFrom": 50,
+    "dayTo": 63,
+    "moduleIds": [
+      "M09",
+      "M10"
+    ],
+    "available": false,
+    "days": [],
+    "plannedTopics": [
+      "Show Rate, Booking Rate, CAC, CLV, Pipeline Value",
+      "Beispiel-Dashboards (Simulationsdaten)",
+      "Energie, Agenturen, Recruiting, SaaS, IT, Beratung",
+      "Wann zwingend an Fachberater übergeben wird"
+    ],
+    "check": {
+      "id": "ST5",
+      "title": "Stufen-Check 5",
+      "questionIds": [],
+      "passThreshold": 0.8,
+      "requiredSimulations": []
+    }
+  },
+  {
+    "id": "ST6",
+    "number": 6,
+    "title": "Selbstständigkeit & Automatisierung",
+    "goal": "Du kannst einen eigenen Setting-Service seriös aufbauen und KI-Werkzeuge verantwortungsvoll einsetzen.",
+    "dayFrom": 64,
+    "dayTo": 77,
+    "moduleIds": [
+      "M11",
+      "M12"
+    ],
+    "available": false,
+    "days": [],
+    "plannedTopics": [
+      "Angebot, Positionierung, Pilotprojekte",
+      "Gewerbe, Steuern, Scheinselbstständigkeit (Grundlagen)",
+      "Zulässige Kundengewinnung",
+      "KI-Recherche und Antwortvorschläge mit menschlicher Kontrolle",
+      "Prozesse und Skalierung"
+    ],
+    "check": {
+      "id": "ST6",
+      "title": "Stufen-Check 6",
+      "questionIds": [],
+      "passThreshold": 0.8,
+      "requiredSimulations": []
+    }
+  },
+  {
+    "id": "ST7",
+    "number": 7,
+    "title": "Meisterstufe",
+    "goal": "Du beweist dauerhaftes Können: gemischte Wiederholung aller Themen, sechs Simulationen ohne Grenzverletzung und die Master-Prüfung.",
+    "dayFrom": 78,
+    "dayTo": 90,
+    "moduleIds": [
+      "M01",
+      "M02",
+      "M03",
+      "M04",
+      "M05",
+      "M06",
+      "M07",
+      "M08",
+      "M09",
+      "M10",
+      "M11",
+      "M12"
+    ],
+    "available": false,
+    "days": [],
+    "plannedTopics": [
+      "Täglich gemischte Wiederholung aus allen Stufen",
+      "Boss-Simulationen je Themenbereich",
+      "Master-Prüfung in 9 Teilen (siehe Prüfungen)",
+      "Abschlussprojekt: dein eigener Setting-Prozess"
+    ],
+    "check": {
+      "id": "ST7",
+      "title": "Stufen-Check 7",
+      "questionIds": [],
+      "passThreshold": 0.8,
+      "requiredSimulations": []
+    }
+  }
+]

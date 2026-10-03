@@ -7,7 +7,7 @@ import { ACHIEVEMENTS, XP_RULES, type XpReason } from "../engine/gamification";
 import { scheduleNext, type AttemptLog, type Confidence, type ItemReview } from "../engine/review";
 import type { GradeResult, HandoverNote, Question, Scenario, SimulationEvaluation } from "../types";
 
-export const SCHEMA_VERSION = 2;
+export const SCHEMA_VERSION = 3;
 
 export interface Settings {
   theme: "dark" | "light" | "system";
@@ -27,7 +27,7 @@ export interface Profile {
 export interface QuizAttemptRecord {
   id: string;
   moduleId: string;
-  kind: "module-exam" | "practice";
+  kind: "module-exam" | "practice" | "stage-check";
   at: number;
   percent: number;
   passed: boolean;
@@ -65,6 +65,17 @@ export interface AcademyState {
   xpLog: { at: number; reason: XpReason; amount: number; ref: string }[];
   achievements: Record<string, number>;
   transferSubmissions: Record<string, { at: number; text: string; selfCheck: string[] }>;
+  program: ProgramProgress;
+}
+
+export interface ProgramProgress {
+  startedAt: number | null;
+  /** day number -> completion timestamp */
+  dayCompletedAt: Record<number, number>;
+  /** days unlocked early on the learner's explicit request */
+  fastTrack: number[];
+  /** timestamps of finished review sessions */
+  reviewSessions: number[];
 }
 
 export const MAX_ATTEMPT_LOGS = 3000;
@@ -83,6 +94,7 @@ export function initialState(): AcademyState {
     xpLog: [],
     achievements: {},
     transferSubmissions: {},
+    program: { startedAt: null, dayCompletedAt: {}, fastTrack: [], reviewSessions: [] },
   };
 }
 
@@ -110,6 +122,11 @@ export function migrate(raw: unknown): AcademyState {
       settings: { ...initialState().settings, ...(cur.settings as object | undefined), pauseMode: false },
     };
     v = 2;
+  }
+  if (v < 3) {
+    // v3 added the 90-day program
+    cur = { ...cur, program: cur.program ?? initialState().program };
+    v = 3;
   }
   const base = initialState();
   return { ...base, ...(cur as Partial<AcademyState>), schemaVersion: SCHEMA_VERSION };
@@ -246,4 +263,25 @@ export function activityTimestamps(s: AcademyState): number[] {
     ...Object.values(s.lessonsCompleted).map((l) => l.at),
     ...s.simulations.map((x) => x.at),
   ];
+}
+
+// ---------- 90-Tage-Programm ----------
+
+export function startProgram(s: AcademyState, now: number): AcademyState {
+  if (s.program.startedAt) return s;
+  return { ...s, program: { ...s.program, startedAt: now } };
+}
+
+export function completeProgramDay(s: AcademyState, day: number, now: number): AcademyState {
+  if (s.program.dayCompletedAt[day]) return s;
+  return { ...s, program: { ...s.program, dayCompletedAt: { ...s.program.dayCompletedAt, [day]: now } } };
+}
+
+export function fastTrackDay(s: AcademyState, day: number): AcademyState {
+  if (s.program.fastTrack.includes(day)) return s;
+  return { ...s, program: { ...s.program, fastTrack: [...s.program.fastTrack, day] } };
+}
+
+export function recordReviewSession(s: AcademyState, now: number): AcademyState {
+  return { ...s, program: { ...s.program, reviewSessions: [...s.program.reviewSessions, now].slice(-500) } };
 }

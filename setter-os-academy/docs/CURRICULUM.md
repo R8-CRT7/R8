@@ -8,7 +8,8 @@ Jedes Modul enthält bei Fertigstellung: Lernziele (Bloom-Stufe) · Voraussetzun
 
 | Modul | Status | Fragen (Ziel) | Szenarien (Ziel) |
 |---|---|---|---|
-| 1 Sales Fundamentals | **verfügbar** | 30 (30) | 3 (3) |
+| 1 Sales Fundamentals | **verfügbar** (≈ 2 h 50 min) | 42 | 3 |
+| 2 Professionelle Kommunikation | **verfügbar** (≈ 2 h) | 28 | 1 |
 | 2–12 | geplant | je 10–15 → gesamt ≥ 150 | gesamt ≥ 20 |
 
 ---

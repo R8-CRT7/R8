@@ -1,6 +1,6 @@
 // Content validator – used by tests (CI gate) and the admin view.
 // Every rule here protects a promise from the product brief (unique IDs, sources, explanations, plausible distractors …).
-import type { KnowledgeEntry, KnowledgeSource, ModuleContent, Question, Scenario } from "../types";
+import type { KnowledgeEntry, KnowledgeSource, ModuleContent, ProgramStage, Question, Scenario } from "../types";
 
 export interface Issue {
   severity: "error" | "warning";
@@ -16,6 +16,7 @@ export function validateContent(input: {
   modules: ModuleContent[];
   questions: Question[];
   scenarios: Scenario[];
+  program?: ProgramStage[];
   now?: number;
 }): Issue[] {
   const issues: Issue[] = [];
@@ -53,7 +54,9 @@ export function validateContent(input: {
     if (!q.explanation || q.explanation.length < 20) err(q.id, "Erklärung fehlt oder zu kurz");
     if (!q.sourceIds.length) err(q.id, "Keine Quelle");
     for (const s of q.sourceIds) if (!srcIds.has(s)) err(q.id, `Unbekannte Quelle ${s}`);
-    const key = q.prompt.trim().toLowerCase() + "|" + q.type;
+    const body =
+      "situation" in q ? q.situation : "text" in q ? q.text : "options" in q ? q.options.map((o) => o.text).join("|") : "lines" in q ? q.lines.map((l) => l.text).join("|") : "items" in q ? q.items.map((i) => i.text).join("|") : "";
+    const key = [q.prompt.trim().toLowerCase(), q.type, body.trim().toLowerCase()].join("|");
     if (promptSeen.has(key)) err(q.id, `Doppelte Frage (gleich wie ${promptSeen.get(key)})`);
     promptSeen.set(key, q.id);
     if (/\bnicht\b/i.test(q.prompt) && /NICHT/.test(q.prompt) && !q.negation) warn(q.id, "Negationsfrage ohne negation-Flag");
@@ -116,7 +119,13 @@ export function validateContent(input: {
     for (const l of m.lessons) {
       if (!l.summary.length) err(l.id, "Lektion ohne Zusammenfassung");
       for (const s of l.sourceIds) if (!srcIds.has(s)) err(l.id, `Unbekannte Quelle ${s}`);
-      for (const b of l.blocks) if (b.kind === "check" && !qIds.has(b.questionId)) err(l.id, `Check-Frage ${b.questionId} fehlt`);
+      for (const b of l.blocks) {
+        if (b.kind === "check" && !qIds.has(b.questionId)) err(l.id, `Check-Frage ${b.questionId} fehlt`);
+        if ((b.kind === "skill" || b.kind === "myth" || b.kind === "book") && b.sourceIds)
+          for (const sid of b.sourceIds) if (!srcIds.has(sid)) err(l.id, `${b.kind}: unbekannte Quelle ${sid}`);
+        if (b.kind === "skill" && (!b.boundary || b.how.length < 2)) err(l.id, `Skill-Karte „${b.name}“ ohne Grenze oder Schritte`);
+        if (b.kind === "skill" && !b.sourceIds.length) err(l.id, `Skill-Karte „${b.name}“ ohne Quelle`);
+      }
       for (const o of l.objectiveIds) if (!objIds.has(o)) err(l.id, `Unbekanntes Lernziel ${o}`);
     }
     if (m.status === "verfuegbar") {
@@ -155,6 +164,30 @@ export function validateContent(input: {
       if (m.betterMoveId && !moveIds.has(m.betterMoveId)) err(`${s.id}/${m.id}`, `betterMoveId ${m.betterMoveId} fehlt`);
       if ((m.quality === "bad" || m.quality === "weak") && !m.betterMoveId) warn(`${s.id}/${m.id}`, "Schwacher Zug ohne bessere Alternative");
       if (m.intent === "pressure" && !m.violation) err(`${s.id}/${m.id}`, "Druck-Zug ohne Verstoß-Kennzeichnung");
+    }
+  }
+  // Program
+  for (const st of input.program ?? []) {
+    if (st.dayTo < st.dayFrom) err(st.id, "Tagesbereich ungültig");
+    if (!st.available) continue;
+    const days = st.days.map((d) => d.day);
+    for (let d = st.dayFrom; d <= st.dayTo; d++) if (!days.includes(d)) err(st.id, `Tag ${d} fehlt`);
+    const scenIds = new Set(input.scenarios.map((x) => x.id));
+    const modIds = new Set(input.modules.map((m) => m.id));
+    for (const d of st.days)
+      for (const it of d.items) {
+        if (it.type === "lesson" && !lessonIds.has(it.ref)) err(`${st.id}/Tag ${d.day}`, `Lektion ${it.ref} fehlt`);
+        if (it.type === "simulation" && !scenIds.has(it.ref)) err(`${st.id}/Tag ${d.day}`, `Szenario ${it.ref} fehlt`);
+        if (it.type === "quiz" && !modIds.has(it.ref) && it.ref !== st.id) err(`${st.id}/Tag ${d.day}`, `Quiz ${it.ref} fehlt`);
+        if (it.type === "transfer" && !modIds.has(it.ref)) err(`${st.id}/Tag ${d.day}`, `Transfer ${it.ref} fehlt`);
+      }
+    for (const q of st.check.questionIds) if (!qIds.has(q)) err(st.id, `Check-Frage ${q} fehlt`);
+    for (const x of st.check.requiredSimulations) if (!scenIds.has(x)) err(st.id, `Pflichtsimulation ${x} fehlt`);
+    if (st.check.questionIds.length < 15) err(st.id, "Stufen-Check braucht ≥ 15 Fragen");
+    const lessonsInPlan = new Set(st.days.flatMap((d) => d.items.filter((i) => i.type === "lesson").map((i) => i.ref)));
+    for (const mid of st.moduleIds) {
+      const m = input.modules.find((x) => x.id === mid);
+      for (const l of m?.lessons ?? []) if (!lessonsInPlan.has(l.id)) err(st.id, `Lektion ${l.id} ist keinem Tag zugeordnet`);
     }
   }
   return issues;

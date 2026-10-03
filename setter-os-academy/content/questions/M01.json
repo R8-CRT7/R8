@@ -1,393 +1,1635 @@
 [
   {
-    "id": "Q-M01-001", "moduleId": "M01", "objectiveId": "LO-M01-01", "difficulty": 1, "version": 1, "type": "single",
+    "id": "Q-M01-001",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
     "prompt": "Was ist das Hauptziel eines Appointment Setters im Erstgespräch?",
     "options": [
-      { "id": "a", "text": "Das Produkt verkaufen und den Vertrag vorbereiten", "misconception": "Verwechslung von Setter- und Closer-Rolle.", "errorCategory": "rollenverwechslung" },
-      { "id": "b", "text": "Klären, ob ein Bedarf passt, und dann einen qualifizierten nächsten Schritt vereinbaren" },
-      { "id": "c", "text": "Möglichst viele Termine in den Kalender des Closers bringen", "misconception": "Menge statt Qualität – unqualifizierte Termine kosten Zeit und Vertrauen.", "errorCategory": "qualifizierungsfehler" },
-      { "id": "d", "text": "Alle technischen Fragen vollständig beantworten", "misconception": "Fachberatung gehört zur qualifizierten Fachperson.", "errorCategory": "rollenverwechslung" }
+      {
+        "id": "a",
+        "text": "Das Produkt verkaufen und den Vertrag vorbereiten",
+        "misconception": "Verwechslung von Setter- und Closer-Rolle.",
+        "errorCategory": "rollenverwechslung"
+      },
+      {
+        "id": "b",
+        "text": "Klären, ob ein Bedarf passt, und dann einen qualifizierten nächsten Schritt vereinbaren"
+      },
+      {
+        "id": "c",
+        "text": "Möglichst viele Termine in den Kalender des Closers bringen",
+        "misconception": "Menge statt Qualität – unqualifizierte Termine kosten Zeit und Vertrauen.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Alle technischen Fragen vollständig beantworten",
+        "misconception": "Fachberatung gehört zur qualifizierten Fachperson.",
+        "errorCategory": "rollenverwechslung"
+      }
     ],
     "correct": "b",
     "explanation": "Setter qualifizieren und vereinbaren den passenden nächsten Schritt. Verkaufen und Fachberatung übernimmt der Closer bzw. Berater. Die Terminanzahl allein ist kein Qualitätsmerkmal.",
-    "sourceIds": ["SRC-050", "SRC-043"]
+    "sourceIds": [
+      "SRC-050",
+      "SRC-043"
+    ]
   },
   {
-    "id": "Q-M01-002", "moduleId": "M01", "objectiveId": "LO-M01-01", "difficulty": 2, "version": 1, "type": "situation",
+    "id": "Q-M01-002",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
     "prompt": "Wie reagierst du am besten?",
     "situation": "Eine Interessentin fragt im Chat: „Was kostet mich eine PV-Anlage mit Speicher genau?“ Du kennst ihr Haus noch nicht.",
     "options": [
-      { "id": "a", "text": "„Ungefähr 15.000 €, genauer kann ich es nicht sagen.“", "quality": "poor", "feedback": "Eine ungeprüfte Zahl weckt falsche Erwartungen und liegt außerhalb deiner Rolle.", "errorCategory": "rollenverwechslung" },
-      { "id": "b", "text": "„Das hängt von Ihrem Haus ab – das rechnet unser Berater im Termin seriös durch. Damit er vorbereitet ist: Wie groß ist Ihre Dachfläche ungefähr?“", "quality": "best", "feedback": "Ehrlich, rollenklar und gleichzeitig nutzt du den Moment für die Bedarfsermittlung." },
-      { "id": "c", "text": "„Preise nennen wir nur im Termin. Wann passt es Ihnen?“", "quality": "acceptable", "feedback": "Rollenklar, aber abweisend und ohne Begründung – die Kundin fühlt sich womöglich abgewimmelt." },
-      { "id": "d", "text": "„Wenn Sie heute buchen, bekommen Sie 20 % Rabatt.“", "quality": "unacceptable", "feedback": "Ein erfundener Rabatt ist künstliche Verknappung und Täuschung.", "errorCategory": "ethikfehler" }
+      {
+        "id": "a",
+        "text": "„Ungefähr 15.000 €, genauer kann ich es nicht sagen.“",
+        "quality": "poor",
+        "feedback": "Eine ungeprüfte Zahl weckt falsche Erwartungen und liegt außerhalb deiner Rolle.",
+        "errorCategory": "rollenverwechslung"
+      },
+      {
+        "id": "b",
+        "text": "„Das hängt von Ihrem Haus ab – das rechnet unser Berater im Termin seriös durch. Damit er vorbereitet ist: Wie groß ist Ihre Dachfläche ungefähr?“",
+        "quality": "best",
+        "feedback": "Ehrlich, rollenklar und gleichzeitig nutzt du den Moment für die Bedarfsermittlung."
+      },
+      {
+        "id": "c",
+        "text": "„Preise nennen wir nur im Termin. Wann passt es Ihnen?“",
+        "quality": "acceptable",
+        "feedback": "Rollenklar, aber abweisend und ohne Begründung – die Kundin fühlt sich womöglich abgewimmelt."
+      },
+      {
+        "id": "d",
+        "text": "„Wenn Sie heute buchen, bekommen Sie 20 % Rabatt.“",
+        "quality": "unacceptable",
+        "feedback": "Ein erfundener Rabatt ist künstliche Verknappung und Täuschung.",
+        "errorCategory": "ethikfehler"
+      }
     ],
     "explanation": "Fachfragen wie Preise gehören zum Berater. Gute Setter erklären das freundlich und nutzen die Frage, um Informationen für die Beratung zu sammeln.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-003", "moduleId": "M01", "objectiveId": "LO-M01-01", "difficulty": 2, "version": 1, "type": "matching",
+    "id": "Q-M01-003",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
     "prompt": "Ordne jeder Rolle die typische Hauptaufgabe zu (verbreitete Praxis-Konvention).",
     "left": [
-      { "id": "setter", "text": "Setter" },
-      { "id": "closer", "text": "Closer / Account Executive" },
-      { "id": "sdr", "text": "SDR" },
-      { "id": "bdr", "text": "BDR" }
+      {
+        "id": "setter",
+        "text": "Setter"
+      },
+      {
+        "id": "closer",
+        "text": "Closer / Account Executive"
+      },
+      {
+        "id": "sdr",
+        "text": "SDR"
+      },
+      {
+        "id": "bdr",
+        "text": "BDR"
+      }
     ],
     "right": [
-      { "id": "r1", "text": "Qualifiziert Leads und vereinbart Termine, oft im Chat" },
-      { "id": "r2", "text": "Führt das Verkaufsgespräch und schließt ab" },
-      { "id": "r3", "text": "Qualifiziert häufig eingehende B2B-Leads" },
-      { "id": "r4", "text": "Baut häufig aktiv neue B2B-Kontakte auf (Outbound)" }
+      {
+        "id": "r1",
+        "text": "Qualifiziert Leads und vereinbart Termine, oft im Chat"
+      },
+      {
+        "id": "r2",
+        "text": "Führt das Verkaufsgespräch und schließt ab"
+      },
+      {
+        "id": "r3",
+        "text": "Qualifiziert häufig eingehende B2B-Leads"
+      },
+      {
+        "id": "r4",
+        "text": "Baut häufig aktiv neue B2B-Kontakte auf (Outbound)"
+      }
     ],
-    "pairs": { "setter": "r1", "closer": "r2", "sdr": "r3", "bdr": "r4" },
+    "pairs": {
+      "setter": "r1",
+      "closer": "r2",
+      "sdr": "r3",
+      "bdr": "r4"
+    },
     "explanation": "Diese Zuordnung ist verbreitet, aber nicht genormt – manche Unternehmen tauschen SDR und BDR. Im Projekt immer klären.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-004", "moduleId": "M01", "objectiveId": "LO-M01-01", "difficulty": 2, "version": 1, "type": "multi", "negation": true,
+    "id": "Q-M01-004",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "negation": true,
     "prompt": "Welche Aufgaben gehören NICHT zur Kernrolle eines Setters? (Mehrere Antworten möglich)",
     "options": [
-      { "id": "a", "text": "Verbindliche Preisangebote erstellen" },
-      { "id": "b", "text": "Termine bestätigen und erinnern", "misconception": "Terminbestätigung ist eine typische Setter-Aufgabe.", "errorCategory": "rollenverwechslung" },
-      { "id": "c", "text": "Zusagen zu Fördermitteln machen" },
-      { "id": "d", "text": "Gespräche im CRM dokumentieren", "misconception": "Dokumentation ist Kernaufgabe des Setters.", "errorCategory": "rollenverwechslung" },
-      { "id": "e", "text": "Verträge abschließen" }
+      {
+        "id": "a",
+        "text": "Verbindliche Preisangebote erstellen"
+      },
+      {
+        "id": "b",
+        "text": "Termine bestätigen und erinnern",
+        "misconception": "Terminbestätigung ist eine typische Setter-Aufgabe.",
+        "errorCategory": "rollenverwechslung"
+      },
+      {
+        "id": "c",
+        "text": "Zusagen zu Fördermitteln machen"
+      },
+      {
+        "id": "d",
+        "text": "Gespräche im CRM dokumentieren",
+        "misconception": "Dokumentation ist Kernaufgabe des Setters.",
+        "errorCategory": "rollenverwechslung"
+      },
+      {
+        "id": "e",
+        "text": "Verträge abschließen"
+      }
     ],
-    "correct": ["a", "c", "e"],
+    "correct": [
+      "a",
+      "c",
+      "e"
+    ],
     "explanation": "Preisangebote, Förderzusagen und Vertragsabschlüsse gehören zu Berater/Closer. Bestätigen, Erinnern und Dokumentieren sind Setter-Aufgaben.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-005", "moduleId": "M01", "objectiveId": "LO-M01-02", "difficulty": 2, "version": 1, "type": "single",
+    "id": "Q-M01-005",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
     "prompt": "Ein Lead hat einen Vergleich „Wärmepumpe vs. Gasheizung“ heruntergeladen. In welcher Phase der Customer Journey befindet er sich am wahrscheinlichsten?",
     "options": [
-      { "id": "a", "text": "Bewusstsein (Awareness)", "misconception": "Er kennt sein Thema bereits und vergleicht Lösungen.", "errorCategory": "ueberinterpretation" },
-      { "id": "b", "text": "Abwägung (Consideration)" },
-      { "id": "c", "text": "Entscheidung (Decision)", "misconception": "Ein Lösungsvergleich zeigt noch keine Anbieterentscheidung.", "errorCategory": "ueberinterpretation" },
-      { "id": "d", "text": "Nachkauf (Retention)", "misconception": "Er ist noch kein Kunde.", "errorCategory": "begriffsfehler" }
+      {
+        "id": "a",
+        "text": "Bewusstsein (Awareness)",
+        "misconception": "Er kennt sein Thema bereits und vergleicht Lösungen.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "b",
+        "text": "Abwägung (Consideration)"
+      },
+      {
+        "id": "c",
+        "text": "Entscheidung (Decision)",
+        "misconception": "Ein Lösungsvergleich zeigt noch keine Anbieterentscheidung.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Nachkauf (Retention)",
+        "misconception": "Er ist noch kein Kunde.",
+        "errorCategory": "begriffsfehler"
+      }
     ],
     "correct": "b",
     "explanation": "Wer Lösungswege vergleicht, ist typischerweise in der Abwägung. Wichtig: Das ist eine Annahme – im Gespräch durch eine Frage prüfen.",
-    "sourceIds": ["SRC-043"]
+    "sourceIds": [
+      "SRC-043"
+    ]
   },
   {
-    "id": "Q-M01-006", "moduleId": "M01", "objectiveId": "LO-M01-02", "difficulty": 2, "version": 1, "type": "ordering",
+    "id": "Q-M01-006",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
     "prompt": "Bringe die Funnel-Stufen in die richtige Reihenfolge.",
     "items": [
-      { "id": "shown", "text": "Termin wahrgenommen" },
-      { "id": "lead", "text": "Lead" },
-      { "id": "won", "text": "Abschluss" },
-      { "id": "qualified", "text": "Qualifizierter Lead" },
-      { "id": "booked", "text": "Termin gebucht" }
+      {
+        "id": "shown",
+        "text": "Termin wahrgenommen"
+      },
+      {
+        "id": "lead",
+        "text": "Lead"
+      },
+      {
+        "id": "won",
+        "text": "Abschluss"
+      },
+      {
+        "id": "qualified",
+        "text": "Qualifizierter Lead"
+      },
+      {
+        "id": "booked",
+        "text": "Termin gebucht"
+      }
     ],
-    "correctOrder": ["lead", "qualified", "booked", "shown", "won"],
+    "correctOrder": [
+      "lead",
+      "qualified",
+      "booked",
+      "shown",
+      "won"
+    ],
     "explanation": "Lead → qualifiziert → Termin gebucht → Termin wahrgenommen → Abschluss. Der Setter verantwortet vor allem die Stufen bis „wahrgenommen“.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-007", "moduleId": "M01", "objectiveId": "LO-M01-02", "difficulty": 1, "version": 1, "type": "truefalse",
+    "id": "Q-M01-007",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-02",
+    "difficulty": 1,
+    "version": 1,
+    "type": "truefalse",
     "prompt": "Die Customer Journey beschreibt den Kaufprozess aus Sicht des Kunden, der Sales Funnel aus Sicht des Vertriebs.",
     "correct": true,
     "explanation": "Beide Modelle beschreiben dieselbe Bewegung – aus zwei Perspektiven.",
-    "sourceIds": ["SRC-043"]
+    "sourceIds": [
+      "SRC-043"
+    ]
   },
   {
-    "id": "Q-M01-008", "moduleId": "M01", "objectiveId": "LO-M01-02", "difficulty": 2, "version": 1, "type": "calculation",
+    "id": "Q-M01-008",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "calculation",
     "prompt": "Simulierte Daten: Wie hoch ist die Show Rate (Anteil wahrgenommener an gebuchten Terminen) in Prozent?",
     "given": [
-      { "label": "Leads", "value": 200 },
-      { "label": "Gebuchte Termine", "value": 40 },
-      { "label": "Wahrgenommene Termine", "value": 30 }
+      {
+        "label": "Leads",
+        "value": 200
+      },
+      {
+        "label": "Gebuchte Termine",
+        "value": 40
+      },
+      {
+        "label": "Wahrgenommene Termine",
+        "value": 30
+      }
     ],
-    "correctValue": 75, "unit": "%", "tolerance": 0.5,
+    "correctValue": 75,
+    "unit": "%",
+    "tolerance": 0.5,
     "formula": "30 ÷ 40 × 100 = 75 %",
     "simulatedData": true,
     "explanation": "Die Show Rate bezieht sich auf gebuchte Termine, nicht auf alle Leads. 30/200 wäre die Lead-to-Show-Rate (15 %).",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-009", "moduleId": "M01", "objectiveId": "LO-M01-03", "difficulty": 1, "version": 1, "type": "single",
+    "id": "Q-M01-009",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-03",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
     "prompt": "Welche Situation ist ein Inbound-Lead?",
     "options": [
-      { "id": "a", "text": "Du schreibst einem Geschäftsführer auf LinkedIn, den du nicht kennst", "misconception": "Das ist Outbound – die Initiative geht vom Unternehmen aus.", "errorCategory": "begriffsfehler" },
-      { "id": "b", "text": "Eine Person füllt auf der Website das Kontaktformular aus" },
-      { "id": "c", "text": "Du rufst Nummern aus einem gekauften Adressverzeichnis an", "misconception": "Outbound – und im B2C ohne Einwilligung unzulässig.", "errorCategory": "begriffsfehler" },
-      { "id": "d", "text": "Du verteilst Flyer in einer Fußgängerzone", "misconception": "Aktive Ansprache durch das Unternehmen = Outbound.", "errorCategory": "begriffsfehler" }
+      {
+        "id": "a",
+        "text": "Du schreibst einem Geschäftsführer auf LinkedIn, den du nicht kennst",
+        "misconception": "Das ist Outbound – die Initiative geht vom Unternehmen aus.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Eine Person füllt auf der Website das Kontaktformular aus"
+      },
+      {
+        "id": "c",
+        "text": "Du rufst Nummern aus einem gekauften Adressverzeichnis an",
+        "misconception": "Outbound – und im B2C ohne Einwilligung unzulässig.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Du verteilst Flyer in einer Fußgängerzone",
+        "misconception": "Aktive Ansprache durch das Unternehmen = Outbound.",
+        "errorCategory": "begriffsfehler"
+      }
     ],
     "correct": "b",
     "explanation": "Inbound bedeutet: Der Interessent ergreift selbst die Initiative.",
-    "sourceIds": ["SRC-043"]
+    "sourceIds": [
+      "SRC-043"
+    ]
   },
   {
-    "id": "Q-M01-010", "moduleId": "M01", "objectiveId": "LO-M01-03", "difficulty": 3, "version": 1, "type": "single",
+    "id": "Q-M01-010",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
     "prompt": "Was gilt in Deutschland für Werbeanrufe bei Verbrauchern (Stand 10/2026)?",
     "options": [
-      { "id": "a", "text": "Sie sind erlaubt, solange man sich höflich vorstellt", "misconception": "Höflichkeit ersetzt keine Einwilligung.", "errorCategory": "rechtsfehler" },
-      { "id": "b", "text": "Es reicht eine mutmaßliche Einwilligung", "misconception": "Die mutmaßliche Einwilligung gilt nur gegenüber sonstigen Marktteilnehmern (B2B), nicht gegenüber Verbrauchern.", "errorCategory": "rechtsfehler" },
-      { "id": "c", "text": "Es braucht eine vorherige ausdrückliche Einwilligung, die dokumentiert und aufbewahrt werden muss" },
-      { "id": "d", "text": "Sie sind nur am Wochenende verboten", "misconception": "Es gibt keine solche Zeitregel; entscheidend ist die Einwilligung.", "errorCategory": "rechtsfehler" }
+      {
+        "id": "a",
+        "text": "Sie sind erlaubt, solange man sich höflich vorstellt",
+        "misconception": "Höflichkeit ersetzt keine Einwilligung.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Es reicht eine mutmaßliche Einwilligung",
+        "misconception": "Die mutmaßliche Einwilligung gilt nur gegenüber sonstigen Marktteilnehmern (B2B), nicht gegenüber Verbrauchern.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Es braucht eine vorherige ausdrückliche Einwilligung, die dokumentiert und aufbewahrt werden muss"
+      },
+      {
+        "id": "d",
+        "text": "Sie sind nur am Wochenende verboten",
+        "misconception": "Es gibt keine solche Zeitregel; entscheidend ist die Einwilligung.",
+        "errorCategory": "rechtsfehler"
+      }
     ],
     "correct": "c",
     "explanation": "§ 7 Abs. 2 UWG verlangt gegenüber Verbrauchern eine vorherige ausdrückliche Einwilligung; § 7a UWG verlangt deren Dokumentation und fünfjährige Aufbewahrung. Keine Rechtsberatung – Stand vor Verwendung prüfen.",
-    "sourceIds": ["SRC-019", "SRC-020"]
+    "sourceIds": [
+      "SRC-019",
+      "SRC-020"
+    ]
   },
   {
-    "id": "Q-M01-011", "moduleId": "M01", "objectiveId": "LO-M01-03", "difficulty": 2, "version": 1, "type": "multi",
+    "id": "Q-M01-011",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
     "prompt": "Welche Merkmale sind für B2B-Entscheidungen im Vergleich zu B2C typisch? (Mehrere Antworten möglich)",
     "options": [
-      { "id": "a", "text": "Mehrere Personen sind an der Entscheidung beteiligt" },
-      { "id": "b", "text": "Freigaben und Budgets spielen eine größere Rolle" },
-      { "id": "c", "text": "Es gelten für Werbe-E-Mails keine Einwilligungsregeln", "misconception": "Auch im B2B braucht Werbung per E-Mail grundsätzlich eine Einwilligung.", "errorCategory": "rechtsfehler" },
-      { "id": "d", "text": "Entscheidungsprozesse dauern oft länger" },
-      { "id": "e", "text": "Emotionen spielen überhaupt keine Rolle", "misconception": "Auch im B2B entscheiden Menschen – Vertrauen und Risikoempfinden zählen.", "errorCategory": "ueberinterpretation" }
+      {
+        "id": "a",
+        "text": "Mehrere Personen sind an der Entscheidung beteiligt"
+      },
+      {
+        "id": "b",
+        "text": "Freigaben und Budgets spielen eine größere Rolle"
+      },
+      {
+        "id": "c",
+        "text": "Es gelten für Werbe-E-Mails keine Einwilligungsregeln",
+        "misconception": "Auch im B2B braucht Werbung per E-Mail grundsätzlich eine Einwilligung.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Entscheidungsprozesse dauern oft länger"
+      },
+      {
+        "id": "e",
+        "text": "Emotionen spielen überhaupt keine Rolle",
+        "misconception": "Auch im B2B entscheiden Menschen – Vertrauen und Risikoempfinden zählen.",
+        "errorCategory": "ueberinterpretation"
+      }
     ],
-    "correct": ["a", "b", "d"],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
     "explanation": "B2B: mehr Beteiligte, Freigaben, längere Prozesse. Einwilligungsregeln für E-Mail-Werbung gelten auch dort, und Emotionen spielen weiterhin eine Rolle.",
-    "sourceIds": ["SRC-019", "SRC-050"]
+    "sourceIds": [
+      "SRC-019",
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-012", "moduleId": "M01", "objectiveId": "LO-M01-03", "difficulty": 3, "version": 1, "type": "truefalse",
+    "id": "Q-M01-012",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "truefalse",
     "prompt": "Wer mit jemandem auf LinkedIn vernetzt ist, darf ihm ohne weitere Einwilligung Werbenachrichten schicken.",
-    "correct": false, "errorCategory": "rechtsfehler",
+    "correct": false,
+    "errorCategory": "rechtsfehler",
     "explanation": "Direktnachrichten gelten als elektronische Post im Sinne des § 7 UWG. Laut AG Düsseldorf (20.11.2025, 23 C 120/25) ist eine Vernetzung keine Einwilligung. Amtsgerichtsurteil – begrenzte Bindungswirkung, aber klare Tendenz.",
-    "sourceIds": ["SRC-019", "SRC-027"]
+    "sourceIds": [
+      "SRC-019",
+      "SRC-027"
+    ]
   },
   {
-    "id": "Q-M01-013", "moduleId": "M01", "objectiveId": "LO-M01-04", "difficulty": 1, "version": 1, "type": "ordering",
+    "id": "Q-M01-013",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-04",
+    "difficulty": 1,
+    "version": 1,
+    "type": "ordering",
     "prompt": "Bringe die vier Phasen des Erstgesprächs in die richtige Reihenfolge.",
     "items": [
-      { "id": "summary", "text": "Zusammenfassung" },
-      { "id": "open", "text": "Eröffnung" },
-      { "id": "next", "text": "Nächster Schritt" },
-      { "id": "need", "text": "Bedarfsermittlung" }
+      {
+        "id": "summary",
+        "text": "Zusammenfassung"
+      },
+      {
+        "id": "open",
+        "text": "Eröffnung"
+      },
+      {
+        "id": "next",
+        "text": "Nächster Schritt"
+      },
+      {
+        "id": "need",
+        "text": "Bedarfsermittlung"
+      }
     ],
-    "correctOrder": ["open", "need", "summary", "next"],
+    "correctOrder": [
+      "open",
+      "need",
+      "summary",
+      "next"
+    ],
     "explanation": "Eröffnung → Bedarfsermittlung → Zusammenfassung → nächster Schritt.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-014", "moduleId": "M01", "objectiveId": "LO-M01-04", "difficulty": 2, "version": 1, "type": "single",
+    "id": "Q-M01-014",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
     "prompt": "Welche Frage ist eine offene, nicht suggestive Bedarfsfrage?",
     "options": [
-      { "id": "a", "text": "„Sie wollen doch sicher auch Heizkosten sparen, oder?“", "misconception": "Suggestivfrage – sie legt die Antwort nahe.", "errorCategory": "kommunikationsfehler" },
-      { "id": "b", "text": "„Ist Ihre Heizung älter als 15 Jahre?“", "misconception": "Geschlossene Detailfrage – sinnvoll, aber nicht offen.", "errorCategory": "kommunikationsfehler" },
-      { "id": "c", "text": "„Was hat Sie dazu gebracht, sich gerade jetzt mit dem Thema Heizung zu beschäftigen?“" },
-      { "id": "d", "text": "„Wie groß ist Ihr Haus, wie alt die Heizung und wer entscheidet mit?“", "misconception": "Drei Fragen in einer – meist wird nur eine beantwortet.", "errorCategory": "kommunikationsfehler" }
+      {
+        "id": "a",
+        "text": "„Sie wollen doch sicher auch Heizkosten sparen, oder?“",
+        "misconception": "Suggestivfrage – sie legt die Antwort nahe.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "b",
+        "text": "„Ist Ihre Heizung älter als 15 Jahre?“",
+        "misconception": "Geschlossene Detailfrage – sinnvoll, aber nicht offen.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Was hat Sie dazu gebracht, sich gerade jetzt mit dem Thema Heizung zu beschäftigen?“"
+      },
+      {
+        "id": "d",
+        "text": "„Wie groß ist Ihr Haus, wie alt die Heizung und wer entscheidet mit?“",
+        "misconception": "Drei Fragen in einer – meist wird nur eine beantwortet.",
+        "errorCategory": "kommunikationsfehler"
+      }
     ],
     "correct": "c",
     "explanation": "Offene W-Fragen ohne vorgegebene Antwort liefern die meiste Information. Pro Nachricht nur eine Frage.",
-    "sourceIds": ["SRC-013", "SRC-050"]
+    "sourceIds": [
+      "SRC-013",
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-015", "moduleId": "M01", "objectiveId": "LO-M01-04", "difficulty": 2, "version": 1, "type": "cloze",
+    "id": "Q-M01-015",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
     "prompt": "Ergänze die Lücken.",
     "text": "Fragen, die mit Wie, Was oder Welche beginnen, nennt man {{g1}} Fragen. Fragen, die nur mit Ja oder Nein beantwortet werden, heißen {{g2}} Fragen. Fragen, die eine bestimmte Antwort nahelegen, heißen {{g3}}.",
     "gaps": [
-      { "id": "g1", "accepted": ["offene", "offen"] },
-      { "id": "g2", "accepted": ["geschlossene", "geschlossen"] },
-      { "id": "g3", "accepted": ["Suggestivfragen", "suggestivfragen", "suggestive Fragen", "Suggestivfrage"] }
+      {
+        "id": "g1",
+        "accepted": [
+          "offene",
+          "offen"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "geschlossene",
+          "geschlossen"
+        ]
+      },
+      {
+        "id": "g3",
+        "accepted": [
+          "Suggestivfragen",
+          "suggestivfragen",
+          "suggestive Fragen",
+          "Suggestivfrage"
+        ]
+      }
     ],
     "explanation": "Offen → Verständnis, geschlossen → Details, suggestiv → vermeiden.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-016", "moduleId": "M01", "objectiveId": "LO-M01-04", "difficulty": 3, "version": 1, "type": "errorspot",
+    "id": "Q-M01-016",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
     "prompt": "Markiere die Zeilen dieser Chat-Nachricht eines Setters, die problematisch sind.",
     "lines": [
-      { "id": "l1", "text": "Hallo Herr Weber, hier ist Mira von SolarNord – danke für Ihre Anfrage!", "faulty": false },
-      { "id": "l2", "text": "Wie groß ist Ihr Dach, wie viel Strom verbrauchen Sie und wann wollen Sie starten?", "faulty": true, "why": "Drei Fragen auf einmal überfordern und werden selten vollständig beantwortet." },
-      { "id": "l3", "text": "Übrigens: Nur diese Woche gibt es noch Förderung, danach ist sie weg!", "faulty": true, "why": "Unbelegte Verknappung und eine Förderaussage außerhalb der Setter-Rolle." },
-      { "id": "l4", "text": "Sie haben geschrieben, dass Ihnen Unabhängigkeit wichtig ist – das notiere ich mir.", "faulty": false },
-      { "id": "l5", "text": "Ich buche Ihnen einfach mal Dienstag 18 Uhr ein, passt schon.", "faulty": true, "why": "Termin ohne Zustimmung und ohne Qualifizierung." }
+      {
+        "id": "l1",
+        "text": "Hallo Herr Weber, hier ist Mira von SolarNord – danke für Ihre Anfrage!",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Wie groß ist Ihr Dach, wie viel Strom verbrauchen Sie und wann wollen Sie starten?",
+        "faulty": true,
+        "why": "Drei Fragen auf einmal überfordern und werden selten vollständig beantwortet."
+      },
+      {
+        "id": "l3",
+        "text": "Übrigens: Nur diese Woche gibt es noch Förderung, danach ist sie weg!",
+        "faulty": true,
+        "why": "Unbelegte Verknappung und eine Förderaussage außerhalb der Setter-Rolle."
+      },
+      {
+        "id": "l4",
+        "text": "Sie haben geschrieben, dass Ihnen Unabhängigkeit wichtig ist – das notiere ich mir.",
+        "faulty": false
+      },
+      {
+        "id": "l5",
+        "text": "Ich buche Ihnen einfach mal Dienstag 18 Uhr ein, passt schon.",
+        "faulty": true,
+        "why": "Termin ohne Zustimmung und ohne Qualifizierung."
+      }
     ],
     "explanation": "Gute Nachrichten: eine Frage, keine erfundene Dringlichkeit, Termin nur mit ausdrücklicher Zustimmung.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-017", "moduleId": "M01", "objectiveId": "LO-M01-05", "difficulty": 2, "version": 1, "type": "multi",
+    "id": "Q-M01-017",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
     "prompt": "Welche Punkte sollten in diesem Kurs vor dem Buchen eines Beratungstermins mindestens geklärt sein? (Mehrere Antworten möglich)",
     "options": [
-      { "id": "a", "text": "Konkreter Bedarf" },
-      { "id": "b", "text": "Passung zur Zielgruppe" },
-      { "id": "c", "text": "Zeitrahmen" },
-      { "id": "d", "text": "Entscheider bzw. Mitentscheider" },
-      { "id": "e", "text": "Das Lieblingsprodukt der Konkurrenz", "misconception": "Interessant, aber kein Pflichtkriterium.", "errorCategory": "qualifizierungsfehler" },
-      { "id": "f", "text": "Die exakte Kreditwürdigkeit", "misconception": "Bonitätsprüfung ist nicht Aufgabe des Setters und datenschutzrechtlich heikel.", "errorCategory": "rollenverwechslung" }
+      {
+        "id": "a",
+        "text": "Konkreter Bedarf"
+      },
+      {
+        "id": "b",
+        "text": "Passung zur Zielgruppe"
+      },
+      {
+        "id": "c",
+        "text": "Zeitrahmen"
+      },
+      {
+        "id": "d",
+        "text": "Entscheider bzw. Mitentscheider"
+      },
+      {
+        "id": "e",
+        "text": "Das Lieblingsprodukt der Konkurrenz",
+        "misconception": "Interessant, aber kein Pflichtkriterium.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "f",
+        "text": "Die exakte Kreditwürdigkeit",
+        "misconception": "Bonitätsprüfung ist nicht Aufgabe des Setters und datenschutzrechtlich heikel.",
+        "errorCategory": "rollenverwechslung"
+      }
     ],
-    "correct": ["a", "b", "c", "d"],
+    "correct": [
+      "a",
+      "b",
+      "c",
+      "d"
+    ],
     "explanation": "Bedarf, Passung, Zeitrahmen und Entscheider sind in diesem Kurs Pflicht. Budget wird je nach Auftraggeber zusätzlich erfragt.",
-    "sourceIds": ["SRC-047", "SRC-050"]
+    "sourceIds": [
+      "SRC-047",
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-018", "moduleId": "M01", "objectiveId": "LO-M01-05", "difficulty": 2, "version": 1, "type": "matching",
+    "id": "Q-M01-018",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
     "prompt": "Ordne jeder Situation den passenden Lead-Status zu.",
     "left": [
-      { "id": "s1", "text": "Kunde sagt: „Bitte kontaktieren Sie mich nicht mehr.“" },
-      { "id": "s2", "text": "Eigentümerin mit klarem Bedarf, Zeitrahmen 3 Monate, Termin vereinbart" },
-      { "id": "s3", "text": "Interessiert, plant aber erst in zwei Jahren" },
-      { "id": "s4", "text": "Mieter ohne Entscheidungsbefugnis für eine Dachanlage" }
+      {
+        "id": "s1",
+        "text": "Kunde sagt: „Bitte kontaktieren Sie mich nicht mehr.“"
+      },
+      {
+        "id": "s2",
+        "text": "Eigentümerin mit klarem Bedarf, Zeitrahmen 3 Monate, Termin vereinbart"
+      },
+      {
+        "id": "s3",
+        "text": "Interessiert, plant aber erst in zwei Jahren"
+      },
+      {
+        "id": "s4",
+        "text": "Mieter ohne Entscheidungsbefugnis für eine Dachanlage"
+      }
     ],
     "right": [
-      { "id": "kein", "text": "Kein Interesse" },
-      { "id": "termin", "text": "Termin gebucht" },
-      { "id": "nurture", "text": "Nurturing" },
-      { "id": "disq", "text": "Disqualifiziert" }
+      {
+        "id": "kein",
+        "text": "Kein Interesse"
+      },
+      {
+        "id": "termin",
+        "text": "Termin gebucht"
+      },
+      {
+        "id": "nurture",
+        "text": "Nurturing"
+      },
+      {
+        "id": "disq",
+        "text": "Disqualifiziert"
+      }
     ],
-    "pairs": { "s1": "kein", "s2": "termin", "s3": "nurture", "s4": "disq" },
+    "pairs": {
+      "s1": "kein",
+      "s2": "termin",
+      "s3": "nurture",
+      "s4": "disq"
+    },
     "explanation": "Status nach Fakten setzen, nicht nach Hoffnung. Beim Mieter kann je nach Auftraggeber auch Nurturing sinnvoll sein – hier fehlt die Entscheidungsbefugnis für das Produkt grundsätzlich.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-019", "moduleId": "M01", "objectiveId": "LO-M01-05", "difficulty": 3, "version": 1, "type": "crm",
+    "id": "Q-M01-019",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "crm",
     "prompt": "Simulierter CRM-Eintrag: Setze Status und nächste Aktion korrekt.",
     "record": [
-      { "label": "Kontakt", "value": "Nina Albers (erfunden)" },
-      { "label": "Quelle", "value": "Website-Formular Wärmepumpe" },
-      { "label": "Gesprächsnotiz", "value": "Eigentümerin, Gasheizung 22 Jahre alt, möchte bis Herbst umsteigen. Ehemann entscheidet mit und ist beim Termin dabei. Termin Do 18:00 mit Energieberater bestätigt." }
+      {
+        "label": "Kontakt",
+        "value": "Nina Albers (erfunden)"
+      },
+      {
+        "label": "Quelle",
+        "value": "Website-Formular Wärmepumpe"
+      },
+      {
+        "label": "Gesprächsnotiz",
+        "value": "Eigentümerin, Gasheizung 22 Jahre alt, möchte bis Herbst umsteigen. Ehemann entscheidet mit und ist beim Termin dabei. Termin Do 18:00 mit Energieberater bestätigt."
+      }
     ],
     "fields": [
-      { "id": "status", "label": "Lead-Status", "options": ["Neu", "In Kontakt", "Qualifiziert", "Termin gebucht", "Nurturing", "Disqualifiziert"], "correct": "Termin gebucht" },
-      { "id": "next", "label": "Nächste Aktion", "options": ["Keine", "Terminerinnerung 24 h vorher senden", "Rabattangebot schicken", "In 6 Monaten erneut anrufen"], "correct": "Terminerinnerung 24 h vorher senden" },
-      { "id": "authority", "label": "Entscheider beim Termin", "options": ["Ja", "Nein", "Nicht erfragt"], "correct": "Ja" }
+      {
+        "id": "status",
+        "label": "Lead-Status",
+        "options": [
+          "Neu",
+          "In Kontakt",
+          "Qualifiziert",
+          "Termin gebucht",
+          "Nurturing",
+          "Disqualifiziert"
+        ],
+        "correct": "Termin gebucht"
+      },
+      {
+        "id": "next",
+        "label": "Nächste Aktion",
+        "options": [
+          "Keine",
+          "Terminerinnerung 24 h vorher senden",
+          "Rabattangebot schicken",
+          "In 6 Monaten erneut anrufen"
+        ],
+        "correct": "Terminerinnerung 24 h vorher senden"
+      },
+      {
+        "id": "authority",
+        "label": "Entscheider beim Termin",
+        "options": [
+          "Ja",
+          "Nein",
+          "Nicht erfragt"
+        ],
+        "correct": "Ja"
+      }
     ],
     "simulatedData": true,
     "explanation": "Termin ist bestätigt → Status „Termin gebucht“, nächste Aktion ist die Erinnerung. Der Mitentscheider ist beim Termin dabei.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-020", "moduleId": "M01", "objectiveId": "LO-M01-05", "difficulty": 2, "version": 1, "type": "situation",
+    "id": "Q-M01-020",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
     "prompt": "Was trägst du in die Übergabenotiz ein?",
     "situation": "Im Gespräch wurde das Budget nicht angesprochen. Der Kunde wirkte aber „wohlhabend“, weil er von seinem Segelboot erzählt hat.",
     "options": [
-      { "id": "a", "text": "Budget: „hoch“", "quality": "unacceptable", "feedback": "Das ist eine Vermutung, keine Information des Kunden – erfundene Angaben führen den Berater in die Irre.", "errorCategory": "ueberinterpretation" },
-      { "id": "b", "text": "Budget: „nicht erfragt“", "quality": "best", "feedback": "Korrekt: Unbekanntes wird als unbekannt markiert." },
-      { "id": "c", "text": "Feld leer lassen", "quality": "acceptable", "feedback": "Nicht falsch, aber der Berater weiß nicht, ob du vergessen hast zu fragen oder bewusst nichts weißt." },
-      { "id": "d", "text": "Budget: „ca. 20.000 €“", "quality": "unacceptable", "feedback": "Eine erfundene Zahl ist eine Falschangabe.", "errorCategory": "ueberinterpretation" }
+      {
+        "id": "a",
+        "text": "Budget: „hoch“",
+        "quality": "unacceptable",
+        "feedback": "Das ist eine Vermutung, keine Information des Kunden – erfundene Angaben führen den Berater in die Irre.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "b",
+        "text": "Budget: „nicht erfragt“",
+        "quality": "best",
+        "feedback": "Korrekt: Unbekanntes wird als unbekannt markiert."
+      },
+      {
+        "id": "c",
+        "text": "Feld leer lassen",
+        "quality": "acceptable",
+        "feedback": "Nicht falsch, aber der Berater weiß nicht, ob du vergessen hast zu fragen oder bewusst nichts weißt."
+      },
+      {
+        "id": "d",
+        "text": "Budget: „ca. 20.000 €“",
+        "quality": "unacceptable",
+        "feedback": "Eine erfundene Zahl ist eine Falschangabe.",
+        "errorCategory": "ueberinterpretation"
+      }
     ],
     "explanation": "Nur dokumentieren, was gesagt wurde. „Nicht erfragt“ ist eine wertvolle, ehrliche Information.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-021", "moduleId": "M01", "objectiveId": "LO-M01-05", "difficulty": 3, "version": 1, "type": "single",
+    "id": "Q-M01-021",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
     "prompt": "Ein Lead ist sehr begeistert, aber der Mitentscheider (Ehepartner) weiß noch nichts vom Projekt. Was ist der beste nächste Schritt?",
     "options": [
-      { "id": "a", "text": "Termin trotzdem buchen – die Begeisterung zählt", "misconception": "Ohne Mitentscheider droht ein ergebnisloser Termin oder ein No-Show.", "errorCategory": "qualifizierungsfehler" },
-      { "id": "b", "text": "Einen Termin vorschlagen, an dem beide teilnehmen können, und das ausdrücklich ansprechen" },
-      { "id": "c", "text": "Den Lead sofort disqualifizieren", "misconception": "Fehlende Abstimmung ist kein Ausschlussgrund – nur ein offener Punkt.", "errorCategory": "qualifizierungsfehler" },
-      { "id": "d", "text": "Empfehlen, den Partner erst nach dem Kauf zu informieren", "misconception": "Unethisch und erhöht Stornorisiko.", "errorCategory": "ethikfehler" }
+      {
+        "id": "a",
+        "text": "Termin trotzdem buchen – die Begeisterung zählt",
+        "misconception": "Ohne Mitentscheider droht ein ergebnisloser Termin oder ein No-Show.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Einen Termin vorschlagen, an dem beide teilnehmen können, und das ausdrücklich ansprechen"
+      },
+      {
+        "id": "c",
+        "text": "Den Lead sofort disqualifizieren",
+        "misconception": "Fehlende Abstimmung ist kein Ausschlussgrund – nur ein offener Punkt.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Empfehlen, den Partner erst nach dem Kauf zu informieren",
+        "misconception": "Unethisch und erhöht Stornorisiko.",
+        "errorCategory": "ethikfehler"
+      }
     ],
     "correct": "b",
     "explanation": "Mitentscheider gehören in den Termin. Das ansprechen ist Qualifizierung, kein Hindernis.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-022", "moduleId": "M01", "objectiveId": "LO-M01-05", "difficulty": 2, "version": 1, "type": "truefalse",
+    "id": "Q-M01-022",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
     "prompt": "BANT ist ein wissenschaftlich als überlegen nachgewiesenes Qualifizierungsmodell.",
-    "correct": false, "errorCategory": "ueberinterpretation",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
     "explanation": "BANT ist eine verbreitete Praxisheuristik (Herkunft IBM zugeschrieben). Eine empirische Überlegenheit gegenüber anderen Rastern ist nicht belegt.",
-    "sourceIds": ["SRC-047"]
+    "sourceIds": [
+      "SRC-047"
+    ]
   },
   {
-    "id": "Q-M01-023", "moduleId": "M01", "objectiveId": "LO-M01-06", "difficulty": 2, "version": 1, "type": "situation",
+    "id": "Q-M01-023",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
     "prompt": "Wie reagierst du?",
     "situation": "Nach zwei Nachrichten schreibt ein Interessent: „Nein danke, ich möchte keinen Termin und keine weiteren Nachrichten.“",
     "options": [
-      { "id": "a", "text": "„Verstehe! Darf ich nur noch kurz fragen, was Sie abhält?“", "quality": "unacceptable", "feedback": "Das ignoriert ein ausdrückliches Nein.", "errorCategory": "ethikfehler" },
-      { "id": "b", "text": "„Alles klar, danke für Ihre klare Rückmeldung. Ich vermerke das, Sie erhalten keine weiteren Nachrichten von uns. Alles Gute!“", "quality": "best", "feedback": "Respektvoll, klar und mit Zusage, den Wunsch umzusetzen." },
-      { "id": "c", "text": "Keine Antwort, Lead aber in 2 Wochen wieder anschreiben", "quality": "unacceptable", "feedback": "Widerspruch gegen weitere Werbung muss beachtet werden.", "errorCategory": "rechtsfehler" },
-      { "id": "d", "text": "„Schade. Das Angebot gilt aber nur noch bis morgen!“", "quality": "unacceptable", "feedback": "Druck und künstliche Verknappung nach einem Nein.", "errorCategory": "ethikfehler" }
+      {
+        "id": "a",
+        "text": "„Verstehe! Darf ich nur noch kurz fragen, was Sie abhält?“",
+        "quality": "unacceptable",
+        "feedback": "Das ignoriert ein ausdrückliches Nein.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "b",
+        "text": "„Alles klar, danke für Ihre klare Rückmeldung. Ich vermerke das, Sie erhalten keine weiteren Nachrichten von uns. Alles Gute!“",
+        "quality": "best",
+        "feedback": "Respektvoll, klar und mit Zusage, den Wunsch umzusetzen."
+      },
+      {
+        "id": "c",
+        "text": "Keine Antwort, Lead aber in 2 Wochen wieder anschreiben",
+        "quality": "unacceptable",
+        "feedback": "Widerspruch gegen weitere Werbung muss beachtet werden.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Schade. Das Angebot gilt aber nur noch bis morgen!“",
+        "quality": "unacceptable",
+        "feedback": "Druck und künstliche Verknappung nach einem Nein.",
+        "errorCategory": "ethikfehler"
+      }
     ],
     "explanation": "Ein ausdrückliches Nein beendet die werbliche Ansprache. Im CRM als „Kein Interesse / kein Kontakt“ markieren.",
-    "sourceIds": ["SRC-019", "SRC-050"]
+    "sourceIds": [
+      "SRC-019",
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-024", "moduleId": "M01", "objectiveId": "LO-M01-06", "difficulty": 2, "version": 1, "type": "multi",
+    "id": "Q-M01-024",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
     "prompt": "Welche Formulierungen sind in diesem Kurs unzulässig? (Mehrere Antworten möglich)",
     "options": [
-      { "id": "a", "text": "„Nur heute gibt es diesen Preis“ – obwohl der Preis nächste Woche gleich ist" },
-      { "id": "b", "text": "„Ihre Nachbarn haben auch alle schon gebucht“ – ohne dass das stimmt" },
-      { "id": "c", "text": "„Ich bin Setter bei SolarNord und melde mich auf Ihre Anfrage von gestern.“", "misconception": "Transparente Vorstellung ist ausdrücklich erwünscht.", "errorCategory": "ethikfehler" },
-      { "id": "d", "text": "„Die Förderung ist Ihnen sicher“ – ohne Prüfung durch einen Berater" },
-      { "id": "e", "text": "„Möchten Sie lieber Dienstag oder Donnerstag?“ – nachdem der Kunde einem Termin zugestimmt hat", "misconception": "Eine Auswahl nach erteilter Zustimmung ist hilfreich, nicht manipulativ.", "errorCategory": "ethikfehler" }
+      {
+        "id": "a",
+        "text": "„Nur heute gibt es diesen Preis“ – obwohl der Preis nächste Woche gleich ist"
+      },
+      {
+        "id": "b",
+        "text": "„Ihre Nachbarn haben auch alle schon gebucht“ – ohne dass das stimmt"
+      },
+      {
+        "id": "c",
+        "text": "„Ich bin Setter bei SolarNord und melde mich auf Ihre Anfrage von gestern.“",
+        "misconception": "Transparente Vorstellung ist ausdrücklich erwünscht.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Die Förderung ist Ihnen sicher“ – ohne Prüfung durch einen Berater"
+      },
+      {
+        "id": "e",
+        "text": "„Möchten Sie lieber Dienstag oder Donnerstag?“ – nachdem der Kunde einem Termin zugestimmt hat",
+        "misconception": "Eine Auswahl nach erteilter Zustimmung ist hilfreich, nicht manipulativ.",
+        "errorCategory": "ethikfehler"
+      }
     ],
-    "correct": ["a", "b", "d"],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
     "explanation": "Falsche Verknappung, erfundener Social Proof und ungeprüfte Zusagen sind Täuschung. Transparente Vorstellung und Terminauswahl nach Zustimmung sind seriös.",
-    "sourceIds": ["SRC-038", "SRC-050"]
+    "sourceIds": [
+      "SRC-038",
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-025", "moduleId": "M01", "objectiveId": "LO-M01-06", "difficulty": 2, "version": 1, "type": "single",
+    "id": "Q-M01-025",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
     "prompt": "Eine Kundin fragt: „Kann ich die Wärmepumpe steuerlich absetzen?“ Was antwortest du als Setter?",
     "options": [
-      { "id": "a", "text": "„Ja, auf jeden Fall, das machen alle so.“", "misconception": "Steuerauskünfte sind nicht Aufgabe des Setters und können falsch sein.", "errorCategory": "rollenverwechslung" },
-      { "id": "b", "text": "„Das möchte ich nicht ungenau beantworten. Notieren Sie sich die Frage gern für die Beratung – und für steuerliche Details ist Ihre Steuerberatung die richtige Stelle.“" },
-      { "id": "c", "text": "„Keine Ahnung.“", "misconception": "Ehrlich, aber unprofessionell – ohne Weiterleitung.", "errorCategory": "kommunikationsfehler" },
-      { "id": "d", "text": "„Nein, das geht nicht.“", "misconception": "Auch eine negative Auskunft ist eine ungeprüfte Fachaussage.", "errorCategory": "rollenverwechslung" }
+      {
+        "id": "a",
+        "text": "„Ja, auf jeden Fall, das machen alle so.“",
+        "misconception": "Steuerauskünfte sind nicht Aufgabe des Setters und können falsch sein.",
+        "errorCategory": "rollenverwechslung"
+      },
+      {
+        "id": "b",
+        "text": "„Das möchte ich nicht ungenau beantworten. Notieren Sie sich die Frage gern für die Beratung – und für steuerliche Details ist Ihre Steuerberatung die richtige Stelle.“"
+      },
+      {
+        "id": "c",
+        "text": "„Keine Ahnung.“",
+        "misconception": "Ehrlich, aber unprofessionell – ohne Weiterleitung.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Nein, das geht nicht.“",
+        "misconception": "Auch eine negative Auskunft ist eine ungeprüfte Fachaussage.",
+        "errorCategory": "rollenverwechslung"
+      }
     ],
     "correct": "b",
     "explanation": "Fachfragen werden freundlich an die zuständige Fachperson weitergegeben.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-026", "moduleId": "M01", "objectiveId": "LO-M01-06", "difficulty": 1, "version": 1, "type": "truefalse",
+    "id": "Q-M01-026",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 1,
+    "version": 1,
+    "type": "truefalse",
     "prompt": "In den Übungen dieses Kurses darf man echte Kundendaten verwenden, wenn man sie anonymisiert „im Kopf“ behält.",
-    "correct": false, "errorCategory": "rechtsfehler",
+    "correct": false,
+    "errorCategory": "rechtsfehler",
     "explanation": "In allen Übungen werden ausschließlich erfundene Daten verwendet – das schützt Dritte und dich.",
-    "sourceIds": ["SRC-025"]
+    "sourceIds": [
+      "SRC-025"
+    ]
   },
   {
-    "id": "Q-M01-027", "moduleId": "M01", "objectiveId": "LO-M01-06", "difficulty": 3, "version": 1, "type": "errorspot",
+    "id": "Q-M01-027",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
     "prompt": "Markiere die problematischen Zeilen in dieser Antwort auf den Einwand „Ich muss das erst mit meiner Frau besprechen“.",
     "lines": [
-      { "id": "l1", "text": "Das verstehe ich gut – so eine Entscheidung trifft man gemeinsam.", "faulty": false },
-      { "id": "l2", "text": "Aber ehrlich gesagt: Echte Männer entscheiden so etwas selbst.", "faulty": true, "why": "Abwertend und manipulativ – Druck über Identität." },
-      { "id": "l3", "text": "Wäre es hilfreich, wenn Ihre Frau beim Beratungstermin dabei ist?", "faulty": false },
-      { "id": "l4", "text": "Wenn Sie jetzt nicht buchen, ist der Termin für immer weg.", "faulty": true, "why": "Unwahre Verknappung." }
+      {
+        "id": "l1",
+        "text": "Das verstehe ich gut – so eine Entscheidung trifft man gemeinsam.",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Aber ehrlich gesagt: Echte Männer entscheiden so etwas selbst.",
+        "faulty": true,
+        "why": "Abwertend und manipulativ – Druck über Identität."
+      },
+      {
+        "id": "l3",
+        "text": "Wäre es hilfreich, wenn Ihre Frau beim Beratungstermin dabei ist?",
+        "faulty": false
+      },
+      {
+        "id": "l4",
+        "text": "Wenn Sie jetzt nicht buchen, ist der Termin für immer weg.",
+        "faulty": true,
+        "why": "Unwahre Verknappung."
+      }
     ],
     "explanation": "Mitentscheider einzubeziehen ist gute Qualifizierung; Druck und Abwertung sind tabu.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-028", "moduleId": "M01", "objectiveId": "LO-M01-06", "difficulty": 3, "version": 1, "type": "single",
+    "id": "Q-M01-028",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
     "prompt": "Was unterscheidet seriöse Überzeugung am deutlichsten von Manipulation?",
     "options": [
-      { "id": "a", "text": "Seriöse Überzeugung nutzt keine Psychologie", "misconception": "Jede Kommunikation wirkt psychologisch – entscheidend ist Ehrlichkeit und Interesse des Kunden.", "errorCategory": "ueberinterpretation" },
-      { "id": "b", "text": "Manipulation führt zu Entscheidungen, die der Mensch bei voller Information nicht treffen würde" },
-      { "id": "c", "text": "Manipulation ist nur strafbar, wenn sie schriftlich erfolgt", "misconception": "Ethik endet nicht bei der Strafbarkeit; die Form ist unerheblich.", "errorCategory": "rechtsfehler" },
-      { "id": "d", "text": "Seriöse Überzeugung führt immer zum Termin", "misconception": "Seriös kann auch heißen: kein Termin.", "errorCategory": "qualifizierungsfehler" }
+      {
+        "id": "a",
+        "text": "Seriöse Überzeugung nutzt keine Psychologie",
+        "misconception": "Jede Kommunikation wirkt psychologisch – entscheidend ist Ehrlichkeit und Interesse des Kunden.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "b",
+        "text": "Manipulation führt zu Entscheidungen, die der Mensch bei voller Information nicht treffen würde"
+      },
+      {
+        "id": "c",
+        "text": "Manipulation ist nur strafbar, wenn sie schriftlich erfolgt",
+        "misconception": "Ethik endet nicht bei der Strafbarkeit; die Form ist unerheblich.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Seriöse Überzeugung führt immer zum Termin",
+        "misconception": "Seriös kann auch heißen: kein Termin.",
+        "errorCategory": "qualifizierungsfehler"
+      }
     ],
     "correct": "b",
     "explanation": "Der Test: Würde die Person genauso entscheiden, wenn sie alles über dein Ziel und deine Methode wüsste?",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-029", "moduleId": "M01", "objectiveId": "LO-M01-02", "difficulty": 3, "version": 1, "type": "calculation",
+    "id": "Q-M01-029",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "calculation",
     "prompt": "Simulierte Daten: Wie hoch ist die Lead-to-Appointment-Rate (gebuchte Termine je Lead) in Prozent?",
     "given": [
-      { "label": "Leads", "value": 250 },
-      { "label": "Qualifizierte Leads", "value": 90 },
-      { "label": "Gebuchte Termine", "value": 60 }
+      {
+        "label": "Leads",
+        "value": 250
+      },
+      {
+        "label": "Qualifizierte Leads",
+        "value": 90
+      },
+      {
+        "label": "Gebuchte Termine",
+        "value": 60
+      }
     ],
-    "correctValue": 24, "unit": "%", "tolerance": 0.5,
+    "correctValue": 24,
+    "unit": "%",
+    "tolerance": 0.5,
     "formula": "60 ÷ 250 × 100 = 24 %",
     "simulatedData": true,
     "explanation": "Bezugsgröße sind alle Leads. 60/90 (≈ 66,7 %) wäre die Booking Rate der qualifizierten Leads.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
   },
   {
-    "id": "Q-M01-030", "moduleId": "M01", "objectiveId": "LO-M01-04", "difficulty": 3, "version": 1, "type": "freetext",
+    "id": "Q-M01-030",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
     "prompt": "Schreibe eine Eröffnungsnachricht im Chat an „Frau Lenz“ (erfunden), die gestern über die Website eine Anfrage zu einem Stromspeicher gestellt hat. Du schreibst für das (erfundene) Unternehmen „SolarNord“.",
     "rubric": [
-      { "id": "c1", "description": "Begrüßt die Kundin mit Namen", "points": 1, "anyOf": [["lenz"]] },
-      { "id": "c2", "description": "Nennt das Unternehmen", "points": 1, "anyOf": [["solarnord"]] },
-      { "id": "c3", "description": "Stellt Bezug zur Anfrage her", "points": 1, "anyOf": [["anfrage", "angefragt", "gemeldet", "interesse"]] },
-      { "id": "c4", "description": "Holt Erlaubnis ein oder fragt nach passendem Moment", "points": 1, "anyOf": [["zeit", "passt es", "moment", "kurz", "darf ich"]] },
-      { "id": "c5", "description": "Enthält eine offene Frage", "points": 1, "anyOf": [["was ", "wie ", "welche", "wodurch", "worum"]] },
-      { "id": "c6", "description": "Kein Druck und keine künstliche Verknappung", "points": 1, "forbidden": ["nur heute", "sofort buchen", "letzte chance", "nur noch", "jetzt oder nie"] }
+      {
+        "id": "c1",
+        "description": "Begrüßt die Kundin mit Namen",
+        "points": 1,
+        "anyOf": [
+          [
+            "lenz"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Nennt das Unternehmen",
+        "points": 1,
+        "anyOf": [
+          [
+            "solarnord"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Stellt Bezug zur Anfrage her",
+        "points": 1,
+        "anyOf": [
+          [
+            "anfrage",
+            "angefragt",
+            "gemeldet",
+            "interesse"
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Holt Erlaubnis ein oder fragt nach passendem Moment",
+        "points": 1,
+        "anyOf": [
+          [
+            "zeit",
+            "passt es",
+            "moment",
+            "kurz",
+            "darf ich"
+          ]
+        ]
+      },
+      {
+        "id": "c5",
+        "description": "Enthält eine offene Frage",
+        "points": 1,
+        "anyOf": [
+          [
+            "was ",
+            "wie ",
+            "welche",
+            "wodurch",
+            "worum"
+          ]
+        ]
+      },
+      {
+        "id": "c6",
+        "description": "Kein Druck und keine künstliche Verknappung",
+        "points": 1,
+        "forbidden": [
+          "nur heute",
+          "sofort buchen",
+          "letzte chance",
+          "nur noch",
+          "jetzt oder nie"
+        ]
+      }
     ],
     "sampleAnswer": "Hallo Frau Lenz, hier ist Jonas von SolarNord – danke für Ihre Anfrage zum Stromspeicher! Passt es gerade für zwei kurze Fragen? Was möchten Sie mit dem Speicher vor allem erreichen?",
     "requiresManualReview": true,
     "explanation": "Die automatische Prüfung erkennt nur Muster und ist ein Selbstcheck. Vergleiche mit der Beispielantwort und den Kriterien – bei Prüfungen bewertet eine Person.",
-    "sourceIds": ["SRC-050"]
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M01-031",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Was ist die beste Reaktion, wenn ein neuer Inbound-Lead eingeht, du aber gerade in einem anderen Gespräch steckst?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lead bis morgen liegen lassen, dann in Ruhe antworten",
+        "misconception": "Lange Wartezeit hängt mit deutlich geringerer Qualifizierung zusammen.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "b",
+        "text": "Kurze persönliche Zwischennachricht mit konkretem Zeitpunkt senden und das Versprechen einhalten"
+      },
+      {
+        "id": "c",
+        "text": "Sofort eine Standardnachricht mit Terminlink schicken",
+        "misconception": "Schnell, aber unpersönlich und ohne Qualifizierung.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Den Lead anrufen, ohne zu prüfen, ob telefonischer Kontakt vereinbart ist",
+        "misconception": "Schnelligkeit rechtfertigt keinen Kanal ohne Einwilligung.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Eine ehrliche Zwischennachricht hält die Erwartung, und ein eingehaltenes Versprechen stärkt Vertrauen. Speed-to-Lead heißt: schnell UND persönlich.",
+    "sourceIds": [
+      "SRC-005",
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M01-032",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Schritte vor einem Terminvorschlag in eine sinnvolle Reihenfolge.",
+    "items": [
+      {
+        "id": "propose",
+        "text": "Termin mit zwei Zeitfenstern vorschlagen"
+      },
+      {
+        "id": "need",
+        "text": "Bedarf und Entscheider erfragen"
+      },
+      {
+        "id": "summary",
+        "text": "Zusammenfassen und bestätigen lassen"
+      },
+      {
+        "id": "open",
+        "text": "Vorstellen und Erlaubnis einholen"
+      }
+    ],
+    "correctOrder": [
+      "open",
+      "need",
+      "summary",
+      "propose"
+    ],
+    "explanation": "Eröffnung → Bedarf (inkl. Entscheider) → Zusammenfassung → Vorschlag. Ein Termin wird erst vorgeschlagen, wenn alle Pflichtkriterien geklärt sind.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M01-033",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Die „But you are free“-Formulierung hat in methodisch strengen Studien einen großen, gut belegten Effekt auf Zustimmung.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Die erste Meta-Analyse (Carpenter 2013) fand einen positiven Effekt; eine Re-Analyse zeigte in Studien mit geringem Verzerrungsrisiko nur g = 0,11 (nicht signifikant). Autonomie zu betonen ist trotzdem ethisch richtig.",
+    "sourceIds": [
+      "SRC-052",
+      "SRC-053"
+    ]
+  },
+  {
+    "id": "Q-M01-034",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Aufgabe gehört an den Anfang eines Setter-Arbeitstages?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Überblick über Termine, neue Leads und offene Gespräche"
+      },
+      {
+        "id": "b",
+        "text": "Sofort alle alten Leads der letzten Monate anschreiben",
+        "misconception": "Reaktivierung ohne Prüfung der Einwilligung ist rechtlich heikel und nicht dringend.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Zuerst die Dokumentation von gestern löschen",
+        "misconception": "Dokumentation wird gepflegt, nicht gelöscht.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "d",
+        "text": "Social Media scrollen, um in Stimmung zu kommen",
+        "misconception": "Keine Arbeitsaufgabe.",
+        "errorCategory": "prozessfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein kurzer Überblick verhindert, dass dringende Dinge (neue Leads, heutige Termine) untergehen.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M01-035",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Was macht eine gute Nachrichten-Vorlage aus? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Feste Bausteine für Vorstellung und Erlaubnisfrage"
+      },
+      {
+        "id": "b",
+        "text": "Eine Lücke für den persönlichen Bezug zur Anfrage"
+      },
+      {
+        "id": "c",
+        "text": "Sie wird ohne Anpassung an alle Leads gleichzeitig verschickt",
+        "misconception": "Massennachrichten wirken unpersönlich und sind oft unzulässig.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Sie klingt laut gelesen wie ein echtes Gespräch"
+      },
+      {
+        "id": "e",
+        "text": "Sie enthält immer einen Countdown bis zum Angebotsende",
+        "misconception": "Künstliche Verknappung ist tabu.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation": "Vorlagen sparen Zeit, wenn sie ein Baukasten mit persönlichem Bezug sind.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M01-036",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie bestätigst du den Termin am besten?",
+    "situation": "Die Kundin hat gerade „Donnerstag 19 Uhr passt“ geschrieben. Ihr Mann soll dabei sein.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Super, bis dann!“",
+        "quality": "poor",
+        "feedback": "Keine Wiederholung der Details, kein Kalendereintrag, keine Info zu Format und Teilnehmern.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "b",
+        "text": "„Perfekt: Donnerstag, 19 Uhr, 45 Minuten per Video mit Ihnen und Ihrem Mann. Mögen Sie sich den Termin gleich eintragen? Falls etwas dazwischenkommt, schreiben Sie mir einfach.“",
+        "quality": "best",
+        "feedback": "Konkreter Plan, Kalendereintrag, Verschieben erlaubt – genau richtig."
+      },
+      {
+        "id": "c",
+        "text": "„Super. Bitte unbedingt erscheinen, unser Berater hält sich extra frei!“",
+        "quality": "poor",
+        "feedback": "Erzeugt Schuldgefühle statt Verbindlichkeit.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Notiert. Falls Sie nicht kommen, berechnen wir 50 € Ausfallgebühr.“",
+        "quality": "unacceptable",
+        "feedback": "Erfundene Gebühr – Täuschung und Druck.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Konkrete Wenn-dann-Pläne erhöhen die Umsetzung; ehrliches Verschieben ist besser als ein No-Show.",
+    "sourceIds": [
+      "SRC-056",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M01-037",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die problematischen Zeilen dieser Übergabenotiz.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Anlass: Formular „PV-Anlage“, 01.10.",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Bedarf: „Stromkosten senken, möglichst unabhängig werden“ (Zitat)",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Budget: wirkt wohlhabend, eher hoch",
+        "faulty": true,
+        "why": "Vermutung statt Information – „nicht erfragt“ wäre korrekt."
+      },
+      {
+        "id": "l4",
+        "text": "Entscheider: vermutlich allein",
+        "faulty": true,
+        "why": "Vermutung – Entscheider muss erfragt oder als offen markiert werden."
+      },
+      {
+        "id": "l5",
+        "text": "Offene Frage des Kunden: Wie lange dauert die Montage?",
+        "faulty": false
+      }
+    ],
+    "explanation": "Übergaben enthalten nur Gesagtes. Vermutungen führen den Berater in die Irre.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M01-038",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken.",
+    "text": "Ein Termin wird verbindlicher, wenn Datum, Uhrzeit und {{g1}} konkret wiederholt werden. Was nicht erfragt wurde, wird in der Übergabe als „nicht {{g2}}“ markiert.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "Format",
+          "das Format",
+          "Teilnehmer",
+          "die Teilnehmer"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "erfragt"
+        ]
+      }
+    ],
+    "explanation": "Konkrete Details machen aus einem Ja einen Plan; „nicht erfragt“ ist ehrliche, nützliche Information.",
+    "sourceIds": [
+      "SRC-056",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M01-039",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Was ist der passende nächste Schritt?",
+    "situation": "Ein Lead schreibt: „Ich sammle gerade nur Infos, wir wollen frühestens nächstes Jahr etwas machen.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "Trotzdem sofort einen Beratungstermin vorschlagen",
+        "quality": "poor",
+        "feedback": "Ignoriert die genannte Phase.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "b",
+        "text": "Hilfreiche Infos anbieten und fragen, ob und wann eine spätere Rückmeldung gewünscht ist",
+        "quality": "best",
+        "feedback": "Passend zur Phase und mit Erlaubnis für späteren Kontakt."
+      },
+      {
+        "id": "c",
+        "text": "Lead als „kein Interesse“ markieren und nie wieder kontaktieren",
+        "quality": "acceptable",
+        "feedback": "Respektvoll, aber verschenkt ein mögliches späteres Interesse – er hat nicht Nein gesagt."
+      },
+      {
+        "id": "d",
+        "text": "„Nächstes Jahr wird es viel teurer, buchen Sie lieber jetzt!“",
+        "quality": "unacceptable",
+        "feedback": "Unbelegte Angstbotschaft.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Nurturing mit Erlaubnis ist der passende Schritt für frühe Phasen.",
+    "sourceIds": [
+      "SRC-043",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M01-040",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Antwort ist eine echte Folgefrage?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Kunde: „Die Kosten sind stark gestiegen.“ → „Um wie viel ungefähr sind sie gestiegen?“"
+      },
+      {
+        "id": "b",
+        "text": "Kunde: „Die Kosten sind stark gestiegen.“ → „Wann haben Sie Zeit für einen Termin?“",
+        "misconception": "Wechselt das Thema, statt anzuknüpfen.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Kunde: „Die Kosten sind stark gestiegen.“ → „Haben Sie auch ein Auto?“",
+        "misconception": "Irrelevant für den Bedarf.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Kunde: „Die Kosten sind stark gestiegen.“ → „Das geht allen so.“",
+        "misconception": "Keine Frage; wirkt abwertend.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Folgefragen greifen ein Detail der letzten Antwort auf und vertiefen es (Huang et al. 2017).",
+    "sourceIds": [
+      "SRC-054"
+    ]
+  },
+  {
+    "id": "Q-M01-041",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Wenn ein Berater tatsächlich nur noch zwei freie Termine diese Woche hat, darf ein Setter das wahrheitsgemäß sagen.",
+    "correct": true,
+    "errorCategory": "ethikfehler",
+    "explanation": "Wahre Knappheit ist eine Information. Tabu ist erfundene oder übertriebene Knappheit.",
+    "sourceIds": [
+      "SRC-038",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M01-042",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Was sagt die Forschung zu NLP-Techniken wie dem Deuten von Augenbewegungen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie sind gut belegt und sollten in jedem Verkaufsgespräch genutzt werden",
+        "misconception": "Die zentralen NLP-Annahmen sind empirisch kaum gestützt.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "b",
+        "text": "Die zentralen Annahmen sind empirisch kaum gestützt"
+      },
+      {
+        "id": "c",
+        "text": "Sie funktionieren nur im Chat",
+        "misconception": "Augenbewegungen sind im Chat gar nicht sichtbar – und belegt ist es auch sonst nicht.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Sie sind gesetzlich verboten",
+        "misconception": "Kein Verbot – aber wissenschaftlich kaum belegt.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "b",
+    "explanation": "Witkowski (2010) fand nach 35 Jahren Forschung kaum Belege für NLP-Kernannahmen. Wirksam sind die allgemeinen Kommunikationsgrundlagen dieses Kurses.",
+    "sourceIds": [
+      "SRC-062"
+    ]
   }
 ]

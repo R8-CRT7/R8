@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { QuestionRenderer } from "@/components/QuestionRenderer";
 import { Badge, Button, ButtonLink, Card, PageHeader, ProgressBar, Ring } from "@/components/ui";
-import { COURSE_VERSION, moduleById, questionById } from "@/lib/content";
+import { COURSE_VERSION, questionById, quizById } from "@/lib/content";
 import { scoreAttempt } from "@/lib/engine/quiz";
 import { recordAnswer, recordQuizAttempt } from "@/lib/store/state";
 import { update } from "@/lib/store/storage";
@@ -24,8 +24,8 @@ function interleave(ids: string[]) {
 }
 
 export default function QuizRunner({ moduleId }: { moduleId: string }) {
-  const m = moduleById(moduleId)!;
-  const ids = useMemo(() => interleave(m.examQuestionIds), [m]);
+  const m = quizById(moduleId)!;
+  const ids = useMemo(() => interleave(m.questionIds), [m]);
   const [started, setStarted] = useState(false);
   const [i, setI] = useState(0);
   const [results, setResults] = useState<GradeResult[]>([]);
@@ -35,7 +35,7 @@ export default function QuizRunner({ moduleId }: { moduleId: string }) {
   if (!started) {
     return (
       <div className="fade-in mx-auto max-w-2xl">
-        <PageHeader eyebrow={`Modul ${m.number}`} title={`Abschlussquiz: ${m.title}`} />
+        <PageHeader eyebrow={m.eyebrow} title={m.title} />
         <Card>
           <h2 className="font-semibold">Regeln (vorab festgelegt)</h2>
           <ul className="mt-2 grid gap-1.5 text-sm text-muted">
@@ -62,7 +62,7 @@ export default function QuizRunner({ moduleId }: { moduleId: string }) {
           <div>
             <p className="text-sm text-muted">Bestehensgrenze {m.passThreshold * 100} % · {finished.autoGraded} automatisch bewertete Fragen</p>
             <p className="mt-2 text-sm">{finished.passed ? "Stark. Die Fragen landen jetzt in deiner Wiederholung – in ein paar Tagen prüfen wir, ob es hängen geblieben ist." : "Kein Problem: Schau dir die Fehlerschwerpunkte an, wiederhole die passenden Lektionen und versuche es erneut."}</p>
-            <Badge tone={finished.passed ? "success" : "warning"} className="mt-3">{finished.passed ? "Modulquiz bestanden" : "Wiederholung empfohlen"}</Badge>
+            <Badge tone={finished.passed ? "success" : "warning"} className="mt-3">{finished.passed ? (m.kind === "stage-check" ? "Stufen-Check bestanden" : "Modulquiz bestanden") : "Wiederholung empfohlen"}</Badge>
           </div>
         </Card>
         {counts.length > 0 && (
@@ -75,7 +75,7 @@ export default function QuizRunner({ moduleId }: { moduleId: string }) {
         )}
         <div className="mt-4 flex flex-wrap gap-2">
           <ButtonLink href="/review/">Zur Wiederholung</ButtonLink>
-          <ButtonLink href={`/learn/${m.id}/`} variant="secondary">Zur Modulübersicht</ButtonLink>
+          <ButtonLink href={m.backHref} variant="secondary">{m.kind === "stage-check" ? "Zum Plan" : "Zur Modulübersicht"}</ButtonLink>
           <Button variant="ghost" onClick={() => { setI(0); setResults([]); setFinished(null); setAnsweredCurrent(false); }}>Erneut versuchen</Button>
         </div>
       </div>
@@ -92,7 +92,7 @@ export default function QuizRunner({ moduleId }: { moduleId: string }) {
         recordQuizAttempt(st, {
           id: `quiz-${Date.now().toString(36)}`,
           moduleId: m.id,
-          kind: "module-exam",
+          kind: m.kind,
           at: Date.now(),
           percent: score.percent,
           passed: score.passed,
@@ -112,7 +112,7 @@ export default function QuizRunner({ moduleId }: { moduleId: string }) {
   return (
     <div className="fade-in mx-auto max-w-2xl">
       <div className="mb-4 flex items-center gap-3">
-        <Link href={`/learn/${m.id}/`} className="text-sm text-faint hover:text-fg">Abbrechen</Link>
+        <Link href={m.backHref} className="text-sm text-faint hover:text-fg">Abbrechen</Link>
         <ProgressBar className="flex-1" value={(i + (answeredCurrent ? 1 : 0)) / ids.length} label="Quizfortschritt" />
       </div>
       <Card>

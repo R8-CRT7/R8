@@ -14,3 +14,12 @@
 - Löschkaskade (FK `created_by`), Faktenregel bei niedrigem Rapport, mobiles Chat-Scrolling, Logo-Gradient-ID.
 ### Bekannte Einschränkungen
 - Siehe TEST_PLAN §2 „ungeprüft“ und OPEN_QUESTIONS.
+
+## [0.2.0-stufe1] – 2026-10-03
+### Hinzugefügt
+- 90-Tage-Plan mit 7 Stufen, Kalender-Pacing, „Heute schon weitermachen“, Tagesabschluss, Stufen-Check als Tor (Quiz ≥ 80 % + Pflichtsimulationen), Übersicht „Themen beherrscht“.
+- Kursbuch-Kapitel, Skill-Karten (Technik, Schritte, Beispiel, Evidenz, ethische Grenze) und Mythos-Checks als neue Lektionsbausteine.
+- Modul 1 erweitert auf 8 Lektionen / 42 Fragen (≈ 2 h 50 min), Modul 2 „Professionelle Kommunikation“ neu: 7 Lektionen / 28 Fragen (≈ 2 h).
+- Szenario SIM-004 (unsichere Kundin, Stromspeicher), Stufen-Check 1 mit 24 Fragen.
+- 15 neue Quellen (u. a. Huang et al. 2017, Weger et al. 2014, Gollwitzer & Sheeran 2006, Carpenter 2013 + Re-Analyse).
+- Lernzeit-Schätzung und Tests (≥ 2 h pro Modul, Plan-Logik P1–P10).

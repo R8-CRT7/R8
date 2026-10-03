@@ -63,7 +63,24 @@ export type LessonBlock =
   | { kind: "caseStudy"; title: string; situation: string; analysis: string; simulationNote?: string }
   | { kind: "callout"; tone: "info" | "warn" | "legal" | "ethics"; title: string; body: string }
   | { kind: "check"; questionId: string } // inline retrieval practice
-  | { kind: "reflect"; prompt: string }; // metacognition prompt
+  | { kind: "reflect"; prompt: string } // metacognition prompt
+  /** Kursbuch-Ausschnitt: long-form reading chapter */
+  | { kind: "book"; chapter: string; title: string; paragraphs: string[]; sourceIds?: string[] }
+  /** Skill-Karte: a concrete technique with evidence and an ethical boundary */
+  | {
+      kind: "skill";
+      name: string;
+      category: "psychologie" | "gespraech" | "schreiben" | "prozess";
+      what: string;
+      how: string[];
+      why: string;
+      evidence: string;
+      example: string;
+      boundary: string;
+      sourceIds: string[];
+    }
+  /** Mythos-Check: popular claim vs. evidence */
+  | { kind: "myth"; claim: string; reality: string; sourceIds: string[] };
 
 export interface Lesson {
   id: string; // M01-L01
@@ -400,4 +417,34 @@ export interface SimulationEvaluation {
   reviewQuestionIds: string[];
   outcome: SimulationState["outcome"];
   outcomeAssessment: string;
+}
+
+// ---------- 90-Tage-Programm ----------
+
+export type ProgramItem =
+  | { type: "lesson"; ref: string }
+  | { type: "quiz"; ref: string } // module id or stage-check id
+  | { type: "simulation"; ref: string }
+  | { type: "review" }
+  | { type: "transfer"; ref: string; optional?: boolean };
+
+export interface ProgramDay {
+  day: number; // 1..90
+  title: string;
+  items: ProgramItem[];
+}
+
+export interface ProgramStage {
+  id: string; // ST1
+  number: number;
+  title: string;
+  goal: string;
+  dayFrom: number;
+  dayTo: number;
+  moduleIds: string[];
+  available: boolean;
+  days: ProgramDay[];
+  /** Plan for stages whose content is not written yet */
+  plannedTopics?: string[];
+  check: { id: string; title: string; questionIds: string[]; passThreshold: number; requiredSimulations: string[] };
 }

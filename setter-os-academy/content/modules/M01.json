@@ -5,7 +5,7 @@
   "subtitle": "Berufsbild, Rollen, Customer Journey und Lead-Status – das Fundament jedes Gesprächs.",
   "status": "verfuegbar",
   "prerequisites": [],
-  "version": "1.0.0",
+  "version": "1.1.0",
   "passThreshold": 0.8,
   "sourceIds": [
     "SRC-005",
@@ -14,7 +14,16 @@
     "SRC-020",
     "SRC-043",
     "SRC-047",
-    "SRC-050"
+    "SRC-050",
+    "SRC-052",
+    "SRC-053",
+    "SRC-054",
+    "SRC-055",
+    "SRC-056",
+    "SRC-057",
+    "SRC-058",
+    "SRC-059",
+    "SRC-062"
   ],
   "objectives": [
     {
@@ -74,6 +83,51 @@
           "body": "Ein Appointment Setter (kurz: Setter) führt die ersten Gespräche mit Interessenten. Ziel ist nicht der Verkauf, sondern eine saubere Entscheidung: Passt das Angebot grundsätzlich zum Bedarf? Wenn ja, wird ein qualifizierter Termin mit einer Person vereinbart, die beraten und verkaufen darf – meist ein Closer, Berater oder Account Executive. Wenn nein, wird der Lead ehrlich verabschiedet oder in eine spätere Betreuung (Nurturing) überführt."
         },
         {
+          "kind": "book",
+          "chapter": "Kapitel 1.1",
+          "title": "Der Beruf hinter dem Begriff",
+          "paragraphs": [
+            "Stell dir vor, ein Unternehmen gibt jeden Monat Geld für Werbung aus. Menschen klicken, füllen Formulare aus, schreiben Nachrichten. Ab diesem Moment entscheidet sich, ob das Geld etwas gebracht hat – und zwar nicht in der Werbung, sondern im ersten Gespräch. Genau dort arbeitest du. Ein Setter ist die erste Person, die einem Interessenten wirklich antwortet. Du bist damit gleichzeitig Gastgeber, Detektiv und Filter.",
+            "Gastgeber heißt: Der Mensch soll sich willkommen und ernst genommen fühlen. Er hat eine Frage oder ein Problem, und du bist die erste Person, die zuhört. Detektiv heißt: Du findest heraus, was wirklich hinter der Anfrage steckt. „Interesse an Wärmepumpe“ kann bedeuten, dass jemand nächste Woche bestellen will – oder dass jemand für ein Schulreferat recherchiert. Filter heißt: Du entscheidest, ob der Kalender des Beraters für diese Person die richtige Investition ist.",
+            "Viele Einsteiger verwechseln den Job mit „Termine machen um jeden Preis“. Das ist der häufigste und teuerste Fehler. Ein Berater, der fünf Termine mit unpassenden Interessenten führt, verliert einen ganzen Arbeitstag. Der Interessent verliert Zeit und Vertrauen. Und du verlierst Glaubwürdigkeit, weil deine Termine als „Zeitverschwendung“ gelten. Gute Setter werden deshalb nicht an der Anzahl gebuchter Termine gemessen, sondern daran, wie viele ihrer Termine tatsächlich stattfinden und zu einem sinnvollen Ergebnis führen.",
+            "Was macht den Beruf anspruchsvoll? Du musst in wenigen Nachrichten Vertrauen aufbauen, ohne zu übertreiben. Du musst Fragen stellen, ohne wie ein Formular zu wirken. Du musst Fachfragen ernst nehmen, ohne sie selbst zu beantworten. Und du musst ein Nein akzeptieren, ohne frustriert zu wirken. Das sind Kommunikationsfähigkeiten, die man trainieren kann – genau darum geht es in dieser Akademie.",
+            "Ein Wort zu den Begriffen: „Setter“ und „Closer“ stammen aus dem Online-Coaching- und Agenturmarkt. In klassischen B2B-Unternehmen heißen ähnliche Rollen SDR oder BDR, im Handwerk oft „Terminierung“ oder „Innendienst“. Die Bezeichnung ist egal. Wichtig ist, dass in jedem Projekt klar ist, wo deine Verantwortung beginnt und wo sie endet. Schreib dir diese Grenze für jeden Auftraggeber auf, bevor du das erste Gespräch führst."
+          ],
+          "sourceIds": [
+            "SRC-050",
+            "SRC-043"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die Rollen-Brücke",
+          "category": "gespraech",
+          "what": "Eine Fachfrage freundlich würdigen, an die zuständige Person übergeben und den Moment für eine eigene Frage nutzen.",
+          "how": [
+            "Würdigen: „Gute Frage …“ oder „Das ist wichtig für Ihre Entscheidung …“",
+            "Begründen, warum du sie nicht beantwortest: „… ich möchte Ihnen nichts Ungenaues sagen.“",
+            "Übergeben: „Genau das rechnet unser Berater im Termin für Sie durch.“",
+            "Brücke: eine Bedarfsfrage, die dem Berater hilft."
+          ],
+          "why": "Menschen akzeptieren ein „Das beantworte ich nicht“ deutlich besser, wenn sie den Grund kennen und merken, dass ihre Frage ernst genommen wird. Die anschließende Frage hält das Gespräch in Bewegung.",
+          "evidence": "Kombiniert zwei gut belegte Prinzipien: Begründungen erhöhen Akzeptanz (Langer et al. 1978, Replikationslage gemischt) und Folgefragen erhöhen wahrgenommene Zugewandtheit (Huang et al. 2017).",
+          "example": "„Was kostet das?“ → „Gute Frage – der Preis hängt stark von Ihrem Dach ab, und ich möchte Ihnen keine falsche Zahl nennen. Das rechnet unser Berater im Termin konkret durch. Damit er vorbereitet ist: In welche Himmelsrichtung zeigt Ihr Dach ungefähr?“",
+          "boundary": "Die Brücke darf nie dazu dienen, eine einfache, erlaubte Frage auszuweichen. Wenn dein Auftraggeber einen Preisrahmen freigegeben hat, nennst du ihn.",
+          "sourceIds": [
+            "SRC-058",
+            "SRC-054",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Ein Setter ist nur ein Terminbucher – das kann jeder.“",
+          "reality": "Terminbuchen ist der kleinste Teil der Arbeit. Die eigentliche Leistung ist die Qualifizierung: herausfinden, ob ein Termin für beide Seiten sinnvoll ist. Genau das unterscheidet Setter, deren Termine stattfinden und zu Ergebnissen führen, von Settern, deren Termine verpuffen.",
+          "sourceIds": [
+            "SRC-050"
+          ]
+        },
+        {
           "kind": "text",
           "title": "Typische Verantwortlichkeiten",
           "body": "• Neue Anfragen schnell und freundlich beantworten\n• Mit gezielten Fragen Bedarf, Zeitrahmen, Entscheider und Rahmenbedingungen klären\n• Nur qualifizierte Termine buchen – nicht jeden Termin\n• Termine bestätigen, erinnern und bei Bedarf verschieben\n• Jedes Gespräch im CRM vollständig und wahrheitsgemäß dokumentieren\n• Eine Übergabe schreiben, mit der der Closer ohne Rückfragen starten kann"
@@ -131,6 +185,43 @@
           "kind": "text",
           "title": "Die Sicht des Kunden: Customer Journey",
           "body": "Die Customer Journey beschreibt den Weg eines Menschen vom ersten Problembewusstsein bis zur Entscheidung. Ein einfaches Modell hat drei Phasen:\n\n1. Bewusstsein (Awareness): „Ich habe ein Problem oder Ziel.“\n2. Abwägung (Consideration): „Welche Lösungswege gibt es?“\n3. Entscheidung (Decision): „Welcher Anbieter passt zu mir?“\n\nWer in Phase 1 schon einen Verkaufstermin bekommt, fühlt sich schnell bedrängt. Wer in Phase 3 lange warten muss, kauft woanders."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 1.2",
+          "title": "Wie Menschen kaufen",
+          "paragraphs": [
+            "Kaum jemand kauft eine Wärmepumpe, eine Agenturbetreuung oder eine Software spontan. Zwischen dem ersten Gedanken („Unsere Heizung ist alt“) und der Unterschrift liegen oft Wochen oder Monate. In dieser Zeit sammeln Menschen Informationen, sprechen mit Familie oder Kollegen, vergleichen Anbieter und schieben die Entscheidung manchmal wieder auf. Das ist normal – und es ist der Grund, warum der Zeitpunkt deines Kontakts so wichtig ist.",
+            "Drei Fragen helfen dir, die Phase eines Interessenten einzuschätzen. Erstens: Weiß er, welches Problem er lösen will? Zweitens: Kennt er schon mögliche Lösungen? Drittens: Vergleicht er bereits konkrete Anbieter? Wer bei Frage eins noch unsicher ist, braucht Orientierung, keinen Verkaufstermin. Wer bei Frage drei angekommen ist, braucht schnell einen kompetenten Ansprechpartner – sonst entscheidet er sich für den Anbieter, der zuerst geantwortet hat.",
+            "Der Funnel ist die Brille des Unternehmens auf denselben Vorgang. Er zeigt, wie viele Menschen von Stufe zu Stufe weiterkommen. Als Setter beeinflusst du vor allem drei Übergänge: vom Lead zum qualifizierten Lead, vom qualifizierten Lead zum gebuchten Termin und vom gebuchten zum tatsächlich wahrgenommenen Termin. Wenn du diese drei Übergänge sauber machst, ist dein Beitrag messbar.",
+            "Ein häufiger Denkfehler: „Wer ein Formular ausfüllt, will kaufen.“ Ein Formular zeigt Interesse, keine Kaufbereitschaft. Manche wollen nur einen Leitfaden, andere sind schon bei drei Anbietern im Gespräch. Deshalb fragst du nach, statt zu vermuten. Ein einfacher Satz reicht: „Planen Sie schon konkret, oder sammeln Sie erst Informationen?“ Die Antwort sagt dir, welcher nächste Schritt passt – und der Interessent fühlt sich verstanden statt bedrängt.",
+            "Und noch etwas: Menschen springen zwischen den Phasen. Wer heute „nur Infos“ will, kann nach einem schlechten Winter plötzlich dringend handeln wollen. Deshalb ist ein sauber dokumentiertes „Nurturing“ – mit Erlaubnis des Kunden – oft mehr wert als ein erzwungener Termin."
+          ],
+          "sourceIds": [
+            "SRC-043",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Phase erfragen statt raten",
+          "category": "gespraech",
+          "what": "Mit einer neutralen Entweder-oder-Frage herausfinden, wie weit der Interessent ist.",
+          "how": [
+            "Bezug auf die Aktion nehmen (Formular, Download, Nachricht).",
+            "Zwei ehrliche Optionen anbieten: konkret planen oder Infos sammeln.",
+            "Beide Antworten als in Ordnung signalisieren.",
+            "Den nächsten Schritt an der Antwort ausrichten."
+          ],
+          "why": "Wer zwei gleichwertige Optionen bekommt, muss sich nicht rechtfertigen und antwortet ehrlicher. Du vermeidest, jemanden in eine Phase zu drängen, in der er nicht ist.",
+          "evidence": "Praxisheuristik (Expertenmeinung). Grundprinzip: Autonomie respektieren senkt Widerstand – vgl. Forschung zu Reaktanz und „But you are free“ (Carpenter 2013; Effekt in strengen Studien deutlich kleiner, Fillon et al.).",
+          "example": "„Sie haben sich unseren Altbau-Leitfaden angesehen – planen Sie schon konkret etwas, oder sammeln Sie erst Informationen? Beides ist völlig in Ordnung.“",
+          "boundary": "Nicht als Trick verwenden, um anschließend trotzdem auf einen Termin zu drängen. Wenn jemand „nur Infos“ sagt, gibst du Infos.",
+          "sourceIds": [
+            "SRC-052",
+            "SRC-053",
+            "SRC-050"
+          ]
         },
         {
           "kind": "text",
@@ -196,6 +287,48 @@
           "body": "Inbound: Der Interessent meldet sich selbst – Formular, Anruf, Chat-Nachricht, Kommentar. Er hat bereits ein Interesse gezeigt.\nOutbound: Das Unternehmen geht aktiv auf Menschen zu, die sich noch nicht gemeldet haben.\n\nFür Einsteiger ist Inbound der bessere Start: Der Kontakt ist erwünscht, und es geht vor allem um schnelles, gutes Reagieren. Eine viel zitierte Untersuchung in der Harvard Business Review (Oldroyd, McElheran & Elkington, 2011; 1,25 Mio. Leads US-amerikanischer Unternehmen) fand: Unternehmen, die innerhalb einer Stunde reagierten, qualifizierten Leads etwa siebenmal häufiger als solche, die eine Stunde später reagierten. Das ist ein Zusammenhang, kein Beweis für eine feste Regel – aber ein starkes Argument für schnelle, gut vorbereitete Antworten."
         },
         {
+          "kind": "book",
+          "chapter": "Kapitel 1.3",
+          "title": "Warm, kalt, privat, geschäftlich",
+          "paragraphs": [
+            "Im Vertrieb spricht man von warmen und kalten Kontakten. Warm ist ein Kontakt, der sich selbst gemeldet oder einer Kontaktaufnahme zugestimmt hat. Kalt ist ein Kontakt, der noch nie mit dem Unternehmen zu tun hatte. Für dich als Einsteiger ist die Unterscheidung doppelt wichtig: Warme Kontakte sind leichter, und sie sind rechtlich meist unproblematischer.",
+            "In Deutschland regelt vor allem § 7 des Gesetzes gegen den unlauteren Wettbewerb (UWG), wann Werbung belästigend ist. Vereinfacht gilt: Privatpersonen darfst du nur mit vorheriger ausdrücklicher Einwilligung zu Werbezwecken anrufen; diese Einwilligung muss nachweisbar dokumentiert sein. Bei Unternehmen genügt für Anrufe eine sogenannte mutmaßliche Einwilligung – das heißt, es müssen konkrete Umstände vorliegen, aus denen man schließen kann, dass der Anruf erwünscht ist. Werbe-E-Mails und Werbe-Direktnachrichten brauchen grundsätzlich eine vorherige Einwilligung, auch bei Unternehmen. Das ist Lernstoff, keine Rechtsberatung – im Zweifel entscheidet dein Auftraggeber mit seiner Rechtsberatung.",
+            "Warum ist das für dich relevant, wenn du „nur“ Termine machst? Weil Verstöße teuer werden können – für den Auftraggeber und manchmal auch für dich. Die Bundesnetzagentur hat 2025 knapp 40.000 Beschwerden über unerlaubte Werbeanrufe erhalten und über eine Million Euro Bußgelder verhängt. Ein Setter, der diese Regeln kennt, ist für Auftraggeber wertvoller als einer, der „einfach anruft“.",
+            "Bei B2B und B2C unterscheidet sich außerdem das Gespräch selbst. Im B2B sprichst du oft mit jemandem, der nicht allein entscheidet: Es gibt Vorgesetzte, Einkauf, IT oder eine Geschäftsführung. Deine Frage „Wer ist noch beteiligt?“ ist dort Pflicht. Im B2C sind es meist Partnerin, Partner oder Familie. Auch hier gilt: Wer den Mitentscheider nicht kennt, bucht Termine, die platzen.",
+            "Und schließlich die Geschwindigkeit: Eine viel zitierte Auswertung von 1,25 Millionen Online-Leads (Harvard Business Review, 2011) fand, dass Unternehmen, die innerhalb einer Stunde reagierten, Leads etwa siebenmal häufiger qualifizierten als Unternehmen, die erst eine Stunde später reagierten. Das ist ein Zusammenhang aus US-Daten, kein Naturgesetz. Die Botschaft ist trotzdem klar: Wer sich gemeldet hat, erwartet eine zügige, persönliche Antwort."
+          ],
+          "sourceIds": [
+            "SRC-019",
+            "SRC-020",
+            "SRC-021",
+            "SRC-005"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Speed-to-Lead mit Substanz",
+          "category": "prozess",
+          "what": "Schnell antworten – aber mit einer persönlichen, vorbereiteten Nachricht statt einer leeren Floskel.",
+          "how": [
+            "Benachrichtigungen für neue Leads aktivieren (in deinen Arbeitszeiten).",
+            "30 Sekunden Vorbereitung: Was hat die Person angefragt? Name richtig?",
+            "Vorlage mit festen Bausteinen nutzen, aber den Bezug individuell schreiben.",
+            "Wenn du nicht sofort kannst: kurze ehrliche Zwischennachricht („Ich melde mich heute bis 17 Uhr“) – und das Versprechen halten."
+          ],
+          "why": "Wer gerade aktiv sucht, hat das Thema im Kopf. Eine Stunde später kann er schon mit einem anderen Anbieter sprechen oder abgelenkt sein.",
+          "evidence": "HBR 2011 (Oldroyd et al.): Kontakt innerhalb einer Stunde ≈ 7× höhere Qualifizierungswahrscheinlichkeit (korrelativ, US-Daten). Eine angekündigte und eingehaltene Rückmeldung stärkt Vertrauen (Integrität im Vertrauensmodell von Mayer et al. 1995).",
+          "example": "„Hallo Herr Weber, danke für Ihre Anfrage zur PV-Anlage von vorhin! Ich bin Mira von SolarNord. Passt es, wenn ich Ihnen zwei kurze Fragen stelle?“",
+          "boundary": "Schnelligkeit rechtfertigt keine Kontaktaufnahme ohne Einwilligung und keine Nachrichten außerhalb vereinbarter Kanäle oder zu unpassenden Zeiten.",
+          "sourceIds": [
+            "SRC-005",
+            "SRC-059"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-031"
+        },
+        {
           "kind": "text",
           "title": "B2B und B2C",
           "body": "B2B (Business-to-Business): Kunden sind Unternehmen. Oft entscheiden mehrere Personen, Prozesse dauern länger, Budget und Freigaben spielen eine große Rolle.\nB2C (Business-to-Consumer): Kunden sind Privatpersonen. Entscheidungen sind persönlicher, oft emotionaler, häufig mit Partnerin oder Partner abgestimmt. Verbraucher genießen in Deutschland einen besonders starken rechtlichen Schutz."
@@ -247,6 +380,60 @@
           "kind": "text",
           "title": "Die Struktur",
           "body": "Ein Erstgespräch – im Chat oder am Telefon – folgt in diesem Kurs vier Phasen:\n\n1. Eröffnung: Vorstellen, Bezug zur Anfrage herstellen, Erlaubnis einholen („Passt es gerade?“).\n2. Bedarfsermittlung: Mit offenen Fragen die Situation, das Ziel und die Hürde verstehen.\n3. Zusammenfassung: Das Gehörte in eigenen Worten wiedergeben und bestätigen lassen.\n4. Nächster Schritt: Passend zum Ergebnis – Termin, Information, spätere Kontaktaufnahme oder ehrliche Absage."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 1.4",
+          "title": "Anatomie eines guten Erstgesprächs",
+          "paragraphs": [
+            "Ein gutes Erstgespräch fühlt sich für den Kunden nicht wie ein Verhör an, sondern wie ein angenehmes, kurzes Gespräch mit jemandem, der sich auskennt und zuhört. Trotzdem steckt dahinter eine klare Struktur. Die vier Phasen – Eröffnung, Bedarf, Zusammenfassung, nächster Schritt – sind dein Geländer. Du kannst daran entlanggehen, ohne dass der Kunde es merkt.",
+            "Die Eröffnung entscheidet, ob du überhaupt eine Antwort bekommst. Sie hat drei Aufgaben: Wer bist du? Warum meldest du dich? Darf es jetzt sein? Fehlt eine davon, wirkt die Nachricht wie Spam oder wie ein Überfall. Gerade die Erlaubnisfrage („Passt es gerade?“) ist mächtiger, als sie aussieht: Sie gibt dem Kunden Kontrolle, und Menschen, die Kontrolle haben, öffnen sich eher.",
+            "In der Bedarfsphase stellst du Fragen – aber nicht zehn auf einmal. Beginne breit („Was hat Sie dazu gebracht …?“) und werde dann konkreter. Eine Studie mit Live-Gesprächen (Huang et al., 2017) fand: Menschen, die mehr Fragen stellen, vor allem Folgefragen zu dem, was der andere gerade gesagt hat, werden als sympathischer wahrgenommen. Folgefragen beweisen, dass du zugehört hast. Eine Folgefrage greift ein Wort des Kunden auf: „Sie sagten, die Kosten sind gestiegen – um wie viel ungefähr?“",
+            "Die Zusammenfassung ist die Phase, die Einsteiger am häufigsten überspringen – und sie ist eine der wirksamsten. Wer zusammenfasst, korrigiert Missverständnisse, bevor sie den Termin ruinieren. Und der Kunde hört seine eigenen Ziele noch einmal klar formuliert. In einer Studie zu aktivem Zuhören (Weger et al., 2014) fühlten sich Menschen, deren Aussagen in eigenen Worten wiedergegeben wurden, stärker verstanden als Menschen, die nur ein „Okay“ oder einen Ratschlag bekamen.",
+            "Der nächste Schritt ist kein Abschluss, sondern eine logische Folge. Wenn Bedarf, Passung, Zeitrahmen und Entscheider stimmen, schlägst du den Termin vor – mit Dauer, Format und zwei konkreten Zeitfenstern. Wenn etwas fehlt, ist der nächste Schritt eine weitere Frage, Information oder eine spätere Kontaktaufnahme mit Erlaubnis. Und wenn es nicht passt, ist der nächste Schritt eine ehrliche, freundliche Verabschiedung."
+          ],
+          "sourceIds": [
+            "SRC-054",
+            "SRC-055",
+            "SRC-013"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Die Folgefrage",
+          "category": "gespraech",
+          "what": "Eine Frage stellen, die ein konkretes Wort oder Detail aus der letzten Antwort aufgreift.",
+          "how": [
+            "Achte auf Signalwörter in der Antwort (z. B. „teuer“, „endlich“, „mein Mann“).",
+            "Greife genau dieses Wort auf.",
+            "Frage offen nach: Wie? Was genau? Woran merken Sie das?",
+            "Nur eine Frage pro Nachricht."
+          ],
+          "why": "Folgefragen zeigen Zuhören und bringen dich von der Oberfläche zum eigentlichen Motiv.",
+          "evidence": "Huang et al. (2017, JPSP): Folgefragen erhöhen Sympathie über wahrgenommene Responsivität; im Speed-Dating mehr Zusagen für ein zweites Treffen.",
+          "example": "Kunde: „Wir wollen da endlich was ändern.“ → „Sie sagen ‚endlich‘ – beschäftigt Sie das Thema schon länger?“",
+          "boundary": "Folgefragen dienen dem Verstehen, nicht dem Aushorchen privater Details, die für das Angebot irrelevant sind.",
+          "sourceIds": [
+            "SRC-054"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Der Weil-Satz",
+          "category": "psychologie",
+          "what": "Bei jeder Bitte einen kurzen, wahren Grund nennen.",
+          "how": [
+            "Bitte formulieren („Darf ich zwei Fragen stellen …“).",
+            "Mit „damit“ oder „weil“ einen echten Grund anhängen („… damit unser Berater gut vorbereitet ist“).",
+            "Grund aus Sicht des Kunden formulieren."
+          ],
+          "why": "Eine Begründung macht eine Bitte nachvollziehbar und weniger willkürlich.",
+          "evidence": "Klassische Kopierer-Studie (Langer, Blank & Chanowitz 1978): Begründungen erhöhten Zustimmung bei kleinen Bitten. Kleine Stichprobe, Replikationen gemischt – als plausibles Prinzip nutzen, nicht als Garantie.",
+          "example": "„Darf ich kurz fragen, wie Sie aktuell heizen? Damit unser Energieberater im Termin nicht bei null anfangen muss.“",
+          "boundary": "Nur echte Gründe. Ein erfundener Grund („weil das Angebot morgen endet“) ist Täuschung.",
+          "sourceIds": [
+            "SRC-058"
+          ]
         },
         {
           "kind": "text",
@@ -308,6 +495,47 @@
           "body": "Ein Lead-Status beschreibt, wo ein Kontakt im Prozess steht. Ein einfaches Statusmodell für dieses Training:\n\n• Neu: Anfrage eingegangen, noch kein Kontakt\n• In Kontakt: Gespräch begonnen\n• Qualifiziert: Pflichtkriterien geklärt und erfüllt\n• Termin gebucht: Termin mit Berater vereinbart\n• Nurturing: Interesse vorhanden, aber (noch) nicht passend oder nicht bereit\n• Disqualifiziert: Angebot passt nicht (z. B. falsche Zielgruppe)\n• Kein Interesse: ausdrückliches Nein – keine weitere werbliche Ansprache\n\nUnternehmen nutzen andere Begriffe (z. B. MQL = Marketing Qualified Lead, SQL = Sales Qualified Lead). Das Prinzip ist gleich."
         },
         {
+          "kind": "book",
+          "chapter": "Kapitel 1.5",
+          "title": "Qualifizieren heißt aussortieren dürfen",
+          "paragraphs": [
+            "Qualifizieren klingt technisch. Im Kern ist es eine einfache Frage: Passt dieses Angebot zu diesem Menschen, jetzt? Die Antwort kann Ja, Noch nicht oder Nein sein – und alle drei Antworten sind gute Ergebnisse, wenn sie stimmen. Ein schlechtes Ergebnis ist nur ein falsches Ja.",
+            "Für dieses Training merkst du dir vier Pflichtkriterien: Bedarf, Passung, Zeitrahmen und Entscheider. Eine Eselsbrücke: „B-P-Z-E – Bevor Planung Zeit Erfordert.“ Bedarf: Gibt es ein konkretes Problem oder Ziel? Passung: Gehört der Mensch zur Zielgruppe – Eigentümer statt Mieter, Firma mit passender Größe? Zeitrahmen: Soll in absehbarer Zeit etwas passieren? Entscheider: Wer entscheidet mit, und ist diese Person beim Termin dabei?",
+            "Budget ist ein heikles Thema. In manchen Branchen fragt der Setter gar nicht danach, weil das der Berater klärt. In anderen – etwa bei Agenturen mit Mindestbudget – ist es das wichtigste Kriterium überhaupt. Frag deinen Auftraggeber vor Projektbeginn, wie mit Budget umzugehen ist. Wenn du fragst, dann offen und mit Begründung: „Damit ich einschätzen kann, ob wir passen: Welchen Rahmen haben Sie eingeplant?“",
+            "Bekannte Raster wie BANT (Budget, Authority, Need, Timing) helfen beim Strukturieren. Sie sind Erfahrungswissen aus der Praxis, kein wissenschaftlich bewiesenes Optimum. Nutze sie als Checkliste im Kopf, nie als Fragebogen, den du abarbeitest. Der Kunde soll ein Gespräch erleben, kein Formular.",
+            "Und dann die Dokumentation. Alles, was du erfahren hast, gehört ins CRM – und zwar so, wie der Kunde es gesagt hat. Was du nicht erfahren hast, markierst du als „nicht erfragt“. Das ist kein Eingeständnis von Schwäche, sondern Professionalität: Der Berater weiß dann genau, wo er ansetzen muss."
+          ],
+          "sourceIds": [
+            "SRC-047",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "B-P-Z-E im Kopf",
+          "category": "prozess",
+          "what": "Vor jedem Terminvorschlag gedanklich vier Kriterien abhaken.",
+          "how": [
+            "Bedarf geklärt? (konkretes Problem/Ziel)",
+            "Passung geklärt? (Zielgruppe, Eigentum, Firmengröße)",
+            "Zeitrahmen geklärt?",
+            "Entscheider geklärt und beim Termin dabei?",
+            "Fehlt etwas: erst fragen, dann vorschlagen."
+          ],
+          "why": "Ein fehlendes Kriterium ist der häufigste Grund für geplatzte oder ergebnislose Termine.",
+          "evidence": "Praxisheuristik, abgeleitet aus BANT (Expertenmeinung). Im Simulator wird ein Termin ohne vollständige Kriterien hart begrenzt (Gate G2).",
+          "example": "Innerer Check vor dem Vorschlag: „Bedarf ✓ – Eigentum ✓ – vor dem Winter ✓ – Ehemann? ✗ → erst fragen: ‚Wer entscheidet bei Ihnen mit?‘“",
+          "boundary": "Die Kriterien dienen der Passung, nicht dem Ausfragen. Keine Fragen zu Einkommen, Gesundheit oder anderen sensiblen Daten.",
+          "sourceIds": [
+            "SRC-047",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-032"
+        },
+        {
           "kind": "text",
           "title": "Qualifizierungskriterien",
           "body": "Bevor ein Termin gebucht wird, sollten mindestens diese Punkte geklärt sein:\n\n1. Bedarf: Gibt es ein konkretes Problem oder Ziel, das das Angebot lösen kann?\n2. Passung: Gehört der Kunde zur Zielgruppe (z. B. Eigentümer statt Mieter)?\n3. Zeitrahmen: Wann soll etwas passieren?\n4. Entscheider: Wer entscheidet mit – und ist diese Person beim Termin dabei?\n\nBudget wird je nach Branche und Auftraggeber unterschiedlich behandelt. BANT (Budget, Authority, Need, Timing) ist ein bekanntes Raster. Es ist eine Praxisheuristik – nicht wissenschaftlich als überlegen belegt – und wird in Modul 4 kritisch vertieft."
@@ -366,6 +594,56 @@
           "body": "Seriöse Kommunikation hilft Menschen, eine gute Entscheidung für sich zu treffen. Manipulation versucht, eine Entscheidung herbeizuführen, die der Mensch bei voller Information nicht treffen würde.\n\nIn diesem Kurs gelten feste Regeln:\n• Ein ausdrückliches Nein wird respektiert – keine Umdeutung, kein „Nur noch eine Frage“.\n• Keine künstliche Verknappung („Nur heute!“), wenn sie nicht stimmt.\n• Keine erfundenen Referenzen, Zahlen oder Förderzusagen.\n• Kein Druck auf erkennbar unsichere, überforderte oder verletzliche Menschen.\n• Transparenz: Wer ich bin, für wen ich anrufe/schreibe und warum."
         },
         {
+          "kind": "book",
+          "chapter": "Kapitel 1.6",
+          "title": "Wo Überzeugung endet",
+          "paragraphs": [
+            "Es gibt eine Menge Videos und Kurse, die „Psychotricks“ für den Vertrieb versprechen. Manche davon sind harmlos, manche wirken kaum, und manche sind schlicht Manipulation. In dieser Akademie lernst du psychologische Prinzipien – aber immer mit der Frage: Hilft das dem Kunden, eine gute Entscheidung zu treffen?",
+            "Ein Beispiel ist die Knappheit. Es stimmt, dass Menschen Dinge begehrenswerter finden, wenn sie knapp sind. Wenn ein Berater wirklich nur noch zwei Termine in dieser Woche frei hat, darfst du das sagen. Wenn du aber „Nur noch heute!“ schreibst, obwohl das nicht stimmt, ist das eine Täuschung – und in vielen Fällen auch wettbewerbswidrig. Die Regel ist einfach: Wahre Informationen dürfen wirken. Erfundene nicht.",
+            "Ein zweites Beispiel ist der Umgang mit einem Nein. In vielen „Closing“-Trainings wird gelehrt, ein Nein sei nur der Anfang. Für einen Setter gilt das Gegenteil: Ein ausdrückliches Nein beendet die Werbeansprache. Du darfst fragen, ob du etwas falsch verstanden hast, wenn die Antwort unklar ist. Aber „Nein, ich möchte keinen Termin“ ist klar. Wer hier nachbohrt, erzeugt Beschwerden, schadet dem Auftraggeber und – nicht zuletzt – sich selbst.",
+            "Interessanterweise wirkt Respekt oft besser als Druck. Wer betont, dass der andere frei entscheiden darf („Sie entscheiden das natürlich ganz in Ruhe“), senkt den inneren Widerstand. Eine Meta-Analyse über 42 Studien fand für diese „But you are free“-Formulierung einen positiven Effekt. Eine neuere Re-Analyse zeigt aber: In methodisch strengen Studien war der Effekt kaum noch messbar. Das ist typisch für Psychologie im Vertrieb – viele Effekte sind kleiner, als Bestseller behaupten. Deshalb lernst du hier die ehrliche Version: Respekt ist richtig, auch wenn er kein Zaubertrick ist.",
+            "Zum Schluss deine Rolle: Du bist kein Fachberater. Das schützt den Kunden vor falschen Auskünften – und dich vor Verantwortung, die du nicht tragen kannst. Wenn du unsicher bist, ob eine Frage in deine Rolle fällt, gilt: Würde eine falsche Antwort dem Kunden Geld oder Sicherheit kosten? Dann übergibst du."
+          ],
+          "sourceIds": [
+            "SRC-038",
+            "SRC-052",
+            "SRC-053",
+            "SRC-019"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Autonomie betonen",
+          "category": "psychologie",
+          "what": "Ausdrücklich sagen, dass der Kunde frei entscheidet.",
+          "how": [
+            "Vorschlag machen.",
+            "Freiheit benennen: „Sie entscheiden das ganz in Ruhe.“",
+            "Alternative anbieten (z. B. Infos statt Termin).",
+            "Die Entscheidung akzeptieren – egal wie sie ausfällt."
+          ],
+          "why": "Druck erzeugt Widerstand (Reaktanz). Freiheit nimmt den Druck heraus und macht ehrliche Antworten wahrscheinlicher.",
+          "evidence": "Carpenter (2013): 42 Studien, positiver Effekt. Fillon et al. (Re-Meta-Analyse): g = 0,44 insgesamt, aber g = 0,11 (nicht signifikant) in Studien mit geringem Verzerrungsrisiko. Fazit: ethisch richtig, Wirkung möglicherweise klein.",
+          "example": "„Ein Gespräch mit unserer Beraterin wäre der nächste Schritt. Ob das für Sie gerade passt, entscheiden natürlich Sie – ich kann Ihnen alternativ auch erst unseren Leitfaden schicken.“",
+          "boundary": "Die Formel darf nicht als Verkaufsfloskel missbraucht werden, nach der man trotzdem weiter drängt.",
+          "sourceIds": [
+            "SRC-052",
+            "SRC-053"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„NLP-Techniken wie ‚Pacing & Leading‘ oder Augenbewegungen verraten, wie du Kunden steuerst.“",
+          "reality": "Eine Übersicht über 35 Jahre Forschung zu Neuro-Linguistischem Programmieren fand kaum empirische Belege für die zentralen NLP-Annahmen. Was in NLP-Seminaren funktioniert, sind meist allgemeine Kommunikationsgrundlagen – Zuhören, Zusammenfassen, Rapport –, die du hier ohne Mythen lernst.",
+          "sourceIds": [
+            "SRC-062"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-033"
+        },
+        {
           "kind": "callout",
           "tone": "ethics",
           "title": "Der Test",
@@ -401,6 +679,176 @@
         "Fachfragen (Preis, Technik, Förderung, Steuer, Vertrag) gehören zur Fachperson.",
         "Übungen nur mit erfundenen Daten."
       ]
+    },
+    {
+      "id": "M01-L07",
+      "moduleId": "M01",
+      "title": "Ein Arbeitstag als Setter",
+      "minutes": 16,
+      "objectiveIds": [
+        "LO-M01-01",
+        "LO-M01-05"
+      ],
+      "sourceIds": [
+        "SRC-005",
+        "SRC-056",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Gute Setter sind nicht nur gute Gesprächspartner, sondern auch gut organisiert. In dieser Lektion lernst du, wie ein realistischer Arbeitstag aufgebaut ist und welche Routinen dir Stress ersparen."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 1.7",
+          "title": "Struktur schlägt Talent",
+          "paragraphs": [
+            "Ein typischer Setter-Tag besteht aus vier Arten von Arbeit: neue Anfragen beantworten, laufende Gespräche weiterführen, Termine bestätigen und erinnern sowie dokumentieren. Wer alles gleichzeitig macht, macht vieles halb. Erfahrene Setter arbeiten deshalb in Blöcken.",
+            "Ein Beispiel für einen Halbtag: Zu Beginn 15 Minuten Überblick – welche Termine stehen heute und morgen an, welche Leads sind neu, welche Gespräche warten auf Antwort? Danach ein Block für neue Leads, weil Geschwindigkeit hier am meisten zählt. Dann ein Block für laufende Gespräche. Danach Bestätigungen und Erinnerungen für die Termine von morgen. Am Ende 15 Minuten Dokumentation und ein kurzer Blick auf deine eigenen Zahlen.",
+            "Neben der Struktur zählt die Vorbereitung. Bevor du einem Lead schreibst, nimmst du dir 30 Sekunden: Wie heißt die Person? Was hat sie angefragt? Über welchen Kanal kam sie? Gibt es eine Notiz aus einem früheren Kontakt? Diese 30 Sekunden machen den Unterschied zwischen einer persönlichen Nachricht und einer Massennachricht.",
+            "Vorlagen sind erlaubt und sinnvoll – aber als Baukasten, nicht als Kopiervorlage. Eine gute Vorlage hat feste Bausteine (Vorstellung, Erlaubnisfrage, erste Bedarfsfrage) und eine Lücke für den persönlichen Bezug. Lies jede Nachricht vor dem Absenden einmal laut im Kopf: Würdest du so mit einem Menschen sprechen?",
+            "Und schließlich deine eigenen Zahlen. Nicht, um dich unter Druck zu setzen, sondern um zu lernen. Wie viele Leads hast du kontaktiert? Wie viele wurden qualifiziert? Wie viele Termine fanden statt? Wenn eine Zahl auffällig niedrig ist, weißt du, wo du üben solltest. Diese Kennzahlen vertiefst du in Modul 9."
+          ],
+          "sourceIds": [
+            "SRC-005",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Ein Beispiel-Halbtag (4 Stunden)",
+          "steps": [
+            "08:00–08:15 Überblick: Kalender heute/morgen, neue Leads, offene Gespräche.",
+            "08:15–09:30 Neue Leads: jede Anfrage innerhalb deines Blocks persönlich beantworten.",
+            "09:30–10:30 Laufende Gespräche weiterführen, Fragen notieren, Übergaben vorbereiten.",
+            "10:30–10:45 Pause – wirklich weg vom Bildschirm.",
+            "10:45–11:30 Terminbestätigungen und Erinnerungen für morgen.",
+            "11:30–12:00 Dokumentation im CRM, Tageszahlen notieren, eine Sache aufschreiben, die du morgen besser machst."
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Zeitblöcke statt Dauerfeuer",
+          "category": "prozess",
+          "what": "Gleichartige Aufgaben bündeln und feste Zeiten dafür einplanen.",
+          "how": [
+            "Plane für jede Aufgabenart einen Block.",
+            "Schalte während eines Blocks andere Ablenkungen aus.",
+            "Lege für neue Leads den frühesten Block fest.",
+            "Notiere am Ende des Tages eine konkrete Verbesserung für morgen."
+          ],
+          "why": "Häufiges Umschalten zwischen Aufgaben kostet Konzentration. Feste Blöcke machen den Tag planbar.",
+          "evidence": "Praxisheuristik (Expertenmeinung). Die Abendnotiz nutzt das Prinzip konkreter Pläne (Gollwitzer & Sheeran 2006: Wenn-dann-Pläne, d = 0,65 auf Zielerreichung).",
+          "example": "„Wenn ich morgen um 8:15 Uhr den Lead-Block starte, beantworte ich zuerst alle Anfragen von über Nacht.“",
+          "boundary": "Arbeitszeiten und Erreichbarkeit mit dem Auftraggeber klären; keine Kundennachrichten spät abends, nur weil das Tool es erlaubt.",
+          "sourceIds": [
+            "SRC-056",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-034"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-035"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Wann am Tag bist du am konzentriertesten? Welcher Block gehört in diese Zeit?"
+        }
+      ],
+      "summary": [
+        "Arbeite in Blöcken: neue Leads, laufende Gespräche, Bestätigungen, Dokumentation.",
+        "30 Sekunden Vorbereitung vor jeder Nachricht.",
+        "Vorlagen als Baukasten mit persönlichem Bezug.",
+        "Eigene Zahlen zum Lernen nutzen, nicht zum Stressen."
+      ]
+    },
+    {
+      "id": "M01-L08",
+      "moduleId": "M01",
+      "title": "Die Übergabe, die der Berater liebt",
+      "minutes": 16,
+      "objectiveIds": [
+        "LO-M01-05",
+        "LO-M01-04"
+      ],
+      "sourceIds": [
+        "SRC-056",
+        "SRC-057",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ein Termin ist erst dann gut, wenn er stattfindet und der Berater bestens vorbereitet ist. In dieser Lektion lernst du, wie du Termine verbindlich bestätigst und eine Übergabe schreibst, mit der der Berater sofort starten kann."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 1.8",
+          "title": "Vom Ja zum stattfindenden Termin",
+          "paragraphs": [
+            "Ein Ja im Chat ist ein guter Moment – aber noch kein stattfindender Termin. Zwischen Buchung und Gespräch passiert das Leben: Der Kunde vergisst den Termin, ihm kommt etwas dazwischen, oder er bekommt kalte Füße. Deshalb endet deine Arbeit nicht mit der Buchung.",
+            "Die erste Stellschraube ist die Bestätigung direkt im Gespräch. Wiederhole Datum, Uhrzeit, Format und Teilnehmer. Frage, ob der Kunde sich den Termin direkt eintragen kann. Das klingt banal, hat aber einen psychologisch gut untersuchten Hintergrund: Menschen setzen Vorhaben deutlich häufiger um, wenn sie einen konkreten Plan haben – wann, wo, wie. In einer Meta-Analyse über 94 Tests hatten solche Wenn-dann-Pläne einen mittleren bis großen Effekt auf die Zielerreichung. In einer Feldstudie erhöhte schon die Aufforderung, Datum und Uhrzeit für eine Impfung aufzuschreiben, die Impfquote spürbar.",
+            "Die zweite Stellschraube ist die Erinnerung. Eine kurze Nachricht am Vortag mit Uhrzeit, Link und der Möglichkeit, unkompliziert zu verschieben, ist für die meisten Kunden hilfreich – vorausgesetzt, sie haben dieser Art der Kontaktaufnahme zugestimmt. Die Möglichkeit zu verschieben ist wichtig: Wer ehrlich absagen kann, erscheint nicht einfach nicht.",
+            "Die dritte Stellschraube ist die Übergabe. Ein Berater, der den Kunden mit „Erzählen Sie mal, worum geht es?“ begrüßt, obwohl der Kunde dir schon alles erklärt hat, verschenkt Vertrauen. Deine Übergabe enthält deshalb: Anlass der Anfrage, Bedarf in den Worten des Kunden, Passung, Zeitrahmen, Entscheider, offene Fragen des Kunden und was ausdrücklich nicht erfragt wurde.",
+            "Schreibe die Übergabe so, dass jemand, der den Kunden nie gesehen hat, in einer Minute weiß, worum es geht. Und schreibe nur Fakten. „Wirkt wohlhabend“ ist keine Information. „Kunde nannte Budget von etwa 20.000 €“ schon."
+          ],
+          "sourceIds": [
+            "SRC-056",
+            "SRC-057",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "Beispiel-Übergabe (erfundene Daten)",
+          "body": "Anlass: Formular „Wärmepumpe“, 02.10.\nBedarf (Zitat): „Gasheizung 24 Jahre alt, Kosten stark gestiegen, wir wollen endlich etwas ändern.“\nPassung: Eigentümerin, Einfamilienhaus Baujahr 1978.\nZeitrahmen: vor dem nächsten Winter.\nEntscheider: gemeinsam mit Ehemann Tom – beide beim Termin.\nOffene Fragen der Kundin: Förderung? Lautstärke der Außeneinheit?\nNicht erfragt: Budget, aktueller Gasverbrauch.\nTermin: Do 19:00 Uhr, Video, Bestätigung + Erinnerung am Vortag."
+        },
+        {
+          "kind": "skill",
+          "name": "Der Wenn-dann-Termin",
+          "category": "psychologie",
+          "what": "Den Termin so konkret machen, dass der Kunde ihn in seinen Alltag einplant.",
+          "how": [
+            "Datum, Uhrzeit, Dauer, Format und Teilnehmer wiederholen.",
+            "Fragen, ob der Kunde den Termin direkt in den Kalender einträgt.",
+            "Kurz klären, was er vorbereiten kann (z. B. letzte Heizkostenabrechnung).",
+            "Verschieben ausdrücklich erlauben."
+          ],
+          "why": "Konkrete Pläne verbinden eine Situation („Donnerstag 19 Uhr“) mit einer Handlung („Videocall öffnen“) und machen das Vergessen unwahrscheinlicher.",
+          "evidence": "Gollwitzer & Sheeran (2006): Wenn-dann-Pläne d = 0,65 (94 Tests). Milkman et al. (2011): Planungsaufforderung erhöhte Impfquote leicht. Übertragung auf Show-Rates ist plausibel, aber nicht direkt untersucht.",
+          "example": "„Dann tragen wir Donnerstag, 19 Uhr, per Video ein – mit Ihnen und Tom. Mögen Sie sich den Termin gleich in den Kalender legen? Falls etwas dazwischenkommt, schreiben Sie mir einfach, dann finden wir einen neuen Termin.“",
+          "boundary": "Keine Schuldgefühle erzeugen („Unser Berater hält sich extra die Zeit frei …“). Ein abgesagter Termin ist besser als ein No-Show.",
+          "sourceIds": [
+            "SRC-056",
+            "SRC-057"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-036"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-037"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-038"
+        }
+      ],
+      "summary": [
+        "Ein Ja ist noch kein stattfindender Termin.",
+        "Termin konkret bestätigen und eintragen lassen (Wenn-dann-Plan).",
+        "Erinnerung nur mit Einwilligung, Verschieben ausdrücklich erlauben.",
+        "Übergabe: Fakten in Kundenworten, offene Fragen, „nicht erfragt“."
+      ]
     }
   ],
   "transferTask": {
@@ -432,6 +880,10 @@
     "Q-M01-026",
     "Q-M01-027",
     "Q-M01-028",
-    "Q-M01-029"
+    "Q-M01-029",
+    "Q-M01-039",
+    "Q-M01-040",
+    "Q-M01-041",
+    "Q-M01-042"
   ]
 }

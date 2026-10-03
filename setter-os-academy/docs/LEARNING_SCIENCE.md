@@ -69,3 +69,16 @@ XP, Level, Logins und Lerntage fließen **nicht** in die Kompetenzeinschätzung 
 ## 5. Messung im Pilot
 
 Siehe TEST_PLAN.md §Pilot: Vortest/Nachtest je Modul, verzögerter Abruf nach 7 und 30 Tagen, Simulationswerte vor/nach Modul, Kalibrierung, subjektive Verständlichkeit (1–5), SUS-Fragebogen.
+
+## 6. Lernzeit-Schätzung
+
+`src/lib/content/minutes.ts`: 170 Wörter/Minute konzentriertes Lesen, 1,5 min je Abrufübung, 2 min je Reflexion/Worked Example, 4 min je Fallstudie; pro Modul zusätzlich 1,2 min je Quizfrage, 12 min je Simulation, 20 min Transferaufgabe. Ein Test erzwingt ≥ 120 Minuten je verfügbarem Modul. Stand 0.2.0: Modul 1 ≈ 2 h 50 min, Modul 2 ≈ 2 h.
+
+## 7. 90-Tage-Plan mit Stufen (`content/program.json`, `src/lib/engine/program.ts`)
+
+- 7 Stufen über 90 Tage: Basics (Tag 1–7) → Psychologie & Qualifizierung → Chat Setting & Einwände → Termine & CRM → Zahlen & Branchen → Selbstständigkeit & Automatisierung → Meisterstufe (Tag 78–90).
+- Pro Tag 30–45 Minuten. Ein neuer Tag öffnet am nächsten Kalendertag (verteiltes Lernen); Vorziehen ist auf ausdrücklichen Wunsch möglich.
+- Ein Tag ist abgeschlossen, wenn alle Pflichtpunkte erledigt sind (Lektionen, Quiz, Simulation, Wiederholung; Transferaufgaben optional).
+- **Stufen-Check** als Tor zur nächsten Stufe: gemischtes Quiz (≥ 80 %) **und** bestandene Pflichtsimulationen.
+- „Thema beherrscht“ = Modulquiz bestanden und ≥ 80 % der Lernziele gefestigt/gesichert (gesichert erst nach verzögertem Abruf ≥ 3 Tage).
+- Stufen 2–7 sind geplant und werden vor Erreichen ausgearbeitet; bis dahin ehrlich als „in Vorbereitung“ gesperrt.

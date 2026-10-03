@@ -1,0 +1,1097 @@
+[
+  {
+    "id": "Q-M02-001",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Nachricht folgt am besten dem Prinzip „ein Gedanke pro Nachricht“?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Hallo Frau Lenz, danke für Ihre Anfrage! Was möchten Sie mit dem Speicher vor allem erreichen?“"
+      },
+      {
+        "id": "b",
+        "text": "„Hallo, wir sind Marktführer, hier unser Katalog, wann haben Sie Zeit und wie groß ist Ihr Dach?“",
+        "misconception": "Mehrere Gedanken und Fragen auf einmal.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Hallo.“",
+        "misconception": "Zu wenig: kein Bezug, keine Frage.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Bitte füllen Sie das angehängte Formular mit 15 Fragen aus.“",
+        "misconception": "Wirkt wie Arbeit statt Gespräch.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Bezug + eine offene Frage am Ende: schnell zu lesen, leicht zu beantworten.",
+    "sourceIds": [
+      "SRC-066"
+    ]
+  },
+  {
+    "id": "Q-M02-002",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die Teile dieser Nachricht, die die Verständlichkeit verschlechtern.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Hallo Herr Weber, danke für Ihre Anfrage!",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Wir prüfen Ihre JAZ und den SCOP Ihres Systems im Kontext der GEG-Vorgaben.",
+        "faulty": true,
+        "why": "Unerklärte Fachbegriffe und Abkürzungen."
+      },
+      {
+        "id": "l3",
+        "text": "Wie heizen Sie aktuell, wie alt ist die Anlage, wie groß ist das Haus und wann wollen Sie starten?",
+        "faulty": true,
+        "why": "Vier Fragen auf einmal."
+      },
+      {
+        "id": "l4",
+        "text": "Was ist Ihnen bei einer neuen Heizung am wichtigsten?",
+        "faulty": false
+      }
+    ],
+    "explanation": "Fachbegriffe ohne Erklärung und Mehrfachfragen machen Nachrichten schwer verständlich.",
+    "sourceIds": [
+      "SRC-066"
+    ]
+  },
+  {
+    "id": "Q-M02-003",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Kunde: „Wir wollen vor allem unabhängiger vom Strompreis werden.“ Welche Antwort ist eine Paraphrase?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Also ist Ihnen Unabhängigkeit wichtiger als der schnelle Spareffekt – richtig?“"
+      },
+      {
+        "id": "b",
+        "text": "„Dann brauchen Sie unseren Speicher XL.“",
+        "misconception": "Sofortige Lösung statt Verstehen.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Okay.“",
+        "misconception": "Bloße Bestätigung zeigt kein Verständnis.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Das sagen alle.“",
+        "misconception": "Abwertend und kein Zuhören.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Paraphrase = Kern in eigenen Worten, als Frage zur Bestätigung.",
+    "sourceIds": [
+      "SRC-055"
+    ]
+  },
+  {
+    "id": "Q-M02-004",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Kundin: „Ich habe schon drei Angebote und blicke ehrlich gesagt gar nicht mehr durch.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Klingt, als wären die Angebote gerade eher verwirrend als hilfreich. Was würde Ihnen am meisten helfen, Klarheit zu bekommen?“",
+        "quality": "best",
+        "feedback": "Lage benannt, Raum gegeben, offene Frage."
+      },
+      {
+        "id": "b",
+        "text": "„Unser Angebot ist sowieso das beste.“",
+        "quality": "poor",
+        "feedback": "Ignoriert die Überforderung und wirkt wie Werbung.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Okay, wann haben Sie Zeit für einen Termin?“",
+        "quality": "poor",
+        "feedback": "Themenwechsel statt Zuhören.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Das verstehe ich. Wollen Sie, dass wir die Angebote im Termin gemeinsam einordnen?“",
+        "quality": "acceptable",
+        "feedback": "Zugewandt, springt aber etwas schnell zum Termin."
+      }
+    ],
+    "explanation": "Gefühle vorsichtig benennen, dann offen fragen – erst danach Lösungen.",
+    "sourceIds": [
+      "SRC-060",
+      "SRC-055"
+    ]
+  },
+  {
+    "id": "Q-M02-005",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Reaktionen zeigen KEIN aktives Zuhören? (Mehrere Antworten möglich)",
+    "negation": true,
+    "options": [
+      {
+        "id": "a",
+        "text": "Sofort eine Produktempfehlung geben"
+      },
+      {
+        "id": "b",
+        "text": "Das Thema wechseln"
+      },
+      {
+        "id": "c",
+        "text": "Ein Wort des Kunden in einer Folgefrage aufgreifen",
+        "misconception": "Folgefragen sind ein Kernwerkzeug aktiven Zuhörens.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Ausführlich von eigenen Erfahrungen erzählen"
+      },
+      {
+        "id": "e",
+        "text": "Den Kern zusammenfassen und bestätigen lassen",
+        "misconception": "Paraphrase ist aktives Zuhören.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation": "Lösung, Themenwechsel und eigene Geschichten lenken vom Kunden weg.",
+    "sourceIds": [
+      "SRC-055",
+      "SRC-054"
+    ]
+  },
+  {
+    "id": "Q-M02-006",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jede Frage dem Fragetyp zu.",
+    "left": [
+      {
+        "id": "q1",
+        "text": "„Was hat Sie dazu gebracht, sich jetzt zu melden?“"
+      },
+      {
+        "id": "q2",
+        "text": "„Sind Sie Eigentümer des Hauses?“"
+      },
+      {
+        "id": "q3",
+        "text": "„Wie dringend ist das Thema, von 1 bis 10?“"
+      },
+      {
+        "id": "q4",
+        "text": "„Was meinen Sie genau mit ‚zu teuer‘?“"
+      }
+    ],
+    "right": [
+      {
+        "id": "open",
+        "text": "Offene Frage"
+      },
+      {
+        "id": "closed",
+        "text": "Geschlossene Frage"
+      },
+      {
+        "id": "scale",
+        "text": "Skalenfrage"
+      },
+      {
+        "id": "clar",
+        "text": "Klärungsfrage"
+      }
+    ],
+    "pairs": {
+      "q1": "open",
+      "q2": "closed",
+      "q3": "scale",
+      "q4": "clar"
+    },
+    "explanation": "Jeder Fragetyp hat eine eigene Aufgabe im Gespräch.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-007",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Fragen in die Reihenfolge des Fragetrichters.",
+    "items": [
+      {
+        "id": "sum",
+        "text": "„Habe ich richtig verstanden, dass …?“"
+      },
+      {
+        "id": "closed",
+        "text": "„Haben Sie bereits eine PV-Anlage?“"
+      },
+      {
+        "id": "open",
+        "text": "„Was hat Sie dazu gebracht, sich zu melden?“"
+      },
+      {
+        "id": "follow",
+        "text": "„Sie sagten, der Preis macht Ihnen Sorgen – wie hoch ist der Abschlag?“"
+      }
+    ],
+    "correctOrder": [
+      "open",
+      "follow",
+      "closed",
+      "sum"
+    ],
+    "explanation": "Breit beginnen, mit Folgefragen vertiefen, Pflichtkriterien klären, zusammenfassen.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-008",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Warum sind Implikationsfragen („Was passiert, wenn die Heizung im Winter ausfällt?“) im Erstkontakt eines Setters heikel?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Sie können Ängste verstärken und wirken früh im Gespräch schnell manipulativ"
+      },
+      {
+        "id": "b",
+        "text": "Sie sind gesetzlich verboten",
+        "misconception": "Kein Verbot – es ist eine Frage von Rolle und Ton.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Sie liefern nie Informationen",
+        "misconception": "Sie liefern Informationen, gehören aber eher ins Beratungsgespräch.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Sie sind geschlossene Fragen",
+        "misconception": "Implikationsfragen sind meist offen.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "SPIN-Implikationsfragen gehören eher ins Beratungsgespräch; im Erstkontakt sind Situation und Problem wichtiger.",
+    "sourceIds": [
+      "SRC-013"
+    ]
+  },
+  {
+    "id": "Q-M02-009",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken.",
+    "text": "Beim Fragetrichter beginnst du {{g1}} und wirst dann immer {{g2}}. Statt „Warum haben Sie …?“ fragst du besser „{{g3}} hat dazu geführt …?“",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "breit",
+          "offen",
+          "allgemein"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "konkreter",
+          "enger",
+          "spezifischer"
+        ]
+      },
+      {
+        "id": "g3",
+        "accepted": [
+          "Was"
+        ]
+      }
+    ],
+    "explanation": "Breit → konkret; „Was hat dazu geführt“ klingt neugierig statt vorwurfsvoll.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-010",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Teile der 4-Satz-Telefoneröffnung in die richtige Reihenfolge.",
+    "items": [
+      {
+        "id": "pause",
+        "text": "Pause – warten"
+      },
+      {
+        "id": "ask",
+        "text": "Dauer nennen und fragen, ob es passt"
+      },
+      {
+        "id": "name",
+        "text": "Name und Unternehmen"
+      },
+      {
+        "id": "ref",
+        "text": "Bezug zur Anfrage"
+      }
+    ],
+    "correctOrder": [
+      "name",
+      "ref",
+      "ask",
+      "pause"
+    ],
+    "explanation": "Wer – warum – wie lange/darf ich – Pause.",
+    "sourceIds": [
+      "SRC-058",
+      "SRC-052"
+    ]
+  },
+  {
+    "id": "Q-M02-011",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Die 7-38-55-Regel von Mehrabian beweist, dass Worte in jedem Verkaufsgespräch nur 7 % der Wirkung ausmachen.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Die Regel stammt aus Experimenten zu widersprüchlichen Gefühlsbotschaften; Mehrabian selbst warnt vor der Verallgemeinerung.",
+    "sourceIds": [
+      "SRC-063"
+    ]
+  },
+  {
+    "id": "Q-M02-012",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Was antwortest du?",
+    "situation": "Am Telefon (Kunde hat angefragt) sagt der Kunde nach deiner Eröffnung: „Gerade schlecht, ich sitze im Auto.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Kein Problem! Wann passt es Ihnen besser – heute Abend oder morgen Vormittag?“",
+        "quality": "best",
+        "feedback": "Respektiert die Situation und sichert einen konkreten neuen Zeitpunkt."
+      },
+      {
+        "id": "b",
+        "text": "„Es dauert wirklich nur zwei Minuten …“",
+        "quality": "poor",
+        "feedback": "Ignoriert die klare Aussage und gefährdet ihn im Straßenverkehr.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Okay, tschüss.“",
+        "quality": "acceptable",
+        "feedback": "Respektvoll, aber ohne neuen Zeitpunkt."
+      },
+      {
+        "id": "d",
+        "text": "„Dann fasse ich schnell zusammen, was wir anbieten …“",
+        "quality": "unacceptable",
+        "feedback": "Redet über ein ausdrückliches „gerade schlecht“ hinweg.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Die Erlaubnisfrage liefert Information: Jetzt passt es nicht – also einen besseren Zeitpunkt finden.",
+    "sourceIds": [
+      "SRC-052",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-013",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Interessent schreibt dir auf Instagram: „hey, macht ihr auch logos?“ Wie antwortest du (die Agentur hat Du-Kultur)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Hey! Ja, machen wir. Wofür brauchst du das Logo – neues Projekt oder Auffrischung?“"
+      },
+      {
+        "id": "b",
+        "text": "„Sehr geehrter Herr, bezugnehmend auf Ihre Anfrage teilen wir Ihnen mit …“",
+        "misconception": "Viel zu förmlich für Kanal und Ton des Kunden.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„jo klar 🔥🔥🔥 call?“",
+        "misconception": "Übertriebenes Spiegeln, unprofessionell, springt ohne Bedarf zum Termin.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Keine Antwort, weil keine Großschreibung verwendet wurde",
+        "misconception": "Stil ist kein Qualifizierungskriterium.",
+        "errorCategory": "qualifizierungsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Kanal und Anrede spiegeln, kurz bleiben, mit einer offenen Frage starten.",
+    "sourceIds": [
+      "SRC-061"
+    ]
+  },
+  {
+    "id": "Q-M02-014",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Telefon-Regeln stimmen? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Bei Namen und Zahlen langsamer sprechen"
+      },
+      {
+        "id": "b",
+        "text": "Nach einer Frage eine Pause aushalten"
+      },
+      {
+        "id": "c",
+        "text": "Jede Stille sofort mit eigenen Worten füllen",
+        "misconception": "Wer die Stille füllt, beantwortet seine Frage oft selbst.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Bei Beleidigungen das Gespräch höflich beenden dürfen"
+      },
+      {
+        "id": "e",
+        "text": "Möglichst schnell sprechen, um Zeit zu sparen",
+        "misconception": "Schnelles Sprechen wirkt nervös und callcenterhaft.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "d"
+    ],
+    "explanation": "Langsam, mit Pausen, freundlich – und mit klaren Grenzen bei Beleidigungen.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-015",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Laut Verhandlungsforschung wirkt auffälliges, offensichtliches Kopieren des Gegenübers genauso gut wie dezentes Anpassen.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Maddux et al. (2008): Dezentes Spiegeln half, offensichtliches Kopieren schadete.",
+    "sourceIds": [
+      "SRC-061"
+    ]
+  },
+  {
+    "id": "Q-M02-016",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jedes Verhalten der Vertrauenssäule zu, die es vor allem stärkt.",
+    "left": [
+      {
+        "id": "b1",
+        "text": "Gezielte Fragen stellen und den Prozess erklären"
+      },
+      {
+        "id": "b2",
+        "text": "„Ich möchte Ihnen keinen Termin verkaufen, der für Sie keinen Sinn ergibt.“"
+      },
+      {
+        "id": "b3",
+        "text": "Eine Rückmeldung bis 16 Uhr zusagen und einhalten"
+      }
+    ],
+    "right": [
+      {
+        "id": "ability",
+        "text": "Fähigkeit"
+      },
+      {
+        "id": "benev",
+        "text": "Wohlwollen"
+      },
+      {
+        "id": "integr",
+        "text": "Integrität"
+      }
+    ],
+    "pairs": {
+      "b1": "ability",
+      "b2": "benev",
+      "b3": "integr"
+    },
+    "explanation": "Vertrauensmodell nach Mayer, Davis & Schoorman (1995).",
+    "sourceIds": [
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M02-017",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welcher Hinweis auf andere Kunden ist zulässig?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ein wahrer, konkreter Hinweis, den der Auftraggeber freigegeben hat"
+      },
+      {
+        "id": "b",
+        "text": "„Alle Ihre Nachbarn haben schon gebucht“ – ohne zu wissen, ob es stimmt",
+        "misconception": "Erfundener Social Proof ist Täuschung.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "Eine erfundene Kundenbewertung mit Foto",
+        "misconception": "Gefälschte Bewertungen sind unzulässig.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Über 10.000 zufriedene Kunden“ als Schätzung",
+        "misconception": "Unbelegte Zahl.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Social Proof nur, wenn er wahr, konkret und freigegeben ist.",
+    "sourceIds": [
+      "SRC-038",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-018",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Du hast „Ich melde mich bis 17 Uhr“ geschrieben. Um 16:45 Uhr hast du die Info vom Berater noch nicht.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Vor 17 Uhr kurz melden: „Ich warte noch auf die Antwort unseres Beraters und melde mich morgen bis 10 Uhr.“",
+        "quality": "best",
+        "feedback": "Integrität: Versprechen nicht stillschweigend brechen."
+      },
+      {
+        "id": "b",
+        "text": "Nichts schreiben und morgen antworten",
+        "quality": "poor",
+        "feedback": "Gebrochenes Mini-Versprechen beschädigt Vertrauen.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "c",
+        "text": "Eine Antwort erfinden, damit die Frist gehalten wird",
+        "quality": "unacceptable",
+        "feedback": "Falschinformation – schlimmer als jede Verspätung.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "Um 18 Uhr schreiben, dass du viel zu tun hattest",
+        "quality": "acceptable",
+        "feedback": "Ehrlich, aber zu spät."
+      }
+    ],
+    "explanation": "Wenn du ein Versprechen nicht halten kannst, sag es vorher.",
+    "sourceIds": [
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M02-019",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jedem beobachteten Verhalten eine passende Reaktion zu.",
+    "left": [
+      {
+        "id": "v1",
+        "text": "Viele genaue Detailfragen"
+      },
+      {
+        "id": "v2",
+        "text": "Sehr knappe Antworten, wenig Zeit"
+      },
+      {
+        "id": "v3",
+        "text": "„Weiß nicht … mal schauen“"
+      },
+      {
+        "id": "v4",
+        "text": "„Vertreter versprechen immer viel“"
+      }
+    ],
+    "right": [
+      {
+        "id": "r1",
+        "text": "Struktur geben, Detailfragen an Berater übergeben"
+      },
+      {
+        "id": "r2",
+        "text": "Auf den Punkt, nur das Nötigste fragen"
+      },
+      {
+        "id": "r3",
+        "text": "Sicherheit durch Transparenz über den nächsten Schritt"
+      },
+      {
+        "id": "r4",
+        "text": "Rolle offenlegen, keine großen Versprechen, Kontrolle lassen"
+      }
+    ],
+    "pairs": {
+      "v1": "r1",
+      "v2": "r2",
+      "v3": "r3",
+      "v4": "r4"
+    },
+    "explanation": "Auf Verhalten reagieren, nicht auf ein Typen-Etikett.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-020",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Warum wirken Persönlichkeitstypen-Beschreibungen oft so zutreffend, obwohl sie wenig vorhersagen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Wegen des Barnum-Effekts: Allgemeine Beschreibungen fühlen sich für fast jeden passend an"
+      },
+      {
+        "id": "b",
+        "text": "Weil sie neurologisch gemessen werden",
+        "misconception": "Typentests sind Fragebögen, keine neurologischen Messungen.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "c",
+        "text": "Weil Menschen ihren Typ nie ändern",
+        "misconception": "Gerade die Retest-Stabilität ist oft gering.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Weil sie gesetzlich zertifiziert sind",
+        "misconception": "Es gibt keine solche Zertifizierung.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Barnum-Effekt plus geringe Retest-Reliabilität (z. B. MBTI, Pittenger 2005).",
+    "sourceIds": [
+      "SRC-064"
+    ]
+  },
+  {
+    "id": "Q-M02-021",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Was ist der beste nächste Schritt?",
+    "situation": "Ein Kunde ist begeistert: „Super, ich will das unbedingt, wann können Sie kommen?“ Du weißt noch nicht, ob er Eigentümer ist.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Freude teilen und vor dem Termin kurz die Eigentumsfrage klären",
+        "quality": "best",
+        "feedback": "Begeisterung ernst nehmen – und trotzdem sauber qualifizieren."
+      },
+      {
+        "id": "b",
+        "text": "Sofort einen Termin eintragen",
+        "quality": "poor",
+        "feedback": "Begeisterung ersetzt keine Qualifizierung.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Die Begeisterung bremsen: „Langsam, das ist teuer.“",
+        "quality": "poor",
+        "feedback": "Unnötig negativ, keine Qualifizierung.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Ihm sagen, er solle erst drei andere Angebote einholen",
+        "quality": "acceptable",
+        "feedback": "Nicht falsch, aber nicht deine Aufgabe und ohne Qualifizierung."
+      }
+    ],
+    "explanation": "Gerade begeisterte Kunden ohne Passung führen zu enttäuschenden Terminen.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-022",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Kürze diese Nachricht auf höchstens 30 Wörter mit genau einer Frage: „Hallo Herr Demir, vielen herzlichen Dank für Ihre Anfrage zu unseren Recruiting-Dienstleistungen, wir sind ein erfahrenes Team und unterstützen Unternehmen seit Jahren bei der Personalsuche. Wie viele Stellen haben Sie offen, in welchen Bereichen, wie schnell müssen sie besetzt werden und wer entscheidet bei Ihnen?“",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Spricht Herrn Demir mit Namen an",
+        "points": 1,
+        "anyOf": [
+          [
+            "demir"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Bezug zur Anfrage",
+        "points": 1,
+        "anyOf": [
+          [
+            "anfrage",
+            "recruiting",
+            "personal",
+            "stelle"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Enthält eine offene Frage",
+        "points": 1,
+        "anyOf": [
+          [
+            "was ",
+            "welche",
+            "wie "
+          ]
+        ]
+      },
+      {
+        "id": "c4",
+        "description": "Keine Werbefloskel wie „erfahrenes Team“ oder „seit Jahren“",
+        "points": 1,
+        "forbidden": [
+          "erfahrenes team",
+          "seit jahren",
+          "marktführer"
+        ]
+      }
+    ],
+    "sampleAnswer": "Hallo Herr Demir, danke für Ihre Anfrage zum Recruiting! Welche Stelle ist für Sie gerade am dringendsten?",
+    "requiresManualReview": true,
+    "explanation": "Kurz, persönlich, eine Frage. Die Wortzahl prüfst du selbst – der Selbstcheck erkennt nur Muster.",
+    "sourceIds": [
+      "SRC-066"
+    ]
+  },
+  {
+    "id": "Q-M02-023",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Kunde: „Wir hatten letztes Jahr schon mal eine Agentur, das war rausgeschmissenes Geld.“ Schreibe eine Antwort, die das Gefühl benennt und mit einer offenen Frage endet.",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Benennt das Gefühl/die Erfahrung vorsichtig",
+        "points": 1,
+        "anyOf": [
+          [
+            "klingt",
+            "wirkt",
+            "verstehe",
+            "nachvollziehbar",
+            "frustr",
+            "enttäusch",
+            "ärger"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Endet mit einer offenen Frage",
+        "points": 1,
+        "anyOf": [
+          [
+            "was ",
+            "wie ",
+            "welche",
+            "woran"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Keine Rechtfertigung oder Abwertung der anderen Agentur",
+        "points": 1,
+        "forbidden": [
+          "wir sind besser",
+          "die anderen",
+          "unseriös",
+          "bei uns passiert das nicht"
+        ]
+      }
+    ],
+    "sampleAnswer": "Klingt, als hätten Sie mit der letzten Agentur keine guten Erfahrungen gemacht. Was lief damals nicht so, wie Sie es sich vorgestellt hatten?",
+    "requiresManualReview": true,
+    "explanation": "Erst verstehen, dann (viel später) über Lösungen sprechen. Andere Anbieter schlechtzumachen schadet dem Vertrauen.",
+    "sourceIds": [
+      "SRC-060",
+      "SRC-055"
+    ]
+  },
+  {
+    "id": "Q-M02-024",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Welche Frage stellst du?",
+    "situation": "Kunde: „Das ist mir alles zu teuer.“ Du weißt nicht, worauf sich „teuer“ bezieht.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Was meinen Sie genau mit ‚zu teuer‘ – den Gesamtpreis oder die monatliche Belastung?“",
+        "quality": "best",
+        "feedback": "Klärungsfrage verhindert ein Missverständnis."
+      },
+      {
+        "id": "b",
+        "text": "„Wir können sicher einen Rabatt machen!“",
+        "quality": "unacceptable",
+        "feedback": "Ungeprüfte Preiszusage außerhalb deiner Rolle.",
+        "errorCategory": "rollenverwechslung"
+      },
+      {
+        "id": "c",
+        "text": "„Qualität hat eben ihren Preis.“",
+        "quality": "poor",
+        "feedback": "Floskel ohne Verständnis.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Warum denken Sie das?“",
+        "quality": "acceptable",
+        "feedback": "Frage ist okay, klingt aber eher wie ein Vorwurf."
+      }
+    ],
+    "explanation": "Erst klären, was gemeint ist – dann entscheiden, ob es eine Frage für den Berater ist.",
+    "sourceIds": [
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-025",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Der Satz „Ich möchte Ihnen keinen Termin verkaufen, der für Sie keinen Sinn ergibt“ stärkt Vertrauen nur dann, wenn er auch ernst gemeint ist und du entsprechend handelst.",
+    "correct": true,
+    "errorCategory": "ethikfehler",
+    "explanation": "Wohlwollen muss sich im Verhalten zeigen – sonst wirkt der Satz als Masche.",
+    "sourceIds": [
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M02-026",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Der Kunde sagt auf deine Erlaubnisfrage „Passt es gerade?“: „Nein.“ Was hast du gewonnen?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eine wertvolle Information – jetzt einen besseren Zeitpunkt vereinbaren"
+      },
+      {
+        "id": "b",
+        "text": "Nichts – die Erlaubnisfrage war ein Fehler",
+        "misconception": "Ein Gespräch gegen den Willen bringt nichts.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Das Recht, trotzdem kurz alles zu erklären",
+        "misconception": "Das ignoriert die Antwort.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "Einen Grund, den Lead zu löschen",
+        "misconception": "„Jetzt nicht“ ist kein „nie“.",
+        "errorCategory": "qualifizierungsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Ein Nein zum Zeitpunkt ist kein Nein zum Thema.",
+    "sourceIds": [
+      "SRC-052"
+    ]
+  },
+  {
+    "id": "Q-M02-027",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Kunde wird unfreundlich: „Ihr nervt, ständig diese Nachrichten!“ Was ist die beste Antwort?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Das tut mir leid. Soll ich Sie aus unseren Nachrichten austragen? Dann melden wir uns nicht mehr.“"
+      },
+      {
+        "id": "b",
+        "text": "„Sie haben sich doch selbst angemeldet!“",
+        "misconception": "Rechtfertigung eskaliert.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Ihn ignorieren und nächste Woche wieder schreiben",
+        "misconception": "Widerspruch muss beachtet werden.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Nur noch eine letzte Nachricht mit unserem Angebot …“",
+        "misconception": "Weitere Werbung trotz Ablehnung.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Freundlich bleiben, einen Ausweg anbieten und den Wunsch umsetzen.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M02-028",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Aus dem Alter oder der Herkunft eines Kunden kann ein Setter ableiten, welche Gesprächstechnik am besten funktioniert.",
+    "correct": false,
+    "errorCategory": "ethikfehler",
+    "explanation": "Du reagierst auf beobachtbares Verhalten im Gespräch, nicht auf persönliche Merkmale – alles andere ist Vorurteil.",
+    "sourceIds": [
+      "SRC-064",
+      "SRC-050"
+    ]
+  }
+]

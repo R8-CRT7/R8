@@ -1,0 +1,603 @@
+{
+  "id": "SIM-004",
+  "version": 1,
+  "title": "Stromspeicher: Unsichere Kundin mit vielen Angeboten",
+  "archetype": "Unsicherer Kunde mit mehreren Fragen",
+  "industry": "Photovoltaik – Stromspeicher-Nachrüstung",
+  "channel": "whatsapp",
+  "market": "B2C",
+  "direction": "inbound",
+  "difficulty": 2,
+  "briefing": "Simulation – alle Personen und Firmen sind erfunden. Du bist Setter bei „SolarNord“. Frau Lenz hat über die Website eine Anfrage zur Nachrüstung eines Stromspeichers gestellt und WhatsApp als Kontaktweg gewählt. Sie wirkt unsicher. Ziel: verstehen, was sie wirklich braucht, Sicherheit geben und – wenn es passt – einen Beratungstermin vereinbaren. Pflichtkriterien: Bedarf, bestehende PV-Anlage, Zeitrahmen, Entscheider. Technik- und Preisfragen beantwortet nur der Berater.",
+  "persona": {
+    "name": "Anna Lenz",
+    "role": "Eigentümerin, hat bereits eine PV-Anlage",
+    "avatarHue": 320
+  },
+  "facts": [
+    {
+      "key": "need",
+      "label": "Bedarf",
+      "value": "Mehr Solarstrom selbst nutzen, Abschlag stark gestiegen",
+      "requiredForQualification": true,
+      "distractors": [
+        "Will Strom ins Netz verkaufen",
+        "Braucht Notstrom für Arztpraxis"
+      ]
+    },
+    {
+      "key": "pv",
+      "label": "PV-Anlage",
+      "value": "PV-Anlage vorhanden (seit 2019)",
+      "requiredForQualification": true,
+      "distractors": [
+        "Noch keine PV-Anlage",
+        "PV-Anlage gemietet"
+      ]
+    },
+    {
+      "key": "timeline",
+      "label": "Zeitrahmen",
+      "value": "Gern bis zum Frühjahr",
+      "requiredForQualification": true,
+      "distractors": [
+        "Sofort, diese Woche",
+        "In fünf Jahren"
+      ]
+    },
+    {
+      "key": "authority",
+      "label": "Entscheider",
+      "value": "Entscheidet allein",
+      "requiredForQualification": true,
+      "distractors": [
+        "Ehemann entscheidet",
+        "Vermieter entscheidet"
+      ]
+    },
+    {
+      "key": "worry",
+      "label": "Hauptsorge",
+      "value": "Überfordert von drei widersprüchlichen Angeboten",
+      "requiredForQualification": false,
+      "distractors": [
+        "Angst vor Brandgefahr",
+        "Kein Vertrauen in Solartechnik"
+      ]
+    }
+  ],
+  "idealOutcome": "book",
+  "acceptableOutcomes": [
+    "book",
+    "nurture"
+  ],
+  "openingMessage": "Hallo, ich hatte wegen eines Speichers angefragt. Ehrlich gesagt bin ich mir gar nicht sicher, ob das überhaupt Sinn macht. Ich habe schon drei Angebote und jedes sagt was anderes 😕",
+  "startRapport": 4,
+  "maxTurns": 11,
+  "handoverFields": [
+    "need",
+    "pv",
+    "timeline",
+    "authority",
+    "worry"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 2,
+    "bedarfsermittlung": 4,
+    "fragetechnik": 4,
+    "zuhoeren": 7,
+    "klarheit": 4,
+    "qualifizierung": 7,
+    "einwaende": 3,
+    "kundenorientierung": 6,
+    "terminvereinbarung": 7
+  },
+  "reviewQuestionIds": [
+    "Q-M02-003",
+    "Q-M02-004",
+    "Q-M02-024",
+    "Q-M02-021"
+  ],
+  "sourceIds": [
+    "SRC-055",
+    "SRC-060",
+    "SRC-050"
+  ],
+  "moves": [
+    {
+      "id": "open-label",
+      "intent": "open",
+      "quality": "good",
+      "text": "Hallo Frau Lenz, hier ist Jonas von SolarNord – danke für Ihre Nachricht! Klingt, als wären die drei Angebote gerade eher verwirrend als hilfreich. Darf ich Ihnen ein paar kurze Fragen stellen, damit wir Klarheit reinbringen?",
+      "effects": {
+        "eroeffnung": 2,
+        "zuhoeren": 3,
+        "kundenorientierung": 2
+      },
+      "coachNote": "Vorstellung, Gefühl benannt, Erlaubnis eingeholt – sehr gute Eröffnung für eine unsichere Kundin.",
+      "reply": [
+        {
+          "text": "Ja, gerne. Das wäre echt hilfreich.",
+          "reveals": [
+            "worry"
+          ]
+        }
+      ],
+      "rapport": 2,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ]
+    },
+    {
+      "id": "open-pitch",
+      "intent": "open",
+      "quality": "weak",
+      "text": "Hallo! Unser Angebot ist mit Sicherheit das beste. Wann haben Sie Zeit für einen Termin?",
+      "effects": {
+        "eroeffnung": -1,
+        "kundenorientierung": -2,
+        "zuhoeren": -2
+      },
+      "coachNote": "Ignoriert die geäußerte Unsicherheit und wirbt, statt zuzuhören.",
+      "reply": [
+        {
+          "text": "Hm, das sagen die anderen auch …"
+        }
+      ],
+      "rapport": -2,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "betterMoveId": "open-label"
+    },
+    {
+      "id": "need",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Was möchten Sie mit dem Speicher vor allem erreichen?",
+      "effects": {
+        "bedarfsermittlung": 3,
+        "fragetechnik": 2
+      },
+      "coachNote": "Offene Zielfrage – lenkt weg vom Angebotschaos hin zu ihrem eigentlichen Ziel.",
+      "reply": [
+        {
+          "text": "Eigentlich will ich einfach mehr von meinem Solarstrom selbst nutzen. Unser Abschlag ist ziemlich gestiegen."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "need"
+      ]
+    },
+    {
+      "id": "paraphrase",
+      "intent": "summarize",
+      "quality": "good",
+      "text": "Wenn ich Sie richtig verstehe, geht es Ihnen weniger um Technik-Details als darum, mehr eigenen Strom zu nutzen und den Abschlag zu senken – stimmt das?",
+      "effects": {
+        "zuhoeren": 4,
+        "klarheit": 2
+      },
+      "coachNote": "Paraphrase als Frage – die Kundin fühlt sich verstanden und kann korrigieren.",
+      "reply": [
+        {
+          "text": "Genau! Das hat mich bisher keiner so gefragt."
+        }
+      ],
+      "requires": [
+        "need"
+      ],
+      "rapport": 1,
+      "setsFlags": [
+        "paraphrased"
+      ],
+      "hiddenByFlags": [
+        "paraphrased"
+      ]
+    },
+    {
+      "id": "pv",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Sie haben ja schon eine PV-Anlage – seit wann ungefähr?",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "coachNote": "Pflichtkriterium mit einer kurzen geschlossenen Frage geklärt.",
+      "reply": [
+        {
+          "text": "Seit 2019. Läuft gut, aber tagsüber sind wir kaum zu Hause."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "pv"
+      ]
+    },
+    {
+      "id": "follow-day",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Sie sagten, tagsüber sind Sie kaum zu Hause – heißt das, ein großer Teil Ihres Solarstroms geht gerade ins Netz?",
+      "effects": {
+        "zuhoeren": 3,
+        "bedarfsermittlung": 1
+      },
+      "coachNote": "Echte Folgefrage: greift ihr Detail auf und vertieft den Bedarf, ohne Technik zu erklären.",
+      "reply": [
+        {
+          "text": "Ja, genau das ist ja das Problem, glaube ich."
+        }
+      ],
+      "requires": [
+        "pv"
+      ],
+      "setsFlags": [
+        "followed"
+      ],
+      "hiddenByFlags": [
+        "followed"
+      ]
+    },
+    {
+      "id": "tech-explain",
+      "intent": "inform",
+      "quality": "weak",
+      "text": "Dann brauchen Sie mindestens 10 kWh mit LFP-Zellen und Hybridwechselrichter, sonst lohnt es sich nicht.",
+      "effects": {
+        "kundenorientierung": -2,
+        "klarheit": -1
+      },
+      "coachNote": "Ungeprüfte Technikaussage außerhalb deiner Rolle – und genau das, was sie bei drei Angeboten schon überfordert hat.",
+      "reply": [
+        {
+          "text": "Oh je, noch mehr Fachbegriffe … das schrieb das zweite Angebot auch so ähnlich."
+        }
+      ],
+      "requires": [
+        "pv"
+      ],
+      "rapport": -1,
+      "betterMoveId": "follow-day",
+      "violation": "Technische Dimensionierungsaussage ohne Prüfung durch Fachberater."
+    },
+    {
+      "id": "compare-ask",
+      "intent": "ask",
+      "quality": "ok",
+      "text": "Was genau verwirrt Sie an den drei Angeboten am meisten?",
+      "effects": {
+        "bedarfsermittlung": 1,
+        "zuhoeren": 1
+      },
+      "coachNote": "Sinnvolle Klärungsfrage – aber Vorsicht, du darfst die Angebote nicht selbst bewerten.",
+      "reply": [
+        {
+          "text": "Jeder empfiehlt eine andere Größe und die Preise liegen 5.000 € auseinander. Wie soll ich da wissen, was stimmt?",
+          "setsFlags": [
+            "asked-compare"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "setsFlags": [
+        "compare-asked"
+      ],
+      "hiddenByFlags": [
+        "compare-asked"
+      ]
+    },
+    {
+      "id": "compare-handoff",
+      "intent": "handoff",
+      "quality": "good",
+      "text": "Das verstehe ich gut. Ich kann die Angebote nicht seriös bewerten – aber unser Berater kann sie im Termin gern mit Ihnen gemeinsam einordnen, ganz ohne Druck. Sie entscheiden danach ganz in Ruhe.",
+      "effects": {
+        "einwaende": 3,
+        "kundenorientierung": 2,
+        "klarheit": 1
+      },
+      "coachNote": "Rollenklar, entlastend und Autonomie betont.",
+      "reply": [
+        {
+          "text": "Das klingt fair. Das wäre mir eine echte Hilfe."
+        }
+      ],
+      "requiresFlags": [
+        "asked-compare"
+      ],
+      "hiddenByFlags": [
+        "compare-done"
+      ],
+      "setsFlags": [
+        "compare-done"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "compare-badmouth",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Die anderen Anbieter übertreiben oft – bei uns sind Sie auf der sicheren Seite.",
+      "effects": {
+        "kundenorientierung": -2
+      },
+      "coachNote": "Konkurrenz schlechtmachen, ohne die Angebote zu kennen – unseriös und unbelegt.",
+      "reply": [
+        {
+          "text": "Hm. Woher wollen Sie das wissen, Sie kennen die Angebote doch gar nicht?"
+        }
+      ],
+      "requiresFlags": [
+        "asked-compare"
+      ],
+      "hiddenByFlags": [
+        "compare-done"
+      ],
+      "setsFlags": [
+        "compare-done"
+      ],
+      "rapport": -2,
+      "betterMoveId": "compare-handoff",
+      "violation": "Unbelegte Herabsetzung von Mitbewerbern."
+    },
+    {
+      "id": "timeline",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Bis wann würden Sie das Thema gern geklärt haben?",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "coachNote": "Zeitrahmen offen erfragt.",
+      "reply": [
+        {
+          "text": "Am liebsten bis zum Frühjahr, dann ist wieder mehr Sonne."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "timeline"
+      ]
+    },
+    {
+      "id": "authority",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Entscheiden Sie das allein, oder ist noch jemand beteiligt?",
+      "effects": {
+        "qualifizierung": 3
+      },
+      "coachNote": "Entscheider geklärt, ohne vorauszusetzen.",
+      "reply": [
+        {
+          "text": "Das entscheide ich allein, das Haus gehört mir."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "authority"
+      ]
+    },
+    {
+      "id": "propose",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Ein 30-minütiges Videogespräch mit unserem Berater wäre der nächste Schritt – er schaut sich Ihre Situation an und ordnet die Angebote mit Ihnen ein. Möchten Sie das?",
+      "effects": {
+        "terminvereinbarung": 2,
+        "klarheit": 1
+      },
+      "coachNote": "Klarer Vorschlag mit Nutzen, Dauer und Format.",
+      "reply": [
+        {
+          "text": "Ja, das machen wir.",
+          "setsFlags": [
+            "accepted"
+          ],
+          "when": {
+            "factsRevealed": [
+              "need",
+              "pv",
+              "timeline",
+              "authority"
+            ],
+            "minRapport": 5
+          }
+        },
+        {
+          "text": "Hm … ich weiß noch nicht. Ich will nicht schon wieder ein Verkaufsgespräch.",
+          "setsFlags": [
+            "hesitant"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "proposed"
+      ],
+      "setsFlags": [
+        "proposed"
+      ]
+    },
+    {
+      "id": "reassure",
+      "intent": "handle_objection",
+      "quality": "good",
+      "text": "Verständlich. Im Gespräch gibt es kein Angebot, das Sie unterschreiben müssen – es geht nur um Klarheit. Wenn es danach nicht passt, ist das völlig in Ordnung. Was bräuchten Sie noch, um sich dafür zu entscheiden?",
+      "effects": {
+        "einwaende": 3,
+        "kundenorientierung": 2
+      },
+      "coachNote": "Unsicherheit durch Transparenz und Autonomie aufgefangen, dann offen gefragt.",
+      "reply": [
+        {
+          "text": "Okay, wenn das so ist … dann gern. Fragen Sie ruhig, was Sie noch brauchen.",
+          "setsFlags": [
+            "reassured"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "hesitant"
+      ],
+      "hiddenByFlags": [
+        "reassured"
+      ],
+      "rapport": 2
+    },
+    {
+      "id": "propose-again",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Dann schlage ich vor: ein 30-minütiges Videogespräch mit unserem Berater, unverbindlich. Passt das für Sie?",
+      "effects": {
+        "terminvereinbarung": 1
+      },
+      "coachNote": "Erneuter Vorschlag erst nach Klärung der Bedenken.",
+      "reply": [
+        {
+          "text": "Ja, gern.",
+          "setsFlags": [
+            "accepted"
+          ],
+          "when": {
+            "factsRevealed": [
+              "need",
+              "pv",
+              "timeline",
+              "authority"
+            ]
+          }
+        },
+        {
+          "text": "Ich glaube, mir fehlen noch ein paar Infos von Ihrer Seite – fragen Sie ruhig, was Sie brauchen."
+        }
+      ],
+      "requiresFlags": [
+        "reassured"
+      ],
+      "hiddenByFlags": [
+        "accepted",
+        "proposed-again"
+      ],
+      "setsFlags": [
+        "proposed-again"
+      ]
+    },
+    {
+      "id": "slots",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Super! Passt Ihnen Dienstag um 18 Uhr oder Mittwoch um 12:30 Uhr in Ihrer Mittagspause besser?",
+      "effects": {
+        "terminvereinbarung": 3,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Zwei konkrete Zeitfenster, angepasst an ihre Arbeitszeiten.",
+      "reply": [
+        {
+          "text": "Mittwoch 12:30 ist perfekt."
+        }
+      ],
+      "requiresFlags": [
+        "accepted"
+      ],
+      "hiddenByFlags": [
+        "slot"
+      ],
+      "setsFlags": [
+        "slot"
+      ]
+    },
+    {
+      "id": "confirm",
+      "intent": "confirm_booking",
+      "quality": "good",
+      "text": "Perfekt: Mittwoch, 12:30 Uhr, 30 Minuten per Video. Mögen Sie sich den Termin gleich eintragen? Wenn Sie mögen, schicken Sie mir die drei Angebote vorab, dann kann der Berater sich vorbereiten. Falls etwas dazwischenkommt, schreiben Sie mir einfach.",
+      "effects": {
+        "terminvereinbarung": 3,
+        "klarheit": 2,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Vollständige Bestätigung mit Wenn-dann-Plan und Vorbereitung.",
+      "reply": [
+        {
+          "text": "Mach ich, danke! Endlich mal jemand, der zuhört.",
+          "ends": "book"
+        }
+      ],
+      "requiresFlags": [
+        "slot"
+      ]
+    },
+    {
+      "id": "pressure",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Die Speicherpreise steigen nächsten Monat – Sie sollten sich jetzt schnell entscheiden.",
+      "effects": {
+        "kundenorientierung": -3
+      },
+      "coachNote": "Unbelegte Preisprognose als Druckmittel gegenüber einer ohnehin unsicheren Kundin.",
+      "reply": [
+        {
+          "text": "Genau dieses Gefühl hatte ich bei den anderen auch. Ich glaube, ich lasse das erst mal.",
+          "ends": "lost"
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ],
+      "rapport": -3,
+      "betterMoveId": "reassure",
+      "violation": "Unbelegte Preisprognose als Druck (künstliche Dringlichkeit)."
+    },
+    {
+      "id": "nurture",
+      "intent": "nurture",
+      "quality": "ok",
+      "text": "Wenn Sie erst einmal in Ruhe sortieren möchten, schicke ich Ihnen gern eine kurze Checkliste, worauf man bei Speicherangeboten achten kann. Ist das okay?",
+      "effects": {
+        "kundenorientierung": 2
+      },
+      "coachNote": "Respektvolle Alternative – bei klarem Bedarf aber nicht das Optimum.",
+      "reply": [
+        {
+          "text": "Ja, das wäre schon mal gut.",
+          "ends": "nurture"
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ]
+    }
+  ]
+}

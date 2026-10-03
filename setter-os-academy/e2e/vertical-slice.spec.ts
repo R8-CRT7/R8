@@ -33,7 +33,7 @@ test("E03 Geschützte Bereiche ohne Profil zeigen Hinweis statt Absturz", async 
 test("E04 Lektion: Abrufübung beantworten, abschließen, Fortschritt bleibt nach Reload", async ({ page }) => {
   await createProfile(page);
   await page.goto("/learn/M01/M01-L01/");
-  const check = page.locator("article").first();
+  const check = page.locator('article[aria-labelledby="Q-M01-001-prompt"]');
   await check.getByText("Klären, ob ein Bedarf passt").click();
   await check.getByRole("button", { name: "Sicher", exact: true }).click();
   await check.getByRole("button", { name: "Antwort prüfen" }).click();
@@ -42,7 +42,7 @@ test("E04 Lektion: Abrufübung beantworten, abschließen, Fortschritt bleibt nac
   await expect(page).toHaveURL(/M01-L02/);
   await page.reload();
   await page.goto("/learn/M01/");
-  await expect(page.getByText("1 von 6 Lektionen")).toBeVisible();
+  await expect(page.getByText("1 von 8 Lektionen")).toBeVisible();
 });
 
 test("E05 Simulator: Nein respektieren → Übergabe → bestandene Auswertung", async ({ page }) => {
@@ -80,7 +80,7 @@ test("E07 Quiz: Regeln vorab sichtbar, erste Frage beantwortbar", async ({ page 
   await page.goto("/quiz/M01/");
   await expect(page.getByText("Regeln (vorab festgelegt)")).toBeVisible();
   await page.getByRole("button", { name: "Quiz starten" }).click();
-  await expect(page.getByText("Frage 1 / 16")).toBeVisible();
+  await expect(page.getByText(/Frage 1 \/ \d+/)).toBeVisible();
 });
 
 test("E08 Einstellungen: heller Modus und Datenlöschung", async ({ page }) => {
@@ -134,8 +134,33 @@ test("E12 Tastaturbedienung: Antwort per Tastatur auswählbar", async ({ page, i
   test.skip(!!isMobile, "Desktop");
   await createProfile(page);
   await page.goto("/learn/M01/M01-L02/");
-  const radio = page.locator("article").first().getByRole("radio").first();
+  const radio = page.locator("article", { has: page.getByRole("button", { name: "Antwort prüfen" }) }).first().getByRole("radio").first();
   await radio.focus();
   await page.keyboard.press("Space");
   await expect(radio).toBeChecked();
+});
+
+test("E13 90-Tage-Plan: starten, Tag 1 bearbeiten und abschließen, Tag 2 öffnet morgen", async ({ page }) => {
+  await createProfile(page);
+  await page.goto("/plan/");
+  await page.getByRole("button", { name: "Plan starten – Tag 1" }).click();
+  await expect(page.getByRole("heading", { name: "Tag 1 von 90" })).toBeVisible();
+  for (const l of ["M01-L01", "M01-L02", "M01-L03"]) {
+    await page.goto(`/learn/M01/${l}/`);
+    await page.getByRole("button", { name: /Lektion abschließen/ }).click();
+  }
+  await page.goto("/plan/");
+  await page.getByRole("button", { name: "Tag 1 abschließen" }).click();
+  await expect(page.getByText("Öffnet morgen").first()).toBeVisible();
+  await page.getByRole("button", { name: "Heute schon weitermachen" }).click();
+  await expect(page.getByRole("heading", { name: "Tag 2 von 90" })).toBeVisible();
+});
+
+test("E14 Lektion zeigt Kursbuch, Skill-Karte und Mythos-Check", async ({ page }) => {
+  await createProfile(page);
+  await page.goto("/learn/M02/M02-L02/");
+  await expect(page.getByText(/Kursbuch · Kapitel 2\.2/)).toBeVisible();
+  await expect(page.getByText("Skill-Karte").first()).toBeVisible();
+  await page.goto("/learn/M01/M01-L06/");
+  await expect(page.getByText("Mythos-Check")).toBeVisible();
 });

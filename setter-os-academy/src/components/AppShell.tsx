@@ -10,12 +10,13 @@ import { ButtonLink } from "./ui";
 
 const PRIMARY: { href: string; label: string; icon: IconName }[] = [
   { href: "/dashboard/", label: "Start", icon: "home" },
-  { href: "/learn/", label: "Lernpfad", icon: "path" },
+  { href: "/plan/", label: "Plan", icon: "path" },
   { href: "/simulator/", label: "Simulator", icon: "chat" },
   { href: "/review/", label: "Wiederholen", icon: "repeat" },
   { href: "/stats/", label: "Statistik", icon: "chart" },
 ];
 const SECONDARY: { href: string; label: string; icon: IconName }[] = [
+  { href: "/learn/", label: "Module", icon: "book" },
   { href: "/skills/", label: "Skill Tree", icon: "tree" },
   { href: "/exam/", label: "Prüfungen", icon: "trophy" },
   { href: "/sources/", label: "Quellen", icon: "book" },
