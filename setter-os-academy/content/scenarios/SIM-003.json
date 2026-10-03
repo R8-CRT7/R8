@@ -1,0 +1,236 @@
+{
+  "id": "SIM-003",
+  "version": 1,
+  "title": "Photovoltaik: „Ich möchte keinen Termin“",
+  "archetype": "Kunde, der ausdrücklich keinen Termin möchte",
+  "industry": "Photovoltaik",
+  "channel": "whatsapp",
+  "market": "B2C",
+  "direction": "inbound",
+  "difficulty": 2,
+  "briefing": "Simulation – alle Personen und Firmen sind erfunden. Du bist Setter bei „SolarNord“. Herr Yilmaz hat einen PV-Ratgeber heruntergeladen und dabei der Kontaktaufnahme per WhatsApp zugestimmt. Du meldest dich. Ziel: herausfinden, ob und wie er weiter kontaktiert werden möchte – und seine Entscheidung respektieren.",
+  "persona": {
+    "name": "Emre Yilmaz",
+    "role": "Privatperson, informiert sich",
+    "avatarHue": 140
+  },
+  "facts": [
+    {
+      "key": "contact_pref",
+      "label": "Kontaktwunsch",
+      "value": "Keine weiteren Werbenachrichten",
+      "requiredForQualification": true,
+      "distractors": [
+        "Erneut in 2 Wochen kontaktieren",
+        "Beratungstermin gewünscht"
+      ]
+    },
+    {
+      "key": "reason",
+      "label": "Hintergrund",
+      "value": "Informiert sich nur, Projekt frühestens in einigen Jahren",
+      "requiredForQualification": false,
+      "distractors": [
+        "Hat bereits bei der Konkurrenz gekauft",
+        "Will sofort bauen"
+      ]
+    }
+  ],
+  "idealOutcome": "respect_no",
+  "acceptableOutcomes": [
+    "respect_no"
+  ],
+  "openingMessage": "Hallo. Ich hab nur den Ratgeber runtergeladen. Ich möchte keinen Termin, danke.",
+  "startRapport": 4,
+  "maxTurns": 6,
+  "handoverFields": [
+    "contact_pref",
+    "reason"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 2,
+    "zuhoeren": 3,
+    "klarheit": 3,
+    "kundenorientierung": 6
+  },
+  "reviewQuestionIds": [
+    "Q-M01-023",
+    "Q-M01-024",
+    "Q-M01-028"
+  ],
+  "sourceIds": [
+    "SRC-019",
+    "SRC-050"
+  ],
+  "moves": [
+    {
+      "id": "ack-clarify",
+      "intent": "acknowledge",
+      "quality": "good",
+      "hiddenByFlags": [
+        "clarified"
+      ],
+      "setsFlags": [
+        "clarified"
+      ],
+      "text": "Hallo Herr Yilmaz, hier ist SolarNord – danke für die klare Rückmeldung, dann gibt es keinen Termin. Eine kurze Frage nur, damit ich es richtig vermerke: Möchten Sie überhaupt noch Nachrichten von uns bekommen, oder soll ich Ihren Kontakt für Werbung sperren?",
+      "effects": {
+        "eroeffnung": 2,
+        "zuhoeren": 2,
+        "kundenorientierung": 3,
+        "klarheit": 1
+      },
+      "reveals": [
+        "contact_pref"
+      ],
+      "rapport": 1,
+      "coachNote": "Das Nein wird sofort akzeptiert; die einzige Frage dient der korrekten Umsetzung seines Wunsches, nicht dem Verkauf.",
+      "reply": [
+        {
+          "text": "Bitte keine weiteren Nachrichten. Ich informiere mich nur, das wird frühestens in ein paar Jahren was.",
+          "reveals": [
+            "reason"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why-not",
+      "intent": "pressure",
+      "quality": "bad",
+      "hiddenByFlags": [
+        "pushed"
+      ],
+      "setsFlags": [
+        "pushed"
+      ],
+      "text": "Schade! Darf ich fragen, warum nicht? Es sind wirklich nur 15 Minuten.",
+      "effects": {
+        "kundenorientierung": -3,
+        "zuhoeren": -2
+      },
+      "rapport": -3,
+      "violation": "Ausdrückliches Nein ignoriert („Nur 15 Minuten“).",
+      "coachNote": "Er hat klar Nein gesagt. Nachbohren ist hier Druck, keine Einwandbehandlung.",
+      "betterMoveId": "ack-clarify",
+      "reply": [
+        {
+          "text": "Ich habe doch gerade gesagt, dass ich keinen Termin möchte."
+        }
+      ]
+    },
+    {
+      "id": "fake-scarcity",
+      "intent": "pressure",
+      "quality": "bad",
+      "requiresFlags": [
+        "pushed"
+      ],
+      "text": "Es ist wirklich unverbindlich – und nur diese Woche gibt es den Solar-Check kostenlos!",
+      "effects": {
+        "kundenorientierung": -3,
+        "klarheit": -1
+      },
+      "rapport": -3,
+      "violation": "Erneute Werbung nach ausdrücklichem Nein plus künstliche Verknappung.",
+      "coachNote": "Zweiter Druckversuch mit erfundener Frist – so entstehen Beschwerden.",
+      "betterMoveId": "close-respectful",
+      "reply": [
+        {
+          "text": "Jetzt reicht's. Löschen Sie bitte meine Daten.",
+          "ends": "lost"
+        }
+      ]
+    },
+    {
+      "id": "close-respectful",
+      "intent": "close_respectfully",
+      "quality": "good",
+      "requiresFlags": [
+        "clarified"
+      ],
+      "text": "Alles klar, ich habe vermerkt: keine weiteren Nachrichten. Danke für Ihr Interesse am Ratgeber und alles Gute für Ihr Projekt!",
+      "effects": {
+        "kundenorientierung": 3,
+        "klarheit": 2,
+        "zuhoeren": 1
+      },
+      "coachNote": "Klarer Abschluss mit Zusage, den Wunsch umzusetzen.",
+      "reply": [
+        {
+          "text": "Danke, Ihnen auch.",
+          "ends": "respect_no"
+        }
+      ]
+    },
+    {
+      "id": "close-quick",
+      "intent": "close_respectfully",
+      "quality": "ok",
+      "hiddenByFlags": [
+        "clarified"
+      ],
+      "text": "Kein Problem! Wenn Sie Fragen zum Ratgeber haben, melden Sie sich gern.",
+      "effects": {
+        "kundenorientierung": 2,
+        "klarheit": 1
+      },
+      "coachNote": "Respektvoll – aber du weißt nicht, ob er überhaupt weitere Nachrichten möchte. Das solltest du für das CRM klären.",
+      "reply": [
+        {
+          "text": "Okay, danke.",
+          "ends": "respect_no"
+        }
+      ]
+    },
+    {
+      "id": "apologize-close",
+      "intent": "close_respectfully",
+      "quality": "ok",
+      "requiresFlags": [
+        "pushed"
+      ],
+      "hiddenByFlags": [
+        "clarified"
+      ],
+      "text": "Entschuldigung, das war zu aufdringlich. Ich vermerke, dass Sie keinen Termin und keine weiteren Nachrichten möchten. Alles Gute!",
+      "effects": {
+        "kundenorientierung": 2,
+        "klarheit": 1
+      },
+      "coachNote": "Gute Korrektur nach einem Fehler – die Entschuldigung macht den Druckversuch aber nicht ungeschehen.",
+      "reply": [
+        {
+          "text": "Okay. Und bitte wirklich keine weiteren Nachrichten.",
+          "reveals": [
+            "contact_pref"
+          ],
+          "ends": "respect_no"
+        }
+      ]
+    },
+    {
+      "id": "later-followup",
+      "intent": "nurture",
+      "quality": "bad",
+      "requiresFlags": [
+        "clarified"
+      ],
+      "text": "Verstanden. Ich melde mich trotzdem in zwei Wochen noch mal, vielleicht sieht es dann anders aus.",
+      "effects": {
+        "kundenorientierung": -3,
+        "zuhoeren": -2
+      },
+      "rapport": -2,
+      "violation": "Weitere Kontaktaufnahme gegen erklärten Widerspruch angekündigt.",
+      "coachNote": "Er hat weitere Nachrichten ausdrücklich abgelehnt.",
+      "betterMoveId": "close-respectful",
+      "reply": [
+        {
+          "text": "Nein. Bitte nicht.",
+          "ends": "lost"
+        }
+      ]
+    }
+  ]
+}

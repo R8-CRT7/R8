@@ -1,0 +1,437 @@
+{
+  "id": "M01",
+  "number": 1,
+  "title": "Sales Fundamentals",
+  "subtitle": "Berufsbild, Rollen, Customer Journey und Lead-Status – das Fundament jedes Gesprächs.",
+  "status": "verfuegbar",
+  "prerequisites": [],
+  "version": "1.0.0",
+  "passThreshold": 0.8,
+  "sourceIds": [
+    "SRC-005",
+    "SRC-013",
+    "SRC-019",
+    "SRC-020",
+    "SRC-043",
+    "SRC-047",
+    "SRC-050"
+  ],
+  "objectives": [
+    {
+      "id": "LO-M01-01",
+      "moduleId": "M01",
+      "text": "Die Aufgaben eines Appointment Setters beschreiben und von Closer, SDR und BDR abgrenzen.",
+      "bloom": "verstehen"
+    },
+    {
+      "id": "LO-M01-02",
+      "moduleId": "M01",
+      "text": "Customer Journey und Sales Funnel erklären und einen Lead der passenden Phase zuordnen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M01-03",
+      "moduleId": "M01",
+      "text": "Inbound/Outbound sowie B2B/B2C unterscheiden und die Folgen für Gesprächsführung und Rechtsrahmen benennen.",
+      "bloom": "verstehen"
+    },
+    {
+      "id": "LO-M01-04",
+      "moduleId": "M01",
+      "text": "Ein Erstgespräch in vier Phasen strukturieren (Eröffnung, Bedarf, Zusammenfassung, nächster Schritt).",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M01-05",
+      "moduleId": "M01",
+      "text": "Lead-Status und Kaufbereitschaft anhand von Kriterien bestimmen und dokumentieren.",
+      "bloom": "analysieren"
+    },
+    {
+      "id": "LO-M01-06",
+      "moduleId": "M01",
+      "text": "Ethische und rechtliche Grenzen des Settings erkennen: kein Druck, Nein respektieren, keine Fachberatung über die eigene Rolle hinaus.",
+      "bloom": "bewerten"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M01-L01",
+      "moduleId": "M01",
+      "title": "Was macht ein Appointment Setter?",
+      "minutes": 8,
+      "objectiveIds": [
+        "LO-M01-01"
+      ],
+      "sourceIds": [
+        "SRC-043",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Die Kernaufgabe",
+          "body": "Ein Appointment Setter (kurz: Setter) führt die ersten Gespräche mit Interessenten. Ziel ist nicht der Verkauf, sondern eine saubere Entscheidung: Passt das Angebot grundsätzlich zum Bedarf? Wenn ja, wird ein qualifizierter Termin mit einer Person vereinbart, die beraten und verkaufen darf – meist ein Closer, Berater oder Account Executive. Wenn nein, wird der Lead ehrlich verabschiedet oder in eine spätere Betreuung (Nurturing) überführt."
+        },
+        {
+          "kind": "text",
+          "title": "Typische Verantwortlichkeiten",
+          "body": "• Neue Anfragen schnell und freundlich beantworten\n• Mit gezielten Fragen Bedarf, Zeitrahmen, Entscheider und Rahmenbedingungen klären\n• Nur qualifizierte Termine buchen – nicht jeden Termin\n• Termine bestätigen, erinnern und bei Bedarf verschieben\n• Jedes Gespräch im CRM vollständig und wahrheitsgemäß dokumentieren\n• Eine Übergabe schreiben, mit der der Closer ohne Rückfragen starten kann"
+        },
+        {
+          "kind": "text",
+          "title": "Setter, Closer, SDR, BDR",
+          "body": "Die Begriffe werden in Unternehmen unterschiedlich verwendet. Eine verbreitete Aufteilung:\n\n• Setter: qualifiziert Leads und vereinbart Termine – häufig im Chat (Chat Setting) oder am Telefon. Der Begriff ist vor allem im Coaching-, Agentur- und Online-Business verbreitet.\n• Closer / Account Executive: führt das Beratungs- bzw. Verkaufsgespräch und schließt den Vertrag ab.\n• SDR (Sales Development Representative): qualifiziert häufig eingehende (Inbound-)Leads in B2B-Unternehmen.\n• BDR (Business Development Representative): baut häufig aktiv neue Kontakte auf (Outbound).\n\nWichtig: Diese Zuordnung ist eine Praxis-Konvention, keine Norm. Manche Firmen verwenden SDR und BDR genau umgekehrt. Kläre in jedem Projekt, wer was verantwortet."
+        },
+        {
+          "kind": "callout",
+          "tone": "info",
+          "title": "Merksatz",
+          "body": "Der Setter verkauft nicht das Produkt – er verkauft den nächsten sinnvollen Schritt. Und manchmal ist der sinnvollste Schritt: kein Termin."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-001"
+        },
+        {
+          "kind": "example",
+          "title": "Beispiel: Gute Rollenklarheit",
+          "body": "Kundin: „Wie viel kostet die Wärmepumpe genau?“\nSetter: „Das hängt von Ihrem Haus ab – das rechnet unser Energieberater im Termin seriös durch. Damit er gut vorbereitet ist: Wie groß ist die Wohnfläche ungefähr und wie heizen Sie aktuell?“\n\nDer Setter weicht nicht aus, verspricht aber auch keine Zahl, die er nicht verantworten kann. Er erklärt, wer die Frage beantwortet, und nutzt den Moment für Bedarfsermittlung."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-002"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Was wäre für dich schwieriger: ein Gespräch ohne Termin zu beenden oder einen unpassenden Termin abzulehnen? Warum?"
+        }
+      ],
+      "summary": [
+        "Setter qualifizieren und vereinbaren Termine – sie verkaufen nicht.",
+        "Closer/Berater führen das Verkaufsgespräch und beantworten Fachfragen.",
+        "SDR/BDR-Bezeichnungen variieren je Unternehmen – Rollen immer klären.",
+        "Ein guter Setter bucht qualifizierte Termine, nicht möglichst viele."
+      ]
+    },
+    {
+      "id": "M01-L02",
+      "moduleId": "M01",
+      "title": "Customer Journey und Sales Funnel",
+      "minutes": 9,
+      "objectiveIds": [
+        "LO-M01-02"
+      ],
+      "sourceIds": [
+        "SRC-043",
+        "SRC-047"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Die Sicht des Kunden: Customer Journey",
+          "body": "Die Customer Journey beschreibt den Weg eines Menschen vom ersten Problembewusstsein bis zur Entscheidung. Ein einfaches Modell hat drei Phasen:\n\n1. Bewusstsein (Awareness): „Ich habe ein Problem oder Ziel.“\n2. Abwägung (Consideration): „Welche Lösungswege gibt es?“\n3. Entscheidung (Decision): „Welcher Anbieter passt zu mir?“\n\nWer in Phase 1 schon einen Verkaufstermin bekommt, fühlt sich schnell bedrängt. Wer in Phase 3 lange warten muss, kauft woanders."
+        },
+        {
+          "kind": "text",
+          "title": "Die Sicht des Unternehmens: Sales Funnel",
+          "body": "Der Funnel (Trichter) beschreibt dieselbe Bewegung aus Sicht des Vertriebs: Viele Kontakte werden zu Leads, ein Teil davon wird qualifiziert, ein Teil erscheint zum Termin, ein Teil kauft. Typische Stufen: Kontakt → Lead → qualifizierter Lead → Termin gebucht → Termin wahrgenommen → Angebot → Abschluss.\n\nDer Setter arbeitet im mittleren Teil: zwischen Lead und wahrgenommenem Termin."
+        },
+        {
+          "kind": "text",
+          "title": "Inbound-Methodik nach HubSpot",
+          "body": "HubSpot beschreibt Inbound Sales in vier Schritten: Identify (aktive Interessenten erkennen), Connect (Kontakt mit Bezug auf das, was der Interessent getan hat), Explore (Bedarf verstehen) und Advise (beraten, wie es weitergeht). Für Setter sind vor allem Connect und Explore zentral – Advise übernimmt meist der Berater."
+        },
+        {
+          "kind": "workedExample",
+          "title": "Lösungsweg: Einen Lead einordnen",
+          "steps": [
+            "Signal lesen: Lead hat ein Whitepaper „Wärmepumpe im Altbau – geht das?“ heruntergeladen.",
+            "Phase ableiten: Er informiert sich über Lösungswege → Abwägung (Consideration).",
+            "Annahme prüfen statt behaupten: „Sie haben sich unseren Altbau-Leitfaden angesehen – planen Sie konkret etwas oder sammeln Sie erst Informationen?“",
+            "Nächsten Schritt passend wählen: Sammelt er nur → hilfreiche Info + spätere Rückmeldung (Nurturing). Plant er konkret → Qualifizierung fortsetzen."
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-005"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-006"
+        },
+        {
+          "kind": "callout",
+          "tone": "warn",
+          "title": "Modelle sind Vereinfachungen",
+          "body": "Echte Kaufentscheidungen verlaufen selten linear. Menschen springen zurück, holen Meinungen ein oder pausieren. Nutze die Phasen als Hilfe zum Zuhören – nicht als Schublade."
+        }
+      ],
+      "summary": [
+        "Customer Journey = Sicht des Kunden; Funnel = Sicht des Vertriebs.",
+        "Der Setter arbeitet zwischen Lead und wahrgenommenem Termin.",
+        "Die Phase bestimmt den passenden nächsten Schritt – nicht die Quote.",
+        "Phasen erst erfragen, dann einordnen."
+      ]
+    },
+    {
+      "id": "M01-L03",
+      "moduleId": "M01",
+      "title": "Inbound, Outbound, B2B und B2C",
+      "minutes": 10,
+      "objectiveIds": [
+        "LO-M01-03"
+      ],
+      "sourceIds": [
+        "SRC-005",
+        "SRC-019",
+        "SRC-020",
+        "SRC-021",
+        "SRC-027"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Inbound und Outbound",
+          "body": "Inbound: Der Interessent meldet sich selbst – Formular, Anruf, Chat-Nachricht, Kommentar. Er hat bereits ein Interesse gezeigt.\nOutbound: Das Unternehmen geht aktiv auf Menschen zu, die sich noch nicht gemeldet haben.\n\nFür Einsteiger ist Inbound der bessere Start: Der Kontakt ist erwünscht, und es geht vor allem um schnelles, gutes Reagieren. Eine viel zitierte Untersuchung in der Harvard Business Review (Oldroyd, McElheran & Elkington, 2011; 1,25 Mio. Leads US-amerikanischer Unternehmen) fand: Unternehmen, die innerhalb einer Stunde reagierten, qualifizierten Leads etwa siebenmal häufiger als solche, die eine Stunde später reagierten. Das ist ein Zusammenhang, kein Beweis für eine feste Regel – aber ein starkes Argument für schnelle, gut vorbereitete Antworten."
+        },
+        {
+          "kind": "text",
+          "title": "B2B und B2C",
+          "body": "B2B (Business-to-Business): Kunden sind Unternehmen. Oft entscheiden mehrere Personen, Prozesse dauern länger, Budget und Freigaben spielen eine große Rolle.\nB2C (Business-to-Consumer): Kunden sind Privatpersonen. Entscheidungen sind persönlicher, oft emotionaler, häufig mit Partnerin oder Partner abgestimmt. Verbraucher genießen in Deutschland einen besonders starken rechtlichen Schutz."
+        },
+        {
+          "kind": "callout",
+          "tone": "legal",
+          "title": "Rechtlicher Grundsatz (Deutschland, Stand 10/2026 – keine Rechtsberatung)",
+          "body": "Nach § 7 UWG ist Telefonwerbung gegenüber Verbrauchern nur mit vorheriger ausdrücklicher Einwilligung zulässig; diese muss nach § 7a UWG dokumentiert und fünf Jahre aufbewahrt werden. Gegenüber Unternehmern genügt für Anrufe mindestens eine mutmaßliche Einwilligung, die an strenge Voraussetzungen gebunden ist. Werbung per E-Mail und Direktnachricht (z. B. LinkedIn) braucht grundsätzlich eine vorherige ausdrückliche Einwilligung – auch im B2B. Eine Vernetzung ist laut AG Düsseldorf (2025) keine Einwilligung. Details folgen in Modul 11; bis dahin: Kaltakquise nur nach Rücksprache mit dem Auftraggeber und dessen Rechtsberatung."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-009"
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Die „warme“ Liste",
+          "situation": "Ein Solar-Installateur gibt dir eine Liste mit 400 privaten Telefonnummern aus einem Gewinnspiel von 2021 und sagt: „Die haben alle mal Interesse gezeigt, ruf die an.“",
+          "analysis": "Es handelt sich um Verbraucher (B2C) und um Outbound-Telefonwerbung. Erforderlich wäre eine vorherige ausdrückliche Einwilligung genau für Werbeanrufe dieses Unternehmens, dokumentiert nach § 7a UWG. Eine Gewinnspielteilnahme ist dafür nicht automatisch ausreichend. Die Bundesnetzagentur hat 2025 erstmals Verstöße gegen die Dokumentationspflicht geahndet. Richtige Reaktion: Nicht anrufen, Einwilligungsnachweise anfordern und den Fall an den Auftraggeber zurückgeben.",
+          "simulationNote": "Alle Daten in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-010"
+        }
+      ],
+      "summary": [
+        "Inbound = Interessent meldet sich; Outbound = Unternehmen geht aktiv zu.",
+        "Schnelle Reaktion auf Inbound-Leads hängt stark mit Qualifizierung zusammen (HBR 2011, korrelativ).",
+        "B2B: mehrere Entscheider, längere Prozesse; B2C: persönliche Entscheidung, starker Verbraucherschutz.",
+        "B2C-Werbeanrufe nur mit dokumentierter ausdrücklicher Einwilligung; Werbe-Direktnachrichten brauchen grundsätzlich Einwilligung."
+      ]
+    },
+    {
+      "id": "M01-L04",
+      "moduleId": "M01",
+      "title": "Das Erstgespräch in vier Phasen",
+      "minutes": 12,
+      "objectiveIds": [
+        "LO-M01-04"
+      ],
+      "sourceIds": [
+        "SRC-013",
+        "SRC-043",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Die Struktur",
+          "body": "Ein Erstgespräch – im Chat oder am Telefon – folgt in diesem Kurs vier Phasen:\n\n1. Eröffnung: Vorstellen, Bezug zur Anfrage herstellen, Erlaubnis einholen („Passt es gerade?“).\n2. Bedarfsermittlung: Mit offenen Fragen die Situation, das Ziel und die Hürde verstehen.\n3. Zusammenfassung: Das Gehörte in eigenen Worten wiedergeben und bestätigen lassen.\n4. Nächster Schritt: Passend zum Ergebnis – Termin, Information, spätere Kontaktaufnahme oder ehrliche Absage."
+        },
+        {
+          "kind": "text",
+          "title": "Offene und geschlossene Fragen",
+          "body": "Offene Fragen (Wie? Was? Welche? Wodurch?) öffnen das Gespräch: „Was hat Sie dazu gebracht, sich gerade jetzt zu melden?“\nGeschlossene Fragen (Ja/Nein) klären Details: „Sind Sie Eigentümer des Hauses?“\n\nSuggestivfragen vermeiden: „Sie wollen doch sicher auch Geld sparen, oder?“ Sie wirken manipulativ und liefern keine echte Information.\n\nSPIN (Rackham, 1988) ordnet Fragen in Situations-, Problem-, Implikations- und Nutzenfragen. Für Setter reichen meist Situations- und Problemfragen – die Vertiefung gehört ins Beratungsgespräch."
+        },
+        {
+          "kind": "workedExample",
+          "title": "Lösungsweg: Ein Chat-Erstgespräch",
+          "steps": [
+            "Eröffnung: „Hallo Frau Kaya, hier ist Jonas von SolarNord. Danke für Ihre Anfrage zu einer PV-Anlage! Haben Sie kurz Zeit für zwei, drei Fragen, damit wir Sie passend beraten können?“",
+            "Bedarf (offen): „Was ist Ihnen bei der Anlage am wichtigsten – Stromkosten senken, Unabhängigkeit oder etwas anderes?“",
+            "Bedarf (geschlossen, Detail): „Und es geht um Ihr eigenes Einfamilienhaus?“",
+            "Zusammenfassung: „Ich fasse zusammen: Sie möchten im eigenen Haus die Stromkosten senken und das gern noch dieses Jahr angehen. Stimmt das so?“",
+            "Nächster Schritt: „Dann wäre ein 30-minütiges Gespräch mit unserem Energieberater sinnvoll. Passt Ihnen Dienstag 17 Uhr oder Donnerstag 9 Uhr besser?“"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-013"
+        },
+        {
+          "kind": "text",
+          "title": "Aktives Zuhören im Chat",
+          "body": "Im Chat fehlen Tonfall und Mimik. Aktives Zuhören zeigt sich deshalb im Text: Aussagen aufgreifen („Sie hatten erwähnt, dass …“), nachfragen statt vermuten, und pro Nachricht nur eine Frage stellen. Drei Fragen in einer Nachricht führen fast immer dazu, dass nur eine beantwortet wird."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-014"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Formuliere eine offene Eröffnungsfrage für eine Anfrage zu einem Recruiting-Service. Prüfe: Ist es wirklich nur eine Frage?"
+        }
+      ],
+      "summary": [
+        "Vier Phasen: Eröffnung → Bedarf → Zusammenfassung → nächster Schritt.",
+        "Offene Fragen für Verständnis, geschlossene für Details, keine Suggestivfragen.",
+        "Eine Frage pro Nachricht; Aussagen des Kunden aufgreifen.",
+        "Die Zusammenfassung verhindert Missverständnisse und zeigt Zuhören."
+      ]
+    },
+    {
+      "id": "M01-L05",
+      "moduleId": "M01",
+      "title": "Lead-Status und Kaufbereitschaft",
+      "minutes": 11,
+      "objectiveIds": [
+        "LO-M01-05"
+      ],
+      "sourceIds": [
+        "SRC-047",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Lead-Status",
+          "body": "Ein Lead-Status beschreibt, wo ein Kontakt im Prozess steht. Ein einfaches Statusmodell für dieses Training:\n\n• Neu: Anfrage eingegangen, noch kein Kontakt\n• In Kontakt: Gespräch begonnen\n• Qualifiziert: Pflichtkriterien geklärt und erfüllt\n• Termin gebucht: Termin mit Berater vereinbart\n• Nurturing: Interesse vorhanden, aber (noch) nicht passend oder nicht bereit\n• Disqualifiziert: Angebot passt nicht (z. B. falsche Zielgruppe)\n• Kein Interesse: ausdrückliches Nein – keine weitere werbliche Ansprache\n\nUnternehmen nutzen andere Begriffe (z. B. MQL = Marketing Qualified Lead, SQL = Sales Qualified Lead). Das Prinzip ist gleich."
+        },
+        {
+          "kind": "text",
+          "title": "Qualifizierungskriterien",
+          "body": "Bevor ein Termin gebucht wird, sollten mindestens diese Punkte geklärt sein:\n\n1. Bedarf: Gibt es ein konkretes Problem oder Ziel, das das Angebot lösen kann?\n2. Passung: Gehört der Kunde zur Zielgruppe (z. B. Eigentümer statt Mieter)?\n3. Zeitrahmen: Wann soll etwas passieren?\n4. Entscheider: Wer entscheidet mit – und ist diese Person beim Termin dabei?\n\nBudget wird je nach Branche und Auftraggeber unterschiedlich behandelt. BANT (Budget, Authority, Need, Timing) ist ein bekanntes Raster. Es ist eine Praxisheuristik – nicht wissenschaftlich als überlegen belegt – und wird in Modul 4 kritisch vertieft."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-017"
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Der begeisterte Mieter",
+          "situation": "Herr Brandt schreibt begeistert, er wolle „unbedingt sofort“ eine Wärmepumpe. Im Gespräch stellt sich heraus: Er wohnt zur Miete, der Vermieter weiß von nichts.",
+          "analysis": "Hohe Begeisterung, aber fehlende Passung und fehlende Entscheidungsbefugnis. Ein Termin mit dem Berater würde beiden Seiten Zeit kosten. Gute Lösung: ehrlich erklären, dass die Entscheidung beim Eigentümer liegt, Informationsmaterial für das Gespräch mit dem Vermieter anbieten und – nur mit Einverständnis – später nachfragen. Status: Nurturing oder Disqualifiziert, je nach Vorgabe des Auftraggebers.",
+          "simulationNote": "Alle Daten in dieser Fallstudie sind erfunden."
+        },
+        {
+          "kind": "text",
+          "title": "Die Übergabenotiz",
+          "body": "Jeder gebuchte Termin braucht eine Übergabe an den Berater. Regel Nummer eins: Dokumentiere nur, was der Kunde wirklich gesagt hat. Was nicht erfragt wurde, wird als „nicht erfragt“ markiert – nie geschätzt oder erfunden. Eine erfundene Angabe führt den Berater in die Irre und zerstört Vertrauen."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-019"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-020"
+        }
+      ],
+      "summary": [
+        "Der Lead-Status zeigt, wo ein Kontakt steht – sauber gepflegt ist er die Basis jeder Auswertung.",
+        "Vor dem Termin klären: Bedarf, Passung, Zeitrahmen, Entscheider.",
+        "Begeisterung ersetzt keine Qualifizierung.",
+        "Übergabe: nur Gesagtes dokumentieren; Unbekanntes als „nicht erfragt“ markieren."
+      ]
+    },
+    {
+      "id": "M01-L06",
+      "moduleId": "M01",
+      "title": "Grenzen: Ethik, Recht und Rolle",
+      "minutes": 9,
+      "objectiveIds": [
+        "LO-M01-06"
+      ],
+      "sourceIds": [
+        "SRC-019",
+        "SRC-020",
+        "SRC-021",
+        "SRC-038",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Seriös statt manipulativ",
+          "body": "Seriöse Kommunikation hilft Menschen, eine gute Entscheidung für sich zu treffen. Manipulation versucht, eine Entscheidung herbeizuführen, die der Mensch bei voller Information nicht treffen würde.\n\nIn diesem Kurs gelten feste Regeln:\n• Ein ausdrückliches Nein wird respektiert – keine Umdeutung, kein „Nur noch eine Frage“.\n• Keine künstliche Verknappung („Nur heute!“), wenn sie nicht stimmt.\n• Keine erfundenen Referenzen, Zahlen oder Förderzusagen.\n• Kein Druck auf erkennbar unsichere, überforderte oder verletzliche Menschen.\n• Transparenz: Wer ich bin, für wen ich anrufe/schreibe und warum."
+        },
+        {
+          "kind": "callout",
+          "tone": "ethics",
+          "title": "Der Test",
+          "body": "Würdest du die Nachricht genauso schreiben, wenn der Kunde später alles über dein Ziel und deine Methode erfährt? Wenn nein, ist sie wahrscheinlich manipulativ."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-023"
+        },
+        {
+          "kind": "text",
+          "title": "Die eigene Rolle kennen",
+          "body": "Setter sind keine Fachberater. Fragen zu genauen Preisen, technischen Details, Fördermitteln, Steuern oder Verträgen beantwortet die qualifizierte Fachperson. Das ist kein Ausweichen, sondern Verantwortung: Eine falsche Auskunft zu einer Förderung kann einen Kunden viel Geld kosten.\n\nGute Formulierung: „Das ist eine wichtige Frage – die möchte ich Ihnen nicht ungenau beantworten. Genau dafür ist das Gespräch mit unserer Beraterin da. Soll ich die Frage schon für sie notieren?“"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-025"
+        },
+        {
+          "kind": "callout",
+          "tone": "legal",
+          "title": "Datenschutz in der Übung",
+          "body": "In diesem Kurs arbeitest du ausschließlich mit erfundenen Daten. Gib in Übungen, Freitexten und Simulationen niemals echte Namen, Telefonnummern oder Kundendaten ein."
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Denke an eine Situation, in der du selbst zu etwas überredet wurdest. Woran hast du es im Nachhinein gemerkt?"
+        }
+      ],
+      "summary": [
+        "Ein ausdrückliches Nein ist das Ende der Werbeansprache.",
+        "Keine falsche Verknappung, keine erfundenen Belege, kein Druck.",
+        "Fachfragen (Preis, Technik, Förderung, Steuer, Vertrag) gehören zur Fachperson.",
+        "Übungen nur mit erfundenen Daten."
+      ]
+    }
+  ],
+  "transferTask": {
+    "title": "Transferaufgabe: Dein Setter-Leitfaden",
+    "instructions": "Wähle eine Branche aus Modul 10 (z. B. Photovoltaik, Recruiting, B2B SaaS). Schreibe einen einseitigen Gesprächsleitfaden für ein Inbound-Erstgespräch im Chat: (1) Eröffnungsnachricht, (2) drei offene Bedarfsfragen, (3) eine Zusammenfassungsformel, (4) je eine Formulierung für Terminvorschlag, Nurturing und respektvolle Verabschiedung, (5) drei Fragen, die du an einen Fachberater übergibst. Verwende nur erfundene Beispieldaten.",
+    "criteria": [
+      "Eröffnung nennt Name, Unternehmen und Anlass und holt Erlaubnis ein",
+      "Bedarfsfragen sind offen und enthalten jeweils nur eine Frage",
+      "Zusammenfassung lädt zur Bestätigung/Korrektur ein",
+      "Terminvorschlag bietet konkrete Alternativen an",
+      "Verabschiedung respektiert ein Nein ohne Druck",
+      "Übergabefragen liegen tatsächlich außerhalb der Setter-Rolle",
+      "Keine falschen Versprechen, keine künstliche Verknappung"
+    ]
+  },
+  "examQuestionIds": [
+    "Q-M01-003",
+    "Q-M01-004",
+    "Q-M01-007",
+    "Q-M01-008",
+    "Q-M01-011",
+    "Q-M01-012",
+    "Q-M01-015",
+    "Q-M01-016",
+    "Q-M01-018",
+    "Q-M01-021",
+    "Q-M01-022",
+    "Q-M01-024",
+    "Q-M01-026",
+    "Q-M01-027",
+    "Q-M01-028",
+    "Q-M01-029"
+  ]
+}

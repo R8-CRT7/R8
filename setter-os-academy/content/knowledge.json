@@ -1,0 +1,435 @@
+[
+  {
+    "id": "KB-001",
+    "topic": "Rollen",
+    "subtopic": "Setter vs. Closer",
+    "statement": "Setter qualifizieren Leads und vereinbaren Termine; Closer/Berater führen das Verkaufsgespräch.",
+    "explanation": "Praxis-Konvention im Online-, Coaching- und Agenturgeschäft; keine Norm.",
+    "sourceIds": [
+      "SRC-050"
+    ],
+    "evidence": "expertenmeinung",
+    "scope": "International, alle Branchen",
+    "lessonIds": [
+      "M01-L01"
+    ],
+    "questionIds": [
+      "Q-M01-001",
+      "Q-M01-002",
+      "Q-M01-004"
+    ],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-002",
+    "topic": "Rollen",
+    "subtopic": "SDR/BDR",
+    "statement": "SDR werden häufig für Inbound-, BDR für Outbound-Qualifizierung eingesetzt.",
+    "explanation": "Uneinheitliche Verwendung; einige Unternehmen kehren die Begriffe um.",
+    "sourceIds": [
+      "SRC-050"
+    ],
+    "evidence": "expertenmeinung",
+    "scope": "B2B, international",
+    "lessonIds": [
+      "M01-L01"
+    ],
+    "questionIds": [
+      "Q-M01-003"
+    ],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03",
+    "contradictions": "Begriffsverwendung widersprüchlich zwischen Unternehmen – im Kurs als Konvention, nicht als Fakt vermittelt."
+  },
+  {
+    "id": "KB-003",
+    "topic": "Inbound",
+    "subtopic": "Reaktionszeit",
+    "statement": "Unternehmen, die innerhalb einer Stunde auf Online-Leads reagierten, qualifizierten diese ca. 7× häufiger als bei Reaktion eine Stunde später.",
+    "explanation": "HBR 2011; 1,25 Mio. Leads, 42 US-Unternehmen. Korrelation, kein Kausalnachweis; Daten von vor 2011.",
+    "sourceIds": [
+      "SRC-005"
+    ],
+    "evidence": "fachliteratur",
+    "scope": "USA, B2B/B2C, Online-Leads",
+    "lessonIds": [
+      "M01-L03"
+    ],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-004",
+    "topic": "Methodik",
+    "subtopic": "Inbound Sales",
+    "statement": "HubSpot beschreibt Inbound Sales in vier Schritten: Identify, Connect, Explore, Advise.",
+    "explanation": "Herstellermethodik; nützliches Modell, keine empirische Überlegenheit belegt.",
+    "sourceIds": [
+      "SRC-043"
+    ],
+    "evidence": "hersteller",
+    "scope": "International",
+    "lessonIds": [
+      "M01-L02"
+    ],
+    "questionIds": [
+      "Q-M01-005",
+      "Q-M01-007"
+    ],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-005",
+    "topic": "Recht",
+    "subtopic": "Telefonwerbung B2C",
+    "statement": "Werbeanrufe bei Verbrauchern erfordern eine vorherige ausdrückliche Einwilligung (§ 7 Abs. 2 UWG).",
+    "explanation": "Keine Rechtsberatung. Stand 10/2026 laut Sekundärquellen.",
+    "sourceIds": [
+      "SRC-019"
+    ],
+    "evidence": "gesetz",
+    "scope": "Deutschland, B2C",
+    "lessonIds": [
+      "M01-L03"
+    ],
+    "questionIds": [
+      "Q-M01-010"
+    ],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-006",
+    "topic": "Recht",
+    "subtopic": "Dokumentation Einwilligung",
+    "statement": "Einwilligungen in Telefonwerbung gegenüber Verbrauchern sind zu dokumentieren und 5 Jahre aufzubewahren (§ 7a UWG).",
+    "explanation": "Seit 01.10.2021; BNetzA ahndete 2025 erstmals Verstöße gegen die Dokumentationspflicht.",
+    "sourceIds": [
+      "SRC-020",
+      "SRC-021"
+    ],
+    "evidence": "gesetz",
+    "scope": "Deutschland, B2C",
+    "lessonIds": [
+      "M01-L03"
+    ],
+    "questionIds": [
+      "Q-M01-010"
+    ],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-007",
+    "topic": "Recht",
+    "subtopic": "Telefonwerbung B2B",
+    "statement": "Gegenüber sonstigen Marktteilnehmern genügt für Werbeanrufe mindestens eine mutmaßliche Einwilligung.",
+    "explanation": "Strenge Anforderungen; bloßer Branchenbezug reicht nach Sekundärquellen nicht.",
+    "sourceIds": [
+      "SRC-019"
+    ],
+    "evidence": "gesetz",
+    "scope": "Deutschland, B2B",
+    "lessonIds": [
+      "M01-L03"
+    ],
+    "questionIds": [
+      "Q-M01-010"
+    ],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-008",
+    "topic": "Recht",
+    "subtopic": "Elektronische Post",
+    "statement": "Werbung per E-Mail/Direktnachricht erfordert grundsätzlich vorherige ausdrückliche Einwilligung, auch B2B; Ausnahme Bestandskunden (§ 7 Abs. 3 UWG, kumulative Voraussetzungen).",
+    "explanation": "LinkedIn-Vernetzung ist laut AG Düsseldorf (2025) keine Einwilligung.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-027"
+    ],
+    "evidence": "gesetz",
+    "scope": "Deutschland, B2B und B2C",
+    "lessonIds": [
+      "M01-L03"
+    ],
+    "questionIds": [
+      "Q-M01-011",
+      "Q-M01-012"
+    ],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-009",
+    "topic": "Recht",
+    "subtopic": "FernUSG Anwendungsbereich",
+    "statement": "Das FernUSG gilt nach BGH (III ZR 109/24) auch gegenüber Unternehmern; Bezeichnungen wie „Coaching“ sind unerheblich.",
+    "explanation": "Rechtsfolge fehlender Zulassung: Nichtigkeit (§ 7 FernUSG).",
+    "sourceIds": [
+      "SRC-015",
+      "SRC-014",
+      "SRC-040"
+    ],
+    "evidence": "rechtsprechung",
+    "scope": "Deutschland",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-010",
+    "topic": "Recht",
+    "subtopic": "FernUSG Lernerfolgskontrolle",
+    "statement": "Die Überwachung des Lernerfolgs wird weit ausgelegt: Ein vertragliches Recht, Verständnisfragen zu stellen, genügt.",
+    "explanation": "BGH III ZR 109/24 und III ZR 73/25. Automatisierte Quiz/Simulationen könnten erst recht als Lernerfolgskontrolle gewertet werden – offen, rechtlich prüfen lassen.",
+    "sourceIds": [
+      "SRC-015",
+      "SRC-017"
+    ],
+    "evidence": "rechtsprechung",
+    "scope": "Deutschland",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03",
+    "contradictions": "Ob rein automatisierte Kontrollen ohne Lehrenden genügen, ist nach den gesichteten Sekundärquellen nicht ausdrücklich entschieden."
+  },
+  {
+    "id": "KB-011",
+    "topic": "Recht",
+    "subtopic": "FernUSG räumliche Trennung",
+    "statement": "Synchrone, bidirektionale Live-Formate können Präsenzunterricht entsprechen; maßgeblich ist der Vertragsinhalt. Aufgezeichnete Live-Calls zählen zum asynchronen Anteil.",
+    "explanation": "BGH III ZR 137/25 (05.02.2026).",
+    "sourceIds": [
+      "SRC-016"
+    ],
+    "evidence": "rechtsprechung",
+    "scope": "Deutschland",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-012",
+    "topic": "Recht",
+    "subtopic": "FernUSG Reform",
+    "statement": "Ein Referentenentwurf (17.08.2026) sieht die Aufhebung der §§ 1–26 FernUSG zum 01.07.2027 vor.",
+    "explanation": "Nur Entwurf – bis zum Inkrafttreten gilt das FernUSG unverändert.",
+    "sourceIds": [
+      "SRC-018",
+      "SRC-049"
+    ],
+    "evidence": "behoerde",
+    "scope": "Deutschland",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-013",
+    "topic": "Lernwissenschaft",
+    "subtopic": "Practice Testing",
+    "statement": "Abrufübungen und verteiltes Lernen haben die höchste Nützlichkeit unter zehn untersuchten Techniken.",
+    "explanation": "Dunlosky et al. 2013; Evidenz überwiegend aus Schule/Hochschule, nicht aus Vertriebstraining.",
+    "sourceIds": [
+      "SRC-006"
+    ],
+    "evidence": "peer_review",
+    "scope": "Lernen allgemein",
+    "lessonIds": [
+      "M01-L01",
+      "M01-L02",
+      "M01-L03",
+      "M01-L04",
+      "M01-L05",
+      "M01-L06"
+    ],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-014",
+    "topic": "Lernwissenschaft",
+    "subtopic": "Interleaving",
+    "statement": "Vermischte Abrufübungen führten nach einem Monat zu besseren Leistungen (63 %) als blockierte (54 %) und keine Übung (47 %).",
+    "explanation": "Sana & Yan 2022, Schulkontext Naturwissenschaften.",
+    "sourceIds": [
+      "SRC-007"
+    ],
+    "evidence": "peer_review",
+    "scope": "Lernen allgemein",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-015",
+    "topic": "Lernwissenschaft",
+    "subtopic": "Feedback",
+    "statement": "Feedback hat im Mittel einen mittleren Effekt (d = 0,48), stark abhängig vom Informationsgehalt.",
+    "explanation": "Wisniewski et al. 2020; Kluger & DeNisi 1996: ein Teil der Feedback-Interventionen schadet.",
+    "sourceIds": [
+      "SRC-008",
+      "SRC-037"
+    ],
+    "evidence": "peer_review",
+    "scope": "Lernen allgemein",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-016",
+    "topic": "Psychologie",
+    "subtopic": "Verlustaversion",
+    "statement": "Mittlerer Verlustaversionskoeffizient λ ≈ 1,96 über 607 Schätzungen.",
+    "explanation": "Brown et al. 2024. Gegenposition: Gal & Rucker 2018 bezweifeln die Generalität.",
+    "sourceIds": [
+      "SRC-009",
+      "SRC-039"
+    ],
+    "evidence": "peer_review",
+    "scope": "Entscheidungsverhalten allgemein",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03",
+    "contradictions": "Gal & Rucker (2018) argumentieren, dass Verlustaversion stark kontextabhängig ist. Im Kurs als kontextabhängige Tendenz, nicht als Gesetz vermitteln."
+  },
+  {
+    "id": "KB-017",
+    "topic": "Psychologie",
+    "subtopic": "Choice Overload",
+    "statement": "Die mittlere Effektstärke von Choice Overload ist in einer Meta-Analyse praktisch null, mit großer Varianz.",
+    "explanation": "Scheibehenne et al. 2010; Chernev et al. 2015 identifizieren Moderatoren.",
+    "sourceIds": [
+      "SRC-010",
+      "SRC-011"
+    ],
+    "evidence": "peer_review",
+    "scope": "Konsum/Entscheidungen",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03",
+    "contradictions": "Populäre Darstellung („Marmeladenstudie“) überzeichnet den Effekt."
+  },
+  {
+    "id": "KB-018",
+    "topic": "Qualifizierung",
+    "subtopic": "BANT",
+    "statement": "BANT ist eine Praxisheuristik ohne belegte empirische Überlegenheit.",
+    "explanation": "Herkunft IBM zugeschrieben.",
+    "sourceIds": [
+      "SRC-047"
+    ],
+    "evidence": "expertenmeinung",
+    "scope": "B2B",
+    "lessonIds": [
+      "M01-L05"
+    ],
+    "questionIds": [
+      "Q-M01-022"
+    ],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-019",
+    "topic": "Ethik",
+    "subtopic": "Nein respektieren",
+    "statement": "Ein ausdrückliches Nein beendet die werbliche Ansprache.",
+    "explanation": "Kurspolicy; rechtlich gestützt durch Widerspruchsrecht/UWG.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-050"
+    ],
+    "evidence": "annahme",
+    "scope": "Alle Kanäle",
+    "lessonIds": [
+      "M01-L06"
+    ],
+    "questionIds": [
+      "Q-M01-023"
+    ],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-020",
+    "topic": "Recht",
+    "subtopic": "KI-Transparenz",
+    "statement": "Art. 50 KI-VO (Transparenzpflichten, u. a. Chatbots) gilt ab 02.08.2026.",
+    "explanation": "Laut Sekundärquellen vom Digital Omnibus nicht verschoben. Für spätere KI-Simulation relevant.",
+    "sourceIds": [
+      "SRC-024"
+    ],
+    "evidence": "gesetz",
+    "scope": "EU",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-021",
+    "topic": "Steuern",
+    "subtopic": "Kleinunternehmer",
+    "statement": "Kleinunternehmerregelung ab 2025: Vorjahr ≤ 25.000 €, laufendes Jahr ≤ 100.000 € Nettoumsatz.",
+    "explanation": "Steuerberatung einholen.",
+    "sourceIds": [
+      "SRC-022",
+      "SRC-048"
+    ],
+    "evidence": "gesetz",
+    "scope": "Deutschland",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-022",
+    "topic": "Barrierefreiheit",
+    "subtopic": "BFSG",
+    "statement": "Das BFSG gilt seit 28.06.2025; Kleinstunternehmen sind bei Dienstleistungen ausgenommen.",
+    "explanation": "Ziel trotzdem WCAG 2.2 AA (Qualität und späteres Wachstum).",
+    "sourceIds": [
+      "SRC-023"
+    ],
+    "evidence": "gesetz",
+    "scope": "Deutschland",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  },
+  {
+    "id": "KB-023",
+    "topic": "Recht",
+    "subtopic": "ZFU-Zulassungskosten",
+    "statement": "Die ZFU-Zulassungsgebühr beträgt i. d. R. 150 % des Lehrgangspreises, mindestens 1.050 €; Bearbeitung i. d. R. drei Monate.",
+    "explanation": "Laut FIM-Leistungsbeschreibung (Snippet). Vor Antrag direkt bei der ZFU bestätigen.",
+    "sourceIds": [
+      "SRC-051",
+      "SRC-029"
+    ],
+    "evidence": "behoerde",
+    "scope": "Deutschland",
+    "lessonIds": [],
+    "questionIds": [],
+    "version": 1,
+    "lastCheckedAt": "2026-10-03"
+  }
+]

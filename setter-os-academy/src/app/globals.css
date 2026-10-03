@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   SETTER OS – Design Tokens (Konzept „Deep Focus“, siehe DESIGN_SYSTEM.md)
+   Dark is primary. Light via [data-theme="light"] or system preference.
+   Contrast targets: text ≥ 4.5:1, large text/UI ≥ 3:1 (WCAG 2.2 AA).
+   ========================================================================= */
+
+:root {
+  color-scheme: dark;
+  --bg: #0a0f1e;            /* deep navy */
+  --bg-elev: #111829;       /* anthracite-navy surface */
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-strong: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --text: #eef1f7;          /* off-white  – 16.3:1 on bg */
+  --text-muted: #a3adc2;    /* 8.1:1 on bg */
+  --text-faint: #7d879c;    /* 5.0:1 on bg */
+  --accent: #7c9cff;        /* blue – 7.0:1 on bg */
+  --accent-2: #a78bfa;      /* violet – 6.4:1 on bg */
+  --accent-ink: #0a0f1e;
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+  --focus: #9db4ff;
+  --glow: 0 0 0 1px rgba(124, 156, 255, 0.25), 0 12px 40px -12px rgba(124, 156, 255, 0.35);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 10px 30px -15px rgba(0, 0, 0, 0.6);
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur: 180ms;
+}
+
+/* "system" theme is resolved in JS (ThemeSync) to data-theme="light" | "dark". */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --bg-elev: #ffffff;
+  --surface: rgba(15, 23, 42, 0.03);
+  --surface-strong: rgba(15, 23, 42, 0.06);
+  --border: rgba(15, 23, 42, 0.1);
+  --border-strong: rgba(15, 23, 42, 0.2);
+  --text: #0f172a;          /* 17:1 */
+  --text-muted: #475569;    /* 7.5:1 */
+  --text-faint: #5b6779;    /* 5.6:1 */
+  --accent: #3554d1;        /* 6.3:1 on bg */
+  --accent-2: #6d4bd8;      /* 5.9:1 */
+  --accent-ink: #ffffff;
+  --success: #15803d;
+  --warning: #a16207;
+  --danger: #b91c1c;
+  --focus: #3554d1;
+  --glow: 0 0 0 1px rgba(53, 84, 209, 0.2), 0 12px 30px -14px rgba(53, 84, 209, 0.35);
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 8px 24px -12px rgba(15, 23, 42, 0.18);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-elev: var(--bg-elev);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-fg: var(--text);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-ink: var(--accent-ink);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --font-sans: "Inter", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-display: "Inter Display", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  /* Type scale (1.2 minor third, 16px base) */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.35rem;
+  --text-2xl: 1.62rem;
+  --text-3xl: 1.94rem;
+  --text-4xl: 2.5rem;
+  --radius-card: var(--radius);
+}
+
+html { background: var(--bg); }
+body {
+  background:
+    radial-gradient(1200px 600px at 85% -10%, color-mix(in srgb, var(--accent-2) 10%, transparent), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01", "tnum";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection { background: color-mix(in srgb, var(--accent) 35%, transparent); }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.glass {
+  background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+.gradient-text {
+  background: linear-gradient(100deg, var(--text) 10%, var(--accent) 60%, var(--accent-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fade-in { animation: fade-in 260ms var(--ease) both; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.typing span { animation: blink 1.2s infinite both; }
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink { 0%, 80%, 100% { opacity: 0.25; } 40% { opacity: 1; } }
+
+/* Reduced motion: system setting OR in-app setting */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+:root[data-motion="reduce"] *, :root[data-motion="reduce"] *::before, :root[data-motion="reduce"] *::after {
+  animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important;
+}
+
+/* iOS safe areas for the bottom tab bar */
+.pb-safe { padding-bottom: max(0.75rem, env(safe-area-inset-bottom)); }
+.min-tap { min-height: 44px; min-width: 44px; }
+
+.prose-lesson p { margin: 0 0 0.9em; }
+.prose-lesson { white-space: pre-line; line-height: 1.7; }

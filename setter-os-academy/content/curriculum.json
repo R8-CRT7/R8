@@ -1,0 +1,290 @@
+[
+  {
+    "id": "M01",
+    "number": 1,
+    "title": "Sales Fundamentals",
+    "subtitle": "Berufsbild, Rollen, Customer Journey, Lead-Status",
+    "prerequisites": [],
+    "topics": [
+      "Vertriebsgrundlagen",
+      "Appointment Setting",
+      "Berufsbild und Verantwortlichkeiten",
+      "Setter, Closer, SDR, BDR",
+      "Customer Journey",
+      "Sales Funnel",
+      "Inbound und Outbound",
+      "B2B und B2C",
+      "Lead-Status und Kaufbereitschaft"
+    ],
+    "status": "verfuegbar"
+  },
+  {
+    "id": "M02",
+    "number": 2,
+    "title": "Professionelle Kommunikation",
+    "subtitle": "Schreiben, Zuhören, Fragen, Vertrauen",
+    "prerequisites": [
+      "M01"
+    ],
+    "topics": [
+      "Professionelles Schreiben",
+      "Klarheit und Verständlichkeit",
+      "Aktives Zuhören",
+      "Empathie",
+      "Gesprächseröffnung",
+      "Gesprächsführung",
+      "Fragetechniken",
+      "Tonfall",
+      "Vertrauensaufbau",
+      "Kundentypen (kritisch: Typologien sind Heuristiken)"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M03",
+    "number": 3,
+    "title": "Sales Psychology",
+    "subtitle": "Entscheidungsverhalten – kritisch und ethisch",
+    "prerequisites": [
+      "M01",
+      "M02"
+    ],
+    "topics": [
+      "Motivation und Entscheidungsverhalten",
+      "Bedürfnisse",
+      "Unsicherheit",
+      "Vertrauen",
+      "Risikoempfinden",
+      "Verlustaversion (inkl. Gegenpositionen)",
+      "Reziprozität",
+      "Social Proof",
+      "Framing",
+      "Commitment und Konsistenz",
+      "Entscheidungsüberlastung (Meta-Analysen: Effekt kontextabhängig)",
+      "Seriöse Kommunikation vs. Manipulation"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M04",
+    "number": 4,
+    "title": "Lead Qualification",
+    "subtitle": "ICP, Persona, BANT, SPIN, MEDDICC, Scoring",
+    "prerequisites": [
+      "M01"
+    ],
+    "topics": [
+      "Lead-Typen",
+      "Ideal Customer Profile",
+      "Buyer Persona",
+      "Bedarfsermittlung",
+      "Budget",
+      "Entscheidungsbefugnis",
+      "Zeitlicher Bedarf",
+      "Kaufbereitschaft",
+      "BANT",
+      "SPIN",
+      "MEDDICC (fortgeschritten, B2B)",
+      "MQL und SQL",
+      "Lead Scoring",
+      "Disqualifizierung"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M05",
+    "number": 5,
+    "title": "Chat Setting",
+    "subtitle": "Struktur, Tempo, Kanäle, Übergabe – 30+ Übungssituationen",
+    "prerequisites": [
+      "M02",
+      "M04"
+    ],
+    "topics": [
+      "Gesprächsstruktur im Chat",
+      "Natürlich klingende Nachrichten",
+      "Antwortgeschwindigkeit",
+      "Gesprächseinstiege",
+      "Nachfragen",
+      "Übergänge",
+      "Chat-basierte Qualifizierung",
+      "Instagram, WhatsApp und zulässige Kanäle (Einwilligung, Plattformregeln)",
+      "Übergabe an Berater und Closer",
+      "30 Übungssituationen"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M06",
+    "number": 6,
+    "title": "Objection Handling",
+    "subtitle": "Einwände verstehen – und Grenzen respektieren",
+    "prerequisites": [
+      "M02",
+      "M03",
+      "M04"
+    ],
+    "topics": [
+      "Preisfragen",
+      "Zeitmangel",
+      "Unsicherheit",
+      "Vergleich mit Konkurrenten",
+      "Fehlendes Vertrauen",
+      "Rücksprache mit Partnern",
+      "Fehlende Kaufbereitschaft",
+      "Unpassende Angebote",
+      "Ablehnung",
+      "Grenzen der Einwandbehandlung: Ein Nein ist ein Nein"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M07",
+    "number": 7,
+    "title": "Appointment Management",
+    "subtitle": "Termin, Bestätigung, No-Show-Recovery, Übergabe",
+    "prerequisites": [
+      "M01",
+      "M05"
+    ],
+    "topics": [
+      "Terminvereinbarung",
+      "Qualifizierte Termine",
+      "Kalenderorganisation",
+      "Terminbestätigungen",
+      "Erinnerungen (Einwilligung beachten)",
+      "Verschiebungen",
+      "No-Shows",
+      "No-Show-Recovery",
+      "Übergabeprotokolle",
+      "Gesprächsnotizen"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M08",
+    "number": 8,
+    "title": "CRM & Sales Operations",
+    "subtitle": "Simuliertes CRM, Datenqualität, Datenschutz",
+    "prerequisites": [
+      "M04",
+      "M07"
+    ],
+    "topics": [
+      "HubSpot (Konzepte; kein Echtzugang nötig)",
+      "Pipelines",
+      "Kontaktverwaltung",
+      "Deals",
+      "Aufgaben",
+      "Statuswechsel",
+      "Datenqualität",
+      "Follow-up-Systeme",
+      "Dokumentation",
+      "Automatisierung",
+      "Datenschutz (DSGVO)",
+      "Simuliertes Übungs-CRM ohne echte Daten"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M09",
+    "number": 9,
+    "title": "Sales Analytics",
+    "subtitle": "Kennzahlen rechnen und richtig deuten",
+    "prerequisites": [
+      "M01",
+      "M08"
+    ],
+    "topics": [
+      "Conversion Rate",
+      "Lead-to-Appointment Rate",
+      "Qualification Rate",
+      "Booking Rate",
+      "Show Rate",
+      "No-Show Rate",
+      "Closing Rate",
+      "Customer Acquisition Cost",
+      "Customer Lifetime Value",
+      "Pipeline Value",
+      "Arbeitsstunden pro erschienenem Termin",
+      "Interaktive Dashboards (Simulationsdaten gekennzeichnet)"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M10",
+    "number": 10,
+    "title": "Branchenwissen",
+    "subtitle": "Energie, Agenturen, Recruiting, SaaS, IT, Beratung",
+    "prerequisites": [
+      "M04"
+    ],
+    "topics": [
+      "Energetische Modernisierung",
+      "Photovoltaik",
+      "Wärmepumpen",
+      "Stromspeicher",
+      "Marketingagenturen",
+      "Recruiting",
+      "B2B SaaS",
+      "IT-Dienstleistungen",
+      "Unternehmensberatung",
+      "Was ein Setter beantworten darf – und wann an Fachberater übergeben wird"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M11",
+    "number": 11,
+    "title": "Selbstständigkeit & Business",
+    "subtitle": "Angebot, Recht, Steuern, Kalkulation",
+    "prerequisites": [
+      "M01",
+      "M09"
+    ],
+    "topics": [
+      "Dienstleistungsangebot",
+      "Positionierung",
+      "Kundenrecherche",
+      "Ideal Customer Profile",
+      "Pilotprojekte",
+      "Vergütungsmodelle",
+      "Vertragsgrundlagen",
+      "Gewerbe",
+      "Steuern (Kleinunternehmerregelung)",
+      "Scheinselbstständigkeit",
+      "Rechnungserstellung",
+      "Kundenbetreuung",
+      "Qualitätssicherung",
+      "Datenschutz (AV-Verträge)",
+      "Kalkulation",
+      "Kundengewinnung über rechtlich zulässige Wege (UWG §§ 7, 7a)"
+    ],
+    "status": "in_vorbereitung"
+  },
+  {
+    "id": "M12",
+    "number": 12,
+    "title": "Advanced Setting & Automation",
+    "subtitle": "KI, Automatisierung, Skalierung – verantwortungsvoll",
+    "prerequisites": [
+      "M08",
+      "M09",
+      "M11"
+    ],
+    "topics": [
+      "KI-gestützte Recherche",
+      "CRM-Automatisierung",
+      "Antwortvorschläge (Mensch prüft, KI-Kennzeichnung Art. 50 KI-VO)",
+      "Lead-Priorisierung",
+      "Prozessdesign",
+      "Qualitätskontrolle",
+      "Workflow-Automatisierung",
+      "Multi-Client-Management",
+      "Mitarbeiterschulung",
+      "Delegation",
+      "Skalierung eines Setting-Services"
+    ],
+    "status": "in_vorbereitung"
+  }
+]

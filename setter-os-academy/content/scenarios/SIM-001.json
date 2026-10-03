@@ -1,0 +1,623 @@
+{
+  "id": "SIM-001",
+  "version": 1,
+  "title": "Wärmepumpe: Interessierte Eigentümerin",
+  "archetype": "Interessierter Kunde mit Fachfrage",
+  "industry": "Energetische Modernisierung – Wärmepumpe",
+  "channel": "chat",
+  "market": "B2C",
+  "direction": "inbound",
+  "difficulty": 2,
+  "briefing": "Simulation – alle Personen und Firmen sind erfunden. Du bist Setter bei „WärmeWerk Nord“. Frau Kaya hat gestern über die Website angefragt: „Interesse an Wärmepumpe, bitte melden“. Sie hat der Kontaktaufnahme per Chat zugestimmt. Ziel: Klären, ob ein Beratungstermin mit dem Energieberater sinnvoll ist. Pflichtkriterien für einen Termin: Bedarf, Eigentum, Zeitrahmen, Entscheider. Preise und Förderungen beantwortet nur der Energieberater.",
+  "persona": {
+    "name": "Selin Kaya",
+    "role": "Eigentümerin eines Einfamilienhauses",
+    "avatarHue": 200
+  },
+  "facts": [
+    {
+      "key": "need",
+      "label": "Bedarf",
+      "value": "Gasheizung 24 Jahre alt, Kosten stark gestiegen",
+      "requiredForQualification": true,
+      "distractors": [
+        "Neubau ohne Heizung",
+        "Nur Interesse an Klimaanlage"
+      ]
+    },
+    {
+      "key": "ownership",
+      "label": "Eigentum",
+      "value": "Eigenes Einfamilienhaus (Baujahr 1978)",
+      "requiredForQualification": true,
+      "distractors": [
+        "Mietwohnung",
+        "Eigentumswohnung im Mehrfamilienhaus"
+      ]
+    },
+    {
+      "key": "timeline",
+      "label": "Zeitrahmen",
+      "value": "Vor dem nächsten Winter",
+      "requiredForQualification": true,
+      "distractors": [
+        "In 3–5 Jahren",
+        "Sofort, innerhalb einer Woche"
+      ]
+    },
+    {
+      "key": "authority",
+      "label": "Entscheider",
+      "value": "Gemeinsam mit Ehemann Tom (abends verfügbar)",
+      "requiredForQualification": true,
+      "distractors": [
+        "Entscheidet allein",
+        "Vermieter entscheidet"
+      ]
+    }
+  ],
+  "idealOutcome": "book",
+  "acceptableOutcomes": [
+    "book",
+    "nurture"
+  ],
+  "openingMessage": "Hallo, ich hatte gestern das Formular wegen einer Wärmepumpe ausgefüllt.",
+  "startRapport": 4,
+  "maxTurns": 12,
+  "handoverFields": [
+    "need",
+    "ownership",
+    "timeline",
+    "authority"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 3,
+    "bedarfsermittlung": 5,
+    "fragetechnik": 4,
+    "zuhoeren": 6,
+    "klarheit": 5,
+    "qualifizierung": 7,
+    "einwaende": 3,
+    "kundenorientierung": 6,
+    "terminvereinbarung": 9
+  },
+  "reviewQuestionIds": [
+    "Q-M01-014",
+    "Q-M01-017",
+    "Q-M01-021",
+    "Q-M01-025"
+  ],
+  "sourceIds": [
+    "SRC-050"
+  ],
+  "moves": [
+    {
+      "id": "open-good",
+      "intent": "open",
+      "quality": "good",
+      "text": "Hallo Frau Kaya, hier ist Ihr Ansprechpartner von WärmeWerk Nord – danke für Ihre Anfrage! Passt es gerade für ein paar kurze Fragen, damit wir Sie passend beraten können?",
+      "effects": {
+        "eroeffnung": 3,
+        "klarheit": 1
+      },
+      "rapport": 1,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "coachNote": "Vorstellung, Bezug zur Anfrage und Erlaubnis – eine vollständige Eröffnung.",
+      "reply": [
+        {
+          "text": "Ja, gern, ich habe ein paar Minuten."
+        }
+      ]
+    },
+    {
+      "id": "open-weak",
+      "intent": "open",
+      "quality": "weak",
+      "text": "Hi! Wann haben Sie Zeit für einen Beratungstermin?",
+      "effects": {
+        "eroeffnung": -1,
+        "terminvereinbarung": -1
+      },
+      "rapport": -1,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "coachNote": "Ohne Vorstellung und Bedarfsklärung direkt zum Termin – wirkt wie Abfertigung.",
+      "betterMoveId": "open-good",
+      "reply": [
+        {
+          "text": "Äh … ich wollte eigentlich erst mal ein paar Infos. Wer sind Sie denn genau?"
+        }
+      ]
+    },
+    {
+      "id": "need-open",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "text": "Was hat Sie dazu gebracht, sich gerade jetzt mit einer Wärmepumpe zu beschäftigen?",
+      "effects": {
+        "bedarfsermittlung": 4,
+        "fragetechnik": 2
+      },
+      "reveals": [
+        "need"
+      ],
+      "rapport": 1,
+      "coachNote": "Offene Frage nach dem Auslöser – liefert Bedarf und Motivation.",
+      "reply": [
+        {
+          "text": "Unsere Gasheizung ist 24 Jahre alt, und die Kosten sind letztes Jahr stark gestiegen. Wir wollen da endlich etwas ändern."
+        }
+      ]
+    },
+    {
+      "id": "need-leading",
+      "intent": "ask",
+      "quality": "weak",
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "need-asked"
+      ],
+      "setsFlags": [
+        "need-asked"
+      ],
+      "text": "Sie wollen doch sicher auch endlich Heizkosten sparen, oder?",
+      "effects": {
+        "fragetechnik": -2
+      },
+      "coachNote": "Suggestivfrage: Die Antwort ist vorgegeben, du erfährst nichts Neues.",
+      "betterMoveId": "need-open",
+      "reply": [
+        {
+          "text": "Ja, klar … wer nicht?"
+        }
+      ]
+    },
+    {
+      "id": "multi-question",
+      "intent": "ask",
+      "quality": "weak",
+      "requiresFlags": [
+        "opened"
+      ],
+      "text": "Wie groß ist Ihr Haus, wie alt ist die Heizung, wann wollen Sie starten und wer entscheidet mit?",
+      "effects": {
+        "fragetechnik": -2,
+        "klarheit": -1,
+        "bedarfsermittlung": 1
+      },
+      "reveals": [
+        "need"
+      ],
+      "coachNote": "Vier Fragen in einer Nachricht – die Kundin beantwortet nur eine.",
+      "betterMoveId": "need-open",
+      "reply": [
+        {
+          "text": "Puh, viele Fragen. Die Heizung ist 24 Jahre alt und teuer geworden. Den Rest müsste ich mir überlegen."
+        }
+      ]
+    },
+    {
+      "id": "ownership",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "text": "Geht es um ein Haus, das Ihnen gehört?",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "reveals": [
+        "ownership"
+      ],
+      "coachNote": "Kurze geschlossene Frage für ein Pflichtkriterium – genau richtig eingesetzt.",
+      "reply": [
+        {
+          "text": "Ja, unser eigenes Einfamilienhaus, Baujahr 1978."
+        }
+      ]
+    },
+    {
+      "id": "timeline",
+      "intent": "ask",
+      "quality": "good",
+      "requires": [
+        "need"
+      ],
+      "text": "Sie hatten geschrieben, dass Sie etwas ändern wollen – bis wann sollte die neue Heizung idealerweise laufen?",
+      "effects": {
+        "zuhoeren": 3,
+        "qualifizierung": 2,
+        "bedarfsermittlung": 1
+      },
+      "reveals": [
+        "timeline"
+      ],
+      "coachNote": "Du greifst ihre Aussage auf (aktives Zuhören) und klärst den Zeitrahmen.",
+      "reply": [
+        {
+          "text": "Am liebsten vor dem nächsten Winter. Und wie viel Förderung bekommen wir da eigentlich?",
+          "setsFlags": [
+            "asked-funding"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "authority",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "text": "Wer entscheidet bei Ihnen über so ein Projekt mit?",
+      "effects": {
+        "qualifizierung": 3,
+        "fragetechnik": 1
+      },
+      "reveals": [
+        "authority"
+      ],
+      "coachNote": "Mitentscheider früh klären – verhindert ergebnislose Termine.",
+      "reply": [
+        {
+          "text": "Mein Mann Tom und ich zusammen. Er arbeitet tagsüber, abends geht es bei ihm besser.",
+          "reveals": [
+            "authority"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "funding-handoff",
+      "intent": "handoff",
+      "quality": "good",
+      "requiresFlags": [
+        "asked-funding"
+      ],
+      "hiddenByFlags": [
+        "funding-handled"
+      ],
+      "setsFlags": [
+        "funding-handled"
+      ],
+      "text": "Gute Frage – die Förderung hängt von mehreren Punkten ab, und ich möchte Ihnen nichts Falsches sagen. Unser Energieberater prüft das im Termin konkret für Ihr Haus. Ich notiere die Frage schon für ihn.",
+      "effects": {
+        "kundenorientierung": 3,
+        "einwaende": 2,
+        "klarheit": 1
+      },
+      "rapport": 1,
+      "coachNote": "Rollenklar und kundenorientiert: Die Frage wird ernst genommen und an die zuständige Fachperson übergeben.",
+      "reply": [
+        {
+          "text": "Okay, das klingt fair."
+        }
+      ]
+    },
+    {
+      "id": "funding-promise",
+      "intent": "inform",
+      "quality": "bad",
+      "requiresFlags": [
+        "asked-funding"
+      ],
+      "hiddenByFlags": [
+        "funding-handled"
+      ],
+      "setsFlags": [
+        "funding-handled"
+      ],
+      "text": "Keine Sorge, Sie bekommen auf jeden Fall 70 % gefördert!",
+      "effects": {
+        "kundenorientierung": -2
+      },
+      "rapport": 1,
+      "violation": "Ungeprüfte Förderzusage – Fachaussage außerhalb der Setter-Rolle und potenziell irreführend.",
+      "coachNote": "Eine Förderzusage ohne Prüfung kann falsch sein und weckt Erwartungen, die der Berater enttäuschen muss.",
+      "betterMoveId": "funding-handoff",
+      "reply": [
+        {
+          "text": "Oh wow, 70 %! Das ist ja super."
+        }
+      ]
+    },
+    {
+      "id": "funding-dodge",
+      "intent": "inform",
+      "quality": "weak",
+      "requiresFlags": [
+        "asked-funding"
+      ],
+      "hiddenByFlags": [
+        "funding-handled"
+      ],
+      "setsFlags": [
+        "funding-handled"
+      ],
+      "text": "Darüber reden wir im Termin.",
+      "effects": {
+        "kundenorientierung": -1
+      },
+      "rapport": -1,
+      "coachNote": "Rollenklar, aber abweisend – ohne Begründung fühlt sich die Kundin abgewimmelt.",
+      "betterMoveId": "funding-handoff",
+      "reply": [
+        {
+          "text": "Hm, okay."
+        }
+      ]
+    },
+    {
+      "id": "summary",
+      "intent": "summarize",
+      "quality": "good",
+      "requires": [
+        "need",
+        "timeline"
+      ],
+      "setsFlags": [
+        "summarized"
+      ],
+      "hiddenByFlags": [
+        "summarized"
+      ],
+      "text": "Ich fasse kurz zusammen: Ihre Gasheizung ist 24 Jahre alt, die Kosten sind gestiegen, und Sie möchten bis vor dem nächsten Winter umsteigen. Habe ich das richtig verstanden?",
+      "effects": {
+        "zuhoeren": 3,
+        "klarheit": 2
+      },
+      "rapport": 1,
+      "coachNote": "Zusammenfassung mit Bitte um Bestätigung – zeigt Zuhören und verhindert Missverständnisse.",
+      "reply": [
+        {
+          "text": "Ja, genau so."
+        }
+      ]
+    },
+    {
+      "id": "propose",
+      "intent": "propose_booking",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "proposed"
+      ],
+      "setsFlags": [
+        "proposed"
+      ],
+      "text": "Der nächste sinnvolle Schritt wäre ein 45-minütiges Beratungsgespräch mit unserem Energieberater, gern per Video. Wäre das für Sie interessant?",
+      "effects": {
+        "terminvereinbarung": 2
+      },
+      "coachNote": "Klarer Vorschlag mit Dauer und Format – ob er passt, hängt davon ab, wie gut du vorher qualifiziert hast.",
+      "reply": [
+        {
+          "when": {
+            "factsRevealed": [
+              "need",
+              "ownership",
+              "timeline",
+              "authority"
+            ],
+            "minRapport": 4
+          },
+          "text": "Ja, das wäre gut. Am besten, wenn Tom auch dabei sein kann.",
+          "setsFlags": [
+            "accepted"
+          ],
+          "reveals": [
+            "authority"
+          ]
+        },
+        {
+          "when": {
+            "factsRevealed": [
+              "need"
+            ],
+            "factsMissing": [
+              "authority"
+            ],
+            "minRapport": 4
+          },
+          "text": "Grundsätzlich ja … aber eigentlich müsste mein Mann da dabei sein.",
+          "setsFlags": [
+            "accepted"
+          ],
+          "reveals": [
+            "authority"
+          ]
+        },
+        {
+          "text": "Ich weiß noch nicht genau, ob das für uns schon passt.",
+          "setsFlags": [
+            "hesitant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hesitation",
+      "intent": "handle_objection",
+      "quality": "good",
+      "requiresFlags": [
+        "hesitant"
+      ],
+      "hiddenByFlags": [
+        "hesitation-asked"
+      ],
+      "setsFlags": [
+        "hesitation-asked"
+      ],
+      "text": "Das verstehe ich. Was fehlt Ihnen noch, um das einschätzen zu können?",
+      "effects": {
+        "einwaende": 3,
+        "kundenorientierung": 2
+      },
+      "rapport": 1,
+      "coachNote": "Einwand erst verstehen, statt zu überreden.",
+      "reply": [
+        {
+          "text": "Ehrlich gesagt wissen Sie ja noch gar nichts über unser Haus. Fragen Sie ruhig."
+        }
+      ]
+    },
+    {
+      "id": "propose-again",
+      "intent": "propose_booking",
+      "quality": "good",
+      "requiresFlags": [
+        "hesitation-asked"
+      ],
+      "hiddenByFlags": [
+        "accepted",
+        "proposed-again"
+      ],
+      "setsFlags": [
+        "proposed-again"
+      ],
+      "text": "Danke für Ihre Antworten. Mit diesen Infos kann unser Energieberater Ihnen konkret sagen, was bei Ihrem Haus möglich ist. Sollen wir dafür ein Gespräch vereinbaren?",
+      "effects": {
+        "terminvereinbarung": 1,
+        "klarheit": 1
+      },
+      "coachNote": "Neuer Vorschlag erst nach zusätzlicher Qualifizierung – richtig.",
+      "reply": [
+        {
+          "when": {
+            "factsRevealed": [
+              "need",
+              "ownership",
+              "timeline"
+            ],
+            "minRapport": 4
+          },
+          "text": "Ja, gern – am besten, wenn mein Mann Tom auch dabei ist.",
+          "setsFlags": [
+            "accepted"
+          ],
+          "reveals": [
+            "authority"
+          ]
+        },
+        {
+          "text": "Ich glaube, ich lese mich erst mal selbst ein.",
+          "setsFlags": [
+            "declined-soft"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "slots",
+      "intent": "propose_booking",
+      "quality": "good",
+      "requiresFlags": [
+        "accepted"
+      ],
+      "hiddenByFlags": [
+        "slot"
+      ],
+      "setsFlags": [
+        "slot"
+      ],
+      "text": "Prima! Passt Ihnen Dienstag 18:30 Uhr oder Donnerstag 19:00 Uhr – dann kann Ihr Mann auch dabei sein?",
+      "effects": {
+        "terminvereinbarung": 4,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Konkrete Alternativen nach erteilter Zustimmung, abgestimmt auf den Mitentscheider.",
+      "reply": [
+        {
+          "text": "Donnerstag 19 Uhr passt uns beiden."
+        }
+      ]
+    },
+    {
+      "id": "confirm",
+      "intent": "confirm_booking",
+      "quality": "good",
+      "requiresFlags": [
+        "slot"
+      ],
+      "text": "Super, dann ist Donnerstag, 19:00 Uhr, per Video mit unserem Energieberater eingetragen. Sie erhalten gleich eine Bestätigung mit Link und am Vortag eine Erinnerung. Gibt es noch etwas, das der Berater vorab wissen sollte?",
+      "effects": {
+        "terminvereinbarung": 3,
+        "klarheit": 1,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Vollständige Bestätigung: Datum, Uhrzeit, Format, Erinnerung und Raum für Fragen.",
+      "reply": [
+        {
+          "text": "Nein, danke! Bis Donnerstag.",
+          "ends": "book"
+        }
+      ]
+    },
+    {
+      "id": "pressure-book",
+      "intent": "pressure",
+      "quality": "bad",
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ],
+      "text": "Ich trage Sie einfach für morgen 10 Uhr ein – die Termine sind sonst schnell weg!",
+      "effects": {
+        "kundenorientierung": -3,
+        "terminvereinbarung": -2
+      },
+      "rapport": -3,
+      "violation": "Termin ohne Zustimmung und unbelegte Verknappung.",
+      "coachNote": "Ein Termin ohne Zustimmung ist kein Termin – und die Verknappung ist erfunden.",
+      "betterMoveId": "propose",
+      "reply": [
+        {
+          "text": "Moment mal – ich habe doch gar nicht zugestimmt. Ich melde mich lieber selbst wieder.",
+          "ends": "lost"
+        }
+      ]
+    },
+    {
+      "id": "nurture",
+      "intent": "nurture",
+      "quality": "ok",
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ],
+      "text": "Wenn Sie lieber erst Informationen sammeln möchten, schicke ich Ihnen gern unseren Leitfaden zur Wärmepumpe im Altbau. Ist das in Ordnung?",
+      "effects": {
+        "kundenorientierung": 1
+      },
+      "coachNote": "Respektvolle Alternative – hier aber wahrscheinlich zu früh, denn die Kundin hat einen konkreten Bedarf.",
+      "reply": [
+        {
+          "text": "Ja, schicken Sie mir den gern.",
+          "ends": "nurture"
+        }
+      ]
+    }
+  ]
+}
