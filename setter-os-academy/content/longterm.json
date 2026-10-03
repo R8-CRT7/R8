@@ -1,0 +1,361 @@
+{
+  "tracks": [
+    {
+      "id": "T01",
+      "title": "Solar & Photovoltaik",
+      "area": "branche",
+      "summary": "Beratungsintensive Investition, Förderung und Technik bleiben beim Fachberater.",
+      "requiredConcepts": [
+        "C-BRANCHE",
+        "C-TERMIN"
+      ],
+      "focus": [
+        "Eigenverbrauch und Speicher verständlich erfragen",
+        "Förderfragen sauber übergeben",
+        "Haushalts-Entscheidungsprozesse"
+      ],
+      "legalNote": "Keine Förder- oder Ertragszusagen durch Setter.",
+      "status": "geplant"
+    },
+    {
+      "id": "T02",
+      "title": "Wärmepumpe & Heizung",
+      "area": "branche",
+      "summary": "Lange Entscheidungswege, viele Fachfragen, GEG-Unsicherheit.",
+      "requiredConcepts": [
+        "C-BRANCHE",
+        "C-EINWAND"
+      ],
+      "focus": [
+        "Gebäudedaten erfragen ohne Beratung",
+        "Unsicherheit ernst nehmen",
+        "Partner-Rücksprache einplanen"
+      ],
+      "legalNote": "Keine Aussagen zu Pflichten aus dem GEG – an Fachberater.",
+      "status": "geplant"
+    },
+    {
+      "id": "T03",
+      "title": "Coaching & Online-Kurse",
+      "area": "branche",
+      "summary": "Hohes Risiko unseriöser Versprechen; Einkommens- und Erfolgsversprechen sind tabu.",
+      "requiredConcepts": [
+        "C-MANIPULATION",
+        "C-DISQUALI"
+      ],
+      "focus": [
+        "Erwartungen realistisch klären",
+        "Disqualifizieren bei Fehlpassung",
+        "Widerruf und FernUSG-Bezug kennen"
+      ],
+      "legalNote": "FernUSG/ZFU-Relevanz bei Fernunterricht prüfen lassen; keine Einkommensversprechen.",
+      "status": "geplant"
+    },
+    {
+      "id": "T04",
+      "title": "Agenturen & Marketing-Dienstleister",
+      "area": "branche",
+      "summary": "B2B, mehrere Entscheider, Ergebnisunsicherheit.",
+      "requiredConcepts": [
+        "C-FRAMEWORKS",
+        "C-KPI"
+      ],
+      "focus": [
+        "Buying Center erfassen",
+        "Ziele messbar machen ohne Zusagen",
+        "Discovery-Call vorbereiten"
+      ],
+      "legalNote": null,
+      "status": "geplant"
+    },
+    {
+      "id": "T05",
+      "title": "SaaS & Software B2B",
+      "area": "branche",
+      "summary": "Demo-Termine, Testphasen, mehrere Stakeholder.",
+      "requiredConcepts": [
+        "C-FRAMEWORKS",
+        "C-SCORING"
+      ],
+      "focus": [
+        "MEDDICC-Grundlagen anwenden",
+        "Demo vs. Discovery unterscheiden",
+        "Technische Fragen übergeben"
+      ],
+      "legalNote": null,
+      "status": "geplant"
+    },
+    {
+      "id": "T06",
+      "title": "Recruiting & Personalberatung",
+      "area": "branche",
+      "summary": "Zwei Zielgruppen: Unternehmen und Kandidaten.",
+      "requiredConcepts": [
+        "C-ICP",
+        "C-DSGVO"
+      ],
+      "focus": [
+        "Vakanzen qualifizieren",
+        "Kandidatendaten datenschutzkonform behandeln",
+        "Diskriminierungsfreie Sprache (AGG)"
+      ],
+      "legalNote": "AGG beachten; Bewerberdaten nur zweckgebunden.",
+      "status": "geplant"
+    },
+    {
+      "id": "T07",
+      "title": "Immobilien & Finanzierung",
+      "area": "branche",
+      "summary": "Hohe Beträge, regulierte Beratung.",
+      "requiredConcepts": [
+        "C-BRANCHE",
+        "C-GRENZEN"
+      ],
+      "focus": [
+        "Suchprofil erfassen",
+        "Finanzierungsfragen strikt übergeben",
+        "Vertrauen ohne Druck"
+      ],
+      "legalNote": "Keine Finanzierungs- oder Anlageberatung (KWG/GewO § 34c/i).",
+      "status": "geplant"
+    },
+    {
+      "id": "T08",
+      "title": "Versicherungen & Finanzen",
+      "area": "branche",
+      "summary": "Streng reguliert; Setter vermittelt nur Termine.",
+      "requiredConcepts": [
+        "C-GRENZEN",
+        "C-KANAELE"
+      ],
+      "focus": [
+        "Abgrenzung Terminvermittlung vs. Vermittlung",
+        "Einwilligungen dokumentieren",
+        "Bedarf ohne Produktempfehlung"
+      ],
+      "legalNote": "Versicherungsvermittlung erlaubnispflichtig (GewO § 34d) – nur Termin, keine Beratung.",
+      "status": "geplant"
+    },
+    {
+      "id": "T09",
+      "title": "Fitness & Gesundheit",
+      "area": "branche",
+      "summary": "Sensible Daten und Heilversprechen-Verbot.",
+      "requiredConcepts": [
+        "C-MANIPULATION",
+        "C-DSGVO"
+      ],
+      "focus": [
+        "Ziele erfragen ohne Gesundheitsdaten zu horten",
+        "Keine Heilversprechen",
+        "Probetraining sauber übergeben"
+      ],
+      "legalNote": "HWG/UWG: keine Heil- oder Erfolgsversprechen; Gesundheitsdaten Art. 9 DSGVO.",
+      "status": "geplant"
+    },
+    {
+      "id": "T10",
+      "title": "IT-Dienstleistungen & Managed Services",
+      "area": "branche",
+      "summary": "Technische Käufer, lange Zyklen.",
+      "requiredConcepts": [
+        "C-FRAMEWORKS",
+        "C-UEBERGABE"
+      ],
+      "focus": [
+        "Ist-Situation strukturiert erfassen",
+        "Technische Übergabe vollständig",
+        "Dringlichkeit ohne Druck klären"
+      ],
+      "legalNote": null,
+      "status": "geplant"
+    },
+    {
+      "id": "T11",
+      "title": "Telefon-Setting (Outbound B2B)",
+      "area": "kanal",
+      "summary": "Kaltakquise nur im zulässigen Rahmen.",
+      "requiredConcepts": [
+        "C-KANAELE",
+        "C-EROEFFNUNG"
+      ],
+      "focus": [
+        "Mutmaßliche Einwilligung B2B prüfen",
+        "Erste 20 Sekunden",
+        "Gatekeeper respektvoll"
+      ],
+      "legalNote": "B2C-Kaltanrufe ohne Einwilligung verboten (UWG § 7 Abs. 2 Nr. 1).",
+      "status": "geplant"
+    },
+    {
+      "id": "T12",
+      "title": "Social-Media-DM-Setting",
+      "area": "kanal",
+      "summary": "Instagram, Facebook, LinkedIn – nur nach Kontaktwunsch.",
+      "requiredConcepts": [
+        "C-CHATFLOW",
+        "C-KANAELE"
+      ],
+      "focus": [
+        "Inbound-DMs strukturieren",
+        "Plattformregeln einhalten",
+        "Übergang in Termin"
+      ],
+      "legalNote": "Keine unaufgeforderten Massen-DMs; Plattform-AGB.",
+      "status": "geplant"
+    },
+    {
+      "id": "T13",
+      "title": "E-Mail- & LinkedIn-Prospecting B2B",
+      "area": "kanal",
+      "summary": "Recherche, Personalisierung, Einwilligung.",
+      "requiredConcepts": [
+        "C-ICP",
+        "C-KANAELE"
+      ],
+      "focus": [
+        "Recherche statt Massenversand",
+        "Einwilligung und Opt-out",
+        "Follow-up-Rhythmus"
+      ],
+      "legalNote": "Werbe-E-Mails brauchen Einwilligung (UWG § 7 Abs. 2 Nr. 2), Ausnahme § 7 Abs. 3 eng.",
+      "status": "geplant"
+    },
+    {
+      "id": "T14",
+      "title": "Team Lead Setting",
+      "area": "fuehrung",
+      "summary": "Qualität im Team sichern, coachen statt drücken.",
+      "requiredConcepts": [
+        "C-KPI",
+        "C-PROZESS"
+      ],
+      "focus": [
+        "Gesprächsanalysen im Team",
+        "Faire Kennzahlen",
+        "Onboarding neuer Setter"
+      ],
+      "legalNote": null,
+      "status": "geplant"
+    },
+    {
+      "id": "T15",
+      "title": "Sales Operations & CRM-Administration",
+      "area": "daten",
+      "summary": "Datenqualität, Automatisierung, Reporting.",
+      "requiredConcepts": [
+        "C-CRM",
+        "C-KPI"
+      ],
+      "focus": [
+        "Pipeline-Hygiene",
+        "Dashboards aus echten Daten",
+        "Löschkonzepte"
+      ],
+      "legalNote": null,
+      "status": "geplant"
+    },
+    {
+      "id": "T16",
+      "title": "KI-gestütztes Setting",
+      "area": "technik",
+      "summary": "KI für Recherche und Entwürfe – Mensch entscheidet.",
+      "requiredConcepts": [
+        "C-KI",
+        "C-DSGVO"
+      ],
+      "focus": [
+        "Prompting für Entwürfe",
+        "Prüfen statt blind übernehmen",
+        "Transparenz gegenüber Kunden"
+      ],
+      "legalNote": "KI-VO-Transparenzpflichten und DSGVO beachten; keine Kundendaten in ungeprüfte Tools.",
+      "status": "geplant"
+    },
+    {
+      "id": "T17",
+      "title": "Selbstständiger Setter & Freelancing",
+      "area": "business",
+      "summary": "Eigenes Business seriös aufbauen.",
+      "requiredConcepts": [
+        "C-SELBST",
+        "C-AKQUISE"
+      ],
+      "focus": [
+        "Angebot und Preise",
+        "Verträge und Scheinselbstständigkeit",
+        "Zulässige Eigenakquise"
+      ],
+      "legalNote": "Steuer- und Rechtsfragen mit Fachleuten klären.",
+      "status": "geplant"
+    },
+    {
+      "id": "T18",
+      "title": "Closing-Grundlagen für Setter",
+      "area": "gespraech",
+      "summary": "Verstehen, was nach der Übergabe passiert – ohne die Rolle zu wechseln.",
+      "requiredConcepts": [
+        "C-UEBERGABE",
+        "C-EINWAND"
+      ],
+      "focus": [
+        "Beratungsgespräch verstehen",
+        "Bessere Übergaben durch Closer-Sicht",
+        "Grenzen der Setter-Rolle"
+      ],
+      "legalNote": null,
+      "status": "geplant"
+    }
+  ],
+  "stages": [
+    {
+      "id": "ST8",
+      "number": 8,
+      "title": "Vertiefung & erste Spezialisierung",
+      "dayFrom": 91,
+      "dayTo": 120,
+      "goal": "Du wählst eine Spezialisierung, vertiefst schwache Konzepte adaptiv und übst branchenspezifische Simulationen.",
+      "structure": [
+        "Woche 1: Diagnose – adaptive Wiederholung aller Konzepte unter „gefestigt“",
+        "Wochen 2–4: Spezialisierung 1 (Lektionen, 3 Simulationen, Fallstudie)",
+        "Täglich: 10–15 Min. gemischte Wiederholung",
+        "Stufen-Check 8: Spezialisierungsprüfung im Prüfungsmodus"
+      ],
+      "unlock": "Stufen-Check 7 bestanden"
+    },
+    {
+      "id": "ST9",
+      "number": 9,
+      "title": "Zweite Spezialisierung & Praxisprojekt",
+      "dayFrom": 121,
+      "dayTo": 150,
+      "goal": "Zweite Spezialisierung (Kanal oder Branche) und ein eigenes Praxisprojekt: Leitfaden, Übergabeprotokoll und Kennzahlen-Plan für ein fiktives Unternehmen.",
+      "structure": [
+        "Spezialisierung 2 (Kanal empfohlen, wenn 1 eine Branche war)",
+        "Praxisprojekt in 4 Abgaben mit KI-Coach-Feedback",
+        "Boss-Simulationen mit wechselnden Personas",
+        "Stufen-Check 9"
+      ],
+      "unlock": "Stufen-Check 8 bestanden"
+    },
+    {
+      "id": "ST10",
+      "number": 10,
+      "title": "Meisterstufe II",
+      "dayFrom": 151,
+      "dayTo": 180,
+      "goal": "Du zeigst stabile Leistung über alle Bereiche: Prüfungssimulationen ohne Hilfen, Gesprächsanalysen fremder Transkripte und eine Abschlussreflexion.",
+      "structure": [
+        "Gemischte Prüfungssimulationen (alle Bereiche)",
+        "Gesprächsanalysen: fremde Transkripte bewerten",
+        "Persönliches Kompetenzprofil mit Belegen",
+        "Abschluss: Meisterprüfung II"
+      ],
+      "unlock": "Stufen-Check 9 bestanden"
+    }
+  ],
+  "open": {
+    "title": "Offene Fortbildung ab Tag 181",
+    "text": "Nach Tag 180 gibt es keinen festen Plan mehr. Die Akademie schlägt täglich Wiederholungen nach dem Abstandsprinzip vor, öffnet weitere Spezialisierungen und neue Simulationen. Fortschritt zeigt sich nur an geprüften Leistungen – nicht an Kalendertagen."
+  }
+}

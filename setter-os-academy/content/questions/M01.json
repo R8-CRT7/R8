@@ -1631,5 +1631,201 @@
     "sourceIds": [
       "SRC-062"
     ]
+  },
+  {
+    "id": "Q-M01-043",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "gespraechsanalyse",
+    "simulatedData": true,
+    "prompt": "Analysiere das Chat-Transkript (Simulation, erfundene Personen) und beantworte die drei Teilfragen.",
+    "material": {
+      "kind": "transcript",
+      "lines": [
+        {
+          "speaker": "kunde",
+          "text": "Hallo, ich habe auf Ihrer Seite das Formular für eine Solaranlage ausgefüllt."
+        },
+        {
+          "speaker": "setter",
+          "text": "Hallo Frau Brandt, hier ist Lea von SolarNord – danke für Ihre Anfrage! Was hat Sie dazu gebracht, sich gerade jetzt damit zu beschäftigen?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Unsere Stromrechnung ist stark gestiegen, und das Dach ist frei."
+        },
+        {
+          "speaker": "setter",
+          "text": "Verstehe. Wem gehört das Haus, und wer entscheidet bei Ihnen mit? Und wann wollen Sie bauen? Und wie hoch ist Ihr Budget?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Puh, das sind viele Fragen. Das Haus gehört uns beiden."
+        },
+        {
+          "speaker": "setter",
+          "text": "Perfekt, dann trage ich Sie für Donnerstag um 18 Uhr ein."
+        }
+      ]
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Wie ist die Eröffnung in Zeile 2 zu bewerten?",
+        "correct": "b",
+        "explanation": "Name, Firma, Dank und eine offene Anlassfrage – genau die Eröffnung aus Phase 1.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Zu persönlich – der Setter sollte sofort nach dem Budget fragen.",
+            "misconception": "Budget vor Bedarf überspringt die Bedarfsphase.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Gelungen: Vorstellung, Bezug zur Anfrage und eine offene Frage nach dem Anlass."
+          },
+          {
+            "id": "c",
+            "text": "Fehlerhaft, weil eine offene Frage im Chat zu lange Antworten erzeugt.",
+            "misconception": "Offene Fragen sind gerade in der Bedarfsphase erwünscht.",
+            "errorCategory": "kommunikationsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Was ist das Hauptproblem in Zeile 4?",
+        "correct": "a",
+        "explanation": "Drei Fragen in einer Nachricht überfordern; die Kundin beantwortet nur eine. Eine Frage pro Nachricht.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mehrere Fragen auf einmal – die Kundin beantwortet nur einen Teil."
+          },
+          {
+            "id": "b",
+            "text": "Die Frage nach dem Entscheider ist unzulässig.",
+            "misconception": "Mitentscheider zu erfragen ist Teil der Qualifizierung.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Kein Problem – effiziente Qualifizierung spart Zeit.",
+            "misconception": "Effizienz für den Setter ist nicht gleich Verständlichkeit für die Kundin.",
+            "errorCategory": "kommunikationsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Wie ist Zeile 6 zu bewerten?",
+        "correct": "c",
+        "explanation": "Ohne Zusammenfassung, ohne Zeitpunkt-Klärung und ohne Zustimmung der Kundin ist das kein qualifizierter Termin; der Mitentscheider fehlt ebenfalls.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gut: Der Setter schafft Verbindlichkeit.",
+            "misconception": "Verbindlichkeit entsteht durch Zustimmung, nicht durch Eintragen.",
+            "errorCategory": "ethikfehler"
+          },
+          {
+            "id": "b",
+            "text": "Unproblematisch, wenn der Termin später bestätigt wird.",
+            "misconception": "Ein ohne Zustimmung gesetzter Termin bleibt unqualifiziert.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Fehler: Termin ohne Zusammenfassung, ohne offene Fragen zu klären und ohne Zustimmung der Kundin."
+          }
+        ]
+      }
+    ],
+    "explanation": "Die vier Phasen (Eröffnung, Bedarf, Zusammenfassung, nächster Schritt) sind nur teilweise umgesetzt: Die Eröffnung gelingt, die Bedarfsphase kippt in ein Fragenbündel, Zusammenfassung und Zustimmung fehlen.",
+    "sourceIds": [
+      "SRC-013",
+      "SRC-066"
+    ],
+    "tags": [
+      "gespraechsanalyse"
+    ]
+  },
+  {
+    "id": "Q-M01-044",
+    "moduleId": "M01",
+    "objectiveId": "LO-M01-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "fallstudie",
+    "simulatedData": true,
+    "prompt": "Lies die Fallstudie (Simulation) und beantworte beide Teilfragen.",
+    "material": {
+      "kind": "text",
+      "body": "Ein Setter einer Wärmepumpen-Firma bekommt eine Liste mit 400 privaten Telefonnummern von einem Adresshändler. Sein Teamleiter sagt: „Ruf alle heute an, die meisten haben irgendwann mal Interesse gezeigt.“ Eine Einwilligung der Personen ist nicht dokumentiert.\n\nAm nächsten Tag schreibt eine Interessentin im Chat, ob sie mit der neuen Wärmepumpe „sicher 40 % Heizkosten“ spart."
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Wie sollte der Setter mit der Telefonliste umgehen?",
+        "correct": "b",
+        "explanation": "Werbeanrufe bei Verbrauchern brauchen eine vorherige ausdrückliche Einwilligung (UWG § 7 Abs. 2 Nr. 1), die dokumentiert sein muss (§ 7a).",
+        "options": [
+          {
+            "id": "a",
+            "text": "Anrufen – „irgendwann Interesse gezeigt“ reicht als Einwilligung.",
+            "misconception": "Eine vage frühere Interessenbekundung ist keine ausdrückliche Einwilligung.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Nicht anrufen und das Problem ansprechen: Ohne dokumentierte ausdrückliche Einwilligung sind Werbeanrufe bei Verbrauchern unzulässig."
+          },
+          {
+            "id": "c",
+            "text": "Nur kurze Anrufe unter einer Minute führen.",
+            "misconception": "Die Dauer ändert nichts an der Zulässigkeit.",
+            "errorCategory": "rechtsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Wie antwortet der Setter auf die Frage nach „sicher 40 %“?",
+        "correct": "a",
+        "explanation": "Ersparnisprognosen hängen vom Gebäude ab und gehören in die Fachberatung; ein Setter darf keine Zusagen machen.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Er sagt ehrlich, dass das vom Haus abhängt, und bietet an, die Frage im Beratungstermin vom Fachberater klären zu lassen."
+          },
+          {
+            "id": "b",
+            "text": "„Ja, das schaffen fast alle Kunden.“",
+            "misconception": "Unbelegte Ersparniszusage – irreführend und außerhalb der Rolle.",
+            "errorCategory": "ethikfehler"
+          },
+          {
+            "id": "c",
+            "text": "Er nennt eine Spanne aus dem Internet, damit sie motiviert bleibt.",
+            "misconception": "Auch Spannen sind ohne Gebäudedaten Fachberatung.",
+            "errorCategory": "rollenverwechslung"
+          }
+        ]
+      }
+    ],
+    "explanation": "Rechtliche und ethische Grenzen gelten auch unter Druck vom Team: keine Anrufe ohne Einwilligung, keine Zusagen außerhalb der eigenen Rolle.",
+    "sourceIds": [
+      "SRC-019",
+      "SRC-020"
+    ],
+    "tags": [
+      "fallstudie",
+      "recht"
+    ]
   }
 ]

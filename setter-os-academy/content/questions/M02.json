@@ -1093,5 +1093,199 @@
       "SRC-064",
       "SRC-050"
     ]
+  },
+  {
+    "id": "Q-M02-029",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-02",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "gespraechsanalyse",
+    "simulatedData": true,
+    "prompt": "Analysiere das Transkript (Simulation) auf aktives Zuhören.",
+    "material": {
+      "kind": "transcript",
+      "lines": [
+        {
+          "speaker": "kunde",
+          "text": "Ich habe schon drei Angebote und blicke ehrlich gesagt gar nicht mehr durch."
+        },
+        {
+          "speaker": "setter",
+          "text": "Klingt, als wäre das gerade ziemlich unübersichtlich für Sie."
+        },
+        {
+          "speaker": "kunde",
+          "text": "Ja, total. Jeder erzählt was anderes."
+        },
+        {
+          "speaker": "setter",
+          "text": "Wenn ich Sie richtig verstehe, wünschen Sie sich vor allem einen klaren Vergleich – stimmt das?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Genau. Und dass mir jemand ehrlich sagt, was wir überhaupt brauchen."
+        },
+        {
+          "speaker": "setter",
+          "text": "Super! Unser Speicher XL ist sowieso der beste am Markt."
+        }
+      ]
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Welche Technik nutzt der Setter in Zeile 2?",
+        "correct": "c",
+        "explanation": "Er benennt vorsichtig die erkennbare Lage („Klingt, als …“).",
+        "options": [
+          {
+            "id": "a",
+            "text": "Paraphrase",
+            "misconception": "Die Paraphrase gibt Inhalt wieder; hier wird ein Gefühl benannt.",
+            "errorCategory": "begriffsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Geschlossene Frage",
+            "misconception": "Zeile 2 ist gar keine Frage.",
+            "errorCategory": "begriffsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Gefühle benennen (Labeling)"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Was leistet Zeile 4?",
+        "correct": "a",
+        "explanation": "Paraphrase als Frage: Kernaussage in eigenen Worten, mit Bitte um Bestätigung.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Paraphrase mit Bestätigungsfrage – die Kundin kann korrigieren."
+          },
+          {
+            "id": "b",
+            "text": "Suggestivfrage, die die Kundin zu einem Ja drängt.",
+            "misconception": "Eine Paraphrase mit „stimmt das?“ lässt Korrektur zu; sie legt kein Produkt nahe.",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Themenwechsel zum Termin.",
+            "misconception": "Der Setter bleibt beim Thema der Kundin.",
+            "errorCategory": "kommunikationsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Welcher Zuhör-Fehler passiert in Zeile 6?",
+        "correct": "b",
+        "explanation": "Statt nach dem Bedarf zu fragen, springt der Setter zur Lösung – und stellt eine unbelegte Superlativ-Behauptung auf.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Kein Fehler – die Kundin wollte eine Empfehlung.",
+            "misconception": "Sie wollte wissen, was sie braucht; das muss erst erfragt werden.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Vorschnelle Lösung mit unbelegter Behauptung statt Folgefrage zum Bedarf."
+          },
+          {
+            "id": "c",
+            "text": "Zu viel Empathie.",
+            "misconception": "Das Problem ist der Sprung zur Lösung, nicht die Empathie.",
+            "errorCategory": "kommunikationsfehler"
+          }
+        ]
+      }
+    ],
+    "explanation": "Zeilen 2 und 4 zeigen sichtbares Zuhören. Zeile 6 zerstört den Aufbau: Lösung statt Folgefrage, dazu eine unbelegte Werbeaussage.",
+    "sourceIds": [
+      "SRC-055",
+      "SRC-060"
+    ],
+    "tags": [
+      "gespraechsanalyse"
+    ]
+  },
+  {
+    "id": "Q-M02-030",
+    "moduleId": "M02",
+    "objectiveId": "LO-M02-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "case",
+    "caseKind": "fallstudie",
+    "simulatedData": true,
+    "prompt": "Lies die Fallstudie (Simulation) und beantworte beide Teilfragen.",
+    "material": {
+      "kind": "text",
+      "body": "Ein Setter schreibt Interessenten nach einer Webinar-Anmeldung per E-Mail (Einwilligung liegt vor). Seine Vorlage hat 140 Wörter, beginnt mit der Firmengeschichte, enthält vier Fragen und endet mit einem Kalenderlink. Die Antwortquote ist niedrig; wer antwortet, beantwortet meist nur die letzte Frage."
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Was ist die plausibelste Erklärung für das Antwortmuster?",
+        "correct": "a",
+        "explanation": "Mehrere Gedanken und Fragen in einer Nachricht: Leser reagieren auf das Ende oder gar nicht.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Zu viele Gedanken und Fragen in einer Nachricht – Leser antworten auf das Ende oder gar nicht."
+          },
+          {
+            "id": "b",
+            "text": "Die Interessenten sind nicht interessiert; der Text spielt keine Rolle.",
+            "misconception": "Das Muster (nur letzte Frage) spricht für ein Textproblem.",
+            "errorCategory": "ueberinterpretation"
+          },
+          {
+            "id": "c",
+            "text": "E-Mails werden grundsätzlich nicht gelesen.",
+            "misconception": "Pauschale Behauptung ohne Beleg.",
+            "errorCategory": "ueberinterpretation"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Welche Überarbeitung folgt dem Prinzip „Anlass – Frage“?",
+        "correct": "c",
+        "explanation": "Kurzer Anlass mit Bezug und genau eine offene Frage am Ende.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Firmengeschichte kürzen, aber alle vier Fragen behalten.",
+            "misconception": "Vier Fragen bleiben vier Gedanken.",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "b",
+            "text": "Nur noch den Kalenderlink schicken.",
+            "misconception": "Ohne Anlass und Frage fehlt jede Bedarfsklärung.",
+            "errorCategory": "qualifizierungsfehler"
+          },
+          {
+            "id": "c",
+            "text": "„Danke für Ihre Anmeldung zum Webinar, Herr Kaya! Was möchten Sie aus dem Thema vor allem mitnehmen?“"
+          }
+        ]
+      }
+    ],
+    "explanation": "Klarheit schlägt Vollständigkeit: ein Anlass, eine Frage, kein Fülltext.",
+    "sourceIds": [
+      "SRC-066"
+    ],
+    "tags": [
+      "fallstudie"
+    ]
   }
 ]

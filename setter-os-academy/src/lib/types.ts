@@ -226,7 +226,18 @@ export interface CrmTaskQ extends QuestionBase {
   simulatedData: true;
 }
 
+/** Gesprächsanalyse / Fallstudie: shared material (transcript or case text) + several single-choice parts. */
+export interface CaseQ extends QuestionBase {
+  type: "case";
+  caseKind: "gespraechsanalyse" | "fallstudie";
+  material: { kind: "transcript"; lines: { speaker: "setter" | "kunde"; text: string }[] } | { kind: "text"; body: string };
+  parts: { id: string; prompt: string; options: Option[]; correct: string; explanation: string }[];
+  /** Simulated data must be labelled */
+  simulatedData: true;
+}
+
 export type Question =
+  | CaseQ
   | SingleChoiceQ
   | MultiChoiceQ
   | TrueFalseQ
@@ -252,7 +263,8 @@ export type AnswerValue =
   | { type: "situation"; optionId: string }
   | { type: "errorspot"; lineIds: string[] }
   | { type: "calculation"; value: number }
-  | { type: "crm"; fields: Record<string, string> };
+  | { type: "crm"; fields: Record<string, string> }
+  | { type: "case"; answers: Record<string, string> };
 
 export interface GradeResult {
   questionId: string;
@@ -466,4 +478,42 @@ export interface ProgramStage {
   /** Plan for stages whose content is not written yet */
   plannedTopics?: string[];
   check: { id: string; title: string; questionIds: string[]; passThreshold: number; requiredSimulations: string[] };
+}
+
+// ---------- Long-term architecture (V3) ----------
+export type ConceptArea = "grundlagen" | "gespraech" | "psychologie" | "qualifizierung" | "chat" | "einwaende" | "termin" | "daten" | "recht" | "business";
+/** Node of the concept graph. Mastery is derived from the linked learning objectives only. */
+export interface Concept {
+  id: string;
+  label: string;
+  area: ConceptArea;
+  moduleId: string;
+  description: string;
+  prerequisites: string[];
+  objectiveIds: string[];
+}
+export interface Track {
+  id: string;
+  title: string;
+  area: string;
+  summary: string;
+  requiredConcepts: string[];
+  focus: string[];
+  legalNote: string | null;
+  status: "geplant" | "verfuegbar";
+}
+export interface LongTermStage {
+  id: string;
+  number: number;
+  title: string;
+  dayFrom: number;
+  dayTo: number;
+  goal: string;
+  structure: string[];
+  unlock: string;
+}
+export interface LongTermPlan {
+  tracks: Track[];
+  stages: LongTermStage[];
+  open: { title: string; text: string };
 }

@@ -1,5 +1,5 @@
 // Typed access to the JSON content. Content is bundled at build time (no backend needed).
-import type { KnowledgeEntry, KnowledgeSource, ModuleContent, ProgramStage, Question, Scenario } from "../types";
+import type { Concept, KnowledgeEntry, LongTermPlan, KnowledgeSource, ModuleContent, ProgramStage, Question, Scenario } from "../types";
 import sourcesJson from "@content/sources.json";
 import knowledgeJson from "@content/knowledge.json";
 import curriculumJson from "@content/curriculum.json";
@@ -13,6 +13,8 @@ import sim003 from "@content/scenarios/SIM-003.json";
 import sim004 from "@content/scenarios/SIM-004.json";
 import programJson from "@content/program.json";
 import glossaryJson from "@content/glossary.json";
+import conceptsJson from "@content/concepts.json";
+import longtermJson from "@content/longterm.json";
 
 export interface CurriculumEntry {
   id: string;
@@ -59,6 +61,9 @@ export function quizById(id: string): QuizDef | undefined {
   return undefined;
 }
 export const allQuizIds = () => [...modules.map((m) => m.id), ...program.filter((p) => p.available).map((p) => p.id)];
+
+export const concepts = conceptsJson as Concept[];
+export const longterm = longtermJson as LongTermPlan;
 
 export const glossary = glossaryJson as { term: string; definition: string; lessonId: string }[];
 

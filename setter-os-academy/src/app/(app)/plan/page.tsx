@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Badge, Button, ButtonLink, Card, Icon, PageHeader, ProgressBar, cx } from "@/components/ui";
-import { curriculum, lessonById, moduleById, program, scenarioById } from "@/lib/content";
+import { curriculum, lessonById, longterm, moduleById, program, scenarioById } from "@/lib/content";
 import { dayState, itemDone, currentDay, programProgress, stageCheckPassed, unlockAnchor } from "@/lib/engine/program";
 import { moduleProgress, objectiveSummaries } from "@/lib/derived";
 import { completeProgramDay, fastTrackDay, startProgram } from "@/lib/store/state";
@@ -146,7 +146,7 @@ export default function PlanPage() {
                     <p className="mt-1 text-muted">{st.check.questionIds.length} gemischte Fragen, bestanden ab {st.check.passThreshold * 100} %. Außerdem bestanden: {st.check.requiredSimulations.map((id) => scenarioById(id)?.title).join(" und ")}.</p>
                     <div className="mt-2 flex flex-wrap gap-1.5">
                       {st.check.requiredSimulations.map((id) => {
-                        const ok = s.simulations.some((x) => x.scenarioId === id && x.passed);
+                        const ok = s.simulations.some((x) => x.scenarioId === id && x.passed) || s.aiSimulations.some((x) => x.scenarioId === id && x.mode === "pruefung" && x.evaluation.passed === true);
                         return <Badge key={id} tone={ok ? "success" : "neutral"}>{ok ? "✓" : "○"} {scenarioById(id)?.title}</Badge>;
                       })}
                     </div>
@@ -155,6 +155,29 @@ export default function PlanPage() {
               </Card>
             );
           })}
+          <Card>
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent-2">Nach Tag 90 · Architektur bis Tag 180</p>
+            <h2 className="mt-1 text-lg font-semibold">Aufbaustufen und Spezialisierungen</h2>
+            <p className="mt-1 text-sm text-muted">Geplant und strukturiert; die Inhalte entstehen, nachdem die Grundlagenmodule fertig sind. Jede Stufe öffnet nur über einen bestandenen Stufen-Check.</p>
+            <ol className="mt-4 grid gap-3">
+              {longterm.stages.map((st) => (
+                <li key={st.id} className="rounded-[var(--radius-sm)] border border-line p-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <p className="font-medium">Stufe {st.number} · Tag {st.dayFrom}–{st.dayTo}: {st.title}</p>
+                    <Badge>geplant</Badge>
+                  </div>
+                  <p className="mt-1 text-sm text-muted">{st.goal}</p>
+                  <ul className="mt-2 grid gap-1 text-sm text-muted">{st.structure.map((x) => <li key={x}>• {x}</li>)}</ul>
+                  <p className="mt-2 text-xs text-faint">Freischaltung: {st.unlock}</p>
+                </li>
+              ))}
+              <li className="rounded-[var(--radius-sm)] border border-dashed border-line p-3">
+                <p className="font-medium">{longterm.open.title}</p>
+                <p className="mt-1 text-sm text-muted">{longterm.open.text}</p>
+              </li>
+            </ol>
+            <ButtonLink href="/skills/" variant="secondary" className="mt-4">18 Spezialisierungen ansehen</ButtonLink>
+          </Card>
         </div>
 
         <aside className="grid content-start gap-4">

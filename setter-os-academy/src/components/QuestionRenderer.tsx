@@ -18,6 +18,7 @@ const TYPE_LABEL: Record<Question["type"], string> = {
   errorspot: "Fehlererkennung",
   calculation: "Kennzahlenberechnung",
   crm: "CRM-Aufgabe",
+  case: "Gesprächsanalyse / Fallstudie",
 };
 
 /** Deterministic shuffle (same order for everyone, every time) – avoids "always b" position bias. */
@@ -121,6 +122,7 @@ function initialAnswer(q: Question): AnswerValue | null {
     case "freetext": return { type: "freetext", text: "" };
     case "errorspot": return { type: "errorspot", lineIds: [] };
     case "crm": return { type: "crm", fields: {} };
+    case "case": return { type: "case", answers: {} };
     default: return null;
   }
 }
@@ -134,6 +136,7 @@ function isComplete(q: Question, a: AnswerValue | null): boolean {
     case "freetext": return a.text.trim().length >= 15;
     case "errorspot": return a.lineIds.length > 0;
     case "crm": return q.type === "crm" && q.fields.every((f) => a.fields[f.id]);
+    case "case": return q.type === "case" && q.parts.every((p) => a.answers[p.id]);
     case "calculation": return !Number.isNaN(a.value);
     default: return true;
   }
@@ -378,6 +381,42 @@ function Body({ q, answer, setAnswer, locked, result }: { q: Question; answer: A
                 {f.options.map((o) => <option key={o}>{o}</option>)}
               </select>
             </label>
+          ))}
+        </div>
+      );
+    }
+    case "case": {
+      const ans = answer?.type === "case" ? answer.answers : {};
+      return (
+        <div className="grid gap-4">
+          <div className="rounded-[var(--radius)] border border-line bg-surface">
+            <div className="flex items-center justify-between border-b border-line px-4 py-2 text-xs text-faint">
+              <span>{q.caseKind === "gespraechsanalyse" ? "Gesprächsanalyse · Transkript" : "Fallstudie"}</span>
+              <span className="text-warning">Simulation – erfundene Daten</span>
+            </div>
+            {q.material.kind === "transcript" ? (
+              <ol className="grid gap-2 p-4 text-sm">
+                {q.material.lines.map((l, i) => (
+                  <li key={i} className="grid gap-0.5 sm:grid-cols-[90px_1fr]">
+                    <span className={cx("text-xs font-semibold uppercase tracking-wider", l.speaker === "setter" ? "text-accent" : "text-faint")}>{i + 1} · {l.speaker === "setter" ? "Setter" : "Kunde"}</span>
+                    <span className="leading-relaxed">{l.text}</span>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <p className="whitespace-pre-line p-4 text-sm leading-relaxed">{q.material.body}</p>
+            )}
+          </div>
+          {q.parts.map((p, pi) => (
+            <fieldset key={p.id} className="grid gap-2">
+              <legend className="mb-1 text-sm font-medium">Teil {pi + 1}: {p.prompt}</legend>
+              {p.options.map((o) => (
+                <OptionRow key={o.id} type="radio" name={`${q.id}-${p.id}`} checked={ans[p.id] === o.id} disabled={locked} onChange={() => setAnswer({ type: "case", answers: { ...ans, [p.id]: o.id } })}
+                  state={show ? (o.id === p.correct ? (ans[p.id] === o.id ? "right" : "missed") : ans[p.id] === o.id ? "wrong" : undefined) : undefined}>
+                  {o.text}
+                </OptionRow>
+              ))}
+            </fieldset>
           ))}
         </div>
       );

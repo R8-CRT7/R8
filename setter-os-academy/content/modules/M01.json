@@ -465,6 +465,10 @@
           "questionId": "Q-M01-014"
         },
         {
+          "kind": "check",
+          "questionId": "Q-M01-043"
+        },
+        {
           "kind": "reflect",
           "prompt": "Formuliere eine offene Eröffnungsfrage für eine Anfrage zu einem Recruiting-Service. Prüfe: Ist es wirklich nur eine Frage?"
         }
@@ -661,6 +665,10 @@
         {
           "kind": "check",
           "questionId": "Q-M01-025"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M01-044"
         },
         {
           "kind": "callout",
@@ -884,6 +892,8 @@
     "Q-M01-039",
     "Q-M01-040",
     "Q-M01-041",
-    "Q-M01-042"
+    "Q-M01-042",
+    "Q-M01-043",
+    "Q-M01-044"
   ]
 }

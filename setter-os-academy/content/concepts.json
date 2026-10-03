@@ -1,0 +1,427 @@
+[
+  {
+    "id": "C-ROLLE",
+    "label": "Rolle des Setters",
+    "area": "grundlagen",
+    "moduleId": "M01",
+    "description": "Aufgaben, Abgrenzung zu Closer, SDR und BDR.",
+    "prerequisites": [],
+    "objectiveIds": [
+      "LO-M01-01"
+    ]
+  },
+  {
+    "id": "C-JOURNEY",
+    "label": "Customer Journey & Funnel",
+    "area": "grundlagen",
+    "moduleId": "M01",
+    "description": "Phasen der Kaufentscheidung und wo ein Lead steht.",
+    "prerequisites": [
+      "C-ROLLE"
+    ],
+    "objectiveIds": [
+      "LO-M01-02"
+    ]
+  },
+  {
+    "id": "C-KONTEXT",
+    "label": "Inbound/Outbound, B2B/B2C",
+    "area": "grundlagen",
+    "moduleId": "M01",
+    "description": "Folgen von Richtung und Markt für Gespräch und Recht.",
+    "prerequisites": [
+      "C-ROLLE"
+    ],
+    "objectiveIds": [
+      "LO-M01-03"
+    ]
+  },
+  {
+    "id": "C-STRUKTUR",
+    "label": "Gesprächsstruktur in vier Phasen",
+    "area": "gespraech",
+    "moduleId": "M01",
+    "description": "Eröffnung, Bedarf, Zusammenfassung, nächster Schritt.",
+    "prerequisites": [
+      "C-JOURNEY"
+    ],
+    "objectiveIds": [
+      "LO-M01-04"
+    ]
+  },
+  {
+    "id": "C-STATUS",
+    "label": "Lead-Status & Kaufbereitschaft",
+    "area": "qualifizierung",
+    "moduleId": "M01",
+    "description": "Status nach Kriterien bestimmen und dokumentieren.",
+    "prerequisites": [
+      "C-JOURNEY"
+    ],
+    "objectiveIds": [
+      "LO-M01-05"
+    ]
+  },
+  {
+    "id": "C-GRENZEN",
+    "label": "Ethische & rechtliche Grenzen",
+    "area": "recht",
+    "moduleId": "M01",
+    "description": "Kein Druck, Nein respektieren, keine Fachberatung.",
+    "prerequisites": [
+      "C-ROLLE"
+    ],
+    "objectiveIds": [
+      "LO-M01-06"
+    ]
+  },
+  {
+    "id": "C-SCHREIBEN",
+    "label": "Klar schreiben",
+    "area": "gespraech",
+    "moduleId": "M02",
+    "description": "Ein Gedanke pro Nachricht, mobil lesbar.",
+    "prerequisites": [],
+    "objectiveIds": [
+      "LO-M02-01"
+    ]
+  },
+  {
+    "id": "C-ZUHOEREN",
+    "label": "Aktives Zuhören",
+    "area": "gespraech",
+    "moduleId": "M02",
+    "description": "Paraphrase, Gefühle benennen, Folgefrage.",
+    "prerequisites": [
+      "C-SCHREIBEN"
+    ],
+    "objectiveIds": [
+      "LO-M02-02"
+    ]
+  },
+  {
+    "id": "C-FRAGEN",
+    "label": "Fragetechnik & Trichter",
+    "area": "gespraech",
+    "moduleId": "M02",
+    "description": "Offene, geschlossene, Folgefragen in sinnvoller Reihenfolge.",
+    "prerequisites": [
+      "C-ZUHOEREN"
+    ],
+    "objectiveIds": [
+      "LO-M02-03"
+    ]
+  },
+  {
+    "id": "C-EROEFFNUNG",
+    "label": "Eröffnung & Erlaubnis",
+    "area": "gespraech",
+    "moduleId": "M02",
+    "description": "Respektvoll beginnen, Erlaubnis einholen.",
+    "prerequisites": [
+      "C-SCHREIBEN",
+      "C-GRENZEN"
+    ],
+    "objectiveIds": [
+      "LO-M02-04"
+    ]
+  },
+  {
+    "id": "C-TON",
+    "label": "Ton & Stil",
+    "area": "gespraech",
+    "moduleId": "M02",
+    "description": "Anrede und Stil an Kanal und Person anpassen.",
+    "prerequisites": [
+      "C-SCHREIBEN"
+    ],
+    "objectiveIds": [
+      "LO-M02-05"
+    ]
+  },
+  {
+    "id": "C-VERTRAUEN",
+    "label": "Vertrauen aufbauen",
+    "area": "psychologie",
+    "moduleId": "M02",
+    "description": "Kompetenz, Wohlwollen, Verlässlichkeit.",
+    "prerequisites": [
+      "C-ZUHOEREN"
+    ],
+    "objectiveIds": [
+      "LO-M02-06"
+    ]
+  },
+  {
+    "id": "C-TYPEN",
+    "label": "Unterschiedliche Kundentypen",
+    "area": "psychologie",
+    "moduleId": "M02",
+    "description": "Heuristiken nutzen, ohne Schubladen.",
+    "prerequisites": [
+      "C-ZUHOEREN"
+    ],
+    "objectiveIds": [
+      "LO-M02-07"
+    ]
+  },
+  {
+    "id": "C-ENTSCHEIDUNG",
+    "label": "Entscheidungsverhalten",
+    "area": "psychologie",
+    "moduleId": "M03",
+    "description": "Motivation, Unsicherheit und Risiko in Kaufentscheidungen.",
+    "prerequisites": [
+      "C-VERTRAUEN"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-EFFEKTE",
+    "label": "Wirkmechanismen kritisch",
+    "area": "psychologie",
+    "moduleId": "M03",
+    "description": "Verlustaversion, Framing, Reziprozität, Social Proof – mit Evidenzlage.",
+    "prerequisites": [
+      "C-ENTSCHEIDUNG"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-MANIPULATION",
+    "label": "Seriös vs. manipulativ",
+    "area": "recht",
+    "moduleId": "M03",
+    "description": "Grenze zu aggressiven und irreführenden Praktiken (UWG).",
+    "prerequisites": [
+      "C-EFFEKTE",
+      "C-GRENZEN"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-ICP",
+    "label": "ICP & Buyer Persona",
+    "area": "qualifizierung",
+    "moduleId": "M04",
+    "description": "Wer passt – und wer nicht.",
+    "prerequisites": [
+      "C-STATUS"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-FRAMEWORKS",
+    "label": "BANT, SPIN, MEDDICC",
+    "area": "qualifizierung",
+    "moduleId": "M04",
+    "description": "Qualifizierungsraster zweckmäßig einsetzen.",
+    "prerequisites": [
+      "C-ICP",
+      "C-FRAGEN"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-SCORING",
+    "label": "MQL/SQL & Lead Scoring",
+    "area": "daten",
+    "moduleId": "M04",
+    "description": "Bewertung von Leads nachvollziehbar machen.",
+    "prerequisites": [
+      "C-FRAMEWORKS"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-DISQUALI",
+    "label": "Ehrlich disqualifizieren",
+    "area": "qualifizierung",
+    "moduleId": "M04",
+    "description": "Unpassende Leads respektvoll beenden.",
+    "prerequisites": [
+      "C-FRAMEWORKS",
+      "C-GRENZEN"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-CHATFLOW",
+    "label": "Chat-Struktur & Tempo",
+    "area": "chat",
+    "moduleId": "M05",
+    "description": "Gesprächsführung, Antwortzeit, Übergänge im Chat.",
+    "prerequisites": [
+      "C-STRUKTUR",
+      "C-SCHREIBEN"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-KANAELE",
+    "label": "Zulässige Kanäle",
+    "area": "recht",
+    "moduleId": "M05",
+    "description": "Einwilligung, Plattformregeln für WhatsApp, Instagram & Co.",
+    "prerequisites": [
+      "C-KONTEXT",
+      "C-GRENZEN"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-UEBERGABE",
+    "label": "Übergabe an Berater/Closer",
+    "area": "termin",
+    "moduleId": "M05",
+    "description": "Vollständige, wahre Übergabe.",
+    "prerequisites": [
+      "C-CHATFLOW",
+      "C-STATUS"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-EINWAND",
+    "label": "Einwände verstehen",
+    "area": "einwaende",
+    "moduleId": "M06",
+    "description": "Preis, Zeit, Vertrauen, Partner – Hintergrund klären.",
+    "prerequisites": [
+      "C-ZUHOEREN",
+      "C-EFFEKTE"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-NEIN",
+    "label": "Nein respektieren",
+    "area": "einwaende",
+    "moduleId": "M06",
+    "description": "Grenzen der Einwandbehandlung.",
+    "prerequisites": [
+      "C-EINWAND",
+      "C-GRENZEN"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-TERMIN",
+    "label": "Qualifizierte Termine",
+    "area": "termin",
+    "moduleId": "M07",
+    "description": "Vereinbarung, Bestätigung, Erinnerung.",
+    "prerequisites": [
+      "C-UEBERGABE",
+      "C-FRAMEWORKS"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-NOSHOW",
+    "label": "No-Show-Recovery",
+    "area": "termin",
+    "moduleId": "M07",
+    "description": "Verschiebung und Wiederaufnahme ohne Druck.",
+    "prerequisites": [
+      "C-TERMIN",
+      "C-NEIN"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-CRM",
+    "label": "CRM & Pipeline",
+    "area": "daten",
+    "moduleId": "M08",
+    "description": "Datenpflege, Pipeline, Aufgaben.",
+    "prerequisites": [
+      "C-STATUS",
+      "C-UEBERGABE"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-DSGVO",
+    "label": "Datenschutz im Vertrieb",
+    "area": "recht",
+    "moduleId": "M08",
+    "description": "Rechtsgrundlagen, Löschung, Auskunft.",
+    "prerequisites": [
+      "C-KANAELE",
+      "C-CRM"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-KPI",
+    "label": "Kennzahlen",
+    "area": "daten",
+    "moduleId": "M09",
+    "description": "Show Rate, Booking Rate, CAC, CLV, Pipeline Value.",
+    "prerequisites": [
+      "C-CRM",
+      "C-SCORING"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-BRANCHE",
+    "label": "Branchenwissen & Fachgrenzen",
+    "area": "business",
+    "moduleId": "M10",
+    "description": "Wann zwingend an Fachberater übergeben wird.",
+    "prerequisites": [
+      "C-GRENZEN",
+      "C-TERMIN"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-SELBST",
+    "label": "Selbstständig als Setter",
+    "area": "business",
+    "moduleId": "M11",
+    "description": "Gewerbe, Steuern, Scheinselbstständigkeit (Grundlagen).",
+    "prerequisites": [
+      "C-KPI"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-AKQUISE",
+    "label": "Zulässige Kundengewinnung",
+    "area": "business",
+    "moduleId": "M11",
+    "description": "Eigene Kunden rechtssicher gewinnen.",
+    "prerequisites": [
+      "C-SELBST",
+      "C-KANAELE"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-KI",
+    "label": "KI mit menschlicher Kontrolle",
+    "area": "business",
+    "moduleId": "M12",
+    "description": "Recherche und Entwürfe, Verantwortung bleibt beim Menschen.",
+    "prerequisites": [
+      "C-SCHREIBEN",
+      "C-DSGVO"
+    ],
+    "objectiveIds": []
+  },
+  {
+    "id": "C-PROZESS",
+    "label": "Prozesse & Skalierung",
+    "area": "business",
+    "moduleId": "M12",
+    "description": "Wiederholbare Abläufe, Qualitätssicherung.",
+    "prerequisites": [
+      "C-KPI",
+      "C-KI"
+    ],
+    "objectiveIds": []
+  }
+]

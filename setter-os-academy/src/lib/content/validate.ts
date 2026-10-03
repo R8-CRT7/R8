@@ -1,6 +1,6 @@
 // Content validator – used by tests (CI gate) and the admin view.
 // Every rule here protects a promise from the product brief (unique IDs, sources, explanations, plausible distractors …).
-import type { KnowledgeEntry, KnowledgeSource, ModuleContent, ProgramStage, Question, Scenario } from "../types";
+import type { Concept, KnowledgeEntry, LongTermPlan, KnowledgeSource, ModuleContent, ProgramStage, Question, Scenario } from "../types";
 
 export interface Issue {
   severity: "error" | "warning";
@@ -17,6 +17,8 @@ export function validateContent(input: {
   questions: Question[];
   scenarios: Scenario[];
   program?: ProgramStage[];
+  concepts?: Concept[];
+  longterm?: LongTermPlan;
   now?: number;
 }): Issue[] {
   const issues: Issue[] = [];
@@ -55,7 +57,7 @@ export function validateContent(input: {
     if (!q.sourceIds.length) err(q.id, "Keine Quelle");
     for (const s of q.sourceIds) if (!srcIds.has(s)) err(q.id, `Unbekannte Quelle ${s}`);
     const body =
-      "situation" in q ? q.situation : "text" in q ? q.text : "options" in q ? q.options.map((o) => o.text).join("|") : "lines" in q ? q.lines.map((l) => l.text).join("|") : "items" in q ? q.items.map((i) => i.text).join("|") : "";
+      "situation" in q ? q.situation : "text" in q ? q.text : "options" in q ? q.options.map((o) => o.text).join("|") : "lines" in q ? q.lines.map((l) => l.text).join("|") : "items" in q ? q.items.map((i) => i.text).join("|") : "parts" in q ? q.parts.map((p) => p.prompt).join("|") : "";
     const key = [q.prompt.trim().toLowerCase(), q.type, body.trim().toLowerCase()].join("|");
     if (promptSeen.has(key)) err(q.id, `Doppelte Frage (gleich wie ${promptSeen.get(key)})`);
     promptSeen.set(key, q.id);
@@ -107,6 +109,19 @@ export function validateContent(input: {
         if (!q.requiresManualReview) err(q.id, "Freitext muss manuelle Prüfung vorsehen");
         if (!q.rubric.length) err(q.id, "Freitext ohne Rubrik");
         break;
+      case "case": {
+        if (!q.simulatedData) err(q.id, "Fallanalyse nicht als Simulation gekennzeichnet");
+        if (q.parts.length < 2) err(q.id, "Fallanalyse braucht ≥ 2 Teilfragen");
+        const lines = q.material.kind === "transcript" ? q.material.lines.length : 0;
+        if (q.caseKind === "gespraechsanalyse" && lines < 4) err(q.id, "Gesprächsanalyse braucht ein Transkript mit ≥ 4 Zeilen");
+        for (const p of q.parts) {
+          if (!p.options.some((o) => o.id === p.correct)) err(q.id, `Teil ${p.id}: korrekte Option fehlt`);
+          if (p.options.length < 3) err(q.id, `Teil ${p.id}: zu wenige Optionen`);
+          for (const o of p.options) if (o.id !== p.correct && !o.misconception) err(q.id, `Teil ${p.id}: Distraktor ${o.id} ohne Denkfehler`);
+          if (!p.explanation) err(q.id, `Teil ${p.id}: Erklärung fehlt`);
+        }
+        break;
+      }
       case "truefalse":
         break;
     }
@@ -193,6 +208,36 @@ export function validateContent(input: {
     for (const mid of st.moduleIds) {
       const m = input.modules.find((x) => x.id === mid);
       for (const l of m?.lessons ?? []) if (!lessonsInPlan.has(l.id)) err(st.id, `Lektion ${l.id} ist keinem Tag zugeordnet`);
+    }
+  }
+  // Concept graph: references resolve, no cycles; tracks only build on known concepts.
+  const cIds = new Set((input.concepts ?? []).map((c) => c.id));
+  dup((input.concepts ?? []).map((c) => c.id), "Konzept");
+  const modIdsAll = new Set(input.modules.map((m) => m.id));
+  for (const c of input.concepts ?? []) {
+    for (const p of c.prerequisites) if (!cIds.has(p)) err(c.id, `Voraussetzung ${p} fehlt`);
+    for (const o of c.objectiveIds) if (!objIds.has(o)) err(c.id, `Lernziel ${o} fehlt`);
+    if (modIdsAll.has(c.moduleId) && !c.objectiveIds.length) warn(c.id, "Modul vorhanden, aber Konzept ohne Lernziel");
+  }
+  const byId = new Map((input.concepts ?? []).map((c) => [c.id, c]));
+  const state = new Map<string, 1 | 2>();
+  const visit = (id: string): boolean => {
+    if (state.get(id) === 2) return true;
+    if (state.get(id) === 1) return false;
+    state.set(id, 1);
+    for (const p of byId.get(id)?.prerequisites ?? []) if (!visit(p)) return false;
+    state.set(id, 2);
+    return true;
+  };
+  for (const c of input.concepts ?? []) if (!visit(c.id)) { err(c.id, "Zyklus im Konzeptgraphen"); break; }
+  if (input.longterm) {
+    dup(input.longterm.tracks.map((t) => t.id), "Spezialisierungs");
+    for (const t of input.longterm.tracks) for (const r of t.requiredConcepts) if (!cIds.has(r)) err(t.id, `Konzept ${r} fehlt`);
+    const last = Math.max(...(input.program ?? []).map((p) => p.dayTo), 0);
+    let expect = last + 1;
+    for (const st of [...input.longterm.stages].sort((a, b) => a.dayFrom - b.dayFrom)) {
+      if (st.dayFrom !== expect) err(st.id, `Lücke im Langzeitplan: erwartet Tag ${expect}`);
+      expect = st.dayTo + 1;
     }
   }
   return issues;

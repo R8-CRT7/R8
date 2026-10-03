@@ -182,6 +182,25 @@ export function grade(q: Question, a: AnswerValue): GradeResult {
       if (a.type !== "freetext") return typeMismatch(q);
       return gradeFreeText(q, a.text);
     }
+    case "case": {
+      if (a.type !== "case") return typeMismatch(q);
+      // Equal weight per part; every part gets its own feedback line.
+      const cats: ErrorCategory[] = [];
+      const fb: string[] = [];
+      let ok = 0;
+      q.parts.forEach((p, i) => {
+        if (a.answers[p.id] === p.correct) {
+          ok++;
+          fb.push(`Teil ${i + 1}: richtig.`);
+        } else {
+          const o = p.options.find((x) => x.id === a.answers[p.id]);
+          if (o?.errorCategory) cats.push(o.errorCategory);
+          else cats.push("ueberinterpretation");
+          fb.push(`Teil ${i + 1}: ${o?.misconception ? `Denkfehler: ${o.misconception}. ` : a.answers[p.id] ? "" : "nicht beantwortet. "}${p.explanation}`);
+        }
+      });
+      return result(q, ok / q.parts.length, fb, ok === q.parts.length ? [] : cats);
+    }
   }
 }
 

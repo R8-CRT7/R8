@@ -1,10 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { knowledge, modules, program, questions, scenarios, sources } from "@/lib/content";
+import { concepts, knowledge, longterm, modules, program, questions, scenarios, sources } from "@/lib/content";
 import { moduleMinutes } from "@/lib/content/minutes";
 import { validateContent } from "@/lib/content/validate";
 
 describe("Content validation (CI gate)", () => {
-  const issues = validateContent({ sources, knowledge, modules, questions, scenarios, program, now: Date.parse("2026-10-03") });
+  const issues = validateContent({ sources, knowledge, modules, questions, scenarios, program, concepts, longterm, now: Date.parse("2026-10-03") });
   it("has no content errors", () => {
     const errors = issues.filter((i) => i.severity === "error");
     expect(errors, JSON.stringify(errors, null, 2)).toEqual([]);

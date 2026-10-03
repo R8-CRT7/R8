@@ -249,3 +249,23 @@ function solution(x: Question) {
     case "freetext": return { type: "freetext" as const, text: x.sampleAnswer };
   }
 }
+
+describe("Fallanalyse (case)", () => {
+  const q = questions.find((x) => x.id === "Q-M01-043")!;
+  it("Q-CASE-1 alle Teile richtig = 100 %", () => {
+    if (q.type !== "case") throw new Error("type");
+    const r = grade(q, { type: "case", answers: Object.fromEntries(q.parts.map((p) => [p.id, p.correct])) });
+    expect(r.correct).toBe(true);
+  });
+  it("Q-CASE-2 Teilpunkte je Teilfrage, Denkfehler im Feedback", () => {
+    if (q.type !== "case") throw new Error("type");
+    const answers = Object.fromEntries(q.parts.map((p, i) => [p.id, i === 0 ? p.options.find((o) => o.id !== p.correct)!.id : p.correct]));
+    const r = grade(q, { type: "case", answers });
+    expect(r.score).toBeCloseTo(2 / 3, 2);
+    expect(r.feedback[0]).toMatch(/Denkfehler/);
+    expect(r.errorCategories.length).toBeGreaterThan(0);
+  });
+  it("Q-CASE-3 falsches Antwortformat wird abgelehnt", () => {
+    expect(grade(q, { type: "single", optionId: "a" }).score).toBe(0);
+  });
+});

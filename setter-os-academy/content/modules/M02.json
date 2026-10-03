@@ -136,6 +136,10 @@
           "questionId": "Q-M02-002"
         },
         {
+          "kind": "check",
+          "questionId": "Q-M02-030"
+        },
+        {
           "kind": "reflect",
           "prompt": "Nimm eine Nachricht, die du kürzlich geschrieben hast (privat oder beruflich). Wie viele Gedanken stecken darin? Wie würde die Version mit einem Gedanken aussehen?"
         }
@@ -242,6 +246,10 @@
         {
           "kind": "check",
           "questionId": "Q-M02-005"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M02-029"
         }
       ],
       "summary": [
@@ -734,6 +742,8 @@
     "Q-M02-025",
     "Q-M02-026",
     "Q-M02-027",
-    "Q-M02-028"
+    "Q-M02-028",
+    "Q-M02-030",
+    "Q-M02-029"
   ]
 }
