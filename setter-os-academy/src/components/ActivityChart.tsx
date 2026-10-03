@@ -28,7 +28,7 @@ export function ActivityChart({ days }: { days: { date: Date; count: number }[] 
             const x = i * bw + bw * 0.22;
             const w = bw * 0.56;
             return (
-              <g key={i} onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(null)} onFocus={() => setHover(i)} onBlur={() => setHover(null)} tabIndex={0} aria-label={`${fmt(d.date)}: ${d.count} Fragen`}>
+              <g key={i} onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(null)}>
                 <rect x={i * bw} y={padT} width={bw} height={H - padT - padB} fill="transparent" />
                 {d.count > 0 && <path d={`M${x},${H - padB} v${-(h - 4)} q0,-4 4,-4 h${w - 8} q4,0 4,4 v${h - 4} z`} fill={hover === i ? "var(--accent-2)" : "var(--accent)"} />}
                 {(i % 2 === 0 || i === days.length - 1) && <text x={i * bw + bw / 2} y={H - 6} fontSize="10" textAnchor="middle" fill="var(--text-faint)">{d.date.getDate()}.</text>}

@@ -117,7 +117,7 @@ export default function Dashboard() {
           <p className="mb-3 text-xs text-faint">Nur durch geprüfte Leistung – nicht durch Klicken.</p>
           <ul className="grid gap-2">
             {badges.map((b) => (
-              <li key={b.id} className={b.earned ? "flex items-start gap-3" : "flex items-start gap-3 opacity-55"}>
+              <li key={b.id} className={b.earned ? "flex items-start gap-3" : "flex items-start gap-3"}>
                 <span aria-hidden className={b.earned ? "grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-success/15 text-success" : "grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-line text-faint"}>{b.earned ? "✓" : "○"}</span>
                 <span className="text-sm"><span className="font-medium">{b.title}</span><span className="block text-xs text-faint">{b.criterion}</span></span>
                 <span className="sr-only">{b.earned ? "erreicht" : "noch nicht erreicht"}</span>
@@ -150,7 +150,7 @@ export default function Dashboard() {
           {ACHIEVEMENTS.map((a) => {
             const got = s.achievements[a.id];
             return (
-              <li key={a.id} className={got ? "flex items-center gap-3" : "flex items-center gap-3 opacity-45"}>
+              <li key={a.id} className={got ? "flex items-center gap-3" : "flex items-center gap-3"}>
                 <span aria-hidden className="grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-line bg-surface text-accent">{a.icon}</span>
                 <span className="text-sm"><span className="font-medium">{a.title}</span><span className="block text-xs text-faint">{a.description}</span></span>
                 <span className="sr-only">{got ? "freigeschaltet" : "noch nicht freigeschaltet"}</span>

@@ -18,6 +18,7 @@ for (const [kind, ctxOpts] of [["desktop", { viewport: { width: 1440, height: 90
   for (const [name, url] of shots) {
     await page.goto(base + url);
     if (name === "simulator") {
+      await page.getByRole("button", { name: /Offline-Training mit Antwortauswahl/ }).click();
       await page.getByRole("button", { name: "Gespräch beginnen" }).click();
       await page.getByRole("button", { name: /hier ist Ihr Ansprechpartner/ }).click();
       await page.waitForTimeout(900);
