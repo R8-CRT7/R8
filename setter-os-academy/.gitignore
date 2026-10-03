@@ -9,3 +9,4 @@ playwright-report/
 .env.*
 !.env.example
 artifact-dist/
+server/ai-proxy/node_modules/

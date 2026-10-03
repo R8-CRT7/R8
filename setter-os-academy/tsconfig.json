@@ -40,8 +40,9 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
+    ".next",
+    "server",
     "node_modules",
-    "out",
-    ".next"
+    "out"
   ]
 }

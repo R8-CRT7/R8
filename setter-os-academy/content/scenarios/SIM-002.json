@@ -9,135 +9,499 @@
   "direction": "inbound",
   "difficulty": 3,
   "briefing": "Simulation – alle Personen und Firmen sind erfunden. Du bist Setter bei der Agentur „Pixelhafen“. Leo Brandt, Inhaber eines kleinen Cafés, hat auf eine Instagram-Story geantwortet: „Könnt ihr uns helfen?“. Pixelhafen betreut Kunden ab 2.000 € netto pro Monat. Pflichtkriterien für einen Strategietermin: Bedarf, monatlicher Rahmen, Entscheider. Ein Termin, der für den Kunden wirtschaftlich nicht sinnvoll ist, ist kein Erfolg.",
-  "persona": { "name": "Leo Brandt", "role": "Inhaber, Café „Bohne & Blatt“ (erfunden)", "avatarHue": 30 },
+  "persona": {
+    "name": "Leo Brandt",
+    "role": "Inhaber, Café „Bohne & Blatt“ (erfunden)",
+    "avatarHue": 30
+  },
   "facts": [
-    { "key": "need", "label": "Bedarf", "value": "Mehr Gäste am Nachmittag (14–17 Uhr)", "requiredForQualification": true, "distractors": ["Neues Logo", "Online-Shop für Kaffeebohnen"] },
-    { "key": "budget", "label": "Monatlicher Rahmen", "value": "ca. 300 € pro Monat", "requiredForQualification": true, "distractors": ["ca. 2.500 € pro Monat", "Kein Limit"] },
-    { "key": "authority", "label": "Entscheider", "value": "Inhaber entscheidet allein", "requiredForQualification": true, "distractors": ["Franchise-Zentrale entscheidet", "Gesellschafterversammlung"] },
-    { "key": "timeline", "label": "Zeitrahmen", "value": "Möglichst vor dem Herbst", "requiredForQualification": false, "distractors": ["Nächstes Jahr", "Kein Zeitdruck"] }
+    {
+      "key": "need",
+      "label": "Bedarf",
+      "value": "Mehr Gäste am Nachmittag (14–17 Uhr)",
+      "requiredForQualification": true,
+      "distractors": [
+        "Neues Logo",
+        "Online-Shop für Kaffeebohnen"
+      ]
+    },
+    {
+      "key": "budget",
+      "label": "Monatlicher Rahmen",
+      "value": "ca. 300 € pro Monat",
+      "requiredForQualification": true,
+      "distractors": [
+        "ca. 2.500 € pro Monat",
+        "Kein Limit"
+      ]
+    },
+    {
+      "key": "authority",
+      "label": "Entscheider",
+      "value": "Inhaber entscheidet allein",
+      "requiredForQualification": true,
+      "distractors": [
+        "Franchise-Zentrale entscheidet",
+        "Gesellschafterversammlung"
+      ]
+    },
+    {
+      "key": "timeline",
+      "label": "Zeitrahmen",
+      "value": "Möglichst vor dem Herbst",
+      "requiredForQualification": false,
+      "distractors": [
+        "Nächstes Jahr",
+        "Kein Zeitdruck"
+      ]
+    }
   ],
   "idealOutcome": "disqualify",
-  "acceptableOutcomes": ["disqualify", "nurture"],
+  "acceptableOutcomes": [
+    "disqualify",
+    "nurture"
+  ],
   "openingMessage": "Hey, ich hab eure Story gesehen. Könnt ihr uns helfen? Bei uns ist nachmittags echt wenig los.",
   "startRapport": 5,
   "maxTurns": 10,
-  "handoverFields": ["need", "budget", "authority"],
-  "competencyTargets": { "eroeffnung": 3, "bedarfsermittlung": 4, "fragetechnik": 4, "zuhoeren": 3, "klarheit": 4, "qualifizierung": 6, "einwaende": 2, "kundenorientierung": 6 },
-  "reviewQuestionIds": ["Q-M01-017", "Q-M01-018", "Q-M01-028"],
-  "sourceIds": ["SRC-050"],
+  "handoverFields": [
+    "need",
+    "budget",
+    "authority"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 3,
+    "bedarfsermittlung": 4,
+    "fragetechnik": 4,
+    "zuhoeren": 3,
+    "klarheit": 4,
+    "qualifizierung": 6,
+    "einwaende": 2,
+    "kundenorientierung": 6
+  },
+  "reviewQuestionIds": [
+    "Q-M01-017",
+    "Q-M01-018",
+    "Q-M01-028"
+  ],
+  "sourceIds": [
+    "SRC-050"
+  ],
   "moves": [
     {
-      "id": "open-good", "intent": "open", "quality": "good", "hiddenByFlags": ["opened"], "setsFlags": ["opened"],
+      "id": "open-good",
+      "intent": "open",
+      "quality": "good",
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "setsFlags": [
+        "opened"
+      ],
       "text": "Hi Leo, danke für deine Nachricht! Ich bin vom Team Pixelhafen. Erzähl gern: Was hast du bisher probiert, um nachmittags mehr Gäste zu bekommen?",
-      "effects": { "eroeffnung": 3, "bedarfsermittlung": 2, "zuhoeren": 1 }, "reveals": ["need"], "rapport": 1,
+      "effects": {
+        "eroeffnung": 3,
+        "bedarfsermittlung": 2,
+        "zuhoeren": 1
+      },
+      "reveals": [
+        "need"
+      ],
+      "rapport": 1,
       "coachNote": "Vorstellung, Bezug auf seine Aussage und eine offene Frage – passend zum lockeren Kanal.",
-      "reply": [{ "text": "Ehrlich gesagt nicht viel. Ab und zu ein Post. Es geht vor allem um 14 bis 17 Uhr – da ist es fast leer." }]
+      "reply": [
+        {
+          "text": "Ehrlich gesagt nicht viel. Ab und zu ein Post. Es geht vor allem um 14 bis 17 Uhr – da ist es fast leer."
+        }
+      ]
     },
     {
-      "id": "open-pitch", "intent": "open", "quality": "weak", "hiddenByFlags": ["opened"], "setsFlags": ["opened"],
+      "id": "open-pitch",
+      "intent": "open",
+      "quality": "weak",
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "setsFlags": [
+        "opened"
+      ],
       "text": "Klar! Wir sind DIE Agentur für Gastro-Wachstum. Unsere Kunden verdoppeln ihren Umsatz. Wann hast du Zeit für einen Call?",
-      "effects": { "eroeffnung": -1, "kundenorientierung": -2 }, "rapport": -1,
+      "effects": {
+        "eroeffnung": -1,
+        "kundenorientierung": -2
+      },
+      "rapport": -1,
       "violation": "Unbelegte Erfolgsbehauptung („verdoppeln ihren Umsatz“).",
       "coachNote": "Pauschale Erfolgsversprechen ohne Beleg sind irreführend – und du weißt noch nichts über seinen Bedarf.",
       "betterMoveId": "open-good",
-      "reply": [{ "text": "Verdoppeln? Wow. Also … worum geht's bei so einem Call?" }]
+      "reply": [
+        {
+          "text": "Verdoppeln? Wow. Also … worum geht's bei so einem Call?"
+        }
+      ]
     },
     {
-      "id": "need-deepen", "intent": "ask", "quality": "good", "requiresFlags": ["opened"], "requires": ["need"],
+      "id": "need-deepen",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "requires": [
+        "need"
+      ],
       "text": "Verstehe, also vor allem die Nachmittage. Woran merkst du gerade am meisten, dass dort Gäste fehlen?",
-      "effects": { "bedarfsermittlung": 2, "zuhoeren": 2 },
+      "effects": {
+        "bedarfsermittlung": 2,
+        "zuhoeren": 2
+      },
       "coachNote": "Greift seine Aussage auf und vertieft den Bedarf.",
-      "reply": [{ "text": "Ich hab nachmittags eine Aushilfe da, die oft nichts zu tun hat. Das kostet halt." }]
+      "reply": [
+        {
+          "text": "Ich hab nachmittags eine Aushilfe da, die oft nichts zu tun hat. Das kostet halt."
+        }
+      ]
     },
     {
-      "id": "need-ask", "intent": "ask", "quality": "good", "requiresFlags": ["opened"], "hiddenByFlags": ["need-known"],
+      "id": "need-ask",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "need-known"
+      ],
       "text": "Was genau soll sich für dein Café ändern?",
-      "effects": { "bedarfsermittlung": 2, "fragetechnik": 1 }, "reveals": ["need"], "setsFlags": ["need-known"],
+      "effects": {
+        "bedarfsermittlung": 2,
+        "fragetechnik": 1
+      },
+      "reveals": [
+        "need"
+      ],
+      "setsFlags": [
+        "need-known"
+      ],
       "coachNote": "Offene Bedarfsfrage.",
-      "reply": [{ "text": "Mehr Gäste am Nachmittag, so zwischen 14 und 17 Uhr." }]
+      "reply": [
+        {
+          "text": "Mehr Gäste am Nachmittag, so zwischen 14 und 17 Uhr."
+        }
+      ]
     },
     {
-      "id": "budget-good", "intent": "ask", "quality": "good", "requiresFlags": ["opened"],
+      "id": "budget-good",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
       "text": "Damit ich einschätzen kann, ob wir überhaupt passen: Welchen monatlichen Rahmen hast du für Marketing eingeplant?",
-      "effects": { "qualifizierung": 3, "fragetechnik": 2, "klarheit": 1 }, "reveals": ["budget"],
+      "effects": {
+        "qualifizierung": 3,
+        "fragetechnik": 2,
+        "klarheit": 1
+      },
+      "reveals": [
+        "budget"
+      ],
       "coachNote": "Budget offen, früh und mit Begründung erfragt – spart beiden Seiten Zeit.",
-      "reply": [{ "text": "Puh. So 300 € im Monat wären drin, mehr eigentlich nicht." }]
+      "reply": [
+        {
+          "text": "Puh. So 300 € im Monat wären drin, mehr eigentlich nicht."
+        }
+      ]
     },
     {
-      "id": "budget-leading", "intent": "ask", "quality": "bad", "requiresFlags": ["opened"], "hiddenByFlags": ["budget-leading-used"], "setsFlags": ["budget-leading-used"],
+      "id": "budget-leading",
+      "intent": "ask",
+      "quality": "bad",
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "budget-leading-used"
+      ],
+      "setsFlags": [
+        "budget-leading-used"
+      ],
       "text": "Wachstum ist doch eine Investition – Geld sollte da keine Rolle spielen, oder?",
-      "effects": { "fragetechnik": -2, "kundenorientierung": -2 }, "rapport": -1,
+      "effects": {
+        "fragetechnik": -2,
+        "kundenorientierung": -2
+      },
+      "rapport": -1,
       "coachNote": "Suggestiv und übergriffig – Budget ist für ein kleines Café sehr wohl entscheidend.",
       "betterMoveId": "budget-good",
-      "reply": [{ "text": "Na ja, Geld spielt bei mir schon eine Rolle, ehrlich gesagt." }]
+      "reply": [
+        {
+          "text": "Na ja, Geld spielt bei mir schon eine Rolle, ehrlich gesagt."
+        }
+      ]
     },
     {
-      "id": "authority", "intent": "ask", "quality": "good", "requiresFlags": ["opened"],
+      "id": "authority",
+      "intent": "ask",
+      "quality": "good",
+      "requiresFlags": [
+        "opened"
+      ],
       "text": "Entscheidest du so etwas allein, oder ist noch jemand beteiligt?",
-      "effects": { "qualifizierung": 2, "fragetechnik": 1 }, "reveals": ["authority"],
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "reveals": [
+        "authority"
+      ],
       "coachNote": "Entscheider klären, ohne vorauszusetzen.",
-      "reply": [{ "text": "Das entscheide ich allein, ist mein Laden." }]
+      "reply": [
+        {
+          "text": "Das entscheide ich allein, ist mein Laden."
+        }
+      ]
     },
     {
-      "id": "timeline", "intent": "ask", "quality": "ok", "requiresFlags": ["opened"],
+      "id": "timeline",
+      "intent": "ask",
+      "quality": "ok",
+      "requiresFlags": [
+        "opened"
+      ],
       "text": "Bis wann soll sich etwas tun?",
-      "effects": { "bedarfsermittlung": 1 }, "reveals": ["timeline"],
+      "effects": {
+        "bedarfsermittlung": 1
+      },
+      "reveals": [
+        "timeline"
+      ],
       "coachNote": "Sinnvoll, aber bei diesem Lead ist das Budget die entscheidende Frage.",
-      "reply": [{ "text": "Am besten vor dem Herbst." }]
+      "reply": [
+        {
+          "text": "Am besten vor dem Herbst."
+        }
+      ]
     },
     {
-      "id": "early-book", "intent": "propose_booking", "quality": "weak", "requiresFlags": ["opened"], "hiddenByFlags": ["price-asked"], "setsFlags": ["price-asked"],
+      "id": "early-book",
+      "intent": "propose_booking",
+      "quality": "weak",
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "price-asked"
+      ],
+      "setsFlags": [
+        "price-asked"
+      ],
       "text": "Klingt spannend! Lass uns direkt einen Strategie-Call mit unserem Strategen machen.",
-      "effects": { "qualifizierung": -2, "terminvereinbarung": -1 },
+      "effects": {
+        "qualifizierung": -2,
+        "terminvereinbarung": -1
+      },
       "coachNote": "Termin vorgeschlagen, bevor das entscheidende Kriterium (Budget) geklärt ist.",
       "betterMoveId": "budget-good",
-      "reply": [{ "text": "Okay … was kostet das eigentlich bei euch?" }]
+      "reply": [
+        {
+          "text": "Okay … was kostet das eigentlich bei euch?"
+        }
+      ]
     },
     {
-      "id": "price-honest", "intent": "inform", "quality": "good", "requiresFlags": ["price-asked"], "hiddenByFlags": ["price-answered"], "setsFlags": ["price-answered"],
+      "id": "price-honest",
+      "intent": "inform",
+      "quality": "good",
+      "requiresFlags": [
+        "price-asked"
+      ],
+      "hiddenByFlags": [
+        "price-answered"
+      ],
+      "setsFlags": [
+        "price-answered"
+      ],
       "text": "Ehrliche Antwort: Unsere Betreuung startet bei 2.000 € netto im Monat. Bevor wir einen Termin machen – passt das grob zu deinem Rahmen?",
-      "effects": { "klarheit": 2, "kundenorientierung": 2, "qualifizierung": 2 }, "reveals": ["budget"], "rapport": 1,
+      "effects": {
+        "klarheit": 2,
+        "kundenorientierung": 2,
+        "qualifizierung": 2
+      },
+      "reveals": [
+        "budget"
+      ],
+      "rapport": 1,
       "coachNote": "Transparenz über den Preisrahmen ist hier fair – das ist eine Vorgabe des Auftraggebers, keine Fachberatung.",
-      "reply": [{ "text": "Oh. Ich hatte eher an 300 € im Monat gedacht." }]
+      "reply": [
+        {
+          "text": "Oh. Ich hatte eher an 300 € im Monat gedacht."
+        }
+      ]
     },
     {
-      "id": "price-dodge", "intent": "inform", "quality": "weak", "requiresFlags": ["price-asked"], "hiddenByFlags": ["price-answered"], "setsFlags": ["price-answered"],
+      "id": "price-dodge",
+      "intent": "inform",
+      "quality": "weak",
+      "requiresFlags": [
+        "price-asked"
+      ],
+      "hiddenByFlags": [
+        "price-answered"
+      ],
+      "setsFlags": [
+        "price-answered"
+      ],
       "text": "Das bespricht der Stratege mit dir im Call.",
-      "effects": { "kundenorientierung": -2, "klarheit": -1 }, "reveals": ["budget"], "rapport": -1,
+      "effects": {
+        "kundenorientierung": -2,
+        "klarheit": -1
+      },
+      "reveals": [
+        "budget"
+      ],
+      "rapport": -1,
       "coachNote": "Der Preisrahmen ist bekannt und entscheidend – ihn zu verschweigen kostet beide Seiten Zeit.",
       "betterMoveId": "price-honest",
-      "reply": [{ "text": "Hm. Ich will nicht, dass wir beide unsere Zeit verschwenden. Mehr als 300 € im Monat kann ich nicht." }]
+      "reply": [
+        {
+          "text": "Hm. Ich will nicht, dass wir beide unsere Zeit verschwenden. Mehr als 300 € im Monat kann ich nicht."
+        }
+      ]
     },
     {
-      "id": "disqualify", "intent": "disqualify", "quality": "good", "requires": ["budget"],
+      "id": "disqualify",
+      "intent": "disqualify",
+      "quality": "good",
+      "requires": [
+        "budget"
+      ],
       "text": "Danke für deine Offenheit! Unsere Betreuung beginnt bei 2.000 € im Monat – das passt aktuell nicht zu deinem Rahmen, und ich möchte dir nichts verkaufen, was sich für dich nicht rechnet. Darf ich dir zwei kostenlose Leitfäden zu lokalem Marketing schicken?",
-      "effects": { "kundenorientierung": 4, "klarheit": 3, "qualifizierung": 1 }, "rapport": 1,
+      "effects": {
+        "kundenorientierung": 4,
+        "klarheit": 3,
+        "qualifizierung": 1
+      },
+      "rapport": 1,
       "coachNote": "Saubere, ehrliche Disqualifizierung mit echtem Mehrwert – so bleibt die Beziehung positiv.",
-      "reply": [{ "text": "Das ist echt ehrlich, danke. Ja, gern!", "ends": "disqualify" }]
+      "reply": [
+        {
+          "text": "Das ist echt ehrlich, danke. Ja, gern!",
+          "ends": "disqualify"
+        }
+      ]
     },
     {
-      "id": "nurture", "intent": "nurture", "quality": "ok", "requires": ["budget"],
+      "id": "nurture",
+      "intent": "nurture",
+      "quality": "ok",
+      "requires": [
+        "budget"
+      ],
       "text": "Aktuell passen wir vom Rahmen her leider nicht zusammen. Ist es okay, wenn ich mich in sechs Monaten noch einmal melde?",
-      "effects": { "kundenorientierung": 2, "klarheit": 1 },
+      "effects": {
+        "kundenorientierung": 2,
+        "klarheit": 1
+      },
       "coachNote": "Respektvoll und mit Erlaubnis – aber ohne konkreten Mehrwert für ihn jetzt.",
-      "reply": [{ "text": "Ja, gern, vielleicht läuft's dann besser.", "ends": "nurture" }]
+      "reply": [
+        {
+          "text": "Ja, gern, vielleicht läuft's dann besser.",
+          "ends": "nurture"
+        }
+      ]
     },
     {
-      "id": "book-anyway", "intent": "propose_booking", "quality": "bad", "requires": ["budget"],
+      "id": "book-anyway",
+      "intent": "propose_booking",
+      "quality": "bad",
+      "requires": [
+        "budget"
+      ],
       "text": "Kein Problem, im Call findet unser Stratege bestimmt eine Lösung – Donnerstag 10 Uhr?",
-      "effects": { "kundenorientierung": -3, "qualifizierung": -2 },
+      "effects": {
+        "kundenorientierung": -3,
+        "qualifizierung": -2
+      },
       "coachNote": "Der Termin ist für den Kunden wirtschaftlich nicht sinnvoll – Zeitverschwendung für beide und ein absehbarer Frust.",
       "betterMoveId": "disqualify",
-      "reply": [{ "text": "Okay … wenn du meinst. Donnerstag 10 Uhr.", "ends": "book" }]
+      "reply": [
+        {
+          "text": "Okay … wenn du meinst. Donnerstag 10 Uhr.",
+          "ends": "book"
+        }
+      ]
     },
     {
-      "id": "fear-pitch", "intent": "pressure", "quality": "bad", "requires": ["budget"], "hiddenByFlags": ["fear-used"], "setsFlags": ["fear-used"],
+      "id": "fear-pitch",
+      "intent": "pressure",
+      "quality": "bad",
+      "requires": [
+        "budget"
+      ],
+      "hiddenByFlags": [
+        "fear-used"
+      ],
+      "setsFlags": [
+        "fear-used"
+      ],
       "text": "Andere Cafés investieren auch 2.000 € – wer jetzt nicht investiert, verliert gegen die Konkurrenz!",
-      "effects": { "kundenorientierung": -3 }, "rapport": -3,
+      "effects": {
+        "kundenorientierung": -3
+      },
+      "rapport": -3,
       "violation": "Unbelegter Social Proof und Angstappell gegenüber einem Kunden ohne passendes Budget.",
       "coachNote": "Erfundener Vergleich plus Angst – klassische Manipulation.",
       "betterMoveId": "disqualify",
-      "reply": [{ "text": "Das klingt mir jetzt zu sehr nach Verkaufsdruck." }]
+      "reply": [
+        {
+          "text": "Das klingt mir jetzt zu sehr nach Verkaufsdruck."
+        }
+      ]
     }
-  ]
+  ],
+  "ai": {
+    "personality": "locker, sympathisch, etwas chaotisch, kostenbewusst, ehrlich über sein knappes Budget wenn man fragt",
+    "speakingStyle": "Du-Form wie auf Instagram üblich, kurze Nachrichten, ab und zu ein Emoji",
+    "situation": "Hat auf eine Instagram-Story der Agentur geantwortet: „Könnt ihr uns helfen?“",
+    "concern": "Nachmittags ist im Café wenig los, er wünscht sich mehr Gäste.",
+    "background": "Kleines Café, Inhaber, eine Aushilfe nachmittags, kaum Marketingerfahrung, realistisch nur ca. 300 € im Monat für Marketing. Die Agentur startet erst bei 2.000 € im Monat.",
+    "needs": [
+      "günstige, praktische Hilfe",
+      "ehrliche Einschätzung, ob die Agentur passt"
+    ],
+    "objections": [
+      {
+        "trigger": "der Setter Erfolgsgarantien oder Umsatzverdopplung verspricht",
+        "reaction": "misstrauisch: „Klingt zu gut, um wahr zu sein.“"
+      },
+      {
+        "trigger": "der Setter einen Termin will, ohne nach dem Budget zu fragen",
+        "reaction": "fragt nach dem Preis"
+      },
+      {
+        "trigger": "Angstmache mit Konkurrenz",
+        "reaction": "empfindet es als Verkaufsdruck"
+      }
+    ],
+    "customerGoals": [
+      "herausfinden, was die Agentur kostet",
+      "Tipps für mehr Gäste bekommen"
+    ],
+    "revealRules": {
+      "need": "der Setter nach dem Problem oder dem Ziel fragt",
+      "budget": "der Setter offen nach dem monatlichen Rahmen fragt oder den Preis nennt",
+      "authority": "der Setter fragt, wer entscheidet",
+      "timeline": "der Setter nach dem Zeitrahmen fragt"
+    },
+    "adviceBoundaries": [
+      "Was genau würdet ihr für mich machen?",
+      "Wie viele Gäste bringt das?"
+    ],
+    "outcomeGuidance": "Weil das Budget weit unter dem Mindestbudget liegt, ist eine ehrliche Disqualifizierung mit hilfreichem Hinweis das beste Ergebnis; ein späterer Kontakt mit Erlaubnis ist vertretbar. Wenn der Setter trotzdem einen Termin drückt, sagt er vielleicht halbherzig zu.",
+    "lessonLinks": [
+      "M01-L05",
+      "M02-L06"
+    ]
+  }
 }

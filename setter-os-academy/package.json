@@ -2,7 +2,7 @@
   "name": "setter-os-academy",
   "version": "0.1.0",
   "private": true,
-  "description": "SETTER OS ACADEMY \u2013 nichtkommerzieller Prototyp (Vertical Slice). Learn the skill. Master the conversation.",
+  "description": "SETTER OS ACADEMY – nichtkommerzieller Prototyp (Vertical Slice). Learn the skill. Master the conversation.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -22,6 +22,8 @@
     "node": ">=20"
   },
   "dependencies": {
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
     "next": "^16.3.8",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"

@@ -1,5 +1,5 @@
 import { scenarios } from "@/lib/content";
-import ChatSimulator from "./ChatSimulator";
+import ScenarioEntry from "./ScenarioEntry";
 
 export function generateStaticParams() {
   return scenarios.map((s) => ({ scenarioId: s.id }));
@@ -7,5 +7,5 @@ export function generateStaticParams() {
 
 export default async function Page({ params }: { params: Promise<{ scenarioId: string }> }) {
   const { scenarioId } = await params;
-  return <ChatSimulator scenarioId={scenarioId} />;
+  return <ScenarioEntry scenarioId={scenarioId} />;
 }

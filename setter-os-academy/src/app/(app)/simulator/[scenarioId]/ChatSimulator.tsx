@@ -80,7 +80,7 @@ export default function ChatSimulator({ scenarioId }: { scenarioId: string }) {
                 <div
                   className={cx(
                     "max-w-[85%] rounded-2xl px-4 py-2.5 text-[15px] leading-relaxed sm:max-w-[75%]",
-                    t.role === "setter" ? "rounded-br-md bg-[linear-gradient(135deg,var(--accent),var(--accent-2))] text-accent-ink" : "rounded-bl-md border border-line bg-elev",
+                    t.role === "setter" ? "rounded-br-md bg-accent-solid text-accent-ink" : "rounded-bl-md border border-line bg-elev",
                   )}
                 >
                   <span className="sr-only">{t.role === "setter" ? "Du: " : `${sc.persona.name}: `}</span>

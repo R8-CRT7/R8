@@ -8,9 +8,8 @@ export function cx(...c: (string | false | null | undefined)[]) {
 
 type Variant = "primary" | "secondary" | "ghost" | "danger";
 const btn: Record<Variant, string> = {
-  primary:
-    "bg-[linear-gradient(135deg,var(--accent),var(--accent-2))] text-accent-ink font-semibold shadow-[var(--glow)] hover:brightness-110 active:brightness-95",
-  secondary: "glass text-fg hover:border-line-strong",
+  primary: "bg-accent-solid text-accent-ink font-semibold hover:brightness-110 active:brightness-95",
+  secondary: "border border-line bg-surface text-fg hover:border-line-strong",
   ghost: "text-muted hover:text-fg hover:bg-surface-strong",
   danger: "border border-danger/50 text-danger hover:bg-danger/10",
 };
@@ -56,7 +55,7 @@ export function ProgressBar({ value, label, className }: { value: number; label:
         aria-valuenow={Math.round(v * 100)}
         className="h-2 w-full overflow-hidden rounded-full bg-surface-strong"
       >
-        <div className="h-full rounded-full bg-[linear-gradient(90deg,var(--accent),var(--accent-2))] transition-[width] duration-500" style={{ width: `${v * 100}%` }} />
+        <div className="h-full rounded-full bg-accent transition-[width] duration-500" style={{ width: `${v * 100}%` }} />
       </div>
     </div>
   );
@@ -73,7 +72,7 @@ export function Ring({ value, size = 76, label, children }: { value: number; siz
         <defs>
           <linearGradient id={gid} x1="0" x2="1">
             <stop offset="0" stopColor="var(--accent)" />
-            <stop offset="1" stopColor="var(--accent-2)" />
+            <stop offset="1" stopColor="var(--accent)" />
           </linearGradient>
         </defs>
         <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--surface-strong)" strokeWidth="8" />
@@ -89,7 +88,7 @@ export function PageHeader({ eyebrow, title, children, actions }: { eyebrow?: st
     <header className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
       <div>
         {eyebrow && <p className="mb-1 text-xs font-semibold uppercase tracking-[0.14em] text-accent">{eyebrow}</p>}
-        <h1 className="font-[family-name:var(--font-display)] text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h1>
+        <h1 className="font-[family-name:var(--font-display)] text-[1.7rem] font-semibold leading-tight tracking-[-0.02em] sm:text-[2.1rem]">{title}</h1>
         {children && <div className="mt-2 max-w-2xl text-sm text-muted sm:text-base">{children}</div>}
       </div>
       {actions && <div className="flex gap-2">{actions}</div>}

@@ -1,0 +1,6 @@
+{
+  "name": "setter-os-ai-proxy",
+  "private": true,
+  "description": "OPTIONAL paid AI proxy for a self-hosted SETTER OS build. Not deployed. Requires explicit approval and an API key stored as a Worker secret.",
+  "scripts": { "typecheck": "tsc --noEmit" }
+}

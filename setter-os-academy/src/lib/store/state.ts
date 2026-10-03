@@ -6,8 +6,12 @@ import { replay } from "../engine/customer";
 import { ACHIEVEMENTS, XP_RULES, type XpReason } from "../engine/gamification";
 import { scheduleNext, type AttemptLog, type Confidence, type ItemReview } from "../engine/review";
 import type { GradeResult, HandoverNote, Question, Scenario, SimulationEvaluation } from "../types";
+import type { FreeEvaluation } from "../ai/coachAI";
+import type { FreeTurn } from "../ai/metrics";
+import type { TrainingMode } from "../ai/customerAI";
+import type { SpendLog } from "../ai/router";
 
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;
 
 export interface Settings {
   theme: "dark" | "light" | "system";
@@ -66,7 +70,27 @@ export interface AcademyState {
   achievements: Record<string, number>;
   transferSubmissions: Record<string, { at: number; text: string; selfCheck: string[] }>;
   program: ProgramProgress;
+  aiSimulations: AiSimulationRecord[];
+  ai: { paidCallsEnabled: boolean; monthlyBudgetEur: number; spendLog: SpendLog[]; consentNoticeSeen: boolean };
+  reader: { bookmarks: string[]; notes: Record<string, string>; highlights: Record<string, string[]>; lastChapter: string | null };
 }
+
+export interface AiSimulationRecord {
+  id: string;
+  scenarioId: string;
+  scenarioVersion: number;
+  mode: TrainingMode;
+  at: number;
+  /** Stored only in this browser. Deletable in Einstellungen / Fehlergedächtnis. */
+  transcript: FreeTurn[];
+  handover: HandoverNote;
+  revealed: string[];
+  outcome: string | null;
+  evaluation: FreeEvaluation;
+  providerId: string;
+}
+
+export const MAX_AI_SIMULATIONS = 30;
 
 export interface ProgramProgress {
   startedAt: number | null;
@@ -95,6 +119,9 @@ export function initialState(): AcademyState {
     achievements: {},
     transferSubmissions: {},
     program: { startedAt: null, dayCompletedAt: {}, fastTrack: [], reviewSessions: [] },
+    aiSimulations: [],
+    ai: { paidCallsEnabled: false, monthlyBudgetEur: 0, spendLog: [], consentNoticeSeen: false },
+    reader: { bookmarks: [], notes: {}, highlights: {}, lastChapter: null },
   };
 }
 
@@ -127,6 +154,12 @@ export function migrate(raw: unknown): AcademyState {
     // v3 added the 90-day program
     cur = { ...cur, program: cur.program ?? initialState().program };
     v = 3;
+  }
+  if (v < 4) {
+    // v4 added free-text AI simulations, AI cost settings (paid calls locked) and the Kursbuch reader
+    const b = initialState();
+    cur = { ...cur, aiSimulations: cur.aiSimulations ?? [], ai: cur.ai ?? b.ai, reader: cur.reader ?? b.reader };
+    v = 4;
   }
   const base = initialState();
   return { ...base, ...(cur as Partial<AcademyState>), schemaVersion: SCHEMA_VERSION };
@@ -284,4 +317,57 @@ export function fastTrackDay(s: AcademyState, day: number): AcademyState {
 
 export function recordReviewSession(s: AcademyState, now: number): AcademyState {
   return { ...s, program: { ...s.program, reviewSessions: [...s.program.reviewSessions, now].slice(-500) } };
+}
+
+// ---------- AI simulations & settings ----------
+
+export function recordAiSimulation(s: AcademyState, rec: AiSimulationRecord): AcademyState {
+  let next: AcademyState = { ...s, aiSimulations: [...s.aiSimulations, rec].slice(-MAX_AI_SIMULATIONS) };
+  next = addXp(next, "simulationFinished", rec.id, rec.at);
+  if (rec.evaluation.passed) {
+    const passedBefore = s.aiSimulations.some((x) => x.scenarioId === rec.scenarioId && x.evaluation.passed);
+    if (!passedBefore) next = addXp(next, "simulationPassed", rec.id, rec.at);
+  }
+  next = unlock(next, "first-sim", rec.at);
+  if (rec.outcome === "respect_no" && rec.evaluation.gates.every((g) => !g.triggered)) next = unlock(next, "respect-no", rec.at);
+  return next;
+}
+
+export function addSpend(s: AcademyState, e: SpendLog): AcademyState {
+  return { ...s, ai: { ...s.ai, spendLog: [...s.ai.spendLog, e].slice(-2000) } };
+}
+
+export function deleteAiTranscripts(s: AcademyState): AcademyState {
+  return { ...s, aiSimulations: [] };
+}
+
+/** Removes everything the error memory is built from (error categories, AI coach reports) – progress stays. */
+export function deleteErrorMemory(s: AcademyState): AcademyState {
+  return {
+    ...s,
+    attempts: s.attempts.map((a) => ({ ...a, errorCategories: [] })),
+    aiSimulations: s.aiSimulations.map((x) => ({ ...x, evaluation: { ...x.evaluation, coach: null } })),
+  };
+}
+
+// ---------- Reader ----------
+export function toggleBookmark(s: AcademyState, key: string): AcademyState {
+  const b = s.reader.bookmarks.includes(key) ? s.reader.bookmarks.filter((x) => x !== key) : [...s.reader.bookmarks, key];
+  return { ...s, reader: { ...s.reader, bookmarks: b } };
+}
+export function setNote(s: AcademyState, key: string, text: string): AcademyState {
+  const notes = { ...s.reader.notes };
+  if (text.trim()) notes[key] = text.slice(0, 4000);
+  else delete notes[key];
+  return { ...s, reader: { ...s.reader, notes } };
+}
+export function addHighlight(s: AcademyState, key: string, text: string): AcademyState {
+  const t = text.trim().replace(/\s+/g, " ").slice(0, 400);
+  if (t.length < 3) return s;
+  const cur = s.reader.highlights[key] ?? [];
+  if (cur.includes(t)) return s;
+  return { ...s, reader: { ...s.reader, highlights: { ...s.reader.highlights, [key]: [...cur, t] } } };
+}
+export function removeHighlight(s: AcademyState, key: string, text: string): AcademyState {
+  return { ...s, reader: { ...s.reader, highlights: { ...s.reader.highlights, [key]: (s.reader.highlights[key] ?? []).filter((x) => x !== text) } } };
 }

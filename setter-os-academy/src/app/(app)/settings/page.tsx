@@ -2,7 +2,9 @@
 import { useRouter } from "next/navigation";
 import { useRef, useState } from "react";
 import { Button, Card, PageHeader } from "@/components/ui";
-import type { Settings } from "@/lib/store/state";
+import { deleteAiTranscripts, type Settings } from "@/lib/store/state";
+import { monthSpend, PRICE_TABLE } from "@/lib/ai/router";
+import { useAiRouter } from "@/components/ai/useAi";
 import { exportJson, importJson, resetAll, update, useAcademy } from "@/lib/store/storage";
 
 // In the claude.ai artifact viewer file downloads are blocked → offer clipboard backup instead.
@@ -46,6 +48,7 @@ export default function SettingsPage() {
             <input type="checkbox" className="h-6 w-6 accent-[var(--accent)]" checked={s.settings.motion === "reduce"} onChange={(e) => set({ motion: e.target.checked ? "reduce" : "system" })} />
           </label>
         </Card>
+        <AiSettings />
         <Card>
           <h2 className="mb-1 font-semibold">Lernpause</h2>
           <label className="flex min-h-12 items-center justify-between gap-3 text-sm text-muted">
@@ -85,5 +88,39 @@ export default function SettingsPage() {
         </Card>
       </div>
     </div>
+  );
+}
+
+function AiSettings() {
+  const s = useAcademy();
+  const ai = useAiRouter();
+  const [budget, setBudget] = useState(String(s.ai.monthlyBudgetEur));
+  const spent = monthSpend(s.ai.spendLog, Date.now());
+  const calls = s.ai.spendLog.length;
+  return (
+    <Card>
+      <h2 className="mb-1 font-semibold">KI & Kosten</h2>
+      <p className="text-sm text-muted">
+        Aktiver Anbieter: <span className="text-fg">{ai.providerLabel ?? (ai.status === "checking" ? "wird geprüft …" : "keiner verfügbar")}</span>.
+        {ai.costKind === "claude-plan" && " Nutzt dein Claude-Kontingent im claude.ai-Viewer – kein API-Schlüssel, keine separate Rechnung."}
+      </p>
+      <p className="mt-2 text-xs text-faint">Bisher {calls} KI-Aufrufe protokolliert · geschätzte kostenpflichtige Ausgaben diesen Monat: {spent.toFixed(2)} €.</p>
+      <div className="mt-4 rounded-[var(--radius-sm)] border border-line p-3">
+        <p className="text-sm font-medium">Kostenpflichtige KI (optionaler eigener Proxy)</p>
+        <p className="mt-1 text-xs text-faint">Standardmäßig gesperrt. Funktioniert nur in einer selbst gehosteten Version mit eingerichtetem Proxy. Listenpreise (USD je 1 Mio. Token): {Object.entries(PRICE_TABLE).map(([m, p]) => `${m} ${p.inputPerMTok}/${p.outputPerMTok}`).join(" · ")}.</p>
+        <label className="mt-3 flex min-h-11 items-center justify-between gap-3 text-sm">
+          <span>Kostenpflichtige Aufrufe erlauben</span>
+          <input type="checkbox" className="h-6 w-6 accent-[var(--accent-solid)]" checked={s.ai.paidCallsEnabled} onChange={(e) => update((x) => ({ ...x, ai: { ...x.ai, paidCallsEnabled: e.target.checked } }))} />
+        </label>
+        <label className="mt-2 grid gap-1 text-sm">
+          Monatsbudget in € (0 = gesperrt)
+          <input inputMode="decimal" value={budget} onChange={(e) => setBudget(e.target.value)} onBlur={() => { const n = Math.max(0, Number(budget.replace(",", ".")) || 0); setBudget(String(n)); update((x) => ({ ...x, ai: { ...x.ai, monthlyBudgetEur: n } })); }} className="min-h-11 max-w-[160px] rounded-[var(--radius-sm)] border border-line bg-bg px-3" />
+        </label>
+      </div>
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <span className="text-sm text-muted">{s.aiSimulations.length} gespeicherte KI-Gespräche</span>
+        <Button variant="danger" className="min-h-10" disabled={!s.aiSimulations.length} onClick={() => update(deleteAiTranscripts)}>KI-Gespräche löschen</Button>
+      </div>
+    </Card>
   );
 }

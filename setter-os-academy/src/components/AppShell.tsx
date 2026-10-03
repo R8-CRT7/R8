@@ -16,10 +16,12 @@ const PRIMARY: { href: string; label: string; icon: IconName }[] = [
   { href: "/stats/", label: "Statistik", icon: "chart" },
 ];
 const SECONDARY: { href: string; label: string; icon: IconName }[] = [
-  { href: "/learn/", label: "Module", icon: "book" },
+  { href: "/learn/", label: "Module", icon: "layers" },
+  { href: "/book/", label: "Kursbuch", icon: "book" },
+  { href: "/mistakes/", label: "Fehlergedächtnis", icon: "alert" },
   { href: "/skills/", label: "Skill Tree", icon: "tree" },
   { href: "/exam/", label: "Prüfungen", icon: "trophy" },
-  { href: "/sources/", label: "Quellen", icon: "book" },
+  { href: "/sources/", label: "Quellen", icon: "shield" },
   { href: "/profile/", label: "Profil", icon: "user" },
   { href: "/settings/", label: "Einstellungen", icon: "gear" },
   { href: "/admin/", label: "Admin", icon: "shield" },
@@ -27,8 +29,8 @@ const SECONDARY: { href: string; label: string; icon: IconName }[] = [
 
 export function PrototypeBanner() {
   return (
-    <div role="note" className="border-b border-warning/30 bg-warning/10 px-4 py-1.5 text-center text-[12px] text-warning">
-      Nichtkommerzieller Prototyp · privater Test · keine Rechts- oder Steuerberatung · Daten bleiben auf diesem Gerät
+    <div role="note" className="border-b border-line px-4 py-1 text-center text-[11px] text-faint">
+      Privater, nichtkommerzieller Prototyp · keine Rechts- oder Steuerberatung · Daten bleiben auf diesem Gerät
     </div>
   );
 }
@@ -46,7 +48,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <PrototypeBanner />
       <div className="mx-auto flex max-w-[1400px]">
         {/* Desktop sidebar */}
-        <aside className="sticky top-0 hidden h-dvh w-64 shrink-0 flex-col border-r border-line px-4 py-6 lg:flex" aria-label="Hauptnavigation">
+        <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col overflow-y-auto border-r border-line px-3 py-6 lg:flex" aria-label="Hauptnavigation">
           <Link href="/dashboard/" className="mb-8 flex items-center gap-2.5 px-2">
             <Logo />
             <span className="text-sm font-semibold tracking-[0.18em]">SETTER OS</span>
@@ -60,7 +62,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   aria-current={active(i.href) ? "page" : undefined}
                   className={cx(
                     "flex min-h-10 items-center gap-3 rounded-[var(--radius-sm)] px-3 text-sm transition-colors",
-                    active(i.href) ? "bg-surface-strong text-fg shadow-[inset_2px_0_0_var(--accent)]" : "text-muted hover:bg-surface hover:text-fg",
+                    active(i.href) ? "bg-surface-strong text-fg" : "text-muted hover:bg-surface hover:text-fg",
                   )}
                 >
                   <Icon name={i.icon} className="h-[18px] w-[18px]" />
@@ -74,7 +76,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <div className="text-xs text-faint">Level {lvl.level}</div>
               <div className="text-sm font-medium">{lvl.title}</div>
               <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-surface-strong">
-                <div className="h-full bg-[linear-gradient(90deg,var(--accent),var(--accent-2))]" style={{ width: `${lvl.progress * 100}%` }} />
+                <div className="h-full bg-accent" style={{ width: `${lvl.progress * 100}%` }} />
               </div>
               <div className="mt-1 text-[11px] text-faint">{xp} XP · Level misst Aktivität, nicht Kompetenz</div>
             </div>
@@ -83,7 +85,7 @@ export function AppShell({ children }: { children: ReactNode }) {
 
         <div className="min-w-0 flex-1">
           {/* Mobile top bar */}
-          <header className="sticky top-[env(safe-area-inset-top,0px)] z-20 flex items-center justify-between border-b border-line bg-[color-mix(in_srgb,var(--bg)_82%,transparent)] px-4 py-3 backdrop-blur-xl lg:hidden">
+          <header className="glass-nav sticky top-[env(safe-area-inset-top,0px)] z-20 flex items-center justify-between border-b border-line px-4 py-2.5 lg:hidden">
             <Link href="/dashboard/" className="flex items-center gap-2">
               <Logo />
               <span className="text-xs font-semibold tracking-[0.18em]">SETTER OS</span>
@@ -116,7 +118,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </div>
 
       {/* Mobile bottom tab bar – 44px+ targets, safe area aware */}
-      <nav className="pb-safe fixed inset-x-0 bottom-0 z-30 border-t border-line bg-[color-mix(in_srgb,var(--bg)_88%,transparent)] px-2 pt-1.5 backdrop-blur-xl lg:hidden" aria-label="Hauptnavigation mobil">
+      <nav className="glass-nav pb-safe fixed inset-x-0 bottom-0 z-30 border-t border-line px-2 pt-1.5 lg:hidden" aria-label="Hauptnavigation mobil">
         <ul className="grid grid-cols-5">
           {PRIMARY.map((i) => (
             <li key={i.href}>

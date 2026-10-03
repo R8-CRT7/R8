@@ -6,29 +6,39 @@
    Contrast targets: text ≥ 4.5:1, large text/UI ≥ 3:1 (WCAG 2.2 AA).
    ========================================================================= */
 
+/* Fonts are self-hosted (no request to Google – see DESIGN_AUDIT.md / LG München I, 3 O 17493/20). */
+@font-face { font-family: "Jakarta"; src: url("../fonts/jakarta.woff2") format("woff2"); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("../fonts/newsreader.woff2") format("woff2"); font-weight: 200 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("../fonts/newsreader-italic.woff2") format("woff2"); font-weight: 200 800; font-style: italic; font-display: swap; }
+
+/* =========================================================================
+   SETTER OS – Design Tokens V2 „Midnight Study“ (DESIGN_SYSTEM.md)
+   Dark is primary. Contrast (measured): text 16:1, muted 8:1, faint ≥ 5:1,
+   accent 7–8:1, white on accent-solid 5.7:1. Light mode ≥ 4.9:1 everywhere.
+   ========================================================================= */
 :root {
   color-scheme: dark;
-  --bg: #0a0f1e;            /* deep navy */
-  --bg-elev: #111829;       /* anthracite-navy surface */
-  --surface: rgba(255, 255, 255, 0.035);
-  --surface-strong: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --text: #eef1f7;          /* off-white  – 16.3:1 on bg */
-  --text-muted: #a3adc2;    /* 8.1:1 on bg */
-  --text-faint: #7d879c;    /* 5.0:1 on bg */
-  --accent: #7c9cff;        /* blue – 7.0:1 on bg */
-  --accent-2: #a78bfa;      /* violet – 6.4:1 on bg */
-  --accent-ink: #0a0f1e;
-  --success: #4ade80;
-  --warning: #fbbf24;
-  --danger: #f87171;
-  --focus: #9db4ff;
-  --glow: 0 0 0 1px rgba(124, 156, 255, 0.25), 0 12px 40px -12px rgba(124, 156, 255, 0.35);
-  --shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 10px 30px -15px rgba(0, 0, 0, 0.6);
+  --bg: #0a0e1a;            /* midnight navy */
+  --bg-elev: #131826;       /* anthracite */
+  --surface: #151a28;
+  --surface-strong: #1b2232;
+  --border: rgba(236, 235, 230, 0.08);
+  --border-strong: rgba(236, 235, 230, 0.16);
+  --text: #ecebe6;          /* off-white */
+  --text-muted: #a7acb8;
+  --text-faint: #868c99;
+  --accent: #8ea4ff;        /* cobalt, for text & icons */
+  --accent-solid: #3b5bdb;  /* cobalt, for filled controls (white text 5.7:1) */
+  --accent-2: #b3a3f5;      /* quiet violet */
+  --accent-ink: #ffffff;
+  --success: #5fd38d;
+  --warning: #e8b54a;
+  --danger: #f08a8a;
+  --focus: #9fb2ff;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 32px -20px rgba(0, 0, 0, 0.7);
   --radius-sm: 10px;
-  --radius: 16px;
-  --radius-lg: 22px;
+  --radius: 14px;
+  --radius-lg: 20px;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --dur: 180ms;
 }
@@ -36,24 +46,24 @@
 /* "system" theme is resolved in JS (ThemeSync) to data-theme="light" | "dark". */
 :root[data-theme="light"] {
   color-scheme: light;
-  --bg: #f6f7fb;
+  --bg: #f5f4ef;
   --bg-elev: #ffffff;
-  --surface: rgba(15, 23, 42, 0.03);
-  --surface-strong: rgba(15, 23, 42, 0.06);
-  --border: rgba(15, 23, 42, 0.1);
-  --border-strong: rgba(15, 23, 42, 0.2);
-  --text: #0f172a;          /* 17:1 */
-  --text-muted: #475569;    /* 7.5:1 */
-  --text-faint: #5b6779;    /* 5.6:1 */
-  --accent: #3554d1;        /* 6.3:1 on bg */
-  --accent-2: #6d4bd8;      /* 5.9:1 */
+  --surface: #ffffff;
+  --surface-strong: #eeede7;
+  --border: rgba(20, 24, 36, 0.1);
+  --border-strong: rgba(20, 24, 36, 0.2);
+  --text: #141824;
+  --text-muted: #4a5160;
+  --text-faint: #5e6574;
+  --accent: #2f4fc4;
+  --accent-solid: #3451c7;
+  --accent-2: #5d43c4;
   --accent-ink: #ffffff;
-  --success: #15803d;
-  --warning: #a16207;
-  --danger: #b91c1c;
-  --focus: #3554d1;
-  --glow: 0 0 0 1px rgba(53, 84, 209, 0.2), 0 12px 30px -14px rgba(53, 84, 209, 0.35);
-  --shadow: 0 1px 2px rgba(15, 23, 42, 0.06), 0 8px 24px -12px rgba(15, 23, 42, 0.18);
+  --success: #17793f;
+  --warning: #8a5a00;
+  --danger: #b42323;
+  --focus: #2f4fc4;
+  --shadow: 0 1px 2px rgba(20, 24, 36, 0.05), 0 10px 28px -18px rgba(20, 24, 36, 0.25);
 }
 
 @theme inline {
@@ -68,12 +78,14 @@
   --color-faint: var(--text-faint);
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
+  --color-accent-solid: var(--accent-solid);
   --color-accent-ink: var(--accent-ink);
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-danger: var(--danger);
-  --font-sans: "Inter", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-  --font-display: "Inter Display", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Jakarta", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-display: "Jakarta", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Newsreader", "Iowan Old Style", Georgia, "Times New Roman", serif;
   /* Type scale (1.2 minor third, 16px base) */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
@@ -89,8 +101,7 @@
 html { background: var(--bg); }
 body {
   background:
-    radial-gradient(1200px 600px at 85% -10%, color-mix(in srgb, var(--accent-2) 10%, transparent), transparent 60%),
-    radial-gradient(900px 500px at -10% 10%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 60%),
+    radial-gradient(1100px 520px at 80% -12%, color-mix(in srgb, var(--accent-solid) 9%, transparent), transparent 62%),
     var(--bg);
   background-attachment: fixed;
   color: var(--text);
@@ -112,16 +123,20 @@ body {
   border-radius: 8px;
 }
 
+/* Cards: solid anthracite with a hairline border – glass is reserved for floating chrome (nav bars). */
 .glass {
-  background: linear-gradient(180deg, var(--surface-strong), var(--surface));
+  background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+.glass-nav {
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
 }
 
 .gradient-text {
-  background: linear-gradient(100deg, var(--text) 10%, var(--accent) 60%, var(--accent-2));
+  background: linear-gradient(100deg, var(--text) 20%, var(--accent) 75%, var(--accent-2));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -149,3 +164,9 @@ body {
 
 .prose-lesson p { margin: 0 0 0.9em; }
 .prose-lesson { white-space: pre-line; line-height: 1.7; }
+
+.font-serif-book { font-family: var(--font-serif); font-optical-sizing: auto; }
+h1, h2, h3 { text-wrap: balance; letter-spacing: -0.01em; }
+.reader-text { font-family: var(--font-serif); font-size: 1.125rem; line-height: 1.75; max-width: 66ch; }
+mark.hl { background: color-mix(in srgb, var(--warning) 32%, transparent); color: inherit; border-radius: 3px; padding: 0 1px; }
+.page-enter { animation: fade-in 220ms var(--ease) both; }

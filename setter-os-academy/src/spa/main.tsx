@@ -11,12 +11,14 @@ import StartPage from "../app/start/page";
 import LoginPage from "../app/login/page";
 import Dashboard from "../app/(app)/dashboard/page";
 import PlanPage from "../app/(app)/plan/page";
+import BookPage from "../app/(app)/book/page";
+import Mistakes from "../app/(app)/mistakes/page";
 import LearningPath from "../app/(app)/learn/page";
 import ModuleOverview from "../app/(app)/learn/[moduleId]/ModuleOverview";
 import LessonView from "../app/(app)/learn/[moduleId]/[lessonId]/LessonView";
 import QuizRunner from "../app/(app)/quiz/[moduleId]/QuizRunner";
 import SimulatorList from "../app/(app)/simulator/page";
-import ChatSimulator from "../app/(app)/simulator/[scenarioId]/ChatSimulator";
+import ScenarioEntry from "../app/(app)/simulator/[scenarioId]/ScenarioEntry";
 import ReviewCenter from "../app/(app)/review/ReviewCenter";
 import Stats from "../app/(app)/stats/page";
 import Skills from "../app/(app)/skills/page";
@@ -37,6 +39,8 @@ function resolve(path: string): { node: ReactNode; shell: boolean } {
   const simple: Record<string, () => ReactNode> = {
     dashboard: () => <Dashboard />,
     plan: () => <PlanPage />,
+    book: () => <BookPage />,
+    mistakes: () => <Mistakes />,
     simulator: () => <SimulatorList />,
     review: () => <ReviewCenter />,
     stats: () => <Stats />,
@@ -56,7 +60,7 @@ function resolve(path: string): { node: ReactNode; shell: boolean } {
     return { node: <ModuleOverview moduleId={b} />, shell: true };
   }
   if (a === "quiz" && b && quizById(b)) return { node: <QuizRunner moduleId={b} />, shell: true };
-  if (a === "simulator" && b && scenarios.some((s) => s.id === b)) return { node: <ChatSimulator scenarioId={b} />, shell: true };
+  if (a === "simulator" && b && scenarios.some((s) => s.id === b)) return { node: <ScenarioEntry scenarioId={b} />, shell: true };
   return { node: (simple[a] ?? simple.dashboard!)(), shell: true };
 }
 

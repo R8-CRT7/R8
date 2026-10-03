@@ -1,0 +1,172 @@
+[
+  {
+    "term": "Appointment Setter",
+    "definition": "Person, die Interessenten qualifiziert und Termine mit einer beratenden oder verkaufenden Person vereinbart.",
+    "lessonId": "M01-L01"
+  },
+  {
+    "term": "Closer",
+    "definition": "Person, die das Beratungs- bzw. Verkaufsgespräch führt und den Abschluss verantwortet.",
+    "lessonId": "M01-L01"
+  },
+  {
+    "term": "SDR",
+    "definition": "Sales Development Representative – im B2B häufig für die Qualifizierung eingehender Leads zuständig (Bezeichnung variiert).",
+    "lessonId": "M01-L01"
+  },
+  {
+    "term": "BDR",
+    "definition": "Business Development Representative – im B2B häufig für aktive Neukundenansprache (Outbound) zuständig (Bezeichnung variiert).",
+    "lessonId": "M01-L01"
+  },
+  {
+    "term": "Lead",
+    "definition": "Kontakt, der Interesse gezeigt hat oder angesprochen wurde, aber noch nicht qualifiziert ist.",
+    "lessonId": "M01-L05"
+  },
+  {
+    "term": "MQL",
+    "definition": "Marketing Qualified Lead – Lead, den das Marketing anhand von Signalen als interessant einstuft.",
+    "lessonId": "M01-L05"
+  },
+  {
+    "term": "SQL",
+    "definition": "Sales Qualified Lead – Lead, bei dem der Vertrieb Bedarf und Passung bestätigt hat.",
+    "lessonId": "M01-L05"
+  },
+  {
+    "term": "Customer Journey",
+    "definition": "Der Weg eines Menschen vom ersten Problembewusstsein bis zur Entscheidung – aus Kundensicht.",
+    "lessonId": "M01-L02"
+  },
+  {
+    "term": "Sales Funnel",
+    "definition": "Stufenmodell des Vertriebs: Kontakt → Lead → qualifiziert → Termin → Abschluss.",
+    "lessonId": "M01-L02"
+  },
+  {
+    "term": "Inbound",
+    "definition": "Der Interessent meldet sich selbst (Formular, Nachricht, Anruf).",
+    "lessonId": "M01-L03"
+  },
+  {
+    "term": "Outbound",
+    "definition": "Das Unternehmen geht aktiv auf Menschen zu, die sich noch nicht gemeldet haben.",
+    "lessonId": "M01-L03"
+  },
+  {
+    "term": "B2B",
+    "definition": "Business-to-Business: Kunden sind Unternehmen.",
+    "lessonId": "M01-L03"
+  },
+  {
+    "term": "B2C",
+    "definition": "Business-to-Consumer: Kunden sind Privatpersonen (Verbraucher).",
+    "lessonId": "M01-L03"
+  },
+  {
+    "term": "Einwilligung",
+    "definition": "Vorherige Erlaubnis zur Kontaktaufnahme zu Werbezwecken; bei Verbrauchern für Telefonwerbung ausdrücklich und dokumentiert (§§ 7, 7a UWG).",
+    "lessonId": "M01-L03"
+  },
+  {
+    "term": "Mutmaßliche Einwilligung",
+    "definition": "Im B2B für Telefonwerbung ausreichend, wenn konkrete Umstände auf ein Interesse schließen lassen.",
+    "lessonId": "M01-L03"
+  },
+  {
+    "term": "B-P-Z-E",
+    "definition": "Kurs-Merkhilfe für Pflichtkriterien vor einem Termin: Bedarf, Passung, Zeitrahmen, Entscheider.",
+    "lessonId": "M01-L05"
+  },
+  {
+    "term": "BANT",
+    "definition": "Budget, Authority, Need, Timing – Praxisraster zur Qualifizierung, nicht empirisch als überlegen belegt.",
+    "lessonId": "M01-L05"
+  },
+  {
+    "term": "Nurturing",
+    "definition": "Interessenten, die (noch) nicht bereit sind, mit Erlaubnis weiter betreuen und informieren.",
+    "lessonId": "M01-L05"
+  },
+  {
+    "term": "Disqualifizieren",
+    "definition": "Ehrlich feststellen und mitteilen, dass ein Angebot nicht passt – ein gutes Gesprächsergebnis.",
+    "lessonId": "M01-L05"
+  },
+  {
+    "term": "Übergabenotiz",
+    "definition": "Dokumentation für den Berater: nur Gesagtes, Unbekanntes als „nicht erfragt“.",
+    "lessonId": "M01-L08"
+  },
+  {
+    "term": "Show Rate",
+    "definition": "Anteil wahrgenommener an gebuchten Terminen.",
+    "lessonId": "M01-L02"
+  },
+  {
+    "term": "No-Show",
+    "definition": "Ein gebuchter Termin, zu dem der Interessent nicht erscheint.",
+    "lessonId": "M01-L08"
+  },
+  {
+    "term": "Wenn-dann-Plan",
+    "definition": "Konkreter Plan (wann, wo, wie), der die Umsetzung von Vorhaben wahrscheinlicher macht (Implementation Intention).",
+    "lessonId": "M01-L08"
+  },
+  {
+    "term": "Paraphrase",
+    "definition": "Das Gesagte in eigenen Worten als Frage wiedergeben, um Verständnis zu zeigen und zu prüfen.",
+    "lessonId": "M02-L02"
+  },
+  {
+    "term": "Labeling",
+    "definition": "Eine erkennbare Lage oder ein Gefühl des Gegenübers vorsichtig benennen.",
+    "lessonId": "M02-L02"
+  },
+  {
+    "term": "Folgefrage",
+    "definition": "Frage, die ein konkretes Detail der letzten Antwort aufgreift und vertieft.",
+    "lessonId": "M02-L03"
+  },
+  {
+    "term": "Fragetrichter",
+    "definition": "Fragereihenfolge von offen und breit zu konkret und geschlossen.",
+    "lessonId": "M02-L03"
+  },
+  {
+    "term": "Suggestivfrage",
+    "definition": "Frage, die die Antwort bereits nahelegt – vermeiden.",
+    "lessonId": "M02-L03"
+  },
+  {
+    "term": "SPIN",
+    "definition": "Situations-, Problem-, Implikations-, Nutzenfragen (Rackham 1988).",
+    "lessonId": "M02-L03"
+  },
+  {
+    "term": "Erlaubnisfrage",
+    "definition": "Frage, ob das Gespräch gerade passt – gibt dem Gegenüber Kontrolle.",
+    "lessonId": "M02-L04"
+  },
+  {
+    "term": "Spiegeln",
+    "definition": "Länge, Ton und Förmlichkeit dezent an das Gegenüber anpassen – nicht kopieren.",
+    "lessonId": "M02-L05"
+  },
+  {
+    "term": "Vertrauenswürdigkeit",
+    "definition": "Nach Mayer et al. (1995): Fähigkeit, Wohlwollen und Integrität.",
+    "lessonId": "M02-L06"
+  },
+  {
+    "term": "Barnum-Effekt",
+    "definition": "Allgemeine Beschreibungen wirken für fast jeden zutreffend – Grund, warum Typentests überzeugend wirken.",
+    "lessonId": "M02-L07"
+  },
+  {
+    "term": "Künstliche Verknappung",
+    "definition": "Erfundene Frist oder Knappheit („nur heute“) – Täuschung und im Kurs tabu.",
+    "lessonId": "M01-L06"
+  }
+]

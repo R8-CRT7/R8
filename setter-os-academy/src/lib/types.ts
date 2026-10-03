@@ -340,7 +340,26 @@ export interface ReplyCondition {
   notFlags?: string[];
 }
 
+/** Profile for the free-text AI customer. The deterministic move tree stays the offline mode. */
+export interface ScenarioAiProfile {
+  personality: string;
+  speakingStyle: string;
+  situation: string;
+  concern: string;
+  background: string;
+  needs: string[];
+  objections: { trigger: string; reaction: string }[];
+  customerGoals: string[];
+  /** factKey -> what kind of setter question makes the customer share it */
+  revealRules: Record<string, string>;
+  /** questions the customer will ask that a setter must hand off to an expert */
+  adviceBoundaries: string[];
+  outcomeGuidance: string;
+  lessonLinks: string[];
+}
+
 export interface Scenario {
+  ai?: ScenarioAiProfile;
   id: string; // SIM-001
   title: string;
   archetype: string; // e.g. "Kunde, der ausdrücklich keinen Termin möchte"

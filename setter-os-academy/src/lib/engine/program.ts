@@ -32,7 +32,7 @@ export function itemDone(s: AcademyState, item: ProgramItem, anchor: number | nu
       return item.ref.startsWith("ST") ? attempts.some((a) => a.passed) : attempts.length > 0;
     }
     case "simulation":
-      return s.simulations.some((x) => x.scenarioId === item.ref);
+      return s.simulations.some((x) => x.scenarioId === item.ref) || s.aiSimulations.some((x) => x.scenarioId === item.ref);
     case "transfer":
       return !!s.transferSubmissions[item.ref];
     case "review": {
@@ -44,7 +44,10 @@ export function itemDone(s: AcademyState, item: ProgramItem, anchor: number | nu
 
 export function stageCheckPassed(s: AcademyState, st: ProgramStage): boolean {
   const quiz = s.quizAttempts.some((a) => a.moduleId === st.check.id && a.kind === "stage-check" && a.passed);
-  const sims = st.check.requiredSimulations.every((id) => s.simulations.some((x) => x.scenarioId === id && x.passed));
+  // offline pass or AI exam-mode pass (gates checked, coach evidence verified)
+  const sims = st.check.requiredSimulations.every(
+    (id) => s.simulations.some((x) => x.scenarioId === id && x.passed) || s.aiSimulations.some((x) => x.scenarioId === id && x.mode === "pruefung" && x.evaluation.passed === true),
+  );
   return quiz && sims;
 }
 

@@ -155,6 +155,11 @@ export function validateContent(input: {
     for (const f of s.handoverFields) if (!factKeys.has(f)) err(s.id, `Übergabefeld ${f} ohne Fakt`);
     for (const q of s.reviewQuestionIds) if (!qIds.has(q)) err(s.id, `Wiederholungsfrage ${q} fehlt`);
     for (const f of s.facts) if (f.distractors.length < 2) err(s.id, `Fakt ${f.key}: zu wenige Distraktoren`);
+    if (s.ai) {
+      for (const f of s.facts) if (!s.ai.revealRules[f.key]) err(s.id, `KI-Profil: keine Offenlegungsregel für ${f.key}`);
+      for (const l of s.ai.lessonLinks) if (!lessonIds.has(l)) err(s.id, `KI-Profil: Lektion ${l} fehlt`);
+      if (!s.ai.personality || !s.ai.outcomeGuidance) err(s.id, "KI-Profil unvollständig");
+    }
     for (const m of s.moves) {
       if (!m.reply.length) err(`${s.id}/${m.id}`, "Zug ohne Kundenantwort");
       const last = m.reply[m.reply.length - 1]!;

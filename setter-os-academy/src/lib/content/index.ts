@@ -12,6 +12,7 @@ import sim002 from "@content/scenarios/SIM-002.json";
 import sim003 from "@content/scenarios/SIM-003.json";
 import sim004 from "@content/scenarios/SIM-004.json";
 import programJson from "@content/program.json";
+import glossaryJson from "@content/glossary.json";
 
 export interface CurriculumEntry {
   id: string;
@@ -58,3 +59,16 @@ export function quizById(id: string): QuizDef | undefined {
   return undefined;
 }
 export const allQuizIds = () => [...modules.map((m) => m.id), ...program.filter((p) => p.available).map((p) => p.id)];
+
+export const glossary = glossaryJson as { term: string; definition: string; lessonId: string }[];
+
+/** All Kursbuch chapters across modules, with a stable key for bookmarks/notes/highlights. */
+export function bookChapters() {
+  return modules.flatMap((m) =>
+    m.lessons.flatMap((l) =>
+      l.blocks.flatMap((b) =>
+        b.kind === "book" ? [{ key: `${l.id}:${b.chapter}`, moduleId: m.id, moduleTitle: m.title, lessonId: l.id, lessonTitle: l.title, chapter: b.chapter, title: b.title, paragraphs: b.paragraphs, sourceIds: b.sourceIds ?? [], skills: l.blocks.filter((x) => x.kind === "skill").map((x) => (x as { name: string }).name), checks: l.blocks.filter((x) => x.kind === "check").map((x) => (x as { questionId: string }).questionId) }] : [],
+      ),
+    ),
+  );
+}
