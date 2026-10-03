@@ -1,0 +1,999 @@
+{
+  "id": "M03",
+  "number": 3,
+  "title": "Sales Psychology",
+  "subtitle": "Entscheidungsverhalten – kritisch und ethisch",
+  "status": "verfuegbar",
+  "prerequisites": [
+    "M01",
+    "M02"
+  ],
+  "version": "1.0.0",
+  "passThreshold": 0.8,
+  "sourceIds": [
+    "SRC-009",
+    "SRC-010",
+    "SRC-011",
+    "SRC-012",
+    "SRC-025",
+    "SRC-038",
+    "SRC-039",
+    "SRC-050",
+    "SRC-052",
+    "SRC-053",
+    "SRC-056",
+    "SRC-059",
+    "SRC-101",
+    "SRC-102",
+    "SRC-103",
+    "SRC-104",
+    "SRC-105",
+    "SRC-106",
+    "SRC-107",
+    "SRC-108",
+    "SRC-109",
+    "SRC-110",
+    "SRC-111",
+    "SRC-112",
+    "SRC-113",
+    "SRC-114",
+    "SRC-115",
+    "SRC-116",
+    "SRC-117",
+    "SRC-118",
+    "SRC-119",
+    "SRC-120",
+    "SRC-121",
+    "SRC-122",
+    "SRC-123",
+    "SRC-124",
+    "SRC-125",
+    "SRC-126",
+    "SRC-127",
+    "SRC-128",
+    "SRC-129"
+  ],
+  "objectives": [
+    {
+      "id": "LO-M03-01",
+      "moduleId": "M03",
+      "text": "Entscheidungen als Zusammenspiel von Bedürfnissen, Motiven und Kontext erklären und Bedürfnisse erfragen, statt sie zu unterstellen.",
+      "bloom": "verstehen"
+    },
+    {
+      "id": "LO-M03-02",
+      "moduleId": "M03",
+      "text": "Unsicherheit und Risikoempfinden im Gespräch erkennen und durch Transparenz und verlässliches Verhalten abbauen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M03-03",
+      "moduleId": "M03",
+      "text": "Verlustaversion und Framing kritisch einordnen und Informationen ehrlich, vollständig und mit Bezugsgröße darstellen.",
+      "bloom": "bewerten"
+    },
+    {
+      "id": "LO-M03-04",
+      "moduleId": "M03",
+      "text": "Reziprozität und Social Proof legitim einsetzen und gefälschte oder irreführende Varianten erkennen.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M03-05",
+      "moduleId": "M03",
+      "text": "Kleine, freiwillige Zusagen nutzen und dabei die Entscheidungsfreiheit des Kunden ausdrücklich wahren.",
+      "bloom": "anwenden"
+    },
+    {
+      "id": "LO-M03-06",
+      "moduleId": "M03",
+      "text": "Die Evidenz zur Entscheidungsüberlastung als kontextabhängig einordnen und Optionen sinnvoll strukturieren.",
+      "bloom": "analysieren"
+    },
+    {
+      "id": "LO-M03-07",
+      "moduleId": "M03",
+      "text": "Seriöse Überzeugung von Manipulation unterscheiden – ethisch und rechtlich (UWG §§ 4a, 5, Anhang; Dark Patterns).",
+      "bloom": "bewerten"
+    },
+    {
+      "id": "LO-M03-08",
+      "moduleId": "M03",
+      "text": "Die Belastbarkeit psychologischer Befunde einschätzen (Replikationskrise, robuste vs. umstrittene Effekte).",
+      "bloom": "bewerten"
+    }
+  ],
+  "lessons": [
+    {
+      "id": "M03-L01",
+      "title": "Wie Menschen entscheiden – Motive, Bedürfnisse, Kontext",
+      "objectiveIds": [
+        "LO-M03-01",
+        "LO-M03-08"
+      ],
+      "sourceIds": [
+        "SRC-126",
+        "SRC-127",
+        "SRC-116",
+        "SRC-107",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Verkaufspsychologie hat einen zweifelhaften Ruf – zu Recht, wenn sie als Werkzeugkasten zum Überlisten verstanden wird. In diesem Modul lernst du sie anders: als Wissen darüber, wie Menschen entscheiden, damit du ihnen die Entscheidung leichter machst, nicht abnimmst. Jede Technik bekommt eine Evidenz-Einschätzung und eine klare Grenze."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 3.1",
+          "title": "Entscheidungen sind selten nur rational",
+          "paragraphs": [
+            "Wenn ein Interessent eine Anfrage stellt, steht dahinter fast nie nur ein Produktwunsch. Hinter „Ich brauche einen Stromspeicher“ kann der Ärger über die letzte Abrechnung stehen, der Wunsch nach Unabhängigkeit oder die Sorge, etwas zu verpassen, das die Nachbarn schon haben. Das Produkt ist die Lösung, an die der Kunde gerade denkt. Das Bedürfnis ist das, was sich in seinem Leben ändern soll. Für dich als Setter ist diese Unterscheidung zentral: Du qualifizierst Bedürfnisse, nicht Produktwünsche.",
+            "Ein in der Motivationsforschung gut untersuchter Rahmen ist die Selbstbestimmungstheorie von Ryan und Deci. Sie beschreibt drei psychologische Grundbedürfnisse: Autonomie (selbst entscheiden), Kompetenz (die Lage verstehen und bewältigen) und soziale Eingebundenheit (sich verbunden und ernst genommen fühlen). Übertragen auf ein Verkaufsgespräch heißt das: Menschen entscheiden lieber und zufriedener, wenn sie sich frei fühlen, wenn sie verstehen, worum es geht, und wenn sie den Eindruck haben, dass ihr Gegenüber es gut mit ihnen meint. Druck verletzt die Autonomie, Fachjargon die Kompetenz, Desinteresse die Eingebundenheit.",
+            "Bekannter, aber schlechter belegt ist Maslows Bedürfnispyramide. Die Idee, dass Menschen streng Stufe für Stufe vorgehen, hat in empirischen Prüfungen wenig konsistente Unterstützung gefunden – schon Wahba und Bridwell kamen 1976 in ihrer Übersicht zu diesem Ergebnis. Als grobe Erinnerung, dass Menschen verschiedene Bedürfnisse haben, taugt die Pyramide. Als Modell, mit dem du Kunden einordnest („der ist noch auf Sicherheitsstufe“), taugt sie nicht.",
+            "Neben Bedürfnissen prägt der Kontext jede Entscheidung. Eine der stabilsten Beobachtungen der Entscheidungsforschung ist die Neigung zum Status quo: Menschen bleiben überproportional häufig bei dem, was sie schon haben oder was voreingestellt ist. Samuelson und Zeckhauser zeigten das 1988 in Experimenten und bei echten Entscheidungen, etwa bei der Wahl von Kranken- und Altersvorsorgeplänen. Für dich heißt das: „Nichts tun“ ist für jeden Kunden eine vollwertige Option – und oft die bequemste. Deine Aufgabe ist nicht, diese Option schlechtzureden, sondern ehrlich zu klären, ob ein nächster Schritt dem Kunden nützt.",
+            "Zum Schluss ein Wort zur Evidenz. Psychologie ist eine junge, lebendige Wissenschaft, und viele populäre Befunde haben sich bei sorgfältigen Wiederholungen als schwächer erwiesen als ursprünglich berichtet. In einem großen Replikationsprojekt waren nur gut ein Drittel der wiederholten Studien erneut statistisch signifikant. Deshalb bekommst du in diesem Modul zu jeder Technik eine ehrliche Einschätzung: gut belegt, kontextabhängig oder umstritten. Wer Psychologie im Verkauf ernst nimmt, nimmt auch ihre Grenzen ernst."
+          ],
+          "sourceIds": [
+            "SRC-126",
+            "SRC-127",
+            "SRC-116",
+            "SRC-107"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Bedürfnis hinter dem Wunsch",
+          "category": "gespraech",
+          "what": "Du fragst hinter den genannten Produktwunsch, um das eigentliche Ziel des Kunden zu verstehen – in seinen Worten.",
+          "how": [
+            "Wunsch aufnehmen, ohne ihn sofort zu bewerten („Sie interessieren sich für einen Speicher.“)",
+            "Nach dem Ziel fragen: „Was soll sich für Sie dadurch ändern?“",
+            "Nach dem Anlass fragen: „Was hat Sie dazu gebracht, sich gerade jetzt zu melden?“",
+            "Das Ziel in den Worten des Kunden zusammenfassen und bestätigen lassen."
+          ],
+          "why": "Wer das Ziel kennt, kann ehrlich beurteilen, ob ein Termin dem Kunden nützt – und der Kunde fühlt sich verstanden statt bearbeitet.",
+          "evidence": "Die Grundbedürfnisse der Selbstbestimmungstheorie sind gut untersucht. Dass Zielfragen im Setting die Terminqualität verbessern, ist eine Praxisheuristik (Expertenmeinung), keine experimentell geprüfte Tatsache.",
+          "example": "„Sie hatten nach einem Speicher gefragt. Was soll sich für Sie damit vor allem ändern?“ – „Ich will einfach nicht mehr jeden Winter Angst vor der Nachzahlung haben.“",
+          "boundary": "Du erfragst Bedürfnisse, um zu helfen – nicht, um daraus Druckpunkte zu basteln. Was der Kunde dir anvertraut (Sorgen, Gesundheit, Finanzen), verwendest du nie gegen ihn und fragst nicht mehr, als für den nächsten Schritt nötig ist.",
+          "sourceIds": [
+            "SRC-126",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "Kunden durchlaufen Maslows Pyramide – erst wenn Sicherheit erfüllt ist, kann man ihnen Selbstverwirklichung verkaufen.",
+          "reality": "Die strenge Stufenfolge ist empirisch kaum gestützt (Wahba & Bridwell, 1976). Menschen verfolgen mehrere Bedürfnisse gleichzeitig. Statt Kunden in Stufen einzuordnen, fragst du nach ihrem konkreten Ziel.",
+          "sourceIds": [
+            "SRC-127"
+          ]
+        },
+        {
+          "kind": "example",
+          "title": "„Nichts tun“ als echte Option",
+          "body": "Kunde: „Ich überlege, ob ich überhaupt etwas ändern soll.“\n\nUnseriös: „Wer jetzt nichts tut, verliert jeden Monat Geld.“ (unbelegt, setzt unter Druck)\n\nSeriös: „Das ist eine völlig legitime Option. Damit Sie gut vergleichen können: Was müsste ein neues System für Sie leisten, damit sich der Wechsel lohnt?“"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-001"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-003"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Denk an deine letzte größere Anschaffung. Welches Bedürfnis stand wirklich dahinter – und wer hat es im Verkaufsgespräch erkannt (oder übersehen)?"
+        }
+      ],
+      "summary": [
+        "Produktwunsch ≠ Bedürfnis: Frage nach dem Ziel hinter dem Wunsch.",
+        "Autonomie, Kompetenz und Eingebundenheit fördern gute Entscheidungen – Druck, Jargon und Desinteresse schaden ihnen.",
+        "Maslows strenge Stufenfolge ist kaum belegt; nutze sie nicht zum Einordnen von Kunden.",
+        "„Nichts tun“ ist eine legitime Option (Status-quo-Neigung) – kläre ehrlich, ob ein nächster Schritt nützt.",
+        "Psychologische Befunde haben unterschiedliche Belastbarkeit; dieses Modul kennzeichnet sie."
+      ],
+      "moduleId": "M03",
+      "minutes": 10
+    },
+    {
+      "id": "M03-L02",
+      "title": "Unsicherheit, Risikoempfinden und Vertrauen",
+      "objectiveIds": [
+        "LO-M03-02"
+      ],
+      "sourceIds": [
+        "SRC-128",
+        "SRC-059",
+        "SRC-129",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Die meisten Kunden, die zögern, sind nicht desinteressiert, sondern unsicher. In dieser Lektion lernst du, verschiedene Arten von Unsicherheit zu unterscheiden und sie mit Information und Verlässlichkeit abzubauen – statt sie mit Druck zu übertönen."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 3.2",
+          "title": "Warum Menschen zögern",
+          "paragraphs": [
+            "Unsicherheit ist im Verkaufsgespräch der Normalfall. Der Kunde weiß nicht genau, was er braucht, was es kostet, ob der Anbieter seriös ist und ob er später bereuen wird. Diese Unsicherheiten sind verschieden und brauchen verschiedene Antworten. Es hilft, vier Arten zu unterscheiden: Wissensunsicherheit (Ich verstehe das Thema nicht), Ergebnisunsicherheit (Ich weiß nicht, ob es sich lohnt), Vertrauensunsicherheit (Ich weiß nicht, ob ich euch glauben kann) und Entscheidungsunsicherheit (Ich weiß nicht, ob ich das allein entscheiden will oder kann).",
+            "Wie riskant uns etwas erscheint, hängt nicht nur von nüchternen Wahrscheinlichkeiten ab. Die Risikoforschung um Paul Slovic hat gezeigt, dass Laien Risiken anders gewichten als Fachleute: Was neu, schwer durchschaubar, unfreiwillig oder schwer kontrollierbar wirkt, erscheint riskanter. Für ein Verkaufsgespräch ist das hochrelevant. Ein unbekannter Anbieter, ein komplexes Produkt und ein Termin, dessen Ablauf unklar ist, fühlen sich riskant an – auch wenn objektiv wenig passieren kann.",
+            "Daraus folgt die wichtigste Regel dieser Lektion: Unsicherheit baust du nicht durch Überreden ab, sondern durch Durchschaubarkeit. Wenn der Kunde genau weiß, was im Termin passiert, wie lange er dauert, wer dabei ist und dass er danach frei entscheiden kann, sinkt das empfundene Risiko. Transparenz über den Ablauf ist kein Zugeständnis, sondern das wirksamste Mittel gegen Zögern, das dir ehrlich zur Verfügung steht.",
+            "Vertrauen ist die Brücke über die verbleibende Unsicherheit. Das Modell von Mayer, Davis und Schoorman beschreibt drei Merkmale, an denen Menschen Vertrauenswürdigkeit festmachen: Fähigkeit (kann die Person das?), Wohlwollen (meint sie es gut mit mir?) und Integrität (hält sie sich an Regeln, die ich teile?). Ein Setter zeigt Fähigkeit durch klare, korrekte Information und durch ehrliche Weitergabe von Fachfragen, Wohlwollen durch echtes Interesse am Ziel des Kunden und Integrität durch Verlässlichkeit: Er tut, was er ankündigt, und verspricht nichts, was er nicht halten kann.",
+            "Ein letzter Punkt: Kunden sind keine naiven Empfänger. Das Persuasion Knowledge Model von Friestad und Wright beschreibt, dass Menschen im Laufe ihres Lebens Wissen über Überzeugungstaktiken aufbauen und es nutzen, um Verkaufsversuche zu erkennen und den Absender zu bewerten. Wer eine Taktik als Manipulation durchschaut, ändert sein Urteil über den Absender. Ein durchschauter Trick kostet dich also nicht nur diesen Termin, sondern das Vertrauen, das du für jeden weiteren Schritt brauchst."
+          ],
+          "sourceIds": [
+            "SRC-128",
+            "SRC-059",
+            "SRC-129"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Unsicherheit sortieren",
+          "category": "gespraech",
+          "what": "Du benennst das Zögern, klärst, welche Art von Unsicherheit dahintersteht, und antwortest gezielt darauf.",
+          "how": [
+            "Zögern wahrnehmen und vorsichtig benennen: „Klingt, als wären Sie noch unsicher.“",
+            "Nachfragen, worauf sich die Unsicherheit bezieht: Thema, Ergebnis, Anbieter oder Entscheidung?",
+            "Passend antworten: Wissen → einfach erklären oder an Fachberater übergeben; Ergebnis → offen sagen, was der Termin klären kann; Anbieter → Ablauf transparent machen; Entscheidung → Mitentscheider einbeziehen.",
+            "Einen kleinen, klar umrissenen nächsten Schritt mit ausdrücklichem Ausstieg anbieten."
+          ],
+          "why": "Eine Standardantwort auf jede Unsicherheit wirkt wie ein Skript. Eine passende Antwort zeigt Fähigkeit und Wohlwollen zugleich.",
+          "evidence": "Die Bedeutung von Durchschaubarkeit und Kontrollierbarkeit für das Risikoempfinden ist in der Risikoforschung gut beschrieben; das Vertrauensmodell (Fähigkeit, Wohlwollen, Integrität) ist etabliert. Die Vier-Arten-Einteilung ist eine didaktische Vereinfachung dieses Kurses (Annahme).",
+          "example": "Kunde: „Ich weiß nicht so recht …“ – Setter: „Das ist völlig okay. Darf ich fragen, was Sie gerade am meisten zögern lässt – eher das Thema selbst oder eher, wie so ein Termin bei uns abläuft?“",
+          "boundary": "Du räumst Unsicherheit mit ehrlicher Information aus – nie mit erfundenen Garantien, unbelegten Zahlen oder Zeitdruck. Bleibt der Kunde nach ehrlicher Information unsicher, ist ein späterer Kontakt oder ein Nein ein vollwertiges Ergebnis.",
+          "sourceIds": [
+            "SRC-128",
+            "SRC-059",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Der Termin, der sich riskant anfühlte",
+          "situation": "Ein Interessent für eine Wärmepumpe schreibt: „Ein Termin? Ich will nicht, dass da jemand zwei Stunden in meinem Wohnzimmer sitzt und ich am Ende etwas unterschreibe.“ Die Setterin antwortet zunächst: „Keine Sorge, unsere Berater sind sehr nett!“ Der Kunde reagiert nicht mehr.",
+          "analysis": "Die Antwort ging an der Unsicherheit vorbei. Der Kunde hatte kein Problem mit der Freundlichkeit, sondern mit Dauer, Kontrolle und Vertragsrisiko – also mit dem Ablauf. Besser: „Verständlich. Der Termin dauert etwa 45 Minuten, der Berater schaut sich die Heizung an und beantwortet Ihre Fragen. Unterschrieben wird dort nichts – Sie bekommen ein schriftliches Angebot und entscheiden in Ruhe. Wäre das für Sie so in Ordnung?“ Diese Antwort macht den Ablauf durchschaubar, gibt Kontrolle zurück und verspricht nur, was das Unternehmen tatsächlich so handhabt."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-004"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-005"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-006"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Wann hast du zuletzt einem Anbieter vertraut – und woran hast du Fähigkeit, Wohlwollen und Integrität konkret festgemacht?"
+        }
+      ],
+      "summary": [
+        "Unsicherheit hat verschiedene Formen: Wissen, Ergebnis, Vertrauen, Entscheidung – frage nach, welche es ist.",
+        "Was undurchschaubar, unfreiwillig oder unkontrollierbar wirkt, fühlt sich riskanter an.",
+        "Transparenz über Ablauf, Dauer und Entscheidungsfreiheit ist das ehrlichste Mittel gegen Zögern.",
+        "Vertrauen entsteht über Fähigkeit, Wohlwollen und Integrität.",
+        "Kunden erkennen Taktiken – ein durchschauter Trick beschädigt das Vertrauen dauerhaft."
+      ],
+      "moduleId": "M03",
+      "minutes": 15
+    },
+    {
+      "id": "M03-L03",
+      "title": "Verlustaversion – was die Forschung wirklich zeigt",
+      "objectiveIds": [
+        "LO-M03-03",
+        "LO-M03-08"
+      ],
+      "sourceIds": [
+        "SRC-012",
+        "SRC-009",
+        "SRC-039",
+        "SRC-115",
+        "SRC-116",
+        "SRC-102",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "„Verluste schmerzen doppelt so stark wie Gewinne“ – kaum ein Satz wird in Verkaufstrainings häufiger zitiert. In dieser Lektion schaust du dir an, was die Forschung dazu tatsächlich sagt, wo sie sich widerspricht und was daraus für ehrliche Gespräche folgt."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 3.3",
+          "title": "Wiegen Verluste schwerer als Gewinne?",
+          "paragraphs": [
+            "Die Idee der Verlustaversion stammt aus der Prospect Theory von Kahneman und Tversky (1979). Sie besagt, dass Menschen Ergebnisse relativ zu einem Bezugspunkt bewerten und dass ein Verlust einer bestimmten Größe stärker wiegt als ein gleich großer Gewinn. Diese Idee hat die Verhaltensökonomie geprägt und erklärt auf den ersten Blick viele Alltagsbeobachtungen, etwa warum Menschen ungern etwas hergeben, das sie bereits besitzen.",
+            "Wie stark der Effekt ist, ist allerdings eine empirische Frage – und die Antwort fällt differenzierter aus als das Trainingszitat. Eine große Meta-Analyse von Brown, Imai, Vieider und Camerer (2024) wertete Hunderte Schätzungen aus und kam auf einen mittleren Verlustaversions-Koeffizienten von knapp 2, mit beträchtlicher Streuung zwischen Studien, Methoden und Personen. „Im Durchschnitt etwa doppelt“ ist also eine vertretbare Zusammenfassung – „bei jedem Menschen in jeder Situation doppelt“ ist es nicht.",
+            "Es gibt zudem ernst zu nehmende Gegenpositionen. Gal und Rucker argumentierten 2018, dass die Evidenz nicht zeige, dass Verluste generell schwerer wiegen als Gewinne. Viele Befunde, die der Verlustaversion zugeschrieben werden – etwa das Festhalten am Status quo – ließen sich auch durch psychologische Trägheit erklären: Menschen bleiben beim Bestehenden, weil Veränderung Aufwand bedeutet, nicht unbedingt, weil sie Verluste fürchten. Mrkva, Johnson, Gächter und Herrmann antworteten 2020 mit Daten von über 17.000 Teilnehmenden: Verlustaversion habe Moderatoren – etwa nimmt sie mit Fachwissen und Erfahrung ab –, sei aber keineswegs verschwunden. Die Debatte ist nicht abgeschlossen.",
+            "Was heißt das für die Praxis? Erstens: Die Grundbeobachtung, dass Menschen am Bestehenden hängen und mögliche Nachteile stark beachten, ist stabil genug, um sie ernst zu nehmen. Zweitens: Der Mechanismus und die Größe sind kontextabhängig – Erfahrung, Höhe des Betrags und Art der Entscheidung spielen eine Rolle. Drittens: Aus dieser Forschung folgt keinerlei Rechtfertigung dafür, Kunden mit konstruierten Verlustszenarien unter Druck zu setzen.",
+            "Der seriöse Umgang mit dem Thema heißt deshalb: Wenn das Abwarten für den Kunden tatsächlich Kosten hat, darfst du diese benennen – sachlich, belegbar und möglichst mit seinen eigenen Zahlen. Erfundene Verluste, übertriebene Schreckensszenarien oder unbelegte Prognosen („Die Preise steigen nächsten Monat!“) sind dagegen nicht nur unethisch, sondern können als unwahre oder zur Täuschung geeignete Angabe nach § 5 UWG irreführend sein. Ehrlich benannte Nachteile helfen beim Entscheiden. Konstruierte Angst ersetzt das Entscheiden."
+          ],
+          "sourceIds": [
+            "SRC-012",
+            "SRC-009",
+            "SRC-039",
+            "SRC-115",
+            "SRC-102"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Ehrliche Kosten des Abwartens",
+          "category": "psychologie",
+          "what": "Du benennst tatsächliche, belegbare Folgen des Abwartens neutral und überlässt die Bewertung dem Kunden.",
+          "how": [
+            "Erst fragen, ob Abwarten für den Kunden überhaupt Nachteile hat („Was passiert, wenn alles so bleibt, wie es ist?“).",
+            "Nur Fakten nennen, die belegbar sind – idealerweise die Zahlen, die der Kunde selbst genannt hat.",
+            "Vor- und Nachteile beider Wege nennen, auch die Vorteile des Abwartens.",
+            "Die Entscheidung ausdrücklich beim Kunden lassen."
+          ],
+          "why": "Kunden beachten mögliche Nachteile stark. Wenn du sie ehrlich und vollständig darstellst, kann der Kunde besser entscheiden – und vertraut dir mehr, weil du auch Gegenargumente nennst.",
+          "evidence": "Dass Menschen im Durchschnitt Verluste stärker gewichten, ist meta-analytisch gestützt (λ ≈ 2, große Streuung). Ob dies auf Verlustaversion oder Trägheit zurückgeht, ist umstritten. Die Wirkung im Setting-Gespräch ist nicht direkt untersucht (Übertragung).",
+          "example": "„Sie hatten erzählt, dass Ihr Abschlag um 40 € gestiegen ist. Wenn alles so bleibt, bleibt vermutlich auch das so. Andererseits: Ein Speicher ist eine größere Investition – ob sich das rechnet, kann nur der Berater mit Ihren Daten seriös sagen.“",
+          "boundary": "Keine erfundenen Verluste, keine Angstszenarien, keine Prognosen, die du nicht belegen kannst. Bei verletzlichen Situationen (Gesundheit, Alter, finanzielle Not) noch zurückhaltender: Wer eine Notlage ausnutzt, handelt aggressiv im Sinne von § 4a UWG.",
+          "sourceIds": [
+            "SRC-009",
+            "SRC-039",
+            "SRC-115",
+            "SRC-102"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Verluste wiegen immer doppelt so schwer wie Gewinne – also musst du Kunden zeigen, was sie verlieren.“",
+          "reality": "Der Mittelwert vieler Studien liegt bei etwa 2, aber mit großer Streuung; erfahrene Entscheider zeigen geringere Werte, und Gal & Rucker bestreiten die Generalität des Effekts. Und selbst wenn er gilt: Ein Effekt ist keine Erlaubnis, Verluste zu erfinden oder zu übertreiben.",
+          "sourceIds": [
+            "SRC-009",
+            "SRC-039",
+            "SRC-115"
+          ]
+        },
+        {
+          "kind": "callout",
+          "tone": "ethics",
+          "title": "Grenze: Fakten ja, Angst nein",
+          "body": "Legitim: „Sie sagten, die Heizung ist 28 Jahre alt – der Berater kann einschätzen, wie lange sie realistisch noch hält.“ Manipulativ: „Wenn die im Winter ausfällt, sitzen Sie mit Ihren Kindern im Kalten.“ Der erste Satz informiert, der zweite erzeugt gezielt Angst."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-007"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-009"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Welche Sätze aus Werbung oder Verkaufsgesprächen, die dir begegnet sind, arbeiten mit Verlustangst? Welche davon waren belegt – und welche nicht?"
+        }
+      ],
+      "summary": [
+        "Prospect Theory: Bewertung relativ zu einem Bezugspunkt, Verluste wiegen oft schwerer.",
+        "Meta-analytisch im Mittel etwa Faktor 2 – mit großer Streuung und Moderatoren wie Erfahrung.",
+        "Gegenposition (Gal & Rucker): Vieles lässt sich auch mit Trägheit erklären; die Debatte ist offen.",
+        "Benenne nur echte, belegbare Kosten des Abwartens – und auch die Vorteile des Abwartens.",
+        "Erfundene Verluste und Angstszenarien sind unethisch und können irreführend (§ 5 UWG) oder aggressiv (§ 4a UWG) sein."
+      ],
+      "moduleId": "M03",
+      "minutes": 10
+    },
+    {
+      "id": "M03-L04",
+      "title": "Framing – gleiche Fakten, andere Wirkung",
+      "objectiveIds": [
+        "LO-M03-03"
+      ],
+      "sourceIds": [
+        "SRC-113",
+        "SRC-114",
+        "SRC-112",
+        "SRC-102",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Ob ein Joghurt „95 % fettfrei“ oder „5 % Fett“ ist, ändert nichts am Joghurt – aber oft am Urteil. In dieser Lektion lernst du, wie Framing wirkt, welche Formen es gibt und wie du Zahlen so darstellst, dass der Kunde besser statt schlechter informiert ist."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 3.4",
+          "title": "Der Rahmen bestimmt den Blick",
+          "paragraphs": [
+            "Framing bezeichnet die Beobachtung, dass inhaltlich gleichwertige Darstellungen unterschiedliche Entscheidungen auslösen können. Das bekannteste Beispiel stammt von Tversky und Kahneman (1981): Dasselbe Programm gegen eine Krankheit wurde einmal als „200 von 600 Menschen werden gerettet“ und einmal als „400 von 600 Menschen werden sterben“ beschrieben. Je nach Rahmen bevorzugten die Befragten unterschiedliche Optionen, obwohl die Zahlen identisch waren.",
+            "Anders als manche andere klassische Befunde hat sich dieser Effekt in großen Replikationsprojekten gut gehalten. Im ersten „Many Labs“-Projekt, in dem 13 Effekte in 36 Stichproben mit über 6.000 Teilnehmenden wiederholt wurden, gehörte das Gewinn-Verlust-Framing zu den Effekten, die sich zuverlässig zeigten. Framing gehört damit zu den robusteren Befunden der Entscheidungspsychologie – wobei die Effektgröße je nach Aufgabe und Kontext schwankt.",
+            "Levin, Schneider und Gaeth (1998) zeigten, dass sich hinter dem Wort „Framing“ verschiedene Phänomene verbergen. Beim Risiko-Framing geht es um die Wahl zwischen einer sicheren und einer riskanten Option (wie im Krankheitsbeispiel). Beim Attribut-Framing wird eine einzelne Eigenschaft positiv oder negativ beschrieben („75 % mager“ vs. „25 % Fett“) – das verändert vor allem die Bewertung. Beim Ziel-Framing wird dieselbe Handlung über ihren Nutzen oder über die Nachteile des Unterlassens begründet („Wenn Sie teilnehmen, gewinnen Sie …“ vs. „Wenn Sie nicht teilnehmen, entgeht Ihnen …“).",
+            "Für Setter ist entscheidend: Es gibt keine rahmenfreie Kommunikation. Jede Formulierung setzt einen Schwerpunkt. Die ethische Frage ist deshalb nicht, ob du einen Rahmen wählst, sondern ob der Rahmen den Kunden informiert oder in die Irre führt. Ein Rahmen informiert, wenn die Bezugsgröße klar ist, wenn wichtige Gegeninformationen nicht weggelassen werden und wenn der Kunde die Zahl selbst nachvollziehen kann.",
+            "Irreführend wird Framing, wenn es ein falsches Bild erzeugt: „Bis zu 70 % sparen“, obwohl das nur in einem seltenen Sonderfall gilt; „nur 2 € am Tag“, ohne die Vertragslaufzeit zu nennen; eine Ersparnis ohne Angabe, im Vergleich wozu. Nach § 5 UWG ist eine geschäftliche Handlung irreführend, wenn sie unwahre oder sonstige zur Täuschung geeignete Angaben enthält – auch eine technisch wahre, aber selektiv gerahmte Zahl kann zur Täuschung geeignet sein. Die einfachste Schutzregel: Nenne die Zahl so, dass der Kunde sie auch im anderen Rahmen versteht."
+          ],
+          "sourceIds": [
+            "SRC-113",
+            "SRC-112",
+            "SRC-114",
+            "SRC-102"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Doppelter Rahmen mit Bezugsgröße",
+          "category": "schreiben",
+          "what": "Du stellst wichtige Zahlen so dar, dass der Kunde Bezugsgröße und Gegenperspektive kennt.",
+          "how": [
+            "Zahl mit Bezugsgröße nennen („von 100 Kunden …“, „pro Monat bei 24 Monaten Laufzeit“).",
+            "Bei Prozentangaben die Gegenperspektive mitliefern („9 von 10 zufrieden – einer also nicht“).",
+            "„Bis zu“-Angaben nur verwenden, wenn du auch den typischen Fall nennen kannst – sonst weglassen.",
+            "Unklare Zahlen an den Fachberater übergeben, statt sie selbst zu rahmen."
+          ],
+          "why": "Ein vollständiger Rahmen schützt den Kunden vor Fehlurteilen und dich vor Irreführung. Er wirkt außerdem glaubwürdiger als eine geschönte Zahl.",
+          "evidence": "Framing-Effekte sind gut repliziert (u. a. Many Labs 1), ihre Stärke ist aufgabenabhängig. Dass doppelte Rahmung Framing-Effekte vollständig neutralisiert, ist nicht belegt – sie macht die Information aber nachvollziehbar (Praxisheuristik).",
+          "example": "Statt „Bis zu 70 % Ersparnis!“: „Wie viel Sie sparen, hängt stark vom Haus ab. Der Berater rechnet das mit Ihren Verbrauchsdaten durch – dann haben Sie eine Zahl, die für Sie gilt.“",
+          "boundary": "Nie eine Zahl so auswählen oder verkürzen, dass ein falscher Eindruck entsteht. Wenn du die Bezugsgröße nicht kennst, nennst du die Zahl nicht.",
+          "sourceIds": [
+            "SRC-113",
+            "SRC-114",
+            "SRC-112",
+            "SRC-102"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Durchgerechnet: Eine Zufriedenheitszahl ehrlich rahmen",
+          "steps": [
+            "Ausgangslage: Das Unternehmen hat 412 abgeschlossene Projekte; 371 Kunden haben die Nachbefragung beantwortet, davon 333 mit „zufrieden“ oder „sehr zufrieden“.",
+            "Verlockender Rahmen: „Über 90 % zufriedene Kunden!“ – 333 von 371 sind 89,8 %, also nicht „über 90 %“, und es fehlt der Hinweis, dass nur Antwortende gezählt wurden.",
+            "Prüfen: Welche Bezugsgröße ist ehrlich? 333 von 371 Antwortenden ≈ 90 % (genau 89,8 %). Bezogen auf alle 412 Projekte wären es 81 % – über die 41 Nicht-Antwortenden weißt du nichts.",
+            "Ehrlicher Rahmen: „In unserer Nachbefragung haben 333 von 371 Kunden, die geantwortet haben, angegeben, zufrieden oder sehr zufrieden zu sein.“",
+            "Gegenperspektive anbieten: „Wenn Sie mögen, kann Ihnen der Berater auch sagen, was die übrigen Kunden kritisiert haben.“",
+            "Ergebnis: Die Zahl ist weniger glänzend, aber überprüfbar, korrekt und glaubwürdiger."
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-010"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-012"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Such dir eine Werbeaussage mit Prozentzahl. Wie lautet sie im umgekehrten Rahmen – und welche Bezugsgröße fehlt?"
+        }
+      ],
+      "summary": [
+        "Framing: gleiche Fakten, unterschiedliche Darstellung, unterschiedliche Entscheidungen.",
+        "Gut replizierter Effekt – Stärke schwankt je nach Aufgabe.",
+        "Drei Typen: Risiko-, Attribut- und Ziel-Framing.",
+        "Rahmenfreie Kommunikation gibt es nicht – entscheidend ist, ob der Rahmen informiert oder täuscht.",
+        "Zahlen immer mit Bezugsgröße; selektive Rahmung kann irreführend nach § 5 UWG sein."
+      ],
+      "moduleId": "M03",
+      "minutes": 12
+    },
+    {
+      "id": "M03-L05",
+      "title": "Reziprozität und Social Proof – echt statt gefälscht",
+      "objectiveIds": [
+        "LO-M03-04"
+      ],
+      "sourceIds": [
+        "SRC-117",
+        "SRC-038",
+        "SRC-118",
+        "SRC-119",
+        "SRC-103",
+        "SRC-102",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Zwei Prinzipien gehören zum Standardrepertoire jedes Verkaufstrainings: Wer etwas bekommt, möchte etwas zurückgeben (Reziprozität), und wer unsicher ist, orientiert sich an anderen (Social Proof). Beide können Kunden helfen – und beide werden häufig missbraucht. Hier lernst du die legitime Version und die Warnsignale."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 3.5",
+          "title": "Geben und Orientierung – zwei mächtige Normen",
+          "paragraphs": [
+            "Die Norm der Gegenseitigkeit ist in nahezu allen Kulturen verbreitet: Wer uns einen Gefallen tut, dem fühlen wir uns verpflichtet. In einem klassischen Experiment von Regan (1971) kauften Versuchspersonen mehr Lose von einer Person, die ihnen zuvor ungefragt eine Limonade mitgebracht hatte. Bemerkenswert: Die Zustimmung hing weniger davon ab, ob man die Person mochte, sondern vor allem vom Gefühl, etwas zurückgeben zu sollen. Cialdini hat Reziprozität in seinem populären Buch als eines der zentralen Einflussprinzipien beschrieben; einzelne Studien dieses Felds sind klein und älter, das Grundprinzip gilt aber als gut beobachtet.",
+            "Gerade weil die Norm stark ist, verlangt sie Sorgfalt. Legitim ist Reziprozität, wenn du echten Wert gibst, der dem Kunden auch dann nützt, wenn er nichts kauft: eine verständliche Erklärung, eine hilfreiche Checkliste, eine ehrliche Einschätzung, ob ein Termin überhaupt sinnvoll ist. Manipulativ wird sie, wenn das Geschenk nur als Hebel dient („Ich habe Ihnen extra einen Sonderpreis reserviert – da können Sie doch jetzt zusagen“) oder wenn ein angeblicher Gefallen gar keiner ist.",
+            "Social Proof beschreibt, dass Menschen sich in unsicheren Situationen am Verhalten anderer orientieren. Eine bekannte Feldstudie von Goldstein, Cialdini und Griskevicius (2008) fand, dass Hotelgäste ihre Handtücher häufiger wiederverwendeten, wenn ein Schild auf das Verhalten anderer Gäste hinwies, als bei einem reinen Umweltappell. Eine Wiederholung von Bohner und Schlüter (2014) in zwei deutschen Hotels zeigte jedoch: Beide Schilder steigerten die Wiederverwendung gegenüber keinem Schild, die Norm-Botschaft war aber nicht wirksamer als der Standardappell. Der Effekt ist also real beobachtbar, aber kontextabhängig und kleiner als in vielen Trainings behauptet.",
+            "Für Setter folgt daraus: Hinweise auf andere Kunden sind dann legitim, wenn sie wahr, überprüfbar und für die Situation des Kunden relevant sind. „Viele unserer Kunden hatten ähnliche Fragen zur Förderung, die klären wir im Termin“ ist ehrlich und entlastend. „Alle Ihre Nachbarn haben schon bei uns gekauft“ ist entweder unwahr oder eine Datenschutzfrage – und in beiden Fällen unseriös.",
+            "Rechtlich ist die Grenze klar gezogen. Nach dem Anhang zu § 3 Abs. 3 UWG sind gegenüber Verbrauchern unter anderem die Übermittlung oder Beauftragung gefälschter Verbraucherbewertungen sowie die Behauptung, Bewertungen stammten von echten Kunden, ohne angemessene Prüfung, stets unzulässig. Erfundene Kundenzahlen, ausgedachte Referenzen oder „Kunden wie Sie“-Geschichten, die nie passiert sind, können zudem als irreführend nach § 5 UWG gelten. Ein Setter erfindet nie Belege – wenn du keinen echten hast, sagst du ehrlich, was du weißt."
+          ],
+          "sourceIds": [
+            "SRC-117",
+            "SRC-038",
+            "SRC-118",
+            "SRC-119",
+            "SRC-103",
+            "SRC-102"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Wert zuerst – ohne Haken",
+          "category": "psychologie",
+          "what": "Du gibst dem Kunden etwas, das ihm auch ohne Termin oder Kauf nützt, und verknüpfst es nicht mit einer Gegenforderung.",
+          "how": [
+            "Herausfinden, was dem Kunden jetzt hilft (Information, Checkliste, Einordnung).",
+            "Den Wert geben, ohne Bedingung („Ganz unabhängig davon, ob Sie mit uns sprechen …“).",
+            "Danach offen fragen, ob ein nächster Schritt sinnvoll ist – ein Nein bleibt folgenlos."
+          ],
+          "why": "Echter Wert zeigt Wohlwollen und Kompetenz. Kunden, die sich gut informiert fühlen, entscheiden sicherer – egal wie.",
+          "evidence": "Die Reziprozitätsnorm ist gut beobachtet (z. B. Regan, 1971); die Effektstärke in modernen Verkaufskontexten ist kaum untersucht. Der Nutzen von Wert ohne Gegenforderung für Vertrauen ist eine plausible Übertragung (Expertenmeinung).",
+          "example": "„Unabhängig davon, ob Sie mit uns weitermachen: Ich schicke Ihnen gern eine Checkliste mit fünf Fragen, die Sie jedem Anbieter stellen können. Möchten Sie die?“",
+          "boundary": "Kein „Geschenk“, das nur als Druckmittel dient, keine Formulierungen wie „Nachdem ich Ihnen so entgegengekommen bin …“, keine erfundenen Sonderpreise.",
+          "sourceIds": [
+            "SRC-117",
+            "SRC-038",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Belegbarer Social Proof",
+          "category": "gespraech",
+          "what": "Du verweist auf Erfahrungen anderer Kunden nur, wenn sie wahr, überprüfbar und für diesen Kunden relevant sind.",
+          "how": [
+            "Prüfen: Ist die Aussage wahr und kann ich sie belegen?",
+            "Prüfen: Ist sie für die Situation des Kunden relevant (ähnliche Frage, ähnliche Lage)?",
+            "Neutral formulieren, ohne Übertreibung („Diese Frage stellen uns viele …“).",
+            "Keine personenbezogenen Daten anderer Kunden preisgeben."
+          ],
+          "why": "Ehrliche Hinweise auf andere entlasten unsichere Kunden („Ich bin nicht der Einzige mit dieser Frage“), ohne sie zu täuschen.",
+          "evidence": "Social-Proof-Effekte sind in Feldstudien beobachtet, aber kontextabhängig: Die Hotel-Replikation in Deutschland fand keinen Vorteil der Norm-Botschaft gegenüber dem Standardappell.",
+          "example": "„Die Frage nach der Förderung stellen uns sehr viele Kunden – der Berater bringt dafür eine Übersicht mit.“",
+          "boundary": "Keine erfundenen Zahlen, Bewertungen, Referenzen oder Nachbarn. Gefälschte Bewertungen sind nach dem UWG-Anhang gegenüber Verbrauchern stets unzulässig.",
+          "sourceIds": [
+            "SRC-118",
+            "SRC-119",
+            "SRC-103"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Ein kleines Geschenk verpflichtet jeden Kunden zum Kauf – Reziprozität funktioniert immer.“",
+          "reality": "Reziprozität ist eine Norm, kein Automatismus. Wer ein Geschenk als Hebel erkennt, reagiert eher mit Misstrauen. Und Social Proof zeigte sich in einer deutschen Replikation schwächer als im Original.",
+          "sourceIds": [
+            "SRC-117",
+            "SRC-119",
+            "SRC-129"
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-013"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-014"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-016"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Wann hast du dich zuletzt „verpflichtet“ gefühlt, etwas zu kaufen? War das ein echter Gefallen oder ein Hebel – und wie hat es sich im Nachhinein angefühlt?"
+        }
+      ],
+      "summary": [
+        "Reziprozität: Gegenseitigkeitsnorm – legitim, wenn du echten Wert ohne Gegenforderung gibst.",
+        "Social Proof: Orientierung an anderen – Effekt real, aber kontextabhängig (Hotel-Replikation).",
+        "Hinweise auf andere Kunden nur, wenn wahr, überprüfbar und relevant.",
+        "Gefälschte Bewertungen sind gegenüber Verbrauchern stets unzulässig (UWG-Anhang); erfundene Referenzen irreführend.",
+        "Geschenke als Druckhebel zerstören Vertrauen."
+      ],
+      "moduleId": "M03",
+      "minutes": 11
+    },
+    {
+      "id": "M03-L06",
+      "title": "Commitment, Konsistenz und Autonomie",
+      "objectiveIds": [
+        "LO-M03-05"
+      ],
+      "sourceIds": [
+        "SRC-120",
+        "SRC-121",
+        "SRC-052",
+        "SRC-053",
+        "SRC-122",
+        "SRC-056",
+        "SRC-102",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Menschen möchten mit dem übereinstimmen, was sie zuvor gesagt oder getan haben. Das kann einem Kunden helfen, einen eigenen Vorsatz umzusetzen – oder ihn in eine Falle locken. In dieser Lektion lernst du, wie du kleine Zusagen fair einsetzt und warum ausdrücklich gewährte Freiheit oft besser wirkt als Druck."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 3.6",
+          "title": "Kleine Schritte, freie Entscheidung",
+          "paragraphs": [
+            "Das bekannteste Experiment zu Commitment stammt von Freedman und Fraser (1966): Menschen, die zuerst einer kleinen Bitte zugestimmt hatten, stimmten später häufiger einer größeren Bitte zu. Diese „Fuß in der Tür“-Technik wurde seither oft untersucht. Burger kam 1999 in einer Übersicht zu einem differenzierten Bild: Hinter dem Effekt stehen mehrere Prozesse – etwa Selbstwahrnehmung („Ich bin jemand, der so etwas unterstützt“), Konsistenzstreben und Commitment –, und je nach Umständen wirkt die Technik, wirkt nicht oder senkt die Zustimmung sogar. Sie ist also kein verlässlicher Hebel.",
+            "Für Setter ist die faire Version naheliegend: Ein Termin ist selbst eine kleine, überschaubare Zusage. Er sollte so gestaltet sein, dass der Kunde ihn ohne Risiko geben kann – klar umrissen, zeitlich begrenzt und ohne versteckte Folgeverpflichtung. Gut belegt ist außerdem, dass konkrete Wenn-dann-Pläne (Implementation Intentions) helfen, eigene Vorsätze umzusetzen. Eine Terminbestätigung mit Datum, Uhrzeit und einem Plan für den Fall, dass etwas dazwischenkommt, nutzt genau das – im Interesse des Kunden.",
+            "Unfair wird Commitment, wenn eine kleine Zusage nachträglich umgedeutet wird. Typische Muster: Aus „Ja, ich bin interessiert“ wird „Sie haben doch gesagt, Sie wollen es“, aus der Zusage zu einem Beratungstermin eine angebliche Kaufabsicht, oder Bedingungen ändern sich, nachdem der Kunde schon zugestimmt hat. Solche Taktiken spielen mit dem Wunsch nach Konsistenz gegen die Interessen des Kunden und können je nach Gestaltung irreführend sein.",
+            "Das Gegenstück zu Druck ist ausdrücklich gewährte Freiheit. Wenn Menschen spüren, dass ihre Wahlfreiheit bedroht ist, reagieren sie oft mit Reaktanz: Sie wehren sich gegen die Einschränkung, werten das Angebot ab oder tun demonstrativ das Gegenteil. Die Reaktanzforschung ist umfangreich und gut etabliert. Umgekehrt zeigte eine Meta-Analyse von Carpenter (2013), dass der Zusatz „Aber Sie sind natürlich frei, Nein zu sagen“ die Zustimmung erhöhen kann. Eine spätere Re-Analyse von Fillon und Kollegen fand allerdings, dass der Effekt in methodisch strengen Studien deutlich kleiner und nicht mehr signifikant war.",
+            "Daraus folgt eine klare Haltung: Du betonst die Freiheit des Kunden nicht als Trick, um die Zustimmung zu steigern – das ist nach aktueller Evidenz ohnehin unsicher –, sondern weil sie stimmt. Der Kunde ist frei. Wenn du das sagst und meinst, verringerst du Reaktanz, stärkst das Bedürfnis nach Autonomie und schützt die Beziehung auch dann, wenn die Antwort Nein ist."
+          ],
+          "sourceIds": [
+            "SRC-120",
+            "SRC-121",
+            "SRC-056",
+            "SRC-122",
+            "SRC-052",
+            "SRC-053",
+            "SRC-102"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Freiwillige Mikro-Zusage",
+          "category": "prozess",
+          "what": "Du schlägst einen kleinen, klar umrissenen nächsten Schritt vor und machst die Entscheidungsfreiheit ausdrücklich.",
+          "how": [
+            "Den Schritt konkret beschreiben: was, wie lange, wer ist dabei, was passiert danach.",
+            "Ausdrücklich sagen, was der Schritt nicht ist („Im Termin wird nichts unterschrieben.“).",
+            "Die Freiheit benennen – ehrlich gemeint: „Wenn es nicht passt, ist das völlig in Ordnung.“",
+            "Bei Zusage einen Wenn-dann-Plan vereinbaren („Falls etwas dazwischenkommt, schreiben Sie mir einfach.“)."
+          ],
+          "why": "Ein überschaubarer, freiwilliger Schritt senkt das empfundene Risiko. Ein klarer Plan hilft dem Kunden, seinen eigenen Vorsatz umzusetzen.",
+          "evidence": "Fuß-in-der-Tür-Effekte sind uneinheitlich (Burger, 1999). Implementation Intentions sind meta-analytisch gut belegt. Der „Sie sind frei“-Zusatz ist nach strenger Re-Analyse nicht sicher wirksam – du nutzt ihn, weil er wahr ist, nicht als Hebel.",
+          "example": "„Der nächste Schritt wäre ein 30-minütiges Videogespräch mit unserem Berater. Er schaut sich Ihre Situation an, unterschrieben wird nichts. Wenn es danach nicht passt, ist das völlig okay. Möchten Sie das?“",
+          "boundary": "Keine Umdeutung von Zusagen („Sie hatten doch Ja gesagt …“), keine nachträglich geänderten Bedingungen, keine Kette immer größerer Bitten, um den Kunden „hineinzuziehen“. Ein Nein beendet die Kette.",
+          "sourceIds": [
+            "SRC-121",
+            "SRC-056",
+            "SRC-052",
+            "SRC-053"
+          ]
+        },
+        {
+          "kind": "caseStudy",
+          "title": "Fallstudie: Aus „Termin“ wird „Kauf“",
+          "situation": "Ein Setter hat mit einer Kundin einen Beratungstermin für einen Treppenlift vereinbart. Kurz vor Ende schreibt er: „Super, dann reserviere ich Ihnen schon mal den Aktionspreis – dafür brauche ich nur Ihre Zusage, dass Sie den Lift nehmen. Sie hatten ja gesagt, dass Sie die Treppe kaum noch schaffen.“ Eine Aktion gibt es nicht. Die Kundin sagt den Termin ab.",
+          "analysis": "Hier kommen drei Fehler zusammen: Die Zusage zum Termin wird in eine Kaufzusage umgedeutet (Missbrauch von Konsistenz), ein Aktionspreis wird erfunden (unwahre Angabe, § 5 UWG; künstliche Dringlichkeit) und eine gesundheitliche Belastung wird als Druckmittel verwendet – bei einer älteren Kundin besonders problematisch (§ 4a Abs. 2 UWG nennt unter anderem Alter und Angst als Umstände, deren Ausnutzung aggressiv sein kann). Richtig wäre gewesen, den vereinbarten Termin sauber zu bestätigen und zu betonen, dass sie dort nichts unterschreiben muss.",
+          "simulationNote": "In der Simulation SIM-005 übst du genau diese Situation – inklusive der Versuchung, mit Knappheit und Angst zu arbeiten."
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-017"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-018"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-019"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-033"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Erinnere dich an eine Situation, in der dich jemand zu etwas drängen wollte. Was hat deine Reaktanz ausgelöst – und was hätte dich stattdessen überzeugt?"
+        }
+      ],
+      "summary": [
+        "Konsistenzstreben ist real, der Fuß-in-der-Tür-Effekt aber uneinheitlich.",
+        "Fair: kleiner, klar umrissener Schritt ohne versteckte Folgeverpflichtung.",
+        "Wenn-dann-Pläne helfen Kunden, eigene Vorsätze umzusetzen.",
+        "Unfair: Zusagen umdeuten, Bedingungen nachträglich ändern.",
+        "Druck erzeugt Reaktanz; ausdrückliche Freiheit sagst du, weil sie stimmt – nicht als Trick."
+      ],
+      "moduleId": "M03",
+      "minutes": 17
+    },
+    {
+      "id": "M03-L07",
+      "title": "Entscheidungsüberlastung – wann weniger mehr ist",
+      "objectiveIds": [
+        "LO-M03-06",
+        "LO-M03-08"
+      ],
+      "sourceIds": [
+        "SRC-123",
+        "SRC-010",
+        "SRC-011",
+        "SRC-124",
+        "SRC-125",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "„Zu viel Auswahl lähmt“ – das Marmeladen-Experiment kennt fast jeder. Weniger bekannt ist, dass Meta-Analysen ein deutlich gemischteres Bild zeigen. In dieser Lektion lernst du, wann viele Optionen tatsächlich überfordern und wie du Auswahl strukturierst, ohne dem Kunden Optionen vorzuenthalten."
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 3.7",
+          "title": "Das Marmeladen-Experiment und was danach kam",
+          "paragraphs": [
+            "Iyengar und Lepper berichteten im Jahr 2000 von einem Feldexperiment in einem Feinkostgeschäft: An einem Probierstand mit 24 Marmeladensorten blieben mehr Menschen stehen als an einem Stand mit 6 Sorten – gekauft wurde aber deutlich häufiger bei der kleinen Auswahl. Weitere Studien mit Pralinen und Aufsatzthemen zeigten ein ähnliches Muster. Der Befund wurde unter dem Schlagwort „Choice Overload“ weltberühmt und wird bis heute als Beleg zitiert, dass weniger Auswahl immer besser sei.",
+            "Spätere Forschung relativiert das deutlich. Scheibehenne, Greifeneder und Todd fassten 2010 in einer Meta-Analyse 63 Bedingungen mit über 5.000 Teilnehmenden zusammen. Der mittlere Effekt lag praktisch bei null – mit großer Streuung: In manchen Studien schadete große Auswahl, in anderen half sie, in vielen machte sie keinen Unterschied. Die einfache Regel „mehr Auswahl schadet“ hielt also nicht.",
+            "Chernev, Böckenholt und Goodman suchten 2015 nach den Bedingungen, unter denen Überlastung auftritt. In ihrer Meta-Analyse mit 99 Beobachtungen identifizierten sie vier Moderatoren: Wie komplex die einzelnen Optionen sind, wie schwierig die Entscheidungsaufgabe ist, wie unsicher sich die Person über ihre eigenen Präferenzen ist und ob sie vor allem Aufwand sparen möchte. Berücksichtigt man diese Moderatoren, zeigt sich ein bedeutsamer Effekt. Die zutreffende Zusammenfassung lautet deshalb: Entscheidungsüberlastung ist kein allgemeines Gesetz, sondern ein kontextabhängiges Phänomen.",
+            "Für Setter ist die Lage typisch für die Bedingungen, unter denen Überlastung wahrscheinlich ist: Kunden kennen sich oft wenig aus (Präferenzunsicherheit), die Produkte sind komplex, und im Chat wollen sie schnell zu einem Ergebnis kommen. Hier hilft Struktur: zwei konkrete Terminvorschläge statt eines offenen Kalenders mit 40 freien Slots, ein klarer nächster Schritt statt fünf Paketvarianten. Wichtig ist der Unterschied zwischen Strukturieren und Vorenthalten: Du ordnest die Auswahl, aber der Kunde kann jederzeit eine andere Zeit, ein anderes Format oder gar keinen Termin wählen.",
+            "Ein verwandtes Feld ist „Nudging“, also die Gestaltung von Entscheidungssituationen. Eine große Meta-Analyse von Mertens und Kollegen (2022) fand einen kleinen bis mittleren Durchschnittseffekt, aber auch Hinweise auf Publikationsverzerrung. Eine Re-Analyse von Maier und Kollegen kam nach Korrektur dieser Verzerrung zu dem Schluss, dass es keine Evidenz für einen durchschnittlichen Effekt gebe – wobei einzelne Interventionen durchaus wirken könnten. Die Lehre für dich: Gestaltungstricks sind kein Zauber. Klarheit hilft Kunden, aber sie ersetzt keine passende Lösung."
+          ],
+          "sourceIds": [
+            "SRC-123",
+            "SRC-010",
+            "SRC-011",
+            "SRC-124",
+            "SRC-125"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Zwei-Optionen-Struktur",
+          "category": "prozess",
+          "what": "Du schlägst zwei konkrete, zur Situation passende Optionen vor und hältst ausdrücklich den Weg zu anderen Optionen offen.",
+          "how": [
+            "Vorher klären, was zum Kunden passt (Arbeitszeiten, Kanal, Mitentscheider).",
+            "Zwei konkrete Optionen anbieten, die sich sinnvoll unterscheiden (z. B. Abend vs. Wochenende).",
+            "Ausdrücklich öffnen: „Oder passt Ihnen ein anderer Zeitpunkt besser?“",
+            "Ein Nein oder „später“ als gültige Antwort akzeptieren."
+          ],
+          "why": "Unter Präferenzunsicherheit und Komplexität kann eine kleine, gut gewählte Auswahl die Entscheidung erleichtern – ohne Freiheit wegzunehmen.",
+          "evidence": "Kontextabhängig: Meta-analytisch kein allgemeiner Overload-Effekt (Scheibehenne et al., 2010), aber unter bestimmten Moderatoren schon (Chernev et al., 2015). Dass zwei Terminoptionen die Buchung erhöhen, ist Praxiserfahrung, nicht experimentell belegt.",
+          "example": "„Passt Ihnen Dienstag um 18 Uhr oder Samstag um 10 Uhr besser? Wenn beides nicht geht, finden wir gern einen anderen Termin.“",
+          "boundary": "Die Zwei-Optionen-Frage ist keine „Alternativfrage“, die das Nein ausblendet. Stelle sie erst, nachdem der Kunde einem Termin grundsätzlich zugestimmt hat – nie als Trick, um eine Zustimmung zu unterstellen.",
+          "sourceIds": [
+            "SRC-010",
+            "SRC-011",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "myth",
+          "claim": "„Das Marmeladen-Experiment beweist: Weniger Auswahl verkauft immer besser.“",
+          "reality": "Eine einzelne Studie beweist kein allgemeines Gesetz. Die Meta-Analyse von Scheibehenne et al. (2010) fand im Mittel praktisch keinen Effekt; Chernev et al. (2015) zeigen, dass Überlastung nur unter bestimmten Bedingungen auftritt.",
+          "sourceIds": [
+            "SRC-123",
+            "SRC-010",
+            "SRC-011"
+          ]
+        },
+        {
+          "kind": "workedExample",
+          "title": "Durchgerechnet: Aus einem überladenen Angebot wird eine klare Frage",
+          "steps": [
+            "Ausgangsnachricht: „Wir bieten Basis, Plus, Premium, Premium-Flex und All-inclusive an, Termine gehen Mo–Sa von 8 bis 20 Uhr, per Telefon, Video oder vor Ort. Was passt Ihnen?“",
+            "Analyse: Fünf Pakete, 72 Zeitfenster, drei Formate – bei einer Kundin, die sich nach eigener Aussage „nicht auskennt“. Präferenzunsicherheit und Komplexität sind hoch, also ist Überlastung wahrscheinlich.",
+            "Schritt 1: Pakete gehören nicht in die Setter-Nachricht – die Auswahl berät der Fachberater.",
+            "Schritt 2: Format nach Bedarf klären: „Ist Ihnen ein Gespräch per Video recht, oder lieber vor Ort?“",
+            "Schritt 3: Zwei Zeitfenster passend zu ihren Angaben anbieten und öffnen: „Dienstag 18 Uhr oder Samstag 10 Uhr – oder ein anderer Zeitpunkt?“",
+            "Ergebnis: Die Kundin kann mit einem Wort antworten, behält aber alle Optionen."
+          ]
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-021"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-022"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-024"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-034"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Wann hat dich zu viel Auswahl zuletzt überfordert – und welche der vier Bedingungen (Komplexität, Schwierigkeit, Präferenzunsicherheit, Wunsch nach wenig Aufwand) lagen vor?"
+        }
+      ],
+      "summary": [
+        "Iyengar & Lepper (2000): weniger Marmeladensorten, mehr Käufe – ein Einzelbefund.",
+        "Meta-Analyse Scheibehenne et al. (2010): im Mittel praktisch kein Effekt, große Streuung.",
+        "Chernev et al. (2015): Überlastung unter bestimmten Moderatoren (Komplexität, Schwierigkeit, Präferenzunsicherheit, Aufwandsziel).",
+        "Strukturieren ja, Vorenthalten nein: zwei Optionen plus offene Tür.",
+        "Nudging-Effekte sind umstritten – Klarheit hilft, ersetzt aber keine passende Lösung."
+      ],
+      "moduleId": "M03",
+      "minutes": 15
+    },
+    {
+      "id": "M03-L08",
+      "title": "Seriös oder manipulativ? Recht, Ethik und Evidenzqualität",
+      "objectiveIds": [
+        "LO-M03-07",
+        "LO-M03-08"
+      ],
+      "sourceIds": [
+        "SRC-101",
+        "SRC-102",
+        "SRC-103",
+        "SRC-104",
+        "SRC-105",
+        "SRC-106",
+        "SRC-129",
+        "SRC-107",
+        "SRC-108",
+        "SRC-109",
+        "SRC-110",
+        "SRC-111",
+        "SRC-112",
+        "SRC-050"
+      ],
+      "blocks": [
+        {
+          "kind": "text",
+          "title": "Worum es geht",
+          "body": "Die letzte Lektion bündelt das Modul: Wo endet seriöse Überzeugung, wo beginnt Manipulation – ethisch und rechtlich? Und wie erkennst du, ob ein psychologischer „Trick“, von dem du hörst, überhaupt belegt ist?"
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 3.8",
+          "title": "Die Grenze zwischen Überzeugen und Manipulieren",
+          "paragraphs": [
+            "Überzeugen und Manipulieren nutzen manchmal dieselben psychologischen Mechanismen. Der Unterschied liegt darin, ob die Entscheidungsfähigkeit des Kunden gestärkt oder umgangen wird. Seriöse Kommunikation gibt wahre, relevante Information, macht Abläufe durchschaubar und lässt die Entscheidung frei. Manipulation täuscht (falsche Angaben, Weglassen wesentlicher Information), setzt unter Druck (künstliche Fristen, Angst) oder nutzt Schwächen aus (Alter, Notlage, Unerfahrenheit). Ein einfacher Test: Würde der Kunde genauso entscheiden, wenn er genau wüsste, was du gerade tust und warum?",
+            "Das Gesetz gegen den unlauteren Wettbewerb (UWG) zieht diese Grenze für geschäftliche Handlungen. Nach § 4a UWG handelt unlauter, wer eine aggressive geschäftliche Handlung vornimmt, die geeignet ist, Verbraucher oder sonstige Marktteilnehmer zu einer Entscheidung zu veranlassen, die sie andernfalls nicht getroffen hätten. Aggressiv ist eine Handlung, wenn sie die Entscheidungsfreiheit durch Belästigung, Nötigung oder unzulässige Beeinflussung erheblich beeinträchtigen kann. Bei der Beurteilung spielt unter anderem eine Rolle, ob konkrete Unglückssituationen oder Umstände wie Alter, Angst oder eine Zwangslage bewusst ausgenutzt werden.",
+            "§ 5 UWG verbietet irreführende geschäftliche Handlungen: Eine Handlung ist irreführend, wenn sie unwahre Angaben oder sonstige zur Täuschung geeignete Angaben enthält, etwa über Verfügbarkeit, Preis oder Preisvorteile. Der Anhang zu § 3 Abs. 3 UWG enthält eine „schwarze Liste“ von Praktiken, die gegenüber Verbrauchern stets unzulässig sind. Dazu gehört die unwahre Angabe, ein Angebot sei nur für einen sehr begrenzten Zeitraum verfügbar, um eine sofortige Entscheidung zu erzwingen (Nr. 7), sowie gefälschte Verbraucherbewertungen (Nr. 23c). Diese Regeln setzen die europäische Richtlinie über unlautere Geschäftspraktiken um. Für dich als Setter heißt das: Künstliche Knappheit und erfundener Social Proof sind nicht nur unfair, sondern rechtlich riskant – für dich und dein Unternehmen. Im Zweifel klärst du Formulierungen mit deinem Unternehmen; diese Lektion ersetzt keine Rechtsberatung.",
+            "Im Digitalen heißen manipulative Gestaltungsmuster „Dark Patterns“. Mathur und Kollegen untersuchten 2019 rund 53.000 Produktseiten auf etwa 11.000 Shopping-Websites und fanden 1.818 Fälle von Dark Patterns, darunter Countdown-Timer, Knappheits- und Social-Proof-Meldungen, von denen einige nachweislich irreführend waren. Der Digital Services Act der EU verbietet Anbietern von Online-Plattformen in Art. 25, ihre Benutzeroberflächen so zu gestalten, dass Nutzer getäuscht, manipuliert oder in ihrer freien und informierten Entscheidung wesentlich beeinträchtigt werden. Im Chat-Setting entstehen ähnliche Muster: der „Nur heute“-Link, die vorausgewählte Zustimmung, die Abmeldung, die man suchen muss.",
+            "Neben der rechtlichen gibt es eine praktische Grenze. Kunden erkennen Überzeugungstaktiken und passen ihr Urteil über den Absender an. Manipulation mag kurzfristig einen Termin bringen – aber dieser Termin ist häufiger ein No-Show, eine Stornierung oder eine schlechte Bewertung. Seriöse Kommunikation ist deshalb nicht der langsamere, sondern der tragfähigere Weg."
+          ],
+          "sourceIds": [
+            "SRC-101",
+            "SRC-102",
+            "SRC-103",
+            "SRC-104",
+            "SRC-106",
+            "SRC-105",
+            "SRC-129"
+          ]
+        },
+        {
+          "kind": "book",
+          "chapter": "Kapitel 3.9",
+          "title": "Was hält der Forschung stand?",
+          "paragraphs": [
+            "Seit etwa 2011 durchläuft die Psychologie eine Phase intensiver Selbstprüfung, oft „Replikationskrise“ genannt. Simmons, Nelson und Simonsohn zeigten 2011, wie flexible Datenerhebung und -auswertung die Rate falsch-positiver Befunde stark erhöhen kann. 2015 wiederholte die Open Science Collaboration 100 veröffentlichte Studien: Während 97 % der Originalstudien signifikante Ergebnisse berichtet hatten, waren es bei den Wiederholungen nur 36 %, und die Effekte waren im Mittel nur etwa halb so groß.",
+            "Einige Befunde, die lange in Verkaufs- und Motivationstrainings kursierten, sind seitdem stark in Zweifel geraten. Beim „Ego Depletion“-Effekt – der Idee, dass Selbstkontrolle eine Ressource ist, die sich erschöpft – fand eine präregistrierte Replikation in 23 Laboren mit über 2.000 Teilnehmenden einen Effekt nahe null; eine zweite Großstudie mit 36 Laboren kam 2021 zu einem ähnlichen Ergebnis. Beim Verhaltens-Priming konnten Doyen und Kollegen 2012 das berühmte Experiment nicht replizieren, in dem Menschen nach Wörtern zum Thema Alter langsamer gegangen sein sollen – ein Effekt zeigte sich nur, wenn die Versuchsleiter ihn erwarteten. Auch im ersten Many-Labs-Projekt replizierten zwei Priming-Effekte nicht.",
+            "Andere Befunde haben sich als robuster erwiesen. Im selben Many-Labs-Projekt zeigten sich etwa Gewinn-Verlust-Framing und Ankereffekte zuverlässig. Zu Verlustaversion und Entscheidungsüberlastung gibt es Meta-Analysen, die zeigen, dass die Effekte existieren können, aber stark vom Kontext abhängen. Die ehrliche Gesamtbilanz: Einige Grundbeobachtungen sind stabil, viele populäre Zuspitzungen sind übertrieben, und einzelne berühmte Experimente sind schlicht nicht belastbar.",
+            "Für deine Praxis ergibt sich daraus ein einfacher Evidenz-Check, wenn dir jemand einen neuen psychologischen Trick verkauft: Erstens, gibt es eine Originalquelle? Zweitens, wurde der Befund unabhängig repliziert oder meta-analytisch zusammengefasst? Drittens, wie groß ist der Effekt und unter welchen Bedingungen tritt er auf? Viertens, lässt er sich überhaupt auf ein Chat- oder Telefongespräch übertragen? Und fünftens, unabhängig von allem: Ist die Anwendung ehrlich und lässt sie dem Kunden seine Entscheidung?",
+            "Diese letzte Frage ist die wichtigste. Selbst ein perfekt replizierter Effekt rechtfertigt keine Täuschung. Und eine Technik, die auf Ehrlichkeit, Klarheit und Respekt setzt, ist auch dann richtig, wenn ihre Wirkung auf die Terminquote nicht exakt beziffert ist."
+          ],
+          "sourceIds": [
+            "SRC-108",
+            "SRC-107",
+            "SRC-109",
+            "SRC-110",
+            "SRC-111",
+            "SRC-112"
+          ]
+        },
+        {
+          "kind": "skill",
+          "name": "Der Transparenz-Test",
+          "category": "psychologie",
+          "what": "Bevor du eine überzeugende Formulierung verwendest, prüfst du sie mit vier Fragen auf Wahrheit, Vollständigkeit, Freiheit und Offenlegbarkeit.",
+          "how": [
+            "Wahr? Ist jede Angabe (Verfügbarkeit, Preis, Kundenzahl) belegbar?",
+            "Vollständig? Fehlt eine Information, die das Bild wesentlich ändern würde?",
+            "Frei? Bleibt dem Kunden Zeit und die Möglichkeit, Nein zu sagen – ohne Nachteil?",
+            "Offenlegbar? Könntest du dem Kunden erklären, warum du es so formulierst, ohne dass er sich getäuscht fühlt?"
+          ],
+          "why": "Der Test übersetzt die Grenze aus UWG und Ethik in vier Fragen, die du in Sekunden beantworten kannst.",
+          "evidence": "Die rechtlichen Maßstäbe (§§ 4a, 5 UWG, Anhang) sind Gesetzestext. Der Offenlegbarkeits-Test ist eine ethische Heuristik dieses Kurses (Annahme), angelehnt an das Persuasion Knowledge Model.",
+          "example": "Entwurf: „Nur noch heute 20 % Rabatt!“ – Wahr? Es gibt keine Befristung. → Test nicht bestanden. Neu: „Das Angebot gilt so, wie der Berater es Ihnen schriftlich gibt – Sie können sich in Ruhe entscheiden.“",
+          "boundary": "Fällt eine der vier Fragen negativ aus, verwendest du die Formulierung nicht. Rechtliche Zweifelsfälle klärst du mit deinem Unternehmen – du bist nicht befugt, sie selbst zu entscheiden.",
+          "sourceIds": [
+            "SRC-101",
+            "SRC-102",
+            "SRC-103",
+            "SRC-129",
+            "SRC-050"
+          ]
+        },
+        {
+          "kind": "callout",
+          "tone": "legal",
+          "title": "Stets unzulässig gegenüber Verbrauchern (Auswahl, UWG-Anhang)",
+          "body": "Nr. 7: unwahre Angabe, ein Angebot sei nur sehr kurz verfügbar, um eine sofortige Entscheidung herbeizuführen. Nr. 23c: gefälschte Verbraucherbewertungen übermitteln oder beauftragen. Daneben: irreführende Angaben (§ 5 UWG) und aggressive Handlungen durch Belästigung, Nötigung oder unzulässige Beeinflussung (§ 4a UWG)."
+        },
+        {
+          "kind": "example",
+          "title": "Vorher – nachher: eine Nachfass-Nachricht",
+          "body": "Vorher: „Letzte Chance! Nur noch 2 Plätze frei, über 1.000 zufriedene Kunden – wenn Sie heute nicht buchen, ist der Preis weg.“ (künstliche Knappheit, unbelegter Social Proof, Fristdruck)\n\nNachher: „Hallo Herr Krämer, ich wollte nachfragen, ob Sie noch Interesse an dem Beratungstermin haben. Wenn ja, schlage ich Ihnen gern zwei Zeiten vor – wenn nicht, ist das völlig in Ordnung, dann melde ich mich nicht mehr.“"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-025"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-026"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-027"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-028"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-030"
+        },
+        {
+          "kind": "check",
+          "questionId": "Q-M03-032"
+        },
+        {
+          "kind": "reflect",
+          "prompt": "Welche Technik aus diesem Modul wirst du künftig bewusst einsetzen – und welche bewusst nicht? Begründe beides mit Evidenz und Ethik."
+        }
+      ],
+      "summary": [
+        "Überzeugen stärkt die Entscheidungsfähigkeit, Manipulation umgeht sie.",
+        "§ 4a UWG: aggressive Handlungen (Belästigung, Nötigung, unzulässige Beeinflussung); Ausnutzen von Alter, Angst, Zwangslage.",
+        "§ 5 UWG: irreführende Angaben; UWG-Anhang: künstliche Befristung (Nr. 7) und gefälschte Bewertungen (Nr. 23c) stets unzulässig.",
+        "Dark Patterns sind verbreitet; der DSA verbietet manipulative Plattform-Oberflächen.",
+        "Replikationskrise: Ego Depletion und Verhaltens-Priming kaum belastbar; Framing und Anker robust; Verlustaversion und Choice Overload kontextabhängig.",
+        "Evidenz-Check vor jedem „Trick“ – und Ehrlichkeit unabhängig vom Effekt."
+      ],
+      "moduleId": "M03",
+      "minutes": 18
+    }
+  ],
+  "transferTask": {
+    "title": "Transferaufgabe: Psychologie-Check echter Werbebotschaften",
+    "instructions": "Sammle drei echte Werbe- oder Verkaufsbotschaften aus deinem Alltag (Newsletter, Shop-Seite, Social-Media-Anzeige, Chat-Nachricht) – ohne Namen oder Daten von Privatpersonen. Bestimme für jede Botschaft, welcher psychologische Mechanismus genutzt wird (z. B. Framing, Social Proof, Knappheit, Reziprozität, Commitment), wie belastbar die Evidenz dafür ist (gut belegt, kontextabhängig, umstritten) und ob die Anwendung seriös, grenzwertig oder manipulativ ist. Begründe die Einordnung mit dem Transparenz-Test und – falls einschlägig – mit § 4a, § 5 UWG oder dem UWG-Anhang. Formuliere zu jeder grenzwertigen oder manipulativen Botschaft eine ehrliche Alternative.",
+    "criteria": [
+      "Drei reale Botschaften ohne personenbezogene Daten",
+      "Mechanismus je Botschaft korrekt benannt",
+      "Evidenzlage ehrlich eingeschätzt (nicht pauschal „bewiesen“)",
+      "Einordnung mit Transparenz-Test begründet",
+      "Rechtliche Bezüge korrekt und ohne Überdehnung (keine Rechtsberatung)",
+      "Ehrliche Alternativen ohne künstliche Knappheit, erfundenen Social Proof oder Druck",
+      "Alternativen lassen dem Kunden ausdrücklich die Entscheidung"
+    ]
+  },
+  "examQuestionIds": [
+    "Q-M03-001",
+    "Q-M03-003",
+    "Q-M03-004",
+    "Q-M03-007",
+    "Q-M03-010",
+    "Q-M03-013",
+    "Q-M03-014",
+    "Q-M03-017",
+    "Q-M03-019",
+    "Q-M03-021",
+    "Q-M03-024",
+    "Q-M03-025",
+    "Q-M03-026",
+    "Q-M03-028",
+    "Q-M03-032",
+    "Q-M03-033",
+    "Q-M03-034"
+  ]
+}

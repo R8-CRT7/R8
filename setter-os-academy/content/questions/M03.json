@@ -1,0 +1,1435 @@
+[
+  {
+    "id": "Q-M03-001",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-01",
+    "difficulty": 1,
+    "version": 1,
+    "type": "single",
+    "prompt": "Ein Interessent schreibt: „Ich brauche eine Wärmepumpe.“ Welche Setter-Antwort zielt am besten auf das Bedürfnis hinter dem Produktwunsch?",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Gern! Was soll sich für Sie mit einer neuen Heizung vor allem ändern?“"
+      },
+      {
+        "id": "b",
+        "text": "„Gern! Wir haben fünf Modelle – welches interessiert Sie?“",
+        "misconception": "Bleibt beim Produkt statt beim Ziel des Kunden.",
+        "errorCategory": "qualifizierungsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Super, wann haben Sie Zeit für einen Termin?“",
+        "misconception": "Springt zum Termin, ohne den Bedarf zu kennen.",
+        "errorCategory": "prozessfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Sie wollen sicher vor allem Geld sparen, oder?“",
+        "misconception": "Unterstellt ein Bedürfnis per Suggestivfrage, statt es zu erfragen.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Die offene Zielfrage holt das Bedürfnis in den Worten des Kunden ab. Produktlisten, Terminsprung und Suggestivfragen überspringen oder unterstellen es.",
+    "sourceIds": [
+      "SRC-126",
+      "SRC-050"
+    ]
+  },
+  {
+    "id": "Q-M03-002",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Maslows Bedürfnispyramide mit ihrer strengen Stufenfolge ist empirisch gut bestätigt und eignet sich, um Kunden einer Bedürfnisstufe zuzuordnen.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Übersichtsarbeiten (z. B. Wahba & Bridwell, 1976) fanden wenig konsistente Unterstützung für die strenge Hierarchie. Menschen verfolgen mehrere Bedürfnisse gleichzeitig – frag nach dem konkreten Ziel, statt Kunden einzustufen.",
+    "sourceIds": [
+      "SRC-127"
+    ]
+  },
+  {
+    "id": "Q-M03-003",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-01",
+    "difficulty": 2,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jede Kundenaussage dem Grundbedürfnis der Selbstbestimmungstheorie zu, das sie am deutlichsten anspricht.",
+    "left": [
+      {
+        "id": "s1",
+        "text": "„Ich will das selbst entscheiden und mir nichts aufdrängen lassen.“"
+      },
+      {
+        "id": "s2",
+        "text": "„Ich will erst mal verstehen, wie das überhaupt funktioniert.“"
+      },
+      {
+        "id": "s3",
+        "text": "„Mir ist wichtig, dass mich jemand ernst nimmt und zuhört.“"
+      }
+    ],
+    "right": [
+      {
+        "id": "aut",
+        "text": "Autonomie"
+      },
+      {
+        "id": "kom",
+        "text": "Kompetenz"
+      },
+      {
+        "id": "ein",
+        "text": "Soziale Eingebundenheit"
+      }
+    ],
+    "pairs": {
+      "s1": "aut",
+      "s2": "kom",
+      "s3": "ein"
+    },
+    "explanation": "Autonomie = selbst entscheiden; Kompetenz = verstehen und bewältigen können; Eingebundenheit = sich verbunden und ernst genommen fühlen (Ryan & Deci, 2000).",
+    "sourceIds": [
+      "SRC-126"
+    ]
+  },
+  {
+    "id": "Q-M03-004",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Kunde im Chat: „Ein Termin? Ich will nicht, dass da jemand zwei Stunden bei mir sitzt und ich am Ende etwas unterschreiben soll.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Verständlich. Der Termin dauert etwa 45 Minuten, unterschrieben wird dort nichts – Sie bekommen ein schriftliches Angebot und entscheiden in Ruhe. Wäre das so für Sie in Ordnung?“",
+        "quality": "best",
+        "feedback": "Macht Ablauf, Dauer und Entscheidungsfreiheit durchschaubar – genau das, worauf sich die Unsicherheit bezieht."
+      },
+      {
+        "id": "b",
+        "text": "„Keine Sorge, unsere Berater sind wirklich sehr nett!“",
+        "quality": "poor",
+        "feedback": "Geht an der Unsicherheit vorbei: Es ging um Dauer und Vertragsrisiko, nicht um Freundlichkeit.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Was genau macht Ihnen an dem Termin Sorgen?“",
+        "quality": "acceptable",
+        "feedback": "Gute Klärungsfrage – der Kunde hat seine Sorge aber schon recht konkret genannt; jetzt wäre Transparenz hilfreicher."
+      },
+      {
+        "id": "d",
+        "text": "„Wenn Sie den Termin diese Woche nehmen, gibt es noch einen Bonus.“",
+        "quality": "unacceptable",
+        "feedback": "Lockangebot mit Zeitdruck statt Information – verstärkt das Misstrauen und ist ethisch nicht vertretbar.",
+        "errorCategory": "ethikfehler"
+      }
+    ],
+    "explanation": "Unsicherheit über den Ablauf baust du mit Durchschaubarkeit ab: Was passiert, wie lange, was nicht passiert, wer entscheidet.",
+    "sourceIds": [
+      "SRC-128",
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M03-005",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Verhaltensweisen eines Setters stärken nach dem Vertrauensmodell von Mayer, Davis und Schoorman die Vertrauenswürdigkeit? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eine Fachfrage ehrlich an den Berater weitergeben, statt zu raten"
+      },
+      {
+        "id": "b",
+        "text": "Einen angekündigten Rückruf pünktlich einhalten"
+      },
+      {
+        "id": "c",
+        "text": "Nach dem Ziel des Kunden fragen und es zusammenfassen"
+      },
+      {
+        "id": "d",
+        "text": "Eine sichere Förderzusage geben, damit der Kunde beruhigt ist",
+        "misconception": "Ungeprüfte Zusagen untergraben Integrität, sobald sie sich als falsch erweisen.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "e",
+        "text": "Möglichst viele Fachbegriffe verwenden, um kompetent zu wirken",
+        "misconception": "Fachjargon wirkt eher überfordernd als kompetent; Fähigkeit zeigt sich in klarer, korrekter Information.",
+        "errorCategory": "kommunikationsfehler"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Ehrliche Weitergabe zeigt Fähigkeit und Integrität, Verlässlichkeit zeigt Integrität, echtes Interesse zeigt Wohlwollen. Ungeprüfte Zusagen und Jargon schaden.",
+    "sourceIds": [
+      "SRC-059"
+    ]
+  },
+  {
+    "id": "Q-M03-006",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-02",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken.",
+    "text": "Was neu, undurchschaubar oder schwer {{g1}} wirkt, erscheint Menschen riskanter. Unsicherheit baust du deshalb nicht durch Überreden ab, sondern durch {{g2}} über Ablauf, Dauer und Entscheidungsfreiheit.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "kontrollierbar",
+          "beeinflussbar",
+          "steuerbar"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "Transparenz",
+          "Durchschaubarkeit",
+          "Offenheit"
+        ]
+      }
+    ],
+    "explanation": "Die Risikoforschung (Slovic, 1987) zeigt: Unbekanntes und Unkontrollierbares fühlt sich riskanter an. Transparenz gibt Kontrolle zurück.",
+    "sourceIds": [
+      "SRC-128"
+    ]
+  },
+  {
+    "id": "Q-M03-007",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Welche Aussage beschreibt die Position von Gal und Rucker (2018) zur Verlustaversion am treffendsten?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Die Evidenz zeige nicht, dass Verluste generell schwerer wiegen als Gewinne; viele Befunde ließen sich auch durch Trägheit erklären."
+      },
+      {
+        "id": "b",
+        "text": "Verluste wiegen bei allen Menschen exakt doppelt so schwer wie Gewinne.",
+        "misconception": "Verwechselt die Kritik mit der populären Zuspitzung, die sie gerade in Frage stellt.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Verlustaversion sei nur bei Kindern nachweisbar.",
+        "misconception": "Erfundene Einschränkung, nicht Teil der Debatte.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Verlustaversion sei endgültig widerlegt, und alle Forscher stimmten dem zu.",
+        "misconception": "Die Debatte ist offen – Mrkva et al. (2020) halten mit großen Datensätzen dagegen.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Gal & Rucker bestreiten die Generalität des Effekts und bieten Trägheit als Alternativerklärung an. Mrkva et al. (2020) finden Moderatoren, aber weiterhin Verlustaversion – die Frage ist umstritten.",
+    "sourceIds": [
+      "SRC-039",
+      "SRC-115"
+    ]
+  },
+  {
+    "id": "Q-M03-008",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Weil Verlustaversion im Mittel gut belegt ist, darf ein Setter Kunden mögliche Verluste auch dann ausmalen, wenn er sie nicht belegen kann.",
+    "correct": false,
+    "errorCategory": "ethikfehler",
+    "explanation": "Ein psychologischer Effekt ist keine Erlaubnis zur Täuschung. Unbelegte Verlustszenarien können irreführend (§ 5 UWG) sein und sind unethisch. Benenne nur echte, belegbare Kosten des Abwartens.",
+    "sourceIds": [
+      "SRC-009",
+      "SRC-102"
+    ]
+  },
+  {
+    "id": "Q-M03-009",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die Zeilen dieser Setter-Nachricht, die mit unseriösen Verlust- oder Angstappellen arbeiten.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Hallo Frau Yilmaz, danke für Ihre Rückmeldung!",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Sie hatten erwähnt, dass Ihr Abschlag um 35 € gestiegen ist.",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Wer jetzt nicht handelt, wirft jedes Jahr Tausende Euro zum Fenster hinaus.",
+        "faulty": true,
+        "why": "Unbelegte, übertriebene Verlustbehauptung – der Kunde nannte 35 € pro Monat."
+      },
+      {
+        "id": "l4",
+        "text": "Und nächsten Monat steigen die Preise garantiert um 20 %.",
+        "faulty": true,
+        "why": "Unbelegte Preisprognose als künstliche Dringlichkeit; kann irreführend sein."
+      },
+      {
+        "id": "l5",
+        "text": "Ob sich ein Speicher für Sie rechnet, kann der Berater mit Ihren Daten seriös einschätzen.",
+        "faulty": false
+      }
+    ],
+    "explanation": "Legitim ist, die vom Kunden genannten Fakten aufzugreifen und Fachfragen weiterzugeben. Übertreibungen und unbelegte Prognosen erzeugen Druck und können irreführend sein.",
+    "sourceIds": [
+      "SRC-102",
+      "SRC-009"
+    ]
+  },
+  {
+    "id": "Q-M03-010",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-03",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "„95 % fettfrei“ statt „5 % Fett“: Um welche Form des Framings handelt es sich nach Levin, Schneider und Gaeth (1998)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Attribut-Framing"
+      },
+      {
+        "id": "b",
+        "text": "Risiko-Framing",
+        "misconception": "Risiko-Framing betrifft die Wahl zwischen sicherer und riskanter Option.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Ziel-Framing",
+        "misconception": "Ziel-Framing begründet eine Handlung über Nutzen oder Nachteile des Unterlassens.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Social Proof",
+        "misconception": "Social Proof ist Orientierung an anderen, kein Framing-Typ.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Beim Attribut-Framing wird eine einzelne Eigenschaft positiv oder negativ beschrieben – das verändert vor allem die Bewertung.",
+    "sourceIds": [
+      "SRC-114"
+    ]
+  },
+  {
+    "id": "Q-M03-011",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Formuliere die Aussage „Bis zu 70 % Heizkosten sparen – nur bei uns!“ so um, dass sie den Kunden ehrlich informiert. Du kennst keine verlässliche Durchschnittszahl.",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Macht deutlich, dass die Ersparnis vom Einzelfall abhängt",
+        "points": 1,
+        "anyOf": [
+          [
+            "hängt",
+            "abhängig",
+            "individuell",
+            "einzelfall",
+            "je nach"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Verweist auf Berechnung mit den Daten des Kunden bzw. auf den Berater",
+        "points": 1,
+        "anyOf": [
+          [
+            "berater",
+            "berechn",
+            "rechnet",
+            "ihre daten",
+            "ihren daten",
+            "verbrauch"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Verwendet keine unbelegte Maximalzahl und keine Exklusivbehauptung",
+        "points": 2,
+        "forbidden": [
+          "70 %",
+          "70%",
+          "bis zu",
+          "nur bei uns"
+        ]
+      }
+    ],
+    "sampleAnswer": "Wie viel Sie sparen, hängt stark von Ihrem Haus und Ihrem Verbrauch ab. Unser Berater rechnet das mit Ihren Daten durch – dann haben Sie eine Zahl, die wirklich für Sie gilt.",
+    "requiresManualReview": true,
+    "explanation": "Ohne verlässliche Bezugsgröße nennst du keine Zahl. Eine „Bis zu“-Angabe aus einem Sonderfall kann zur Täuschung geeignet sein (§ 5 UWG). Der Selbstcheck erkennt nur Muster – Inhalt prüfst du selbst.",
+    "sourceIds": [
+      "SRC-114",
+      "SRC-102"
+    ]
+  },
+  {
+    "id": "Q-M03-012",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-03",
+    "difficulty": 3,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jedes Beispiel dem Framing-Typ nach Levin, Schneider und Gaeth zu.",
+    "left": [
+      {
+        "id": "e1",
+        "text": "„Programm A rettet sicher 200 von 600 Menschen“ vs. „Bei Programm A sterben sicher 400 von 600“"
+      },
+      {
+        "id": "e2",
+        "text": "„Erfolgsquote 80 %“ vs. „Misserfolgsquote 20 %“"
+      },
+      {
+        "id": "e3",
+        "text": "„Mit einer Vorsorgeuntersuchung erkennen Sie Probleme früh“ vs. „Ohne Vorsorge riskieren Sie, Probleme zu spät zu erkennen“"
+      }
+    ],
+    "right": [
+      {
+        "id": "risk",
+        "text": "Risiko-Framing"
+      },
+      {
+        "id": "attr",
+        "text": "Attribut-Framing"
+      },
+      {
+        "id": "goal",
+        "text": "Ziel-Framing"
+      }
+    ],
+    "pairs": {
+      "e1": "risk",
+      "e2": "attr",
+      "e3": "goal"
+    },
+    "explanation": "Risiko-Framing: sichere vs. riskante Option in Gewinn-/Verlustsprache. Attribut-Framing: eine Eigenschaft positiv/negativ. Ziel-Framing: Nutzen des Handelns vs. Nachteil des Unterlassens.",
+    "sourceIds": [
+      "SRC-114",
+      "SRC-113"
+    ]
+  },
+  {
+    "id": "Q-M03-013",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Kundin: „Haben denn schon andere Leute hier in der Gegend bei Ihnen gekauft?“ Du weißt, dass es in ihrer Stadt Kunden gibt, kennst aber keine Zahlen und hast keine Freigabe, Namen zu nennen.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Ja, wir haben Kunden in Ihrer Stadt. Genaue Zahlen habe ich nicht, und Namen darf ich aus Datenschutzgründen nicht nennen. Der Berater kann Ihnen aber gern Projektbeispiele zeigen, für die Kunden ihr Einverständnis gegeben haben.“",
+        "quality": "best",
+        "feedback": "Wahr, ohne Übertreibung, datenschutzbewusst und mit einem belegbaren Angebot."
+      },
+      {
+        "id": "b",
+        "text": "„Ja, fast alle Ihre Nachbarn sind schon bei uns!“",
+        "quality": "unacceptable",
+        "feedback": "Erfundener Social Proof – unwahr und möglicherweise irreführend (§ 5 UWG).",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Ja, zum Beispiel Familie Hartmann in der Lindenstraße.“",
+        "quality": "unacceptable",
+        "feedback": "Gibt personenbezogene Daten anderer Kunden ohne Einwilligung preis.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Ja, einige. Warum ist Ihnen das wichtig?“",
+        "quality": "acceptable",
+        "feedback": "Ehrlich und neugierig – die Frage nach dem Warum ist gut, ein konkretes Angebot fehlt aber noch."
+      }
+    ],
+    "explanation": "Social Proof nur, wenn wahr, überprüfbar und datenschutzkonform. Lieber weniger sagen als etwas Erfundenes.",
+    "sourceIds": [
+      "SRC-119",
+      "SRC-102",
+      "SRC-025"
+    ]
+  },
+  {
+    "id": "Q-M03-014",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Formulierungen nutzen Reziprozität oder Social Proof auf legitime Weise? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Unabhängig davon, ob Sie mit uns weitermachen: Hier ist eine Checkliste mit Fragen, die Sie jedem Anbieter stellen können.“"
+      },
+      {
+        "id": "b",
+        "text": "„Die Frage nach der Förderung stellen uns sehr viele Kunden – der Berater bringt dazu eine Übersicht mit.“ (trifft zu)"
+      },
+      {
+        "id": "c",
+        "text": "„Ich habe Ihnen extra einen Sonderpreis reserviert – da können Sie jetzt doch zusagen.“",
+        "misconception": "Ein (erfundener) Gefallen wird als Druckhebel benutzt.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Unsere Bewertungen sind 100 % positiv – wir haben einfach keine schlechten bekommen.“ (Negative Bewertungen wurden gelöscht.)",
+        "misconception": "Selektiv bereinigte Bewertungen täuschen über das tatsächliche Kundenbild.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "e",
+        "text": "„Ich habe für Sie nachgefragt: Der Berater kann auch abends um 19 Uhr.“"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "e"
+    ],
+    "explanation": "Legitim: echter Wert ohne Bedingung, wahre und relevante Hinweise auf andere, echte Gefälligkeiten. Unzulässig: erfundene Gefallen als Hebel und manipulierte Bewertungen.",
+    "sourceIds": [
+      "SRC-117",
+      "SRC-118",
+      "SRC-103"
+    ]
+  },
+  {
+    "id": "Q-M03-015",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-04",
+    "difficulty": 3,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "In der Replikation der Hotel-Handtuch-Studie in zwei deutschen Hotels (Bohner & Schlüter, 2014) war die Botschaft „Die meisten Gäste verwenden ihre Handtücher wieder“ deutlich wirksamer als der Standard-Umweltappell.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Beide Botschaften steigerten die Wiederverwendung gegenüber keinem Hinweis, die Norm-Botschaft war aber nicht wirksamer als der Standardappell. Social Proof ist kontextabhängig.",
+    "sourceIds": [
+      "SRC-119",
+      "SRC-118"
+    ]
+  },
+  {
+    "id": "Q-M03-016",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-04",
+    "difficulty": 2,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Markiere die Zeilen, in denen Reziprozität oder Social Proof unseriös eingesetzt werden.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Ich schicke Ihnen gern unsere Checkliste – ganz unverbindlich.",
+        "faulty": false
+      },
+      {
+        "id": "l2",
+        "text": "Über 10.000 Familien vertrauen uns schon!",
+        "faulty": true,
+        "why": "Zahl ohne Beleg – wenn sie nicht stimmt, ist sie irreführend."
+      },
+      {
+        "id": "l3",
+        "text": "Nachdem ich mir so viel Zeit für Sie genommen habe, sollten Sie den Termin schon annehmen.",
+        "faulty": true,
+        "why": "Ein „Gefallen“ wird als Schuldgefühl-Hebel eingesetzt."
+      },
+      {
+        "id": "l4",
+        "text": "Viele Kunden hatten vorher die gleiche Frage zur Montage – das klärt der Berater gern mit Ihnen.",
+        "faulty": false
+      }
+    ],
+    "explanation": "Unverbindlicher Wert und wahre, relevante Hinweise sind legitim. Unbelegte Zahlen und erzeugte Schuldgefühle sind es nicht.",
+    "sourceIds": [
+      "SRC-117",
+      "SRC-102"
+    ]
+  },
+  {
+    "id": "Q-M03-017",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Bringe die Schritte einer fairen Mikro-Zusage in eine sinnvolle Reihenfolge.",
+    "items": [
+      {
+        "id": "plan",
+        "text": "Wenn-dann-Plan vereinbaren („Falls etwas dazwischenkommt …“)"
+      },
+      {
+        "id": "free",
+        "text": "Freiheit benennen („Wenn es nicht passt, ist das völlig in Ordnung.“)"
+      },
+      {
+        "id": "desc",
+        "text": "Nächsten Schritt konkret beschreiben (was, wie lange, wer)"
+      },
+      {
+        "id": "not",
+        "text": "Sagen, was der Schritt nicht ist („Unterschrieben wird nichts.“)"
+      }
+    ],
+    "correctOrder": [
+      "desc",
+      "not",
+      "free",
+      "plan"
+    ],
+    "explanation": "Erst beschreiben, dann abgrenzen, dann Freiheit benennen – und erst nach der Zusage einen Wenn-dann-Plan vereinbaren.",
+    "sourceIds": [
+      "SRC-056",
+      "SRC-052"
+    ]
+  },
+  {
+    "id": "Q-M03-018",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "single",
+    "prompt": "Was zeigt die aktuelle Evidenz zum Zusatz „Aber Sie sind natürlich frei, Nein zu sagen“ („But you are free“)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Eine Meta-Analyse fand eine Wirkung; eine strengere Re-Analyse fand in Studien mit geringem Verzerrungsrisiko nur einen kleinen, nicht signifikanten Effekt."
+      },
+      {
+        "id": "b",
+        "text": "Der Zusatz verdoppelt nachweislich jede Terminquote.",
+        "misconception": "Überschätzt die Wirkung; die Evidenz ist unsicher.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "c",
+        "text": "Der Zusatz senkt in allen Studien die Zustimmung.",
+        "misconception": "Die Meta-Analysen zeigen eher positive, aber unsichere Effekte – keine systematische Senkung.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Zu dem Zusatz gibt es keinerlei Forschung.",
+        "misconception": "Es gibt eine Meta-Analyse (Carpenter, 2013) und eine Re-Analyse (Fillon et al.).",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "Carpenter (2013) fand eine Wirkung; Fillon et al. relativieren: In methodisch strengen Studien g ≈ 0,11, nicht signifikant. Du sagst den Satz, weil er wahr ist – nicht als Trick.",
+    "sourceIds": [
+      "SRC-052",
+      "SRC-053"
+    ]
+  },
+  {
+    "id": "Q-M03-019",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Ein Kunde hat einem Beratungstermin zugestimmt. Dein Teamleiter schlägt vor, ihm jetzt zu schreiben: „Da Sie ja zugesagt haben, gehe ich davon aus, dass Sie das Angebot auch annehmen.“",
+    "options": [
+      {
+        "id": "a",
+        "text": "Du bestätigst nur den Termin mit Datum, Dauer und Ablauf und schreibst, dass im Termin nichts unterschrieben wird.",
+        "quality": "best",
+        "feedback": "Die Zusage bleibt, was sie war: ein Termin. Klarheit statt Umdeutung."
+      },
+      {
+        "id": "b",
+        "text": "Du schickst die vorgeschlagene Nachricht, weil Konsistenz nachweislich wirkt.",
+        "quality": "unacceptable",
+        "feedback": "Deutet eine Terminzusage in eine Kaufzusage um – Missbrauch von Konsistenz, potenziell irreführend.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "c",
+        "text": "Du bestätigst den Termin und schreibst: „Viele Kunden entscheiden sich direkt im Termin.“",
+        "quality": "poor",
+        "feedback": "Schiebt subtil Erwartungsdruck nach; selbst wenn es stimmt, ist es hier unnötig.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Du bestätigst den Termin und sprichst die Idee später mit deinem Teamleiter an.",
+        "quality": "acceptable",
+        "feedback": "Richtig gehandelt; das Gespräch mit dem Teamleiter ist sinnvoll. Ein klarer Hinweis an den Kunden, dass nichts unterschrieben wird, fehlt noch."
+      }
+    ],
+    "explanation": "Commitment fair nutzen heißt: eine kleine Zusage nicht nachträglich größer machen.",
+    "sourceIds": [
+      "SRC-121",
+      "SRC-102"
+    ]
+  },
+  {
+    "id": "Q-M03-020",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-05",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Wenn Menschen ihre Entscheidungsfreiheit bedroht sehen, reagieren sie häufig mit Reaktanz – sie wehren sich etwa gegen das Angebot oder werten es ab.",
+    "correct": true,
+    "explanation": "Das ist der Kern der Reaktanztheorie, die seit Brehm (1966) umfangreich untersucht wurde. Druck erzeugt deshalb oft Gegendruck.",
+    "sourceIds": [
+      "SRC-122"
+    ]
+  },
+  {
+    "id": "Q-M03-021",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Was fand die Meta-Analyse von Scheibehenne, Greifeneder und Todd (2010) zur Entscheidungsüberlastung?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Im Mittel praktisch keinen Effekt der Auswahlgröße, aber große Unterschiede zwischen den Studien."
+      },
+      {
+        "id": "b",
+        "text": "Mehr als sechs Optionen führen immer zu weniger Käufen.",
+        "misconception": "Verallgemeinert den Marmeladen-Einzelbefund.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "c",
+        "text": "Große Auswahl erhöht immer die Zufriedenheit.",
+        "misconception": "Auch das Gegenteil gilt nicht allgemein – die Streuung ist groß.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Choice Overload tritt nur online auf.",
+        "misconception": "Keine solche Einschränkung; entscheidend sind Moderatoren wie Komplexität und Präferenzunsicherheit.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "63 Bedingungen, über 5.000 Teilnehmende: mittlerer Effekt nahe null, hohe Varianz. Das spricht für Kontextabhängigkeit.",
+    "sourceIds": [
+      "SRC-010"
+    ]
+  },
+  {
+    "id": "Q-M03-022",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Bedingungen machen Entscheidungsüberlastung laut Chernev, Böckenholt und Goodman (2015) wahrscheinlicher? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Hohe Komplexität der Auswahl"
+      },
+      {
+        "id": "b",
+        "text": "Unsicherheit über die eigenen Präferenzen"
+      },
+      {
+        "id": "c",
+        "text": "Eine schwierige Entscheidungsaufgabe"
+      },
+      {
+        "id": "d",
+        "text": "Eine sehr klare, feste Präferenz der Person",
+        "misconception": "Klare Präferenzen machen Überlastung unwahrscheinlicher, nicht wahrscheinlicher.",
+        "errorCategory": "begriffsfehler"
+      },
+      {
+        "id": "e",
+        "text": "Eine besonders schöne Produktverpackung",
+        "misconception": "Kein untersuchter Moderator in dieser Meta-Analyse.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Die vier Moderatoren sind: Komplexität der Auswahl, Schwierigkeit der Aufgabe, Präferenzunsicherheit und ein auf wenig Aufwand gerichtetes Entscheidungsziel.",
+    "sourceIds": [
+      "SRC-011"
+    ]
+  },
+  {
+    "id": "Q-M03-023",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "cloze",
+    "prompt": "Ergänze die Lücken.",
+    "text": "Entscheidungsüberlastung ist kein allgemeines Gesetz, sondern {{g1}}. Im Setting bietest du deshalb meist {{g2}} konkrete Terminoptionen an – und hältst die Tür für andere Zeiten oder ein Nein offen.",
+    "gaps": [
+      {
+        "id": "g1",
+        "accepted": [
+          "kontextabhängig",
+          "situationsabhängig",
+          "bedingungsabhängig"
+        ]
+      },
+      {
+        "id": "g2",
+        "accepted": [
+          "zwei",
+          "2"
+        ]
+      }
+    ],
+    "explanation": "Die Meta-Analysen zeigen Kontextabhängigkeit. Zwei Optionen strukturieren, ohne Freiheit wegzunehmen.",
+    "sourceIds": [
+      "SRC-010",
+      "SRC-011"
+    ]
+  },
+  {
+    "id": "Q-M03-024",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-06",
+    "difficulty": 2,
+    "version": 1,
+    "type": "situation",
+    "prompt": "Wie reagierst du?",
+    "situation": "Kundin: „Ich kenne mich da null aus. Was haben Sie denn für Termine?“ Im Kalender des Beraters sind diese Woche 38 Slots frei.",
+    "options": [
+      {
+        "id": "a",
+        "text": "„Passt Ihnen eher ein Termin unter der Woche am Abend oder am Samstagvormittag? Dann schlage ich Ihnen zwei konkrete Zeiten vor – oder wir finden eine andere.“",
+        "quality": "best",
+        "feedback": "Strukturiert die Auswahl nach ihrem Alltag und hält andere Optionen offen."
+      },
+      {
+        "id": "b",
+        "text": "Du schickst ihr die Liste aller 38 freien Slots.",
+        "quality": "poor",
+        "feedback": "Bei Präferenzunsicherheit und wenig Vorwissen ist Überlastung wahrscheinlich.",
+        "errorCategory": "kommunikationsfehler"
+      },
+      {
+        "id": "c",
+        "text": "„Ich habe nur noch Donnerstag um 9 Uhr – sonst wird es schwierig.“",
+        "quality": "unacceptable",
+        "feedback": "Unwahre Knappheitsbehauptung – es sind 38 Slots frei.",
+        "errorCategory": "ethikfehler"
+      },
+      {
+        "id": "d",
+        "text": "„Hier ist mein Kalenderlink, suchen Sie sich einfach etwas aus.“",
+        "quality": "acceptable",
+        "feedback": "Für entscheidungsfreudige Kunden praktisch, hier aber wenig Struktur für eine unsichere Kundin."
+      }
+    ],
+    "explanation": "Strukturieren ja, vorenthalten oder Knappheit erfinden nein.",
+    "sourceIds": [
+      "SRC-011",
+      "SRC-103"
+    ]
+  },
+  {
+    "id": "Q-M03-025",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "matching",
+    "prompt": "Ordne jede Praxis der passenden rechtlichen Einordnung zu (gegenüber Verbrauchern).",
+    "left": [
+      {
+        "id": "p1",
+        "text": "„Nur heute verfügbar!“, obwohl das Angebot unverändert weiterläuft"
+      },
+      {
+        "id": "p2",
+        "text": "Selbst geschriebene Bewertungen als Kundenbewertungen veröffentlichen"
+      },
+      {
+        "id": "p3",
+        "text": "Eine verängstigte, ältere Kundin wiederholt bedrängen, bis sie zustimmt"
+      },
+      {
+        "id": "p4",
+        "text": "Ehrlich mitteilen, dass die Montage derzeit etwa sechs Wochen nach Auftrag stattfindet"
+      }
+    ],
+    "right": [
+      {
+        "id": "nr7",
+        "text": "Stets unzulässig: unwahre Befristung (UWG-Anhang Nr. 7)"
+      },
+      {
+        "id": "nr23",
+        "text": "Stets unzulässig: gefälschte Bewertungen (UWG-Anhang Nr. 23c)"
+      },
+      {
+        "id": "a4",
+        "text": "Aggressive geschäftliche Handlung (§ 4a UWG)"
+      },
+      {
+        "id": "ok",
+        "text": "Zulässige, sachliche Information"
+      }
+    ],
+    "pairs": {
+      "p1": "nr7",
+      "p2": "nr23",
+      "p3": "a4",
+      "p4": "ok"
+    },
+    "explanation": "Unwahre Befristung und gefälschte Bewertungen stehen auf der schwarzen Liste. Bedrängen unter Ausnutzung von Alter und Angst kann aggressiv sein. Wahre Lieferzeitangaben sind sachliche Information.",
+    "sourceIds": [
+      "SRC-103",
+      "SRC-101"
+    ]
+  },
+  {
+    "id": "Q-M03-026",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-07",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Durch welche drei Mittel kann eine geschäftliche Handlung nach § 4a UWG aggressiv sein?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Belästigung, Nötigung, unzulässige Beeinflussung"
+      },
+      {
+        "id": "b",
+        "text": "Werbung, Rabatte, Kundenbewertungen",
+        "misconception": "Das sind normale Marketinginstrumente, keine Tatbestandsmerkmale von § 4a.",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "c",
+        "text": "Irreführung, Unterlassen, Preisangabe",
+        "misconception": "Verwechselt § 4a (aggressiv) mit den Irreführungstatbeständen (§§ 5 ff.).",
+        "errorCategory": "rechtsfehler"
+      },
+      {
+        "id": "d",
+        "text": "Telefonanruf, E-Mail, Chatnachricht",
+        "misconception": "Das sind Kanäle; unzumutbare Belästigung durch Werbung regelt zusätzlich § 7 UWG.",
+        "errorCategory": "rechtsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "§ 4a Abs. 1 UWG: Aggressiv ist eine Handlung, die die Entscheidungsfreiheit durch Belästigung, Nötigung (einschließlich Gewalt) oder unzulässige Beeinflussung erheblich beeinträchtigen kann.",
+    "sourceIds": [
+      "SRC-101"
+    ]
+  },
+  {
+    "id": "Q-M03-027",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "errorspot",
+    "prompt": "Ein Chatbot-Flow für Terminbuchungen. Markiere die Zeilen, die als Dark Pattern gelten.",
+    "lines": [
+      {
+        "id": "l1",
+        "text": "Ein Countdown „Angebot endet in 09:59“, der nach jedem Neuladen wieder bei 10:00 beginnt",
+        "faulty": true,
+        "why": "Falscher Countdown – künstliche Dringlichkeit, unwahre Befristung."
+      },
+      {
+        "id": "l2",
+        "text": "Zwei gleich gestaltete Buttons: „Termin buchen“ und „Nein, danke“",
+        "faulty": false
+      },
+      {
+        "id": "l3",
+        "text": "Ein vorab angehakter Haken „Ja, ich möchte Werbung per WhatsApp erhalten“",
+        "faulty": true,
+        "why": "Voreingestellte Zustimmung ist keine wirksame Einwilligung und lenkt manipulativ."
+      },
+      {
+        "id": "l4",
+        "text": "Die Meldung „Gerade schauen sich 27 Personen diesen Termin an“ ohne echte Datengrundlage",
+        "faulty": true,
+        "why": "Erfundener Social Proof bzw. erfundene Knappheit."
+      },
+      {
+        "id": "l5",
+        "text": "Ein gut sichtbarer Link „Keine Nachrichten mehr erhalten“",
+        "faulty": false
+      }
+    ],
+    "explanation": "Falsche Countdowns, voreingestellte Zustimmungen und erfundene Nachfrage-Meldungen gehören zu den typischen Dark Patterns. Gleichwertige Optionen und leichte Abmeldung sind seriös.",
+    "sourceIds": [
+      "SRC-106",
+      "SRC-103",
+      "SRC-105",
+      "SRC-025"
+    ]
+  },
+  {
+    "id": "Q-M03-028",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-08",
+    "difficulty": 3,
+    "version": 1,
+    "type": "multi",
+    "prompt": "Welche Befunde gelten nach großen Replikationsprojekten als stark angezweifelt? (Mehrere Antworten möglich)",
+    "options": [
+      {
+        "id": "a",
+        "text": "Ego Depletion (Selbstkontrolle als sich erschöpfende Ressource)"
+      },
+      {
+        "id": "b",
+        "text": "Verhaltens-Priming (z. B. langsameres Gehen nach Wörtern zum Thema Alter)"
+      },
+      {
+        "id": "c",
+        "text": "Gewinn-Verlust-Framing",
+        "misconception": "Framing hat sich in Many Labs 1 zuverlässig repliziert.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Ankereffekte",
+        "misconception": "Ankereffekte gehörten in Many Labs 1 zu den robust replizierten Effekten.",
+        "errorCategory": "ueberinterpretation"
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanation": "Ego Depletion: Multilab-Replikationen fanden Effekte nahe null (Hagger et al., 2016; Vohs et al., 2021). Verhaltens-Priming: Doyen et al. (2012) und Many Labs 1 fanden keine Replikation. Framing und Anker replizierten.",
+    "sourceIds": [
+      "SRC-109",
+      "SRC-110",
+      "SRC-111",
+      "SRC-112"
+    ]
+  },
+  {
+    "id": "Q-M03-029",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "ordering",
+    "prompt": "Ein Kollege empfiehlt dir einen „wissenschaftlich bewiesenen“ Verkaufstrick. Bringe die Prüfschritte des Evidenz-Checks in die Reihenfolge aus Kapitel 3.9.",
+    "items": [
+      {
+        "id": "transfer",
+        "text": "Lässt sich der Befund auf ein Chat- oder Telefongespräch übertragen?"
+      },
+      {
+        "id": "source",
+        "text": "Gibt es eine Originalquelle?"
+      },
+      {
+        "id": "ethics",
+        "text": "Ist die Anwendung ehrlich und lässt sie dem Kunden die Entscheidung?"
+      },
+      {
+        "id": "repl",
+        "text": "Wurde der Befund repliziert oder meta-analytisch zusammengefasst?"
+      },
+      {
+        "id": "size",
+        "text": "Wie groß ist der Effekt, unter welchen Bedingungen?"
+      }
+    ],
+    "correctOrder": [
+      "source",
+      "repl",
+      "size",
+      "transfer",
+      "ethics"
+    ],
+    "explanation": "Quelle → Replikation → Effektgröße und Bedingungen → Übertragbarkeit → Ethik. Die ethische Prüfung gilt unabhängig vom Ergebnis der anderen Schritte.",
+    "sourceIds": [
+      "SRC-107",
+      "SRC-108"
+    ]
+  },
+  {
+    "id": "Q-M03-030",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-07",
+    "difficulty": 3,
+    "version": 1,
+    "type": "freetext",
+    "prompt": "Schreibe diese Nachfass-Nachricht seriös um: „Letzte Chance! Nur noch 2 Plätze frei – wenn Sie heute nicht buchen, ist der Rabatt weg.“ (Es gibt weder eine Platzbegrenzung noch einen Rabatt.)",
+    "rubric": [
+      {
+        "id": "c1",
+        "description": "Fragt offen nach dem Interesse bzw. bietet den Termin an",
+        "points": 1,
+        "anyOf": [
+          [
+            "interesse",
+            "möchten sie",
+            "wollen sie",
+            "termin"
+          ]
+        ]
+      },
+      {
+        "id": "c2",
+        "description": "Lässt ausdrücklich ein Nein zu",
+        "points": 1,
+        "anyOf": [
+          [
+            "in ordnung",
+            "kein problem",
+            "okay",
+            "nicht mehr",
+            "völlig frei",
+            "frei entscheiden"
+          ]
+        ]
+      },
+      {
+        "id": "c3",
+        "description": "Keine künstliche Knappheit, keine Frist, kein erfundener Rabatt",
+        "points": 2,
+        "forbidden": [
+          "letzte chance",
+          "nur noch",
+          "heute",
+          "rabatt",
+          "plätze frei",
+          "schnell"
+        ]
+      }
+    ],
+    "sampleAnswer": "Hallo Herr Krämer, ich wollte nachfragen, ob Sie noch Interesse an dem Beratungstermin haben. Wenn ja, schlage ich Ihnen gern zwei Zeiten vor – wenn nicht, ist das völlig in Ordnung, dann melde ich mich nicht mehr.",
+    "requiresManualReview": true,
+    "explanation": "Unwahre Befristung ist gegenüber Verbrauchern stets unzulässig (UWG-Anhang Nr. 7), ein erfundener Rabatt irreführend (§ 5 UWG). Seriös: offen fragen, Nein ermöglichen.",
+    "sourceIds": [
+      "SRC-103",
+      "SRC-102"
+    ]
+  },
+  {
+    "id": "Q-M03-031",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "truefalse",
+    "prompt": "Präregistrierte Multilab-Replikationen haben den Ego-Depletion-Effekt mit großer Effektstärke bestätigt.",
+    "correct": false,
+    "errorCategory": "ueberinterpretation",
+    "explanation": "Hagger et al. (2016, 23 Labore) fanden d ≈ 0,04, Vohs et al. (2021, 36 Labore) d ≈ 0,06 – jeweils nahe null.",
+    "sourceIds": [
+      "SRC-109",
+      "SRC-110"
+    ]
+  },
+  {
+    "id": "Q-M03-032",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-08",
+    "difficulty": 2,
+    "version": 1,
+    "type": "single",
+    "prompt": "Was fand die Open Science Collaboration (2015), als sie 100 psychologische Studien wiederholte?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Etwa ein Drittel der Wiederholungen war statistisch signifikant, die Effekte waren im Mittel etwa halb so groß."
+      },
+      {
+        "id": "b",
+        "text": "Fast alle Studien ließen sich mit gleicher Effektstärke replizieren.",
+        "misconception": "Unterschätzt die Replikationsprobleme deutlich.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "c",
+        "text": "Keine einzige Studie ließ sich replizieren.",
+        "misconception": "Überzeichnet – rund 36 % waren signifikant.",
+        "errorCategory": "ueberinterpretation"
+      },
+      {
+        "id": "d",
+        "text": "Nur Studien zu Verkaufspsychologie ließen sich nicht replizieren.",
+        "misconception": "Das Projekt bezog sich auf Studien aus drei allgemeinen Psychologie-Fachzeitschriften.",
+        "errorCategory": "begriffsfehler"
+      }
+    ],
+    "correct": "a",
+    "explanation": "97 % der Originale, aber nur 36 % der Wiederholungen waren signifikant; die Effekte halbierten sich im Mittel. Das heißt nicht, dass Psychologie wertlos ist, sondern dass einzelne Befunde vorsichtig zu lesen sind.",
+    "sourceIds": [
+      "SRC-107"
+    ]
+  },
+  {
+    "id": "Q-M03-033",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-05",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "gespraechsanalyse",
+    "simulatedData": true,
+    "prompt": "Analysiere das Chat-Transkript (Simulation, erfundene Personen) und beantworte die drei Teilfragen.",
+    "material": {
+      "kind": "transcript",
+      "lines": [
+        {
+          "speaker": "kunde",
+          "text": "Hallo, ich hatte wegen eines Treppenlifts angefragt. Ich möchte mich aber erst mal nur informieren."
+        },
+        {
+          "speaker": "setter",
+          "text": "Guten Tag Frau Petersen, hier ist Tom von LiftHaus Nord – danke für Ihre Anfrage! Informieren ist ein guter erster Schritt, Sie bestimmen das Tempo. Was möchten Sie im Alltag mit einem Lift vor allem leichter machen?"
+        },
+        {
+          "speaker": "kunde",
+          "text": "Ins Schlafzimmer oben komme ich seit dem Winter nur noch mühsam. Ich möchte aber nichts überstürzen."
+        },
+        {
+          "speaker": "setter",
+          "text": "Verstehe. Dann sollten Sie sich aber beeilen: Diesen Monat habe ich nur noch zwei Montageplätze, danach wird es teurer."
+        },
+        {
+          "speaker": "kunde",
+          "text": "Oh. Das wusste ich nicht … muss ich mich denn heute entscheiden?"
+        },
+        {
+          "speaker": "setter",
+          "text": "Wenn Sie jetzt Ja zum Beratungstermin sagen, gehe ich davon aus, dass Sie den Lift auch nehmen – dann sichere ich Ihnen den Platz."
+        }
+      ]
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Wie ist Zeile 2 zu bewerten?",
+        "correct": "b",
+        "explanation": "Vorstellung, Dank, ausdrückliche Autonomie und eine offene Zielfrage – genau die faire Eröffnung aus Kapitel 3.1 und 3.6.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Zu weich – der Setter sollte sofort einen Termin vorschlagen.",
+            "misconception": "Termin vor Bedarf überspringt die Bedarfsermittlung.",
+            "errorCategory": "prozessfehler"
+          },
+          {
+            "id": "b",
+            "text": "Gelungen: Sie respektiert den Wunsch, sich nur zu informieren, und fragt offen nach dem Ziel."
+          },
+          {
+            "id": "c",
+            "text": "Fehlerhaft, weil „Sie bestimmen das Tempo“ die Kundin verunsichert.",
+            "misconception": "Ausdrücklich gewährte Freiheit verringert Reaktanz eher, als dass sie verunsichert.",
+            "errorCategory": "kommunikationsfehler"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Was ist das Hauptproblem in Zeile 4 (es gibt laut Unternehmen keine Kapazitätsgrenze und keine Preiserhöhung)?",
+        "correct": "a",
+        "explanation": "Unwahre Knappheit und Befristung, um eine sofortige Entscheidung herbeizuführen, sind gegenüber Verbrauchern stets unzulässig (UWG-Anhang Nr. 7) und irreführend (§ 5 UWG) – zumal die Kundin gerade gesagt hat, dass sie nichts überstürzen will.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Künstliche Knappheit und Zeitdruck mit unwahren Angaben."
+          },
+          {
+            "id": "b",
+            "text": "Die Nachricht ist zu lang.",
+            "misconception": "Die Länge ist nicht das Problem, sondern der unwahre Inhalt.",
+            "errorCategory": "kommunikationsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Kein Problem – Knappheit ist ein anerkanntes Einflussprinzip.",
+            "misconception": "Ein Einflussprinzip rechtfertigt keine unwahren Angaben.",
+            "errorCategory": "ethikfehler"
+          }
+        ]
+      },
+      {
+        "id": "p3",
+        "prompt": "Wie ist Zeile 6 zu bewerten?",
+        "correct": "c",
+        "explanation": "Die Zusage zu einem Beratungstermin wird nachträglich in eine Kaufabsicht umgedeutet – ein Missbrauch von Konsistenz. Fair wäre: Termin bestätigen und klarstellen, dass dort nichts unterschrieben wird.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gut: Die Kundin bekommt Planungssicherheit.",
+            "misconception": "Planungssicherheit entsteht durch ehrliche Information, nicht durch unterstellte Kaufzusagen.",
+            "errorCategory": "ethikfehler"
+          },
+          {
+            "id": "b",
+            "text": "Unproblematisch, wenn die Kundin später noch widerrufen kann.",
+            "misconception": "Ein späteres Widerrufsrecht macht eine unfaire Umdeutung nicht fair.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Fehler: Eine Terminzusage wird in eine Kaufzusage umgedeutet."
+          }
+        ]
+      }
+    ],
+    "explanation": "Die Eröffnung ist vorbildlich, danach kippt das Gespräch: erfundene Knappheit (Zeile 4) und umgedeutetes Commitment (Zeile 6) setzen eine ältere, zögernde Kundin unter Druck. Richtig wäre ein ehrlicher Hinweis auf die übliche Lieferzeit und ein Termin ohne Kaufverpflichtung.",
+    "sourceIds": [
+      "SRC-103",
+      "SRC-102",
+      "SRC-121",
+      "SRC-101"
+    ],
+    "tags": [
+      "gespraechsanalyse"
+    ]
+  },
+  {
+    "id": "Q-M03-034",
+    "moduleId": "M03",
+    "objectiveId": "LO-M03-06",
+    "difficulty": 3,
+    "version": 1,
+    "type": "case",
+    "caseKind": "fallstudie",
+    "simulatedData": true,
+    "prompt": "Lies die Fallstudie (Simulation) und beantworte beide Teilfragen.",
+    "material": {
+      "kind": "text",
+      "body": "Eine fiktive Agentur für Hausautomation plant einen neuen Chat-Funnel. Der Entwurf zeigt Interessenten zuerst zwölf Paketvarianten mit je zehn technischen Merkmalen und fragt dann: „Welches Paket möchten Sie?“ Über dem Chatfenster läuft ein Countdown „Angebot endet in 15:00“, der bei jedem Besuch neu startet.\n\nDie Agentur weiß aus ihren Gesprächen, dass die meisten Interessenten sich kaum mit Hausautomation auskennen und vor allem schnell wissen wollen, ob sich ein Gespräch lohnt."
+    },
+    "parts": [
+      {
+        "id": "p1",
+        "prompt": "Wie schätzt du das Risiko einer Entscheidungsüberlastung ein?",
+        "correct": "b",
+        "explanation": "Hohe Komplexität, Präferenzunsicherheit und ein Wunsch nach wenig Aufwand sind genau die Moderatoren, unter denen Chernev et al. (2015) Überlastung fanden. Die Paketwahl gehört ohnehin in die Fachberatung.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gering – Meta-Analysen zeigen im Mittel keinen Effekt, also ist die Auswahlgröße egal.",
+            "misconception": "Ein mittlerer Nulleffekt heißt nicht, dass der Effekt unter keinen Bedingungen auftritt.",
+            "errorCategory": "ueberinterpretation"
+          },
+          {
+            "id": "b",
+            "text": "Hoch – komplexe Optionen, unsichere Präferenzen und Wunsch nach wenig Aufwand treffen zusammen; besser zuerst Bedarf klären und einen klaren nächsten Schritt anbieten."
+          },
+          {
+            "id": "c",
+            "text": "Nur dann hoch, wenn mehr als 24 Pakete angeboten werden.",
+            "misconception": "Es gibt keine feste Schwelle; entscheidend sind die Bedingungen.",
+            "errorCategory": "ueberinterpretation"
+          }
+        ]
+      },
+      {
+        "id": "p2",
+        "prompt": "Wie ist der Countdown zu bewerten?",
+        "correct": "a",
+        "explanation": "Ein Countdown, der bei jedem Besuch neu startet, erweckt den falschen Eindruck einer Befristung – ein typisches Dark Pattern und gegenüber Verbrauchern als unwahre Befristung stets unzulässig (UWG-Anhang Nr. 7).",
+        "options": [
+          {
+            "id": "a",
+            "text": "Unzulässig: Er täuscht eine Befristung vor, die es nicht gibt (Dark Pattern)."
+          },
+          {
+            "id": "b",
+            "text": "Zulässig, weil der Countdown ja tatsächlich abläuft.",
+            "misconception": "Wenn er neu startet, ist die angedeutete Befristung unwahr.",
+            "errorCategory": "rechtsfehler"
+          },
+          {
+            "id": "c",
+            "text": "Zulässig, solange im Impressum steht, dass es kein echtes Ende gibt.",
+            "misconception": "Ein versteckter Hinweis beseitigt den täuschenden Gesamteindruck nicht.",
+            "errorCategory": "rechtsfehler"
+          }
+        ]
+      }
+    ],
+    "explanation": "Struktur statt Überflutung und ehrliche statt künstlicher Dringlichkeit: erst den Bedarf klären, dann einen überschaubaren nächsten Schritt anbieten – ohne falsche Countdowns.",
+    "sourceIds": [
+      "SRC-011",
+      "SRC-010",
+      "SRC-106",
+      "SRC-103"
+    ],
+    "tags": [
+      "fallstudie",
+      "recht"
+    ]
+  }
+]

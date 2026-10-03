@@ -1,0 +1,18 @@
+{
+  "C-ENTSCHEIDUNG": [
+    "LO-M03-01",
+    "LO-M03-02",
+    "LO-M03-06"
+  ],
+  "C-EFFEKTE": [
+    "LO-M03-03",
+    "LO-M03-04",
+    "LO-M03-05",
+    "LO-M03-08"
+  ],
+  "C-MANIPULATION": [
+    "LO-M03-04",
+    "LO-M03-05",
+    "LO-M03-07"
+  ]
+}

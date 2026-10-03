@@ -1,0 +1,823 @@
+{
+  "id": "SIM-005",
+  "version": 1,
+  "title": "Treppenlift: Zögernde Kundin, die keinen Druck will",
+  "archetype": "Zögernder B2C-Kunde – Versuchung zu Druck, künstlicher Knappheit und Angstappellen",
+  "industry": "Barrierefreies Wohnen – Treppenlift",
+  "channel": "chat",
+  "market": "B2C",
+  "direction": "inbound",
+  "difficulty": 3,
+  "briefing": "Simulation – alle Personen und Firmen sind erfunden. Du bist Setterin bei „Treppenhilfe Weserland“. Frau Brandt (74) hat über das Website-Formular eine Anfrage zu einem Treppenlift gestellt und den Website-Chat gewählt. Wichtig für dich: Es läuft derzeit KEINE Rabattaktion, Montagekapazitäten sind frei, zwischen Auftrag und Einbau liegen derzeit etwa vier bis sechs Wochen, und beim Vor-Ort-Termin wird nie etwas unterschrieben – das Angebot kommt schriftlich. Ziel: Bedürfnis und Pflichtkriterien (Bedarf, Wohnsituation, Zeitrahmen, Entscheider) klären, ihre Unsicherheit ehrlich auffangen und – wenn es passt – einen Vor-Ort-Termin vereinbaren. Preis- und Förderfragen beantwortet nur der Berater.",
+  "persona": {
+    "name": "Helga Brandt",
+    "role": "Eigentümerin eines Einfamilienhauses, 74 Jahre",
+    "avatarHue": 28
+  },
+  "facts": [
+    {
+      "key": "need",
+      "label": "Bedarf",
+      "value": "Treppe zum Schlafzimmer im Obergeschoss ist seit einer Knie-OP beschwerlich",
+      "requiredForQualification": true,
+      "distractors": [
+        "Braucht einen Lift für einen Rollstuhl im Mehrfamilienhaus",
+        "Sucht einen Lastenaufzug für die Garage"
+      ]
+    },
+    {
+      "key": "home",
+      "label": "Wohnsituation",
+      "value": "Eigenes Einfamilienhaus, gerade Innentreppe",
+      "requiredForQualification": true,
+      "distractors": [
+        "Mietwohnung, Vermieter muss zustimmen",
+        "Außentreppe zum Garten"
+      ]
+    },
+    {
+      "key": "timeline",
+      "label": "Zeitrahmen",
+      "value": "Keine Eile – möchte bis zum Herbst Klarheit",
+      "requiredForQualification": true,
+      "distractors": [
+        "Muss nächste Woche eingebaut sein",
+        "Erst in einigen Jahren"
+      ]
+    },
+    {
+      "key": "authority",
+      "label": "Entscheider",
+      "value": "Entscheidet selbst, Tochter Katrin soll beim Termin dabei sein",
+      "requiredForQualification": true,
+      "distractors": [
+        "Tochter entscheidet allein",
+        "Rechtliche Betreuerin muss zustimmen"
+      ]
+    },
+    {
+      "key": "worry",
+      "label": "Hauptsorge",
+      "value": "Angst, überrumpelt zu werden (Nachbarin hatte schlechte Erfahrung mit Druckverkauf)",
+      "requiredForQualification": false,
+      "distractors": [
+        "Angst vor Lärm bei der Montage",
+        "Zweifelt an der technischen Sicherheit von Treppenliften"
+      ]
+    }
+  ],
+  "idealOutcome": "book",
+  "acceptableOutcomes": [
+    "book",
+    "nurture"
+  ],
+  "openingMessage": "Guten Tag, ich habe auf Ihrer Seite das Formular wegen eines Treppenlifts ausgefüllt. Ich möchte mich aber erst mal nur informieren – ich lasse mich nicht gern drängen.",
+  "startRapport": 4,
+  "maxTurns": 16,
+  "handoverFields": [
+    "need",
+    "home",
+    "timeline",
+    "authority",
+    "worry"
+  ],
+  "competencyTargets": {
+    "eroeffnung": 2,
+    "bedarfsermittlung": 4,
+    "fragetechnik": 4,
+    "zuhoeren": 9,
+    "klarheit": 9,
+    "qualifizierung": 7,
+    "einwaende": 5,
+    "kundenorientierung": 9,
+    "terminvereinbarung": 8
+  },
+  "reviewQuestionIds": [
+    "Q-M03-004",
+    "Q-M03-013",
+    "Q-M03-019",
+    "Q-M03-025",
+    "Q-M03-033"
+  ],
+  "sourceIds": [
+    "SRC-101",
+    "SRC-102",
+    "SRC-103",
+    "SRC-122",
+    "SRC-059",
+    "SRC-025",
+    "SRC-050"
+  ],
+  "moves": [
+    {
+      "id": "open-respect",
+      "intent": "open",
+      "quality": "good",
+      "text": "Guten Tag Frau Brandt, hier ist Mia von Treppenhilfe Weserland – danke für Ihre Anfrage! Informieren ist genau der richtige erste Schritt, und Sie bestimmen das Tempo. Darf ich Ihnen ein paar kurze Fragen stellen, damit ich Ihnen passende Infos geben kann?",
+      "effects": {
+        "eroeffnung": 2,
+        "kundenorientierung": 2,
+        "zuhoeren": 1
+      },
+      "coachNote": "Vorstellung, Dank, Autonomie ausdrücklich bestätigt und Erlaubnis eingeholt – genau richtig für eine Kundin, die keinen Druck möchte.",
+      "reply": [
+        {
+          "text": "Ja, das ist nett. Fragen Sie ruhig."
+        }
+      ],
+      "rapport": 2,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ]
+    },
+    {
+      "id": "open-promo",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Guten Tag! Gute Nachricht: Diesen Monat läuft noch unsere Frühjahrsaktion mit 20 % Rabatt – aber nur noch für die nächsten drei Kunden!",
+      "effects": {
+        "eroeffnung": -1,
+        "kundenorientierung": -3
+      },
+      "coachNote": "Erfundene Rabattaktion mit künstlicher Knappheit – laut Briefing gibt es keine Aktion. Unwahre Befristung und Knappheit sind gegenüber Verbrauchern stets unzulässig (UWG-Anhang Nr. 7) und irreführend (§ 5 UWG).",
+      "reply": [
+        {
+          "text": "Genau so etwas meinte ich. Ich glaube, ich informiere mich lieber woanders.",
+          "ends": "lost"
+        }
+      ],
+      "rapport": -3,
+      "setsFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "opened"
+      ],
+      "betterMoveId": "open-respect",
+      "violation": "Erfundene Rabattaktion und künstliche Knappheit (UWG-Anhang Nr. 7, § 5 UWG)."
+    },
+    {
+      "id": "need",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Was möchten Sie im Alltag mit einem Treppenlift vor allem leichter machen?",
+      "effects": {
+        "bedarfsermittlung": 3,
+        "fragetechnik": 2
+      },
+      "coachNote": "Offene Zielfrage – fragt nach dem Bedürfnis, nicht nach dem Produkt.",
+      "reply": [
+        {
+          "text": "Mein Schlafzimmer ist oben. Seit meiner Knie-OP im Frühjahr ist die Treppe jeden Abend eine Quälerei."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "need"
+      ]
+    },
+    {
+      "id": "paraphrase",
+      "intent": "summarize",
+      "quality": "good",
+      "text": "Wenn ich Sie richtig verstehe, geht es Ihnen darum, abends wieder sicher und ohne Schmerzen ins Schlafzimmer zu kommen – stimmt das?",
+      "effects": {
+        "zuhoeren": 4,
+        "klarheit": 1
+      },
+      "coachNote": "Paraphrase als Frage: Die Kundin fühlt sich verstanden – ohne dass du medizinische Details erfragen musst.",
+      "reply": [
+        {
+          "text": "Ja, genau. Und ausziehen möchte ich auf keinen Fall, ich wohne hier seit 40 Jahren."
+        }
+      ],
+      "requires": [
+        "need"
+      ],
+      "rapport": 1,
+      "setsFlags": [
+        "paraphrased"
+      ],
+      "hiddenByFlags": [
+        "paraphrased"
+      ]
+    },
+    {
+      "id": "home",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Wohnen Sie im eigenen Haus?",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "coachNote": "Kurze geschlossene Frage zu einem Pflichtkriterium.",
+      "reply": [
+        {
+          "text": "Ja, ein Einfamilienhaus, die Treppe ist gerade, ganz normale Holztreppe. Was kostet denn so ein Lift ungefähr? Und zahlt da die Pflegekasse etwas?",
+          "setsFlags": [
+            "asked-price"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "home"
+      ]
+    },
+    {
+      "id": "price-handoff",
+      "intent": "handoff",
+      "quality": "good",
+      "text": "Gute Fragen. Einen seriösen Preis kann man erst nennen, wenn die Treppe ausgemessen ist – alles andere wäre geraten. Ob und welche Zuschüsse infrage kommen, klärt der Berater mit Ihnen, und Ihre Pflegekasse kann es verbindlich beantworten. Das Angebot bekommen Sie dann schriftlich.",
+      "effects": {
+        "einwaende": 2,
+        "klarheit": 2,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Rollenklar: keine Preis- oder Förderzusage, aber ein konkreter Weg zur Antwort.",
+      "reply": [
+        {
+          "text": "Das ist ehrlich. Lieber so als eine Zahl, die dann nicht stimmt."
+        }
+      ],
+      "requiresFlags": [
+        "asked-price"
+      ],
+      "setsFlags": [
+        "price-done"
+      ],
+      "hiddenByFlags": [
+        "price-done"
+      ],
+      "rapport": 1
+    },
+    {
+      "id": "timeline",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Bis wann möchten Sie für sich Klarheit haben?",
+      "effects": {
+        "qualifizierung": 2,
+        "fragetechnik": 1
+      },
+      "coachNote": "Zeitrahmen offen erfragt, ohne Dringlichkeit zu unterstellen.",
+      "reply": [
+        {
+          "text": "Eilig ist es nicht. Bis zum Herbst würde ich gern wissen, woran ich bin."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "timeline"
+      ]
+    },
+    {
+      "id": "honest-leadtime",
+      "intent": "inform",
+      "quality": "good",
+      "text": "Das passt gut. Nur zur Orientierung, ganz ohne Eile: Zwischen Auftrag und Einbau liegen bei uns derzeit etwa vier bis sechs Wochen. Sie haben also genug Zeit, sich in Ruhe zu entscheiden.",
+      "effects": {
+        "klarheit": 2,
+        "kundenorientierung": 2
+      },
+      "coachNote": "Ehrliche, belegbare Information (laut Briefing) – entlastet statt Druck aufzubauen.",
+      "reply": [
+        {
+          "text": "Gut zu wissen. Dann muss ich ja nichts überstürzen."
+        }
+      ],
+      "requires": [
+        "timeline"
+      ],
+      "rapport": 1,
+      "setsFlags": [
+        "leadtime"
+      ],
+      "hiddenByFlags": [
+        "leadtime",
+        "scarcity"
+      ]
+    },
+    {
+      "id": "authority",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Möchten Sie das allein entscheiden, oder soll jemand dabei sein, dem Sie vertrauen?",
+      "effects": {
+        "qualifizierung": 3,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Entscheider geklärt und zugleich eine Vertrauensperson angeboten – stärkt Autonomie.",
+      "reply": [
+        {
+          "text": "Entscheiden tue ich selbst. Aber meine Tochter Katrin soll beim Termin dabei sein, sie kennt sich mit Verträgen besser aus."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "authority"
+      ]
+    },
+    {
+      "id": "worry-ask",
+      "intent": "ask",
+      "quality": "good",
+      "text": "Sie schrieben, dass Sie sich nicht gern drängen lassen. Haben Sie da schon einmal schlechte Erfahrungen gemacht?",
+      "effects": {
+        "zuhoeren": 3,
+        "bedarfsermittlung": 1
+      },
+      "coachNote": "Greift ihre eigene Formulierung auf und fragt nach der Ursache der Unsicherheit.",
+      "reply": [
+        {
+          "text": "Meine Nachbarin hat sich an der Haustür einen Lift aufschwatzen lassen – teuer, und der Vertreter kam dreimal. So etwas möchte ich nicht erleben."
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "reveals": [
+        "worry"
+      ],
+      "setsFlags": [
+        "worry-asked"
+      ],
+      "hiddenByFlags": [
+        "worry-asked"
+      ]
+    },
+    {
+      "id": "worry-respond",
+      "intent": "handle_objection",
+      "quality": "good",
+      "text": "Das verstehe ich gut. Bei uns läuft es so: Der Berater misst die Treppe aus und erklärt Ihnen die Möglichkeiten. Unterschrieben wird beim Termin nichts – Sie bekommen ein schriftliches Angebot und entscheiden in Ruhe, gern zusammen mit Ihrer Tochter.",
+      "effects": {
+        "einwaende": 3,
+        "kundenorientierung": 2,
+        "klarheit": 1
+      },
+      "coachNote": "Unsicherheit über den Ablauf mit Transparenz beantwortet; Autonomie und Vertrauensperson betont.",
+      "reply": [
+        {
+          "text": "Das beruhigt mich wirklich. So stelle ich mir das vor.",
+          "setsFlags": [
+            "reassured"
+          ]
+        }
+      ],
+      "requires": [
+        "worry"
+      ],
+      "rapport": 2,
+      "hiddenByFlags": [
+        "reassured",
+        "worry-done"
+      ],
+      "setsFlags": [
+        "worry-done"
+      ]
+    },
+    {
+      "id": "summary",
+      "intent": "summarize",
+      "quality": "good",
+      "text": "Darf ich kurz zusammenfassen? Die Treppe zum Schlafzimmer ist seit der Knie-OP beschwerlich, Sie wohnen im eigenen Haus mit gerader Treppe, möchten bis zum Herbst Klarheit und entscheiden selbst – mit Ihrer Tochter an Ihrer Seite. Stimmt das so?",
+      "effects": {
+        "zuhoeren": 2,
+        "klarheit": 2
+      },
+      "coachNote": "Saubere Zusammenfassung aller Pflichtkriterien vor dem Vorschlag.",
+      "reply": [
+        {
+          "text": "Ja, das haben Sie gut zusammengefasst."
+        }
+      ],
+      "requires": [
+        "need",
+        "home",
+        "timeline",
+        "authority"
+      ],
+      "rapport": 1,
+      "setsFlags": [
+        "summarized"
+      ],
+      "hiddenByFlags": [
+        "summarized"
+      ]
+    },
+    {
+      "id": "propose",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Als nächster Schritt wäre ein Termin bei Ihnen zu Hause sinnvoll: Der Berater misst die Treppe aus, erklärt die Möglichkeiten, und Sie bekommen ein schriftliches Angebot – ohne Unterschrift am Termin. Ihre Tochter kann gern dabei sein. Möchten Sie das?",
+      "effects": {
+        "terminvereinbarung": 2,
+        "klarheit": 1
+      },
+      "coachNote": "Klarer, freiwilliger nächster Schritt mit Ablauf und Abgrenzung (Mikro-Zusage).",
+      "reply": [
+        {
+          "text": "Ja, so ist das gut. Das machen wir.",
+          "setsFlags": [
+            "accepted"
+          ],
+          "when": {
+            "factsRevealed": [
+              "need",
+              "home",
+              "timeline",
+              "authority"
+            ],
+            "flags": [
+              "reassured"
+            ],
+            "minRapport": 6
+          }
+        },
+        {
+          "text": "Hm, ich weiß nicht … ich möchte nicht, dass mir dann jemand im Wohnzimmer etwas aufschwatzt.",
+          "setsFlags": [
+            "hesitant"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "proposed"
+      ],
+      "setsFlags": [
+        "proposed"
+      ]
+    },
+    {
+      "id": "slots",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Schön! Wann passt es Ihnen und Ihrer Tochter besser – Donnerstag um 16 Uhr oder Samstag um 10 Uhr? Wenn beides nicht geht, finden wir gern einen anderen Termin.",
+      "effects": {
+        "terminvereinbarung": 3,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Zwei konkrete Optionen, abgestimmt auf die Tochter, mit offener Tür für andere Zeiten.",
+      "reply": [
+        {
+          "text": "Samstag um 10, da hat Katrin frei."
+        }
+      ],
+      "requiresFlags": [
+        "accepted"
+      ],
+      "hiddenByFlags": [
+        "slot"
+      ],
+      "setsFlags": [
+        "slot"
+      ]
+    },
+    {
+      "id": "confirm",
+      "intent": "confirm_booking",
+      "quality": "good",
+      "text": "Prima: Samstag, 10 Uhr, bei Ihnen zu Hause, etwa eine Stunde, mit Ihrer Tochter Katrin. Der Berater misst aus und erklärt die Möglichkeiten; das schriftliche Angebot kommt danach, unterschrieben wird am Termin nichts. Ich schicke Ihnen eine Bestätigung mit Namen und Telefonnummer des Beraters. Falls etwas dazwischenkommt, schreiben Sie mir einfach.",
+      "effects": {
+        "terminvereinbarung": 3,
+        "klarheit": 2,
+        "kundenorientierung": 1
+      },
+      "coachNote": "Vollständige Bestätigung mit Teilnehmern, Ablauf, Abgrenzung und Wenn-dann-Plan.",
+      "reply": [
+        {
+          "text": "Danke, Mia. So habe ich mir das gewünscht – ganz in Ruhe.",
+          "ends": "book"
+        }
+      ],
+      "requiresFlags": [
+        "slot"
+      ]
+    },
+    {
+      "id": "reassure",
+      "intent": "handle_objection",
+      "quality": "good",
+      "text": "Das ist Ihr gutes Recht. Am Termin wird nichts unterschrieben – Sie bekommen ein schriftliches Angebot und entscheiden in Ruhe, gern zusammen mit Ihrer Tochter. Was bräuchten Sie noch, damit sich das für Sie gut anfühlt?",
+      "effects": {
+        "einwaende": 3,
+        "kundenorientierung": 2
+      },
+      "coachNote": "Zögern ernst genommen, Ablauf transparent gemacht und offen nachgefragt – ohne Überreden.",
+      "reply": [
+        {
+          "text": "Wenn das so ist … dann bin ich offen dafür.",
+          "setsFlags": [
+            "reassured"
+          ]
+        }
+      ],
+      "requiresFlags": [
+        "hesitant"
+      ],
+      "hiddenByFlags": [
+        "reassured"
+      ],
+      "rapport": 2
+    },
+    {
+      "id": "propose-again",
+      "intent": "propose_booking",
+      "quality": "good",
+      "text": "Dann schlage ich einen Termin von etwa einer Stunde bei Ihnen zu Hause vor, gern wenn Ihre Tochter Zeit hat. Passt das für Sie?",
+      "effects": {
+        "terminvereinbarung": 1
+      },
+      "coachNote": "Erneuter Vorschlag erst, nachdem die Bedenken geklärt sind.",
+      "reply": [
+        {
+          "text": "Ja, gut.",
+          "setsFlags": [
+            "accepted"
+          ],
+          "when": {
+            "factsRevealed": [
+              "need",
+              "home",
+              "timeline",
+              "authority"
+            ]
+          }
+        },
+        {
+          "text": "Erzählen Sie mir erst noch ein bisschen – was müssen Sie denn noch von mir wissen?"
+        }
+      ],
+      "requiresFlags": [
+        "reassured",
+        "proposed"
+      ],
+      "hiddenByFlags": [
+        "accepted",
+        "proposed-again"
+      ],
+      "setsFlags": [
+        "proposed-again"
+      ]
+    },
+    {
+      "id": "health-probe",
+      "intent": "ask",
+      "quality": "weak",
+      "text": "Welche Diagnose haben Sie genau, und wie schätzt Ihr Arzt die Heilung ein?",
+      "effects": {
+        "kundenorientierung": -2,
+        "fragetechnik": -1
+      },
+      "coachNote": "Unnötige Gesundheitsdaten (besondere Kategorie nach Art. 9 DSGVO) – für den Termin nicht erforderlich und für die Kundin unangenehm. Eine Paraphrase des Ziels reicht völlig.",
+      "reply": [
+        {
+          "text": "Das möchte ich im Chat eigentlich nicht so genau erzählen."
+        }
+      ],
+      "requires": [
+        "need"
+      ],
+      "rapport": -1,
+      "setsFlags": [
+        "health-asked"
+      ],
+      "hiddenByFlags": [
+        "health-asked",
+        "paraphrased"
+      ],
+      "betterMoveId": "paraphrase"
+    },
+    {
+      "id": "fear-frame",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Ehrlich gesagt: Jeder Tag ohne Lift ist ein Sturzrisiko. Stellen Sie sich vor, Sie fallen nachts die Treppe hinunter …",
+      "effects": {
+        "kundenorientierung": -3,
+        "zuhoeren": -1
+      },
+      "coachNote": "Angstappell, der die gesundheitliche Lage und das Alter der Kundin als Druckmittel nutzt – § 4a Abs. 2 UWG nennt Alter und Angst als Umstände, deren Ausnutzung aggressiv sein kann.",
+      "reply": [
+        {
+          "text": "Das macht mir jetzt richtig Angst. Ich glaube, ich möchte das Gespräch lieber beenden.",
+          "ends": "lost"
+        }
+      ],
+      "requires": [
+        "need"
+      ],
+      "rapport": -3,
+      "betterMoveId": "paraphrase",
+      "violation": "Angstappell unter Ausnutzung von Alter und gesundheitlicher Lage (vgl. § 4a UWG)."
+    },
+    {
+      "id": "fake-scarcity",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Bis zum Herbst? Dann sollten Sie sich beeilen – unsere Montagetermine sind fast ausgebucht, ich habe nur noch zwei Plätze.",
+      "effects": {
+        "kundenorientierung": -3
+      },
+      "coachNote": "Unwahre Knappheitsangabe – laut Briefing sind Kapazitäten frei. Künstliche Knappheit erzeugt Reaktanz und ist irreführend (UWG-Anhang Nr. 7, § 5 UWG).",
+      "reply": [
+        {
+          "text": "Jetzt also doch Druck? Genau das hat meine Nachbarin auch erlebt. Nein danke.",
+          "ends": "lost"
+        }
+      ],
+      "requires": [
+        "timeline"
+      ],
+      "rapport": -3,
+      "setsFlags": [
+        "scarcity"
+      ],
+      "hiddenByFlags": [
+        "leadtime"
+      ],
+      "betterMoveId": "honest-leadtime",
+      "violation": "Unwahre Knappheitsangabe zur Erzeugung von Zeitdruck (UWG-Anhang Nr. 7, § 5 UWG)."
+    },
+    {
+      "id": "social-fake",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Keine Sorge – bei uns sind 100 % der Kunden zufrieden, das zeigen alle unsere Bewertungen.",
+      "effects": {
+        "kundenorientierung": -2,
+        "einwaende": -1
+      },
+      "coachNote": "Unbelegte Absolutbehauptung als Social Proof – irreführend (§ 5 UWG) und für eine misstrauische Kundin unglaubwürdig.",
+      "reply": [
+        {
+          "text": "100 Prozent? Das glaube ich ehrlich gesagt nicht."
+        }
+      ],
+      "requires": [
+        "worry"
+      ],
+      "rapport": -2,
+      "setsFlags": [
+        "worry-done"
+      ],
+      "hiddenByFlags": [
+        "worry-done",
+        "reassured"
+      ],
+      "betterMoveId": "worry-respond",
+      "violation": "Unbelegter, übertriebener Social Proof („100 % zufrieden“, § 5 UWG)."
+    },
+    {
+      "id": "price-guess",
+      "intent": "inform",
+      "quality": "bad",
+      "text": "Meistens so um die 3.000 €, und die Pflegekasse übernimmt das sowieso komplett.",
+      "effects": {
+        "kundenorientierung": -2,
+        "klarheit": -1
+      },
+      "coachNote": "Ungeprüfte Preis- und Förderzusage außerhalb der Setter-Rolle – weckt falsche Erwartungen.",
+      "reply": [
+        {
+          "text": "Komplett? Das wäre ja toll … stimmt das wirklich?"
+        }
+      ],
+      "requiresFlags": [
+        "asked-price"
+      ],
+      "setsFlags": [
+        "price-done"
+      ],
+      "hiddenByFlags": [
+        "price-done"
+      ],
+      "betterMoveId": "price-handoff",
+      "violation": "Ungeprüfte Preis- und Förderzusage."
+    },
+    {
+      "id": "commitment-trap",
+      "intent": "pressure",
+      "quality": "bad",
+      "text": "Super, dann machen wir es gleich fest: Wenn Sie jetzt zusagen, reserviere ich Ihnen den Aktionspreis – dafür bräuchte ich nur kurz Ihre Zusage, dass Sie den Lift nehmen.",
+      "effects": {
+        "kundenorientierung": -3,
+        "terminvereinbarung": -2
+      },
+      "coachNote": "Terminzusage wird in eine Kaufzusage umgedeutet, dazu ein erfundener Aktionspreis – Missbrauch von Konsistenz und irreführende Angabe.",
+      "reply": [
+        {
+          "text": "Moment – ich habe einem Termin zugestimmt, nicht einem Kauf. So nicht.",
+          "ends": "lost"
+        }
+      ],
+      "requiresFlags": [
+        "accepted"
+      ],
+      "hiddenByFlags": [
+        "slot"
+      ],
+      "rapport": -3,
+      "betterMoveId": "slots",
+      "violation": "Umdeutung einer Terminzusage in eine Kaufzusage mit erfundenem Aktionspreis (§ 5 UWG)."
+    },
+    {
+      "id": "nurture",
+      "intent": "nurture",
+      "quality": "ok",
+      "text": "Wenn Sie erst einmal in Ruhe lesen möchten: Ich schicke Ihnen gern unsere Infobroschüre und eine Checkliste mit Fragen, die Sie jedem Anbieter stellen können. Ist das in Ordnung?",
+      "effects": {
+        "kundenorientierung": 2
+      },
+      "coachNote": "Respektvolle Alternative – bei klarem Bedarf und Interesse aber nicht das Optimum.",
+      "reply": [
+        {
+          "text": "Ja, das ist nett. Dann schaue ich mir das mit Katrin zusammen an.",
+          "ends": "nurture"
+        }
+      ],
+      "requiresFlags": [
+        "opened"
+      ],
+      "hiddenByFlags": [
+        "accepted"
+      ]
+    }
+  ],
+  "ai": {
+    "personality": "freundlich, wach, etwas misstrauisch gegenüber Verkäufern; öffnet sich, wenn man ihr Tempo respektiert und ehrlich ist",
+    "speakingStyle": "Sie-Form, vollständige Sätze, höflich, kein Emoji; wird knapp und zieht sich zurück, sobald sie Druck spürt",
+    "situation": "Hat über das Website-Formular einen Treppenlift angefragt und den Chat gewählt; will sich zunächst nur informieren.",
+    "concern": "Die Treppe zum Schlafzimmer ist seit einer Knie-OP beschwerlich; sie fürchtet, wie ihre Nachbarin zu einem teuren Kauf gedrängt zu werden.",
+    "background": "74 Jahre, eigenes Einfamilienhaus mit gerader Holztreppe, wohnt dort seit 40 Jahren und will nicht ausziehen. Keine Eile, möchte bis zum Herbst Klarheit. Entscheidet selbst, möchte aber ihre Tochter Katrin beim Termin dabeihaben. Samstagvormittag passt Katrin am besten.",
+    "needs": [
+      "Ihr eigenes Tempo",
+      "ehrliche Information ohne Druck",
+      "Transparenz über den Ablauf eines Termins",
+      "eine Vertrauensperson an ihrer Seite"
+    ],
+    "objections": [
+      {
+        "trigger": "der Setter Rabatte, Fristen oder knappe Plätze erwähnt",
+        "reaction": "wird misstrauisch, verweist auf die Erfahrung ihrer Nachbarin und beendet das Gespräch"
+      },
+      {
+        "trigger": "der Setter mit Stürzen oder Gesundheitsrisiken Angst macht",
+        "reaction": "ist verletzt und möchte das Gespräch beenden"
+      },
+      {
+        "trigger": "ein Termin vorgeschlagen wird, bevor klar ist, dass dort nichts unterschrieben wird",
+        "reaction": "zögert: Sie will sich nichts im Wohnzimmer aufschwatzen lassen"
+      },
+      {
+        "trigger": "der Setter nach Diagnose oder Arztmeinung fragt",
+        "reaction": "möchte das im Chat nicht erzählen"
+      },
+      {
+        "trigger": "der Setter übertriebene Behauptungen wie „100 % zufriedene Kunden“ macht",
+        "reaction": "glaubt es nicht und wird reservierter"
+      }
+    ],
+    "customerGoals": [
+      "herausfinden, ob ein Treppenlift für ihr Haus infrage kommt",
+      "nicht überrumpelt werden",
+      "eine Entscheidung gemeinsam mit ihrer Tochter treffen"
+    ],
+    "revealRules": {
+      "need": "die Setterin offen fragt, was ein Lift ihr im Alltag erleichtern soll oder was sie zur Anfrage bewogen hat",
+      "home": "die Setterin nach ihrer Wohnsituation oder dem Haus fragt",
+      "timeline": "die Setterin fragt, bis wann sie Klarheit haben möchte – ohne Eile zu unterstellen",
+      "authority": "die Setterin fragt, wer entscheidet oder ob jemand dabei sein soll",
+      "worry": "die Setterin ihren Wunsch, nicht gedrängt zu werden, aufgreift und nach dem Grund oder bisherigen Erfahrungen fragt"
+    },
+    "adviceBoundaries": [
+      "Was kostet so ein Lift ungefähr?",
+      "Zahlt die Pflegekasse etwas dazu?",
+      "Passt ein Lift auf meine Treppe?"
+    ],
+    "outcomeGuidance": "Ein Vor-Ort-Termin ist sinnvoll, wenn sie sich respektiert fühlt, alle vier Pflichtkriterien geklärt sind und klar ist, dass am Termin nichts unterschrieben wird und Katrin dabei sein kann (Samstag 10 Uhr passt). Infomaterial statt Termin (nurture) ist vertretbar. Bei Druck, Knappheit, Angstappellen oder einer umgedeuteten Kaufzusage beendet sie das Gespräch.",
+    "lessonLinks": [
+      "M03-L02",
+      "M03-L03",
+      "M03-L05",
+      "M03-L06",
+      "M03-L08"
+    ]
+  }
+}

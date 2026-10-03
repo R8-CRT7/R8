@@ -4,7 +4,7 @@ import { chromium, devices } from "@playwright/test";
 const base = process.env.BASE ?? "http://127.0.0.1:4173";
 const shots = [
   ["landing", "/"], ["dashboard", "/dashboard/"], ["lernpfad", "/learn/"], ["lektion", "/learn/M01/M01-L04/"],
-  ["quiz", "/quiz/M01/"], ["simulator", "/simulator/SIM-001/"], ["statistik", "/stats/"], ["quellen", "/sources/"], ["admin", "/admin/"],
+  ["quiz", "/quiz/M01/"], ["simulator", "/simulator/SIM-001/"], ["statistik", "/stats/"], ["quellen", "/sources/"], ["admin", "/admin/"], ["kompetenzbaum", "/skills/"], ["kursbuch", "/book/"], ["plan", "/plan/"], ["simulator-start", "/simulator/SIM-006/"],
 ];
 const browser = await chromium.launch();
 for (const [kind, ctxOpts] of [["desktop", { viewport: { width: 1440, height: 900 } }], ["iphone", { ...devices["iPhone 13"], deviceScaleFactor: 2 }]]) {

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "SRC-201",
+    "title": "Gesetz gegen den unlauteren Wettbewerb (UWG), § 4a – Aggressive geschäftliche Handlungen",
+    "authorOrPublisher": "Bundesrepublik Deutschland",
+    "url": "https://www.gesetze-im-internet.de/uwg_2004/__4a.html",
+    "evidence": "gesetz",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026; Primärseite wegen Egress-Sperre der Arbeitsumgebung nicht direkt abrufbar – Kernaussage über Such-Snippets/Sekundärquellen abgeglichen. Wortlaut über Gesetzesportale (lexetius, buzer, lxgesetze) abgeglichen: Unlauter ist eine aggressive geschäftliche Handlung, die geeignet ist, Verbraucher oder sonstige Marktteilnehmer zu einer Entscheidung zu veranlassen, die sie andernfalls nicht getroffen hätten. Aggressiv ist eine Handlung, wenn sie die Entscheidungsfreiheit erheblich beeinträchtigt durch Belästigung, Nötigung einschließlich körperlicher Gewalt oder unzulässige Beeinflussung (Ausnutzen einer Machtposition zur Druckausübung). Abs. 2 nennt Kriterien (u. a. Zeitpunkt, Ort, Art, Dauer; Drohungen; Ausnutzen von Unglückssituationen). Einordnung im Einzelfall ist Rechtsfrage – kein Rechtsrat.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 90
+  },
+  {
+    "id": "SRC-202",
+    "title": "UWG, Anhang (zu § 3 Abs. 3) – „Schwarze Liste“, Nr. 7 (unwahre Angabe begrenzter Verfügbarkeit)",
+    "authorOrPublisher": "Bundesrepublik Deutschland",
+    "url": "https://www.gesetze-im-internet.de/uwg_2004/anhang.html",
+    "evidence": "gesetz",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026; Primärseite wegen Egress-Sperre der Arbeitsumgebung nicht direkt abrufbar – Kernaussage über Such-Snippets/Sekundärquellen abgeglichen. Abgeglichen über IHK-Seiten (Frankfurt, Hanau, Osnabrück) und it-recht-kanzlei: Nr. 7 erfasst die unwahre Angabe, bestimmte Waren oder Dienstleistungen seien allgemein oder zu bestimmten Bedingungen nur für einen sehr begrenzten Zeitraum verfügbar, um Verbraucher zu einer sofortigen Entscheidung zu veranlassen, ohne Zeit und Gelegenheit für eine informierte Entscheidung. Handlungen der Schwarzen Liste sind gegenüber Verbrauchern stets unzulässig (ohne Relevanzprüfung). Nummerierung nach UWG-Novelle 2022 vor Prüfungsverwendung am Primärtext gegenprüfen.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 90
+  },
+  {
+    "id": "SRC-203",
+    "title": "Richtlinie 2005/29/EG über unlautere Geschäftspraktiken (UGP-Richtlinie), Art. 8 und 9 – aggressive Geschäftspraktiken",
+    "authorOrPublisher": "Europäische Union",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32005L0029",
+    "evidence": "gesetz",
+    "verification": "unverifiziert",
+    "accessNote": "Aus Fachwissen eingetragen; in dieser Session NICHT online geprüft (Websuche-Kontingent erschöpft). Vor Verwendung in Prüfungsfragen verifizieren. EU-Grundlage für § 4a UWG: Art. 8 definiert aggressive Praktiken (Belästigung, Nötigung, unzulässige Beeinflussung), Art. 9 nennt Prüfkriterien. Konsolidierte Fassung (u. a. Änderung durch Richtlinie (EU) 2019/2161) nicht geprüft.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 180,
+    "publishedAt": "2005-05-11"
+  },
+  {
+    "id": "SRC-204",
+    "title": "Gesetz gegen den unlauteren Wettbewerb (UWG), § 6 – Vergleichende Werbung",
+    "authorOrPublisher": "Bundesrepublik Deutschland",
+    "url": "https://www.gesetze-im-internet.de/uwg_2004/__6.html",
+    "evidence": "gesetz",
+    "verification": "unverifiziert",
+    "accessNote": "Aus Fachwissen eingetragen; in dieser Session NICHT online geprüft (Websuche-Kontingent erschöpft). Vor Verwendung in Prüfungsfragen verifizieren. Vergleichende Werbung ist nur unter Bedingungen zulässig (u. a. objektiver Vergleich nachprüfbarer, typischer Eigenschaften; keine Herabsetzung oder Verunglimpfung von Mitbewerbern). Für die Lehre nur als Hintergrund verwendet: Setter vergleichen keine Fremdangebote.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 90
+  },
+  {
+    "id": "SRC-205",
+    "title": "Gesetz gegen den unlauteren Wettbewerb (UWG), § 4 – Mitbewerberschutz (Nr. 1 Herabsetzung, Nr. 2 Anschwärzung)",
+    "authorOrPublisher": "Bundesrepublik Deutschland",
+    "url": "https://www.gesetze-im-internet.de/uwg_2004/__4.html",
+    "evidence": "gesetz",
+    "verification": "unverifiziert",
+    "accessNote": "Aus Fachwissen eingetragen; in dieser Session NICHT online geprüft (Websuche-Kontingent erschöpft). Vor Verwendung in Prüfungsfragen verifizieren. Unlauter handelt u. a., wer Waren, Dienstleistungen oder Verhältnisse eines Mitbewerbers herabsetzt oder verunglimpft (Nr. 1) oder über Mitbewerber nicht erweislich wahre Tatsachen behauptet oder verbreitet, die geeignet sind, den Betrieb oder Kredit zu schädigen (Nr. 2). Einzelfallprüfung – kein Rechtsrat.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 90
+  },
+  {
+    "id": "SRC-206",
+    "title": "The Persuasion Knowledge Model: How People Cope with Persuasion Attempts",
+    "authorOrPublisher": "Friestad, M.; Wright, P. – Journal of Consumer Research 21(1), 1–31",
+    "url": "https://ideas.repec.org/a/oup/jconrs/v21y1994i1p1-31.html",
+    "evidence": "peer_review",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026; Primärseite wegen Egress-Sperre der Arbeitsumgebung nicht direkt abrufbar – Kernaussage über Such-Snippets/Sekundärquellen abgeglichen. Bibliografische Angaben über RePEc/IDEAS und Sekundärquellen bestätigt. Theoretisches Modell: Menschen entwickeln Wissen über Ziele und Taktiken von Beeinflussungsversuchen und nutzen es, um damit umzugehen – erkannte Taktiken verändern die Haltung gegenüber Produkt und Anbieter. Konzeptioneller Beitrag, keine Effektgrößen für Vertriebsgespräche.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 1825,
+    "publishedAt": "1994-06"
+  },
+  {
+    "id": "SRC-207",
+    "title": "The Nature of Psychological Reactance Revisited: A Meta-Analytic Review",
+    "authorOrPublisher": "Rains, S. A. – Human Communication Research 39(1), 47–73",
+    "url": "https://academic.oup.com/hcr",
+    "evidence": "peer_review",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026; Primärseite wegen Egress-Sperre der Arbeitsumgebung nicht direkt abrufbar – Kernaussage über Such-Snippets/Sekundärquellen abgeglichen. Laut Sekundärquellen (u. a. Frontiers in Communication 2019, PMC-Artikel): Meta-Analyse mit 20 Studien (N = 4.942); Reaktanz lässt sich am besten als Verflechtung von Ärger und negativen Gedanken modellieren, ausgelöst durch wahrgenommene Freiheitsbedrohung. Kontext überwiegend Gesundheitskommunikation; Übertragung auf Verkaufsgespräche ist Analogieschluss. URL verweist auf die Zeitschrift, DOI nicht geprüft.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 1825,
+    "publishedAt": "2013"
+  },
+  {
+    "id": "SRC-208",
+    "title": "A Theory of Psychological Reactance",
+    "authorOrPublisher": "Brehm, J. W. – Academic Press",
+    "url": "https://www.elsevier.com/",
+    "evidence": "fachliteratur",
+    "verification": "unverifiziert",
+    "accessNote": "Aus Fachwissen eingetragen; in dieser Session NICHT online geprüft (Websuche-Kontingent erschöpft). Vor Verwendung in Prüfungsfragen verifizieren. Grundlagenwerk der Reaktanztheorie: Wird eine wahrgenommene Verhaltensfreiheit bedroht, entsteht eine Motivation, sie wiederherzustellen (z. B. durch Ablehnung des nahegelegten Verhaltens).",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 1825,
+    "publishedAt": "1966"
+  },
+  {
+    "id": "SRC-209",
+    "title": "A Meta-Analysis of Motivational Interviewing: Twenty-Five Years of Empirical Studies",
+    "authorOrPublisher": "Lundahl, B. W.; Kunz, C.; Brownell, C.; Tollefson, D.; Burke, B. L. – Research on Social Work Practice 20(2), 137–160",
+    "url": "https://digitalcommons.usu.edu/sswa_facpubs/199",
+    "evidence": "peer_review",
+    "verification": "teilweise_verifiziert",
+    "accessNote": "Websuche am 03.10.2026; Primärseite wegen Egress-Sperre der Arbeitsumgebung nicht direkt abrufbar – Kernaussage über Such-Snippets/Sekundärquellen abgeglichen. Über Repositorium der Utah State University und Sekundärquellen abgeglichen: 119 Studien; gegenüber schwachen Vergleichsgruppen kleine, signifikante und dauerhafte Effekte (g ≈ 0,28), gegenüber spezifischen Behandlungen nicht signifikant (g ≈ 0,09). Kontext: Beratung zu Sucht- und Gesundheitsverhalten – NICHT Vertrieb. Wird hier nur als Beleg für die Haltung „Widerstand nicht bekämpfen, sondern verstehen“ genutzt.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 1825,
+    "publishedAt": "2010"
+  },
+  {
+    "id": "SRC-210",
+    "title": "Motivational Interviewing: Helping People Change (3rd ed.)",
+    "authorOrPublisher": "Miller, W. R.; Rollnick, S. – Guilford Press",
+    "url": "https://www.guilford.com/",
+    "evidence": "fachliteratur",
+    "verification": "unverifiziert",
+    "accessNote": "Aus Fachwissen eingetragen; in dieser Session NICHT online geprüft (Websuche-Kontingent erschöpft). Vor Verwendung in Prüfungsfragen verifizieren. Beratungsansatz: Widerstand/„Discord“ als Signal für die Beziehung verstehen, Reflexionen statt Gegenargumente („Righting Reflex“ vermeiden), Autonomie betonen. Für klinische Beratung entwickelt; Übertragung auf Setting ist Analogie.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 1825,
+    "publishedAt": "2013"
+  },
+  {
+    "id": "SRC-211",
+    "title": "Getting to Yes: Negotiating Agreement Without Giving In",
+    "authorOrPublisher": "Fisher, R.; Ury, W.; Patton, B. – Penguin",
+    "url": "https://www.penguinrandomhouse.com/",
+    "evidence": "fachliteratur",
+    "verification": "unverifiziert",
+    "accessNote": "Aus Fachwissen eingetragen; in dieser Session NICHT online geprüft (Websuche-Kontingent erschöpft). Vor Verwendung in Prüfungsfragen verifizieren. Harvard-Konzept: Interessen statt Positionen, Menschen und Probleme trennen. Praxisliteratur auf Basis von Verhandlungserfahrung, nicht systematisch evaluiert. Erstausgabe 1981.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 1825,
+    "publishedAt": "1981"
+  },
+  {
+    "id": "SRC-212",
+    "title": "Resistance and Persuasion",
+    "authorOrPublisher": "Knowles, E. S.; Linn, J. A. (Hrsg.) – Lawrence Erlbaum Associates",
+    "url": "https://www.routledge.com/",
+    "evidence": "fachliteratur",
+    "verification": "unverifiziert",
+    "accessNote": "Aus Fachwissen eingetragen; in dieser Session NICHT online geprüft (Websuche-Kontingent erschöpft). Vor Verwendung in Prüfungsfragen verifizieren. Sammelband zu Formen von Widerstand gegen Beeinflussung (u. a. Reaktanz, Misstrauen, Skepsis, Trägheit) und zu Strategien, die Widerstand verringern statt Druck zu erhöhen. Heute bei Taylor & Francis/Routledge verlegt.",
+    "lastCheckedAt": "2026-10-03",
+    "reviewIntervalDays": 1825,
+    "publishedAt": "2004"
+  }
+]

@@ -267,7 +267,14 @@
       "C-STRUKTUR",
       "C-SCHREIBEN"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M05-01",
+      "LO-M05-02",
+      "LO-M05-03",
+      "LO-M05-04",
+      "LO-M05-05",
+      "LO-M05-08"
+    ]
   },
   {
     "id": "C-KANAELE",
@@ -279,7 +286,10 @@
       "C-KONTEXT",
       "C-GRENZEN"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M05-06",
+      "LO-M05-08"
+    ]
   },
   {
     "id": "C-UEBERGABE",
@@ -291,7 +301,10 @@
       "C-CHATFLOW",
       "C-STATUS"
     ],
-    "objectiveIds": []
+    "objectiveIds": [
+      "LO-M05-05",
+      "LO-M05-07"
+    ]
   },
   {
     "id": "C-EINWAND",

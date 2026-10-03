@@ -3,15 +3,18 @@
 import modM01 from "@content/modules/M01.json";
 import modM02 from "@content/modules/M02.json";
 import modM04 from "@content/modules/M04.json";
+import modM05 from "@content/modules/M05.json";
 import qM01 from "@content/questions/M01.json";
 import qM02 from "@content/questions/M02.json";
 import qM04 from "@content/questions/M04.json";
+import qM05 from "@content/questions/M05.json";
 import simSIM001 from "@content/scenarios/SIM-001.json";
 import simSIM002 from "@content/scenarios/SIM-002.json";
 import simSIM003 from "@content/scenarios/SIM-003.json";
 import simSIM004 from "@content/scenarios/SIM-004.json";
 import simSIM006 from "@content/scenarios/SIM-006.json";
+import simSIM007 from "@content/scenarios/SIM-007.json";
 
-export const moduleFiles: unknown[] = [modM01, modM02, modM04];
-export const questionFiles: unknown[][] = [qM01, qM02, qM04];
-export const scenarioFiles: unknown[] = [simSIM001, simSIM002, simSIM003, simSIM004, simSIM006];
+export const moduleFiles: unknown[] = [modM01, modM02, modM04, modM05];
+export const questionFiles: unknown[][] = [qM01, qM02, qM04, qM05];
+export const scenarioFiles: unknown[] = [simSIM001, simSIM002, simSIM003, simSIM004, simSIM006, simSIM007];
